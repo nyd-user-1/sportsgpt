@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { ArrowUp, MapPin } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { AppPanel } from './AppPanel'
-import { APP_NAME, ACCENT_COLOR } from '@/lib/app-config'
+import { APP_NAME, ACCENT_COLOR, CHAT_PLACEHOLDER_PANEL, CHAT_PANEL_INTRO } from '@/lib/app-config'
 
 type Message = { id: string; role: 'user' | 'assistant'; content: string }
 
@@ -35,7 +35,7 @@ export function PanelChat({
     setMessages(prev => [...prev, {
       id: crypto.randomUUID(),
       role: 'assistant',
-      content: `AI integration coming soon. Explore childcare data for ${countyName} County using the panels and map.`,
+      content: `AI integration coming soon. Explore ${APP_NAME} data for ${countyName} using the panels and map.`,
     }])
     setLoading(false)
   }
@@ -54,7 +54,7 @@ export function PanelChat({
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter') submit(input) }}
-          placeholder="Ask about this county..."
+          placeholder={CHAT_PLACEHOLDER_PANEL}
           className="flex-1 bg-transparent text-sm text-[var(--txt)] placeholder:text-[var(--muted2)] outline-none"
         />
         <button
@@ -76,7 +76,7 @@ export function PanelChat({
           <div className="flex flex-col items-center justify-center gap-3 pt-12 text-center">
             <AppLogo className="h-10 w-10" />
             <p className="text-sm text-[var(--muted)] max-w-[200px]">
-              Ask anything about childcare in this county.
+              {CHAT_PANEL_INTRO}
             </p>
           </div>
         ) : (

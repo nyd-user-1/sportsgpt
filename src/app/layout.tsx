@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 
 export const metadata: Metadata = {
-  title: 'ChildcareGPT',
-  description: 'AI-powered childcare intelligence',
+  title: APP_NAME,
+  description: APP_TAGLINE,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

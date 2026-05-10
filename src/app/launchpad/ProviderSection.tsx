@@ -3,99 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-
-type Provider = { name: string; county: string }
-
-const PROVIDERS: Record<string, Provider[]> = {
-  'Family Day Care': [
-    { name: "Sunshine Family Care",        county: 'Albany'      },
-    { name: "Little Stars FDC",            county: 'Bronx'       },
-    { name: "Maple Street Family Care",    county: 'Brooklyn'    },
-    { name: "Rainbow Kids FDC",            county: 'Queens'      },
-    { name: "Cozy Corner Care",            county: 'Nassau'      },
-    { name: "Happy Home FDC",              county: 'Suffolk'     },
-    { name: "Tender Hearts Family Care",   county: 'Westchester' },
-    { name: "Blossom Family Day Care",     county: 'Erie'        },
-    { name: "Little Sprouts FDC",          county: 'Monroe'      },
-    { name: "Nest & Nurture Care",         county: 'Onondaga'    },
-    { name: "Stepping Stones FDC",         county: 'Orange'      },
-    { name: "Bright Days Family Care",     county: 'Dutchess'    },
-    { name: "Cozy Kids FDC",               county: 'Rockland'    },
-    { name: "Gentle Giants Care",          county: 'Saratoga'    },
-    { name: "Morning Glory FDC",           county: 'Schenectady' },
-    { name: "Sunrise Family Care",         county: 'Rensselaer'  },
-    { name: "Tiny Treasures FDC",          county: 'Richmond'    },
-    { name: "Meadow Kids Family Care",     county: 'Niagara'     },
-    { name: "Clover Leaf FDC",             county: 'Oneida'      },
-    { name: "Firefly Family Care",         county: 'Tompkins'    },
-  ],
-  'Group Family Day Care': [
-    { name: "Happy Hearts Group Care",     county: 'Albany'      },
-    { name: "Village Kids GFDC",           county: 'Bronx'       },
-    { name: "Riverside Group Care",        county: 'Brooklyn'    },
-    { name: "Hilltop Group FDC",           county: 'Queens'      },
-    { name: "Pinecrest Group Care",        county: 'Nassau'      },
-    { name: "Sunflower Group GFDC",        county: 'Suffolk'     },
-    { name: "Orchard Group Care",          county: 'Westchester' },
-    { name: "Blue Sky Group GFDC",         county: 'Erie'        },
-    { name: "Horizon Group Care",          county: 'Monroe'      },
-    { name: "Cedar Grove Group GFDC",      county: 'Onondaga'    },
-    { name: "Parkside Group Care",         county: 'Orange'      },
-    { name: "Harbor Light GFDC",           county: 'Dutchess'    },
-    { name: "Waterfront Group Care",       county: 'Rockland'    },
-    { name: "Birchwood Group GFDC",        county: 'Saratoga'    },
-    { name: "Lakeview Group Care",         county: 'Schenectady' },
-    { name: "Summit Group GFDC",           county: 'Rensselaer'  },
-    { name: "Creekside Group Care",        county: 'Richmond'    },
-    { name: "Willowbrook Group GFDC",      county: 'Niagara'     },
-    { name: "Foxwood Group Care",          county: 'Oneida'      },
-    { name: "Elmwood Group GFDC",          county: 'Tompkins'    },
-  ],
-  'School Age Child Care': [
-    { name: "After School Academy",        county: 'Albany'      },
-    { name: "Kids Zone SACC",              county: 'Bronx'       },
-    { name: "Explorers After School",      county: 'Brooklyn'    },
-    { name: "Discovery Kids SACC",         county: 'Queens'      },
-    { name: "Champions After School",      county: 'Nassau'      },
-    { name: "Scholars Club SACC",          county: 'Suffolk'     },
-    { name: "Trailblazers After School",   county: 'Westchester' },
-    { name: "Achievers SACC",              county: 'Erie'        },
-    { name: "Pathfinders After School",    county: 'Monroe'      },
-    { name: "Innovators SACC",             county: 'Onondaga'    },
-    { name: "Leaders Club After School",   county: 'Orange'      },
-    { name: "Creators SACC",              county: 'Dutchess'    },
-    { name: "Voyagers After School",       county: 'Rockland'    },
-    { name: "Builders SACC",              county: 'Saratoga'    },
-    { name: "Dreamers After School",       county: 'Schenectady' },
-    { name: "Pioneers SACC",              county: 'Rensselaer'  },
-    { name: "Thinkers After School",       county: 'Richmond'    },
-    { name: "Adventurers SACC",           county: 'Niagara'     },
-    { name: "Sparks After School",         county: 'Oneida'      },
-    { name: "Bridges SACC",              county: 'Tompkins'    },
-  ],
-  'Small Day Care Center': [
-    { name: "Tiny Tots Center",            county: 'Albany'      },
-    { name: "Bright Beginnings SDCC",      county: 'Bronx'       },
-    { name: "Little Learners Center",      county: 'Brooklyn'    },
-    { name: "Wonder Years SDCC",           county: 'Queens'      },
-    { name: "Seedling Child Center",       county: 'Nassau'      },
-    { name: "Sprout Small Care",           county: 'Suffolk'     },
-    { name: "Bumblebee Day Center",        county: 'Westchester' },
-    { name: "Pebble Path SDCC",           county: 'Erie'        },
-    { name: "Button Nose Center",          county: 'Monroe'      },
-    { name: "Acorn Day Care Center",       county: 'Onondaga'    },
-    { name: "Ladybug SDCC",              county: 'Orange'      },
-    { name: "Dewdrop Child Center",        county: 'Dutchess'    },
-    { name: "Puddle Jump SDCC",           county: 'Rockland'    },
-    { name: "Firefly Day Center",          county: 'Saratoga'    },
-    { name: "Clover SDCC",               county: 'Schenectady' },
-    { name: "Daisy Chain Center",          county: 'Rensselaer'  },
-    { name: "Moonbeam SDCC",             county: 'Richmond'    },
-    { name: "Starfish Day Center",         county: 'Niagara'     },
-    { name: "Peppercorn SDCC",           county: 'Oneida'      },
-    { name: "Buttercup Child Center",      county: 'Tompkins'    },
-  ],
-}
+import { LAUNCHPAD_TABS, LAUNCHPAD_ITEMS } from '@/lib/launchpad-data'
 
 const CARD_GRADIENTS = [
   ['#fca5a5', '#dc2626'], ['#22d3ee', '#0e7490'], ['#4ade80', '#15803d'],
@@ -104,16 +12,16 @@ const CARD_GRADIENTS = [
   ['#f472b6', '#be185d'],
 ]
 
-const PROVIDER_TABS = [
-  'Family Day Care',
-  'Group Family Day Care',
-  'School Age Child Care',
-  'Small Day Care Center',
-]
+const PROVIDERS = LAUNCHPAD_ITEMS
+const PROVIDER_TABS = LAUNCHPAD_TABS
 
 export function ProviderSection() {
   const [activeTab, setActiveTab] = useState(0)
-  const currentProviders = PROVIDERS[PROVIDER_TABS[activeTab]]
+  const currentProviders = PROVIDERS[PROVIDER_TABS[activeTab]] ?? []
+
+  if (PROVIDER_TABS.length === 0) {
+    return <p className="text-sm text-[var(--muted)] py-8 text-center">No items yet — populate src/lib/launchpad-data.ts.</p>
+  }
 
   return (
     <div>

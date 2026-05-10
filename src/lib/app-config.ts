@@ -12,11 +12,13 @@ import {
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
-export const APP_NAME         = 'SportsGPT'
-export const APP_TAGLINE      = 'AI-powered high school sports intelligence'
-export const CHAT_PLACEHOLDER = 'Ask about Section XI football...'
-export const ACCENT_COLOR     = '#023887'
-export const CHART_NAV_EVENT  = 'sportsgpt:chart-nav'
+export const APP_NAME              = 'SportsGPT'
+export const APP_TAGLINE           = 'AI-powered high school sports intelligence'
+export const CHAT_PLACEHOLDER      = 'Ask about Section XI football...'
+export const CHAT_PLACEHOLDER_PANEL = 'Ask about this team...'
+export const CHAT_PANEL_INTRO      = 'Ask anything using the panels and map.'
+export const ACCENT_COLOR          = '#023887'
+export const CHART_NAV_EVENT       = 'sportsgpt:chart-nav'
 
 // ── Top-level nav cycle (prev/next arrows in AppLayout header) ─────────────
 export const NAV_CYCLE = [

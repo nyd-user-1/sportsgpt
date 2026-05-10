@@ -1,4 +1,7 @@
-/* Shared dummy data for Facility, ZIP Code, and City detail pages (slugs 1–10) */
+// ── REPLACE FOR NEW DOMAIN ────────────────────────────────────────────────
+// Rename fields to match your domain's data model.
+// Used by Facility, ZIP Code, and City detail pages for slugs 1–10.
+// These are placeholder records shown before real DB data exists.
 
 export type DummyLocation = {
   slug: string

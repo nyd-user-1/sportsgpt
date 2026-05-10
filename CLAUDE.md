@@ -1,170 +1,176 @@
 @AGENTS.md
 
 ---
-## ⚠ TEMPLATE NOTICE — Read this first
 
-**If you are NOT working on ChildcareGPT, this repo was cloned as a starting template.**
+# SportsGPT
 
-Do the following before writing any code:
+**Purpose:** NY high school sports intelligence — starting with Section XI football.
+**Stack:** Next.js 16 (App Router, Turbopack), Neon Postgres, Tailwind v4, Google Maps, lucide-react, recharts.
+**Repo:** https://github.com/nyd-user-1/sportsgpt
 
-### Step 1 — Configure the brand (5 minutes)
-- **`src/lib/app-config.ts`** — set `APP_NAME`, `ACCENT_COLOR`, `CHART_NAV_EVENT`, `NAV_CYCLE`, `PATH_NAV`, `PATH_TITLE`, and all sidebar nav arrays
-- **`src/components/AppLogo.tsx`** — swap `BottleBaby` for the new app's icon
+---
 
-### Step 2 — Connect a new database
+## ⚠ TEMPLATE NOTICE — Read this before writing any code
+
+This repo is also the canonical "clone and swap" template for new GPT apps.
+The goal: clone → edit config → connect DB → ship. No hunting through components.
+
+### Step 1 — Brand (edit ONE file + ONE component)
+
+**`src/lib/app-config.ts`** — every brand/nav string lives here:
+- `APP_NAME`, `APP_TAGLINE`, `ACCENT_COLOR` — app identity
+- `CHAT_PLACEHOLDER`, `CHAT_PLACEHOLDER_PANEL`, `CHAT_PANEL_INTRO` — all input placeholders
+- `CHART_NAV_EVENT` — namespace to match the new app
+- `SIDEBAR_NAV_TOP/BOTTOM`, `SIDEBAR_DATA_ITEMS`, `SIDEBAR_MAP_ITEMS` — all nav
+- `PATH_NAV`, `PATH_TITLE`, `NAV_CYCLE` — routing/header labels
+
+**`src/components/AppLogo.tsx`** — swap the icon (currently `Trophy` from lucide-react).
+
+**`src/app/layout.tsx`** — already imports `APP_NAME`/`APP_TAGLINE` from app-config. No edit needed.
+
+### Step 2 — Domain content files (replace wholesale, don't parameterize)
+
+These files have a `// REPLACE FOR NEW DOMAIN` header. They ship as empty stubs.
+The app builds and renders cleanly with empty arrays — that's intentional.
+
+| File | What to put there |
+|------|-------------------|
+| `src/lib/chart-configs.ts` | One `ChartConfig` entry per chart you want |
+| `src/lib/glossary-terms.ts` | `GlossaryTerm[]` for your data model |
+| `src/lib/launchpad-data.ts` | `LAUNCHPAD_TABS` + `LAUNCHPAD_ITEMS` for the Launchpad card grid |
+| `src/lib/dummy-locations.ts` | Placeholder rows for detail pages before real DB data exists |
+| `src/app/chart/[slug]/page.tsx` | One `case` per chart slug with your DB queries |
+
+### Step 3 — Database
+
 - Create a new Neon project at neon.tech
 - Add `DATABASE_URL` to `.env.local` and Vercel (Production + Preview + Development)
-- Drop the childcare schema and create tables for the new domain
-- Update `src/lib/db.ts` if needed (usually no change — it just reads `DATABASE_URL`)
+- `src/lib/db.ts` uses a lazy placeholder connection — it will NOT throw at build time if `DATABASE_URL` is missing, but queries will fail at runtime until a real URL is set
+- Write your schema and ingest scripts in `scripts/`
 
-### Step 3 — Write a new CLAUDE.md immediately
-Replace this entire file with a project-specific CLAUDE.md covering:
-- The new app's purpose and production URL
-- Stack (Next.js 16, Neon Postgres, Tailwind, Google Maps — keep these unless you have a reason not to)
-- New DB schema and table names
-- New API routes
-- New page structure and nav
-- Any domain-specific rules
+### Step 4 — Write a new CLAUDE.md
 
-Delete everything from the `TEMPLATE NOTICE` line down through the end of the ChildcareGPT-specific content. The ChildcareGPT sections below are reference only — they describe the shape of what you're replacing, not what you're building.
-
-### What NOT to touch (reuse as-is)
-- `src/components/AppLayout.tsx` — reads from app-config, no edits needed
-- `src/components/Sidebar.tsx` — reads from app-config, no edits needed
-- `src/components/AppPanel.tsx`, `PanelChart.tsx`, `PanelMap.tsx`, `PanelChat.tsx` — generic, reuse as-is
-- `src/components/MiniCharts.tsx`, `CardCarousel.tsx`, `PlusMenu.tsx` — generic, reuse as-is
-- `src/app/globals.css` — CSS vars and base styles, keep unless rebranding colors
-- `src/lib/utils.ts` — `cn()` helper, keep as-is
+Replace this template notice section with your app's specifics:
+- Production URL
+- DB schema and table names
+- API routes
+- Page structure
+- Domain rules
 
 ---
 
-# Database & API Infrastructure
+## Build Rules (learned the hard way)
 
-## Neon Postgres (`wispy-hat-96132084` / `neon-bisque-arrow`)
-Connection via `DATABASE_URL` env var (set in `.env.local` and Vercel Production/Preview/Development).
+### Every page that queries the DB must export `force-dynamic`
+
+```ts
+export const dynamic = 'force-dynamic'
+```
+
+Without this, Next.js tries to statically pre-render the page at build time and
+hits the DB — which fails when `DATABASE_URL` isn't connected yet. All 10 DB
+pages in this repo already have it. Any new page you add that calls `sql` needs it.
+
+### Use `npm run build` (not `tsc --noEmit`) before pushing
+
+The Vercel build catches things `tsc` doesn't. Always run `npm run build` locally
+before pushing when you've made structural changes.
+
+### `getAdjacentSlugs` is safe with empty `CHART_CONFIGS`
+
+It returns `{ prevSlug: '', nextSlug: '' }` when the array is empty.
+
+---
+
+## What NOT to touch (reuse as-is)
+
+| File | Why |
+|------|-----|
+| `src/components/AppLayout.tsx` | Reads entirely from app-config |
+| `src/components/Sidebar.tsx` | Reads entirely from app-config |
+| `src/components/AppPanel.tsx` | Generic shell |
+| `src/components/PanelChart.tsx`, `PanelMap.tsx`, `PanelChat.tsx` | Generic panels |
+| `src/components/MiniCharts.tsx` | Generic recharts wrappers |
+| `src/components/CardCarousel.tsx`, `CardCarouselPortrait.tsx` | Generic carousels |
+| `src/components/PlusMenu.tsx`, `ChatInput.tsx` | Generic input UI |
+| `src/app/globals.css` | CSS vars and base styles |
+| `src/lib/utils.ts` | `cn()` helper |
+| `src/lib/ny-counties.ts` | GeoJSON county data for maps |
+
+---
+
+## File Map — Domain Content vs Reusable Shell
+
+```
+src/lib/
+  app-config.ts          ← EDIT THIS (brand + nav)
+  chart-configs.ts       ← REPLACE (your charts)
+  glossary-terms.ts      ← REPLACE (your terms)
+  launchpad-data.ts      ← REPLACE (your launchpad cards)
+  dummy-locations.ts     ← REPLACE (your placeholder data)
+  db.ts                  ← keep (just reads DATABASE_URL)
+  utils.ts               ← keep
+  ny-counties.ts         ← keep (or replace if not NY)
+
+src/components/
+  AppLogo.tsx            ← EDIT THIS (your icon)
+  AppLayout.tsx          ← keep (reads app-config)
+  Sidebar.tsx            ← keep (reads app-config)
+  PanelChat.tsx          ← keep (reads app-config)
+  everything else        ← keep
+
+src/app/
+  layout.tsx             ← keep (reads app-config)
+  page.tsx               ← keep (reads app-config + AppLogo)
+  chart/[slug]/page.tsx  ← REPLACE switch body (your DB queries)
+  charts/page.tsx        ← keep (renders CHART_CONFIGS, empty = blank grid)
+  glossary/page.tsx      ← keep (renders GLOSSARY_TERMS, empty = blank)
+  launchpad/
+    ProviderSection.tsx  ← keep (reads launchpad-data)
+    page.tsx             ← keep
+  county/, facility/, city/, zip/, zip-code/  ← REPLACE with your entity pages
+  maps/page.tsx          ← REPLACE with your map data
+```
+
+---
+
+## Database & API Infrastructure (SportsGPT)
+
+### Neon Postgres
+Connection via `DATABASE_URL` env var.
 Client: `@neondatabase/serverless` — import `sql` from `@/lib/db`.
 
-### Tables
+*DB schema and tables to be documented here once connected.*
 
-#### `facilities` — 16,800 rows, keyed on `facility_id`
-NY State OCFS regulated childcare providers (from `data.ny.gov` dataset `fymg-3wv3` + dates from `cb42-qumz`).
-Key columns: `facility_id`, `program_type` (DCC/FDC/GFDC/SACC/SDCC), `county`, `facility_status`, `facility_name`, `city`, `zip_code`, `phone_number`, `provider_name`, `total_capacity`, `infant_capacity`, `toddler_capacity`, `preschool_capacity`, `school_age_capacity`, `profile_url`, `latitude`, `longitude`, `facility_opened_date`, `license_issue_date`, `license_expiration_date`.
-Indexes: `county`, `program_type`, `facility_status`, `zip_code`, `region_code`.
+### Google Maps
+Requires `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in `.env.local` and Vercel.
 
-#### `county_costs` — 930 rows, keyed on `(county_fips_code, studyyear)`
-DOL National Database of Childcare Prices, NY counties only, 2008–2022.
-Key columns: `county_fips_code` (e.g. `'36001'`), `county_name` (e.g. `'Albany County'`), `studyyear`, median/75th-pct center + family care costs by age group (`mcinfant`, `mctoddler`, `mcpreschool`, `mfccinfant`, etc.), women's labor force participation (`flfpr_20to64_under6`), income (`mhi`, `mfi`), poverty (`pr_f`, `pr_p`).
-
-### API Routes
-
-| Route | Description |
-|---|---|
-| `GET /api/facilities` | Query facilities. Params: `county`, `program_type`, `status`, `limit` (max 200), `offset` |
-| `GET /api/county-costs` | County cost data. Params: `year` (default 2022) |
-
-### Ingest Scripts (`scripts/`)
-- `ingest-facilities.mjs` — fetches both `fymg-3wv3` + `cb42-qumz`, merges dates, batch-upserts all 16,800 facilities. Run: `DATABASE_URL=... node scripts/ingest-facilities.mjs`
-- `ingest-county-costs.mjs` — reads `dol-child-care-data.csv` (keep locally, not committed), inserts NY rows only. Run: `DATABASE_URL=... node scripts/ingest-county-costs.mjs`
-- `backfill-dates.mjs` — one-time script, already run, can be discarded.
-
----
-
-## Map Components
-
-### `NYCountyChoropleth` (`src/components/NYCountyChoropleth.tsx`)
-Google Maps choropleth of all 62 NY counties colored by a selectable DOL cost metric.
-- **Props:** `data: CountyCostRow[]` (from `/api/county-costs`), `metric?: ChoroplethMetric` (default `'mcinfant'`), `year?: number`, `onMetricChange?`, `className?`
-- **Metrics:** `mcinfant` · `mctoddler` · `mcpreschool` · `mfccinfant` · `mfcctoddler` · `mfccpreschool` · `mhi` · `pr_f`
-- Click on a county navigates to `/county/[slug]`
-- Requires `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` (already in Vercel + `.env.local`)
-
-### GeoJSON assets (in `For Review/` — not yet promoted to `src/`)
-All map components fetch GeoJSON from `https://raw.githubusercontent.com/nyd-user-1/nyd-geojson/main/`:
-- `us-counties.geojson` — all US counties, FIPS-keyed (STATEFP + COUNTYFP)
+### GeoJSON
+Map components fetch from `https://raw.githubusercontent.com/nyd-user-1/nyd-geojson/main/`:
+- `us-counties.geojson` — all US counties, FIPS-keyed
 - `us-states.geojson` — all 50 states + DC
-- `ny-assembly-districts.geojson` — 150 districts, props: `District` (int), `Name`, `Party`
-- `ny-senate-districts.geojson` — 63 districts, props: `DISTRICT` (int), `NAME`, `Party`
+- `ny-assembly-districts.geojson`, `ny-senate-districts.geojson`
 
 ---
 
-# ChildcareGPT Wireframe Rules
+## Naming Conventions (inherited from ChildcareGPT, adapt as needed)
 
-## The Golden Rule
-This is a pixel-perfect port of SolarGPT. When in doubt, read the SolarGPT source at `/Users/brendanstanton/projects/*solargpt-demo`. Don't guess. Don't invent. Don't freelance.
-
-## When Building a New Page or Slot
-- If a reference component already exists in this codebase (e.g. `DetailPageCounty`), **copy it verbatim**. Do not rewrite it.
-- Parallel route slots that mirror a full page **must use the exact same components** — do not rebuild them from scratch at a different size.
-- If a container is smaller and components don't fit cleanly, **ask** rather than silently resizing text, cards, or spacing.
-
-## Never Add What Isn't There
-- Do not add UI elements (buttons, labels, icons, decorations) that don't exist in the reference design.
-- Do not add X/close buttons, flanking chevrons, custom labels, or any new interaction patterns without explicit instruction.
-
-## CSS Variables
-- Before using any CSS variable as an opaque background, verify what it resolves to.
-- `--inp-bg` is `rgba(0,0,0,0.04)` — nearly transparent. Use `--row-hover` (`#f5f5f5`) for solid hover backgrounds in tables.
-
----
-
-## Naming Conventions
+### Components
+| Name | Description |
+|------|-------------|
+| `AppLayout` | Root shell with sidebar + header |
+| `AppPanel` | Slide-out panel shell (header, scrollable body, footer slot) |
+| `PanelChart` / `PanelMap` / `PanelChat` | Panel implementations |
+| `CardLandscape` / `CardLandscapeMini` | Gradient cards |
+| `DataTable` | Sticky-column scrollable table (index pages) |
+| `DataTableMini` | Compact zebra table (Launchpad) |
+| `InfoTable[Entity]` | Accordion profile card on detail pages |
+| `TabGroup` | Underline tab nav bar |
+| `ButtonGroup` | Prev/Next/Chart/Map/Chat buttons on detail page headers |
 
 ### Pages
-| Name | Route |
-|------|-------|
-| `DetailPageCounty` | `/county/[slug]` |
-| `DetailPageFacility` | `/facility/[slug]` |
-| `DetailPageZipCode` | `/zip/[slug]` |
-| `DetailPageCity` | `/city/[slug]` |
-| `IndexPageCounty` | `/county` |
-| `IndexPageFacility` | `/facility` |
-| `IndexPageZipCode` | `/zip-code` |
-| `IndexPageCity` | `/city` |
-| `LaunchpadPage` | `/launchpad` |
-
-### Tables
-| Name | Description |
-|------|-------------|
-| `DataTable` | Sticky first column, horizontal scroll, many columns — used on all index pages |
-| `DataTableMini` | Simple compact table, zebra striping, no horizontal scroll — used on LaunchpadPage |
-
-### InfoTable (accordion profile cards on detail pages)
-`InfoTableCounty` · `InfoTableFacility` · `InfoTableCity` · `InfoTableZipCode` · `InfoTableState`
-
-### Cards
-| Name | Description |
-|------|-------------|
-| `CardLandscape` | Larger gradient cards — provider cards on LaunchpadPage |
-| `CardLandscapeMini` | Smaller gradient cards — home page carousel AND detail page ZIP code cards (same component) |
-| `CardChart` | Chart cards on `/charts` |
-| `CardMap` | Map cards on `/maps` |
-
-### ButtonGroup (detail page header)
-`ButtonPrevious` · `ButtonNext` (circular, always active) · `ButtonChart` · `ButtonMap` · `ButtonChat`
-
-### AppPanel
-`AppPanel` — blank shell (header bar, scrollable body, footer slot)
-- Sub-buttons: `ButtonPanelHalf` · `ButtonPanelThird`
-- Implementations: `PanelChart` · `PanelMap` · `PanelChat`
-
-### Navigation
-`TabGroup` — underline-style tab navigation bar
-
-### Slot Views (parallel route @detail)
-`DetailSlotCounty` — compact county detail rendered in the `@detail` slot on LaunchpadPage. No map placeholder, no section H2s. Uses same components as `DetailPageCounty`: H1, ButtonGroup, InfoTableCounty, CardLandscapeMini carousel.
-
-### ChatInput (home page prompt box)
-| Name | Description |
-|------|-------------|
-| `ChatInput` | Outer container — the whole rounded box (textarea + toolbar) |
-| `ChatTextArea` | The `<textarea>` element inside ChatInput |
-| `ChatToolBar` | Bottom row of ChatInput — icon buttons + ButtonSendChat |
-| `ButtonSendChat` | Dark rounded-xl send button (also written `ButtonSend`) |
-
-### Icons
-| Name | Description |
-|------|-------------|
-| `IconBabyBottle` | ChildcareGPT brand icon |
-| `IconMapPin` | Location/map pin icon in ChatToolBar |
-| `IconMic` | Microphone icon in ChatToolBar |
-| `IconPlus` | Plus/attach icon in ChatToolBar |
+| Pattern | Route |
+|---------|-------|
+| `IndexPage[Entity]` | `/entity` |
+| `DetailPage[Entity]` | `/entity/[slug]` |
+| `DetailSlot[Entity]` | Parallel `@detail` slot on Launchpad |
