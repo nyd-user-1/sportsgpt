@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm show *)",
+      "Bash(diskutil list *)",
+      "Bash(diskutil info *)",
+      "mcp__claude_ai_Neon__list_projects"
+    ]
+  }
+}
