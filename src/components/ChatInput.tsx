@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react'
 import { MapPin, Mic, ArrowUp } from 'lucide-react'
 import { PlusMenu } from '@/components/PlusMenu'
+import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 
 export function ChatInput() {
   const [input, setInput] = useState('')
@@ -31,7 +32,7 @@ export function ChatInput() {
           value={input}
           onChange={e => handleInputChange(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) e.preventDefault() }}
-          placeholder="Ask about childcare..."
+          placeholder={CHAT_PLACEHOLDER}
           className="flex-1 resize-none bg-transparent py-1 text-[17px] text-[var(--txt)] placeholder:text-[var(--muted2)] outline-none leading-relaxed"
           style={{ minHeight: '40px' }}
         />

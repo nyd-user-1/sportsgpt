@@ -1,9 +1,10 @@
 'use client'
 
-import { BottleBaby } from '@/components/BottleBaby'
+import { AppLogo } from '@/components/AppLogo'
 import { AppLayout } from '@/components/AppLayout'
 import { ChatInput } from '@/components/ChatInput'
 import { CardCarouselPortrait } from '@/components/CardCarouselPortrait'
+import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 
 export default function HomePage() {
   return (
@@ -15,8 +16,8 @@ export default function HomePage() {
             {/* Logo */}
             <div className="flex justify-center">
               <div className="flex items-center gap-2">
-                <BottleBaby className="h-9 w-9" style={{ stroke: '#38bdf8', fill: 'rgba(56,189,248,0.15)' }} />
-                <h1 className="text-3xl font-bold text-[var(--txt)]">ChildcareGPT</h1>
+                <AppLogo className="h-9 w-9" />
+                <h1 className="text-3xl font-bold text-[var(--txt)]">{APP_NAME}</h1>
               </div>
             </div>
 
@@ -24,7 +25,7 @@ export default function HomePage() {
             <div className="relative">
               <ChatInput />
               <p className="text-center text-[10px] text-[var(--muted2)] mt-2">
-                AI-powered childcare intelligence · Design &amp; Development by NYSgpt
+                {APP_TAGLINE} · Design &amp; Development by NYSgpt
               </p>
             </div>
 
