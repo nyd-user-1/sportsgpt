@@ -1,6 +1,8 @@
 import { sql } from '@/lib/db'
 import CountyTable from './CountyTable'
 
+export const dynamic = 'force-dynamic'
+
 export default async function CountyPage() {
   const rows = await sql`
     SELECT

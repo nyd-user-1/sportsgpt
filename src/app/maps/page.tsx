@@ -2,6 +2,8 @@ import { sql } from '@/lib/db'
 import { AppLayout } from '@/components/AppLayout'
 import NYCountyMap from '@/components/NYCountyMap'
 
+export const dynamic = 'force-dynamic'
+
 export default async function MapsPage() {
   const rows = await sql`
     SELECT

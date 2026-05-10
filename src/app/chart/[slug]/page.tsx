@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
-import { getChartConfig, getAdjacentSlugs, CHART_CONFIGS } from '@/lib/chart-configs'
+import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { ChartDetailPage, type StdRow, type MultiRow, type ScatterRow } from '@/components/ChartDetailPage'
 
-export async function generateStaticParams() {
-  return CHART_CONFIGS.map(c => ({ slug: c.slug }))
-}
+export const dynamic = 'force-dynamic'
 
 export default async function ChartPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
