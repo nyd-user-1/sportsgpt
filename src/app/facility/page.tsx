@@ -1,4 +1,6 @@
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import FacilityTable from './FacilityTable'
 
 export default async function FacilityPage() {

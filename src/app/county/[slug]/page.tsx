@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import { NY_COUNTIES } from '@/lib/ny-counties'
 import { CountyShell } from './Shell'
 

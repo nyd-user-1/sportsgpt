@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import { ZipShell } from './Shell'
 
 export default async function DetailPageZipCode({ params }: { params: Promise<{ slug: string }> }) {

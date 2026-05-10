@@ -1,4 +1,6 @@
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import CityTable from './CityTable'
 
 export default async function CityPage() {

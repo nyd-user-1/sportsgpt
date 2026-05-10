@@ -1,4 +1,6 @@
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import ZipTable from './ZipTable'
 
 export default async function ZipCodePage() {

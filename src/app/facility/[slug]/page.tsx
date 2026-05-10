@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
+
+export const dynamic = 'force-dynamic'
 import { FacilityShell } from './Shell'
 
 export default async function DetailPageFacility({ params }: { params: Promise<{ slug: string }> }) {
