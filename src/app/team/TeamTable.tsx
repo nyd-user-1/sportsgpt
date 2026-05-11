@@ -19,20 +19,8 @@ const GRADIENTS = [
   'linear-gradient(160deg,#b91c1c 0%,#991b1b 100%)',
 ]
 
-export type TeamRow = {
-  id: number
-  name: string
-  school: string
-  section: string
-  division: string
-  city: string
-  county: string
-  wins: number
-  losses: number
-  pf: number
-  pa: number
-  coach: string
-}
+export type { TeamRow } from '@/lib/placeholder-data'
+import type { TeamRow } from '@/lib/placeholder-data'
 
 type SortCol = 'name' | 'school' | 'division' | 'city' | 'wins' | 'losses' | 'pct' | 'pf' | 'pa' | 'diff'
 

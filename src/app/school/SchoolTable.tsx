@@ -19,18 +19,8 @@ const GRADIENTS = [
   'linear-gradient(160deg,#991b1b 0%,#b91c1c 100%)',
 ]
 
-export type SchoolRow = {
-  id: number
-  name: string
-  city: string
-  county: string
-  section: string
-  division: string
-  enrollment: number
-  teams: number
-  wins: number
-  losses: number
-}
+export type { SchoolRow } from '@/lib/placeholder-data'
+import type { SchoolRow } from '@/lib/placeholder-data'
 
 function fmtPct(w: number, l: number) {
   const g = w + l
