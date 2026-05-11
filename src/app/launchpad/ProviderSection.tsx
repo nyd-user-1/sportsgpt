@@ -31,7 +31,7 @@ export function ProviderSection() {
             className={cn(
               'px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap',
               activeTab === i
-                ? 'border-blue-500 text-[var(--txt)]'
+                ? 'border-[#033882] text-[var(--txt)]'
                 : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
             )}>
             {t}
@@ -44,7 +44,7 @@ export function ProviderSection() {
           const [light, dark] = CARD_GRADIENTS[i % CARD_GRADIENTS.length]
           return (
             <Link key={`${p.name}-${i}`}
-              href={`/county/${p.county.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+              href={`/team/${p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm transition-shadow hover:shadow-md"
               style={{ background: `linear-gradient(135deg, ${light}, ${dark})` }}>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
