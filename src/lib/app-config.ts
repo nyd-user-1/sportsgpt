@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School, Rocket } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
@@ -21,6 +21,7 @@ export const CHART_NAV_EVENT        = 'sportsgpt:chart-nav'
 export const NAV_CYCLE = [
   '/charts',
   ...CHART_CONFIGS.map(c => `/chart/${c.slug}`),
+  '/maps',
   '/team',
   '/school',
   '/launchpad',
@@ -30,6 +31,7 @@ export const NAV_CYCLE = [
 export const PATH_NAV: Record<string, string> = {
   '/':           'Chat',
   '/charts':     'Charts',
+  '/maps':       'Maps',
   '/team':       'Teams',
   '/school':     'Schools',
   '/launchpad':  'Launchpad',
@@ -40,6 +42,7 @@ export const PATH_NAV: Record<string, string> = {
 // ── Page title shown in AppLayout header (exact path → title) ─────────────
 export const PATH_TITLE: Record<string, string> = {
   '/charts':    'Charts',
+  '/maps':      'Maps',
   '/team':      'Teams',
   '/school':    'Schools',
   '/launchpad': 'Launchpad',
@@ -53,6 +56,7 @@ export type NavItem = { label: string; icon: React.ComponentType<{ className?: s
 export const SIDEBAR_NAV_TOP: NavItem[] = [
   { label: 'Chat',      icon: MessageCircle,   href: '/'          },
   { label: 'Charts',    icon: LayoutDashboard, href: '/charts'    },
+  { label: 'Maps',      icon: Map,             href: '/maps'      },
   { label: 'Teams',     icon: Building2,       href: '/team'      },
   { label: 'Schools',   icon: School,          href: '/school'    },
   { label: 'Launchpad', icon: Rocket,          href: '/launchpad' },
