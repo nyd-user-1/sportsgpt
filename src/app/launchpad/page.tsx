@@ -1,13 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { PLACEHOLDER_TEAMS, toSlug } from '@/lib/placeholder-data'
 import { cn } from '@/lib/utils'
-import { ACCENT_COLOR } from '@/lib/app-config'
-
-const DIVISIONS = ['Division I', 'Division II', 'Division III', 'Division IV', 'Division V']
-const DIV_KEY   = ['I', 'II', 'III', 'IV', 'V']
 
 function fmtPct(w: number, l: number) {
   const g = w + l
@@ -15,36 +10,16 @@ function fmtPct(w: number, l: number) {
 }
 
 export default function LaunchpadPage() {
-  const router = useRouter()
-  const [divIdx, setDivIdx] = useState(0)
+  const router       = useRouter()
+  const searchParams = useSearchParams()
+  const activeDiv    = searchParams.get('div') // null = All
 
-  const activeDivision = DIV_KEY[divIdx]
-  const teams = PLACEHOLDER_TEAMS.filter(t => t.division === activeDivision)
-    .sort((a, b) => b.wins - a.wins || b.pf - a.pf)
+  const teams = PLACEHOLDER_TEAMS
+    .filter(t => !activeDiv || t.division === activeDiv.replace('Division ', ''))
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   return (
     <div className="w-[52%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
-
-      {/* Division pill tabs */}
-      <div className="shrink-0 px-4 pt-3 pb-0 flex items-center gap-2 flex-wrap border-b border-[var(--border)]">
-        {DIVISIONS.map((d, i) => (
-          <button
-            key={d}
-            onClick={() => setDivIdx(i)}
-            className={cn(
-              'px-3 py-1.5 mb-3 rounded-lg text-sm font-medium transition-colors',
-              divIdx === i
-                ? 'border font-semibold'
-                : 'text-[var(--muted)] hover:text-[var(--txt)]'
-            )}
-            style={divIdx === i ? { borderColor: ACCENT_COLOR, color: ACCENT_COLOR } : undefined}
-          >
-            {d}
-          </button>
-        ))}
-      </div>
-
-      {/* Teams table */}
       <div className="overflow-y-auto no-scrollbar flex-1">
         <table className="w-full text-sm">
           <thead className="sticky top-0 bg-[var(--surface)]">
@@ -81,7 +56,6 @@ export default function LaunchpadPage() {
           </tbody>
         </table>
       </div>
-
     </div>
   )
 }
