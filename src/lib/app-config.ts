@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
@@ -23,16 +23,18 @@ export const NAV_CYCLE = [
   ...CHART_CONFIGS.map(c => `/chart/${c.slug}`),
   '/team',
   '/school',
+  '/launchpad',
 ]
 
 // ── Sidebar active-label lookup (exact path → label) ──────────────────────
 export const PATH_NAV: Record<string, string> = {
-  '/':          'Chat',
-  '/charts':    'Charts',
-  '/team':      'Teams',
-  '/school':    'Schools',
-  '/glossary':  'Glossary',
-  '/admin':     'Admin',
+  '/':           'Chat',
+  '/charts':     'Charts',
+  '/team':       'Teams',
+  '/school':     'Schools',
+  '/launchpad':  'Launchpad',
+  '/glossary':   'Glossary',
+  '/admin':      'Admin',
 }
 
 // ── Page title shown in AppLayout header (exact path → title) ─────────────
@@ -40,6 +42,7 @@ export const PATH_TITLE: Record<string, string> = {
   '/charts':    'Charts',
   '/team':      'Teams',
   '/school':    'Schools',
+  '/launchpad': 'Launchpad',
   '/glossary':  'Glossary',
   '/admin':     'Admin',
 }
@@ -48,10 +51,11 @@ export const PATH_TITLE: Record<string, string> = {
 export type NavItem = { label: string; icon: React.ComponentType<{ className?: string }>; href: string }
 
 export const SIDEBAR_NAV_TOP: NavItem[] = [
-  { label: 'Chat',    icon: MessageCircle,   href: '/'       },
-  { label: 'Charts',  icon: LayoutDashboard, href: '/charts' },
-  { label: 'Teams',   icon: Building2,       href: '/team'   },
-  { label: 'Schools', icon: School,          href: '/school' },
+  { label: 'Chat',      icon: MessageCircle,   href: '/'          },
+  { label: 'Charts',    icon: LayoutDashboard, href: '/charts'    },
+  { label: 'Teams',     icon: Building2,       href: '/team'      },
+  { label: 'Schools',   icon: School,          href: '/school'    },
+  { label: 'Launchpad', icon: Rocket,          href: '/launchpad' },
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = []
