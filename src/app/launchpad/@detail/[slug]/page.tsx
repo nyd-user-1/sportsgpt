@@ -90,12 +90,6 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
                 </span>
               </div>
             ))}
-            {!infoExpanded && profileRows.length > DEFAULT_ROWS && (
-              <button onClick={() => setInfoExpanded(true)}
-                className="w-full px-4 py-2 border-t border-[var(--border)] text-xs text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
-                Show {profileRows.length - DEFAULT_ROWS} more
-              </button>
-            )}
           </div>
 
           {/* Division peers */}

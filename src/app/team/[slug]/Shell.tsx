@@ -56,7 +56,7 @@ export function TeamShell({
   ]
 
   const activeProfile = PROFILES[profileIdx]
-  const DEFAULT_ROWS  = 3
+  const DEFAULT_ROWS  = 2
   const visibleRows   = infoExpanded ? activeProfile.rows : activeProfile.rows.slice(0, DEFAULT_ROWS)
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
@@ -133,12 +133,6 @@ export function TeamShell({
                     </span>
                   </div>
                 ))}
-                {!infoExpanded && activeProfile.rows.length > DEFAULT_ROWS && (
-                  <button onClick={() => setInfoExpanded(true)}
-                    className="w-full px-4 py-2 border-t border-[var(--border)] text-xs text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
-                    Show {activeProfile.rows.length - DEFAULT_ROWS} more
-                  </button>
-                )}
               </div>
             </div>
 
