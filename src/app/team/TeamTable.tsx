@@ -93,8 +93,8 @@ export default function TeamTable({ teams: initial, total: initialTotal }: { tea
     <th key={col}
       onClick={() => handleSort(col)}
       className={cn(
-        'px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none',
-        sticky && 'sticky left-0 z-30 text-left min-w-[200px]',
+        'px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none text-left',
+        sticky && 'sticky left-0 z-30 min-w-[200px]',
       )}
     >
       <button className={cn(
@@ -147,7 +147,7 @@ export default function TeamTable({ teams: initial, total: initialTotal }: { tea
                     {th('pf', 'PF')}
                     {th('pa', 'PA')}
                     {th('diff', '+/−')}
-                    <th className="px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap">Coach</th>
+                    <th className="px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap text-left">Coach</th>
                   </tr>
                 </thead>
                 <tbody>

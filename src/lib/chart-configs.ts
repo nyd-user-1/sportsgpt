@@ -25,11 +25,72 @@ export interface ChartConfig {
   filters?: FilterDef[]
 }
 
-// ── REPLACE FOR NEW DOMAIN ────────────────────────────────────────────────
-// Add one entry per chart. Each slug must have a matching case in
-// src/app/chart/[slug]/page.tsx that queries your DB and returns data.
-// The /charts index page renders empty when this array is empty — that's fine.
-export const CHART_CONFIGS: ChartConfig[] = []
+export const CHART_CONFIGS: ChartConfig[] = [
+  {
+    slug: 'teams-by-division',
+    title: 'Teams by Division',
+    description: 'Section XI football teams per division',
+    color: '#033882',
+    chartType: 'bar',
+    kpiLabel: 'total teams',
+  },
+  {
+    slug: 'win-pct-by-division',
+    title: 'Win % by Division',
+    description: 'Average win percentage per division · 2024',
+    color: '#4338ca',
+    chartType: 'bar',
+    kpiLabel: 'avg win %',
+  },
+  {
+    slug: 'points-scored-leaders',
+    title: 'Points Scored Leaders',
+    description: 'Top teams by total points scored · 2024 season',
+    color: '#a855f7',
+    chartType: 'bar',
+    kpiLabel: 'total points for',
+  },
+  {
+    slug: 'point-differential',
+    title: 'Point Differential',
+    description: 'Points for minus points against per team',
+    color: '#0ea5e9',
+    chartType: 'bar',
+    kpiLabel: 'avg differential',
+  },
+  {
+    slug: 'schools-by-enrollment',
+    title: 'Schools by Enrollment',
+    description: 'Section XI schools ranked by student enrollment',
+    color: '#10b981',
+    chartType: 'bar',
+    kpiLabel: 'largest school',
+  },
+  {
+    slug: 'wins-by-school',
+    title: 'Wins by School',
+    description: 'Total football wins per school · all-time',
+    color: '#f59e0b',
+    chartType: 'bar',
+    kpiLabel: 'most wins',
+  },
+  {
+    slug: 'season-records',
+    title: 'Season Records',
+    description: 'Win–loss distribution across all Section XI teams',
+    color: '#14b8a6',
+    chartType: 'bar',
+    kpiLabel: 'teams tracked',
+  },
+  {
+    slug: 'scoring-trend',
+    title: 'Scoring Trend',
+    description: 'Average points per game across Section XI · by season',
+    color: '#22c55e',
+    chartType: 'area',
+    kpiLabel: 'pts/game avg',
+  },
+]
 
 export function getChartConfig(slug: string): ChartConfig | undefined {
   return CHART_CONFIGS.find(c => c.slug === slug)

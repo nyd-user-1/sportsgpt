@@ -5,23 +5,16 @@ import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 /* ── Preview data keyed by slug ──────────────────────────────────── */
 const PREVIEW: Record<string, number[]> = {
-  'providers-by-county':  [100, 62, 58, 42, 38, 32, 28, 24, 20, 18, 14, 10, 8, 6, 4],
-  'capacity-by-county':   [100, 88, 82, 70, 62, 54, 46, 38, 30, 24, 18, 14, 10, 7, 4],
-  'program-types':        [100, 32, 22, 20, 1],
-  'facilities-by-year':   [5, 8, 12, 18, 22, 30, 28, 32, 35, 42, 38, 36, 40, 32, 28],
-  'age-group-capacity':   [18, 30, 45, 62],
-  'facility-status':      [100, 44, 1],
-  'license-expiration':   [55, 88, 100, 78, 60, 45, 32, 20],
-  'infant-care-cost':     [100, 92, 85, 78, 72, 65, 58, 52, 46, 40, 35, 30, 26, 22, 18],
-  'toddler-care-cost':    [100, 90, 82, 74, 66, 59, 52, 46, 40, 35, 30, 26, 22, 18, 14],
-  'preschool-care-cost':  [100, 88, 78, 68, 60, 52, 45, 38, 32, 27, 22, 18, 14, 11, 8],
-  'household-income':     [100, 95, 88, 82, 76, 70, 64, 58, 52, 46, 40, 35, 30, 25, 20],
-  'cost-trend':           [42, 48, 52, 56, 60, 64, 70, 75, 80, 84, 88, 92, 96, 98, 100],
-  'center-vs-family':     [40, 45, 50, 56, 62, 68, 74, 80, 85, 90, 94, 97, 99, 100, 98],
-  'income-vs-cost':       [30, 55, 42, 70, 48, 65, 38, 82, 60, 45, 75, 52, 88, 35, 62],
-  'lfpr-by-county':       [100, 95, 88, 82, 76, 70, 64, 58, 52, 46, 40, 35, 30, 25, 20],
+  'teams-by-division':    [24, 18, 14, 10, 8],
+  'win-pct-by-division':  [68, 72, 65, 70, 62],
+  'points-scored-leaders':[100, 92, 88, 85, 80, 76, 72, 68, 63, 58, 52, 47, 42, 36, 28],
+  'point-differential':   [100, 88, 72, 65, 58, 48, 40, 32, 22, 14, 8, 2, -5, -12, -22],
+  'schools-by-enrollment':[100, 95, 90, 82, 76, 70, 62, 55, 48, 42, 36, 30, 24, 18, 12],
+  'wins-by-school':       [100, 90, 82, 75, 68, 62, 55, 48, 42, 36, 30, 25, 20, 15, 10],
+  'season-records':       [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+  'scoring-trend':        [38, 40, 36, 42, 45, 44, 48, 46, 50, 52, 54, 56, 55, 58, 60],
 }
-const AREA_SLUGS = new Set(['facilities-by-year', 'cost-trend', 'center-vs-family'])
+const AREA_SLUGS = new Set(['scoring-trend'])
 
 /* ── Page ─────────────────────────────────────────────────────────── */
 

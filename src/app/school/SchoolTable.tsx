@@ -88,7 +88,7 @@ export default function SchoolTable({ schools: initial, total: initialTotal }: {
   function Th({ col, label, sticky }: { col: SortCol; label: string; sticky?: boolean }) {
     return (
       <th onClick={() => handleSort(col)}
-        className={cn('px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none', sticky && 'sticky left-0 z-30 text-left min-w-[200px]')}>
+        className={cn('px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none text-left', sticky && 'sticky left-0 z-30 min-w-[200px]')}>
         <button className={cn('inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5', sortCol === col ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
           {label}
           {sortCol === col ? (sortDir === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />) : <ChevronUp className="h-3 w-3 opacity-0" />}
