@@ -3,8 +3,9 @@
 import { use, useState, useRef } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, MapPlus, MessageCircle } from 'lucide-react'
 import { PanelChart } from '@/components/PanelChart'
+import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { PLACEHOLDER_TEAMS, toSlug } from '@/lib/placeholder-data'
 import { ACCENT_COLOR } from '@/lib/app-config'
@@ -31,6 +32,7 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
 
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [chartsOpen,   setChartsOpen]   = useState(false)
+  const [mapsOpen,     setMapsOpen]     = useState(false)
   const [chatOpen,     setChatOpen]     = useState(false)
   const carouselRef = useRef<HTMLDivElement>(null)
 
@@ -66,6 +68,7 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
               <div className="inline-flex -space-x-px">
                 <Link href={`/launchpad/${prevSlug}`} scroll={false} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
                 <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
+                <button onClick={() => setMapsOpen(v => !v)}   className={`${btn} ${mapsOpen   ? active : ''}`}><MapPlus className="h-4 w-4" /></button>
                 <button onClick={() => setChatOpen(v => !v)}   className={`${btn} ${chatOpen   ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
                 <Link href={`/launchpad/${nextSlug}`} scroll={false} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
               </div>
@@ -92,14 +95,31 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
             ))}
           </div>
 
-          {/* Division peers */}
+          {/* Division carousel — matching ChildcareGPT card style */}
+          <div className="mb-2 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-[var(--txt)]">Division {team.division}</h2>
+            <div className="flex items-center gap-1.5">
+              <button onClick={() => carouselRef.current?.scrollBy({ left: -200, behavior: 'smooth' })}
+                className="inline-flex items-center justify-center h-7 w-7 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
+                <ChevronLeft className="h-3.5 w-3.5" />
+              </button>
+              <button onClick={() => carouselRef.current?.scrollBy({ left: 200, behavior: 'smooth' })}
+                className="inline-flex items-center justify-center h-7 w-7 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
+                <ChevronRight className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          </div>
           <div ref={carouselRef} className="overflow-x-auto no-scrollbar">
-            <div className="flex gap-2 pb-1">
+            <div className="flex gap-3 pb-1">
               {divisionTeams.map(t => (
                 <Link key={t.id} href={`/launchpad/${toSlug(t.name)}`} scroll={false}
-                  className="shrink-0 w-36 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2.5 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                  <p className="text-xs font-bold text-[var(--txt)] leading-snug">{t.name}</p>
-                  <p className="text-[10px] font-bold mt-1" style={{ color: ACCENT_COLOR }}>{t.wins}–{t.losses}</p>
+                  className="shrink-0 w-44 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                  <p className="text-sm font-bold text-[var(--txt)] leading-snug">{t.name}</p>
+                  <p className="text-xs text-[var(--muted)] mt-0.5">{t.city}</p>
+                  <div className="mt-2 flex items-center gap-1.5">
+                    <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{t.wins}–{t.losses}</span>
+                    <span className="text-xs text-[var(--muted)]">{fmtPct(t.wins, t.losses)}</span>
+                  </div>
                 </Link>
               ))}
             </div>
@@ -109,6 +129,7 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
       </div>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
+      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={team.name} />
     </>
   )
