@@ -216,30 +216,6 @@ export default function NYCountyMap({ data }: { data: CountyMapRow[] }) {
         </GMap>
       </APIProvider>
 
-      {/* Metric selector — top left */}
-      <div className="absolute top-4 left-4 z-10 flex gap-1.5 flex-wrap">
-        {(Object.keys(METRIC_CONFIG) as Metric[]).map(m => (
-          <button
-            key={m}
-            onClick={() => setMetric(m)}
-            className={`px-3 py-1.5 rounded-full text-[11px] font-semibold transition-colors shadow-sm whitespace-nowrap ${
-              metric === m
-                ? 'bg-indigo-600 text-white shadow-indigo-200'
-                : 'bg-white/92 backdrop-blur-sm text-[#444] hover:bg-white'
-            }`}
-          >
-            {METRIC_CONFIG[m].label}
-          </button>
-        ))}
-      </div>
-
-      {/* Description chip — top left below metric selector */}
-      <div className="absolute top-14 left-4 z-10 pointer-events-none">
-        <div className="bg-white/85 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-sm">
-          <p className="text-[10px] text-[#666]">{config.description}</p>
-        </div>
-      </div>
-
       {/* Floating hover chip — follows cursor */}
       {hoveredRow && mousePos && (
         <div
@@ -253,20 +229,6 @@ export default function NYCountyMap({ data }: { data: CountyMapRow[] }) {
         </div>
       )}
 
-      {/* Bottom center legend bar */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none z-10">
-        <div className="bg-white/90 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm flex items-center gap-4">
-          {config.legend.map((label, i) => (
-            <div key={label} className="flex items-center gap-1.5">
-              <div
-                className="h-2.5 w-5 rounded-sm shrink-0"
-                style={{ background: COLORS[i], border: '1px solid rgba(0,0,0,0.08)' }}
-              />
-              <span className="text-[10px] text-[#555] whitespace-nowrap">{label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   )
 }
