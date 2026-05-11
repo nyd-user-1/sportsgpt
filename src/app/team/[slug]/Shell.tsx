@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { PanelChart } from '@/components/PanelChart'
+import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
@@ -26,6 +27,7 @@ export function TeamShell({
   const [profileIdx, setProfileIdx] = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [chartsOpen, setChartsOpen]     = useState(false)
+  const [mapsOpen,   setMapsOpen]       = useState(false)
   const [chatOpen, setChatOpen]         = useState(false)
   const carouselRef = useRef<HTMLDivElement>(null)
 
@@ -84,7 +86,7 @@ export function TeamShell({
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
-                    <button className={btn}><Map className="h-4 w-4" /></button>
+                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
                     <span className={tip}>Map</span>
                   </div>
                   <div className="relative group">
@@ -167,6 +169,7 @@ export function TeamShell({
       </AppLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
+      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={team.name} />
     </>
   )
