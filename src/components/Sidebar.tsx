@@ -110,6 +110,9 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
       {/* Footer */}
       <div className="p-3 space-y-1">
+        <Link href="/team/east-islip-redmen" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
+          East Islip
+        </Link>
         <Link href="/glossary" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--txt)] bg-[var(--inp-bg)] hover:opacity-80">
           {SIDEBAR_FOOTER_LABEL}
         </Link>

@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
@@ -24,42 +24,61 @@ export const NAV_CYCLE = [
   '/maps',
   '/team',
   '/school',
+  '/player',
+  '/division/division-i',
+  '/section/section-xi',
   '/launchpad',
 ]
 
 // ── Sidebar active-label lookup (exact path → label) ──────────────────────
 export const PATH_NAV: Record<string, string> = {
-  '/':           'Chat',
-  '/charts':     'Charts',
-  '/maps':       'Maps',
-  '/team':       'Teams',
-  '/school':     'Schools',
-  '/launchpad':  'Launchpad',
-  '/glossary':   'Glossary',
-  '/admin':      'Admin',
+  '/':                    'Chat',
+  '/charts':              'Charts',
+  '/maps':                'Maps',
+  '/team':                'Teams',
+  '/school':              'Schools',
+  '/player':              'Players',
+  '/division':            'Divisions',
+  '/division/division-i':   'Divisions',
+  '/division/division-ii':  'Divisions',
+  '/division/division-iii': 'Divisions',
+  '/division/division-iv':  'Divisions',
+  '/section':             'Section XI',
+  '/section/section-xi':  'Section XI',
+  '/launchpad':           'Launchpad',
+  '/glossary':            'Glossary',
+  '/admin':               'Admin',
 }
 
 // ── Page title shown in AppLayout header (exact path → title) ─────────────
 export const PATH_TITLE: Record<string, string> = {
-  '/charts':    'Charts',
-  '/maps':      'Maps',
-  '/team':      'Teams',
-  '/school':    'Schools',
-  '/launchpad': 'Launchpad',
-  '/glossary':  'Glossary',
-  '/admin':     'Admin',
+  '/charts':              'Charts',
+  '/maps':                'Maps',
+  '/team':                'Teams',
+  '/school':              'Schools',
+  '/player':              'Players',
+  '/division':            'Divisions',
+  '/division/division-i': 'Division I',
+  '/section':             'Section XI',
+  '/section/section-xi':  'Section XI',
+  '/launchpad':           'Launchpad',
+  '/glossary':            'Glossary',
+  '/admin':               'Admin',
 }
 
 // ── Sidebar nav items ──────────────────────────────────────────────────────
 export type NavItem = { label: string; icon: React.ComponentType<{ className?: string }>; href: string }
 
 export const SIDEBAR_NAV_TOP: NavItem[] = [
-  { label: 'Chat',      icon: MessageCircle,   href: '/'          },
-  { label: 'Charts',    icon: LayoutDashboard, href: '/charts'    },
-  { label: 'Maps',      icon: Map,             href: '/maps'      },
-  { label: 'Teams',     icon: Building2,       href: '/team'      },
-  { label: 'Schools',   icon: School,          href: '/school'    },
-  { label: 'Launchpad', icon: Rocket,          href: '/launchpad' },
+  { label: 'Chat',       icon: MessageCircle,   href: '/'                    },
+  { label: 'Charts',     icon: LayoutDashboard, href: '/charts'              },
+  { label: 'Maps',       icon: Map,             href: '/maps'                },
+  { label: 'Teams',      icon: Building2,       href: '/team'                },
+  { label: 'Schools',    icon: School,          href: '/school'              },
+  { label: 'Players',    icon: User,            href: '/player'              },
+  { label: 'Divisions',  icon: LayoutGrid,      href: '/division/division-i' },
+  { label: 'Section XI', icon: Trophy,          href: '/section/section-xi'  },
+  { label: 'Launchpad',  icon: Rocket,          href: '/launchpad'           },
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = []
