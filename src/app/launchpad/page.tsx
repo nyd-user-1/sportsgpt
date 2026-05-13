@@ -1,61 +1,27 @@
-'use client'
+import { sql } from '@/lib/db'
+import { LaunchpadStandings, type StandingsRow } from './LaunchpadStandings'
 
-import { useRouter, useSearchParams } from 'next/navigation'
-import { PLACEHOLDER_TEAMS, toSlug } from '@/lib/placeholder-data'
-import { cn } from '@/lib/utils'
+export const dynamic = 'force-dynamic'
 
-function fmtPct(w: number, l: number) {
-  const g = w + l
-  return g === 0 ? '—' : (w / g).toFixed(3).replace(/^0/, '')
-}
+export default async function LaunchpadPage() {
+  const rows = await sql`
+    SELECT t.slug, t.name, t.division,
+      s.overall_wins, s.overall_losses, s.overall_ties,
+      s.conference_wins, s.conference_losses
+    FROM teams t
+    LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+    ORDER BY t.division, s.overall_wins DESC NULLS LAST, t.name`
 
-export default function LaunchpadPage() {
-  const router       = useRouter()
-  const searchParams = useSearchParams()
-  const activeDiv    = searchParams.get('div') // null = All
+  const standings: StandingsRow[] = rows.map(r => ({
+    slug:               r.slug as string,
+    name:               r.name as string,
+    division:           r.division as string,
+    overall_wins:       r.overall_wins != null ? Number(r.overall_wins) : null,
+    overall_losses:     r.overall_losses != null ? Number(r.overall_losses) : null,
+    overall_ties:       r.overall_ties != null ? Number(r.overall_ties) : null,
+    conference_wins:    r.conference_wins != null ? Number(r.conference_wins) : null,
+    conference_losses:  r.conference_losses != null ? Number(r.conference_losses) : null,
+  }))
 
-  const teams = PLACEHOLDER_TEAMS
-    .filter(t => !activeDiv || t.division === activeDiv.replace('Division ', ''))
-    .sort((a, b) => a.name.localeCompare(b.name))
-
-  return (
-    <div className="w-[52%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
-      <div className="overflow-y-auto no-scrollbar flex-1">
-        <table className="w-full text-sm">
-          <thead className="sticky top-0 bg-[var(--surface)]">
-            <tr className="border-b border-[var(--border)]">
-              {['Team', 'W', 'L', 'PCT', 'PF', 'PA', '+/−'].map(h => (
-                <th key={h} className="text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] px-4 py-3 whitespace-nowrap">{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {teams.map((t, i) => {
-              const diff = t.pf - t.pa
-              return (
-                <tr
-                  key={t.id}
-                  onClick={() => router.push(`/launchpad/${toSlug(t.name)}`, { scroll: false })}
-                  className={cn(
-                    'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',
-                    i % 2 !== 0 && 'bg-[var(--inp-bg)]'
-                  )}
-                >
-                  <td className="px-4 py-3 font-medium text-[var(--txt)]">{t.name}</td>
-                  <td className="px-4 py-3 text-[var(--txt)]">{t.wins}</td>
-                  <td className="px-4 py-3 text-[var(--txt2)]">{t.losses}</td>
-                  <td className="px-4 py-3 text-[var(--txt2)]">{fmtPct(t.wins, t.losses)}</td>
-                  <td className="px-4 py-3 text-[var(--txt2)]">{t.pf}</td>
-                  <td className="px-4 py-3 text-[var(--txt2)]">{t.pa}</td>
-                  <td className={cn('px-4 py-3 font-semibold', diff >= 0 ? 'text-emerald-600' : 'text-red-500')}>
-                    {diff >= 0 ? `+${diff}` : diff}
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  )
+  return <LaunchpadStandings rows={standings} />
 }

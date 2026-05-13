@@ -1,37 +1,52 @@
 import { notFound } from 'next/navigation'
+import { sql } from '@/lib/db'
 import { TeamShell } from './Shell'
-import { PLACEHOLDER_TEAMS, toSlug } from '@/lib/placeholder-data'
 
 export const dynamic = 'force-dynamic'
 
 export default async function TeamDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
-  // Find team by slug — first from placeholder, then DB when connected
-  let team = PLACEHOLDER_TEAMS.find(t => toSlug(t.name) === slug)
-  let allTeams = PLACEHOLDER_TEAMS
-
-  // TODO: when DB is connected, replace with:
-  // const rows = await sql`SELECT * FROM teams`
-  // team = rows.find(r => toSlug(r.name as string) === slug)
-  // allTeams = rows.map(r => ({ ... }))
-
+  const teamRows = await sql`SELECT * FROM teams WHERE slug = ${slug}`
+  const team = teamRows[0]
   if (!team) notFound()
 
-  const sorted = [...allTeams].sort((a, b) => b.wins - a.wins || b.pf - a.pf)
-  const idx    = sorted.findIndex(t => t.id === team!.id)
-  const n      = sorted.length
-  const prev   = sorted[(idx - 1 + n) % n]
-  const next   = sorted[(idx + 1) % n]
+  const [allTeams, seasonRows, divTeams, playerRows] = await Promise.all([
+    sql`SELECT slug, name FROM teams ORDER BY name`,
+    sql`
+      SELECT * FROM team_season_stats
+      WHERE team_slug = ${slug}
+      ORDER BY season DESC`,
+    sql`
+      SELECT t.slug, t.name, s.overall_wins, s.overall_losses
+      FROM teams t
+      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+      WHERE t.division = ${team.division} AND t.slug != ${slug}
+      ORDER BY s.overall_wins DESC NULLS LAST, t.name`,
+    sql`
+      SELECT DISTINCT ON (ps.player_slug, ps.stat_type)
+        ps.player_slug, ps.player_name, ps.stat_type, ps.season,
+        ps.pass_yards, ps.pass_tds, ps.rush_yards, ps.rush_tds, ps.recv_yards, ps.recv_tds
+      FROM player_season_stats ps
+      WHERE ps.school_slug = ${team.school_slug}
+      ORDER BY ps.player_slug, ps.stat_type, ps.season DESC`,
+  ])
 
-  const divisionTeams = allTeams.filter(t => t.division === team!.division)
+  // Prev/next by name order
+  const namesSorted = (allTeams as { slug: string; name: string }[])
+  const idx = namesSorted.findIndex(t => t.slug === slug)
+  const n   = namesSorted.length
+  const prevSlug = namesSorted[(idx - 1 + n) % n]?.slug ?? slug
+  const nextSlug = namesSorted[(idx + 1) % n]?.slug ?? slug
 
   return (
     <TeamShell
-      team={team}
-      prevSlug={toSlug(prev.name)}
-      nextSlug={toSlug(next.name)}
-      divisionTeams={divisionTeams}
+      team={team as Record<string, unknown>}
+      prevSlug={prevSlug}
+      nextSlug={nextSlug}
+      seasonRows={seasonRows as Record<string, unknown>[]}
+      divTeams={divTeams as Record<string, unknown>[]}
+      playerRows={playerRows as Record<string, unknown>[]}
     />
   )
 }

@@ -1,29 +1,35 @@
 import { sql } from '@/lib/db'
 import TeamTable from './TeamTable'
-import { PLACEHOLDER_TEAMS, type TeamRow } from '@/lib/placeholder-data'
 
 export const dynamic = 'force-dynamic'
 
+export type TeamIndexRow = {
+  slug: string
+  name: string
+  division: string
+  overall_wins: number | null
+  overall_losses: number | null
+  conference_wins: number | null
+  conference_losses: number | null
+}
+
 export default async function TeamPage() {
-  let teams: TeamRow[] = PLACEHOLDER_TEAMS
-  let total = PLACEHOLDER_TEAMS.length
+  const rows = await sql`
+    SELECT t.slug, t.name, t.division,
+      s.overall_wins, s.overall_losses, s.conference_wins, s.conference_losses
+    FROM teams t
+    LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+    ORDER BY t.division, s.overall_wins DESC NULLS LAST, t.name`
 
-  try {
-    const [rows, countRows] = await Promise.all([
-      sql`SELECT id, name, school, section, division, city, county, wins, losses, pf, pa, coach FROM teams ORDER BY wins DESC, pf DESC LIMIT 200`,
-      sql`SELECT COUNT(*)::int AS total FROM teams`,
-    ])
-    if (rows.length > 0) {
-      teams = rows.map(r => ({
-        id: Number(r.id), name: r.name as string, school: r.school as string,
-        section: r.section as string, division: r.division as string,
-        city: r.city as string, county: r.county as string,
-        wins: Number(r.wins), losses: Number(r.losses),
-        pf: Number(r.pf), pa: Number(r.pa), coach: r.coach as string,
-      }))
-      total = Number(countRows[0].total)
-    }
-  } catch { /* DB not connected — showing placeholder data */ }
+  const teams: TeamIndexRow[] = rows.map(r => ({
+    slug: r.slug as string,
+    name: r.name as string,
+    division: r.division as string,
+    overall_wins: r.overall_wins != null ? Number(r.overall_wins) : null,
+    overall_losses: r.overall_losses != null ? Number(r.overall_losses) : null,
+    conference_wins: r.conference_wins != null ? Number(r.conference_wins) : null,
+    conference_losses: r.conference_losses != null ? Number(r.conference_losses) : null,
+  }))
 
-  return <TeamTable teams={teams} total={total} />
+  return <TeamTable teams={teams} />
 }

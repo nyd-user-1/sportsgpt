@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
-const TABS = ['All', 'Division I', 'Division II', 'Division III', 'Division IV', 'Division V']
+const TABS = ['All', 'Division I', 'Division II', 'Division III', 'Division IV']
 
 export function LaunchpadTabs() {
   const router       = useRouter()

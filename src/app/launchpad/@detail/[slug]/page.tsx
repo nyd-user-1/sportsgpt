@@ -1,7 +1,6 @@
 'use client'
 
 import { use, useState, useRef } from 'react'
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, MapPlus, MessageCircle } from 'lucide-react'
 import { PanelChart } from '@/components/PanelChart'
@@ -21,9 +20,16 @@ function fmtPct(w: number, l: number) {
 export default function TeamDetailSlot({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
 
+  // Find by slug field first, fall back to name-derived slug for backward compat
   const sorted = [...PLACEHOLDER_TEAMS].sort((a, b) => b.wins - a.wins || b.pf - a.pf)
   const team   = sorted.find(t => toSlug(t.name) === slug)
-  if (!team) notFound()
+  if (!team) {
+    return (
+      <div className="h-full flex items-center justify-center">
+        <p className="text-sm text-[var(--muted)]">Team not found</p>
+      </div>
+    )
+  }
 
   const idx      = sorted.findIndex(t => t.id === team.id)
   const n        = sorted.length
@@ -95,7 +101,7 @@ export default function TeamDetailSlot({ params }: { params: Promise<{ slug: str
             ))}
           </div>
 
-          {/* Division carousel — matching ChildcareGPT card style */}
+          {/* Division carousel */}
           <div className="mb-2 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-[var(--txt)]">Division {team.division}</h2>
             <div className="flex items-center gap-1.5">
