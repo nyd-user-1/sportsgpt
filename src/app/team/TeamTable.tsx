@@ -33,7 +33,7 @@ const DIV_MAP: Record<string, string> = {
   'Div I': 'I', 'Div II': 'II', 'Div III': 'III', 'Div IV': 'IV',
 }
 
-type SortCol = 'name' | 'division' | 'wins' | 'losses' | 'pct' | 'conf'
+type SortCol = 'name' | 'division' | 'wins' | 'losses' | 'pct' | 'conf' | 'gp' | 'ties' | 'pf' | 'pa' | 'diff'
 
 export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
   const [activeDiv, setActiveDiv] = useState('All')
@@ -61,8 +61,13 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
       case 'division': av = a.division; bv = b.division; break
       case 'wins':     av = a.overall_wins ?? -1;  bv = b.overall_wins ?? -1;  break
       case 'losses':   av = a.overall_losses ?? -1; bv = b.overall_losses ?? -1; break
+      case 'ties':     av = a.overall_ties ?? -1;   bv = b.overall_ties ?? -1;   break
       case 'pct':      av = pct(a.overall_wins, a.overall_losses); bv = pct(b.overall_wins, b.overall_losses); break
       case 'conf':     av = a.conference_wins ?? -1; bv = b.conference_wins ?? -1; break
+      case 'gp':       av = a.games_played ?? -1;   bv = b.games_played ?? -1;   break
+      case 'pf':       av = a.points_for ?? -1;     bv = b.points_for ?? -1;     break
+      case 'pa':       av = a.points_against ?? -1; bv = b.points_against ?? -1; break
+      case 'diff':     av = (a.points_for ?? 0) - (a.points_against ?? 0); bv = (b.points_for ?? 0) - (b.points_against ?? 0); break
       default:         av = 0; bv = 0
     }
     if (typeof av === 'string') return sortDir === 'asc' ? av.localeCompare(bv as string) : (bv as string).localeCompare(av)
@@ -117,10 +122,15 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
                 <tr>
                   <Th col="name" label="Team" sticky />
                   <Th col="division" label="Div" />
+                  <Th col="gp" label="GP" />
                   <Th col="wins" label="W" />
                   <Th col="losses" label="L" />
+                  <Th col="ties" label="T" />
                   <Th col="pct" label="PCT" />
                   <Th col="conf" label="Conf" />
+                  <Th col="pf" label="PF" />
+                  <Th col="pa" label="PA" />
+                  <Th col="diff" label="DIFF" />
                 </tr>
               </thead>
               <tbody>
@@ -130,10 +140,19 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
                       <Link href={`/team/${t.slug}`} className="hover:underline">{t.name}</Link>
                     </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>Div. {t.division}</td>
+                    <td className={cn(td, 'text-[var(--muted)]')}>{t.games_played ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--txt)] font-medium')}>{t.overall_wins ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--muted)]')}>{t.overall_ties ?? 0}</td>
                     <td className={cn(td, 'text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
                     <td className={cn(td, 'text-[var(--txt)]')}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
+                    <td className={cn(td, 'text-[var(--txt)]')}>{t.points_for ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--muted)]')}>{t.points_against ?? '—'}</td>
+                    <td className={cn(td, 'font-semibold', (t.points_for ?? 0) >= (t.points_against ?? 0) ? 'text-green-600' : 'text-red-500')}>
+                      {t.points_for != null && t.points_against != null
+                        ? `${(t.points_for - t.points_against) >= 0 ? '+' : ''}${t.points_for - t.points_against}`
+                        : '—'}
+                    </td>
                   </tr>
                 ))}
               </tbody>
