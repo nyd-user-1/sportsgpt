@@ -11,7 +11,7 @@ export default async function PlayerPage() {
       SELECT p.slug, p.name, p.position,
         t.name AS team_name
       FROM players p
-      LEFT JOIN teams t ON t.slug = p.team_slug
+      LEFT JOIN teams t ON t.school_slug = p.school_slug
       ORDER BY p.name
     `
     players = rows.map(r => ({
