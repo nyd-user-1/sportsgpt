@@ -3,6 +3,7 @@
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import HeroCard from './HeroCard'
 import type { GalleryPhoto } from '@/lib/gallery'
 
 export default function GalleryGrid({
@@ -22,6 +23,7 @@ export default function GalleryGrid({
 
   return (
     <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-4 px-4 py-4">
+      <HeroCard />
       {photos.map(photo => (
         <Link
           key={photo.id}
