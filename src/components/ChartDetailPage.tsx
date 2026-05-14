@@ -135,7 +135,7 @@ export function ChartDetailPage({
         <div className="shrink-0 border-b border-[var(--border)] bg-[var(--surface)] px-5 pt-3 pb-0">
 
           {/* Inline recharts preview — hidden when shadcn chart children are provided */}
-          {!children && (
+          {children ? null : (
           <div className="h-40 md:h-52 -mx-1 mb-3">
             <ResponsiveContainer width="100%" height="100%">
               {config.chartType === 'area' ? (
