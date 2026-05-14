@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -25,12 +25,6 @@ function fmtRecord(w: number | null, l: number | null, ties?: number | null): st
   return t > 0 ? `${w ?? 0}–${l ?? 0}–${t}` : `${w ?? 0}–${l ?? 0}`
 }
 
-function topStat(row: Record<string, unknown>): { label: string; value: string } {
-  const stat = row.stat_type as string
-  if (stat === 'Passing') return { label: 'Pass Yds', value: String(row.pass_yards ?? 0) }
-  if (stat === 'Rushing') return { label: 'Rush Yds', value: String(row.rush_yards ?? 0) }
-  return { label: 'Recv Yds', value: String(row.recv_yards ?? 0) }
-}
 
 type GameRow = {
   id: number
@@ -68,7 +62,6 @@ export function TeamShell({
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [mapsOpen,   setMapsOpen]     = useState(false)
   const [chatOpen,   setChatOpen]     = useState(false)
-  const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
 
   const gameSeasons = useMemo(() =>
@@ -290,52 +283,6 @@ export function TeamShell({
                 })()}
               </div>
             </div>
-
-            {/* Top Players carousel */}
-            {playerRows.length > 0 && (
-              <div className="mb-8">
-                <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Players</h2>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => playersRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                    <button onClick={() => playersRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
-                  </div>
-                </div>
-                <div ref={playersRef} className="overflow-x-auto no-scrollbar">
-                  <div className="flex gap-3 pb-1">
-                    {playerRows.map((p, i) => {
-                      const stat = topStat(p)
-                      return (
-                        <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
-                          href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          {/* Photo */}
-                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden bg-[var(--inp-bg)]">
-                            {PLAYER_PHOTOS[p.player_slug as string] ? (
-                              <Image src={PLAYER_PHOTOS[p.player_slug as string]} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                            ) : (
-                              <div className="w-full h-full" />
-                            )}
-                          </div>
-                          {/* Text */}
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5">{p.stat_type as string}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
-                              <span className="text-xs text-[var(--muted)]">{stat.label}</span>
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-
 
             {/* Division Standings carousel */}
             <div className="mb-8">
