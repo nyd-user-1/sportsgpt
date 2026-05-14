@@ -188,15 +188,16 @@ export function TeamShell({
                   historyRows.length === 0 ? (
                     <div className="px-4 py-3 text-sm text-[var(--muted)]">No season data available.</div>
                   ) : (
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm table-fixed">
                       <thead>
                         <tr onClick={() => setInfoExpanded(v => !v)}
                           className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
-                            <span className="inline-flex items-center justify-end gap-1.5">Win%<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
+                          <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
+                            <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                           </th>
                         </tr>
                       </thead>
@@ -212,6 +213,7 @@ export function TeamShell({
                                 return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
                               })()}
                             </td>
+                            <td className={cn(td, 'w-10')} />
                           </tr>
                         ))}
                       </tbody>
@@ -230,7 +232,7 @@ export function TeamShell({
                         <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No game data for {profileSeason}.</div>
                       ) : (
                         <div className="overflow-x-auto no-scrollbar">
-                          <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
+                          <table className="w-full text-sm table-fixed" style={{ borderSpacing: 0 }}>
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
@@ -238,8 +240,9 @@ export function TeamShell({
                                 <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
                                 <th className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
                                 <th className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
-                                  <span className="inline-flex items-center gap-1.5">Result<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
+                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
+                                  <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
                               </tr>
                             </thead>
@@ -274,6 +277,7 @@ export function TeamShell({
                                         {result}
                                       </span>
                                     </td>
+                                    <td className={cn(td, 'w-10')} />
                                   </tr>
                                 )
                               })}
