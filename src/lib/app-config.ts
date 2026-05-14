@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid, ListOrdered } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid, ListOrdered, Images } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
@@ -49,6 +49,7 @@ export const PATH_NAV: Record<string, string> = {
   '/section':             'Section XI',
   '/section/section-xi':  'Section XI',
   '/launchpad':           'Launchpad',
+  '/gallery':             'Gallery',
   '/glossary':            'Glossary',
   '/admin':               'Admin',
 }
@@ -66,6 +67,7 @@ export const PATH_TITLE: Record<string, string> = {
   '/section':             'Section XI',
   '/section/section-xi':  'Section XI',
   '/launchpad':           'Launchpad',
+  '/gallery':             'Gallery',
   '/glossary':            'Glossary',
   '/admin':               'Admin',
 }
@@ -84,6 +86,7 @@ export const SIDEBAR_NAV_TOP: NavItem[] = [
   { label: 'Divisions',    icon: LayoutGrid,    href: '/division/division-i' },
   { label: 'Section XI', icon: Trophy,          href: '/section/section-xi'  },
   { label: 'Launchpad',  icon: Rocket,          href: '/launchpad'           },
+  { label: 'Gallery',    icon: Images,          href: '/gallery'             },
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = []
