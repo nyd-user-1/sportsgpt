@@ -57,6 +57,10 @@ export const SCHOOL_LOGOS: Record<string, string> = {
 
 // Primary team/school photo used as the hero image on team detail pages
 export const TEAM_PHOTOS: Record<string, string> = {
+  'bay-shore':                         '/Images/bay-shore-1.avif',
+  'floyd':                             '/Images/wf.webp',
+  'longwood':                          '/Images/longwood.jpg',
+  'ward-melville':                     '/Images/ward-melville.jpg',
   'center-moriches':                   '/Images/cm 1.jpg',
   'commack':                           '/Images/cmk 4.jpg',
   'east-hampton-bridgehampton-pierson':'/Images/eh 1.jpg',
