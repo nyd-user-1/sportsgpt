@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle, User } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { PLAYER_PHOTOS } from '@/lib/team-images'
+import { PLAYER_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -426,9 +426,14 @@ export function PlayerShell({
                   </div>
                   {(() => {
                     const photo = PLAYER_PHOTOS[player.slug]
+                    const logo  = player.school_slug ? SCHOOL_LOGOS[player.school_slug] : null
                     return photo ? (
                       <div className="shrink-0 h-20 w-20 rounded-full overflow-hidden border-2 border-white/30 relative">
                         <Image src={photo} alt={player.name} fill className="object-cover object-top" unoptimized />
+                      </div>
+                    ) : logo ? (
+                      <div className="shrink-0 h-16 w-16 rounded-full bg-white/10 flex items-center justify-center p-1.5">
+                        <Image src={logo} alt="" width={52} height={52} className="object-contain" unoptimized />
                       </div>
                     ) : (
                       <User className="shrink-0 h-16 w-16 text-white/20" />
