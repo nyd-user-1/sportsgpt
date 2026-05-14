@@ -37,8 +37,8 @@ type SortCol = 'name' | 'division' | 'wins' | 'losses' | 'pct' | 'conf'
 
 export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
   const [activeDiv, setActiveDiv] = useState('All')
-  const [sortCol, setSortCol] = useState<SortCol>('wins')
-  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc')
+  const [sortCol, setSortCol] = useState<SortCol>('name')
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
 
   function handleSort(col: SortCol) {
     if (sortCol === col) setSortDir(d => d === 'asc' ? 'desc' : 'asc')
