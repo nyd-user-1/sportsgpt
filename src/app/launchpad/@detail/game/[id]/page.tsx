@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
-import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
 export const dynamic = 'force-dynamic'
 
@@ -13,22 +13,6 @@ function fmtDate(raw: unknown) {
   if (!raw) return null
   const d = new Date(new Date(raw as string).toISOString().slice(0, 10) + 'T12:00:00')
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
-}
-
-function TeamLogo({ slug, size = 72 }: { slug: string; size?: number }) {
-  const schoolSlug = slug.replace(/-varsity-football$/, '')
-  const logo = SCHOOL_LOGOS[schoolSlug]
-  return logo ? (
-    <Image src={logo} alt="" width={size} height={size}
-      className="rounded-full bg-white/10 border-2 border-white/20 object-contain p-1" unoptimized />
-  ) : (
-    <div className="rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center"
-      style={{ width: size, height: size }}>
-      <span className="text-white/40 text-xs font-bold uppercase">
-        {cleanName(slug.replace(/-varsity-football$/, '')).slice(0, 2)}
-      </span>
-    </div>
-  )
 }
 
 export default async function GameDetailSlot({ params }: { params: Promise<{ id: string }> }) {
@@ -48,84 +32,106 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
   const g = rows[0]
   if (!g) notFound()
 
-  const homeSlug  = g.home_team_slug as string
-  const awaySlug  = g.away_team_slug as string
-  const homeName  = cleanName(g.home_name as string)
-  const awayName  = cleanName(g.away_name as string)
-  const homeScore = g.home_score != null ? Number(g.home_score) : null
-  const awayScore = g.away_score != null ? Number(g.away_score) : null
-  const scored    = homeScore != null && awayScore != null
-  const homeWon   = scored && homeScore! > awayScore!
-  const awayWon   = scored && awayScore! > homeScore!
-  const dateStr   = fmtDate(g.game_date)
+  const homeSlug   = g.home_team_slug as string
+  const awaySlug   = g.away_team_slug as string
+  const homeSchool = (g.home_school as string) ?? homeSlug.replace(/-varsity-football$/, '')
+  const awaySchool = (g.away_school as string) ?? awaySlug.replace(/-varsity-football$/, '')
+  const homeName   = cleanName(g.home_name as string)
+  const awayName   = cleanName(g.away_name as string)
+  const homeScore  = g.home_score != null ? Number(g.home_score) : null
+  const awayScore  = g.away_score != null ? Number(g.away_score) : null
+  const scored     = homeScore != null && awayScore != null
+  const homeWon    = scored && homeScore! > awayScore!
+  const awayWon    = scored && awayScore! > homeScore!
+
+  const homePhoto  = TEAM_PHOTOS[homeSchool]
+  const awayPhoto  = TEAM_PHOTOS[awaySchool]
+  const homeLogo   = SCHOOL_LOGOS[homeSchool]
+  const awayLogo   = SCHOOL_LOGOS[awaySchool]
+  const gameNum    = g.game_number != null ? Number(g.game_number) : null
 
   return (
-    <div className="h-full flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b]">
+    <div className="h-full relative overflow-hidden">
 
-      {/* Game number top-right */}
-      <div className="flex justify-end px-4 pt-3">
-        <span className="text-xs text-white/40 font-medium">
-          {g.game_number != null ? `Game ${g.game_number as number}` : ''}
-        </span>
+      {/* Split photo background */}
+      <div className="absolute inset-0 flex">
+        {/* Home side */}
+        <div className="relative flex-1">
+          {homePhoto ? (
+            <>
+              <Image src={homePhoto} alt={homeName} fill className="object-cover" unoptimized />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/60" />
+            </>
+          ) : (
+            <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
+          )}
+        </div>
+        {/* Away side */}
+        <div className="relative flex-1">
+          {awayPhoto ? (
+            <>
+              <Image src={awayPhoto} alt={awayName} fill className="object-cover" unoptimized />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/60" />
+            </>
+          ) : (
+            <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />
+          )}
+        </div>
       </div>
 
-      {/* Main content — fills remaining space */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6">
-
-        {/* Score — the focus */}
-        <div className="flex items-center gap-4">
-          <span className={scored && !homeWon ? 'text-6xl font-black text-white/30 tabular-nums' : 'text-6xl font-black text-white tabular-nums'}>
-            {homeScore ?? '—'}
-          </span>
-          <span className="text-3xl font-light text-white/30">–</span>
-          <span className={scored && !awayWon ? 'text-6xl font-black text-white/30 tabular-nums' : 'text-6xl font-black text-white tabular-nums'}>
-            {awayScore ?? '—'}
-          </span>
+      {/* Game number top-right */}
+      {gameNum != null && (
+        <div className="absolute top-3 right-4 z-10">
+          <span className="text-xs font-medium text-white/50">Game {gameNum}</span>
         </div>
+      )}
 
-        {scored && (
-          <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">Final</span>
-        )}
-
-        {/* Teams */}
-        <div className="w-full flex items-start justify-between gap-4">
-          {/* Home */}
-          <div className="flex flex-col items-center gap-2 text-center min-w-0">
-            <TeamLogo slug={homeSlug} size={56} />
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-white/40 mb-0.5">Home</p>
-              <p className="text-sm font-bold text-white leading-snug">
-                {homeName}
-                {scored && (
-                  <span className={homeWon ? ' text-green-400' : ' text-red-400'}> {homeWon ? 'W' : 'L'}</span>
-                )}
+      {/* Score badge — centered */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div className="bg-black/65 backdrop-blur-md rounded-2xl px-5 py-3 text-center border border-white/10 shadow-xl">
+          {scored ? (
+            <>
+              <p className="text-3xl font-black text-white tabular-nums leading-none">
+                <span className={homeWon ? 'text-white' : 'text-white/40'}>{homeScore}</span>
+                <span className="text-white/25 mx-2">–</span>
+                <span className={awayWon ? 'text-white' : 'text-white/40'}>{awayScore}</span>
               </p>
-            </div>
-          </div>
-
-          {/* Date + season info */}
-          {dateStr && (
-            <div className="flex flex-col items-center text-center min-w-0 mt-2">
-              <p className="text-[11px] text-white/50 leading-snug">{dateStr}</p>
-              <p className="text-[11px] text-white/30 mt-0.5">Season {g.season as number}</p>
-            </div>
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">Final</p>
+            </>
+          ) : (
+            <p className="text-sm text-white/40">vs</p>
           )}
-
-          {/* Away */}
-          <div className="flex flex-col items-center gap-2 text-center min-w-0">
-            <TeamLogo slug={awaySlug} size={56} />
-            <div>
-              <p className="text-[10px] uppercase tracking-widest text-white/40 mb-0.5">Away</p>
-              <p className="text-sm font-bold text-white leading-snug">
-                {awayName}
-                {scored && (
-                  <span className={awayWon ? ' text-green-400' : ' text-red-400'}> {awayWon ? 'W' : 'L'}</span>
-                )}
-              </p>
-            </div>
-          </div>
         </div>
+      </div>
 
+      {/* Home team overlay — bottom left */}
+      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2">
+        {homeLogo && (
+          <Image src={homeLogo} alt="" width={32} height={32}
+            className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
+        )}
+        <div>
+          <p className="text-xs font-bold text-white leading-snug">
+            {homeName}
+            {scored && <span className={homeWon ? ' text-green-400' : ' text-red-400'}> {homeWon ? 'W' : 'L'}</span>}
+          </p>
+          <p className="text-[10px] uppercase tracking-wider text-white/50">Home</p>
+        </div>
+      </div>
+
+      {/* Away team overlay — bottom right */}
+      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse">
+        {awayLogo && (
+          <Image src={awayLogo} alt="" width={32} height={32}
+            className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
+        )}
+        <div className="text-right">
+          <p className="text-xs font-bold text-white leading-snug">
+            {awayName}
+            {scored && <span className={awayWon ? ' text-green-400' : ' text-red-400'}> {awayWon ? 'W' : 'L'}</span>}
+          </p>
+          <p className="text-[10px] uppercase tracking-wider text-white/50">Away</p>
+        </div>
       </div>
 
     </div>

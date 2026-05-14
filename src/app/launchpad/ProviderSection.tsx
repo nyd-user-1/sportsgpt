@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import Image from 'next/image'
@@ -52,15 +52,29 @@ function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?:
 export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
   const router        = useRouter()
+  const pathname      = usePathname()
   const searchParams  = useSearchParams()
   const divParam      = searchParams.get('div')
   const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null
   const activeSeason  = Number(SEASONS[seasonIdx])
 
+  // Extract selected team slug from URL: /launchpad/[team-slug] (not /launchpad/game/[id])
+  const parts = pathname.split('/').filter(Boolean)
+  const selectedTeam = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game')
+    ? parts[1]
+    : null
+
   const filtered = games.filter(g => {
     if (g.season !== activeSeason) return false
-    if (!activeDivision) return true
-    return g.home_div === activeDivision || g.away_div === activeDivision
+    // Team selected → show only that team's games
+    if (selectedTeam) {
+      return g.home_team_slug === selectedTeam || g.away_team_slug === selectedTeam
+    }
+    // Division filter from outer tabs
+    if (activeDivision) {
+      return g.home_div === activeDivision || g.away_div === activeDivision
+    }
+    return true
   })
 
   return (
