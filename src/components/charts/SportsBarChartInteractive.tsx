@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart'
 
@@ -61,14 +61,8 @@ export function SportsBarChartInteractive({ seasons, title, description, color, 
             margin={{ left: 12, right: 12 }}
           >
             <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="name"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              minTickGap={32}
-              tickFormatter={(v: string) => v.split(' ')[0]}
-            />
+            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+            <YAxis hide tickCount={25} />
             <ChartTooltip
               content={
                 <ChartTooltipContent

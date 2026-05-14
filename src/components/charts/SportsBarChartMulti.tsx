@@ -1,6 +1,6 @@
 'use client'
 
-import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   ChartContainer,
@@ -40,14 +40,8 @@ export function SportsBarChartMulti({ data, series, title, description, stacked 
         <ChartContainer config={chartConfig} className="aspect-auto h-[260px] w-full">
           <BarChart accessibilityLayer data={data} margin={{ left: 0, right: 0 }}>
             <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="name"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              minTickGap={32}
-              tickFormatter={(v: string) => v.split(' ')[0]}
-            />
+            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+            <YAxis hide tickCount={25} />
             <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
             {series.map((s, i) => (
               <Bar
