@@ -57,7 +57,23 @@ export const SCHOOL_LOGOS: Record<string, string> = {
 
 // Primary team/school photo used as the hero image on team detail pages
 export const TEAM_PHOTOS: Record<string, string> = {
+  'amityville':                        '/Images/amityville.jpeg',
+  'babylon':                           '/Images/babylon.jpeg',
   'bay-shore':                         '/Images/bay-shore-1.avif',
+  'bayport-blue-point':                '/Images/bayport-blue-point.jpg',
+  'bellport':                          '/Images/bellport.avif',
+  'brentwood':                         '/Images/brentwood.jpg',
+  'centereach':                        '/Images/centereach.avif',
+  'central-islip':                     '/Images/central-islip.jpg',
+  'comsewogue':                        '/Images/comsewogue.avif',
+  'connetquot':                        '/Images/connetquot.jpeg',
+  'copiague':                          '/Images/copiague.avif',
+  'deer-park':                         '/Images/deer-park.jpeg',
+  'east-islip':                        '/Images/east-islip.jpeg',
+  'miller-place':                      '/Images/miller-place.avif',
+  'patchogue-medford':                 '/Images/pat-med.jpg',
+  'riverhead':                         '/Images/riverhead.jpg',
+  'west-islip':                        '/Images/west-islip.avif',
   'floyd':                             '/Images/wf.webp',
   'longwood':                          '/Images/longwood.jpg',
   'ward-melville':                     '/Images/ward-melville.jpg',
