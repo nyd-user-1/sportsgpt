@@ -127,19 +127,28 @@ export default function SharedModal({
         </div>
 
         {/* Filmstrip */}
-        <div className="shrink-0 h-20 bg-gradient-to-t from-black to-transparent overflow-hidden">
-          <motion.div className="flex h-full items-center gap-1 px-2"
-            animate={{ x: `calc(50% - ${currentId * 84}px - 42px)` }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
-            {strip.map(p => (
-              <button key={p.id} onClick={() => navigate(p.id)}
-                className="relative shrink-0 h-16 w-20 overflow-hidden rounded transition-all"
-                style={{ opacity: p.id === currentId ? 1 : 0.4, transform: p.id === currentId ? 'scale(1.1)' : 'scale(1)' }}>
-                <Image src={p.url} alt="" fill className="object-cover" unoptimized />
-              </button>
-            ))}
-          </motion.div>
-        </div>
+        {(() => {
+          const THUMB = 84 // w-20 (80px) + gap-1 (4px)
+          const idxInStrip = strip.findIndex(p => p.id === currentId)
+          const targetX = `calc(50% - ${idxInStrip * THUMB + 42}px)`
+          return (
+            <div className="shrink-0 h-20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
+              <motion.div className="flex h-full items-center gap-1 px-2 absolute"
+                initial={{ x: targetX }}
+                animate={{ x: targetX }}
+                transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+                {strip.map(p => (
+                  <button key={p.id} onClick={() => navigate(p.id)}
+                    className="relative shrink-0 h-14 w-20 overflow-hidden rounded transition-all duration-150"
+                    style={{ opacity: p.id === currentId ? 1 : 0.45, transform: p.id === currentId ? 'scale(1.15)' : 'scale(1)' }}>
+                    <Image src={p.url} alt="" fill className="object-cover" unoptimized />
+                  </button>
+                ))}
+              </motion.div>
+            </div>
+          )
+        })()}
 
       </div>
     </MotionConfig>
