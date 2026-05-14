@@ -45,10 +45,7 @@ export function SportsBarChartInteractive({ seasons, title, description, color, 
               style={{ borderColor: 'var(--border)' }}
               onClick={() => setActive(s.season)}
             >
-              <span className="text-xs text-[var(--muted)]">{s.season}</span>
-              <span className="text-lg leading-none font-bold sm:text-3xl" style={{ color }}>
-                {s.topValue.toLocaleString()}
-              </span>
+              <span className="text-sm font-semibold text-[var(--txt)]">{s.season}</span>
             </button>
           ))}
         </div>
