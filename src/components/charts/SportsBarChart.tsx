@@ -32,7 +32,8 @@ export function SportsBarChart({ data, title, description, color, valueLabel }: 
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(v: string) => (v.length > 14 ? v.slice(0, 13) + '…' : v)}
+              minTickGap={32}
+              tickFormatter={(v: string) => v.split(' ')[0]}
             />
             <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
             <Bar dataKey="value" fill="var(--color-value)" radius={8} />

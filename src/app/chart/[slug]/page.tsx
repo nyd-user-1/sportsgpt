@@ -4,6 +4,7 @@ import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { ChartDetailPage, type StdRow, type MultiRow } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
+import { SportsBarChartInteractive, type SeasonBars } from '@/components/charts/SportsBarChartInteractive'
 import { SportsLineMulti } from '@/components/charts/SportsLineMulti'
 import { SportsPieDonut } from '@/components/charts/SportsPieDonut'
 
@@ -14,6 +15,21 @@ const DIV_COLORS: Record<string, string> = {
   II:  '#4338ca',
   III: '#0ea5e9',
   IV:  '#10b981',
+}
+
+function buildSeasonBars(
+  rows: { name: unknown; value: unknown; season: unknown }[],
+  seasons: string[]
+): SeasonBars[] {
+  return seasons.map(yr => {
+    const yrows = rows
+      .filter(r => String(r.season) === yr)
+      .sort((a, b) => Number(b.value) - Number(a.value))
+      .slice(0, 15)
+      .map(r => ({ name: String(r.name), value: Number(r.value) }))
+    const topValue = yrows[0]?.value ?? 0
+    return { season: yr, topValue, bars: yrows }
+  })
 }
 
 export default async function ChartPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -114,15 +130,17 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── season-records ─────────────────────────────────────────────────────────
     case 'season-records': {
       const rows = await sql`
-        SELECT t.name, s.overall_wins AS value
+        SELECT t.name, s.overall_wins AS value, s.season
         FROM teams t
-        JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
-        ORDER BY s.overall_wins DESC, t.name`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length
+        JOIN team_season_stats s ON s.team_slug = t.slug
+        WHERE s.season IN (2022, 2023, 2024)
+        ORDER BY s.season, s.overall_wins DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 20)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -177,15 +195,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── passing-yards-leaders ──────────────────────────────────────────────────
     case 'passing-yards-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, pass_yards AS value
+        SELECT player_name AS name, pass_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND season = 2024 AND pass_yards IS NOT NULL
-        ORDER BY pass_yards DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Passing' AND pass_yards IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, pass_yards DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -198,15 +217,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── passing-tds-leaders ────────────────────────────────────────────────────
     case 'passing-tds-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, pass_tds AS value
+        SELECT player_name AS name, pass_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND season = 2024 AND pass_tds IS NOT NULL
-        ORDER BY pass_tds DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Passing' AND pass_tds IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, pass_tds DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -219,15 +239,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── rushing-yards-leaders ──────────────────────────────────────────────────
     case 'rushing-yards-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, rush_yards AS value
+        SELECT player_name AS name, rush_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND season = 2024 AND rush_yards IS NOT NULL
-        ORDER BY rush_yards DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Rushing' AND rush_yards IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, rush_yards DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -240,15 +261,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── rushing-tds-leaders ────────────────────────────────────────────────────
     case 'rushing-tds-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, rush_tds AS value
+        SELECT player_name AS name, rush_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND season = 2024 AND rush_tds IS NOT NULL
-        ORDER BY rush_tds DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Rushing' AND rush_tds IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, rush_tds DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -261,15 +283,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── receiving-yards-leaders ────────────────────────────────────────────────
     case 'receiving-yards-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, recv_yards AS value
+        SELECT player_name AS name, recv_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND season = 2024 AND recv_yards IS NOT NULL
-        ORDER BY recv_yards DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Receiving' AND recv_yards IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, recv_yards DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -279,18 +302,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
-    // ── receiving-tds-leaders (NEW) ────────────────────────────────────────────
+    // ── receiving-tds-leaders ──────────────────────────────────────────────────
     case 'receiving-tds-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, recv_tds AS value
+        SELECT player_name AS name, recv_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND season = 2024 AND recv_tds IS NOT NULL
-        ORDER BY recv_tds DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+        WHERE stat_type = 'Receiving' AND recv_tds IS NOT NULL AND season IN (2022, 2023, 2024)
+        ORDER BY season, recv_tds DESC`
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -300,7 +324,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
-    // ── total-tds-leaders (NEW) ────────────────────────────────────────────────
+    // ── total-tds-leaders ──────────────────────────────────────────────────────
     case 'total-tds-leaders': {
       const rows = await sql`
         SELECT player_name AS name,
@@ -333,7 +357,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
-    // ── total-yards-leaders (NEW) ──────────────────────────────────────────────
+    // ── total-yards-leaders ────────────────────────────────────────────────────
     case 'total-yards-leaders': {
       const rows = await sql`
         SELECT player_name AS name,
@@ -370,18 +394,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
-    // ── total-points-leaders (NEW) ─────────────────────────────────────────────
+    // ── total-points-leaders ───────────────────────────────────────────────────
     case 'total-points-leaders': {
       const rows = await sql`
-        SELECT player_name AS name, points AS value
+        SELECT player_name AS name, points AS value, season
         FROM player_season_stats
         WHERE stat_type = 'Scoring' AND season = 2024 AND points IS NOT NULL
         ORDER BY points DESC LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+      const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
@@ -391,7 +416,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
-    // ── team-scoring-avg (NEW) ─────────────────────────────────────────────────
+    // ── team-scoring-avg ───────────────────────────────────────────────────────
     case 'team-scoring-avg': {
       const rows = await sql`
         WITH team_games AS (
@@ -401,18 +426,20 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT away_team_slug AS team_slug, away_score AS score
           FROM games WHERE away_score IS NOT NULL AND season = 2024
         )
-        SELECT t.name, ROUND(AVG(tg.score), 1)::float AS value
+        SELECT t.name, ROUND(AVG(tg.score)::numeric, 1) AS value
         FROM team_games tg
         JOIN teams t ON t.slug = tg.team_slug
         GROUP BY t.name
         HAVING COUNT(*) >= 3
         ORDER BY value DESC
         LIMIT 20`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
+      const rows2 = rows.map(r => ({ name: r.name as string, value: Number(r.value), season: '2024' }))
+      const seasonBars = buildSeasonBars(rows2, ['2024'])
+      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 15)}
+        <SportsBarChartInteractive
+          seasons={seasonBars}
           title={config.title}
           description={config.description}
           color={config.color}
