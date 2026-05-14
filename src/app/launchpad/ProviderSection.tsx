@@ -35,14 +35,15 @@ function fmtDate(raw: string | null) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
-function LogoOrDiv({ slug, div }: { slug: string; div: string }) {
+function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?: number }) {
   const schoolSlug = slug.replace(/-varsity-football$/, '')
   const logo = SCHOOL_LOGOS[schoolSlug]
+  const cls = `shrink-0 rounded-full object-contain bg-white border border-[var(--border)]`
   return logo ? (
-    <Image src={logo} alt="" width={20} height={20}
-      className="rounded-full bg-white border border-white/20 object-contain shrink-0" unoptimized />
+    <Image src={logo} alt="" width={size} height={size} className={cls} unoptimized />
   ) : (
-    <span className="shrink-0 inline-flex items-center justify-center h-5 w-5 rounded-full bg-white/20 text-[9px] font-bold text-white">
+    <span className="shrink-0 inline-flex items-center justify-center rounded-full bg-[var(--inp-bg)] border border-[var(--border)] text-xs font-bold text-[var(--muted)]"
+      style={{ width: size, height: size, fontSize: size * 0.28 }}>
       {div}
     </span>
   )
@@ -92,7 +93,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
             return (
               <div key={g.id}
                 onClick={() => router.push(`/launchpad/game/${g.id}`, { scroll: false })}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 flex flex-col gap-3 hover:shadow-md hover:border-[var(--muted)] transition-all cursor-pointer">
+                className="rounded-2xl bg-[var(--surface)] shadow-sm p-5 flex flex-col justify-between min-h-[280px] hover:shadow-md transition-all cursor-pointer">
 
                 {/* Date + game# */}
                 <div className="flex items-center justify-between">
@@ -103,12 +104,12 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 </div>
 
                 {/* Score — huge, centered */}
-                <div className="flex items-center justify-center gap-3">
-                  <span className={cn('text-4xl font-black tabular-nums leading-none', !homeWon && scored ? 'opacity-35' : 'text-[var(--txt)]')}>
+                <div className="flex items-center justify-center gap-4">
+                  <span className={cn('text-5xl font-black tabular-nums leading-none', !homeWon && scored ? 'opacity-25' : 'text-[var(--txt)]')}>
                     {g.home_score ?? '—'}
                   </span>
-                  <span className="text-2xl font-light text-[var(--muted)]">–</span>
-                  <span className={cn('text-4xl font-black tabular-nums leading-none', !awayWon && scored ? 'opacity-35' : 'text-[var(--txt)]')}>
+                  <span className="text-3xl font-light text-[var(--muted)]">–</span>
+                  <span className={cn('text-5xl font-black tabular-nums leading-none', !awayWon && scored ? 'opacity-25' : 'text-[var(--txt)]')}>
                     {g.away_score ?? '—'}
                   </span>
                 </div>
@@ -116,15 +117,15 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 {/* Teams row */}
                 <div className="flex items-center justify-between gap-2">
                   {/* Home */}
-                  <div className="flex items-center gap-2 min-w-0"
+                  <div className="flex items-center gap-2.5 min-w-0"
                     onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} />
+                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={40} />
                     <div className="min-w-0">
                       <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Home</p>
-                      <p className="text-xs font-semibold text-[var(--txt)] truncate leading-snug">
+                      <p className="text-sm font-semibold text-[var(--txt)] truncate leading-snug">
                         {g.home_name}
                         {scored && (
-                          <span className={cn('ml-1 font-bold text-[10px]', homeWon ? 'text-green-600' : 'text-red-500')}>
+                          <span className={cn('ml-1 font-bold text-xs', homeWon ? 'text-green-600' : 'text-red-500')}>
                             {homeWon ? 'W' : 'L'}
                           </span>
                         )}
@@ -132,15 +133,15 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                     </div>
                   </div>
 
-                  {/* Away (right-aligned, logo on right) */}
-                  <div className="flex items-center gap-2 min-w-0 flex-row-reverse"
+                  {/* Away — logo on right */}
+                  <div className="flex items-center gap-2.5 min-w-0 flex-row-reverse"
                     onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} />
+                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={40} />
                     <div className="min-w-0 text-right">
                       <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Away</p>
-                      <p className="text-xs font-semibold text-[var(--txt)] truncate leading-snug">
+                      <p className="text-sm font-semibold text-[var(--txt)] truncate leading-snug">
                         {scored && (
-                          <span className={cn('mr-1 font-bold text-[10px]', awayWon ? 'text-green-600' : 'text-red-500')}>
+                          <span className={cn('mr-1 font-bold text-xs', awayWon ? 'text-green-600' : 'text-red-500')}>
                             {awayWon ? 'W' : 'L'}
                           </span>
                         )}
