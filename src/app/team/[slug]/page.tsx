@@ -59,7 +59,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       playerRows={playerRows as Record<string, unknown>[]}
       gameRows={gameRows.map(r => ({
         id:             Number(r.id),
-        game_date:      r.game_date ? String(r.game_date).slice(0, 10) : null,
+        game_date:      r.game_date ? new Date(r.game_date as unknown as string).toISOString().slice(0, 10) : null,
         season:         Number(r.season),
         home_team_slug: r.home_team_slug as string,
         away_team_slug: r.away_team_slug as string,
