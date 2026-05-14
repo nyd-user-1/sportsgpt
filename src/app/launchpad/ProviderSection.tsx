@@ -2,63 +2,130 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { LAUNCHPAD_TABS, LAUNCHPAD_ITEMS } from '@/lib/launchpad-data'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
+import Image from 'next/image'
 
-const CARD_GRADIENTS = [
-  ['#fca5a5', '#dc2626'], ['#22d3ee', '#0e7490'], ['#4ade80', '#15803d'],
-  ['#fde047', '#b45309'], ['#34d399', '#065f46'], ['#60a5fa', '#1d4ed8'],
-  ['#2dd4bf', '#0f766e'], ['#c084fc', '#7e22ce'], ['#fb923c', '#c2410c'],
-  ['#f472b6', '#be185d'],
-]
+export type GameRow = {
+  id: number
+  game_date: string | null
+  season: number
+  home_team_slug: string
+  away_team_slug: string
+  home_score: number | null
+  away_score: number | null
+  game_number: number | null
+  home_name: string
+  away_name: string
+  home_div: string
+  away_div: string
+}
 
-const PROVIDERS = LAUNCHPAD_ITEMS
-const PROVIDER_TABS = LAUNCHPAD_TABS
+const SEASONS = ['2024', '2023', '2022']
 
-export function ProviderSection() {
-  const [activeTab, setActiveTab] = useState(0)
-  const currentProviders = PROVIDERS[PROVIDER_TABS[activeTab]] ?? []
+// Map "Division I" → "I", etc.
+const SEARCH_DIV_MAP: Record<string, string> = {
+  'Division I': 'I', 'Division II': 'II', 'Division III': 'III', 'Division IV': 'IV',
+}
 
-  if (PROVIDER_TABS.length === 0) {
-    return <p className="text-sm text-[var(--muted)] py-8 text-center">No items yet — populate src/lib/launchpad-data.ts.</p>
-  }
+function fmtDate(raw: string | null) {
+  if (!raw) return '—'
+  const d = new Date(raw + 'T12:00:00')
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
+function LogoOrDiv({ slug, div }: { slug: string; div: string }) {
+  const schoolSlug = slug.replace(/-varsity-football$/, '')
+  const logo = SCHOOL_LOGOS[schoolSlug]
+  return logo ? (
+    <Image src={logo} alt="" width={20} height={20}
+      className="rounded-full bg-white border border-white/20 object-contain shrink-0" unoptimized />
+  ) : (
+    <span className="shrink-0 inline-flex items-center justify-center h-5 w-5 rounded-full bg-white/20 text-[9px] font-bold text-white">
+      {div}
+    </span>
+  )
+}
+
+export function ProviderSection({ games }: { games: GameRow[] }) {
+  const [seasonIdx, setSeasonIdx] = useState(0)
+  const searchParams  = useSearchParams()
+  const divParam      = searchParams.get('div')
+  const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null
+  const activeSeason  = Number(SEASONS[seasonIdx])
+
+  const filtered = games.filter(g => {
+    if (g.season !== activeSeason) return false
+    if (!activeDivision) return true
+    return g.home_div === activeDivision || g.away_div === activeDivision
+  })
 
   return (
     <div>
-      <div className="sticky top-0 z-10 bg-[var(--surface)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
-        {PROVIDER_TABS.map((t, i) => (
-          <button key={t} onClick={() => setActiveTab(i)}
+      {/* Season tabs */}
+      <div className="sticky top-0 z-10 bg-[var(--bg)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
+        {SEASONS.map((s, i) => (
+          <button key={s} onClick={() => setSeasonIdx(i)}
             className={cn(
               'px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap',
-              activeTab === i
+              seasonIdx === i
                 ? 'border-[#033882] text-[var(--txt)]'
                 : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
             )}>
-            {t}
+            {s}
           </button>
         ))}
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pb-6">
-        {currentProviders.map((p, i) => {
-          const [light, dark] = CARD_GRADIENTS[i % CARD_GRADIENTS.length]
-          return (
-            <Link key={`${p.name}-${i}`}
-              href={`/team/${p.slug}`}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-sm transition-shadow hover:shadow-md"
-              style={{ background: `linear-gradient(135deg, ${light}, ${dark})` }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute top-3 right-3 rounded-full bg-white/20 backdrop-blur-sm px-2 py-1">
-                <span className="text-xs font-bold text-white">{PROVIDER_TABS[activeTab].split(' ').map(w => w[0]).join('')}</span>
+      {filtered.length === 0 ? (
+        <p className="text-sm text-[var(--muted)] py-8 text-center">
+          No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
+        </p>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pb-6">
+          {filtered.map(g => {
+            const homeWon = g.home_score != null && g.away_score != null && g.home_score > g.away_score
+            const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
+            return (
+              <div key={g.id}
+                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden hover:shadow-sm transition-shadow flex flex-col">
+                {/* Date + game# header */}
+                <div className="px-3 pt-2.5 pb-1.5 flex items-center justify-between border-b border-[var(--border)]">
+                  <span className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wide">{fmtDate(g.game_date)}</span>
+                  {g.game_number != null && (
+                    <span className="text-[10px] text-[var(--muted)]">Game {g.game_number}</span>
+                  )}
+                </div>
+
+                {/* Home team */}
+                <Link href={`/team/${g.home_team_slug}`}
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors">
+                  <LogoOrDiv slug={g.home_team_slug} div={g.home_div} />
+                  <span className={cn('text-xs font-medium truncate flex-1', homeWon && 'font-bold text-[var(--txt)]', !homeWon && 'text-[var(--txt2)]')}>
+                    {g.home_name}
+                  </span>
+                  <span className={cn('text-xs font-bold shrink-0 tabular-nums', homeWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
+                    {g.home_score ?? '—'}
+                  </span>
+                </Link>
+
+                {/* Away team */}
+                <Link href={`/team/${g.away_team_slug}`}
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors">
+                  <LogoOrDiv slug={g.away_team_slug} div={g.away_div} />
+                  <span className={cn('text-xs font-medium truncate flex-1', awayWon && 'font-bold text-[var(--txt)]', !awayWon && 'text-[var(--txt2)]')}>
+                    {g.away_name}
+                  </span>
+                  <span className={cn('text-xs font-bold shrink-0 tabular-nums', awayWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
+                    {g.away_score ?? '—'}
+                  </span>
+                </Link>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 px-3 pb-3">
-                <p className="text-sm font-bold text-white leading-snug">{p.name}</p>
-                <p className="text-[10px] text-white/70">{p.county}</p>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,142 +1,74 @@
-'use client'
-
-import { use, useState, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, MapPlus, MessageCircle } from 'lucide-react'
-import { PanelChart } from '@/components/PanelChart'
-import { PanelMap } from '@/components/PanelMap'
-import { PanelChat } from '@/components/PanelChat'
-import { PLACEHOLDER_TEAMS, toSlug } from '@/lib/placeholder-data'
-import { ACCENT_COLOR } from '@/lib/app-config'
-import { cn } from '@/lib/utils'
+import { ArrowUpRight } from 'lucide-react'
+import { sql } from '@/lib/db'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
-const DEFAULT_ROWS = 2
+export const dynamic = 'force-dynamic'
 
-function fmtPct(w: number, l: number) {
-  const g = w + l
-  return g === 0 ? '—' : (w / g).toFixed(3).replace(/^0/, '')
+function cleanName(name: string) {
+  return name.replace(/\s+Varsity\s+Football$/i, '')
 }
 
-export default function TeamDetailSlot({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params)
+export default async function TeamDetailSlot({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
 
-  // Find by slug field first, fall back to name-derived slug for backward compat
-  const sorted = [...PLACEHOLDER_TEAMS].sort((a, b) => b.wins - a.wins || b.pf - a.pf)
-  const team   = sorted.find(t => toSlug(t.name) === slug)
+  const rows = await sql`
+    SELECT t.*, s.overall_wins, s.overall_losses
+    FROM teams t
+    LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+    WHERE t.slug = ${slug}
+  `
+  const team = rows[0]
   if (!team) {
     return (
       <div className="h-full flex items-center justify-center">
-        <p className="text-sm text-[var(--muted)]">Team not found</p>
+        <p className="text-sm text-[var(--muted)]">Select a team</p>
       </div>
     )
   }
 
-  const idx      = sorted.findIndex(t => t.id === team.id)
-  const n        = sorted.length
-  const prevSlug = toSlug(sorted[(idx - 1 + n) % n].name)
-  const nextSlug = toSlug(sorted[(idx + 1) % n].name)
-
-  const [infoExpanded, setInfoExpanded] = useState(false)
-  const [chartsOpen,   setChartsOpen]   = useState(false)
-  const [mapsOpen,     setMapsOpen]     = useState(false)
-  const [chatOpen,     setChatOpen]     = useState(false)
-  const carouselRef = useRef<HTMLDivElement>(null)
-
-  const diff = team.pf - team.pa
-
-  const profileRows = [
-    { label: 'Record',             value: `${team.wins}–${team.losses}`,         highlight: false },
-    { label: 'Win %',              value: fmtPct(team.wins, team.losses),         highlight: true  },
-    { label: 'Points For',         value: String(team.pf),                        highlight: false },
-    { label: 'Points Against',     value: String(team.pa),                        highlight: false },
-    { label: 'Point Differential', value: diff >= 0 ? `+${diff}` : String(diff), highlight: diff > 0 },
-    { label: 'Division',           value: `Division ${team.division}`,            highlight: false },
-    { label: 'City',               value: team.city,                              highlight: false },
-    { label: 'Coach',              value: team.coach,                             highlight: false },
-  ]
-
-  const visibleRows = infoExpanded ? profileRows : profileRows.slice(0, DEFAULT_ROWS)
-
-  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
-  const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
-
-  const divisionTeams = PLACEHOLDER_TEAMS.filter(t => t.division === team.division && t.id !== team.id)
+  const schoolSlug = (team.school_slug as string) ?? slug.replace(/-varsity-football$/, '')
+  const photo      = TEAM_PHOTOS[schoolSlug]
+  const logo       = SCHOOL_LOGOS[schoolSlug]
+  const teamName   = cleanName(team.name as string)
+  const division   = team.division as string
+  const wins       = team.overall_wins  != null ? Number(team.overall_wins)  : null
+  const losses     = team.overall_losses != null ? Number(team.overall_losses) : null
 
   return (
-    <>
-      <div className="h-full overflow-y-auto no-scrollbar">
-        <div className="px-5 pt-5 pb-4">
+    <div className="h-full relative overflow-hidden">
+      {photo ? (
+        <>
+          <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        </>
+      ) : (
+        <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
+      )}
 
-          {/* Header */}
-          <div className="mb-5 flex items-center justify-between gap-2">
-            <h1 className="text-lg font-bold text-[var(--txt)] leading-snug">{team.name}</h1>
-            <div className="flex items-center shrink-0">
-              <div className="inline-flex -space-x-px">
-                <Link href={`/launchpad/${prevSlug}`} scroll={false} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
-                <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
-                <button onClick={() => setMapsOpen(v => !v)}   className={`${btn} ${mapsOpen   ? active : ''}`}><MapPlus className="h-4 w-4" /></button>
-                <button onClick={() => setChatOpen(v => !v)}   className={`${btn} ${chatOpen   ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
-                <Link href={`/launchpad/${nextSlug}`} scroll={false} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
-              </div>
-            </div>
+      {/* Bottom overlay */}
+      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-2">
+        <div className="flex items-center gap-2.5 min-w-0">
+          {logo && (
+            <Image src={logo} alt="" width={36} height={36}
+              className="shrink-0 rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
+          )}
+          <div className="min-w-0">
+            <p className="text-sm font-bold text-white leading-snug truncate">{teamName}</p>
+            <p className="text-xs text-white/70">Division {division} · Section XI</p>
+            {wins != null && losses != null && (
+              <p className="text-xs font-semibold text-white/90 mt-0.5">{wins}–{losses} · 2024</p>
+            )}
           </div>
-
-          {/* InfoTable */}
-          <div className="mb-5 rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-            <button
-              onClick={() => setInfoExpanded(v => !v)}
-              className="flex items-center justify-between w-full px-4 py-3 bg-[var(--surface)] hover:bg-[var(--inp-bg)] transition-colors"
-            >
-              <span className="text-sm font-semibold text-[var(--txt)]">Team Profile</span>
-              <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', infoExpanded && 'rotate-180')} />
-            </button>
-            {visibleRows.map((row, i) => (
-              <div key={i} className="grid grid-cols-[1fr_auto] gap-x-3 px-4 py-2.5 border-t border-[var(--border)]">
-                <span className="text-sm text-[var(--muted)]">{row.label}</span>
-                <span className={cn('text-sm text-right', row.highlight ? 'font-bold' : 'text-[var(--txt)]')}
-                  style={row.highlight ? { color: ACCENT_COLOR } : undefined}>
-                  {row.value}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Division carousel */}
-          <div className="mb-2 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-[var(--txt)]">Division {team.division}</h2>
-            <div className="flex items-center gap-1.5">
-              <button onClick={() => carouselRef.current?.scrollBy({ left: -200, behavior: 'smooth' })}
-                className="inline-flex items-center justify-center h-7 w-7 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
-                <ChevronLeft className="h-3.5 w-3.5" />
-              </button>
-              <button onClick={() => carouselRef.current?.scrollBy({ left: 200, behavior: 'smooth' })}
-                className="inline-flex items-center justify-center h-7 w-7 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
-                <ChevronRight className="h-3.5 w-3.5" />
-              </button>
-            </div>
-          </div>
-          <div ref={carouselRef} className="overflow-x-auto no-scrollbar">
-            <div className="flex gap-3 pb-1">
-              {divisionTeams.map(t => (
-                <Link key={t.id} href={`/launchpad/${toSlug(t.name)}`} scroll={false}
-                  className="shrink-0 w-44 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                  <p className="text-sm font-bold text-[var(--txt)] leading-snug">{t.name}</p>
-                  <p className="text-xs text-[var(--muted)] mt-0.5">{t.city}</p>
-                  <div className="mt-2 flex items-center gap-1.5">
-                    <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{t.wins}–{t.losses}</span>
-                    <span className="text-xs text-[var(--muted)]">{fmtPct(t.wins, t.losses)}</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={team.name} />
-    </>
+        {/* Arrow link to full detail page */}
+        <Link href={`/team/${slug}`}
+          className="shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-sm transition-colors">
+          <ArrowUpRight className="h-4 w-4 text-white" />
+        </Link>
+      </div>
+    </div>
   )
 }

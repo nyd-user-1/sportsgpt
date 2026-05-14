@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -61,13 +63,13 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
             {filtered.map((t, i) => (
               <tr
                 key={t.slug}
-                onClick={() => router.push(`/team/${t.slug}`)}
+                onClick={() => router.push(`/launchpad/${t.slug}`, { scroll: false })}
                 className={cn(
                   'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',
                   i % 2 !== 0 && 'bg-[var(--inp-bg)]'
                 )}
               >
-                <td className="px-4 py-3 font-medium text-[var(--txt)] max-w-[220px]">
+                <td className="px-4 py-3 font-medium text-[var(--txt)] max-w-[240px]">
                   <div className="flex items-center gap-2.5 min-w-0">
                     {(() => {
                       const schoolSlug = t.slug.replace(/-varsity-football$/, '')
@@ -79,6 +81,11 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
                       )
                     })()}
                     <span className="truncate">{cleanName(t.name)}</span>
+                    <Link href={`/team/${t.slug}`}
+                      onClick={e => e.stopPropagation()}
+                      className="shrink-0 ml-0.5 inline-flex items-center text-[var(--muted)] hover:text-[var(--txt)] transition-colors translate-y-[-1px] hover:translate-x-[1px] hover:translate-y-[-2px] transition-transform duration-150">
+                      <ArrowUpRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
                 </td>
                 <td className="px-4 py-3 text-[var(--txt)]">{t.overall_wins ?? '—'}</td>
