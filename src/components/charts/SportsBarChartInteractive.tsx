@@ -2,8 +2,9 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart'
+import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 export interface SeasonBars {
   season: string        // '2022', '2023', '2024'
@@ -19,9 +20,18 @@ interface Props {
   valueLabel: string
 }
 
-export function SportsBarChartInteractive({ seasons, title, description, color, valueLabel }: Props) {
+export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props) {
   const defaultSeason = seasons[seasons.length - 1]?.season ?? ''
   const [active, setActive] = React.useState(defaultSeason)
+
+  React.useEffect(() => {
+    const handle = (e: Event) => {
+      const yr = (e as CustomEvent<string>).detail
+      if (seasons.some(s => s.season === yr)) setActive(yr)
+    }
+    window.addEventListener(SEASON_CHANGE_EVENT, handle)
+    return () => window.removeEventListener(SEASON_CHANGE_EVENT, handle)
+  }, [seasons])
 
   const activeBars = seasons.find(s => s.season === active)?.bars ?? []
 
@@ -30,27 +40,8 @@ export function SportsBarChartInteractive({ seasons, title, description, color, 
   } satisfies ChartConfig
 
   return (
-    <Card className="py-0">
-      <CardHeader className="flex flex-col items-stretch border-b border-[var(--border)] p-0! sm:flex-row">
-        <div className="flex flex-1 flex-col justify-center gap-1 px-6 pt-4 pb-3 sm:py-0!">
-          <CardTitle>{title}</CardTitle>
-          {description && <CardDescription>{description}</CardDescription>}
-        </div>
-        <div className="flex">
-          {seasons.map(s => (
-            <button
-              key={s.season}
-              data-active={active === s.season}
-              className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l data-[active=true]:bg-[var(--inp-bg)] sm:border-t-0 sm:border-l sm:px-8 sm:py-6"
-              style={{ borderColor: 'var(--border)' }}
-              onClick={() => setActive(s.season)}
-            >
-              <span className="text-sm font-semibold text-[var(--txt)]">{s.season}</span>
-            </button>
-          ))}
-        </div>
-      </CardHeader>
-      <CardContent className="px-2 sm:p-6">
+    <Card>
+      <CardContent className="px-2 pt-4 sm:p-6">
         <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
           <BarChart
             accessibilityLayer

@@ -43,6 +43,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let multiPoints: MultiRow[] = []
   let kpiValue = 0
   let chartChild: React.ReactNode = null
+  let seasonFilters: string[] | undefined = undefined
+  const SEASON_FILTER_MAP: Record<string, string[]> = {
+    'season-records':         ['2022', '2023', '2024'],
+    'passing-yards-leaders':  ['2022', '2023', '2024'],
+    'passing-tds-leaders':    ['2022', '2023', '2024'],
+    'rushing-yards-leaders':  ['2022', '2023', '2024'],
+    'rushing-tds-leaders':    ['2022', '2023', '2024'],
+    'receiving-yards-leaders':['2022', '2023', '2024'],
+    'receiving-tds-leaders':  ['2022', '2023', '2024'],
+    'total-points-leaders':   ['2024'],
+    'team-scoring-avg':       ['2024'],
+  }
+  seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
 
   switch (slug) {
@@ -575,6 +588,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       tableRows={tableRows}
       multiPoints={multiPoints}
       subRows={subRows}
+      seasonFilters={seasonFilters}
     >
       {chartChild}
     </ChartDetailPage>

@@ -16,6 +16,7 @@ export const CHAT_PLACEHOLDER_PANEL = 'Ask about this team...'
 export const CHAT_PANEL_INTRO       = 'Ask anything using the panels and map.'
 export const ACCENT_COLOR           = '#033882'
 export const CHART_NAV_EVENT        = 'sportsgpt:chart-nav'
+export const SEASON_CHANGE_EVENT    = 'sportsgpt:season-change'
 
 // ── Top-level nav cycle (prev/next arrows in AppLayout header) ─────────────
 export const NAV_CYCLE = [

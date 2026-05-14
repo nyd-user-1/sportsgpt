@@ -25,7 +25,7 @@ const PREVIEW: Record<string, { x: number; y: number }[]> = {
 }
 const AREA_SLUGS = new Set(['facilities-by-year','cost-trend','center-vs-family'])
 
-export function ChartsDrawer() {
+export function ChartsDrawer({ label }: { label?: string }) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
 
@@ -37,7 +37,7 @@ export function ChartsDrawer() {
         className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
       >
         <LayoutGrid className="h-4 w-4" />
-        <span>Charts</span>
+        <span>{label ?? 'Charts'}</span>
       </button>
 
       {/* Backdrop */}

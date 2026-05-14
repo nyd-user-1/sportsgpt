@@ -14,7 +14,7 @@ import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
 } from '@/lib/chart-configs'
-import { CHART_NAV_EVENT } from '@/lib/app-config'
+import { CHART_NAV_EVENT, SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 /* ── Formatting ──────────────────────────────────────────────────── */
 function fmtNum(n: number) {
@@ -63,6 +63,7 @@ interface Props {
   scatterPoints?: ScatterRow[]
   subRows?: SubRowMap
   children?: React.ReactNode
+  seasonFilters?: string[]
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -71,10 +72,17 @@ export function ChartDetailPage({
   tableRows = [], chartPoints = [], multiPoints = [], scatterPoints = [],
   subRows,
   children,
+  seasonFilters,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
+  const [activeSeason, setActiveSeason] = useState(seasonFilters?.[seasonFilters.length - 1] ?? '')
+
+  const emitSeason = (yr: string) => {
+    setActiveSeason(yr)
+    window.dispatchEvent(new CustomEvent(SEASON_CHANGE_EVENT, { detail: yr }))
+  }
 
   const toggleRow = (name: string) => {
     setExpanded(prev => {
@@ -94,8 +102,8 @@ export function ChartDetailPage({
       prevHref: `/chart/${prevSlug}`,
       nextHref: `/chart/${nextSlug}`,
       color: config.color,
-      kpi: fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
-      kpiLabel: config.kpiLabel,
+      kpi: config.hideKpi ? '' : fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
+      kpiLabel: config.hideKpi ? '' : config.kpiLabel,
     }
     window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
     return () => {
@@ -212,9 +220,25 @@ export function ChartDetailPage({
           </div>
           )}
 
-          {/* Tab row: Charts drawer + filter tabs + period toggle */}
+          {/* Tab row: Charts drawer + season pills + filter tabs + period toggle */}
           <div className="flex items-center gap-1.5 pb-3 flex-wrap">
-            <ChartsDrawer />
+            <ChartsDrawer label={config.title} />
+            {seasonFilters && seasonFilters.length > 0 && (
+              <>
+                <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
+                {seasonFilters.map(yr => (
+                  <button key={yr} onClick={() => emitSeason(yr)}
+                    className={cn(
+                      'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
+                      activeSeason === yr
+                        ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                        : 'text-[var(--muted)] hover:text-[var(--txt)]',
+                    )}>
+                    {yr}
+                  </button>
+                ))}
+              </>
+            )}
             <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
             {/* Filter tabs */}
             {config.filters?.map(f => (

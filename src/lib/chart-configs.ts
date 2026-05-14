@@ -24,6 +24,7 @@ export interface ChartConfig {
   series?: SeriesDef[]
   filters?: FilterDef[]
   stacked?: boolean
+  hideKpi?: boolean
 }
 
 export const CHART_CONFIGS: ChartConfig[] = [
@@ -136,6 +137,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Avg. Points Per Game',
     description: '',
     color: '#033882', chartType: 'bar', kpiLabel: 'highest avg',
+    hideKpi: true,
   },
 ]
 
