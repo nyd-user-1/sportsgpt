@@ -134,7 +134,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'team-scoring-avg',
     title: 'Avg. Points Per Game',
-    description: 'Average points scored per game by team · 2024 season',
+    description: '',
     color: '#033882', chartType: 'bar', kpiLabel: 'highest avg',
   },
 ]
