@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT * FROM team_season_stats
@@ -30,6 +30,16 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       FROM player_season_stats ps
       WHERE ps.school_slug = ${team.school_slug}
       ORDER BY ps.player_slug, ps.stat_type, ps.season DESC`,
+    sql`
+      SELECT g.id, g.game_date, g.season,
+        g.home_team_slug, g.away_team_slug,
+        g.home_score, g.away_score, g.is_division_game, g.game_number,
+        ht.name AS home_team_name, at2.name AS away_team_name
+      FROM games g
+      LEFT JOIN teams ht  ON ht.slug  = g.home_team_slug
+      LEFT JOIN teams at2 ON at2.slug = g.away_team_slug
+      WHERE g.home_team_slug = ${slug} OR g.away_team_slug = ${slug}
+      ORDER BY g.season DESC, g.game_date ASC`,
   ])
 
   // Prev/next by name order
@@ -47,6 +57,19 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       seasonRows={seasonRows as Record<string, unknown>[]}
       divTeams={divTeams as Record<string, unknown>[]}
       playerRows={playerRows as Record<string, unknown>[]}
+      gameRows={gameRows.map(r => ({
+        id:             Number(r.id),
+        game_date:      r.game_date ? String(r.game_date).slice(0, 10) : null,
+        season:         Number(r.season),
+        home_team_slug: r.home_team_slug as string,
+        away_team_slug: r.away_team_slug as string,
+        home_score:     r.home_score != null ? Number(r.home_score) : null,
+        away_score:     r.away_score != null ? Number(r.away_score) : null,
+        is_division_game: r.is_division_game as boolean | null,
+        game_number:    r.game_number != null ? Number(r.game_number) : null,
+        home_team_name: r.home_team_name as string | null,
+        away_team_name: r.away_team_name as string | null,
+      }))}
     />
   )
 }

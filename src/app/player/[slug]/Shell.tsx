@@ -31,6 +31,20 @@ type StatRow = {
   recv_yards: number | null
   recv_tds: number | null
   pat: number | null
+  season_rank: number | null
+  games_played: number | null
+  total_yards: number | null
+  yards_per_game: number | null
+  total_tds: number | null
+  tds_per_game: number | null
+  fumble_return_tds: number | null
+  int_return_tds: number | null
+  punt_return_tds: number | null
+  kickoff_return_tds: number | null
+  points: number | null
+  points_per_game: number | null
+  fg: number | null
+  safeties: number | null
 }
 
 type PlayerRow = {
@@ -197,6 +211,123 @@ function ReceivingCard({ rows, expanded, onToggle }: { rows: StatRow[]; expanded
   )
 }
 
+function ScoringCard({ rows, expanded, onToggle }: { rows: StatRow[]; expanded: boolean; onToggle: () => void }) {
+  const visible = expanded ? rows : rows.slice(0, 2)
+  const td = 'px-3 py-2 text-sm border-b border-[var(--border)]'
+  return (
+    <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
+      <button onClick={onToggle}
+        className="flex items-center justify-between w-full px-4 py-3 bg-[var(--surface)] hover:bg-[var(--inp-bg)] transition-colors">
+        <span className="text-sm font-semibold text-[var(--txt)]">Scoring</span>
+        <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', expanded && 'rotate-180')} />
+      </button>
+      <div className="overflow-x-auto no-scrollbar">
+        <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
+          <thead>
+            <tr className="bg-[var(--surface)]">
+              {['Season','PTS','PTS/G','TD','FG','PAT','S','GP'].map(h => (
+                <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]', h === 'Season' ? 'text-left' : 'text-right')}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {visible.map((r, i) => (
+              <tr key={i} className="hover:bg-[var(--inp-bg)] transition-colors">
+                <td className={cn(td, 'text-[var(--txt)] font-medium')}>{r.season}</td>
+                <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>{fmtVal(r.points)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.points_per_game)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.total_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.fg)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.pat)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.safeties)}</td>
+                <td className={cn(td, 'text-right text-[var(--muted)]')}>{fmtVal(r.games_played)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+function TouchdownsCard({ rows, expanded, onToggle }: { rows: StatRow[]; expanded: boolean; onToggle: () => void }) {
+  const visible = expanded ? rows : rows.slice(0, 2)
+  const td = 'px-3 py-2 text-sm border-b border-[var(--border)]'
+  return (
+    <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
+      <button onClick={onToggle}
+        className="flex items-center justify-between w-full px-4 py-3 bg-[var(--surface)] hover:bg-[var(--inp-bg)] transition-colors">
+        <span className="text-sm font-semibold text-[var(--txt)]">Touchdowns</span>
+        <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', expanded && 'rotate-180')} />
+      </button>
+      <div className="overflow-x-auto no-scrollbar">
+        <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
+          <thead>
+            <tr className="bg-[var(--surface)]">
+              {['Season','TOT','Rush','Rec','FR','IR','PR','KOR','TD/G'].map(h => (
+                <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]', h === 'Season' ? 'text-left' : 'text-right')}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {visible.map((r, i) => (
+              <tr key={i} className="hover:bg-[var(--inp-bg)] transition-colors">
+                <td className={cn(td, 'text-[var(--txt)] font-medium')}>{r.season}</td>
+                <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>{fmtVal(r.total_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.rush_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.recv_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.fumble_return_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.int_return_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.punt_return_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.kickoff_return_tds)}</td>
+                <td className={cn(td, 'text-right text-[var(--muted)]')}>{fmtVal(r.tds_per_game)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+function TotalYardsCard({ rows, expanded, onToggle }: { rows: StatRow[]; expanded: boolean; onToggle: () => void }) {
+  const visible = expanded ? rows : rows.slice(0, 2)
+  const td = 'px-3 py-2 text-sm border-b border-[var(--border)]'
+  return (
+    <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
+      <button onClick={onToggle}
+        className="flex items-center justify-between w-full px-4 py-3 bg-[var(--surface)] hover:bg-[var(--inp-bg)] transition-colors">
+        <span className="text-sm font-semibold text-[var(--txt)]">Total Yards</span>
+        <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', expanded && 'rotate-180')} />
+      </button>
+      <div className="overflow-x-auto no-scrollbar">
+        <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
+          <thead>
+            <tr className="bg-[var(--surface)]">
+              {['Season','TOT YDS','YDS/G','Pass','Rush','Rec','GP'].map(h => (
+                <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]', h === 'Season' ? 'text-left' : 'text-right')}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {visible.map((r, i) => (
+              <tr key={i} className="hover:bg-[var(--inp-bg)] transition-colors">
+                <td className={cn(td, 'text-[var(--txt)] font-medium')}>{r.season}</td>
+                <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>{fmtVal(r.total_yards)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.yards_per_game)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.pass_yards)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.rush_yards)}</td>
+                <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtVal(r.recv_yards)}</td>
+                <td className={cn(td, 'text-right text-[var(--muted)]')}>{fmtVal(r.games_played)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 export function PlayerShell({
   player,
   stats,
@@ -213,13 +344,19 @@ export function PlayerShell({
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
-  const [passExpanded, setPassExpanded] = useState(true)
-  const [rushExpanded, setRushExpanded] = useState(true)
-  const [recvExpanded, setRecvExpanded] = useState(true)
+  const [passExpanded,   setPassExpanded]   = useState(true)
+  const [rushExpanded,   setRushExpanded]   = useState(true)
+  const [recvExpanded,   setRecvExpanded]   = useState(true)
+  const [scoreExpanded,  setScoreExpanded]  = useState(true)
+  const [tdExpanded,     setTdExpanded]     = useState(true)
+  const [yardsExpanded,  setYardsExpanded]  = useState(true)
 
-  const passingRows   = stats.filter(s => s.stat_type === 'Passing')
-  const rushingRows   = stats.filter(s => s.stat_type === 'Rushing')
-  const receivingRows = stats.filter(s => s.stat_type === 'Receiving')
+  const passingRows    = stats.filter(s => s.stat_type === 'Passing')
+  const rushingRows    = stats.filter(s => s.stat_type === 'Rushing')
+  const receivingRows  = stats.filter(s => s.stat_type === 'Receiving')
+  const scoringRows    = stats.filter(s => s.stat_type === 'Scoring')
+  const tdRows         = stats.filter(s => s.stat_type === 'Touchdowns')
+  const totalYardRows  = stats.filter(s => s.stat_type === 'Total Yards')
 
   const { yards, label, season: bestSeason } = getBestYards(stats)
 
@@ -302,6 +439,15 @@ export function PlayerShell({
                 )}
                 {receivingRows.length > 0 && (
                   <ReceivingCard rows={receivingRows} expanded={recvExpanded} onToggle={() => setRecvExpanded(v => !v)} />
+                )}
+                {totalYardRows.length > 0 && (
+                  <TotalYardsCard rows={totalYardRows} expanded={yardsExpanded} onToggle={() => setYardsExpanded(v => !v)} />
+                )}
+                {tdRows.length > 0 && (
+                  <TouchdownsCard rows={tdRows} expanded={tdExpanded} onToggle={() => setTdExpanded(v => !v)} />
+                )}
+                {scoringRows.length > 0 && (
+                  <ScoringCard rows={scoringRows} expanded={scoreExpanded} onToggle={() => setScoreExpanded(v => !v)} />
                 )}
                 {stats.length === 0 && (
                   <div className="rounded-xl border border-[var(--border)] px-4 py-8 text-center text-sm text-[var(--muted)]">

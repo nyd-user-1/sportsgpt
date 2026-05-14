@@ -22,9 +22,10 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         s.overall_wins, s.overall_losses, s.overall_ties,
         s.conference_wins, s.conference_losses, s.season
       FROM teams t
-      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+      JOIN team_season_stats s ON s.team_slug = t.slug
       WHERE t.division = ${division}
-      ORDER BY s.overall_wins DESC NULLS LAST, t.name
+        AND s.season IN (2021, 2022, 2023, 2024)
+      ORDER BY s.season DESC, s.overall_wins DESC NULLS LAST, t.name
     `,
     sql`
       SELECT DISTINCT ON (ps.player_slug)
