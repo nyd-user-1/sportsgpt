@@ -85,14 +85,14 @@ export default function PlayerTable({
 
         {/* Tables */}
         <div className="flex-1 min-h-0 overflow-hidden px-5 pt-4 pb-5">
-          <div className="h-full overflow-auto no-scrollbar rounded-xl border border-[var(--border)]">
+          <div className="h-full overflow-auto no-scrollbar rounded-xl border border-[var(--border)] px-2">
 
             {tab === 'Passing' && (
-              <table className="text-sm whitespace-nowrap w-full" style={{ borderSpacing: 0 }}>
+              <table className="text-sm whitespace-nowrap w-full border-separate" style={{ borderSpacing: 0 }}>
                 <thead className="sticky top-0 z-20">
                   <tr>
-                    <th className={cn(th, 'sticky left-0 z-30 min-w-[40px]')}>#</th>
-                    <th className={cn(th, 'sticky left-[40px] z-30 min-w-[180px]')}>Player</th>
+                    <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
+                    <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                     <th className={th}>School</th>
                     <th className={thR}>YDS</th>
                     <th className={thR}>TD</th>
@@ -109,8 +109,8 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
-                        <td className={cn(td, 'sticky left-[40px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] group-hover:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
@@ -119,7 +119,7 @@ export default function PlayerTable({
                         <td className={tdR}>{p.interceptions ?? '—'}</td>
                         <td className={tdR}>{p.completions ?? '—'}</td>
                         <td className={tdR}>{p.attempts ?? '—'}</td>
-                        <td className={tdR}>{compPct}</td>
+                        <td className={cn(tdR, 'group-hover:rounded-r-md')}>{compPct}</td>
                       </tr>
                     )
                   })}
@@ -131,11 +131,11 @@ export default function PlayerTable({
             )}
 
             {tab === 'Rushing' && (
-              <table className="text-sm whitespace-nowrap w-full" style={{ borderSpacing: 0 }}>
+              <table className="text-sm whitespace-nowrap w-full border-separate" style={{ borderSpacing: 0 }}>
                 <thead className="sticky top-0 z-20">
                   <tr>
-                    <th className={cn(th, 'sticky left-0 z-30 min-w-[40px]')}>#</th>
-                    <th className={cn(th, 'sticky left-[40px] z-30 min-w-[180px]')}>Player</th>
+                    <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
+                    <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                     <th className={th}>School</th>
                     <th className={thR}>YDS</th>
                     <th className={thR}>TD</th>
@@ -150,15 +150,15 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
-                        <td className={cn(td, 'sticky left-[40px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] group-hover:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
                         <td className={tdR}>{p.rush_tds ?? '—'}</td>
                         <td className={tdR}>{p.rush_attempts ?? '—'}</td>
-                        <td className={tdR}>{ypc}</td>
+                        <td className={cn(tdR, 'group-hover:rounded-r-md')}>{ypc}</td>
                       </tr>
                     )
                   })}
@@ -170,11 +170,11 @@ export default function PlayerTable({
             )}
 
             {tab === 'Receiving' && (
-              <table className="text-sm whitespace-nowrap w-full" style={{ borderSpacing: 0 }}>
+              <table className="text-sm whitespace-nowrap w-full border-separate" style={{ borderSpacing: 0 }}>
                 <thead className="sticky top-0 z-20">
                   <tr>
-                    <th className={cn(th, 'sticky left-0 z-30 min-w-[40px]')}>#</th>
-                    <th className={cn(th, 'sticky left-[40px] z-30 min-w-[180px]')}>Player</th>
+                    <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
+                    <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                     <th className={th}>School</th>
                     <th className={thR}>YDS</th>
                     <th className={thR}>TD</th>
@@ -189,15 +189,15 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
-                        <td className={cn(td, 'sticky left-[40px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] group-hover:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.recv_yards ?? '—'}</td>
                         <td className={tdR}>{p.recv_tds ?? '—'}</td>
                         <td className={tdR}>{p.receptions ?? '—'}</td>
-                        <td className={tdR}>{ypr}</td>
+                        <td className={cn(tdR, 'group-hover:rounded-r-md')}>{ypr}</td>
                       </tr>
                     )
                   })}

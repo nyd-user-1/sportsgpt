@@ -74,7 +74,7 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
   function Th({ col, label, sticky }: { col: SortCol; label: string; sticky?: boolean }) {
     return (
       <th onClick={() => handleSort(col)}
-        className={cn('px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none text-left', sticky && 'sticky left-0 z-30 min-w-[200px]')}>
+        className={cn('px-3 py-4 bg-[var(--surface)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none text-left', sticky && 'sticky left-2 z-30 min-w-[200px]')}>
         <button className={cn('inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5', sortCol === col ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
           {label}
           {sortCol === col
@@ -111,8 +111,8 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
         </div>
 
         <div className="px-5 pb-5 flex-1 min-h-0 overflow-hidden">
-          <div className="h-full overflow-auto no-scrollbar rounded-xl border border-[var(--border)] mt-4">
-            <table className="text-sm whitespace-nowrap" style={{ minWidth: '700px', width: '100%', borderSpacing: 0 }}>
+          <div className="h-full overflow-auto no-scrollbar rounded-xl border border-[var(--border)] mt-4 px-2">
+            <table className="text-sm whitespace-nowrap border-separate" style={{ minWidth: '700px', width: '100%', borderSpacing: 0 }}>
               <thead className="sticky top-0 z-20 bg-[var(--surface)]">
                 <tr>
                   <Th col="name" label="Team" sticky />
@@ -126,14 +126,14 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
               <tbody>
                 {sorted.map(t => (
                   <tr key={t.slug} className="group cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold text-[var(--txt)] transition-colors max-w-[200px] truncate')}>
+                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] group-hover:rounded-l-md font-semibold text-[var(--txt)] transition-colors max-w-[200px] truncate')}>
                       <Link href={`/team/${t.slug}`} className="hover:underline">{t.name}</Link>
                     </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>Div. {t.division}</td>
                     <td className={cn(td, 'text-[var(--txt)] font-medium')}>{t.overall_wins ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
-                    <td className={cn(td, 'text-[var(--txt)]')}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
+                    <td className={cn(td, 'text-[var(--txt)] group-hover:rounded-r-md')}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
                   </tr>
                 ))}
               </tbody>
