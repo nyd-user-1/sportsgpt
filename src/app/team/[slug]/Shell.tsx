@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -304,14 +304,25 @@ export function TeamShell({
                       return (
                         <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 flex flex-col justify-between hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          <div>
-                            <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
-                            <p className="text-xs text-[var(--muted)] mt-0.5">{p.stat_type as string}</p>
+                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                          {/* Photo */}
+                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden bg-[var(--inp-bg)]">
+                            {PLAYER_PHOTOS[p.player_slug as string] ? (
+                              <Image src={PLAYER_PHOTOS[p.player_slug as string]} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                            ) : (
+                              <div className="w-full h-full" />
+                            )}
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
-                            <span className="text-xs text-[var(--muted)]">{stat.label}</span>
+                          {/* Text */}
+                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
+                            <div>
+                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
+                              <p className="text-xs text-[var(--muted)] mt-0.5">{p.stat_type as string}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
+                              <span className="text-xs text-[var(--muted)]">{stat.label}</span>
+                            </div>
                           </div>
                         </Link>
                       )
@@ -333,20 +344,35 @@ export function TeamShell({
               </div>
               <div ref={divRef} className="overflow-x-auto no-scrollbar">
                 <div className="flex gap-3 pb-1">
-                  {divTeams.map(t => (
-                    <Link key={t.slug as string} href={`/team/${t.slug}`}
-                      className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 flex flex-col justify-between hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                      <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>
-                          {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
-                        </span>
-                        <span className="text-xs text-[var(--muted)]">
-                          {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
+                  {divTeams.map(t => {
+                    const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
+                    const tLogo = SCHOOL_LOGOS[tSchoolSlug]
+                    return (
+                      <Link key={t.slug as string} href={`/team/${t.slug}`}
+                        className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                        {/* Logo */}
+                        <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden bg-[var(--inp-bg)] flex items-center justify-center">
+                          {tLogo ? (
+                            <Image src={tLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
+                          ) : (
+                            <div className="w-full h-full" />
+                          )}
+                        </div>
+                        {/* Text */}
+                        <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
+                          <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>
+                              {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
+                            </span>
+                            <span className="text-xs text-[var(--muted)]">
+                              {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             </div>
