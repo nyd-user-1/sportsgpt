@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 export default function HeroCard() {
   return (
-    <div className="relative mb-4 overflow-hidden rounded-xl bg-[#0e0e0e] flex flex-col" style={{ minHeight: '520px' }}>
+    <div className="relative mb-4 overflow-hidden rounded-xl bg-[#0e0e0e] flex flex-col"
+      style={{ minHeight: '520px', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.08)' }}>
 
       {/* Goalpost line-art background */}
       <div className="absolute inset-0 flex items-start justify-center pt-6 pointer-events-none select-none">
