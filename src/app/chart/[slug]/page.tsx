@@ -25,7 +25,7 @@ function buildSeasonBars(
     const yrows = rows
       .filter(r => String(r.season) === yr)
       .sort((a, b) => Number(b.value) - Number(a.value))
-      .slice(0, 15)
+      .slice(0, 52)
       .map(r => ({ name: String(r.name), value: Number(r.value) }))
     const topValue = yrows[0]?.value ?? 0
     return { season: yr, topValue, bars: yrows }
@@ -521,9 +521,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         FROM team_games tg
         JOIN teams t ON t.slug = tg.team_slug
         GROUP BY t.name
-        HAVING COUNT(*) >= 3
-        ORDER BY value DESC
-        LIMIT 20`
+        HAVING COUNT(*) >= 1
+        ORDER BY value DESC`
       const rows2 = rows.map(r => ({ name: r.name as string, value: Number(r.value), season: '2024' }))
       const seasonBars = buildSeasonBars(rows2, ['2024'])
       tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
