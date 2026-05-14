@@ -182,24 +182,22 @@ export function TeamShell({
               </div>
 
               <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                <button onClick={() => setInfoExpanded(v => !v)}
-                  className="flex items-center justify-between w-full px-4 py-3 bg-[var(--surface)] hover:bg-[var(--inp-bg)] transition-colors">
-                  <span className="text-sm font-semibold text-[var(--txt)]">{activeProfile.title}</span>
-                  <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', infoExpanded && 'rotate-180')} />
-                </button>
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
                   historyRows.length === 0 ? (
-                    <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No season data available.</div>
+                    <div className="px-4 py-3 text-sm text-[var(--muted)]">No season data available.</div>
                   ) : (
                     <table className="w-full text-sm">
                       <thead>
-                        <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
-                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
-                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
-                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
-                          <th className="px-4 py-2 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
+                        <tr onClick={() => setInfoExpanded(v => !v)}
+                          className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
+                            <span className="inline-flex items-center justify-end gap-1.5">Win%<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -234,13 +232,15 @@ export function TeamShell({
                         <div className="overflow-x-auto no-scrollbar">
                           <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
                             <thead>
-                              <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
-                                {['Date','Opponent','H/A','Score','Result'].map((h, i) => (
-                                  <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]',
-                                    i === 0 || i === 1 ? 'text-left' : i === 2 ? 'text-center' : i === 3 ? 'text-right' : 'text-center')}>
-                                    {h}
-                                  </th>
-                                ))}
+                              <tr onClick={() => setInfoExpanded(v => !v)}
+                                className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
+                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
+                                <th className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="px-3 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
+                                  <span className="inline-flex items-center justify-end gap-1.5 w-full">Result<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
+                                </th>
                               </tr>
                             </thead>
                             <tbody>
