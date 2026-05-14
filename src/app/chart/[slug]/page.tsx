@@ -53,7 +53,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     'receiving-yards-leaders':['2022', '2023', '2024'],
     'receiving-tds-leaders':  ['2022', '2023', '2024'],
     'total-points-leaders':   ['2024'],
-    'team-scoring-avg':       ['2024'],
+    'team-scoring-avg':       ['2023', '2024'],
   }
   seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
@@ -524,20 +524,20 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     case 'team-scoring-avg': {
       const rows = await sql`
         WITH team_games AS (
-          SELECT home_team_slug AS team_slug, home_score AS score
-          FROM games WHERE home_score IS NOT NULL AND season = 2024
+          SELECT home_team_slug AS team_slug, home_score AS score, season
+          FROM games WHERE home_score IS NOT NULL AND season IN (2023, 2024)
           UNION ALL
-          SELECT away_team_slug AS team_slug, away_score AS score
-          FROM games WHERE away_score IS NOT NULL AND season = 2024
+          SELECT away_team_slug AS team_slug, away_score AS score, season
+          FROM games WHERE away_score IS NOT NULL AND season IN (2023, 2024)
         )
-        SELECT t.name, ROUND(AVG(tg.score)::numeric, 1) AS value
+        SELECT t.name, ROUND(AVG(tg.score)::numeric, 1) AS value, tg.season::text AS season
         FROM team_games tg
         JOIN teams t ON t.slug = tg.team_slug
-        GROUP BY t.name
+        GROUP BY t.name, tg.season
         HAVING COUNT(*) >= 1
-        ORDER BY value DESC`
-      const rows2 = rows.map(r => ({ name: r.name as string, value: Number(r.value), season: '2024' }))
-      const seasonBars = buildSeasonBars(rows2, ['2024'])
+        ORDER BY tg.season, value DESC`
+      const rows2 = rows.map(r => ({ name: r.name as string, value: Number(r.value), season: r.season as string }))
+      const seasonBars = buildSeasonBars(rows2, ['2023', '2024'])
       tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
