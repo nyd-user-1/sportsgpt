@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
-import { ChartDetailPage, type StdRow, type MultiRow } from '@/components/ChartDetailPage'
+import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
 import { SportsBarChartInteractive, type SeasonBars } from '@/components/charts/SportsBarChartInteractive'
@@ -43,6 +43,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let multiPoints: MultiRow[] = []
   let kpiValue = 0
   let chartChild: React.ReactNode = null
+  let subRows: SubRowMap | undefined = undefined
 
   switch (slug) {
 
@@ -147,6 +148,24 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Wins"
         />
       )
+
+      const recordRows = await sql`
+        SELECT t.name, s.season, s.overall_wins AS w, s.overall_losses AS l
+        FROM teams t
+        JOIN team_season_stats s ON s.team_slug = t.slug
+        WHERE s.season IN (2022, 2023, 2024)
+        ORDER BY t.name, s.season`
+
+      subRows = {}
+      for (const r of recordRows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({
+          label: String(r.season),
+          value: Number(r.w),
+          extra: `${r.w}–${r.l}`,
+        })
+      }
       break
     }
 
@@ -169,6 +188,24 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Total Wins"
         />
       )
+
+      const recordRows = await sql`
+        SELECT t.name, s.season, s.overall_wins AS w, s.overall_losses AS l
+        FROM teams t
+        JOIN team_season_stats s ON s.team_slug = t.slug
+        WHERE s.season IN (2022, 2023, 2024)
+        ORDER BY t.name, s.season`
+
+      subRows = {}
+      for (const r of recordRows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({
+          label: String(r.season),
+          value: Number(r.w),
+          extra: `${r.w}–${r.l}`,
+        })
+      }
       break
     }
 
@@ -211,6 +248,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Pass Yards"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -233,6 +279,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Pass TDs"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -255,6 +310,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Rush Yards"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -277,6 +341,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Rush TDs"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -299,6 +372,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Recv Yards"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -321,6 +403,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Recv TDs"
         />
       )
+      subRows = {}
+      for (const r of rows) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: String(r.season), value: Number(r.value) })
+      }
+      for (const key of Object.keys(subRows)) {
+        subRows[key].sort((a: SubRow, b: SubRow) => Number(a.label) - Number(b.label))
+      }
       break
     }
 
@@ -446,6 +537,29 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           valueLabel="Avg Pts/Game"
         />
       )
+
+      const scoringDetail = await sql`
+        WITH home_avg AS (
+          SELECT home_team_slug AS team_slug, ROUND(AVG(home_score)::numeric, 1) AS avg_score, 'Home' AS side
+          FROM games WHERE home_score IS NOT NULL AND season = 2024
+          GROUP BY home_team_slug
+        ),
+        away_avg AS (
+          SELECT away_team_slug AS team_slug, ROUND(AVG(away_score)::numeric, 1) AS avg_score, 'Away' AS side
+          FROM games WHERE away_score IS NOT NULL AND season = 2024
+          GROUP BY away_team_slug
+        )
+        SELECT t.name, d.avg_score, d.side
+        FROM (SELECT * FROM home_avg UNION ALL SELECT * FROM away_avg) d
+        JOIN teams t ON t.slug = d.team_slug
+        ORDER BY t.name, d.side DESC`
+
+      subRows = {}
+      for (const r of scoringDetail) {
+        const key = r.name as string
+        if (!subRows[key]) subRows[key] = []
+        subRows[key].push({ label: r.side as string, value: Number(r.avg_score) })
+      }
       break
     }
 
@@ -461,6 +575,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       kpiValue={kpiValue}
       tableRows={tableRows}
       multiPoints={multiPoints}
+      subRows={subRows}
     >
       {chartChild}
     </ChartDetailPage>

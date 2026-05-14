@@ -6,6 +6,7 @@ import {
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
   Tooltip as RechartsTip, CartesianGrid, Cell,
 } from 'recharts'
+import { ChevronRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { ChartsDrawer } from '@/components/ChartsDrawer'
 import { cn } from '@/lib/utils'
@@ -48,6 +49,8 @@ function fmtKpi(v: number, config: ChartConfig, period?: Period): string {
 export type StdRow = { name: string; value: number }
 export type MultiRow = Record<string, string | number>
 export type ScatterRow = { name: string; x: number; y: number }
+export type SubRow = { label: string; value: number; extra?: string }
+export type SubRowMap = Record<string, SubRow[]>
 
 interface Props {
   config: ChartConfig
@@ -58,6 +61,7 @@ interface Props {
   chartPoints?: StdRow[]
   multiPoints?: MultiRow[]
   scatterPoints?: ScatterRow[]
+  subRows?: SubRowMap
   children?: React.ReactNode
 }
 
@@ -65,10 +69,20 @@ interface Props {
 export function ChartDetailPage({
   config, prevSlug, nextSlug, kpiValue,
   tableRows = [], chartPoints = [], multiPoints = [], scatterPoints = [],
+  subRows,
   children,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
+  const [expanded, setExpanded] = useState<Set<string>>(new Set())
+
+  const toggleRow = (name: string) => {
+    setExpanded(prev => {
+      const next = new Set(prev)
+      next.has(name) ? next.delete(name) : next.add(name)
+      return next
+    })
+  }
 
   const base = config.periodBase ?? 'weekly'
 
@@ -119,6 +133,8 @@ export function ChartDetailPage({
 
   const total = scaledTable.reduce((s, r) => s + r.value, 0) || scaledKpi
   const sorted = [...scaledTable].sort((a, b) => b.value - a.value)
+
+  const hasSubRows = !!subRows && Object.keys(subRows).length > 0
 
   const tipStyle = {
     backgroundColor: 'var(--surface)',
@@ -278,30 +294,67 @@ export function ChartDetailPage({
           ) : (
             /* Standard table: name | value | share */
             <div className="divide-y divide-[var(--border)]">
-              <div className="sticky top-0 grid grid-cols-[1fr_120px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10">
+              <div
+                className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+                style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
+              >
+                {hasSubRows && <span />}
                 <span>Name</span>
                 <span className="text-right">Value</span>
                 <span className="text-right">Share</span>
               </div>
               {sorted.map(row => {
                 const pct = total > 0 ? (row.value / total) * 100 : 0
+                const isOpen = expanded.has(row.name)
+                const rowSubRows = subRows?.[row.name]
+                const hasRowSubRows = !!rowSubRows && rowSubRows.length > 0
                 return (
-                  <div key={row.name}
-                    className="group/row grid grid-cols-[1fr_120px_80px] gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors cursor-default">
-                    <span className="text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors truncate">{row.name}</span>
-                    <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">
-                      {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
-                    </span>
-                    <div className="flex items-center gap-1.5 justify-end">
-                      <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
-                        <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
+                  <React.Fragment key={row.name}>
+                    <div
+                      className={cn(
+                        'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
+                        hasRowSubRows ? 'cursor-pointer' : 'cursor-default',
+                      )}
+                      style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
+                      onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
+                    >
+                      {hasSubRows && (
+                        <span className="flex items-center justify-center">
+                          {hasRowSubRows && (
+                            <ChevronRight className={cn('h-3.5 w-3.5 shrink-0 text-[var(--muted)] transition-transform duration-150', isOpen && 'rotate-90')} />
+                          )}
+                        </span>
+                      )}
+                      <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                      <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
+                        style={isOpen ? { color: config.color } : undefined}>
+                        {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
+                      </span>
+                      <div className="flex items-center gap-1.5 justify-end">
+                        <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
+                          <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
+                        </div>
+                        <span className="text-xs text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums w-7 text-right transition-colors">{pct.toFixed(0)}%</span>
                       </div>
-                      <span className="text-xs text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums w-7 text-right transition-colors">{pct.toFixed(0)}%</span>
                     </div>
-                  </div>
+                    {isOpen && rowSubRows?.map(sr => (
+                      <div key={sr.label}
+                        className="grid gap-3 px-5 py-2 items-center border-b border-[var(--border)] bg-[var(--inp-bg)]"
+                        style={{ gridTemplateColumns: '20px 1fr 120px 80px' }}>
+                        <span />
+                        <span className="text-xs text-[var(--muted)] pl-3">{sr.label}</span>
+                        <span className="text-right text-xs tabular-nums text-[var(--txt)]">{sr.extra ?? sr.value.toLocaleString()}</span>
+                        <span />
+                      </div>
+                    ))}
+                  </React.Fragment>
                 )
               })}
-              <div className="grid grid-cols-[1fr_120px_80px] gap-3 px-5 py-4 bg-[var(--surface)] font-semibold text-[var(--txt)]">
+              <div
+                className="grid gap-3 px-5 py-4 bg-[var(--surface)] font-semibold text-[var(--txt)]"
+                style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
+              >
+                {hasSubRows && <span />}
                 <span>Total</span>
                 <span className="text-right tabular-nums">{fmtVal(total, config, config.periodToggle ? period : undefined)}</span>
                 <span className="text-right text-[var(--muted)]">100%</span>
