@@ -157,7 +157,7 @@ export function ChartDetailPage({
       <div className="flex-1 flex flex-col overflow-hidden">
 
         {/* ── Header band ── */}
-        <div className="shrink-0 border-b border-[var(--border)] bg-[var(--surface)] px-5 pt-3 pb-0">
+        <div className="shrink-0 bg-[var(--surface)] px-5 pt-3 pb-0">
 
           {/* Inline recharts preview — hidden when shadcn chart children are provided */}
           {children ? null : (

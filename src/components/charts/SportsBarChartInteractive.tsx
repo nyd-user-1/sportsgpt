@@ -41,7 +41,7 @@ export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props)
 
   return (
     <Card>
-      <CardContent className="px-2 pt-4 sm:p-6">
+      <CardContent className="px-2 sm:px-6">
         <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
           <BarChart
             accessibilityLayer
