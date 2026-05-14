@@ -156,7 +156,8 @@ export function ChartDetailPage({
     <AppLayout>
       <div className="flex-1 flex flex-col overflow-hidden">
 
-        {/* ── Header band ── */}
+        {/* ── Header band — only renders when inline chart or filters are present ── */}
+        {(!children || config.filters?.length || config.periodToggle) && (
         <div className="shrink-0 bg-[var(--surface)] px-5 pt-3 pb-0">
 
           {/* Inline recharts preview — hidden when shadcn chart children are provided */}
@@ -248,6 +249,7 @@ export function ChartDetailPage({
             </div>
           ) : null}
         </div>
+        )}
 
         {/* ── Shadcn chart (when children provided) ── */}
         {children && (
