@@ -91,24 +91,11 @@ export function TeamShell({
   }))
 
   const PROFILES = [
-    { title: 'Season History', kind: 'history' as const },
-    {
-      title: 'Team Info', kind: 'info' as const,
-      rows: [
-        { label: 'School',   value: schoolSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()), highlight: false },
-        { label: 'Division', value: `Division ${division}`,        highlight: false },
-        { label: 'Section',  value: `Section ${section}`,          highlight: false },
-        ...(level   ? [{ label: 'Level',  value: level,  highlight: false }] : []),
-        ...(gender  ? [{ label: 'Gender', value: gender, highlight: false }] : []),
-      ],
-    },
-    ...gameSeasons.map(s => ({ title: String(s), kind: 'games' as const, season: s })),
+    { title: 'Season History', h2: 'History',       kind: 'history' as const },
+    ...gameSeasons.map(s => ({ title: String(s), h2: String(s), kind: 'games' as const, season: s })),
   ]
 
   const activeProfile = PROFILES[profileIdx]
-  const visibleInfoRows = infoExpanded
-    ? (activeProfile as { rows?: { label: string; value: string; highlight: boolean }[] }).rows ?? []
-    : ((activeProfile as { rows?: { label: string; value: string; highlight: boolean }[] }).rows ?? []).slice(0, 2)
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
   const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
@@ -187,7 +174,7 @@ export function TeamShell({
             {/* Profiles */}
             <div className="mb-8">
               <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">Profiles</h2>
+                <h2 className="text-lg font-semibold text-[var(--txt)]">{activeProfile.h2}</h2>
                 <div className="flex items-center gap-2">
                   <button onClick={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(false) }} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
                   <button onClick={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(false) }} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
@@ -234,17 +221,6 @@ export function TeamShell({
                   )
                 )}
 
-                {/* Team Info */}
-                {PROFILES[profileIdx].kind === 'info' && visibleInfoRows.map((row, i) => (
-                  <div key={i} className="grid grid-cols-[1fr_auto] gap-x-3 px-4 py-2.5 border-t border-[var(--border)]">
-                    <span className="text-sm text-[var(--muted)]">{row.label}</span>
-                    <span className={cn('text-sm text-right font-medium', row.highlight ? 'font-bold' : 'text-[var(--txt)]')}
-                      style={row.highlight ? { color: ACCENT_COLOR } : undefined}>
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
-
                 {/* Game season table */}
                 {PROFILES[profileIdx].kind === 'games' && (() => {
                   const profileSeason = (PROFILES[profileIdx] as { season: number }).season
@@ -259,9 +235,9 @@ export function TeamShell({
                           <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
                             <thead>
                               <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
-                                {['#','Date','Opponent','H/A','Score','Result'].map((h, i) => (
+                                {['Date','Opponent','H/A','Score','Result'].map((h, i) => (
                                   <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]',
-                                    i === 0 || i === 1 || i === 3 ? 'text-left' : i === 4 ? 'text-right' : i === 5 ? 'text-center' : 'text-left')}>
+                                    i === 0 || i === 1 ? 'text-left' : i === 2 ? 'text-center' : i === 3 ? 'text-right' : 'text-center')}>
                                     {h}
                                   </th>
                                 ))}
@@ -284,7 +260,6 @@ export function TeamShell({
                                   .replace(/\b\w/g, c => c.toUpperCase())
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
-                                    <td className={cn(td, 'text-[var(--muted)]')}>{g.game_number ?? i + 1}</td>
                                     <td className={cn(td, 'text-[var(--txt2)]')}>{fmtGameDate(g.game_date)}</td>
                                     <td className={cn(td, 'font-medium')}>
                                       <Link href={`/team/${opSlug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
