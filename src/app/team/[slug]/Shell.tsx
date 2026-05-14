@@ -238,8 +238,8 @@ export function TeamShell({
                                 <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
                                 <th className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
                                 <th className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="px-3 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
-                                  <span className="inline-flex items-center justify-end gap-1.5 w-full">Result<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
+                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">
+                                  <span className="inline-flex items-center gap-1.5">Result<ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200', infoExpanded && 'rotate-180')} /></span>
                                 </th>
                               </tr>
                             </thead>
@@ -266,7 +266,7 @@ export function TeamShell({
                                     </td>
                                     <td className={cn(td, 'text-center text-xs text-[var(--muted)]')}>{isHome ? 'H' : 'A'}</td>
                                     <td className={cn(td, 'text-right font-medium text-[var(--txt)]')}>{scoreStr}</td>
-                                    <td className={cn(td, 'text-center')}>
+                                    <td className={cn(td, 'text-left')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
                                         result === 'W' ? 'text-green-700 bg-green-50' :
                                         result === 'L' ? 'text-red-700 bg-red-50' :
