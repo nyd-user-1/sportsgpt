@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid, ListOrdered } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Brand ──────────────────────────────────────────────────────────────────
@@ -25,6 +25,7 @@ export const NAV_CYCLE = [
   '/team',
   '/school',
   '/player',
+  '/leaderboard',
   '/division/division-i',
   '/section/section-xi',
   '/launchpad',
@@ -38,6 +39,7 @@ export const PATH_NAV: Record<string, string> = {
   '/team':                'Teams',
   '/school':              'Schools',
   '/player':              'Players',
+  '/leaderboard':         'Leaderboard',
   '/division':            'Divisions',
   '/division/division-i':   'Divisions',
   '/division/division-ii':  'Divisions',
@@ -57,6 +59,7 @@ export const PATH_TITLE: Record<string, string> = {
   '/team':                'Teams',
   '/school':              'Schools',
   '/player':              'Players',
+  '/leaderboard':         'Leaderboard',
   '/division':            'Divisions',
   '/division/division-i': 'Division I',
   '/section':             'Section XI',
@@ -75,8 +78,9 @@ export const SIDEBAR_NAV_TOP: NavItem[] = [
   { label: 'Maps',       icon: Map,             href: '/maps'                },
   { label: 'Teams',      icon: Building2,       href: '/team'                },
   { label: 'Schools',    icon: School,          href: '/school'              },
-  { label: 'Players',    icon: User,            href: '/player'              },
-  { label: 'Divisions',  icon: LayoutGrid,      href: '/division/division-i' },
+  { label: 'Players',      icon: User,          href: '/player'              },
+  { label: 'Leaderboard',  icon: ListOrdered,   href: '/leaderboard'         },
+  { label: 'Divisions',    icon: LayoutGrid,    href: '/division/division-i' },
   { label: 'Section XI', icon: Trophy,          href: '/section/section-xi'  },
   { label: 'Launchpad',  icon: Rocket,          href: '/launchpad'           },
 ]
