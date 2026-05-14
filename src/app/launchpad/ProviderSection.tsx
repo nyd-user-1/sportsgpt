@@ -84,45 +84,72 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
           No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
         </p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 pb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pb-6">
           {filtered.map(g => {
             const homeWon = g.home_score != null && g.away_score != null && g.home_score > g.away_score
             const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
+            const scored  = g.home_score != null && g.away_score != null
             return (
               <div key={g.id}
                 onClick={() => router.push(`/launchpad/game/${g.id}`, { scroll: false })}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden hover:shadow-sm hover:border-[var(--muted)] transition-all cursor-pointer flex flex-col">
-                {/* Date + game# header */}
-                <div className="px-3 pt-2.5 pb-1.5 flex items-center justify-between border-b border-[var(--border)]">
-                  <span className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wide">{fmtDate(g.game_date)}</span>
+                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 flex flex-col gap-3 hover:shadow-md hover:border-[var(--muted)] transition-all cursor-pointer">
+
+                {/* Date + game# */}
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] text-[var(--muted)]">{fmtDate(g.game_date)}</span>
                   {g.game_number != null && (
-                    <span className="text-[10px] text-[var(--muted)]">Game {g.game_number}</span>
+                    <span className="text-[11px] text-[var(--muted)]">Game {g.game_number}</span>
                   )}
                 </div>
 
-                {/* Home team */}
-                <div className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors"
-                  onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                  <LogoOrDiv slug={g.home_team_slug} div={g.home_div} />
-                  <span className={cn('text-xs font-medium truncate flex-1', homeWon ? 'font-bold text-[var(--txt)]' : 'text-[var(--txt2)]')}>
-                    {g.home_name}
-                  </span>
-                  <span className={cn('text-xs font-bold shrink-0 tabular-nums', homeWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
+                {/* Score — huge, centered */}
+                <div className="flex items-center justify-center gap-3">
+                  <span className={cn('text-4xl font-black tabular-nums leading-none', !homeWon && scored ? 'opacity-35' : 'text-[var(--txt)]')}>
                     {g.home_score ?? '—'}
                   </span>
-                </div>
-
-                {/* Away team */}
-                <div className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors"
-                  onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                  <LogoOrDiv slug={g.away_team_slug} div={g.away_div} />
-                  <span className={cn('text-xs font-medium truncate flex-1', awayWon ? 'font-bold text-[var(--txt)]' : 'text-[var(--txt2)]')}>
-                    {g.away_name}
-                  </span>
-                  <span className={cn('text-xs font-bold shrink-0 tabular-nums', awayWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
+                  <span className="text-2xl font-light text-[var(--muted)]">–</span>
+                  <span className={cn('text-4xl font-black tabular-nums leading-none', !awayWon && scored ? 'opacity-35' : 'text-[var(--txt)]')}>
                     {g.away_score ?? '—'}
                   </span>
                 </div>
+
+                {/* Teams row */}
+                <div className="flex items-center justify-between gap-2">
+                  {/* Home */}
+                  <div className="flex items-center gap-2 min-w-0"
+                    onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
+                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} />
+                    <div className="min-w-0">
+                      <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Home</p>
+                      <p className="text-xs font-semibold text-[var(--txt)] truncate leading-snug">
+                        {g.home_name}
+                        {scored && (
+                          <span className={cn('ml-1 font-bold text-[10px]', homeWon ? 'text-green-600' : 'text-red-500')}>
+                            {homeWon ? 'W' : 'L'}
+                          </span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Away (right-aligned, logo on right) */}
+                  <div className="flex items-center gap-2 min-w-0 flex-row-reverse"
+                    onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
+                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} />
+                    <div className="min-w-0 text-right">
+                      <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Away</p>
+                      <p className="text-xs font-semibold text-[var(--txt)] truncate leading-snug">
+                        {scored && (
+                          <span className={cn('mr-1 font-bold text-[10px]', awayWon ? 'text-green-600' : 'text-red-500')}>
+                            {awayWon ? 'W' : 'L'}
+                          </span>
+                        )}
+                        {g.away_name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             )
           })}

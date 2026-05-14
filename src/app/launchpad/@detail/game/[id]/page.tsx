@@ -1,9 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
-import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,14 +15,19 @@ function fmtDate(raw: unknown) {
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
 }
 
-function Logo({ slug }: { slug: string }) {
+function TeamLogo({ slug, size = 72 }: { slug: string; size?: number }) {
   const schoolSlug = slug.replace(/-varsity-football$/, '')
   const logo = SCHOOL_LOGOS[schoolSlug]
   return logo ? (
-    <Image src={logo} alt="" width={40} height={40}
-      className="rounded-full bg-white/90 border border-white/30 object-contain" unoptimized />
+    <Image src={logo} alt="" width={size} height={size}
+      className="rounded-full bg-white/10 border-2 border-white/20 object-contain p-1" unoptimized />
   ) : (
-    <div className="h-10 w-10 rounded-full bg-white/20 border border-white/20" />
+    <div className="rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center"
+      style={{ width: size, height: size }}>
+      <span className="text-white/40 text-xs font-bold uppercase">
+        {cleanName(slug.replace(/-varsity-football$/, '')).slice(0, 2)}
+      </span>
+    </div>
   )
 }
 
@@ -45,98 +48,84 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
   const g = rows[0]
   if (!g) notFound()
 
-  const homeSlug   = g.home_team_slug as string
-  const awaySlug   = g.away_team_slug as string
-  const homeSchool = (g.home_school as string) ?? homeSlug.replace(/-varsity-football$/, '')
-  const awaySchool = (g.away_school as string) ?? awaySlug.replace(/-varsity-football$/, '')
-  const homeName   = cleanName(g.home_name as string)
-  const awayName   = cleanName(g.away_name as string)
-  const homeScore  = g.home_score != null ? Number(g.home_score) : null
-  const awayScore  = g.away_score != null ? Number(g.away_score) : null
-  const homeWon    = homeScore != null && awayScore != null && homeScore > awayScore
-  const awayWon    = homeScore != null && awayScore != null && awayScore > homeScore
-
-  const homePhoto  = TEAM_PHOTOS[homeSchool]
-  const awayPhoto  = TEAM_PHOTOS[awaySchool]
-  const dateStr    = fmtDate(g.game_date)
+  const homeSlug  = g.home_team_slug as string
+  const awaySlug  = g.away_team_slug as string
+  const homeName  = cleanName(g.home_name as string)
+  const awayName  = cleanName(g.away_name as string)
+  const homeScore = g.home_score != null ? Number(g.home_score) : null
+  const awayScore = g.away_score != null ? Number(g.away_score) : null
+  const scored    = homeScore != null && awayScore != null
+  const homeWon   = scored && homeScore! > awayScore!
+  const awayWon   = scored && awayScore! > homeScore!
+  const dateStr   = fmtDate(g.game_date)
 
   return (
-    <div className="h-full flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col bg-gradient-to-br from-[#0f172a] to-[#1e293b]">
 
-      {/* Split photo header */}
-      <div className="relative flex-1 min-h-0 flex">
-        {/* Home side */}
-        <div className="relative flex-1 overflow-hidden">
-          {homePhoto ? (
-            <>
-              <Image src={homePhoto} alt={homeName} fill className="object-cover" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/60" />
-            </>
-          ) : (
-            <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
-          )}
-          <div className="absolute inset-0 flex flex-col items-start justify-end p-3 gap-1">
-            <Logo slug={homeSlug} />
-            <p className="text-xs font-bold text-white leading-tight">{homeName}</p>
-            <span className="text-[10px] text-white/60 uppercase tracking-wide">Home</span>
-          </div>
-        </div>
-
-        {/* Score badge */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-          <div className="bg-black/70 backdrop-blur-md rounded-xl px-3 py-2 text-center border border-white/10 shadow-lg">
-            {homeScore != null && awayScore != null ? (
-              <>
-                <p className="text-xl font-black text-white tabular-nums leading-none">
-                  <span className={homeWon ? 'text-white' : 'text-white/50'}>{homeScore}</span>
-                  <span className="text-white/30 mx-1">–</span>
-                  <span className={awayWon ? 'text-white' : 'text-white/50'}>{awayScore}</span>
-                </p>
-                <p className="text-[10px] text-white/50 mt-1 uppercase tracking-wide">Final</p>
-              </>
-            ) : (
-              <p className="text-xs text-white/50">vs</p>
-            )}
-          </div>
-        </div>
-
-        {/* Away side */}
-        <div className="relative flex-1 overflow-hidden">
-          {awayPhoto ? (
-            <>
-              <Image src={awayPhoto} alt={awayName} fill className="object-cover" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-black/60" />
-            </>
-          ) : (
-            <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />
-          )}
-          <div className="absolute inset-0 flex flex-col items-end justify-end p-3 gap-1">
-            <Logo slug={awaySlug} />
-            <p className="text-xs font-bold text-white leading-tight text-right">{awayName}</p>
-            <span className="text-[10px] text-white/60 uppercase tracking-wide">Away</span>
-          </div>
-        </div>
+      {/* Game number top-right */}
+      <div className="flex justify-end px-4 pt-3">
+        <span className="text-xs text-white/40 font-medium">
+          {g.game_number != null ? `Game ${g.game_number as number}` : ''}
+        </span>
       </div>
 
-      {/* Footer info */}
-      <div className="shrink-0 px-4 py-3 border-t border-[var(--border)] bg-[var(--surface)] flex items-center justify-between gap-3">
-        <div className="min-w-0">
-          {dateStr && <p className="text-xs text-[var(--muted)]">{dateStr}</p>}
-          <p className="text-xs font-medium text-[var(--txt)] mt-0.5">
-            {g.game_number != null ? `Game ${g.game_number} · ` : ''}Season {g.season as number}
-          </p>
+      {/* Main content — fills remaining space */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6">
+
+        {/* Score — the focus */}
+        <div className="flex items-center gap-4">
+          <span className={scored && !homeWon ? 'text-6xl font-black text-white/30 tabular-nums' : 'text-6xl font-black text-white tabular-nums'}>
+            {homeScore ?? '—'}
+          </span>
+          <span className="text-3xl font-light text-white/30">–</span>
+          <span className={scored && !awayWon ? 'text-6xl font-black text-white/30 tabular-nums' : 'text-6xl font-black text-white tabular-nums'}>
+            {awayScore ?? '—'}
+          </span>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <Link href={`/team/${homeSlug}`}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
-            {homeName.split(' ')[0]} <ArrowUpRight className="h-3 w-3" />
-          </Link>
-          <ArrowRight className="h-3.5 w-3.5 text-[var(--muted)]" />
-          <Link href={`/team/${awaySlug}`}
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-[var(--border)] text-xs font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
-            {awayName.split(' ')[0]} <ArrowUpRight className="h-3 w-3" />
-          </Link>
+
+        {scored && (
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-white/40">Final</span>
+        )}
+
+        {/* Teams */}
+        <div className="w-full flex items-start justify-between gap-4">
+          {/* Home */}
+          <div className="flex flex-col items-center gap-2 text-center min-w-0">
+            <TeamLogo slug={homeSlug} size={56} />
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-white/40 mb-0.5">Home</p>
+              <p className="text-sm font-bold text-white leading-snug">
+                {homeName}
+                {scored && (
+                  <span className={homeWon ? ' text-green-400' : ' text-red-400'}> {homeWon ? 'W' : 'L'}</span>
+                )}
+              </p>
+            </div>
+          </div>
+
+          {/* Date + season info */}
+          {dateStr && (
+            <div className="flex flex-col items-center text-center min-w-0 mt-2">
+              <p className="text-[11px] text-white/50 leading-snug">{dateStr}</p>
+              <p className="text-[11px] text-white/30 mt-0.5">Season {g.season as number}</p>
+            </div>
+          )}
+
+          {/* Away */}
+          <div className="flex flex-col items-center gap-2 text-center min-w-0">
+            <TeamLogo slug={awaySlug} size={56} />
+            <div>
+              <p className="text-[10px] uppercase tracking-widest text-white/40 mb-0.5">Away</p>
+              <p className="text-sm font-bold text-white leading-snug">
+                {awayName}
+                {scored && (
+                  <span className={awayWon ? ' text-green-400' : ' text-red-400'}> {awayWon ? 'W' : 'L'}</span>
+                )}
+              </p>
+            </div>
+          </div>
         </div>
+
       </div>
 
     </div>
