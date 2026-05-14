@@ -4,173 +4,150 @@
 
 # SportsGPT
 
-**Purpose:** NY high school sports intelligence — starting with Section XI football.
-**Stack:** Next.js 16 (App Router, Turbopack), Neon Postgres, Tailwind v4, Google Maps, lucide-react, recharts.
+**Purpose:** NY high school sports intelligence — Section XI football (Nassau/Suffolk, Long Island).
+**Stack:** Next.js 16 (App Router, Turbopack), Neon Postgres, Tailwind v4, Vercel Blob, lucide-react, recharts, framer-motion.
 **Repo:** https://github.com/nyd-user-1/sportsgpt
+**Accent color:** `#033882`
 
 ---
 
-## ⚠ TEMPLATE NOTICE — Read this before writing any code
+## Build Rules
 
-This repo is also the canonical "clone and swap" template for new GPT apps.
-The goal: clone → edit config → connect DB → ship. No hunting through components.
-
-### Step 1 — Brand (edit ONE file + ONE component)
-
-**`src/lib/app-config.ts`** — every brand/nav string lives here:
-- `APP_NAME`, `APP_TAGLINE`, `ACCENT_COLOR` — app identity
-- `CHAT_PLACEHOLDER`, `CHAT_PLACEHOLDER_PANEL`, `CHAT_PANEL_INTRO` — all input placeholders
-- `CHART_NAV_EVENT` — namespace to match the new app
-- `SIDEBAR_NAV_TOP/BOTTOM`, `SIDEBAR_DATA_ITEMS`, `SIDEBAR_MAP_ITEMS` — all nav
-- `PATH_NAV`, `PATH_TITLE`, `NAV_CYCLE` — routing/header labels
-
-**`src/components/AppLogo.tsx`** — swap the icon (currently `Trophy` from lucide-react).
-
-**`src/app/layout.tsx`** — already imports `APP_NAME`/`APP_TAGLINE` from app-config. No edit needed.
-
-### Step 2 — Domain content files (replace wholesale, don't parameterize)
-
-These files have a `// REPLACE FOR NEW DOMAIN` header. They ship as empty stubs.
-The app builds and renders cleanly with empty arrays — that's intentional.
-
-| File | What to put there |
-|------|-------------------|
-| `src/lib/chart-configs.ts` | One `ChartConfig` entry per chart you want |
-| `src/lib/glossary-terms.ts` | `GlossaryTerm[]` for your data model |
-| `src/lib/launchpad-data.ts` | `LAUNCHPAD_TABS` + `LAUNCHPAD_ITEMS` for the Launchpad card grid |
-| `src/lib/dummy-locations.ts` | Placeholder rows for detail pages before real DB data exists |
-| `src/app/chart/[slug]/page.tsx` | One `case` per chart slug with your DB queries |
-
-### Step 3 — Database
-
-- Create a new Neon project at neon.tech
-- Add `DATABASE_URL` to `.env.local` and Vercel (Production + Preview + Development)
-- `src/lib/db.ts` uses a lazy placeholder connection — it will NOT throw at build time if `DATABASE_URL` is missing, but queries will fail at runtime until a real URL is set
-- Write your schema and ingest scripts in `scripts/`
-
-### Step 4 — Write a new CLAUDE.md
-
-Replace this template notice section with your app's specifics:
-- Production URL
-- DB schema and table names
-- API routes
-- Page structure
-- Domain rules
-
----
-
-## Build Rules (learned the hard way)
-
-### Every page that queries the DB must export `force-dynamic`
-
+### Every DB page must export `force-dynamic`
 ```ts
 export const dynamic = 'force-dynamic'
 ```
 
-Without this, Next.js tries to statically pre-render the page at build time and
-hits the DB — which fails when `DATABASE_URL` isn't connected yet. All 10 DB
-pages in this repo already have it. Any new page you add that calls `sql` needs it.
+### Always `npm run build` before pushing — never `tsc --noEmit`
 
-### Use `npm run build` (not `tsc --noEmit`) before pushing
-
-The Vercel build catches things `tsc` doesn't. Always run `npm run build` locally
-before pushing when you've made structural changes.
-
-### `getAdjacentSlugs` is safe with empty `CHART_CONFIGS`
-
-It returns `{ prevSlug: '', nextSlug: '' }` when the array is empty.
+### Double-highlight fix for sticky table columns
+Use `group/row` (named group) on `<tr>` and `group-hover/row:bg-[var(--row-hover)]` on sticky cells.
+Never use the semi-transparent `--inp-bg` on sticky cells — it compounds with the row hover.
+`--row-hover: #f5f5f5` is defined in `globals.css`.
 
 ---
 
-## What NOT to touch (reuse as-is)
+## Environment Variables
 
-| File | Why |
-|------|-----|
-| `src/components/AppLayout.tsx` | Reads entirely from app-config |
-| `src/components/Sidebar.tsx` | Reads entirely from app-config |
-| `src/components/AppPanel.tsx` | Generic shell |
-| `src/components/PanelChart.tsx`, `PanelMap.tsx`, `PanelChat.tsx` | Generic panels |
-| `src/components/MiniCharts.tsx` | Generic recharts wrappers |
-| `src/components/CardCarousel.tsx`, `CardCarouselPortrait.tsx` | Generic carousels |
-| `src/components/PlusMenu.tsx`, `ChatInput.tsx` | Generic input UI |
-| `src/app/globals.css` | CSS vars and base styles |
-| `src/lib/utils.ts` | `cn()` helper |
-| `src/lib/ny-counties.ts` | GeoJSON county data for maps |
+| Var | Where |
+|-----|-------|
+| `DATABASE_URL` | Neon Postgres connection string — Production + Preview only (not pulled by `vercel env pull`) |
+| `BLOB_READ_WRITE_TOKEN` | Vercel Blob — All Environments. Token: see `.env.local` |
+
+After `vercel env pull`, manually append `DATABASE_URL` and `BLOB_READ_WRITE_TOKEN` to `.env.local` — the CLI won't include them automatically.
 
 ---
 
-## File Map — Domain Content vs Reusable Shell
+## Database (Neon Postgres)
 
-```
-src/lib/
-  app-config.ts          ← EDIT THIS (brand + nav)
-  chart-configs.ts       ← REPLACE (your charts)
-  glossary-terms.ts      ← REPLACE (your terms)
-  launchpad-data.ts      ← REPLACE (your launchpad cards)
-  dummy-locations.ts     ← REPLACE (your placeholder data)
-  db.ts                  ← keep (just reads DATABASE_URL)
-  utils.ts               ← keep
-  ny-counties.ts         ← keep (or replace if not NY)
+Client: `@neondatabase/serverless` — `import { sql } from '@/lib/db'`
 
-src/components/
-  AppLogo.tsx            ← EDIT THIS (your icon)
-  AppLayout.tsx          ← keep (reads app-config)
-  Sidebar.tsx            ← keep (reads app-config)
-  PanelChat.tsx          ← keep (reads app-config)
-  everything else        ← keep
+### Tables
+| Table | Key columns |
+|-------|-------------|
+| `teams` | `slug`, `name`, `school_slug`, `division`, `section`, `level`, `gender` |
+| `schools` | `slug`, `name`, `enrollment`, `grad_rate`, `sat_avg`, `ap_count` |
+| `players` | `slug`, `name`, `school_slug`, `team_slug`, `position` |
+| `team_season_stats` | `team_slug`, `season`, `overall_wins`, `overall_losses`, `conference_wins`, `conference_losses` |
+| `player_season_stats` | `player_slug`, `school_slug`, `stat_type`, `season`, `pass_yards`, `rush_yards`, `recv_yards`, `total_yards`, `pass_tds`, `rush_tds`, `recv_tds`, `total_tds`, `interceptions`, `completions`, `attempts`, `receptions`, `points`, `games_played`, ... |
+| `games` | `id`, `home_team_slug`, `away_team_slug`, `home_score`, `away_score`, `game_date`, `season`, `game_number`, `is_division_game` |
 
-src/app/
-  layout.tsx             ← keep (reads app-config)
-  page.tsx               ← keep (reads app-config + AppLogo)
-  chart/[slug]/page.tsx  ← REPLACE switch body (your DB queries)
-  charts/page.tsx        ← keep (renders CHART_CONFIGS, empty = blank grid)
-  glossary/page.tsx      ← keep (renders GLOSSARY_TERMS, empty = blank)
-  launchpad/
-    ProviderSection.tsx  ← keep (reads launchpad-data)
-    page.tsx             ← keep
-  county/, facility/, city/, zip/, zip-code/  ← REPLACE with your entity pages
-  maps/page.tsx          ← REPLACE with your map data
-```
+### Slug formats
+- Team slug: `{school-slug}-varsity-football` (e.g. `floyd-varsity-football`)
+- School slug: simple kebab-case (e.g. `floyd`, `ward-melville`, `half-hollow-hills-east`)
+- Player slug: `{first-last}` kebab-case
+
+### Stat types in `player_season_stats`
+`'Passing'` | `'Rushing'` | `'Receiving'` | `'Touchdowns'` | `'Scoring'` | `'Total Yards'`
 
 ---
 
-## Database & API Infrastructure (SportsGPT)
+## Blob Storage (Vercel)
 
-### Neon Postgres
-Connection via `DATABASE_URL` env var.
-Client: `@neondatabase/serverless` — import `sql` from `@/lib/db`.
+Store: `sportsgpt-images`
+Base URL: `https://tmdolblsg0vd3laa.public.blob.vercel-storage.com`
 
-*DB schema and tables to be documented here once connected.*
+| Prefix | Contents |
+|--------|----------|
+| `gallery/teams/` | 119 team photos |
+| `gallery/players/` | 93 player headshots |
+| `gallery/logos/` | 52 school logos |
 
-### Google Maps
-Requires `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` in `.env.local` and Vercel.
+**Adding new photos:** Upload directly via Vercel dashboard → Storage → sportsgpt-images → Upload. No deploy needed — gallery re-fetches every hour via `unstable_cache`.
 
-### GeoJSON
-Map components fetch from `https://raw.githubusercontent.com/nyd-user-1/nyd-geojson/main/`:
-- `us-counties.geojson` — all US counties, FIPS-keyed
-- `us-states.geojson` — all 50 states + DC
-- `ny-assembly-districts.geojson`, `ny-senate-districts.geojson`
+**Ingest script:** `scripts/ingest-blob-photos.mjs` — uploads from `/public` to Blob, idempotent.
+
+**Gallery data function:** `src/lib/gallery.ts` → `getPhotos()` uses `list({ prefix: 'gallery/' })` + `unstable_cache` (1hr TTL). Logos are excluded from the gallery view. `getPhotos()` is the single swappable source — replace its internals to move metadata to Postgres without touching UI.
 
 ---
 
-## Naming Conventions (inherited from ChildcareGPT, adapt as needed)
+## Page Structure
 
-### Components
-| Name | Description |
-|------|-------------|
-| `AppLayout` | Root shell with sidebar + header |
-| `AppPanel` | Slide-out panel shell (header, scrollable body, footer slot) |
-| `PanelChart` / `PanelMap` / `PanelChat` | Panel implementations |
-| `CardLandscape` / `CardLandscapeMini` | Gradient cards |
-| `DataTable` | Sticky-column scrollable table (index pages) |
-| `DataTableMini` | Compact zebra table (Launchpad) |
-| `InfoTable[Entity]` | Accordion profile card on detail pages |
-| `TabGroup` | Underline tab nav bar |
-| `ButtonGroup` | Prev/Next/Chart/Map/Chat buttons on detail page headers |
+### Index pages
+| Route | File | Notes |
+|-------|------|-------|
+| `/team` | `src/app/team/TeamTable.tsx` | Sortable, division filter tabs |
+| `/player` | `src/app/player/PlayerIndexTable.tsx` | All 307 players, searchable, sortable, career stats |
+| `/leaderboard` | `src/app/leaderboard/LeaderboardTable.tsx` | Top 25/season, season filter via + popover |
+| `/school` | `src/app/school/` | School index |
+| `/gallery` | `src/app/gallery/` | Blob-backed masonry grid + lightbox |
 
-### Pages
-| Pattern | Route |
-|---------|-------|
-| `IndexPage[Entity]` | `/entity` |
-| `DetailPage[Entity]` | `/entity/[slug]` |
-| `DetailSlot[Entity]` | Parallel `@detail` slot on Launchpad |
+### Detail pages
+| Route | File | Notes |
+|-------|------|-------|
+| `/team/[slug]` | `src/app/team/[slug]/Shell.tsx` | Hero photo, profiles carousel (History + game seasons), Division Standings |
+| `/player/[slug]` | `src/app/player/[slug]/Shell.tsx` | Career stats, hero with headshot → school logo fallback |
+| `/school/[slug]` | `src/app/school/[slug]/` | Enrollment, academics |
+| `/division/[slug]` | `src/app/division/[slug]/Shell.tsx` | Standings + season selector 2021–2024 |
+| `/gallery/p/[id]` | `src/app/gallery/p/[id]/page.tsx` | Fullscreen lightbox, filmstrip, keyboard + swipe nav |
+
+### Launchpad (`/launchpad`)
+Parallel routes (`@detail` slot):
+- `/launchpad` → standings table left + empty slot right
+- `/launchpad/[slug]` → team photo in slot
+- `/launchpad/game/[id]` → split-screen home/away photo with score badge
+
+---
+
+## Static Asset Mappings
+
+`src/lib/team-images.ts` — three exported records:
+- `SCHOOL_LOGOS` — school slug → `/Logos/...` path
+- `TEAM_PHOTOS` — school slug → `/Images/...` path (hero images on team detail pages)
+- `PLAYER_PHOTOS` — player slug → `/PlayerPhotos/...` path
+
+These serve files from `/public` for team/player detail pages. The gallery uses Blob instead.
+
+---
+
+## Components
+
+### CardLandscapeMini
+`w-[210px] h-[90px]`, flex-row, 60×60 image on left, text on right.
+Used in: Top Players carousel + Division Standings carousel on `/team/[slug]`.
+
+### Gallery components (`src/app/gallery/components/`)
+- `HeroCard` — dark hero card with goalpost SVG line art, first tile in masonry grid
+- `GalleryGrid` — CSS columns masonry (1/2/3/4 responsive), scroll-to-last-viewed
+- `SharedModal` — fullscreen lightbox with framer-motion slide, filmstrip, prev/next, keyboard/swipe
+
+### SeasonFilterMenu (in LeaderboardTable)
+`+` icon popover pattern (ported from SolarGPT). Badge shows active filter count. Click to open, click outside to close, Clear link resets.
+
+---
+
+## Ingest Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/ingest-extended.mjs` | Full DB ingest: schema, schools, standings, player stats, games |
+| `scripts/ingest-blob-photos.mjs` | Upload `/public/{Images,PlayerPhotos,Logos}` → Blob under `gallery/` prefix |
+
+Run ingest scripts with: `node --env-file=.env.local scripts/<name>.mjs`
+
+---
+
+## App Config (`src/lib/app-config.ts`)
+
+All brand, nav, and routing strings live here. Current nav order:
+Chat → Charts → Maps → Teams → Schools → Players → Leaderboard → Divisions → Section XI → Launchpad → Gallery
