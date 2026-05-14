@@ -3,7 +3,9 @@
 import { useState, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -154,15 +156,38 @@ export function TeamShell({
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="mb-8 h-64 sm:h-80 w-full rounded-2xl border border-[var(--border)] overflow-hidden flex flex-col items-center justify-center gap-3"
-              style={{ background: 'linear-gradient(135deg,#e8f4fb 0%,#d0eaf7 100%)' }}>
-              <Map className="h-12 w-12 text-[var(--muted)]" />
-              <div className="text-center">
-                <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
-                <p className="text-xs text-[var(--muted)] mt-0.5">School Map · Coming Soon</p>
-              </div>
-            </div>
+            {/* Hero — team photo or gradient fallback */}
+            {(() => {
+              const photo = TEAM_PHOTOS[schoolSlug]
+              const logo  = SCHOOL_LOGOS[schoolSlug]
+              return photo ? (
+                <div className="mb-8 h-64 sm:h-80 w-full rounded-2xl overflow-hidden relative">
+                  <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                    {logo && (
+                      <Image src={logo} alt="" width={40} height={40} className="rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
+                    )}
+                    <div>
+                      <p className="text-sm font-bold text-white leading-snug">{teamName}</p>
+                      <p className="text-xs text-white/70">Section XI · Division {division}</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-8 h-64 sm:h-80 w-full rounded-2xl border border-[var(--border)] overflow-hidden flex flex-col items-center justify-center gap-3"
+                  style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
+                  {logo ? (
+                    <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
+                  ) : (
+                    <Map className="h-12 w-12 text-[var(--muted)]" />
+                  )}
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
+                  </div>
+                </div>
+              )
+            })()}
 
             {/* Profiles */}
             <div className="mb-8">

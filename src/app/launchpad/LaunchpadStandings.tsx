@@ -1,7 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 export type StandingsRow = {
   slug: string
@@ -65,7 +67,20 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
                   i % 2 !== 0 && 'bg-[var(--inp-bg)]'
                 )}
               >
-                <td className="px-4 py-3 font-medium text-[var(--txt)] max-w-[180px] truncate">{cleanName(t.name)}</td>
+                <td className="px-4 py-3 font-medium text-[var(--txt)] max-w-[220px]">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    {(() => {
+                      const schoolSlug = t.slug.replace(/-varsity-football$/, '')
+                      const logo = SCHOOL_LOGOS[schoolSlug]
+                      return logo ? (
+                        <Image src={logo} alt="" width={24} height={24} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
+                      ) : (
+                        <div className="shrink-0 h-6 w-6 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />
+                      )
+                    })()}
+                    <span className="truncate">{cleanName(t.name)}</span>
+                  </div>
+                </td>
                 <td className="px-4 py-3 text-[var(--txt)]">{t.overall_wins ?? '—'}</td>
                 <td className="px-4 py-3 text-[var(--txt2)]">{t.overall_losses ?? '—'}</td>
                 <td className="px-4 py-3 text-[var(--txt2)]">{fmtPct(t.overall_wins, t.overall_losses)}</td>

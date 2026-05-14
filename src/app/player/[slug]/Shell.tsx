@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle, User } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
+import { PLAYER_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -414,15 +416,24 @@ export function PlayerShell({
 
             {/* Hero stat card */}
             {yards > 0 && (
-              <div className="mb-8 rounded-2xl border border-[var(--border)] overflow-hidden"
+              <div className="mb-8 rounded-2xl overflow-hidden"
                 style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR} 0%, #0a52c7 100%)` }}>
-                <div className="px-6 py-5 flex items-center justify-between">
+                <div className="px-6 py-5 flex items-center justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-white/70 mb-1">Best Season · {bestSeason}</p>
                     <p className="text-4xl font-black text-white">{yards.toLocaleString()}</p>
                     <p className="text-sm text-white/80 mt-1">{label}</p>
                   </div>
-                  <User className="h-16 w-16 text-white/20" />
+                  {(() => {
+                    const photo = PLAYER_PHOTOS[player.slug]
+                    return photo ? (
+                      <div className="shrink-0 h-20 w-20 rounded-full overflow-hidden border-2 border-white/30 relative">
+                        <Image src={photo} alt={player.name} fill className="object-cover object-top" unoptimized />
+                      </div>
+                    ) : (
+                      <User className="shrink-0 h-16 w-16 text-white/20" />
+                    )
+                  })()}
                 </div>
               </div>
             )}
