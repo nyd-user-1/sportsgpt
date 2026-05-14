@@ -17,6 +17,7 @@ type ChartNavDetail = {
   color: string
   kpi: string
   kpiLabel: string
+  pageTitle?: string
 } | null
 
 export function AppLayout({ children }: { children: React.ReactNode; showNavArrows?: boolean }) {
@@ -84,7 +85,7 @@ export function AppLayout({ children }: { children: React.ReactNode; showNavArro
                 {APP_NAME}
               </Link>
               <span className="text-[var(--muted)] text-xl select-none">|</span>
-              <span className="text-xl font-medium">{title}</span>
+              <span className="text-xl font-medium">{chartNav?.pageTitle ?? title}</span>
             </div>
           )}
 

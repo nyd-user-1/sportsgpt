@@ -104,6 +104,7 @@ export function ChartDetailPage({
       color: config.color,
       kpi: config.hideKpi ? '' : fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
       kpiLabel: config.hideKpi ? '' : config.kpiLabel,
+      pageTitle: config.title,
     }
     window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
     return () => {
@@ -222,11 +223,11 @@ export function ChartDetailPage({
 
           {/* Tab row: Charts drawer + season pills + filter tabs + period toggle */}
           <div className="flex items-center gap-1.5 pb-3 flex-wrap">
-            <ChartsDrawer label={config.title} />
+            <ChartsDrawer />
             {seasonFilters && seasonFilters.length > 0 && (
               <>
                 <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
-                {seasonFilters.map(yr => (
+                {[...seasonFilters].reverse().map(yr => (
                   <button key={yr} onClick={() => emitSeason(yr)}
                     className={cn(
                       'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
