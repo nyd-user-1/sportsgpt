@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
@@ -50,7 +50,7 @@ type GameRow = {
 function fmtGameDate(raw: string | null) {
   if (!raw) return '—'
   const d = new Date(raw + 'T12:00:00')
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  return `${d.getMonth() + 1}/${d.getDate()}`
 }
 
 export function TeamShell({
@@ -71,6 +71,12 @@ export function TeamShell({
   const [chatOpen,   setChatOpen]     = useState(false)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches) {
+      setInfoExpanded(true)
+    }
+  }, [])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -104,14 +110,27 @@ export function TeamShell({
   const roundBtn = 'inline-flex items-center justify-center h-8 w-8 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
   const td = 'px-4 py-2.5 border-b border-[var(--border)] text-sm'
 
+  const heroLogo  = SCHOOL_LOGOS[schoolSlug]
+  const mobileHeader = (
+    <div className="flex items-center gap-2 min-w-0">
+      {heroLogo ? (
+        <Image src={heroLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 rounded-full bg-white p-0.5 object-contain ring-1 ring-[var(--border)]" unoptimized />
+      ) : null}
+      <div className="min-w-0">
+        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{teamName}</p>
+        <p className="text-[11px] text-[var(--muted)] leading-tight truncate">Section XI · Division {division}</p>
+      </div>
+    </div>
+  )
+
   return (
     <>
-      <AppLayout>
+      <AppLayout mobileHeader={mobileHeader}>
         <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 py-8">
+          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
-            {/* Header */}
-            <div className="mb-8 flex items-center justify-between gap-2">
+            {/* Header — hidden on mobile (team info moved to AppLayout header) */}
+            <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <h1 className="text-2xl font-bold text-[var(--txt)]">{teamName}</h1>
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
@@ -139,12 +158,12 @@ export function TeamShell({
               </div>
             </div>
 
-            {/* Hero — team photo or gradient fallback */}
+            {/* Hero — team photo or gradient fallback (hidden on mobile) */}
             {(() => {
               const photo = TEAM_PHOTOS[schoolSlug]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
-                <div className="mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
+                <div className="hidden sm:block mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
                   <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center gap-3">
@@ -158,7 +177,7 @@ export function TeamShell({
                   </div>
                 </div>
               ) : (
-                <div className="mb-8 h-[390px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex flex-col items-center justify-center gap-3"
+                <div className="hidden sm:flex mb-8 h-[390px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
                   style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
                   {logo ? (
                     <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
@@ -237,10 +256,9 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th style={{width:'18%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th style={{width:'28%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th style={{width:'14%'}} className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
-                                <th style={{width:'20%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th style={{width:'44%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th style={{width:'22%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
                                 <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                                 <th style={{width:'6%'}} className="px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
@@ -264,11 +282,11 @@ export function TeamShell({
                                   .replace(/\b\w/g, c => c.toUpperCase())
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
-                                    <td className={cn(td, 'text-[var(--txt2)]')}>{fmtGameDate(g.game_date)}</td>
+                                    <td className={cn(td, 'text-[var(--txt2)] tabular-nums')}>{fmtGameDate(g.game_date)}</td>
                                     <td className={cn(td, 'font-medium')}>
+                                      <span className="text-xs text-[var(--muted)] mr-1.5">{isHome ? 'vs' : 'at'}</span>
                                       <Link href={`/team/${opSlug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                     </td>
-                                    <td className={cn(td, 'text-center text-xs text-[var(--muted)]')}>{isHome ? 'H' : 'A'}</td>
                                     <td className={cn(td, 'text-right font-medium text-[var(--txt)]')}>{scoreStr}</td>
                                     <td className={cn(td, 'text-left')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',

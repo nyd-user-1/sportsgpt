@@ -20,7 +20,7 @@ type ChartNavDetail = {
   pageTitle?: string
 } | null
 
-export function AppLayout({ children }: { children: React.ReactNode; showNavArrows?: boolean }) {
+export function AppLayout({ children, mobileHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
   const pathname = usePathname()
@@ -71,12 +71,16 @@ export function AppLayout({ children }: { children: React.ReactNode; showNavArro
         <div className="flex items-center px-5 pt-5 pb-3">
 
           <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-            className="flex h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
+            className="hidden sm:flex h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
             {sidebarOpen
               ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
               : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
             }
           </button>
+
+          {mobileHeader && (
+            <div className="flex sm:hidden flex-1 min-w-0">{mobileHeader}</div>
+          )}
 
           {title && (
             <div className="ml-4 flex items-center gap-2 text-[var(--txt)]">
@@ -126,6 +130,14 @@ export function AppLayout({ children }: { children: React.ReactNode; showNavArro
       </div>
 
       <div id="chat-panel-root" className="flex shrink-0 h-full" />
+
+      <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
+        className="sm:hidden fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg transition-colors hover:bg-[var(--inp-bg)]">
+        {sidebarOpen
+          ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
+          : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+        }
+      </button>
     </div>
   )
 }
