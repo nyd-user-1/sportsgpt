@@ -355,7 +355,7 @@ export function TeamShell({
                       <Link key={t.slug as string} href={`/team/${t.slug}`}
                         className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
                         {/* Logo */}
-                        <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden bg-[var(--inp-bg)] flex items-center justify-center">
+                        <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
                           {tLogo ? (
                             <Image src={tLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
                           ) : (
