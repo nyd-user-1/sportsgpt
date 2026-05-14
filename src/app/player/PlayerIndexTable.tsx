@@ -8,10 +8,13 @@ import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 
 type PlayerRow = {
-  slug: string
-  name: string
-  team_name: string | null
-  position: string | null
+  slug: string; name: string; team_name: string | null; position: string | null
+  total_yards: number | null; pass_yards: number | null; rush_yards: number | null
+  recv_yards: number | null; total_tds: number | null; interceptions: number | null
+}
+
+function fmt(v: number | null) {
+  return v != null ? v.toLocaleString() : '—'
 }
 
 export default function PlayerIndexTable({ players }: { players: PlayerRow[] }) {
@@ -27,8 +30,10 @@ export default function PlayerIndexTable({ players }: { players: PlayerRow[] }) 
     )
   }, [players, query])
 
-  const td = 'px-4 py-2.5 border-b border-[var(--border)] text-sm'
-  const th = 'px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap text-left'
+  const td  = 'px-4 py-2.5 border-b border-[var(--border)] text-sm'
+  const th  = 'px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap text-left'
+  const thR = th + ' text-right'
+  const tdR = td + ' text-right text-[var(--txt)]'
 
   return (
     <AppLayout showNavArrows>
@@ -55,9 +60,15 @@ export default function PlayerIndexTable({ players }: { players: PlayerRow[] }) 
               <thead className="sticky top-0 z-20">
                 <tr>
                   <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
-                  <th className={cn(th, 'sticky left-[48px] z-30 min-w-[200px]')}>Player</th>
+                  <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                   <th className={th}>Team</th>
-                  <th className={th}>Position</th>
+                  <th className={th}>Pos</th>
+                  <th className={thR}>Tot Yds</th>
+                  <th className={thR}>Pass Yds</th>
+                  <th className={thR}>Rush Yds</th>
+                  <th className={thR}>Rec Yds</th>
+                  <th className={thR}>TD</th>
+                  <th className={thR}>INT</th>
                 </tr>
               </thead>
               <tbody>
@@ -69,10 +80,16 @@ export default function PlayerIndexTable({ players }: { players: PlayerRow[] }) 
                     </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{p.team_name ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{p.position ?? '—'}</td>
+                    <td className={cn(tdR, 'font-bold')} style={p.total_yards ? { color: ACCENT_COLOR } : undefined}>{fmt(p.total_yards)}</td>
+                    <td className={tdR}>{fmt(p.pass_yards)}</td>
+                    <td className={tdR}>{fmt(p.rush_yards)}</td>
+                    <td className={tdR}>{fmt(p.recv_yards)}</td>
+                    <td className={tdR}>{fmt(p.total_tds)}</td>
+                    <td className={tdR}>{fmt(p.interceptions)}</td>
                   </tr>
                 ))}
                 {filtered.length === 0 && (
-                  <tr><td colSpan={4} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No players found.</td></tr>
+                  <tr><td colSpan={10} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No players found.</td></tr>
                 )}
               </tbody>
             </table>
