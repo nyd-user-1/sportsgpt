@@ -131,6 +131,7 @@ export default function LeaderboardTable({
                       <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
                       <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                       <th className={th}>Team</th>
+                      <th className={th}>Season</th>
                       <th className={thR}>YDS</th>
                       <th className={thR}>TD</th>
                       <th className={thR}>INT</th>
@@ -150,6 +151,7 @@ export default function LeaderboardTable({
                             <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                           </td>
                           <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
+                          <td className={cn(td, 'text-[var(--muted)]')}>{p.season}</td>
                           <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'}</td>
                           <td className={tdR}>{p.pass_tds ?? '—'}</td>
                           <td className={tdR}>{p.interceptions ?? '—'}</td>
@@ -176,6 +178,7 @@ export default function LeaderboardTable({
                       <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
                       <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                       <th className={th}>Team</th>
+                      <th className={th}>Season</th>
                       <th className={thR}>YDS</th>
                       <th className={thR}>TD</th>
                       <th className={thR}>ATT</th>
@@ -193,6 +196,7 @@ export default function LeaderboardTable({
                             <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                           </td>
                           <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
+                          <td className={cn(td, 'text-[var(--muted)]')}>{p.season}</td>
                           <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
                           <td className={tdR}>{p.rush_tds ?? '—'}</td>
                           <td className={tdR}>{p.rush_attempts ?? '—'}</td>
@@ -217,6 +221,7 @@ export default function LeaderboardTable({
                       <th className={cn(th, 'sticky left-2 z-30 min-w-[40px]')}>#</th>
                       <th className={cn(th, 'sticky left-[48px] z-30 min-w-[180px]')}>Player</th>
                       <th className={th}>Team</th>
+                      <th className={th}>Season</th>
                       <th className={thR}>YDS</th>
                       <th className={thR}>TD</th>
                       <th className={thR}>REC</th>
@@ -234,6 +239,7 @@ export default function LeaderboardTable({
                             <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                           </td>
                           <td className={cn(td, 'text-[var(--muted)]')}>{p.school_name}</td>
+                          <td className={cn(td, 'text-[var(--muted)]')}>{p.season}</td>
                           <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.recv_yards ?? '—'}</td>
                           <td className={tdR}>{p.recv_tds ?? '—'}</td>
                           <td className={tdR}>{p.receptions ?? '—'}</td>
