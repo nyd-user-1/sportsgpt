@@ -133,9 +133,9 @@ export default function SharedModal({
             <div className="shrink-0 h-24 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
               <motion.div
-                className="flex items-center gap-1 absolute top-0 bottom-0 left-0"
-                initial={{ x: `calc(50% - ${offsetPx}px)` }}
-                animate={{ x: `calc(50% - ${offsetPx}px)` }}
+                className="flex items-center gap-1 absolute top-0 bottom-0"
+                initial={{ left: `calc(50% - ${offsetPx}px)` }}
+                animate={{ left: `calc(50% - ${offsetPx}px)` }}
                 transition={{ type: 'spring', stiffness: 320, damping: 32 }}>
                 {strip.map(p => {
                   const isActive = p.id === currentId
