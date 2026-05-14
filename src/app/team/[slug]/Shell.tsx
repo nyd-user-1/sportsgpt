@@ -304,7 +304,7 @@ export function TeamShell({
                       return (
                         <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-48 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                          className="shrink-0 min-w-[210px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
                           <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
                           <p className="text-xs text-[var(--muted)] mt-0.5">{p.stat_type as string}</p>
                           <div className="mt-2 flex items-center gap-2">
@@ -333,8 +333,8 @@ export function TeamShell({
                 <div className="flex gap-3 pb-1">
                   {divTeams.map(t => (
                     <Link key={t.slug as string} href={`/team/${t.slug}`}
-                      className="shrink-0 w-52 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                      <p className="text-sm font-bold text-[var(--txt)] leading-snug">{t.name as string}</p>
+                      className="shrink-0 min-w-[210px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                      <p className="text-sm font-bold text-[var(--txt)] leading-snug">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
                       <div className="mt-2 flex items-center gap-2">
                         <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>
                           {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
