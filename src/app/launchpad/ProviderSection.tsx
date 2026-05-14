@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import Image from 'next/image'
@@ -50,6 +50,7 @@ function LogoOrDiv({ slug, div }: { slug: string; div: string }) {
 
 export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
+  const router        = useRouter()
   const searchParams  = useSearchParams()
   const divParam      = searchParams.get('div')
   const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null
@@ -89,7 +90,8 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
             const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
             return (
               <div key={g.id}
-                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden hover:shadow-sm transition-shadow flex flex-col">
+                onClick={() => router.push(`/launchpad/game/${g.id}`, { scroll: false })}
+                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden hover:shadow-sm hover:border-[var(--muted)] transition-all cursor-pointer flex flex-col">
                 {/* Date + game# header */}
                 <div className="px-3 pt-2.5 pb-1.5 flex items-center justify-between border-b border-[var(--border)]">
                   <span className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wide">{fmtDate(g.game_date)}</span>
@@ -99,28 +101,28 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 </div>
 
                 {/* Home team */}
-                <Link href={`/team/${g.home_team_slug}`}
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors">
+                <div className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors"
+                  onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
                   <LogoOrDiv slug={g.home_team_slug} div={g.home_div} />
-                  <span className={cn('text-xs font-medium truncate flex-1', homeWon && 'font-bold text-[var(--txt)]', !homeWon && 'text-[var(--txt2)]')}>
+                  <span className={cn('text-xs font-medium truncate flex-1', homeWon ? 'font-bold text-[var(--txt)]' : 'text-[var(--txt2)]')}>
                     {g.home_name}
                   </span>
                   <span className={cn('text-xs font-bold shrink-0 tabular-nums', homeWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
                     {g.home_score ?? '—'}
                   </span>
-                </Link>
+                </div>
 
                 {/* Away team */}
-                <Link href={`/team/${g.away_team_slug}`}
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors">
+                <div className="flex items-center gap-2 px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors"
+                  onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
                   <LogoOrDiv slug={g.away_team_slug} div={g.away_div} />
-                  <span className={cn('text-xs font-medium truncate flex-1', awayWon && 'font-bold text-[var(--txt)]', !awayWon && 'text-[var(--txt2)]')}>
+                  <span className={cn('text-xs font-medium truncate flex-1', awayWon ? 'font-bold text-[var(--txt)]' : 'text-[var(--txt2)]')}>
                     {g.away_name}
                   </span>
                   <span className={cn('text-xs font-bold shrink-0 tabular-nums', awayWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
                     {g.away_score ?? '—'}
                   </span>
-                </Link>
+                </div>
               </div>
             )
           })}
