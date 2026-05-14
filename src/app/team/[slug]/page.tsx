@@ -24,12 +24,23 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       WHERE t.division = ${team.division} AND t.slug != ${slug}
       ORDER BY s.overall_wins DESC NULLS LAST, t.name`,
     sql`
-      SELECT DISTINCT ON (ps.player_slug, ps.stat_type)
-        ps.player_slug, ps.player_name, ps.stat_type, ps.season,
-        ps.pass_yards, ps.pass_tds, ps.rush_yards, ps.rush_tds, ps.recv_yards, ps.recv_tds
-      FROM player_season_stats ps
-      WHERE ps.school_slug = ${team.school_slug}
-      ORDER BY ps.player_slug, ps.stat_type, ps.season DESC`,
+      WITH latest AS (
+        SELECT DISTINCT ON (player_slug, stat_type)
+          player_slug, player_name, stat_type, season,
+          pass_yards, pass_tds, rush_yards, rush_tds, recv_yards, recv_tds
+        FROM player_season_stats
+        WHERE school_slug = ${team.school_slug}
+          AND stat_type IN ('Passing', 'Rushing', 'Receiving')
+        ORDER BY player_slug, stat_type, season DESC
+      )
+      SELECT * FROM latest
+      ORDER BY
+        CASE stat_type
+          WHEN 'Passing'   THEN COALESCE(pass_yards, 0)
+          WHEN 'Rushing'   THEN COALESCE(rush_yards, 0)
+          ELSE                  COALESCE(recv_yards, 0)
+        END DESC
+      LIMIT 8`,
     sql`
       SELECT g.id, g.game_date, g.season,
         g.home_team_slug, g.away_team_slug,
