@@ -3,16 +3,11 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
+import { motion, MotionConfig } from 'framer-motion'
 import { useSwipeable } from 'react-swipeable'
 import { X, ChevronLeft, ChevronRight, ArrowDownToLine, ExternalLink } from 'lucide-react'
 import type { GalleryPhoto } from '@/lib/gallery'
 
-const variants = {
-  enter: (dir: number) => ({ x: dir > 0 ? 800 : -800, opacity: 0 }),
-  center: { x: 0, opacity: 1 },
-  exit:  (dir: number) => ({ x: dir < 0 ? 800 : -800, opacity: 0 }),
-}
 
 function range(lo: number, hi: number) {
   return Array.from({ length: hi - lo }, (_, i) => lo + i)
@@ -93,22 +88,22 @@ export default function SharedModal({
           </div>
         </div>
 
-        {/* Main image */}
+        {/* Main image — fade + scale-up on mount */}
         <div className="relative flex-1 flex items-center justify-center overflow-hidden">
-          <AnimatePresence initial={false} custom={direction}>
-            <motion.div key={currentId} custom={direction}
-              variants={variants} initial="enter" animate="center" exit="exit"
-              className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src={current.url}
-                alt=""
-                fill
-                className="object-contain"
-                unoptimized
-                priority
-              />
-            </motion.div>
-          </AnimatePresence>
+          <motion.div key={currentId}
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+            className="absolute inset-0 flex items-center justify-center">
+            <Image
+              src={current.url}
+              alt=""
+              fill
+              className="object-contain"
+              unoptimized
+              priority
+            />
+          </motion.div>
 
           {/* Prev */}
           {hasPrev && (
@@ -128,23 +123,36 @@ export default function SharedModal({
 
         {/* Filmstrip */}
         {(() => {
-          const THUMB = 84 // w-20 (80px) + gap-1 (4px)
+          const THUMB_W = 80  // w-20
+          const GAP     = 4   // gap-1
+          const STEP    = THUMB_W + GAP  // 84px per slot
           const idxInStrip = strip.findIndex(p => p.id === currentId)
-          const targetX = `calc(50% - ${idxInStrip * THUMB + 42}px)`
+          // Center the active thumb: shift strip left so active thumb sits at viewport center
+          const offsetPx = idxInStrip * STEP + THUMB_W / 2
           return (
-            <div className="shrink-0 h-20 relative overflow-hidden">
+            <div className="shrink-0 h-24 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10" />
-              <motion.div className="flex h-full items-center gap-1 px-2 absolute"
-                initial={{ x: targetX }}
-                animate={{ x: targetX }}
-                transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
-                {strip.map(p => (
-                  <button key={p.id} onClick={() => navigate(p.id)}
-                    className="relative shrink-0 h-14 w-20 overflow-hidden rounded transition-all duration-150"
-                    style={{ opacity: p.id === currentId ? 1 : 0.45, transform: p.id === currentId ? 'scale(1.15)' : 'scale(1)' }}>
-                    <Image src={p.url} alt="" fill className="object-cover" unoptimized />
-                  </button>
-                ))}
+              <motion.div
+                className="flex items-center gap-1 absolute top-0 bottom-0 left-0"
+                initial={{ x: `calc(50% - ${offsetPx}px)` }}
+                animate={{ x: `calc(50% - ${offsetPx}px)` }}
+                transition={{ type: 'spring', stiffness: 320, damping: 32 }}>
+                {strip.map(p => {
+                  const isActive = p.id === currentId
+                  return (
+                    <button key={p.id} onClick={() => navigate(p.id)}
+                      className="relative shrink-0 overflow-hidden rounded transition-all duration-200"
+                      style={{
+                        width:   isActive ? 92  : THUMB_W,
+                        height:  isActive ? 76  : 60,
+                        opacity: isActive ? 1   : 0.4,
+                        outline: isActive ? '2px solid rgba(255,255,255,0.7)' : 'none',
+                        outlineOffset: '2px',
+                      }}>
+                      <Image src={p.url} alt="" fill className="object-cover" unoptimized />
+                    </button>
+                  )
+                })}
               </motion.div>
             </div>
           )
