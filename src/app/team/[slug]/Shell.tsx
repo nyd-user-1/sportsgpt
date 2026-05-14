@@ -236,12 +236,12 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
-                                <th className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
+                                <th style={{width:'18%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th style={{width:'28%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th style={{width:'14%'}} className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
+                                <th style={{width:'20%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th style={{width:'6%'}} className="px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
                               </tr>
