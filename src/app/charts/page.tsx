@@ -3,18 +3,26 @@ import { AppLayout } from '@/components/AppLayout'
 import { MiniAreaChart, MiniBarChart } from '@/components/MiniCharts'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
-/* ── Preview data keyed by slug ──────────────────────────────────── */
+/* ── Preview sparkline data keyed by slug ────────────────────────── */
 const PREVIEW: Record<string, number[]> = {
-  'teams-by-division':    [24, 18, 14, 10, 8],
-  'win-pct-by-division':  [68, 72, 65, 70, 62],
-  'points-scored-leaders':[100, 92, 88, 85, 80, 76, 72, 68, 63, 58, 52, 47, 42, 36, 28],
-  'point-differential':   [100, 88, 72, 65, 58, 48, 40, 32, 22, 14, 8, 2, -5, -12, -22],
-  'schools-by-enrollment':[100, 95, 90, 82, 76, 70, 62, 55, 48, 42, 36, 30, 24, 18, 12],
-  'wins-by-school':       [100, 90, 82, 75, 68, 62, 55, 48, 42, 36, 30, 25, 20, 15, 10],
-  'season-records':       [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
-  'scoring-trend':        [38, 40, 36, 42, 45, 44, 48, 46, 50, 52, 54, 56, 55, 58, 60],
+  'win-pct-trend':         [55, 58, 60, 62, 64, 66, 68, 65, 63, 61],
+  'win-pct-by-division':   [42, 38, 28, 22],
+  'season-records':        [10, 9, 9, 8, 7, 7, 6, 5, 4, 3, 2, 1, 0],
+  'wins-by-school':        [22, 20, 18, 16, 14, 13, 11, 10, 8, 7, 6],
+  'schools-by-enrollment': [3200, 2900, 2700, 2400, 2100, 1900, 1600, 1400, 1100, 900],
+  'passing-yards-leaders': [1820, 1650, 1490, 1310, 1180, 1040, 920, 810, 740, 680],
+  'passing-tds-leaders':   [24, 22, 19, 17, 15, 14, 12, 11, 9, 8],
+  'rushing-yards-leaders': [1540, 1380, 1220, 1090, 960, 840, 730, 640, 560, 480],
+  'rushing-tds-leaders':   [20, 18, 16, 14, 13, 11, 10, 9, 7, 6],
+  'receiving-yards-leaders':[980, 860, 750, 660, 580, 510, 440, 380, 320, 270],
+  'receiving-tds-leaders': [12, 11, 10, 9, 8, 7, 6, 5, 4, 3],
+  'total-tds-leaders':     [22, 20, 18, 16, 14, 13, 11, 10, 8, 7],
+  'total-yards-leaders':   [1900, 1720, 1560, 1400, 1250, 1100, 960, 840, 730, 620],
+  'total-points-leaders':  [136, 122, 110, 98, 88, 80, 72, 64, 56, 48],
+  'highest-scoring-games': [88, 84, 80, 76, 72, 68, 65, 62, 60, 58],
+  'team-scoring-avg':      [38, 35, 32, 30, 28, 26, 24, 22, 20, 18],
 }
-const AREA_SLUGS = new Set(['scoring-trend'])
+const AREA_SLUGS = new Set(['win-pct-trend'])
 
 /* ── Page ─────────────────────────────────────────────────────────── */
 

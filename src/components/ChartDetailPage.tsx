@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar,
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
@@ -13,6 +13,7 @@ import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
 } from '@/lib/chart-configs'
+import { CHART_NAV_EVENT } from '@/lib/app-config'
 
 /* ── Formatting ──────────────────────────────────────────────────── */
 function fmtNum(n: number) {
@@ -57,12 +58,14 @@ interface Props {
   chartPoints?: StdRow[]
   multiPoints?: MultiRow[]
   scatterPoints?: ScatterRow[]
+  children?: React.ReactNode
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
 export function ChartDetailPage({
   config, prevSlug, nextSlug, kpiValue,
   tableRows = [], chartPoints = [], multiPoints = [], scatterPoints = [],
+  children,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -80,9 +83,9 @@ export function ChartDetailPage({
       kpi: fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
       kpiLabel: config.kpiLabel,
     }
-    window.dispatchEvent(new CustomEvent('childcaregpt:chart-nav', { detail }))
+    window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
     return () => {
-      window.dispatchEvent(new CustomEvent('childcaregpt:chart-nav', { detail: null }))
+      window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail: null }))
     }
   }, [prevSlug, nextSlug, config, scaledKpi, period])
 
@@ -131,7 +134,8 @@ export function ChartDetailPage({
         {/* ── Header band ── */}
         <div className="shrink-0 border-b border-[var(--border)] bg-[var(--surface)] px-5 pt-3 pb-0">
 
-          {/* Chart */}
+          {/* Inline recharts preview — hidden when shadcn chart children are provided */}
+          {!children && (
           <div className="h-40 md:h-52 -mx-1 mb-3">
             <ResponsiveContainer width="100%" height="100%">
               {config.chartType === 'area' ? (
@@ -190,6 +194,7 @@ export function ChartDetailPage({
               )}
             </ResponsiveContainer>
           </div>
+          )}
 
           {/* Tab row: Charts drawer + filter tabs + period toggle */}
           <div className="flex items-center gap-1.5 pb-3 flex-wrap">
@@ -220,6 +225,13 @@ export function ChartDetailPage({
             ))}
           </div>
         </div>
+
+        {/* ── Shadcn chart (when children provided) ── */}
+        {children && (
+          <div className="shrink-0 px-5 pt-4 pb-2">
+            {children}
+          </div>
+        )}
 
         {/* ── Table ── */}
         <div className="flex-1 overflow-y-auto no-scrollbar">

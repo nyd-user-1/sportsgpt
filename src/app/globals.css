@@ -19,6 +19,13 @@
 }
 
 :root {
+  /* shadcn chart palette */
+  --chart-1: #033882;
+  --chart-2: #4338ca;
+  --chart-3: #0ea5e9;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+
   --bg: #f9f9f9;
   --bg2: #f0f0f0;
   --surface: #ffffff;
