@@ -22,9 +22,10 @@ interface Props {
   series: MultiSeries[]
   title: string
   description: string
+  stacked?: boolean
 }
 
-export function SportsBarChartMulti({ data, series, title, description }: Props) {
+export function SportsBarChartMulti({ data, series, title, description, stacked }: Props) {
   const chartConfig = Object.fromEntries(
     series.map((s) => [s.key, { label: s.label, color: s.color }])
   ) satisfies ChartConfig
@@ -44,11 +45,20 @@ export function SportsBarChartMulti({ data, series, title, description }: Props)
               tickLine={false}
               tickMargin={10}
               axisLine={false}
-              tickFormatter={(v: string) => (v.length > 14 ? v.slice(0, 13) + '…' : v)}
+              minTickGap={32}
+              tickFormatter={(v: string) => v.split(' ')[0]}
             />
             <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
-            {series.map((s) => (
-              <Bar key={s.key} dataKey={s.key} fill={`var(--color-${s.key})`} radius={4} />
+            {series.map((s, i) => (
+              <Bar
+                key={s.key}
+                dataKey={s.key}
+                fill={`var(--color-${s.key})`}
+                radius={stacked
+                  ? (i === series.length - 1 ? [4, 4, 0, 0] : 0)
+                  : 4}
+                stackId={stacked ? 'a' : undefined}
+              />
             ))}
             <ChartLegend content={<ChartLegendContent />} />
           </BarChart>

@@ -23,6 +23,7 @@ export interface ChartConfig {
   periodBase?: 'weekly' | 'annual'
   series?: SeriesDef[]
   filters?: FilterDef[]
+  stacked?: boolean
 }
 
 export const CHART_CONFIGS: ChartConfig[] = [
@@ -31,7 +32,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'win-pct-trend',
     title: 'Win % Trend by Division',
     description: 'Average team win % per division across 2021–2024 seasons',
-    color: '#22c55e', chartType: 'line-multi', kpiLabel: 'seasons tracked',
+    color: '#033882', chartType: 'line-multi', kpiLabel: 'seasons tracked',
     series: [
       { key: 'I',   color: '#033882', label: 'Division I'   },
       { key: 'II',  color: '#4338ca', label: 'Division II'  },
@@ -49,19 +50,19 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'season-records',
     title: '2024 Season Records',
     description: 'All Section XI team records — 2024 season ranked by wins',
-    color: '#0ea5e9', chartType: 'bar', kpiLabel: 'teams tracked',
+    color: '#033882', chartType: 'bar', kpiLabel: 'teams tracked',
   },
   {
     slug: 'wins-by-school',
     title: 'Total Wins (3-Year)',
     description: 'Cumulative wins per school across 2022–2024 seasons',
-    color: '#f59e0b', chartType: 'bar', kpiLabel: 'most wins',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most wins',
   },
   {
     slug: 'schools-by-enrollment',
     title: 'Schools by Enrollment',
     description: 'Section XI schools ranked by student enrollment',
-    color: '#10b981', chartType: 'bar', kpiLabel: 'largest school',
+    color: '#033882', chartType: 'bar', kpiLabel: 'largest school',
   },
 
   // ── Passing ──────────────────────────────────────────────────────────────────
@@ -69,13 +70,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'passing-yards-leaders',
     title: 'Passing Yards Leaders',
     description: 'Top quarterbacks by passing yards · 2024 season',
-    color: '#8b5cf6', chartType: 'bar', kpiLabel: 'most pass yds',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most pass yds',
   },
   {
     slug: 'passing-tds-leaders',
     title: 'Passing TD Leaders',
     description: 'Top quarterbacks by touchdown passes · 2024 season',
-    color: '#f97316', chartType: 'bar', kpiLabel: 'most pass TDs',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most pass TDs',
   },
 
   // ── Rushing ──────────────────────────────────────────────────────────────────
@@ -83,13 +84,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'rushing-yards-leaders',
     title: 'Rushing Yards Leaders',
     description: 'Top ball carriers by rushing yards · 2024 season',
-    color: '#ef4444', chartType: 'bar', kpiLabel: 'most rush yds',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most rush yds',
   },
   {
     slug: 'rushing-tds-leaders',
     title: 'Rushing TD Leaders',
     description: 'Top ball carriers by rushing touchdowns · 2024 season',
-    color: '#ec4899', chartType: 'bar', kpiLabel: 'most rush TDs',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most rush TDs',
   },
 
   // ── Receiving ────────────────────────────────────────────────────────────────
@@ -97,13 +98,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'receiving-yards-leaders',
     title: 'Receiving Yards Leaders',
     description: 'Top receivers by receiving yards · 2024 season',
-    color: '#14b8a6', chartType: 'bar', kpiLabel: 'most recv yds',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most recv yds',
   },
   {
     slug: 'receiving-tds-leaders',
     title: 'Receiving TD Leaders',
     description: 'Top receivers by touchdown catches · 2024 season',
-    color: '#06b6d4', chartType: 'bar', kpiLabel: 'most recv TDs',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most recv TDs',
   },
 
   // ── Multi-stat ───────────────────────────────────────────────────────────────
@@ -111,22 +112,14 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'total-tds-leaders',
     title: 'Total TD Leaders',
     description: 'Top scorers by combined rushing + receiving touchdowns · 2024',
-    color: '#6366f1', chartType: 'multi-bar', kpiLabel: 'most total TDs',
-    series: [
-      { key: 'rush', color: '#ef4444', label: 'Rush TDs' },
-      { key: 'recv', color: '#14b8a6', label: 'Recv TDs' },
-    ],
+    color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total TDs',
   },
   {
     slug: 'total-yards-leaders',
     title: 'Total Yards Leaders',
     description: 'Top offensive players by combined pass + rush + receiving yards · 2024',
-    color: '#a855f7', chartType: 'multi-bar', kpiLabel: 'most total yds',
-    series: [
-      { key: 'pass', color: '#8b5cf6', label: 'Pass Yds' },
-      { key: 'rush', color: '#ef4444', label: 'Rush Yds' },
-      { key: 'recv', color: '#14b8a6', label: 'Recv Yds' },
-    ],
+    color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total yds',
+    stacked: true,
   },
 
   // ── Scoring ──────────────────────────────────────────────────────────────────
@@ -134,21 +127,15 @@ export const CHART_CONFIGS: ChartConfig[] = [
     slug: 'total-points-leaders',
     title: 'Total Points Leaders',
     description: 'Top scorers by total points including TDs, FGs, and PATs · 2024',
-    color: '#f59e0b', chartType: 'bar', kpiLabel: 'most points',
+    color: '#033882', chartType: 'bar', kpiLabel: 'most points',
   },
 
   // ── Games ────────────────────────────────────────────────────────────────────
   {
-    slug: 'highest-scoring-games',
-    title: 'Highest Scoring Games',
-    description: 'Top 2024 games ranked by combined score',
-    color: '#f97316', chartType: 'bar', kpiLabel: 'combined pts',
-  },
-  {
     slug: 'team-scoring-avg',
     title: 'Team Scoring Average',
     description: 'Average points scored per game by team · 2024 season',
-    color: '#0ea5e9', chartType: 'bar', kpiLabel: 'highest avg',
+    color: '#033882', chartType: 'bar', kpiLabel: 'highest avg',
   },
 ]
 

@@ -19,7 +19,6 @@ const PREVIEW: Record<string, number[]> = {
   'total-tds-leaders':     [22, 20, 18, 16, 14, 13, 11, 10, 8, 7],
   'total-yards-leaders':   [1900, 1720, 1560, 1400, 1250, 1100, 960, 840, 730, 620],
   'total-points-leaders':  [136, 122, 110, 98, 88, 80, 72, 64, 56, 48],
-  'highest-scoring-games': [88, 84, 80, 76, 72, 68, 65, 62, 60, 58],
   'team-scoring-avg':      [38, 35, 32, 30, 28, 26, 24, 22, 20, 18],
 }
 const AREA_SLUGS = new Set(['win-pct-trend'])

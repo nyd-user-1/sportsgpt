@@ -34,7 +34,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     case 'win-pct-trend': {
       const rows = await sql`
         SELECT t.division, s.season::text AS season,
-          ROUND(AVG(s.overall_wins::float / NULLIF(s.overall_wins + s.overall_losses, 0)) * 100, 1)::float AS pct
+          ROUND((AVG(s.overall_wins::float / NULLIF(s.overall_wins + s.overall_losses, 0)) * 100)::numeric, 1) AS pct
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
         WHERE s.season IN (2021, 2022, 2023, 2024)
@@ -323,8 +323,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         <SportsBarChartMulti
           data={multiData}
           series={[
-            { key: 'rush', label: 'Rush TDs', color: '#ef4444' },
-            { key: 'recv', label: 'Recv TDs', color: '#14b8a6' },
+            { key: 'rush', label: 'Rush TDs', color: '#033882' },
+            { key: 'recv', label: 'Recv TDs', color: '#4338ca' },
           ]}
           title={config.title}
           description={config.description}
@@ -358,12 +358,13 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         <SportsBarChartMulti
           data={multiData}
           series={[
-            { key: 'pass', label: 'Pass Yds', color: '#8b5cf6' },
-            { key: 'rush', label: 'Rush Yds', color: '#ef4444' },
-            { key: 'recv', label: 'Recv Yds', color: '#14b8a6' },
+            { key: 'pass', label: 'Pass Yds', color: '#033882' },
+            { key: 'rush', label: 'Rush Yds', color: '#4338ca' },
+            { key: 'recv', label: 'Recv Yds', color: '#0ea5e9' },
           ]}
           title={config.title}
           description={config.description}
+          stacked={true}
         />
       )
       break
@@ -385,35 +386,6 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           description={config.description}
           color={config.color}
           valueLabel="Points"
-        />
-      )
-      break
-    }
-
-    // ── highest-scoring-games (NEW) ────────────────────────────────────────────
-    case 'highest-scoring-games': {
-      const rows = await sql`
-        SELECT
-          ht.name || ' vs ' || at.name AS name,
-          (g.home_score + g.away_score) AS value,
-          g.home_score,
-          g.away_score,
-          g.game_date
-        FROM games g
-        JOIN teams ht ON ht.slug = g.home_team_slug
-        JOIN teams at ON at.slug = g.away_team_slug
-        WHERE g.home_score IS NOT NULL AND g.away_score IS NOT NULL
-        ORDER BY (g.home_score + g.away_score) DESC
-        LIMIT 15`
-      tableRows = rows.map((r) => ({ name: r.name as string, value: Number(r.value) }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
-      chartChild = (
-        <SportsBarChart
-          data={tableRows}
-          title={config.title}
-          description={config.description}
-          color={config.color}
-          valueLabel="Combined Pts"
         />
       )
       break
