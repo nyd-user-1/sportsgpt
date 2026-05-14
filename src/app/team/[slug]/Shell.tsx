@@ -249,7 +249,7 @@ export function TeamShell({
                 {PROFILES[profileIdx].kind === 'games' && (() => {
                   const profileSeason = (PROFILES[profileIdx] as { season: number }).season
                   const games = gameRows.filter(g => g.season === profileSeason)
-                  const visible = infoExpanded ? games : games.slice(0, 5)
+                  const visible = infoExpanded ? games : games.slice(0, 2)
                   return (
                     <>
                       {games.length === 0 ? (
@@ -305,13 +305,6 @@ export function TeamShell({
                             </tbody>
                           </table>
                         </div>
-                      )}
-                      {games.length > 5 && (
-                        <button onClick={() => setInfoExpanded(v => !v)}
-                          className="flex items-center justify-center w-full gap-1 px-4 py-2.5 bg-[var(--surface)] hover:bg-[var(--inp-bg)] border-t border-[var(--border)] transition-colors text-xs font-medium text-[var(--muted)]">
-                          {infoExpanded ? 'Show fewer' : `Show all ${games.length} games`}
-                          <ChevronDown className={cn('h-3 w-3 transition-transform', infoExpanded && 'rotate-180')} />
-                        </button>
                       )}
                     </>
                   )
