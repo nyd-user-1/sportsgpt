@@ -30,7 +30,7 @@ export default function GalleryGrid({
           href={`/gallery/p/${photo.id}`}
           ref={photo.id === lastViewed ? lastRef : undefined}
           scroll={false}
-          className="group relative mb-4 block w-full cursor-zoom-in overflow-hidden rounded-xl"
+          className="group relative mb-4 block w-full cursor-zoom-in overflow-hidden rounded-xl after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)] after:content-['']"
         >
           <Image
             src={photo.url}
