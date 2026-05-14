@@ -161,7 +161,7 @@ export function TeamShell({
               const photo = TEAM_PHOTOS[schoolSlug]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
-                <div className="mb-8 h-64 sm:h-80 w-full rounded-2xl overflow-hidden relative">
+                <div className="mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
                   <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center gap-3">
@@ -175,7 +175,7 @@ export function TeamShell({
                   </div>
                 </div>
               ) : (
-                <div className="mb-8 h-64 sm:h-80 w-full rounded-2xl border border-[var(--border)] overflow-hidden flex flex-col items-center justify-center gap-3"
+                <div className="mb-8 h-[390px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex flex-col items-center justify-center gap-3"
                   style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
                   {logo ? (
                     <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
@@ -222,7 +222,7 @@ export function TeamShell({
                           </tr>
                         </thead>
                         <tbody>
-                          {(infoExpanded ? historyRows : historyRows.slice(0, 3)).map(row => (
+                          {(infoExpanded ? historyRows : historyRows.slice(0, 2)).map(row => (
                             <tr key={row.season} className="border-t border-[var(--border)]">
                               <td className={td}>{row.season}</td>
                               <td className={cn(td, 'font-medium text-[var(--txt)]')}>{row.overall}</td>
