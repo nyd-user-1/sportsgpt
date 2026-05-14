@@ -109,7 +109,7 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] group-hover/row:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
                         <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
@@ -119,7 +119,7 @@ export default function PlayerTable({
                         <td className={tdR}>{p.interceptions ?? '—'}</td>
                         <td className={tdR}>{p.completions ?? '—'}</td>
                         <td className={tdR}>{p.attempts ?? '—'}</td>
-                        <td className={cn(tdR, 'group-hover/row:rounded-r-md')}>{compPct}</td>
+                        <td className={tdR}>{compPct}</td>
                       </tr>
                     )
                   })}
@@ -150,7 +150,7 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] group-hover/row:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
                         <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
@@ -158,7 +158,7 @@ export default function PlayerTable({
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
                         <td className={tdR}>{p.rush_tds ?? '—'}</td>
                         <td className={tdR}>{p.rush_attempts ?? '—'}</td>
-                        <td className={cn(tdR, 'group-hover/row:rounded-r-md')}>{ypc}</td>
+                        <td className={tdR}>{ypc}</td>
                       </tr>
                     )
                   })}
@@ -189,7 +189,7 @@ export default function PlayerTable({
                       : '—'
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] group-hover/row:rounded-l-md text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
+                        <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
                         <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold text-[var(--txt)] transition-colors')}>
                           <Link href={`/player/${p.player_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
                         </td>
@@ -197,7 +197,7 @@ export default function PlayerTable({
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.recv_yards ?? '—'}</td>
                         <td className={tdR}>{p.recv_tds ?? '—'}</td>
                         <td className={tdR}>{p.receptions ?? '—'}</td>
-                        <td className={cn(tdR, 'group-hover/row:rounded-r-md')}>{ypr}</td>
+                        <td className={tdR}>{ypr}</td>
                       </tr>
                     )
                   })}
