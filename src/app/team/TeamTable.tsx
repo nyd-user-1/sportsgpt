@@ -125,15 +125,15 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
               </thead>
               <tbody>
                 {sorted.map(t => (
-                  <tr key={t.slug} className="group cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] group-hover:rounded-l-md font-semibold text-[var(--txt)] transition-colors max-w-[200px] truncate')}>
+                  <tr key={t.slug} className="group/row cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
+                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] group-hover/row:rounded-l-md font-semibold text-[var(--txt)] transition-colors max-w-[200px] truncate')}>
                       <Link href={`/team/${t.slug}`} className="hover:underline">{t.name}</Link>
                     </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>Div. {t.division}</td>
                     <td className={cn(td, 'text-[var(--txt)] font-medium')}>{t.overall_wins ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
-                    <td className={cn(td, 'text-[var(--txt)] group-hover:rounded-r-md')}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
+                    <td className={cn(td, 'text-[var(--txt)] group-hover/row:rounded-r-md')}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
                   </tr>
                 ))}
               </tbody>
