@@ -18,7 +18,7 @@ export default async function LeaderboardPage() {
                  pass_yards, pass_tds, interceptions, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY pass_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season IN (2022, 2023, 2024)
+          WHERE stat_type = 'Passing' AND season IN (2020, 2021, 2022, 2023, 2024)
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, pass_yards DESC NULLS LAST
@@ -29,7 +29,7 @@ export default async function LeaderboardPage() {
                  rush_yards, rush_tds, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY rush_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2022, 2023, 2024)
+          WHERE stat_type = 'Rushing' AND season IN (2020, 2021, 2022, 2023, 2024)
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, rush_yards DESC NULLS LAST
@@ -40,7 +40,7 @@ export default async function LeaderboardPage() {
                  recv_yards, recv_tds, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY recv_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2022, 2023, 2024)
+          WHERE stat_type = 'Receiving' AND season IN (2020, 2021, 2022, 2023, 2024)
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, recv_yards DESC NULLS LAST

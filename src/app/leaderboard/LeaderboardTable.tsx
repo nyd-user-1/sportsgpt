@@ -7,7 +7,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 
-const SEASONS = [2024, 2023, 2022]
+const SEASONS = [2024, 2023, 2022, 2021, 2020]
 
 function SeasonFilterMenu({ selected, onChange }: { selected: number | null; onChange: (v: number | null) => void }) {
   const [open, setOpen] = useState(false)
