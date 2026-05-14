@@ -221,50 +221,32 @@ export function ChartDetailPage({
           </div>
           )}
 
-          {/* Tab row: Charts drawer + season pills + filter tabs + period toggle */}
-          <div className="flex items-center gap-1.5 pb-3 flex-wrap">
-            <ChartsDrawer />
-            {seasonFilters && seasonFilters.length > 0 && (
-              <>
+          {/* Filter tabs + period toggle (only when present) */}
+          {(config.filters?.length || config.periodToggle) ? (
+            <div className="flex items-center gap-1.5 pb-3 flex-wrap">
+              {config.filters?.map(f => (
+                <button key={f.key} onClick={() => setFilter(f.key)}
+                  className={cn(
+                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
+                    filter === f.key
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      : 'text-[var(--muted)] hover:text-[var(--txt)]',
+                  )}>{f.label}</button>
+              ))}
+              {config.periodToggle && config.filters && (
                 <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
-                {[...seasonFilters].reverse().map(yr => (
-                  <button key={yr} onClick={() => emitSeason(yr)}
-                    className={cn(
-                      'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
-                      activeSeason === yr
-                        ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
-                        : 'text-[var(--muted)] hover:text-[var(--txt)]',
-                    )}>
-                    {yr}
-                  </button>
-                ))}
-              </>
-            )}
-            <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
-            {/* Filter tabs */}
-            {config.filters?.map(f => (
-              <button key={f.key} onClick={() => setFilter(f.key)}
-                className={cn(
-                  'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
-                  filter === f.key
-                    ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
-                    : 'text-[var(--muted)] hover:text-[var(--txt)]',
-                )}>{f.label}</button>
-            ))}
-            {/* Period toggle — shown after filters for cost/income charts */}
-            {config.periodToggle && config.filters && (
-              <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
-            )}
-            {config.periodToggle && (['weekly', 'monthly', 'annual'] as Period[]).map(p => (
-              <button key={p} onClick={() => setPeriod(p)}
-                className={cn(
-                  'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize',
-                  period === p
-                    ? 'text-[var(--txt)] border border-sky-500/50 bg-white shadow-sm'
-                    : 'text-[var(--muted)] hover:text-[var(--txt)]',
-                )}>{p}</button>
-            ))}
-          </div>
+              )}
+              {config.periodToggle && (['weekly', 'monthly', 'annual'] as Period[]).map(p => (
+                <button key={p} onClick={() => setPeriod(p)}
+                  className={cn(
+                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize',
+                    period === p
+                      ? 'text-[var(--txt)] border border-sky-500/50 bg-white shadow-sm'
+                      : 'text-[var(--muted)] hover:text-[var(--txt)]',
+                  )}>{p}</button>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         {/* ── Shadcn chart (when children provided) ── */}
@@ -273,6 +255,27 @@ export function ChartDetailPage({
             {children}
           </div>
         )}
+
+        {/* ── Charts button + season buttons ── */}
+        <div className="shrink-0 flex items-center gap-1.5 px-5 py-3 border-b border-[var(--border)]">
+          <ChartsDrawer />
+          {seasonFilters && seasonFilters.length > 0 && (
+            <>
+              <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
+              {[...seasonFilters].reverse().map(yr => (
+                <button key={yr} onClick={() => emitSeason(yr)}
+                  className={cn(
+                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
+                    activeSeason === yr
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      : 'text-[var(--muted)] hover:text-[var(--txt)]',
+                  )}>
+                  {yr}
+                </button>
+              ))}
+            </>
+          )}
+        </div>
 
         {/* ── Table ── */}
         <div className="flex-1 overflow-y-auto no-scrollbar">
