@@ -82,7 +82,11 @@ export const TEAM_PHOTOS: Record<string, string> = {
   'rocky-point':                       '/Images/rp1.jpg',
   'sachem-east':                       '/Images/sh1.jpg',
   'sachem-north':                      '/Images/sh3.jpg',
+  'islip':                             '/Images/islip-fb.jpg',
+  'lindenhurst':                       '/Images/lindenhurst.avif',
+  'sayville':                          '/Images/sayville.avif',
   'shoreham-wading-river':             '/Images/swr1.jpg',
+  'smithtown-east':                    '/Images/smithtown-east.webp',
   'smithtown-west':                    '/Images/sw2.jpg',
   'west-babylon':                      '/Images/wb 3.jpg',
   'westhampton':                       '/Images/wh1.jpg',
@@ -92,7 +96,11 @@ export const TEAM_PHOTOS: Record<string, string> = {
 
 // Player headshots keyed by player slug
 export const PLAYER_PHOTOS: Record<string, string> = {
-  'joseph-filardi':    '/PlayerPhotos/joe filardi.jpg',
+  'joseph-filardi':    '/PlayerPhotos/filardi-2.avif',
+  'aidan-winter':      '/PlayerPhotos/aidan-winter.avif',
+  'anthony-raio':      '/PlayerPhotos/raio.avif',
+  'jeremy-weiss':      '/PlayerPhotos/jeremy-weiss.avif',
+  'karahn-king':       '/PlayerPhotos/karahn-king.avif',
   'brayden-stahl':     '/PlayerPhotos/brayden stahl.jpg',
   'kyle-messina':      '/PlayerPhotos/kyle messina.jpeg',
   'brady-nash':        '/PlayerPhotos/brady nash.jpeg',
@@ -109,7 +117,7 @@ export const PLAYER_PHOTOS: Record<string, string> = {
   'shane-grant':       '/PlayerPhotos/shane grant.jpg',
   'kieran-clifford':   '/PlayerPhotos/kieran clifford.jpg',
   'cole-madden':       '/PlayerPhotos/cole madden.jpg',
-  'ethan-burgos':      '/PlayerPhotos/ethan 2.jpg',
+  'ethan-burgos':      '/PlayerPhotos/ethan-burgos.avif',
   'jack-weiss':        '/PlayerPhotos/jack weiss.jpg',
   'andrew-amarando':   '/PlayerPhotos/andrew.jpg',
   'jeremy-grahm':      '/PlayerPhotos/jeremy grahm.jpg',
