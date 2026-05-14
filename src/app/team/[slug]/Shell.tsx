@@ -68,8 +68,6 @@ export function TeamShell({
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [mapsOpen,   setMapsOpen]     = useState(false)
   const [chatOpen,   setChatOpen]     = useState(false)
-  const [gameSeason, setGameSeason]   = useState<number | null>(null)
-  const [gamesExpanded, setGamesExpanded] = useState(false)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
 
@@ -77,10 +75,6 @@ export function TeamShell({
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
     [gameRows]
   )
-  const activeSeason = gameSeason ?? gameSeasons[0] ?? 2024
-  const seasonGames  = gameRows.filter(g => g.season === activeSeason)
-  const DEFAULT_GAMES = 5
-  const visibleGames = gamesExpanded ? seasonGames : seasonGames.slice(0, DEFAULT_GAMES)
 
   const teamName = team.name as string
   const division = team.division as string
@@ -97,9 +91,9 @@ export function TeamShell({
   }))
 
   const PROFILES = [
-    { title: 'Season History' },
+    { title: 'Season History', kind: 'history' as const },
     {
-      title: 'Team Info',
+      title: 'Team Info', kind: 'info' as const,
       rows: [
         { label: 'School',   value: schoolSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()), highlight: false },
         { label: 'Division', value: `Division ${division}`,        highlight: false },
@@ -108,6 +102,7 @@ export function TeamShell({
         ...(gender  ? [{ label: 'Gender', value: gender, highlight: false }] : []),
       ],
     },
+    ...gameSeasons.map(s => ({ title: String(s), kind: 'games' as const, season: s })),
   ]
 
   const activeProfile = PROFILES[profileIdx]
@@ -206,43 +201,41 @@ export function TeamShell({
                   <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-200', infoExpanded && 'rotate-180')} />
                 </button>
 
-                {/* Season History table */}
-                {profileIdx === 0 && (
-                  <>
-                    {historyRows.length === 0 ? (
-                      <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No season data available.</div>
-                    ) : (
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
-                            <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
-                            <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
-                            <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
-                            <th className="px-4 py-2 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
+                {/* Season History */}
+                {PROFILES[profileIdx].kind === 'history' && (
+                  historyRows.length === 0 ? (
+                    <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No season data available.</div>
+                  ) : (
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
+                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
+                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
+                          <th className="px-4 py-2 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
+                          <th className="px-4 py-2 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(infoExpanded ? historyRows : historyRows.slice(0, 2)).map(row => (
+                          <tr key={row.season} className="border-t border-[var(--border)]">
+                            <td className={td}>{row.season}</td>
+                            <td className={cn(td, 'font-medium text-[var(--txt)]')}>{row.overall}</td>
+                            <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
+                            <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>
+                              {(() => {
+                                const s = seasonRows.find(s2 => String(s2.season) === row.season)
+                                return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
+                              })()}
+                            </td>
                           </tr>
-                        </thead>
-                        <tbody>
-                          {(infoExpanded ? historyRows : historyRows.slice(0, 2)).map(row => (
-                            <tr key={row.season} className="border-t border-[var(--border)]">
-                              <td className={td}>{row.season}</td>
-                              <td className={cn(td, 'font-medium text-[var(--txt)]')}>{row.overall}</td>
-                              <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
-                              <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>
-                                {(() => {
-                                  const s = seasonRows.find(s2 => String(s2.season) === row.season)
-                                  return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
-                                })()}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    )}
-                  </>
+                        ))}
+                      </tbody>
+                    </table>
+                  )
                 )}
 
-                {/* Team Info rows */}
-                {profileIdx === 1 && visibleInfoRows.map((row, i) => (
+                {/* Team Info */}
+                {PROFILES[profileIdx].kind === 'info' && visibleInfoRows.map((row, i) => (
                   <div key={i} className="grid grid-cols-[1fr_auto] gap-x-3 px-4 py-2.5 border-t border-[var(--border)]">
                     <span className="text-sm text-[var(--muted)]">{row.label}</span>
                     <span className={cn('text-sm text-right font-medium', row.highlight ? 'font-bold' : 'text-[var(--txt)]')}
@@ -251,6 +244,78 @@ export function TeamShell({
                     </span>
                   </div>
                 ))}
+
+                {/* Game season table */}
+                {PROFILES[profileIdx].kind === 'games' && (() => {
+                  const profileSeason = (PROFILES[profileIdx] as { season: number }).season
+                  const games = gameRows.filter(g => g.season === profileSeason)
+                  const visible = infoExpanded ? games : games.slice(0, 5)
+                  return (
+                    <>
+                      {games.length === 0 ? (
+                        <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No game data for {profileSeason}.</div>
+                      ) : (
+                        <div className="overflow-x-auto no-scrollbar">
+                          <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
+                            <thead>
+                              <tr className="border-t border-[var(--border)] bg-[var(--surface)]">
+                                {['#','Date','Opponent','H/A','Score','Result'].map((h, i) => (
+                                  <th key={h} className={cn('px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]',
+                                    i === 0 || i === 1 || i === 3 ? 'text-left' : i === 4 ? 'text-right' : i === 5 ? 'text-center' : 'text-left')}>
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {visible.map((g, i) => {
+                                const isHome  = g.home_team_slug === team.slug
+                                const opSlug  = isHome ? g.away_team_slug : g.home_team_slug
+                                const opName  = isHome ? g.away_team_name : g.home_team_name
+                                const myScore = isHome ? g.home_score : g.away_score
+                                const opScore = isHome ? g.away_score : g.home_score
+                                const result  = myScore == null || opScore == null ? '—'
+                                  : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
+                                const scoreStr = myScore != null && opScore != null ? `${myScore}–${opScore}` : '—'
+                                const opDisplay = (opName ?? opSlug)
+                                  .replace(/\s+Varsity\s+Football$/i, '')
+                                  .replace(/-varsity-football$/, '')
+                                  .replace(/-/g, ' ')
+                                  .replace(/\b\w/g, c => c.toUpperCase())
+                                return (
+                                  <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
+                                    <td className={cn(td, 'text-[var(--muted)]')}>{g.game_number ?? i + 1}</td>
+                                    <td className={cn(td, 'text-[var(--txt2)]')}>{fmtGameDate(g.game_date)}</td>
+                                    <td className={cn(td, 'font-medium')}>
+                                      <Link href={`/team/${opSlug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
+                                    </td>
+                                    <td className={cn(td, 'text-center text-xs text-[var(--muted)]')}>{isHome ? 'H' : 'A'}</td>
+                                    <td className={cn(td, 'text-right font-medium text-[var(--txt)]')}>{scoreStr}</td>
+                                    <td className={cn(td, 'text-center')}>
+                                      <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
+                                        result === 'W' ? 'text-green-700 bg-green-50' :
+                                        result === 'L' ? 'text-red-700 bg-red-50' :
+                                        'text-[var(--muted)] bg-[var(--inp-bg)]')}>
+                                        {result}
+                                      </span>
+                                    </td>
+                                  </tr>
+                                )
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                      {games.length > 5 && (
+                        <button onClick={() => setInfoExpanded(v => !v)}
+                          className="flex items-center justify-center w-full gap-1 px-4 py-2.5 bg-[var(--surface)] hover:bg-[var(--inp-bg)] border-t border-[var(--border)] transition-colors text-xs font-medium text-[var(--muted)]">
+                          {infoExpanded ? 'Show fewer' : `Show all ${games.length} games`}
+                          <ChevronDown className={cn('h-3 w-3 transition-transform', infoExpanded && 'rotate-180')} />
+                        </button>
+                      )}
+                    </>
+                  )
+                })()}
               </div>
             </div>
 
@@ -286,92 +351,6 @@ export function TeamShell({
               </div>
             )}
 
-            {/* Game Log */}
-            {gameRows.length > 0 && (
-              <div className="mb-8">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Game Log</h2>
-                  {gameSeasons.length > 1 && (
-                    <div className="flex gap-1">
-                      {gameSeasons.map(s => (
-                        <button key={s} onClick={() => { setGameSeason(s); setGamesExpanded(false) }}
-                          className={cn('px-3 py-1 rounded-full text-xs font-semibold border transition-colors',
-                            s === activeSeason
-                              ? 'text-white border-transparent'
-                              : 'border-[var(--border)] text-[var(--muted)] hover:bg-[var(--inp-bg)]')}
-                          style={s === activeSeason ? { background: ACCENT_COLOR } : undefined}>
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                  <div className="overflow-x-auto no-scrollbar">
-                    <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
-                      <thead>
-                        <tr className="bg-[var(--surface)]">
-                          <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">#</th>
-                          <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">Date</th>
-                          <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">Opponent</th>
-                          <th className="px-3 py-2.5 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">H/A</th>
-                          <th className="px-3 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">Score</th>
-                          <th className="px-3 py-2.5 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)]">Result</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {visibleGames.map((g, i) => {
-                          const isHome   = g.home_team_slug === team.slug
-                          const opSlug   = isHome ? g.away_team_slug : g.home_team_slug
-                          const opName   = isHome ? g.away_team_name : g.home_team_name
-                          const myScore  = isHome ? g.home_score : g.away_score
-                          const opScore  = isHome ? g.away_score : g.home_score
-                          const result   = myScore == null || opScore == null ? '—'
-                            : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
-                          const scoreStr = myScore != null && opScore != null
-                            ? `${myScore}–${opScore}` : '—'
-                          const opDisplay = (opName ?? opSlug)
-                            .replace(/-varsity-football$/, '')
-                            .replace(/-/g, ' ')
-                            .replace(/\b\w/g, c => c.toUpperCase())
-                          return (
-                            <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
-                              <td className="px-3 py-2.5 text-[var(--muted)] text-sm">{g.game_number ?? i + 1}</td>
-                              <td className="px-3 py-2.5 text-sm text-[var(--txt2)]">{fmtGameDate(g.game_date)}</td>
-                              <td className="px-3 py-2.5 text-sm font-medium">
-                                <Link href={`/team/${opSlug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>
-                                  {opDisplay}
-                                </Link>
-                              </td>
-                              <td className="px-3 py-2.5 text-center text-xs text-[var(--muted)]">{isHome ? 'H' : 'A'}</td>
-                              <td className="px-3 py-2.5 text-right text-sm font-medium text-[var(--txt)]">{scoreStr}</td>
-                              <td className="px-3 py-2.5 text-center">
-                                <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
-                                  result === 'W' ? 'text-green-700 bg-green-50' :
-                                  result === 'L' ? 'text-red-700 bg-red-50' :
-                                  'text-[var(--muted)] bg-[var(--inp-bg)]')}>
-                                  {result}
-                                </span>
-                              </td>
-                            </tr>
-                          )
-                        })}
-                        {seasonGames.length === 0 && (
-                          <tr><td colSpan={6} className="px-4 py-6 text-center text-sm text-[var(--muted)]">No game data for {activeSeason}</td></tr>
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
-                  {seasonGames.length > DEFAULT_GAMES && (
-                    <button onClick={() => setGamesExpanded(v => !v)}
-                      className="flex items-center justify-center w-full gap-1 px-4 py-2.5 bg-[var(--surface)] hover:bg-[var(--inp-bg)] border-t border-[var(--border)] transition-colors text-xs font-medium text-[var(--muted)]">
-                      {gamesExpanded ? 'Show fewer' : `Show all ${seasonGames.length} games`}
-                      <ChevronDown className={cn('h-3 w-3 transition-transform', gamesExpanded && 'rotate-180')} />
-                    </button>
-                  )}
-                </div>
-              </div>
-            )}
 
             {/* Division Standings carousel */}
             <div className="mb-8">
