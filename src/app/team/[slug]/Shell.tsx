@@ -111,7 +111,7 @@ export function TeamShell({
         <Image src={heroLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 rounded-full bg-white p-0.5 object-contain ring-1 ring-[var(--border)]" unoptimized />
       ) : null}
       <div className="min-w-0">
-        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{teamName}</p>
+        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{teamName.replace(/\s*Varsity\s+/i, ' ').trim()}</p>
         <p className="text-[11px] text-[var(--muted)] leading-tight truncate">Section XI · Division {division}</p>
       </div>
     </div>
@@ -250,11 +250,11 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th style={{width:'40%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th style={{width:'20%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
+                                <th className="w-[16%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="w-[30%] sm:w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th className="w-[34%] sm:w-[20%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="w-[20%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="hidden sm:table-cell sm:w-10 px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
                               </tr>
@@ -274,14 +274,21 @@ export function TeamShell({
                                   .replace(/-varsity-football$/, '')
                                   .replace(/-/g, ' ')
                                   .replace(/\b\w/g, c => c.toUpperCase())
+                                const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+                                const opLogo = SCHOOL_LOGOS[opSchoolSlug]
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
                                     <td className={cn(td, 'text-[var(--txt2)] tabular-nums')}>{fmtGameDate(g.game_date)}</td>
                                     <td className={cn(td, 'font-medium')}>
                                       <span className="text-xs text-[var(--muted)] mr-1.5">{isHome ? 'vs' : 'at'}</span>
-                                      <Link href={`/team/${opSlug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
+                                      <Link href={`/team/${opSlug}`} className="hover:underline align-middle" style={{ color: ACCENT_COLOR }}>
+                                        {opLogo && (
+                                          <Image src={opLogo} alt={opDisplay} width={28} height={28} className="sm:hidden inline-block h-7 w-7 align-middle object-contain" unoptimized />
+                                        )}
+                                        <span className={opLogo ? 'hidden sm:inline' : ''}>{opDisplay}</span>
+                                      </Link>
                                     </td>
-                                    <td className={cn(td, 'text-right font-medium text-[var(--txt)]')}>{scoreStr}</td>
+                                    <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
                                     <td className={cn(td, 'text-left')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
                                         result === 'W' ? 'text-green-700 bg-green-50' :
@@ -290,7 +297,7 @@ export function TeamShell({
                                         {result}
                                       </span>
                                     </td>
-                                    <td className={cn(td, 'w-10')} />
+                                    <td className={cn(td, 'hidden sm:table-cell sm:w-10')} />
                                   </tr>
                                 )
                               })}
