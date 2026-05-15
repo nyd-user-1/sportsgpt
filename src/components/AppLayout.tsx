@@ -58,7 +58,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
   const navBtnCls = 'flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
 
   return (
-    <div className="flex h-dvh overflow-hidden p-0 sm:p-[18px]" style={{ background: 'var(--bg)' }}>
+    <div className="flex h-dvh overflow-hidden p-0 sm:p-[18px] bg-[var(--surface)] sm:bg-[var(--bg)]">
 
       <div className={`shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${sidebarOpen ? 'w-full sm:w-[240px] sm:mr-[18px]' : 'w-0'}`}>
         <div className="w-[240px] h-full rounded-none sm:rounded-2xl overflow-hidden">
