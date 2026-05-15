@@ -50,6 +50,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let kpiValue = 0
   let chartChild: React.ReactNode = null
   let seasonFilters: string[] | undefined = undefined
+  let seasonRows: Record<string, StdRow[]> | undefined = undefined
   const SEASON_FILTER_MAP: Record<string, string[]> = {
     'season-records':             ['2021', '2022', '2023', '2024'],
     'wins-by-school':             ['2023', '2024'], // overridden in case block
@@ -155,6 +156,12 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         buildDynastyWindow(2024),
       ]
 
+      seasonRows = {}
+      for (const w of dynastyWindows) {
+        seasonRows[w.filterYear] = w.bars.map(b => ({
+          name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
+        }))
+      }
       const win2024 = dynastyWindows.find(w => w.filterYear === '2024')
       tableRows = (win2024?.bars ?? []).map(b => ({
         name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
@@ -536,6 +543,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       subRows={subRows}
       rowLinks={rowLinks}
       seasonFilters={seasonFilters}
+      seasonRows={seasonRows}
     >
       {chartChild}
     </ChartDetailPage>

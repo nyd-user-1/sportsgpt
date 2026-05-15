@@ -36,7 +36,7 @@ function fmtVal(v: number, config: ChartConfig, period?: Period): string {
 }
 
 /* ── Props ───────────────────────────────────────────────────────── */
-export type StdRow = { name: string; value: number }
+export type StdRow = { name: string; value: number; logoUrl?: string }
 export type MultiRow = Record<string, string | number>
 export type ScatterRow = { name: string; x: number; y: number }
 export type SubRow = { label: string; value: number; extra?: string }
@@ -55,6 +55,7 @@ interface Props {
   children?: React.ReactNode
   seasonFilters?: string[]
   rowLinks?: Record<string, string>
+  seasonRows?: Record<string, StdRow[]>
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -65,6 +66,7 @@ export function ChartDetailPage({
   children,
   seasonFilters,
   rowLinks,
+  seasonRows,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -120,10 +122,28 @@ export function ChartDetailPage({
     })
   }, [multiPoints, config.periodToggle, config.series, base, period])
 
+  const activeRows: StdRow[] = seasonRows?.[activeSeason] ?? tableRows
+
   const scaledTable: StdRow[] = useMemo(() => {
-    if (!config.periodToggle) return tableRows
-    return tableRows.map(r => ({ ...r, value: applyPeriod(r.value, base, period) }))
-  }, [tableRows, config.periodToggle, base, period])
+    if (!config.periodToggle) return activeRows
+    return activeRows.map(r => ({ ...r, value: applyPeriod(r.value, base, period) }))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeRows, config.periodToggle, base, period])
+
+  const rankChanges = useMemo(() => {
+    if (!seasonRows || Object.keys(seasonRows).length < 2) return {} as Record<string, number>
+    const seasons = Object.keys(seasonRows).sort()
+    const activeIdx = seasons.indexOf(activeSeason)
+    const otherIdx = activeIdx > 0 ? activeIdx - 1 : 1
+    const otherSeason = seasons[otherIdx]
+    const otherRanks = new Map((seasonRows[otherSeason] ?? []).map((r, i) => [r.name, i + 1]))
+    const result: Record<string, number> = {}
+    ;(seasonRows[activeSeason] ?? []).forEach((r, i) => {
+      const other = otherRanks.get(r.name)
+      if (other !== undefined) result[r.name] = other - (i + 1)
+    })
+    return result
+  }, [seasonRows, activeSeason])
 
   const scaledScatter: ScatterRow[] = useMemo(() => {
     if (config.slug !== 'income-vs-cost') return scatterPoints
@@ -346,9 +366,19 @@ export function ChartDetailPage({
                         </span>
                       )}
                       {rowLinks?.[row.name] ? (
-                        <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                        <span className="flex items-center gap-2 min-w-0">
+                          {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                          <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                          {rankChanges[row.name] > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{rankChanges[row.name]}</span>}
+                          {rankChanges[row.name] < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(rankChanges[row.name])}</span>}
+                        </span>
                       ) : (
-                        <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                        <span className="flex items-center gap-2 min-w-0">
+                          {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                          <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                          {rankChanges[row.name] > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{rankChanges[row.name]}</span>}
+                          {rankChanges[row.name] < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(rankChanges[row.name])}</span>}
+                        </span>
                       )}
                       <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
                         style={isOpen ? { color: config.color } : undefined}>
