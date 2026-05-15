@@ -40,3 +40,11 @@
   --inp-bg: rgba(0, 0, 0, 0.04);
   --row-hover: #f5f5f5;
 }
+
+/* Mobile: collapse the app gutter so the page background reads as white
+   (no gray peeking through Safari's overscroll / safe-area). */
+@media (max-width: 639px) {
+  html, body {
+    background: var(--surface);
+  }
+}

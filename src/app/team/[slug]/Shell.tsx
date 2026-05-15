@@ -251,10 +251,10 @@ export function TeamShell({
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
                                 <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th style={{width:'44%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th style={{width:'22%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th style={{width:'40%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th style={{width:'20%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
                                 <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th style={{width:'6%'}} className="px-3 py-3 text-right text-[var(--muted)]">
+                                <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
                               </tr>
@@ -307,12 +307,8 @@ export function TeamShell({
             {/* Top Players carousel */}
             {playerRows.length > 0 && (
               <div className="mb-8">
-                <div className="mb-4 flex items-center justify-between">
+                <div className="mb-4">
                   <h2 className="text-lg font-semibold text-[var(--txt)]">Top Players</h2>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => playersRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                    <button onClick={() => playersRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
-                  </div>
                 </div>
                 <div ref={playersRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
@@ -322,13 +318,11 @@ export function TeamShell({
                         <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
                           className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
-                            {PLAYER_PHOTOS[p.player_slug as string] ? (
+                          {PLAYER_PHOTOS[p.player_slug as string] && (
+                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
                               <Image src={PLAYER_PHOTOS[p.player_slug as string]} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                            ) : (
-                              <div className="w-full h-full bg-[var(--inp-bg)] rounded-lg" />
-                            )}
-                          </div>
+                            </div>
+                          )}
                           <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
                             <div>
                               <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
@@ -349,12 +343,8 @@ export function TeamShell({
 
             {/* Division Standings carousel */}
             <div className="mb-8">
-              <div className="mb-4 flex items-center justify-between">
+              <div className="mb-4">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">Division {division} Standings</h2>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => divRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                  <button onClick={() => divRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
-                </div>
               </div>
               <div ref={divRef} className="overflow-x-auto no-scrollbar">
                 <div className="flex gap-3 pb-1">
