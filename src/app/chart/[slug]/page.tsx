@@ -93,8 +93,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           })),
       }))
 
-      tableRows = (stackedSeasonBars.find(s => s.season === '2024')?.bars ?? [])
-        .map(b => ({ name: b.name, value: b.wins }))
+      seasonRows = {}
+      for (const bar of stackedSeasonBars) {
+        seasonRows[bar.season] = bar.bars.map(b => ({
+          name: b.name,
+          value: b.wins,
+          logoUrl: b.logoUrl,
+        }))
+      }
+      tableRows = seasonRows['2024'] ?? []
       kpiValue = tableRows.length
 
       rowLinks = Object.fromEntries(
@@ -555,8 +562,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       rowLinks={rowLinks}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
-      valueLabel={slug === 'wins-by-school' ? 'Total Wins' : undefined}
-      showRank={slug === 'wins-by-school'}
+      valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : undefined}
+      showRank={slug === 'wins-by-school' || slug === 'season-records'}
     >
       {chartChild}
     </ChartDetailPage>
