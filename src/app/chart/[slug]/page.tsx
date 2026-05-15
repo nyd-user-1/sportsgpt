@@ -6,6 +6,7 @@ import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
 import { SportsBarChartInteractive, type SeasonBars } from '@/components/charts/SportsBarChartInteractive'
 import { SportsBarChartStackedInteractive, type StackedSeasonBars } from '@/components/charts/SportsBarChartStackedInteractive'
+import { SportsBarChartDynasty, type DynastyBar, type DynastyWindow } from '@/components/charts/SportsBarChartDynasty'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 export const dynamic = 'force-dynamic'
@@ -51,7 +52,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let seasonFilters: string[] | undefined = undefined
   const SEASON_FILTER_MAP: Record<string, string[]> = {
     'season-records':             ['2021', '2022', '2023', '2024'],
-    'wins-by-school':             [],
+    'wins-by-school':             ['2023', '2024'], // overridden in case block
     'point-differential-leaders': ['2023', '2024'],
     'passing-yards-leaders':      ['2021', '2022', '2023', '2024'],
     'passing-tds-leaders':        ['2021', '2022', '2023', '2024'],
@@ -111,44 +112,57 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── wins-by-school (Current Dynasty) ──────────────────────────────────────
     case 'wins-by-school': {
       const rows = await sql`
-        SELECT t.name, t.school_slug, SUM(s.overall_wins)::int AS value
+        SELECT t.name, t.school_slug, s.season,
+          s.overall_wins, s.overall_losses, COALESCE(s.overall_ties, 0) AS overall_ties
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2022, 2023, 2024)
-        GROUP BY t.name, t.school_slug ORDER BY value DESC`
-
-      tableRows = rows.map((r) => ({
-        name: r.name as string,
-        value: Number(r.value),
-        logoUrl: SCHOOL_LOGOS[r.school_slug as string] ?? '',
-      }))
-      kpiValue = tableRows.length > 0 ? tableRows[0].value : 0
-
-      chartChild = (
-        <SportsBarChart
-          data={tableRows.slice(0, 52)}
-          color={config.color}
-          valueLabel="Total Wins"
-        />
-      )
-
-      const recordRows = await sql`
-        SELECT t.name, s.season, s.overall_wins AS w, s.overall_losses AS l
-        FROM teams t
-        JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2022, 2023, 2024)
+        WHERE s.season IN (2020, 2021, 2022, 2023, 2024)
         ORDER BY t.name, s.season`
 
-      subRows = {}
-      for (const r of recordRows) {
-        const key = r.name as string
-        if (!subRows[key]) subRows[key] = []
-        subRows[key].push({
-          label: String(r.season),
-          value: Number(r.w),
-          extra: `${r.w}–${r.l}`,
-        })
+      // Index wins/losses/ties per team per season
+      const byTeam: Record<string, Record<string, { w: number; l: number; t: number }>> = {}
+      const schoolSlugs: Record<string, string> = {}
+      for (const r of rows) {
+        const name = r.name as string
+        const season = String(r.season)
+        if (!byTeam[name]) byTeam[name] = {}
+        byTeam[name][season] = { w: Number(r.overall_wins), l: Number(r.overall_losses), t: Number(r.overall_ties) }
+        schoolSlugs[name] = r.school_slug as string
       }
+      const teamNames = Object.keys(byTeam)
+
+      const buildDynastyWindow = (endYear: number): DynastyWindow => {
+        const [y1, y2, y3] = [String(endYear - 2), String(endYear - 1), String(endYear)]
+        const bars: DynastyBar[] = teamNames
+          .map(name => {
+            const s = byTeam[name]
+            const w1 = s[y1]?.w ?? 0, w2 = s[y2]?.w ?? 0, w3 = s[y3]?.w ?? 0
+            const games = (s[y1] ? s[y1].w + s[y1].l + s[y1].t : 0)
+                        + (s[y2] ? s[y2].w + s[y2].l + s[y2].t : 0)
+                        + (s[y3] ? s[y3].w + s[y3].l + s[y3].t : 0)
+            return { name, logoUrl: SCHOOL_LOGOS[schoolSlugs[name]] ?? '',
+              yr1: w1, yr1Label: y1, yr2: w2, yr2Label: y2, yr3: w3, yr3Label: y3, totalGames: games }
+          })
+          .filter(b => b.yr1 + b.yr2 + b.yr3 > 0)
+          .sort((a, b) => (b.yr1 + b.yr2 + b.yr3) - (a.yr1 + a.yr2 + a.yr3))
+        return { filterYear: String(endYear), bars }
+      }
+
+      const has2020 = rows.some(r => String(r.season) === '2020')
+      const dynastyWindows: DynastyWindow[] = [
+        ...(has2020 ? [buildDynastyWindow(2022)] : []),
+        buildDynastyWindow(2023),
+        buildDynastyWindow(2024),
+      ]
+
+      const win2024 = dynastyWindows.find(w => w.filterYear === '2024')
+      tableRows = (win2024?.bars ?? []).map(b => ({
+        name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
+      }))
+      kpiValue = tableRows[0]?.value ?? 0
+      seasonFilters = dynastyWindows.map(w => w.filterYear)
+
+      chartChild = <SportsBarChartDynasty windows={dynastyWindows} />
       break
     }
 

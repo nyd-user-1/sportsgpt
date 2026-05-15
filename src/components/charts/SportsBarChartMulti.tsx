@@ -42,9 +42,7 @@ export function SportsBarChartMulti({ data, series, stacked }: Props) {
                 key={s.key}
                 dataKey={s.key}
                 fill={`var(--color-${s.key})`}
-                radius={stacked
-                  ? (i === series.length - 1 ? [4, 4, 0, 0] : 0)
-                  : 4}
+                radius={0}
                 stackId={stacked ? 'a' : undefined}
               />
             ))}

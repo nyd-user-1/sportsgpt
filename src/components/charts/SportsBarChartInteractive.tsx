@@ -103,7 +103,7 @@ export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props)
                 <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
               )}
             />
-            <Bar dataKey="value" fill="var(--color-value)" />
+            <Bar dataKey="value" fill="var(--color-value)" radius={0} />
           </BarChart>
         </ChartContainer>
       </CardContent>
