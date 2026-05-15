@@ -10,7 +10,7 @@ import {
 import { ChevronRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { ChartsDrawer } from '@/components/ChartsDrawer'
-import { cn } from '@/lib/utils'
+import { cn, formatSeason } from '@/lib/utils'
 import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
@@ -286,7 +286,7 @@ export function ChartDetailPage({
                       ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>
-                  {yr}
+                  {formatSeason(yr)}
                 </button>
               ))}
             </>

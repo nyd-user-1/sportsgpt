@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { cn } from '@/lib/utils'
+import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
@@ -77,7 +77,7 @@ function SeasonFilterMenu({ selected, onChange }: { selected: number | null; onC
                 'flex w-full items-center justify-between px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)]',
                 i > 0 && 'border-t border-[var(--border)]'
               )}>
-              <span className="font-semibold text-[var(--txt)]">{s}</span>
+              <span className="font-semibold text-[var(--txt)]">{formatSeason(s)}</span>
               {selected === s && <Check className="h-4 w-4" style={{ color: ACCENT_COLOR }} />}
             </button>
           ))}
@@ -321,7 +321,7 @@ export default function LeaderboardTable({
                           <span className="truncate">{p.school_name}</span>
                         </div>
                       </td>
-                      <td className={cn(td, 'text-[var(--muted)] w-[70px]')}>{p.season}</td>
+                      <td className={cn(td, 'text-[var(--muted)] w-[70px]')}>{formatSeason(p.season)}</td>
                       <td className={cn(tdR, 'font-bold w-[65px]')} style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'}</td>
                       <td className={cn(tdR, 'w-[55px]')}>{p.attempts ?? '—'}</td>
                       <td className={cn(tdR, 'w-[60px]')}>{p.completions ?? '—'}</td>
@@ -340,7 +340,7 @@ export default function LeaderboardTable({
                     </tr>
                   ))}
                   {sortedPassers.length === 0 && (
-                    <tr><td colSpan={18} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No passing data{season ? ` for ${season}` : ''}</td></tr>
+                    <tr><td colSpan={18} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No passing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
                 </tbody>
               </table>
@@ -386,7 +386,7 @@ export default function LeaderboardTable({
                             <span className="truncate">{p.school_name}</span>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>{p.season}</td>
+                        <td className={cn(td, 'text-[var(--muted)]')}>{formatSeason(p.season)}</td>
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
                         <td className={tdR}>{p.rush_attempts ?? '—'}</td>
                         <td className={tdR}>{ypc}</td>
@@ -395,7 +395,7 @@ export default function LeaderboardTable({
                     )
                   })}
                   {sortedRushers.length === 0 && (
-                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${season}` : ''}</td></tr>
+                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
                 </tbody>
               </table>
@@ -441,7 +441,7 @@ export default function LeaderboardTable({
                             <span className="truncate">{p.school_name}</span>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>{p.season}</td>
+                        <td className={cn(td, 'text-[var(--muted)]')}>{formatSeason(p.season)}</td>
                         <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.recv_yards ?? '—'}</td>
                         <td className={tdR}>{p.receptions ?? '—'}</td>
                         <td className={tdR}>{ypr}</td>
@@ -450,7 +450,7 @@ export default function LeaderboardTable({
                     )
                   })}
                   {sortedReceivers.length === 0 && (
-                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No receiving data{season ? ` for ${season}` : ''}</td></tr>
+                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No receiving data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
                 </tbody>
               </table>

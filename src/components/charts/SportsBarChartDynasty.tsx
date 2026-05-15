@@ -5,6 +5,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from '
 import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
+import { formatSeason } from '@/lib/utils'
 
 export interface DynastyBar {
   name: string
@@ -51,9 +52,9 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
         <span>{bar.name}</span>
       </div>
       {[
-        { label: bar.yr3Label, value: bar.yr3, color: COLORS.yr3 },
-        { label: bar.yr2Label, value: bar.yr2, color: COLORS.yr2 },
-        { label: bar.yr1Label, value: bar.yr1, color: COLORS.yr1 },
+        { label: formatSeason(bar.yr3Label), value: bar.yr3, color: COLORS.yr3 },
+        { label: formatSeason(bar.yr2Label), value: bar.yr2, color: COLORS.yr2 },
+        { label: formatSeason(bar.yr1Label), value: bar.yr1, color: COLORS.yr1 },
       ].map(row => (
         <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
           <span style={{
