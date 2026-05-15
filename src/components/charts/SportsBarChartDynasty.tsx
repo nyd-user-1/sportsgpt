@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from 'recharts'
 import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
@@ -97,6 +97,28 @@ export function SportsBarChartDynasty({ windows }: Props) {
 
   const activeWindow = windows.find(w => w.filterYear === active)
   const bars = activeWindow?.bars ?? []
+
+  const renderTopLogo = (props: { x?: number; y?: number; width?: number; index?: number }) => {
+    const { x = 0, y = 0, width = 0, index = 0 } = props
+    if (index >= 5) return null
+    const bar = bars[index]
+    if (!bar?.logoUrl) return null
+    const size = 22
+    const cx = x + width / 2
+    const cy = y - size / 2 - 4
+    const clipId = `dcl-${active}-${index}`
+    return (
+      <g key={clipId}>
+        <defs>
+          <clipPath id={clipId}>
+            <circle cx={cx} cy={cy} r={size / 2} />
+          </clipPath>
+        </defs>
+        <image href={bar.logoUrl} x={cx - size / 2} y={cy - size / 2}
+          width={size} height={size} clipPath={`url(#${clipId})`} />
+      </g>
+    )
+  }
   const yr1Label = bars[0]?.yr1Label ?? ''
   const yr2Label = bars[0]?.yr2Label ?? ''
   const yr3Label = bars[0]?.yr3Label ?? ''
@@ -111,7 +133,7 @@ export function SportsBarChartDynasty({ windows }: Props) {
     <Card>
       <CardContent>
         <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
-          <BarChart data={bars} margin={{ left: 0, right: 0 }}>
+          <BarChart data={bars} margin={{ top: 30, left: 0, right: 0 }}>
             <CartesianGrid vertical={false} />
             <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
             <YAxis hide domain={[0, 36]} />
@@ -123,7 +145,9 @@ export function SportsBarChartDynasty({ windows }: Props) {
             />
             <Bar dataKey="yr1" fill="var(--color-yr1)" stackId="a" radius={0} />
             <Bar dataKey="yr2" fill="var(--color-yr2)" stackId="a" radius={0} />
-            <Bar dataKey="yr3" fill="var(--color-yr3)" stackId="a" radius={0} />
+            <Bar dataKey="yr3" fill="var(--color-yr3)" stackId="a" radius={0}>
+              <LabelList content={renderTopLogo as never} />
+            </Bar>
           </BarChart>
         </ChartContainer>
       </CardContent>
