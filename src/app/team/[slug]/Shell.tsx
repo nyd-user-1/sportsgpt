@@ -250,10 +250,10 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th className="w-[16%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th className="w-[30%] sm:w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="w-[34%] sm:w-[20%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="w-[20%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="w-[14%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="w-[38%] sm:w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th className="w-[30%] sm:w-[20%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="w-[18%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                                 <th className="hidden sm:table-cell sm:w-10 px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
@@ -279,7 +279,7 @@ export function TeamShell({
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
                                     <td className={cn(td, 'text-[var(--txt2)] tabular-nums')}>{fmtGameDate(g.game_date)}</td>
-                                    <td className={cn(td, 'font-medium')}>
+                                    <td className={cn(td, 'font-medium whitespace-nowrap')}>
                                       <span className="text-xs text-[var(--muted)] mr-1.5">{isHome ? 'vs' : 'at'}</span>
                                       <Link href={`/team/${opSlug}`} className="hover:underline align-middle" style={{ color: ACCENT_COLOR }}>
                                         {opLogo && (
