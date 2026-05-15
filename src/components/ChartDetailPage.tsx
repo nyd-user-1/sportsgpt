@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo, useEffect } from 'react'
+import Link from 'next/link'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar,
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
@@ -34,17 +35,6 @@ function fmtVal(v: number, config: ChartConfig, period?: Period): string {
   return fmtNum(v)
 }
 
-function fmtKpi(v: number, config: ChartConfig, period?: Period): string {
-  const slug = config.slug
-  const isUsd = slug.includes('cost') || slug.includes('income')
-  if (isUsd) {
-    const label = period ? fmtPeriodLabel(period) : ''
-    return `$${Math.round(v).toLocaleString()}${label}`
-  }
-  if (slug === 'lfpr-by-county') return `${v.toFixed(1)}%`
-  return Math.round(v).toLocaleString()
-}
-
 /* ── Props ───────────────────────────────────────────────────────── */
 export type StdRow = { name: string; value: number }
 export type MultiRow = Record<string, string | number>
@@ -64,6 +54,7 @@ interface Props {
   subRows?: SubRowMap
   children?: React.ReactNode
   seasonFilters?: string[]
+  rowLinks?: Record<string, string>
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -73,6 +64,7 @@ export function ChartDetailPage({
   subRows,
   children,
   seasonFilters,
+  rowLinks,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -96,21 +88,19 @@ export function ChartDetailPage({
 
   const scaledKpi = config.periodToggle ? applyPeriod(kpiValue, base, period) : kpiValue
 
-  /* Broadcast nav + KPI to AppLayout header */
+  /* Broadcast nav to AppLayout header */
   useEffect(() => {
     const detail = {
       prevHref: `/chart/${prevSlug}`,
       nextHref: `/chart/${nextSlug}`,
       color: config.color,
-      kpi: config.hideKpi ? '' : fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
-      kpiLabel: config.hideKpi ? '' : config.kpiLabel,
       pageTitle: config.title,
     }
     window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
     return () => {
       window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail: null }))
     }
-  }, [prevSlug, nextSlug, config, scaledKpi, period])
+  }, [prevSlug, nextSlug, config])
 
   const scaledChart: StdRow[] = useMemo(() => {
     if (!config.periodToggle) return chartPoints
@@ -253,7 +243,7 @@ export function ChartDetailPage({
 
         {/* ── Shadcn chart (when children provided) ── */}
         {children && (
-          <div className="shrink-0 px-5 pt-4 pb-2">
+          <div className="shrink-0 px-5 pt-2 pb-2">
             {children}
           </div>
         )}
@@ -343,7 +333,7 @@ export function ChartDetailPage({
                     <div
                       className={cn(
                         'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
-                        hasRowSubRows ? 'cursor-pointer' : 'cursor-default',
+                        hasRowSubRows ? 'cursor-pointer' : rowLinks?.[row.name] ? 'cursor-pointer' : 'cursor-default',
                       )}
                       style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
                       onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
@@ -355,7 +345,11 @@ export function ChartDetailPage({
                           )}
                         </span>
                       )}
-                      <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                      {rowLinks?.[row.name] ? (
+                        <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                      ) : (
+                        <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                      )}
                       <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
                         style={isOpen ? { color: config.color } : undefined}>
                         {fmtVal(row.value, config, config.periodToggle ? period : undefined)}

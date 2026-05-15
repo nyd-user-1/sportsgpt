@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
+import { CommandPalette } from '@/components/CommandPalette'
 
 export const metadata: Metadata = {
   title: APP_NAME,
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="h-full" style={{ fontFamily: "'DM Sans', sans-serif", background: 'var(--bg)' }}>
         {children}
+        <CommandPalette />
       </body>
     </html>
   )

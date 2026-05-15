@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
@@ -141,7 +141,7 @@ export function TeamShell({
 
             {/* Hero — team photo or gradient fallback */}
             {(() => {
-              const photo = TEAM_PHOTOS[schoolSlug]
+              const photo = TEAM_PHOTOS[schoolSlug]?.[0]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
                 <div className="mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
@@ -197,9 +197,6 @@ export function TeamShell({
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
                           <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
-                          <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
-                            <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
-                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -214,7 +211,6 @@ export function TeamShell({
                                 return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
                               })()}
                             </td>
-                            <td className={cn(td, 'w-10')} />
                           </tr>
                         ))}
                       </tbody>
@@ -241,10 +237,7 @@ export function TeamShell({
                                 <th style={{width:'28%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
                                 <th style={{width:'14%'}} className="px-3 py-3 text-center text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">H/A</th>
                                 <th style={{width:'20%'}} className="px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th style={{width:'14%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th style={{width:'6%'}} className="px-3 py-3 text-right text-[var(--muted)]">
-                                  <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
-                                </th>
+                                <th style={{width:'20%'}} className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -278,7 +271,6 @@ export function TeamShell({
                                         {result}
                                       </span>
                                     </td>
-                                    <td className={cn(td, 'w-10')} />
                                   </tr>
                                 )
                               })}

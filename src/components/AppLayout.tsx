@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight } from 'lucide-react'
+import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
@@ -15,8 +15,6 @@ type ChartNavDetail = {
   prevHref: string
   nextHref: string
   color: string
-  kpi: string
-  kpiLabel: string
   pageTitle?: string
 } | null
 
@@ -91,22 +89,29 @@ export function AppLayout({ children }: { children: React.ReactNode; showNavArro
 
           <div className="flex-1" />
 
+          {pathname === '/' && (
+            <div className="flex items-center gap-2">
+              <Link href="/gallery"
+                className="flex h-9 w-9 items-center justify-center rounded-xl text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
+                <ImageIcon className="h-5 w-5" />
+              </Link>
+              <button className="h-9 px-4 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
+                Sign in
+              </button>
+              <button className="h-9 px-4 rounded-full bg-[var(--txt)] text-sm font-medium text-[var(--surface)] hover:opacity-80 transition-opacity">
+                Sign up
+              </button>
+            </div>
+          )}
+
           {chartNav ? (
-            <div className="flex flex-col items-end gap-0.5">
-              <div className="hidden sm:flex items-center gap-1.5">
-                <button onClick={() => router.push(chartNav.prevHref)} className={navBtnCls}>
-                  <ChevronLeft className="h-4 w-4" />
-                </button>
-                <button onClick={() => router.push(chartNav.nextHref)} className={navBtnCls}>
-                  <ChevronRight className="h-4 w-4" />
-                </button>
-              </div>
-              <div className="text-right">
-                <div className="tabular-nums font-bold text-3xl leading-tight" style={{ color: chartNav.color }}>
-                  {chartNav.kpi}
-                </div>
-                <div className="text-xs text-[var(--muted)] mt-0.5">{chartNav.kpiLabel}</div>
-              </div>
+            <div className="hidden sm:flex items-center gap-1.5">
+              <button onClick={() => router.push(chartNav.prevHref)} className={navBtnCls}>
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+              <button onClick={() => router.push(chartNav.nextHref)} className={navBtnCls}>
+                <ChevronRight className="h-4 w-4" />
+              </button>
             </div>
           ) : navIdx >= 0 ? (
             <div className="hidden sm:flex items-center gap-1.5">

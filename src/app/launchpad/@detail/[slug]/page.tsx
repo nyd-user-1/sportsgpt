@@ -29,7 +29,7 @@ export default async function TeamDetailSlot({ params }: { params: Promise<{ slu
   }
 
   const schoolSlug = (team.school_slug as string) ?? slug.replace(/-varsity-football$/, '')
-  const photo      = TEAM_PHOTOS[schoolSlug]
+  const photo      = TEAM_PHOTOS[schoolSlug]?.[0]
   const logo       = SCHOOL_LOGOS[schoolSlug]
   const teamName   = cleanName(team.name as string)
   const division   = team.division as string

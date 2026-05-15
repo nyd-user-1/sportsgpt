@@ -47,6 +47,7 @@ type StatRow = {
   points_per_game: number | null
   fg: number | null
   safeties: number | null
+  ai_summary: string | null
 }
 
 type PlayerRow = {
@@ -442,6 +443,26 @@ export function PlayerShell({
                 </div>
               </div>
             )}
+
+            {/* AI Summaries */}
+            {(() => {
+              const summaries = stats
+                .filter(s => s.ai_summary)
+                .sort((a, b) => b.season - a.season)
+              if (summaries.length === 0) return null
+              return (
+                <div className="mb-8 flex flex-col gap-3">
+                  {summaries.map((s, i) => (
+                    <div key={i} className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)] mb-2">
+                        {s.season} {s.stat_type} · Season Summary
+                      </p>
+                      <p className="text-sm text-[var(--txt)] leading-relaxed">{s.ai_summary}</p>
+                    </div>
+                  ))}
+                </div>
+              )
+            })()}
 
             {/* Career Stats */}
             <div className="mb-8">

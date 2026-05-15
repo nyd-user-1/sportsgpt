@@ -9,11 +9,11 @@ export default async function PhotoPage({
 }: {
   params: Promise<{ id: string }>
 }) {
-  const { id } = await params
+  const { id }  = await params
   const photos  = await getPhotos()
-  const idx     = Number(id)
+  const idx     = photos.findIndex(p => p.id === id)
 
-  if (isNaN(idx) || idx < 0 || idx >= photos.length) notFound()
+  if (idx === -1) notFound()
 
-  return <SharedModal photos={photos} currentId={idx} direction={1} />
+  return <SharedModal photos={photos} currentIdx={idx} direction={1} />
 }

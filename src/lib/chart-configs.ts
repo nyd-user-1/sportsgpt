@@ -24,46 +24,27 @@ export interface ChartConfig {
   series?: SeriesDef[]
   filters?: FilterDef[]
   stacked?: boolean
-  hideKpi?: boolean
 }
 
 export const CHART_CONFIGS: ChartConfig[] = [
   // ── Team / Season ────────────────────────────────────────────────────────────
   {
-    slug: 'win-pct-trend',
-    title: 'Win % Trend by Division',
-    description: 'Average team win % per division across 2021–2024 seasons',
-    color: '#033882', chartType: 'line-multi', kpiLabel: 'seasons tracked',
-    series: [
-      { key: 'I',   color: '#033882', label: 'Division I'   },
-      { key: 'II',  color: '#4338ca', label: 'Division II'  },
-      { key: 'III', color: '#0ea5e9', label: 'Division III' },
-      { key: 'IV',  color: '#10b981', label: 'Division IV'  },
-    ],
-  },
-  {
-    slug: 'win-pct-by-division',
-    title: '2024 Wins by Division',
-    description: 'Share of total 2024 Section XI wins per division',
-    color: '#033882', chartType: 'pie-donut', kpiLabel: 'divisions',
-  },
-  {
     slug: 'season-records',
-    title: '2024 Season Records',
-    description: 'All Section XI team records — 2024 season ranked by wins',
+    title: 'Season Records',
+    description: 'Section XI team records by season — wins and losses',
     color: '#033882', chartType: 'bar', kpiLabel: 'teams tracked',
   },
   {
     slug: 'wins-by-school',
-    title: 'Total Wins (3-Year)',
-    description: 'Cumulative wins per school across 2022–2024 seasons',
+    title: 'Current Dynasty',
+    description: 'Combined wins per school across the last 3 seasons (2022–2024)',
     color: '#033882', chartType: 'bar', kpiLabel: 'most wins',
   },
   {
-    slug: 'schools-by-enrollment',
-    title: 'Schools by Enrollment',
-    description: 'Section XI schools ranked by student enrollment',
-    color: '#033882', chartType: 'bar', kpiLabel: 'largest school',
+    slug: 'point-differential-leaders',
+    title: 'Point Differential Leaders',
+    description: 'Teams ranked by scoring margin (PF minus PA) · per season',
+    color: '#033882', chartType: 'bar', kpiLabel: 'best differential',
   },
 
   // ── Passing ──────────────────────────────────────────────────────────────────
@@ -131,14 +112,6 @@ export const CHART_CONFIGS: ChartConfig[] = [
     color: '#033882', chartType: 'bar', kpiLabel: 'most points',
   },
 
-  // ── Games ────────────────────────────────────────────────────────────────────
-  {
-    slug: 'team-scoring-avg',
-    title: 'Avg. Points Per Game',
-    description: '',
-    color: '#033882', chartType: 'bar', kpiLabel: 'highest avg',
-    hideKpi: true,
-  },
 ]
 
 export function getChartConfig(slug: string): ChartConfig | undefined {

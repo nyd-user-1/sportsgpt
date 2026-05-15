@@ -1,14 +1,17 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Search, ChevronUp, ChevronDown } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 type PlayerRow = {
-  slug: string; name: string; team_name: string | null; position: string | null
+  slug: string; name: string; school_slug: string | null; team_slug: string | null
+  team_name: string | null; position: string | null
   total_yards: number | null; pass_yards: number | null; rush_yards: number | null
   recv_yards: number | null; total_tds: number | null; interceptions: number | null
 }
@@ -127,9 +130,20 @@ export default function PlayerIndexTable({ players }: { players: PlayerRow[] }) 
                   <tr key={p.slug} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
                     <td className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] text-[var(--muted)] font-medium transition-colors')}>{i + 1}</td>
                     <td className={cn(td, 'sticky left-[48px] z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors')}>
-                      <Link href={`/player/${p.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{p.name}</Link>
+                      <Link href={`/player/${p.slug}`} className="hover:underline text-[var(--txt)]">{p.name}</Link>
                     </td>
-                    <td className={cn(td, 'text-[var(--muted)]')}>{p.team_name ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--muted)]')}>
+                      {p.team_slug ? (
+                        <Link href={`/team/${p.team_slug}`} className="flex items-center gap-2 hover:underline text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
+                          {p.school_slug && SCHOOL_LOGOS[p.school_slug] && (
+                            <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={18} height={18} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
+                          )}
+                          <span>{p.team_name ?? '—'}</span>
+                        </Link>
+                      ) : (
+                        <span>{p.team_name ?? '—'}</span>
+                      )}
+                    </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{p.position ?? '—'}</td>
                     <td className={cn(tdR, 'font-bold')} style={p.total_yards ? { color: ACCENT_COLOR } : undefined}>{fmt(p.total_yards)}</td>
                     <td className={tdR}>{fmt(p.pass_yards)}</td>

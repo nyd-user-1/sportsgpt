@@ -14,8 +14,10 @@ export default async function LeaderboardPage() {
     const results = await Promise.all([
       sql`
         WITH ranked AS (
-          SELECT player_slug, player_name, school_name, completions, attempts,
+          SELECT player_slug, player_name, school_slug, school_name, completions, attempts,
                  pass_yards, pass_tds, interceptions, season,
+                 comp_pct, ypa, ypc, td_rate, int_rate, td_int_ratio, yva,
+                 cmd_score, gbi_score, ies_score,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY pass_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
           WHERE stat_type = 'Passing' AND season IN (2020, 2021, 2022, 2023, 2024)
@@ -25,7 +27,7 @@ export default async function LeaderboardPage() {
       `,
       sql`
         WITH ranked AS (
-          SELECT player_slug, player_name, school_name, rush_attempts,
+          SELECT player_slug, player_name, school_slug, school_name, rush_attempts,
                  rush_yards, rush_tds, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY rush_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
@@ -36,7 +38,7 @@ export default async function LeaderboardPage() {
       `,
       sql`
         WITH ranked AS (
-          SELECT player_slug, player_name, school_name, receptions,
+          SELECT player_slug, player_name, school_slug, school_name, receptions,
                  recv_yards, recv_tds, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY recv_yards DESC NULLS LAST) AS rn
           FROM player_season_stats

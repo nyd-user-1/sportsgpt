@@ -1,14 +1,36 @@
-import Link from 'next/link'
+'use client'
 
-export default function HeroCard() {
+import Link from 'next/link'
+import { Sun, Moon } from 'lucide-react'
+
+export default function HeroCard({
+  dark = true,
+  onToggle,
+}: {
+  dark?: boolean
+  onToggle?: (e: React.MouseEvent) => void
+}) {
   return (
-    <div className="relative mb-4 overflow-hidden rounded-xl bg-[#0e0e0e] flex flex-col"
-      style={{ minHeight: '520px', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.08)' }}>
+    <div className={`relative mb-4 overflow-hidden rounded-xl flex flex-col ${dark ? 'bg-[#0e0e0e]' : 'bg-[#d8d8d8]'}`}
+      style={{ minHeight: '520px', boxShadow: dark ? 'inset 0 0 0 1px rgba(255,255,255,0.08)' : 'inset 0 0 0 1px rgba(0,0,0,0.08)' }}>
+
+      {/* Toggle button */}
+      {onToggle && (
+        <button
+          onClick={onToggle}
+          aria-label="Toggle light/dark"
+          className={`absolute top-3 right-3 z-20 rounded-full p-2 border transition-colors ${dark ? 'border-white/20 hover:border-white/40 hover:bg-white/10' : 'border-black/15 hover:border-black/30 hover:bg-black/10'}`}
+        >
+          {dark
+            ? <Sun  className="h-4 w-4 text-amber-400" />
+            : <Moon className="h-4 w-4 text-[#033882] fill-yellow-200/60" />}
+        </button>
+      )}
 
       {/* Goalpost line-art background */}
       <div className="absolute inset-0 flex items-start justify-center pt-6 pointer-events-none select-none">
         <svg viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto opacity-[0.13]" stroke="white" strokeLinecap="round" strokeLinejoin="round">
+          className="w-full h-auto opacity-[0.13]" stroke={dark ? 'white' : 'black'} strokeLinecap="round" strokeLinejoin="round">
 
           {/* ── Goalposts ── */}
           {/* Base pole */}
@@ -61,28 +83,28 @@ export default function HeroCard() {
 
         {/* Logo lockup */}
         <div className="flex items-center gap-2 mb-5">
-          <span className="text-3xl font-black tracking-tight text-white leading-none">SPORTS</span>
-          <span className="border border-white/60 px-2 py-0.5 text-xs font-bold text-white tracking-[0.18em] leading-none mt-0.5">GPT</span>
+          <span className={`text-3xl font-black tracking-tight leading-none ${dark ? 'text-white' : 'text-black'}`}>SPORTS</span>
+          <span className={`border px-2 py-0.5 text-xs font-bold tracking-[0.18em] leading-none mt-0.5 ${dark ? 'border-white/60 text-white' : 'border-black/40 text-black'}`}>GPT</span>
         </div>
 
         {/* Eyebrow */}
-        <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-white/40 mb-3">
+        <p className={`text-[11px] font-semibold tracking-[0.22em] uppercase mb-3 ${dark ? 'text-white/40' : 'text-black/40'}`}>
           Section XI · Long Island
         </p>
 
         {/* Title */}
-        <h2 className="text-xl font-black uppercase tracking-widest text-white mb-4 leading-tight">
+        <h2 className={`text-xl font-black uppercase tracking-widest mb-4 leading-tight ${dark ? 'text-white' : 'text-black'}`}>
           Football<br />Photo Gallery
         </h2>
 
         {/* Body */}
-        <p className="text-sm text-white/50 leading-relaxed mb-8 max-w-[220px]">
+        <p className={`text-sm leading-relaxed mb-8 max-w-[220px] ${dark ? 'text-white/50' : 'text-black/50'}`}>
           Players, teams, and moments from the fields of Section XI varsity football.
         </p>
 
         {/* CTA */}
         <Link href="/team"
-          className="bg-white text-black text-sm font-bold px-7 py-3 rounded-xl hover:bg-white/90 active:scale-95 transition-all">
+          className={`text-sm font-bold px-7 py-3 rounded-xl active:scale-95 transition-all ${dark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/80'}`}>
           Explore Teams
         </Link>
       </div>

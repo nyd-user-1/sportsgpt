@@ -1,12 +1,16 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronUp, ChevronDown } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+import { DIVISION_LOGOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import type { TeamIndexRow } from './page'
+
+const DIV_NUM: Record<string, number> = { 'I': 1, 'II': 2, 'III': 3, 'IV': 4 }
 
 function pct(w: number | null, l: number | null): number {
   const wins = w ?? 0
@@ -136,10 +140,20 @@ export default function TeamTable({ teams }: { teams: TeamIndexRow[] }) {
               <tbody>
                 {sorted.map(t => (
                   <tr key={t.slug} className="group/row cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold text-[var(--txt)] transition-colors max-w-[200px] truncate')}>
-                      <Link href={`/team/${t.slug}`} className="hover:underline">{t.name}</Link>
+                    <td style={{ willChange: 'transform' }} className={cn(td, 'sticky left-2 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold text-[var(--txt)] transition-colors max-w-[200px]')}>
+                      <Link href={`/team/${t.slug}`} className="hover:underline flex items-center gap-2 min-w-0">
+                        {(() => { const logo = SCHOOL_LOGOS[t.slug.replace('-varsity-football', '')]; return logo ? <Image src={logo} alt="" width={20} height={20} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized /> : null })()}
+                        <span className="truncate">{t.name}</span>
+                      </Link>
                     </td>
-                    <td className={cn(td, 'text-[var(--muted)]')}>Div. {t.division}</td>
+                    <td className={cn(td, 'text-[var(--muted)]')}>
+                      <div className="flex items-center gap-2">
+                        {DIVISION_LOGOS[DIV_NUM[t.division]] && (
+                          <Image src={DIVISION_LOGOS[DIV_NUM[t.division]]} alt="" width={20} height={20} className="shrink-0 object-contain" unoptimized />
+                        )}
+                        <span>Division {t.division}</span>
+                      </div>
+                    </td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{t.games_played ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--txt)] font-medium')}>{t.overall_wins ?? '—'}</td>
                     <td className={cn(td, 'text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
