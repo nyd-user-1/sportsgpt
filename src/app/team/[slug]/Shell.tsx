@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useMemo, useEffect } from 'react'
+import { useState, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
@@ -65,18 +65,12 @@ export function TeamShell({
   gameRows: GameRow[]
 }) {
   const [profileIdx, setProfileIdx]   = useState(0)
-  const [infoExpanded, setInfoExpanded] = useState(false)
+  const [infoExpanded, setInfoExpanded] = useState(true)
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [mapsOpen,   setMapsOpen]     = useState(false)
   const [chatOpen,   setChatOpen]     = useState(false)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches) {
-      setInfoExpanded(true)
-    }
-  }, [])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -196,8 +190,8 @@ export function TeamShell({
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">{activeProfile.h2}</h2>
                 <div className="flex items-center gap-2">
-                  <button onClick={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(false) }} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                  <button onClick={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(false) }} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
+                  <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
+                  <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
                 </div>
               </div>
 
