@@ -113,7 +113,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── wins-by-school (Current Dynasty) ──────────────────────────────────────
     case 'wins-by-school': {
       const rows = await sql`
-        SELECT t.name, t.school_slug, s.season,
+        SELECT t.name, t.slug AS team_slug, t.school_slug, s.season,
           s.overall_wins, s.overall_losses, COALESCE(s.overall_ties, 0) AS overall_ties
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
@@ -123,12 +123,14 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       // Index wins/losses/ties per team per season
       const byTeam: Record<string, Record<string, { w: number; l: number; t: number }>> = {}
       const schoolSlugs: Record<string, string> = {}
+      const teamSlugs: Record<string, string> = {}
       for (const r of rows) {
         const name = r.name as string
         const season = String(r.season)
         if (!byTeam[name]) byTeam[name] = {}
         byTeam[name][season] = { w: Number(r.overall_wins), l: Number(r.overall_losses), t: Number(r.overall_ties) }
         schoolSlugs[name] = r.school_slug as string
+        teamSlugs[name] = r.team_slug as string
       }
       const teamNames = Object.keys(byTeam)
 
@@ -158,12 +160,21 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
       seasonRows = {}
       for (const w of dynastyWindows) {
-        seasonRows[w.filterYear] = w.bars.map(b => ({
-          name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
-        }))
+        seasonRows[w.filterYear] = w.bars.map(b => {
+          const total = b.yr1 + b.yr2 + b.yr3
+          return {
+            name: b.name,
+            value: total,
+            logoUrl: b.logoUrl,
+            winPct: b.totalGames > 0 ? (total / b.totalGames) * 100 : 0,
+          }
+        })
       }
+      rowLinks = Object.fromEntries(
+        teamNames.map(name => [name, `/team/${teamSlugs[name]}`])
+      )
       const win2024 = dynastyWindows.find(w => w.filterYear === '2024')
-      tableRows = (win2024?.bars ?? []).map(b => ({
+      tableRows = seasonRows['2024'] ?? (win2024?.bars ?? []).map(b => ({
         name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
       }))
       kpiValue = tableRows[0]?.value ?? 0
@@ -544,6 +555,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       rowLinks={rowLinks}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
+      valueLabel={slug === 'wins-by-school' ? 'Total Wins' : undefined}
+      showRank={slug === 'wins-by-school'}
     >
       {chartChild}
     </ChartDetailPage>
