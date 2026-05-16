@@ -32,7 +32,7 @@ const PASS_COL_GLOSSARY: Partial<Record<string, string>> = {
   ies_score:     'ies',
 }
 
-const SEASONS = [2024, 2023, 2022, 2021, 2020]
+const SEASONS = [2025, 2024, 2023, 2022, 2021, 2020]
 
 function SeasonFilterMenu({ selected, onChange }: { selected: number | null; onChange: (v: number | null) => void }) {
   const [open, setOpen] = useState(false)
