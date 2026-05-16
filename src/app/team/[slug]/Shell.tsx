@@ -143,12 +143,18 @@ export function TeamShell({
     const avgPa = pa != null && gp > 0 ? pa / gp : null
     const diff = pf != null && pa != null ? pf - pa : null
     const winPct = gp > 0 ? ow / gp : null
+    const defGrade = avgPa == null ? null
+      : avgPa <= 14 ? 'Elite'
+      : avgPa <= 21 ? 'Strong'
+      : avgPa <= 28 ? 'Average'
+      : 'Vulnerable'
     return {
       seasonKey: s.season as number,
       season: formatSeason(s.season as number),
       overall: fmtRecord(ow, ol, ot),
       conf: fmtRecord(cw, cl),
-      pf, pa, avgPf, avgPa, diff,
+      pf, pa, avgPf, avgPa, diff, defGrade,
+      sos: s.sos_value as number | null,
       _ow: ow, _cw: cw, _winPct: winPct,
     }
   })
@@ -169,6 +175,8 @@ export function TeamShell({
         case 'pa':      return r.pa ?? -Infinity
         case 'avgPf':   return r.avgPf ?? -Infinity
         case 'avgPa':   return r.avgPa ?? -Infinity
+        case 'defGrade': return r.avgPa != null ? -r.avgPa : Infinity
+        case 'sos':      return r.sos ?? -Infinity
         case 'diff':    return r.diff ?? -Infinity
         case 'winPct':  return r._winPct ?? -Infinity
         default:        return 0
@@ -313,6 +321,8 @@ export function TeamShell({
                           <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa"     right />
                           <SortTh col="avgPf"   label="Avg PF"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pf" right />
                           <SortTh col="avgPa"   label="Avg PA"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pa" right />
+                          <SortTh col="defGrade" label="Def"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="defense-grade" right />
+                          <SortTh col="sos"     label="SoS"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos"    right />
                           <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff"   right />
                           <SortTh col="winPct"  label="PCT"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pct"    right />
                         </tr>
@@ -327,6 +337,20 @@ export function TeamShell({
                             <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.pa ?? '—'}</td>
                             <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPf != null ? row.avgPf.toFixed(1) : '—'}</td>
                             <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPa != null ? row.avgPa.toFixed(1) : '—'}</td>
+                            <td className={cn(td, 'text-right')}>
+                              {row.defGrade ? (
+                                <span className={cn('text-xs font-semibold',
+                                  row.defGrade === 'Elite'      ? 'text-green-600' :
+                                  row.defGrade === 'Strong'     ? 'text-blue-600'  :
+                                  row.defGrade === 'Average'    ? 'text-amber-600' :
+                                  'text-red-500')}>
+                                  {row.defGrade}
+                                </span>
+                              ) : '—'}
+                            </td>
+                            <td className={cn(td, 'text-right text-[var(--muted)]')}>
+                              {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
+                            </td>
                             <td className={cn(td, 'text-right font-medium', row.diff == null ? 'text-[var(--muted)]' : row.diff >= 0 ? 'text-green-600' : 'text-red-500')}>
                               {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
                             </td>
@@ -358,8 +382,8 @@ export function TeamShell({
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
                                 <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
                                 <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
                                 <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
                                 <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                               </tr>
                             </thead>
@@ -395,8 +419,8 @@ export function TeamShell({
                                         <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                       </div>
                                     </td>
-                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
+                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
                                         result === 'W' ? 'text-green-700 bg-green-50' :

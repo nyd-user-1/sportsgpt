@@ -16,7 +16,8 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
     sql`
       SELECT s.*,
         COALESCE(s.points_for,  g.pf) AS points_for,
-        COALESCE(s.points_against, g.pa) AS points_against
+        COALESCE(s.points_against, g.pa) AS points_against,
+        sos.sos_value
       FROM team_season_stats s
       LEFT JOIN (
         SELECT season,
@@ -26,6 +27,22 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
         WHERE home_team_slug = ${slug} OR away_team_slug = ${slug}
         GROUP BY season
       ) g ON g.season = s.season
+      LEFT JOIN (
+        SELECT gm.season,
+          AVG(
+            CAST(opp.overall_wins AS float) /
+            NULLIF(opp.overall_wins + opp.overall_losses, 0)
+          ) AS sos_value
+        FROM games gm
+        JOIN team_season_stats opp
+          ON opp.team_slug = CASE
+               WHEN gm.home_team_slug = ${slug} THEN gm.away_team_slug
+               ELSE gm.home_team_slug
+             END
+          AND opp.season = gm.season
+        WHERE gm.home_team_slug = ${slug} OR gm.away_team_slug = ${slug}
+        GROUP BY gm.season
+      ) sos ON sos.season = s.season
       WHERE s.team_slug = ${slug}
       ORDER BY s.season DESC`,
     sql`

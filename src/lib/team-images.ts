@@ -62,6 +62,7 @@ export const SCHOOL_LOGOS: Record<string, string> = {
   'smithtown-east':                    `${BLOB}/Smithtown%2080.png`,
   'smithtown-west':                    `${BLOB}/Smithtown%2080.png`,
   'ward-melville':                     `${BLOB}/Ward%20Melville%2080.png`,
+  'west-babylon':                      `${BLOB}/west-babylon-80.png`,
   'west-islip':                        `${BLOB}/West%20Islip%2080.png`,
   'westhampton':                       `${BLOB}/Westhampton%2080.png`,
   'whitman':                           `${BLOB}/Walt%20Whitman%2080.png`,
@@ -125,6 +126,14 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
 
 // Player headshots keyed by player slug
 export const PLAYER_PHOTOS: Record<string, string> = {
+  'jordan-konig':      `${BLOB_P}/jordan-konig.avif`,
+  'jacob-guzik':       `${BLOB_P}/jacob-guzik.avif`,
+  'enrique-hernandez': `${BLOB_P}/enrique-hernandez.avif`,
+  'antonio-marrone':   `${BLOB_P}/antonio-marrone.avif`,
+  'jawara-keahey':     `${BLOB_P}/jawara-keahey.avif`,
+  'daniel-white':      `${BLOB_P}/daniel-white.avif`,
+  'ryan-parker':       `${BLOB_P}/ryan-parker.avif`,
+  'elijah-outlaw':     `${BLOB_P}/elijah-outlaw.avif`,
   'ja-quan-thomas':    `${BLOB_P}/jaquan-thomas.avif`,
   'jason-pratt':       `${BLOB_P}/jason-pratt.avif`,
   'thomas-costarelli': `${BLOB_P}/thomas-costarelli.avif`,

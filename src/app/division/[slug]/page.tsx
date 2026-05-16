@@ -28,24 +28,24 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       ORDER BY s.season DESC, s.overall_wins DESC NULLS LAST, t.name
     `,
     sql`
-      SELECT DISTINCT ON (ps.player_slug)
-        ps.player_slug, ps.player_name, ps.school_name,
+      SELECT ps.player_slug, ps.player_name, ps.school_name, ps.school_slug,
         ps.pass_yards, ps.pass_tds, ps.completions, ps.attempts, ps.season
       FROM player_season_stats ps
       JOIN schools sch ON sch.slug = ps.school_slug AND sch.division = ${division}
-      WHERE ps.stat_type = 'Passing' AND ps.season = 2024
-      ORDER BY ps.player_slug, ps.pass_yards DESC NULLS LAST
-      LIMIT 10
+      WHERE ps.stat_type = 'Passing'
+        AND ps.season IN (2021, 2022, 2023, 2024, 2025)
+        AND ps.pass_yards IS NOT NULL
+      ORDER BY ps.season DESC, ps.pass_yards DESC NULLS LAST
     `,
     sql`
-      SELECT DISTINCT ON (ps.player_slug)
-        ps.player_slug, ps.player_name, ps.school_name,
+      SELECT ps.player_slug, ps.player_name, ps.school_name, ps.school_slug,
         ps.rush_yards, ps.rush_tds, ps.season
       FROM player_season_stats ps
       JOIN schools sch ON sch.slug = ps.school_slug AND sch.division = ${division}
-      WHERE ps.stat_type = 'Rushing' AND ps.season = 2024
-      ORDER BY ps.player_slug, ps.rush_yards DESC NULLS LAST
-      LIMIT 10
+      WHERE ps.stat_type = 'Rushing'
+        AND ps.season IN (2021, 2022, 2023, 2024, 2025)
+        AND ps.rush_yards IS NOT NULL
+      ORDER BY ps.season DESC, ps.rush_yards DESC NULLS LAST
     `,
   ])
 
@@ -68,6 +68,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         player_slug: r.player_slug as string,
         player_name: r.player_name as string,
         school_name: r.school_name as string,
+        school_slug: r.school_slug as string | undefined,
         pass_yards:  r.pass_yards != null ? Number(r.pass_yards) : null,
         pass_tds:    r.pass_tds != null ? Number(r.pass_tds) : null,
         completions: r.completions != null ? Number(r.completions) : null,
@@ -78,6 +79,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         player_slug: r.player_slug as string,
         player_name: r.player_name as string,
         school_name: r.school_name as string,
+        school_slug: r.school_slug as string | undefined,
         rush_yards:  r.rush_yards != null ? Number(r.rush_yards) : null,
         rush_tds:    r.rush_tds != null ? Number(r.rush_tds) : null,
         season:      Number(r.season),

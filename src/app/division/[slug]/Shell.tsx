@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, PLAYER_PHOTOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -28,6 +28,7 @@ type TopPlayer = {
   player_slug: string
   player_name: string
   school_name: string
+  school_slug?: string
   pass_yards?: number | null
   pass_tds?: number | null
   completions?: number | null
@@ -38,6 +39,8 @@ type TopPlayer = {
 }
 
 const DIV_ORDER = ['division-i', 'division-ii', 'division-iii', 'division-iv']
+
+const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
 
 function fmtPct(w: number | null, l: number | null) {
   const ww = w ?? 0
@@ -85,8 +88,10 @@ export function DivisionShell({
   const rushRef = useRef<HTMLDivElement>(null)
 
   const availableSeasons = [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a)
-  const selectedSeason   = availableSeasons[seasonIdx] ?? 2024
+  const selectedSeason    = availableSeasons[seasonIdx] ?? 2024
   const filteredStandings = standings.filter(s => s.season === selectedSeason)
+  const seasonPassers     = topPassers.filter(p => p.season === selectedSeason).sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
+  const seasonRushers     = topRushers.filter(p => p.season === selectedSeason).sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))
 
   const curIdx  = DIV_ORDER.indexOf(divSlug)
   const n       = DIV_ORDER.length
@@ -173,7 +178,7 @@ export function DivisionShell({
             {/* Standings with season carousel */}
             <div className="mb-8">
               <div className="mb-4 flex items-center justify-between gap-3">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">{selectedSeason} Standings</h2>
+                <h2 className="text-lg font-semibold text-[var(--txt)]">{fmtSeason(selectedSeason)} Standings</h2>
                 {availableSeasons.length > 1 && (
                   <div className="flex items-center gap-2">
                     <button
@@ -204,15 +209,20 @@ export function DivisionShell({
                   </thead>
                   <tbody>
                     {filteredStandings.length === 0 && (
-                      <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No standings data for {selectedSeason}</td></tr>
+                      <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No standings data for {fmtSeason(selectedSeason)}</td></tr>
                     )}
                     {visibleStandings.map((t, i) => (
                       <tr key={t.slug} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
                         <td className={cn(td, 'text-[var(--muted)]')}>{i + 1}</td>
                         <td className={cn(td, 'font-semibold')}>
-                          <Link href={`/team/${t.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>
-                            {t.name.replace(/\s+Varsity\s+Football$/i, '')}
-                          </Link>
+                          <div className="flex items-center gap-2">
+                            {t.school_slug && SCHOOL_LOGOS[t.school_slug] && (
+                              <Image src={SCHOOL_LOGOS[t.school_slug]} alt="" width={20} height={20} className="shrink-0 h-5 w-5 object-contain" unoptimized />
+                            )}
+                            <Link href={`/team/${t.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>
+                              {t.name.replace(/\s+Varsity\s+Football$/i, '')}
+                            </Link>
+                          </div>
                         </td>
                         <td className={cn(td, 'text-right font-bold text-[var(--txt)]')}>{t.overall_wins ?? '—'}</td>
                         <td className={cn(td, 'text-right text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
@@ -230,10 +240,10 @@ export function DivisionShell({
             </div>
 
             {/* Top Passers carousel */}
-            {topPassers.length > 0 && (
+            {seasonPassers.length > 0 && (
               <div className="mb-8">
                 <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Passers · 2024</h2>
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Passers · {fmtSeason(selectedSeason)}</h2>
                   <div className="flex items-center gap-2">
                     <button onClick={() => passRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
                     <button onClick={() => passRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
@@ -241,14 +251,17 @@ export function DivisionShell({
                 </div>
                 <div ref={passRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
-                    {topPassers.map(p => {
+                    {seasonPassers.map(p => {
                       const photo = PLAYER_PHOTOS[p.player_slug]
+                      const logo  = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : undefined
                       return (
                         <Link key={p.player_slug} href={`/player/${p.player_slug}`}
                           className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
                           <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
                             {photo
                               ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                              : logo
+                              ? <Image src={logo} alt="" width={44} height={44} className="object-contain" unoptimized />
                               : null}
                           </div>
                           <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
@@ -270,10 +283,10 @@ export function DivisionShell({
             )}
 
             {/* Top Rushers carousel */}
-            {topRushers.length > 0 && (
+            {seasonRushers.length > 0 && (
               <div className="mb-8">
                 <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Rushers · 2024</h2>
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Rushers · {fmtSeason(selectedSeason)}</h2>
                   <div className="flex items-center gap-2">
                     <button onClick={() => rushRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
                     <button onClick={() => rushRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
@@ -281,14 +294,17 @@ export function DivisionShell({
                 </div>
                 <div ref={rushRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
-                    {topRushers.map(p => {
+                    {seasonRushers.map(p => {
                       const photo = PLAYER_PHOTOS[p.player_slug]
+                      const logo  = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : undefined
                       return (
                         <Link key={p.player_slug} href={`/player/${p.player_slug}`}
                           className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
                           <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
                             {photo
                               ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                              : logo
+                              ? <Image src={logo} alt="" width={44} height={44} className="object-contain" unoptimized />
                               : null}
                           </div>
                           <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
