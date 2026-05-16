@@ -97,7 +97,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
   'glenn':                             [`${BLOB_T}/glenn%201.jpg`,  `${BLOB_T}/glenn%202.jpg`,`${BLOB_T}/jg1.jpg`, `${BLOB_T}/jg2.jpg`],
   'greenport-southold-mattituck':      [`${BLOB_T}/gp1.jpg`,        `${BLOB_T}/gp2.jpg`,     `${BLOB_T}/gp3.jpg`],
   'half-hollow-hills-east':            [`${BLOB_T}/hhhe1.jpg`,      `${BLOB_T}/hhhe3.jpg`,   `${BLOB_T}/hhhe4%201.png`, `${BLOB_T}/hhhe4.jpg`],
-  'half-hollow-hills-west':            [`${BLOB_T}/hhw1.jpeg`],
+  'half-hollow-hills-west':            [`${BLOB_T}/hhhw-team.avif`, `${BLOB_T}/hhw1.jpeg`],
   'hampton-bays':                      [`${BLOB_T}/hb1.jpg`,        `${BLOB_T}/hb2.jpg`,     `${BLOB_T}/hb3.jpg`,  `${BLOB_T}/hb4.jpg`,  `${BLOB_T}/hb5.jpg`],
   'harborfields':                      [`${BLOB_T}/harbor1.jpg`,    `${BLOB_T}/harbor%202.jpg`,`${BLOB_T}/harbor%204.jpg`,`${BLOB_T}/harbor%205.jpg`,`${BLOB_T}/harbor%207.jpg`],
   'hauppauge':                         [`${BLOB_T}/hauppauge.jpg`,  `${BLOB_T}/hp2.jpg`,     `${BLOB_T}/hp3.jpg`,  `${BLOB_T}/hp4.jpeg`],
@@ -125,6 +125,8 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
 
 // Player headshots keyed by player slug
 export const PLAYER_PHOTOS: Record<string, string> = {
+  'thomas-costarelli': `${BLOB_P}/thomas-costarelli.avif`,
+  'derek-burrell':     `${BLOB_P}/derek-burrell.avif`,
   'joseph-filardi':    `${BLOB_P}/filardi-2.avif`,
   'aidan-winter':      `${BLOB_P}/aidan-winter.avif`,
   'anthony-raio':      `${BLOB_P}/raio.avif`,

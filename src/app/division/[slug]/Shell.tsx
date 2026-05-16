@@ -62,15 +62,15 @@ export function DivisionShell({
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
-  const [standingsExpanded, setStandingsExpanded] = useState(false)
+  const [standingsExpanded, setStandingsExpanded] = useState(true)
   const [seasonIdx, setSeasonIdx] = useState(0)
   const [slideIdx, setSlideIdx] = useState(0)
 
   const DIVISION_SCHOOLS: Record<string, string[]> = {
-    I:   ['bay-shore',            'ward-melville', 'commack',      'sachem-east'],
-    II:  ['northport',            'bellport',      'west-islip',   'lindenhurst'],
-    III: ['hauppauge',            'kings-park',    'rocky-point',  'harborfields'],
-    IV:  ['shoreham-wading-river','glenn',         'hampton-bays'],
+    I:   ['bay-shore',             'ward-melville',          'commack',      'sachem-east'],
+    II:  ['northport',             'bellport',               'huntington',   'half-hollow-hills-east'],
+    III: ['hauppauge',             'kings-park',             'rocky-point',  'harborfields'],
+    IV:  ['shoreham-wading-river', 'center-moriches',        'hampton-bays', 'glenn'],
   }
   const slides = (DIVISION_SCHOOLS[division] ?? [])
     .map(s => TEAM_PHOTOS[s]?.[0])
@@ -150,7 +150,7 @@ export function DivisionShell({
                   <div key={src}
                     className="absolute inset-0 transition-opacity duration-700 ease-in-out"
                     style={{ opacity: i === slideIdx ? 1 : 0 }}>
-                    <Image src={src} alt="" fill className="object-cover" unoptimized />
+                    <Image src={src} alt="" fill className="object-cover object-center" unoptimized />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                   </div>
                 ))}

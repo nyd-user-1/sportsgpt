@@ -100,12 +100,19 @@ export function TeamShell({
   const historyRows = seasonRows.map(s => {
     const pf = s.points_for as number | null
     const pa = s.points_against as number | null
+    const gp = ((s.overall_wins as number | null) ?? 0) + ((s.overall_losses as number | null) ?? 0) + ((s.overall_ties as number | null) ?? 0)
+    const avgPf = pf != null && gp > 0 ? pf / gp : null
+    const avgPa = pa != null && gp > 0 ? pa / gp : null
     const diff = pf != null && pa != null ? pf - pa : null
     return {
       seasonKey: s.season as number,
       season: formatSeason(s.season as number),
       overall: fmtRecord(s.overall_wins as number | null, s.overall_losses as number | null, s.overall_ties as number | null),
       conf: fmtRecord(s.conference_wins as number | null, s.conference_losses as number | null, s.conference_ties as number | null),
+      pf,
+      pa,
+      avgPf,
+      avgPa,
       diff,
     }
   })
@@ -113,7 +120,7 @@ export function TeamShell({
   const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
 
   const PROFILES = [
-    { title: 'Seasons', h2: 'Seasons', kind: 'history' as const },
+    { title: 'All Seasons', h2: 'All Seasons', kind: 'history' as const },
     ...gameSeasons.map(s => ({ title: fmtSeason(s), h2: fmtSeason(s), kind: 'games' as const, season: s })),
   ]
 
@@ -178,7 +185,7 @@ export function TeamShell({
               const photo = TEAM_PHOTOS[schoolSlug]?.[0]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
-                <div className="hidden sm:block mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
+                <div className="hidden sm:block mb-8 h-\[400px\] w-full rounded-2xl overflow-hidden relative">
                   <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 flex items-center gap-3">
@@ -192,7 +199,7 @@ export function TeamShell({
                   </div>
                 </div>
               ) : (
-                <div className="hidden sm:flex mb-8 h-[390px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+                <div className="hidden sm:flex mb-8 h-\[400px\] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
                   style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
                   {logo ? (
                     <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
@@ -239,23 +246,32 @@ export function TeamShell({
                   historyRows.length === 0 ? (
                     <div className="px-4 py-3 text-sm text-[var(--muted)]">No season data available.</div>
                   ) : (
+                    <div className="overflow-x-auto no-scrollbar">
                     <table className="w-full text-sm table-fixed">
                       <thead>
                         <tr onClick={() => setInfoExpanded(v => !v)}
                           className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Season</th>
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Overall</th>
+                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Conf</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">PF</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">PA</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Avg PF</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Avg PA</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Diff</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Win%</th>
                         </tr>
                       </thead>
                       <tbody>
                         {(infoExpanded ? historyRows : historyRows.slice(0, 2)).map(row => (
                           <tr key={row.season} className="border-t border-[var(--border)]">
-                            <td className={td}>{row.season}</td>
-                            <td className={cn(td, 'font-medium text-[var(--txt)]')}>{row.overall}</td>
+                            <td className={cn(td, 'text-[var(--muted)]')}>{row.season}</td>
+                            <td className={cn(td, 'text-[var(--muted)]')}>{row.overall}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
+                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.pf ?? '—'}</td>
+                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.pa ?? '—'}</td>
+                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPf != null ? row.avgPf.toFixed(1) : '—'}</td>
+                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPa != null ? row.avgPa.toFixed(1) : '—'}</td>
                             <td className={cn(td, 'text-right font-medium', row.diff == null ? 'text-[var(--muted)]' : row.diff >= 0 ? 'text-green-600' : 'text-red-500')}>
                               {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
                             </td>
@@ -269,6 +285,7 @@ export function TeamShell({
                         ))}
                       </tbody>
                     </table>
+                    </div>
                   )
                 )}
 
