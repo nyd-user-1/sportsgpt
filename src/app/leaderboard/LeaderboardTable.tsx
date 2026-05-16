@@ -246,15 +246,15 @@ export default function LeaderboardTable({
       <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
 
         {/* Stat type tabs + season filter */}
-        <div className="shrink-0 bg-[var(--surface)] px-5 pt-4 pb-0 border-b border-[var(--border)]">
+        <div className="shrink-0 bg-[var(--surface)] px-5 pt-4 pb-0 border-b-2 transition-colors"
+          style={{ borderBottomColor: ACCENT_COLOR }}>
           <div className="flex items-center gap-2">
             {statTabs.map(t => (
               <button key={t} onClick={() => setStatTab(t)}
                 className={cn(
-                  'px-5 py-3 text-sm font-semibold border-b-2 transition-colors',
-                  statTab === t ? 'text-[var(--txt)]' : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]',
-                )}
-                style={statTab === t ? { borderBottomColor: ACCENT_COLOR } : undefined}>
+                  'px-5 py-3 text-sm font-semibold transition-colors',
+                  statTab === t ? 'text-[var(--txt)]' : 'text-[var(--muted)] hover:text-[var(--txt)]',
+                )}>
                 {t}
               </button>
             ))}
