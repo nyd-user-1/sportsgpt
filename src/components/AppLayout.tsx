@@ -64,7 +64,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] border border-[var(--border)]">
+      <div className="flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
 
         <div className="flex items-center px-5 pt-5 pb-5">
 
