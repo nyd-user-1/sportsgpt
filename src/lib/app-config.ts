@@ -8,6 +8,9 @@
 import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Trophy, LayoutGrid, ListOrdered, Images } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
+// ── Season — update season.ts to bump for a new year ──────────────────────
+export { CURRENT_SEASON, AVAILABLE_SEASONS } from '@/lib/season'
+
 // ── Brand ──────────────────────────────────────────────────────────────────
 export const APP_NAME               = 'SportsGPT'
 export const APP_TAGLINE            = 'AI-powered high school sports intelligence'

@@ -10,7 +10,7 @@ import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { cn } from '@/lib/utils'
-import { ACCENT_COLOR } from '@/lib/app-config'
+import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
 
 type StandingRow = {
   slug: string
@@ -88,7 +88,7 @@ export function DivisionShell({
   const rushRef = useRef<HTMLDivElement>(null)
 
   const availableSeasons = [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a)
-  const selectedSeason    = availableSeasons[seasonIdx] ?? 2024
+  const selectedSeason    = availableSeasons[seasonIdx] ?? CURRENT_SEASON
   const filteredStandings = standings.filter(s => s.season === selectedSeason)
   const seasonPassers     = topPassers.filter(p => p.season === selectedSeason).sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
   const seasonRushers     = topRushers.filter(p => p.season === selectedSeason).sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))

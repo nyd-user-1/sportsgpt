@@ -1,3 +1,5 @@
+import { CURRENT_SEASON } from '@/lib/season'
+
 export type ChartType = 'bar' | 'area' | 'line' | 'scatter' | 'multi-bar' | 'line-multi' | 'pie-donut'
 export type Period = 'weekly' | 'monthly' | 'annual'
 
@@ -37,7 +39,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'wins-by-school',
     title: 'Current Dynasty',
-    description: 'Combined wins per school across the last 3 seasons (2022–2024)',
+    description: `Combined wins per school across the last 3 seasons (${CURRENT_SEASON - 2}–${CURRENT_SEASON})`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most wins',
   },
   {
@@ -51,13 +53,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'passing-yards-leaders',
     title: 'Passing Yards Leaders',
-    description: 'Top quarterbacks by passing yards · 2024 season',
+    description: `Top quarterbacks by passing yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most pass yds',
   },
   {
     slug: 'passing-tds-leaders',
     title: 'Passing TD Leaders',
-    description: 'Top quarterbacks by touchdown passes · 2024 season',
+    description: `Top quarterbacks by touchdown passes · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most pass TDs',
   },
 
@@ -65,13 +67,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'rushing-yards-leaders',
     title: 'Rushing Yards Leaders',
-    description: 'Top ball carriers by rushing yards · 2024 season',
+    description: `Top ball carriers by rushing yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most rush yds',
   },
   {
     slug: 'rushing-tds-leaders',
     title: 'Rushing TD Leaders',
-    description: 'Top ball carriers by rushing touchdowns · 2024 season',
+    description: `Top ball carriers by rushing touchdowns · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most rush TDs',
   },
 
@@ -79,13 +81,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'receiving-yards-leaders',
     title: 'Receiving Yards Leaders',
-    description: 'Top receivers by receiving yards · 2024 season',
+    description: `Top receivers by receiving yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most recv yds',
   },
   {
     slug: 'receiving-tds-leaders',
     title: 'Receiving TD Leaders',
-    description: 'Top receivers by touchdown catches · 2024 season',
+    description: `Top receivers by touchdown catches · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most recv TDs',
   },
 
@@ -93,13 +95,13 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'total-tds-leaders',
     title: 'Total TD Leaders',
-    description: 'Top scorers by combined rushing + receiving touchdowns · 2024',
+    description: `Top scorers by combined rushing + receiving touchdowns · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total TDs',
   },
   {
     slug: 'total-yards-leaders',
     title: 'Total Yards Leaders',
-    description: 'Top offensive players by combined pass + rush + receiving yards · 2024',
+    description: `Top offensive players by combined pass + rush + receiving yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total yds',
     stacked: true,
   },
@@ -108,7 +110,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'total-points-leaders',
     title: 'Total Points Leaders',
-    description: 'Top scorers by total points including TDs, FGs, and PATs · 2024',
+    description: `Top scorers by total points including TDs, FGs, and PATs · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most points',
   },
 

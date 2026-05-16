@@ -1,0 +1,2 @@
+export const CURRENT_SEASON    = 2025
+export const AVAILABLE_SEASONS = [2021, 2022, 2023, 2024, 2025]

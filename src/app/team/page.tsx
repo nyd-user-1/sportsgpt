@@ -1,5 +1,6 @@
 import { sql } from '@/lib/db'
 import TeamTable from './TeamTable'
+import { CURRENT_SEASON } from '@/lib/season'
 
 export const dynamic = 'force-dynamic'
 
@@ -26,7 +27,7 @@ export default async function TeamPage() {
       g.games_played, g.points_for, g.points_against
     FROM teams t
     LEFT JOIN team_season_stats s
-      ON s.team_slug = t.slug AND s.season = 2025
+      ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
     LEFT JOIN (
       SELECT
         team_slug,
@@ -37,10 +38,10 @@ export default async function TeamPage() {
           FILTER (WHERE home_score IS NOT NULL)               AS points_against
       FROM (
         SELECT home_team_slug AS team_slug, home_team_slug, away_team_slug, home_score, away_score
-        FROM games WHERE season = 2025
+        FROM games WHERE season = ${CURRENT_SEASON}
         UNION ALL
         SELECT away_team_slug AS team_slug, home_team_slug, away_team_slug, home_score, away_score
-        FROM games WHERE season = 2025
+        FROM games WHERE season = ${CURRENT_SEASON}
       ) combined
       GROUP BY team_slug
     ) g ON g.team_slug = t.slug

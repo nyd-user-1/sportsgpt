@@ -8,8 +8,8 @@ import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { ACCENT_COLOR } from '@/lib/app-config'
+import { cn, formatSeason } from '@/lib/utils'
+import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
 import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
 type DivisionSummary = {
@@ -167,7 +167,7 @@ export function SectionShell({
 
             {/* All teams standings with division tabs */}
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-[var(--txt)] mb-4">2024 Standings</h2>
+              <h2 className="text-lg font-semibold text-[var(--txt)] mb-4">{formatSeason(CURRENT_SEASON)} Standings</h2>
 
               {/* Division tab bar */}
               <div className="flex gap-0 border-b border-[var(--border)] mb-0">

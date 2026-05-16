@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { SectionShell } from './Shell'
+import { CURRENT_SEASON } from '@/lib/season'
 
 export const dynamic = 'force-dynamic'
 
@@ -13,7 +14,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       SELECT t.division,
         COUNT(DISTINCT t.slug)::int AS team_count,
         AVG(
-          CASE WHEN s.season = 2025 AND (s.overall_wins + s.overall_losses) > 0
+          CASE WHEN s.season = ${CURRENT_SEASON} AND (s.overall_wins + s.overall_losses) > 0
             THEN s.overall_wins::float / (s.overall_wins + s.overall_losses)
           END
         ) AS avg_win_pct
@@ -39,7 +40,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       SELECT t.slug, t.name, t.division,
         s.overall_wins, s.overall_losses
       FROM teams t
-      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2025
+      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
       ORDER BY t.division, s.overall_wins DESC NULLS LAST
     `,
   ])

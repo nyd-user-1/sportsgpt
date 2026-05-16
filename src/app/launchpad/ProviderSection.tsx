@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { CURRENT_SEASON } from '@/lib/app-config'
 import Image from 'next/image'
 
 export type GameRow = {
@@ -22,7 +23,7 @@ export type GameRow = {
   away_div: string
 }
 
-const SEASONS = ['2024', '2023', '2022']
+const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2].map(String)
 
 // Map "Division I" → "I", etc.
 const SEARCH_DIV_MAP: Record<string, string> = {

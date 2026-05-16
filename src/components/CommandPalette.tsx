@@ -20,7 +20,7 @@ function saveRecent(r: RecentEntry) {
 
 const QUICK_NAV = [
   { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',                   Icon: Building2  },
-  { key: 'nav-players',    displayName: 'Players',     subtitle: '307 players, all seasons',        href: '/player',                 Icon: Users      },
+  { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',                 Icon: Users      },
   { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard',            Icon: Trophy     },
   { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',                Icon: Images     },
   { key: 'nav-div1',       displayName: 'Division I',  subtitle: 'Standings & top performers',      href: '/division/division-i',    Icon: LayoutGrid },
