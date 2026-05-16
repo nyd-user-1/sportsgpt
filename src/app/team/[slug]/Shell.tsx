@@ -383,15 +383,15 @@ export function TeamShell({
                         </div>
                         {/* Text */}
                         <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                          <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>
+                          <div>
+                            <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
+                            <p className="text-xs font-bold mt-0.5 truncate" style={{ color: ACCENT_COLOR }}>
                               {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
-                            </span>
-                            <span className="text-xs text-[var(--muted)]">
-                              {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
-                            </span>
+                            </p>
                           </div>
+                          <span className="text-xs text-[var(--muted)]">
+                            {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
+                          </span>
                         </div>
                       </Link>
                     )
