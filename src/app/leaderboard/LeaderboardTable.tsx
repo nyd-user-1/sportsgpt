@@ -9,6 +9,7 @@ import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
+import { PanelCompare } from '@/components/PanelCompare'
 
 // Build a lookup map from glossary term id → {definition, name}
 const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
@@ -169,6 +170,37 @@ export default function LeaderboardTable({
   const [statTab, setStatTab] = useState<StatTab>('Passing')
   const [season, setSeason]   = useState<number | null>(null)
 
+  const [compareA, setCompareA] = useState<Passer | Rusher | Receiver | null>(null)
+  const [compareB, setCompareB] = useState<Passer | Rusher | Receiver | null>(null)
+  const [panelOpen, setPanelOpen] = useState(false)
+
+  const compareAKey = compareA ? `${compareA.player_slug}__${compareA.season}` : null
+  const compareBKey = compareB ? `${compareB.player_slug}__${compareB.season}` : null
+
+  function handleTabChange(tab: StatTab) {
+    setStatTab(tab)
+    setCompareA(null)
+    setCompareB(null)
+    setPanelOpen(false)
+  }
+
+  function handleAssign(rowKey: string, player: Passer | Rusher | Receiver) {
+    if (compareAKey === rowKey) {
+      setCompareA(null)
+    } else if (compareBKey === rowKey) {
+      setCompareB(null)
+    } else if (!compareA) {
+      setCompareA(player)
+    } else if (!compareB) {
+      setCompareB(player)
+      setPanelOpen(true)
+    } else {
+      setCompareA(compareB)
+      setCompareB(player)
+      setPanelOpen(true)
+    }
+  }
+
   const [passCol, setPassCol] = useState<PassCol>('pass_yards')
   const [passDir, setPassDir] = useState<SortDir>('desc')
   const [rushCol, setRushCol] = useState<RushCol>('rush_yards')
@@ -249,7 +281,7 @@ export default function LeaderboardTable({
         <div className="shrink-0 bg-[var(--surface)] px-5 pt-4 pb-0 border-b border-[var(--border)]">
           <div className="flex items-center gap-2">
             {statTabs.map(t => (
-              <button key={t} onClick={() => setStatTab(t)}
+              <button key={t} onClick={() => handleTabChange(t)}
                 className={cn(
                   'px-5 py-3 text-sm font-semibold border-b-2 transition-colors',
                   statTab === t ? 'text-[var(--txt)]' : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]',
@@ -258,8 +290,18 @@ export default function LeaderboardTable({
                 {t}
               </button>
             ))}
-            <div className="pb-1">
+            <div className="pb-1 flex items-center gap-2">
               <SeasonFilterMenu selected={season} onChange={setSeason} />
+              {(compareA || compareB) && (
+                <button onClick={() => setPanelOpen(true)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors text-[var(--txt)]">
+                  <span className="flex items-center gap-0.5">
+                    {compareA && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>A</span>}
+                    {compareB && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>B</span>}
+                  </span>
+                  Compare
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -308,10 +350,25 @@ export default function LeaderboardTable({
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedPassers.map((p, i) => (
+                  {sortedPassers.map((p, i) => {
+                    const rowKey = `${p.player_slug}__${p.season}`
+                    const isA = compareAKey === rowKey
+                    const isB = compareBKey === rowKey
+                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareActive = isA || isB
+                    return (
                     <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
-                      <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold truncate transition-colors min-w-[160px]')}>
-                        <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)]">{p.player_name}</Link>
+                      <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors min-w-[160px]')}>
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                          <button
+                            onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                            className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
+                              compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
+                            style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                            aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                          >{compareLabel}</button>
+                        </div>
                       </td>
                       <td className={cn(td, 'text-[var(--muted)] min-w-[150px]')}>
                         <div className="flex items-center gap-2 min-w-0">
@@ -338,7 +395,8 @@ export default function LeaderboardTable({
                       <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
                       <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
                     </tr>
-                  ))}
+                  )
+                  })}
                   {sortedPassers.length === 0 && (
                     <tr><td colSpan={18} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No passing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
@@ -373,10 +431,24 @@ export default function LeaderboardTable({
                   {sortedRushers.map((p, i) => {
                     const ypc = (p.rush_attempts && p.rush_yards != null && p.rush_attempts > 0)
                       ? (p.rush_yards / p.rush_attempts).toFixed(1) : '—'
+                    const rowKey = `${p.player_slug}__${p.season}`
+                    const isA = compareAKey === rowKey
+                    const isB = compareBKey === rowKey
+                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold truncate transition-colors')}>
-                          <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)]">{p.player_name}</Link>
+                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
+                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors')}>
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <button
+                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
+                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
+                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                            >{compareLabel}</button>
+                          </div>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>
                           <div className="flex items-center gap-2 min-w-0">
@@ -428,10 +500,24 @@ export default function LeaderboardTable({
                   {sortedReceivers.map((p, i) => {
                     const ypr = (p.receptions && p.recv_yards != null && p.receptions > 0)
                       ? (p.recv_yards / p.receptions).toFixed(1) : '—'
+                    const rowKey = `${p.player_slug}__${p.season}`
+                    const isA = compareAKey === rowKey
+                    const isB = compareBKey === rowKey
+                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold truncate transition-colors')}>
-                          <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)]">{p.player_name}</Link>
+                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
+                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors')}>
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <button
+                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
+                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
+                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                            >{compareLabel}</button>
+                          </div>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>
                           <div className="flex items-center gap-2 min-w-0">
@@ -459,6 +545,15 @@ export default function LeaderboardTable({
           </div>
         </div>
       </div>
+      <PanelCompare
+        open={panelOpen}
+        onClose={() => setPanelOpen(false)}
+        playerA={compareA}
+        playerB={compareB}
+        onClearA={() => setCompareA(null)}
+        onClearB={() => setCompareB(null)}
+        statTab={statTab}
+      />
     </AppLayout>
   )
 }
