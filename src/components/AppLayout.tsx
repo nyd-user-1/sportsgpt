@@ -102,7 +102,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
       }
       setFabDragging(false)
       setFabPos(prev => ({
-        x: window.innerWidth - FAB_SIZE,
+        x: window.innerWidth - FAB_SIZE - 8,
         y: prev?.y ?? d.startY,
       }))
     }
@@ -201,7 +201,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
           touchAction: 'none',
           ...(fabPos ? { left: fabPos.x, top: fabPos.y } : {}),
         }}
-        className={`sm:hidden fixed z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg hover:bg-[var(--inp-bg)] ${fabPos ? '' : 'bottom-4 right-0'} ${fabDragging ? '' : 'transition-[left,top] duration-300 ease-out'}`}
+        className={`sm:hidden fixed z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg hover:bg-[var(--inp-bg)] ${fabPos ? '' : 'bottom-4 right-2'} ${fabDragging ? '' : 'transition-[left,top] duration-300 ease-out'}`}
       >
         {sidebarOpen
           ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
