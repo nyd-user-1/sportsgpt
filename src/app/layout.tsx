@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 import { CommandPalette } from '@/components/CommandPalette'
@@ -8,9 +8,13 @@ export const metadata: Metadata = {
   description: APP_TAGLINE,
 }
 
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full bg-[var(--surface)] sm:bg-[var(--bg)]">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
