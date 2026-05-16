@@ -52,8 +52,9 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let chartChild: React.ReactNode = null
   let seasonFilters: string[] | undefined = undefined
   let seasonRows: Record<string, StdRow[]> | undefined = undefined
-  const ALL_SEASONS  = AVAILABLE_SEASONS.map(String)
-  const LAST3_SEASONS = ALL_SEASONS.slice(-3)
+  const ALL_SEASONS    = AVAILABLE_SEASONS.map(String)
+  const LAST3_SEASONS  = ALL_SEASONS.slice(-3)
+  const SEASONS_WITH_2020 = [2020, ...AVAILABLE_SEASONS]
   const SEASON_FILTER_MAP: Record<string, string[]> = {
     'season-records':             ALL_SEASONS,
     'wins-by-school':             LAST3_SEASONS, // overridden in case block
@@ -80,7 +81,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         SELECT t.name, t.slug AS team_slug, t.school_slug, s.overall_wins AS wins, s.overall_losses AS losses, s.season
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE s.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY s.season, s.overall_wins DESC`
 
       const stackedSeasonBars: StackedSeasonBars[] = ALL_SEASONS.map(yr => ({
@@ -127,7 +128,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           s.overall_wins, s.overall_losses, COALESCE(s.overall_ties, 0) AS overall_ties
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2020, 2021, 2022, 2023, 2024, 2025)
+        WHERE s.season = ANY(${SEASONS_WITH_2020})
         ORDER BY t.name, s.season`
 
       // Index wins/losses/ties per team per season
@@ -211,7 +212,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         JOIN games g ON (g.home_team_slug = t.slug OR g.away_team_slug = t.slug)
           AND g.season = s.season
           AND g.home_score IS NOT NULL
-        WHERE s.season IN (2023, 2024, 2025)
+        WHERE s.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
         GROUP BY t.name, t.school_slug, s.season
         ORDER BY s.season, value DESC`
 
@@ -237,7 +238,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, pass_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND pass_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Passing' AND pass_yards IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, pass_yards DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -266,7 +267,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, pass_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND pass_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Passing' AND pass_tds IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, pass_tds DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -295,7 +296,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, rush_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND rush_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Rushing' AND rush_yards IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, rush_yards DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -324,7 +325,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, rush_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND rush_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Rushing' AND rush_tds IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, rush_tds DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -353,7 +354,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, recv_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND recv_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Receiving' AND recv_yards IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, recv_yards DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -382,7 +383,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, recv_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND recv_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
+        WHERE stat_type = 'Receiving' AND recv_tds IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
         ORDER BY season, recv_tds DESC`
       const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
@@ -413,13 +414,13 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_tds, 0) AS rush_tds
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
         ),
         receiving AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_tds, 0) AS recv_tds
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
           COALESCE(r.player_name, v.player_name) AS name,
@@ -454,19 +455,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(pass_yards, 0) AS pass_yards
           FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Passing' AND season = ANY(${AVAILABLE_SEASONS})
         ),
         rushing AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_yards, 0) AS rush_yards
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
         ),
         receiving AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_yards, 0) AS recv_yards
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
           COALESCE(pa.player_name, ru.player_name, re.player_name) AS name,
@@ -504,20 +505,20 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_tds, 0) AS rush_tds
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
         ),
         recv AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_tds, 0) AS recv_tds,
             COALESCE(pat, 0) AS pat
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
         ),
         passing AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(pass_tds, 0) AS pass_tds
           FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024, 2025)
+          WHERE stat_type = 'Passing' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
           COALESCE(t.player_name, r.player_name, p.player_name) AS name,

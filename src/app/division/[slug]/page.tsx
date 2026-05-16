@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { DivisionShell } from './Shell'
+import { AVAILABLE_SEASONS } from '@/lib/season'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,7 +25,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       FROM teams t
       JOIN team_season_stats s ON s.team_slug = t.slug
       WHERE t.division = ${division}
-        AND s.season IN (2021, 2022, 2023, 2024, 2025)
+        AND s.season = ANY(${AVAILABLE_SEASONS})
       ORDER BY s.season DESC, s.overall_wins DESC NULLS LAST, t.name
     `,
     sql`
@@ -33,7 +34,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       FROM player_season_stats ps
       JOIN schools sch ON sch.slug = ps.school_slug AND sch.division = ${division}
       WHERE ps.stat_type = 'Passing'
-        AND ps.season IN (2021, 2022, 2023, 2024, 2025)
+        AND ps.season = ANY(${AVAILABLE_SEASONS})
         AND ps.pass_yards IS NOT NULL
       ORDER BY ps.season DESC, ps.pass_yards DESC NULLS LAST
     `,
@@ -43,7 +44,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       FROM player_season_stats ps
       JOIN schools sch ON sch.slug = ps.school_slug AND sch.division = ${division}
       WHERE ps.stat_type = 'Rushing'
-        AND ps.season IN (2021, 2022, 2023, 2024, 2025)
+        AND ps.season = ANY(${AVAILABLE_SEASONS})
         AND ps.rush_yards IS NOT NULL
       ORDER BY ps.season DESC, ps.rush_yards DESC NULLS LAST
     `,

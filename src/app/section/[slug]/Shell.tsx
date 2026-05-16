@@ -82,14 +82,17 @@ export function SectionShell({
 
   const filteredTeams = allTeams.filter(t => t.division === activeDiv)
 
-  const DIV_PHOTOS: Record<string, string> = {
-    I:   TEAM_PHOTOS['bay-shore']?.[0]             ?? '',
-    II:  TEAM_PHOTOS['northport']?.[0]             ?? '',
-    III: TEAM_PHOTOS['hauppauge']?.[0]             ?? '',
-    IV:  TEAM_PHOTOS['shoreham-wading-river']?.[0] ?? '',
-  }
-  const DIV_SCHOOL: Record<string, string> = {
-    I: 'bay-shore', II: 'northport', III: 'hauppauge', IV: 'shoreham-wading-river',
+  const DIV_PHOTOS: Record<string, string> = {}
+  const DIV_SCHOOL: Record<string, string> = {}
+  for (const div of DIV_ORDER) {
+    for (const team of allTeams.filter(t => t.division === div)) {
+      const schoolSlug = team.slug.replace(/-varsity-football$/, '')
+      if (TEAM_PHOTOS[schoolSlug]?.[0]) {
+        DIV_PHOTOS[div] = TEAM_PHOTOS[schoolSlug][0]
+        DIV_SCHOOL[div] = schoolSlug
+        break
+      }
+    }
   }
 
   return (

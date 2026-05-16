@@ -69,15 +69,16 @@ export function DivisionShell({
   const [seasonIdx, setSeasonIdx] = useState(0)
   const [slideIdx, setSlideIdx] = useState(0)
 
-  const DIVISION_SCHOOLS: Record<string, string[]> = {
-    I:   ['bay-shore',             'ward-melville',          'commack',      'sachem-east'],
-    II:  ['northport',             'bellport',               'huntington',   'half-hollow-hills-east'],
-    III: ['hauppauge',             'kings-park',             'rocky-point',  'harborfields'],
-    IV:  ['shoreham-wading-river', 'center-moriches',        'hampton-bays', 'glenn'],
-  }
-  const slides = (DIVISION_SCHOOLS[division] ?? [])
-    .map(s => TEAM_PHOTOS[s]?.[0])
-    .filter(Boolean) as string[]
+  const seenPhotoSlugs = new Set<string>()
+  const slides = standings
+    .filter(s => {
+      const slug = s.school_slug
+      if (!slug || seenPhotoSlugs.has(slug) || !TEAM_PHOTOS[slug]?.[0]) return false
+      seenPhotoSlugs.add(slug)
+      return true
+    })
+    .map(s => TEAM_PHOTOS[s.school_slug!]![0])
+    .slice(0, 6)
 
   useEffect(() => {
     if (slides.length < 2) return
