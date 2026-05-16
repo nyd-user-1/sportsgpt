@@ -52,18 +52,18 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   let seasonFilters: string[] | undefined = undefined
   let seasonRows: Record<string, StdRow[]> | undefined = undefined
   const SEASON_FILTER_MAP: Record<string, string[]> = {
-    'season-records':             ['2021', '2022', '2023', '2024'],
-    'wins-by-school':             ['2023', '2024'], // overridden in case block
-    'point-differential-leaders': ['2023', '2024'],
-    'passing-yards-leaders':      ['2021', '2022', '2023', '2024'],
-    'passing-tds-leaders':        ['2021', '2022', '2023', '2024'],
-    'rushing-yards-leaders':      ['2021', '2022', '2023', '2024'],
-    'rushing-tds-leaders':        ['2021', '2022', '2023', '2024'],
-    'receiving-yards-leaders':    ['2021', '2022', '2023', '2024'],
-    'receiving-tds-leaders':      ['2021', '2022', '2023', '2024'],
-    'total-tds-leaders':          ['2021', '2022', '2023', '2024'],
-    'total-yards-leaders':        ['2021', '2022', '2023', '2024'],
-    'total-points-leaders':       ['2021', '2022', '2023', '2024'],
+    'season-records':             ['2021', '2022', '2023', '2024', '2025'],
+    'wins-by-school':             ['2023', '2024', '2025'], // overridden in case block
+    'point-differential-leaders': ['2023', '2024', '2025'],
+    'passing-yards-leaders':      ['2021', '2022', '2023', '2024', '2025'],
+    'passing-tds-leaders':        ['2021', '2022', '2023', '2024', '2025'],
+    'rushing-yards-leaders':      ['2021', '2022', '2023', '2024', '2025'],
+    'rushing-tds-leaders':        ['2021', '2022', '2023', '2024', '2025'],
+    'receiving-yards-leaders':    ['2021', '2022', '2023', '2024', '2025'],
+    'receiving-tds-leaders':      ['2021', '2022', '2023', '2024', '2025'],
+    'total-tds-leaders':          ['2021', '2022', '2023', '2024', '2025'],
+    'total-yards-leaders':        ['2021', '2022', '2023', '2024', '2025'],
+    'total-points-leaders':       ['2021', '2022', '2023', '2024', '2025'],
   }
   seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
@@ -77,10 +77,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         SELECT t.name, t.slug AS team_slug, t.school_slug, s.overall_wins AS wins, s.overall_losses AS losses, s.season
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2021, 2022, 2023, 2024)
+        WHERE s.season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY s.season, s.overall_wins DESC`
 
-      const stackedSeasonBars: StackedSeasonBars[] = ['2021','2022','2023','2024'].map(yr => ({
+      const stackedSeasonBars: StackedSeasonBars[] = ['2021','2022','2023','2024','2025'].map(yr => ({
         season: yr,
         bars: recordRows
           .filter(r => String(r.season) === yr)
@@ -101,7 +101,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           logoUrl: b.logoUrl,
         }))
       }
-      tableRows = seasonRows['2024'] ?? []
+      tableRows = seasonRows['2025'] ?? []
       kpiValue = tableRows.length
 
       rowLinks = Object.fromEntries(
@@ -124,7 +124,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           s.overall_wins, s.overall_losses, COALESCE(s.overall_ties, 0) AS overall_ties
         FROM teams t
         JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season IN (2020, 2021, 2022, 2023, 2024)
+        WHERE s.season IN (2020, 2021, 2022, 2023, 2024, 2025)
         ORDER BY t.name, s.season`
 
       // Index wins/losses/ties per team per season
@@ -163,6 +163,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         ...(has2020 ? [buildDynastyWindow(2022)] : []),
         buildDynastyWindow(2023),
         buildDynastyWindow(2024),
+        buildDynastyWindow(2025),
       ]
 
       seasonRows = {}
@@ -180,8 +181,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       rowLinks = Object.fromEntries(
         teamNames.map(name => [name, `/team/${teamSlugs[name]}`])
       )
-      const win2024 = dynastyWindows.find(w => w.filterYear === '2024')
-      tableRows = seasonRows['2024'] ?? (win2024?.bars ?? []).map(b => ({
+      const win2025 = dynastyWindows.find(w => w.filterYear === '2025')
+      tableRows = seasonRows['2025'] ?? (win2025?.bars ?? []).map(b => ({
         name: b.name, value: b.yr1 + b.yr2 + b.yr3, logoUrl: b.logoUrl,
       }))
       kpiValue = tableRows[0]?.value ?? 0
@@ -207,16 +208,16 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         JOIN games g ON (g.home_team_slug = t.slug OR g.away_team_slug = t.slug)
           AND g.season = s.season
           AND g.home_score IS NOT NULL
-        WHERE s.season IN (2023, 2024)
+        WHERE s.season IN (2023, 2024, 2025)
         GROUP BY t.name, t.school_slug, s.season
         ORDER BY s.season, value DESC`
 
       const seasonBars = buildSeasonBars(
         rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
-        ['2023', '2024'],
+        ['2023', '2024', '2025'],
         52
       )
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -233,10 +234,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, pass_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND pass_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Passing' AND pass_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, pass_yards DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -262,10 +263,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, pass_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Passing' AND pass_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Passing' AND pass_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, pass_tds DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -291,10 +292,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, rush_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND rush_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Rushing' AND rush_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, rush_yards DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -320,10 +321,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, rush_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Rushing' AND rush_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Rushing' AND rush_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, rush_tds DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -349,10 +350,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, recv_yards AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND recv_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Receiving' AND recv_yards IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, recv_yards DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -378,10 +379,10 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const rows = await sql`
         SELECT player_name AS name, school_slug, recv_tds AS value, season
         FROM player_season_stats
-        WHERE stat_type = 'Receiving' AND recv_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024)
+        WHERE stat_type = 'Receiving' AND recv_tds IS NOT NULL AND season IN (2021, 2022, 2023, 2024, 2025)
         ORDER BY season, recv_tds DESC`
-      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024'])
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      const seasonBars = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ['2021', '2022', '2023', '2024', '2025'])
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -409,13 +410,13 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_tds, 0) AS rush_tds
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
         ),
         receiving AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_tds, 0) AS recv_tds
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
         )
         SELECT
           COALESCE(r.player_name, v.player_name) AS name,
@@ -429,9 +430,9 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
       const seasonBars = buildSeasonBars(
         rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
-        ['2021', '2022', '2023', '2024']
+        ['2021', '2022', '2023', '2024', '2025']
       )
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -450,19 +451,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(pass_yards, 0) AS pass_yards
           FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024, 2025)
         ),
         rushing AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_yards, 0) AS rush_yards
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
         ),
         receiving AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_yards, 0) AS recv_yards
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
         )
         SELECT
           COALESCE(pa.player_name, ru.player_name, re.player_name) AS name,
@@ -479,9 +480,9 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
       const seasonBars = buildSeasonBars(
         rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
-        ['2021', '2022', '2023', '2024']
+        ['2021', '2022', '2023', '2024', '2025']
       )
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
@@ -500,20 +501,20 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(rush_tds, 0) AS rush_tds
           FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Rushing' AND season IN (2021, 2022, 2023, 2024, 2025)
         ),
         recv AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(recv_tds, 0) AS recv_tds,
             COALESCE(pat, 0) AS pat
           FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Receiving' AND season IN (2021, 2022, 2023, 2024, 2025)
         ),
         passing AS (
           SELECT player_slug, school_slug, player_name, season,
             COALESCE(pass_tds, 0) AS pass_tds
           FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024)
+          WHERE stat_type = 'Passing' AND season IN (2021, 2022, 2023, 2024, 2025)
         )
         SELECT
           COALESCE(t.player_name, r.player_name, p.player_name) AS name,
@@ -532,9 +533,9 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
       const seasonBars = buildSeasonBars(
         rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
-        ['2021', '2022', '2023', '2024']
+        ['2021', '2022', '2023', '2024', '2025']
       )
-      tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
+      tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = (
         <SportsBarChartInteractive
