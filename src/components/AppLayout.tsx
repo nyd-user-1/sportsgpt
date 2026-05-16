@@ -63,9 +63,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
   const fabDrag = useRef<{ ptrX: number; ptrY: number; startX: number; startY: number; moved: boolean } | null>(null)
 
   const handleFabPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
-    const btn = e.currentTarget
-    btn.setPointerCapture(e.pointerId)
-    const rect = btn.getBoundingClientRect()
+    const rect = e.currentTarget.getBoundingClientRect()
     fabDrag.current = {
       ptrX: e.clientX,
       ptrY: e.clientY,
@@ -73,37 +71,45 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
       startY: rect.top,
       moved: false,
     }
-  }
 
-  const handleFabPointerMove = (e: React.PointerEvent<HTMLButtonElement>) => {
-    const d = fabDrag.current
-    if (!d) return
-    const dx = e.clientX - d.ptrX
-    const dy = e.clientY - d.ptrY
-    if (!d.moved && Math.hypot(dx, dy) > 6) {
-      d.moved = true
-      setFabDragging(true)
+    const onMove = (ev: PointerEvent) => {
+      const d = fabDrag.current
+      if (!d) return
+      ev.preventDefault()
+      const dx = ev.clientX - d.ptrX
+      const dy = ev.clientY - d.ptrY
+      if (!d.moved && Math.hypot(dx, dy) > 6) {
+        d.moved = true
+        setFabDragging(true)
+      }
+      if (d.moved) {
+        const x = Math.max(0, Math.min(window.innerWidth - FAB_SIZE, d.startX + dx))
+        const y = Math.max(0, Math.min(window.innerHeight - FAB_SIZE, d.startY + dy))
+        setFabPos({ x, y })
+      }
     }
-    if (d.moved) {
-      const x = Math.max(0, Math.min(window.innerWidth - FAB_SIZE, d.startX + dx))
-      const y = Math.max(0, Math.min(window.innerHeight - FAB_SIZE, d.startY + dy))
-      setFabPos({ x, y })
-    }
-  }
 
-  const handleFabPointerUp = () => {
-    const d = fabDrag.current
-    fabDrag.current = null
-    if (!d) return
-    if (!d.moved) {
-      setSidebarOpen(v => !v)
-      return
+    const onUp = () => {
+      window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('pointerup', onUp)
+      window.removeEventListener('pointercancel', onUp)
+      const d = fabDrag.current
+      fabDrag.current = null
+      if (!d) return
+      if (!d.moved) {
+        setSidebarOpen(v => !v)
+        return
+      }
+      setFabDragging(false)
+      setFabPos(prev => ({
+        x: window.innerWidth - FAB_SIZE,
+        y: prev?.y ?? d.startY,
+      }))
     }
-    setFabDragging(false)
-    setFabPos(prev => ({
-      x: window.innerWidth - FAB_SIZE,
-      y: prev?.y ?? d.startY,
-    }))
+
+    window.addEventListener('pointermove', onMove, { passive: false })
+    window.addEventListener('pointerup', onUp)
+    window.addEventListener('pointercancel', onUp)
   }
 
   return (
@@ -190,9 +196,6 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
       <button
         ref={fabRef}
         onPointerDown={handleFabPointerDown}
-        onPointerMove={handleFabPointerMove}
-        onPointerUp={handleFabPointerUp}
-        onPointerCancel={handleFabPointerUp}
         aria-label="Toggle sidebar"
         style={{
           touchAction: 'none',
