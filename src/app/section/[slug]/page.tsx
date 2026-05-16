@@ -13,7 +13,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       SELECT t.division,
         COUNT(DISTINCT t.slug)::int AS team_count,
         AVG(
-          CASE WHEN s.season = 2024 AND (s.overall_wins + s.overall_losses) > 0
+          CASE WHEN s.season = 2025 AND (s.overall_wins + s.overall_losses) > 0
             THEN s.overall_wins::float / (s.overall_wins + s.overall_losses)
           END
         ) AS avg_win_pct
@@ -30,7 +30,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       JOIN (
         SELECT division, season, MAX(overall_wins) AS max_wins
         FROM team_season_stats
-        WHERE season IN (2022, 2023, 2024)
+        WHERE season IN (2022, 2023, 2024, 2025)
         GROUP BY division, season
       ) m ON m.division = tss.division AND m.season = tss.season AND m.max_wins = tss.overall_wins
       ORDER BY tss.season DESC, tss.division
@@ -39,7 +39,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       SELECT t.slug, t.name, t.division,
         s.overall_wins, s.overall_losses
       FROM teams t
-      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2025
       ORDER BY t.division, s.overall_wins DESC NULLS LAST
     `,
   ])
