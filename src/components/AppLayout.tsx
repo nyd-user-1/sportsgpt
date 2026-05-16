@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react'
@@ -54,6 +54,57 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
   const nextNav = navIdx >= 0 ? NAV_CYCLE[(navIdx + 1) % n]     : null
 
   const navBtnCls = 'flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
+
+  // Mobile floating sidebar toggle — draggable, snaps to right edge on release.
+  const FAB_SIZE = 48
+  const [fabPos, setFabPos] = useState<{ x: number; y: number } | null>(null)
+  const [fabDragging, setFabDragging] = useState(false)
+  const fabRef = useRef<HTMLButtonElement>(null)
+  const fabDrag = useRef<{ ptrX: number; ptrY: number; startX: number; startY: number; moved: boolean } | null>(null)
+
+  const handleFabPointerDown = (e: React.PointerEvent<HTMLButtonElement>) => {
+    const btn = e.currentTarget
+    btn.setPointerCapture(e.pointerId)
+    const rect = btn.getBoundingClientRect()
+    fabDrag.current = {
+      ptrX: e.clientX,
+      ptrY: e.clientY,
+      startX: rect.left,
+      startY: rect.top,
+      moved: false,
+    }
+  }
+
+  const handleFabPointerMove = (e: React.PointerEvent<HTMLButtonElement>) => {
+    const d = fabDrag.current
+    if (!d) return
+    const dx = e.clientX - d.ptrX
+    const dy = e.clientY - d.ptrY
+    if (!d.moved && Math.hypot(dx, dy) > 6) {
+      d.moved = true
+      setFabDragging(true)
+    }
+    if (d.moved) {
+      const x = Math.max(0, Math.min(window.innerWidth - FAB_SIZE, d.startX + dx))
+      const y = Math.max(0, Math.min(window.innerHeight - FAB_SIZE, d.startY + dy))
+      setFabPos({ x, y })
+    }
+  }
+
+  const handleFabPointerUp = () => {
+    const d = fabDrag.current
+    fabDrag.current = null
+    if (!d) return
+    if (!d.moved) {
+      setSidebarOpen(v => !v)
+      return
+    }
+    setFabDragging(false)
+    setFabPos(prev => ({
+      x: window.innerWidth - FAB_SIZE,
+      y: prev?.y ?? d.startY,
+    }))
+  }
 
   return (
     <div className="flex h-dvh overflow-hidden p-0 sm:p-[18px] bg-[var(--surface)] sm:bg-[var(--bg)]">
@@ -136,8 +187,19 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
 
       <div id="chat-panel-root" className="flex shrink-0 h-full" />
 
-      <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-        className="sm:hidden fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg transition-colors hover:bg-[var(--inp-bg)]">
+      <button
+        ref={fabRef}
+        onPointerDown={handleFabPointerDown}
+        onPointerMove={handleFabPointerMove}
+        onPointerUp={handleFabPointerUp}
+        onPointerCancel={handleFabPointerUp}
+        aria-label="Toggle sidebar"
+        style={{
+          touchAction: 'none',
+          ...(fabPos ? { left: fabPos.x, top: fabPos.y } : {}),
+        }}
+        className={`sm:hidden fixed z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg hover:bg-[var(--inp-bg)] ${fabPos ? '' : 'bottom-4 right-0'} ${fabDragging ? '' : 'transition-[left,top] duration-300 ease-out'}`}
+      >
         {sidebarOpen
           ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
           : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
