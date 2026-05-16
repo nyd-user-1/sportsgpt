@@ -18,7 +18,7 @@ type ChartNavDetail = {
   pageTitle?: string
 } | null
 
-export function AppLayout({ children, mobileHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode }) {
+export function AppLayout({ children, mobileHeader, hideHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
   const pathname = usePathname()
@@ -125,8 +125,17 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
+      <div className="relative flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
 
+        {hideHeader ? (
+          <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
+            className="hidden sm:flex absolute top-5 left-5 z-20 h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
+            {sidebarOpen
+              ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
+              : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+            }
+          </button>
+        ) : (
         <div className="flex items-center px-5 pt-5 pb-5">
 
           <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
@@ -186,6 +195,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
           ) : null}
 
         </div>
+        )}
 
         {children}
 

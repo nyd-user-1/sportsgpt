@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, FileText, Info, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
@@ -11,6 +11,48 @@ import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
+
+const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
+
+function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort }: {
+  col: string; label: string; right?: boolean; glossaryId?: string
+  sortCol: string | null; sortDir: 'asc' | 'desc'; onSort: (col: string) => void
+}) {
+  const active = sortCol === col
+  const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
+  return (
+    <th className={cn('px-2 py-3 border-b border-[var(--border)] bg-[var(--surface)]', right ? 'text-right' : 'text-left')}>
+      <div className={cn('relative inline-block group/th', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
+        <button onClick={() => onSort(col)}
+          className={cn('inline-flex items-center gap-1 rounded-md px-0 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5 whitespace-nowrap',
+            active ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
+          {label}
+          {active
+            ? (sortDir === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />)
+            : <ChevronUp className="h-3 w-3 opacity-0" />}
+        </button>
+        {term && (
+          <div className={cn(
+            'pointer-events-none group-hover/th:pointer-events-auto absolute top-full z-50 mt-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
+            right ? 'right-0' : 'left-0'
+          )}>
+            <div className="px-3.5 py-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)] mb-1.5">{term.name}</p>
+              <p className="text-[12px] text-[var(--muted)] leading-relaxed font-normal">{term.definition}</p>
+            </div>
+            <Link href={`/glossary#${glossaryId}`} onClick={e => e.stopPropagation()}
+              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--border)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--inp-bg)] transition-colors"
+              style={{ color: ACCENT_COLOR }}>
+              <span className="inline-flex items-center gap-1.5"><Info className="h-3 w-3" />Learn more</span>
+              <ArrowUpRight className="h-3 w-3" />
+            </Link>
+          </div>
+        )}
+      </div>
+    </th>
+  )
+}
 
 function fmtPct(w: number | null, l: number | null): string {
   const wins   = w ?? 0
@@ -47,6 +89,7 @@ type GameRow = {
   away_team_name: string | null
 }
 
+
 function fmtGameDate(raw: string | null) {
   if (!raw) return '—'
   const d = new Date(raw + 'T12:00:00')
@@ -66,23 +109,13 @@ export function TeamShell({
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(true)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
   const [chartsOpen, setChartsOpen]     = useState(false)
   const [mapsOpen,   setMapsOpen]       = useState(false)
   const [chatOpen,   setChatOpen]       = useState(false)
+  const [sortCol, setSortCol]           = useState<string | null>(null)
+  const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false)
-      }
-    }
-    if (dropdownOpen) document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
-  }, [dropdownOpen])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -100,22 +133,49 @@ export function TeamShell({
   const historyRows = seasonRows.map(s => {
     const pf = s.points_for as number | null
     const pa = s.points_against as number | null
-    const gp = ((s.overall_wins as number | null) ?? 0) + ((s.overall_losses as number | null) ?? 0) + ((s.overall_ties as number | null) ?? 0)
+    const ow = (s.overall_wins as number | null) ?? 0
+    const ol = (s.overall_losses as number | null) ?? 0
+    const ot = (s.overall_ties as number | null) ?? 0
+    const cw = (s.conference_wins as number | null) ?? 0
+    const cl = (s.conference_losses as number | null) ?? 0
+    const gp = ow + ol + ot
     const avgPf = pf != null && gp > 0 ? pf / gp : null
     const avgPa = pa != null && gp > 0 ? pa / gp : null
     const diff = pf != null && pa != null ? pf - pa : null
+    const winPct = gp > 0 ? ow / gp : null
     return {
       seasonKey: s.season as number,
       season: formatSeason(s.season as number),
-      overall: fmtRecord(s.overall_wins as number | null, s.overall_losses as number | null, s.overall_ties as number | null),
-      conf: fmtRecord(s.conference_wins as number | null, s.conference_losses as number | null, s.conference_ties as number | null),
-      pf,
-      pa,
-      avgPf,
-      avgPa,
-      diff,
+      overall: fmtRecord(ow, ol, ot),
+      conf: fmtRecord(cw, cl),
+      pf, pa, avgPf, avgPa, diff,
+      _ow: ow, _cw: cw, _winPct: winPct,
     }
   })
+
+  function handleSort(col: string) {
+    if (sortCol === col) setSortDir(d => d === 'asc' ? 'desc' : 'asc')
+    else { setSortCol(col); setSortDir('desc') }
+  }
+
+  const sortedHistoryRows = useMemo(() => {
+    if (!sortCol) return historyRows
+    const key = (r: typeof historyRows[0]): number => {
+      switch (sortCol) {
+        case 'season':  return r.seasonKey
+        case 'overall': return r._ow
+        case 'conf':    return r._cw
+        case 'pf':      return r.pf ?? -Infinity
+        case 'pa':      return r.pa ?? -Infinity
+        case 'avgPf':   return r.avgPf ?? -Infinity
+        case 'avgPa':   return r.avgPa ?? -Infinity
+        case 'diff':    return r.diff ?? -Infinity
+        case 'winPct':  return r._winPct ?? -Infinity
+        default:        return 0
+      }
+    }
+    return [...historyRows].sort((a, b) => sortDir === 'asc' ? key(a) - key(b) : key(b) - key(a))
+  }, [historyRows, sortCol, sortDir])
 
   const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
 
@@ -130,7 +190,7 @@ export function TeamShell({
   const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
   const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
   const roundBtn = 'inline-flex items-center justify-center h-8 w-8 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
-  const td = 'px-4 py-2.5 border-b border-[var(--border)] text-sm'
+  const td = 'px-2 py-2.5 border-b border-[var(--border)] text-sm'
 
   const heroLogo  = SCHOOL_LOGOS[schoolSlug]
   const mobileHeader = (
@@ -153,7 +213,21 @@ export function TeamShell({
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
-              <h1 className="text-2xl font-bold text-[var(--txt)]">{teamName}</h1>
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-3">
+                  {heroLogo && (
+                    <Image src={heroLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 object-contain" unoptimized />
+                  )}
+                  <h1 className="text-2xl font-bold text-[var(--txt)]">{teamName}</h1>
+                </div>
+                <div className="flex items-center gap-1.5 pl-[48px] text-xs text-[var(--muted)]">
+                  <Link href="/section/xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
+                  <span>/</span>
+                  <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {division}</Link>
+                  <span>/</span>
+                  <span className="font-medium" style={{ color: ACCENT_COLOR }}>{teamName}</span>
+                </div>
+              </div>
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
                   <div className="relative group">
@@ -185,21 +259,11 @@ export function TeamShell({
               const photo = TEAM_PHOTOS[schoolSlug]?.[0]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
-                <div className="hidden sm:block mb-8 h-\[400px\] w-full rounded-2xl overflow-hidden relative">
+                <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
                   <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 flex items-center gap-3">
-                    {logo && (
-                      <Image src={logo} alt="" width={40} height={40} className="rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
-                    )}
-                    <div>
-                      <p className="text-sm font-bold text-white leading-snug">{teamName}</p>
-                      <p className="text-xs text-white/70">Section XI · Division {division}</p>
-                    </div>
-                  </div>
                 </div>
               ) : (
-                <div className="hidden sm:flex mb-8 h-\[400px\] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+                <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
                   style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
                   {logo ? (
                     <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
@@ -215,31 +279,23 @@ export function TeamShell({
 
             {/* Profiles */}
             <div className="mb-8">
-              <div className="mb-4">
-                <div ref={dropdownRef} className="relative inline-block">
-                  <button
-                    onClick={() => setDropdownOpen(v => !v)}
-                    className="flex items-center gap-1 rounded-lg px-2 py-1 -ml-2 text-lg font-semibold text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-                  >
-                    {activeProfile.h2}
-                    <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-150', dropdownOpen && 'rotate-180')} />
-                  </button>
-                  {dropdownOpen && (
-                    <div className="absolute top-full left-0 mt-1 z-20 bg-[var(--surface)] border border-[var(--border)] rounded-xl shadow-lg overflow-hidden min-w-[140px]">
-                      {PROFILES.map((p, i) => (
-                        <button key={p.h2}
-                          onClick={() => { setProfileIdx(i); setInfoExpanded(true); setDropdownOpen(false) }}
-                          className={cn('w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)]',
-                            i === profileIdx ? 'font-semibold text-[var(--txt)]' : 'text-[var(--muted)]')}>
-                          {p.h2}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <div className="rounded-xl border border-[var(--border)] shadow-sm">
 
-              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
+                {/* Toolbar: title + chevrons left, PDF icon right */}
+                <div className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] rounded-t-xl">
+                  <div className="flex items-center gap-1">
+                    <span className="text-sm font-semibold text-[var(--txt)]">{activeProfile.h2}</span>
+                    <button onClick={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button onClick={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <button className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Export PDF">
+                    <FileText className="h-4 w-4" />
+                  </button>
+                </div>
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
@@ -249,21 +305,20 @@ export function TeamShell({
                     <div className="overflow-x-auto no-scrollbar">
                     <table className="w-full text-sm table-fixed">
                       <thead>
-                        <tr onClick={() => setInfoExpanded(v => !v)}
-                          className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Season</th>
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Overall</th>
-                          <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Conf</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">PF</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">PA</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Avg PF</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Avg PA</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Diff</th>
-                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)]">Win%</th>
+                        <tr>
+                          <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
+                          <SortTh col="overall" label="Overall" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
+                          <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" />
+                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf"     right />
+                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa"     right />
+                          <SortTh col="avgPf"   label="Avg PF"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pf" right />
+                          <SortTh col="avgPa"   label="Avg PA"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pa" right />
+                          <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff"   right />
+                          <SortTh col="winPct"  label="PCT"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pct"    right />
                         </tr>
                       </thead>
                       <tbody>
-                        {(infoExpanded ? historyRows : historyRows.slice(0, 2)).map(row => (
+                        {(infoExpanded ? sortedHistoryRows : sortedHistoryRows.slice(0, 2)).map(row => (
                           <tr key={row.season} className="border-t border-[var(--border)]">
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.season}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.overall}</td>
@@ -276,10 +331,7 @@ export function TeamShell({
                               {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
                             </td>
                             <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>
-                              {(() => {
-                                const s = seasonRows.find(s2 => (s2.season as number) === row.seasonKey)
-                                return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
-                              })()}
+                              {row._winPct != null ? row._winPct.toFixed(3).replace(/^0/, '') : '—'}
                             </td>
                           </tr>
                         ))}
@@ -300,15 +352,15 @@ export function TeamShell({
                         <div className="px-4 py-3 text-sm text-[var(--muted)] border-t border-[var(--border)]">No game data for {profileSeason}.</div>
                       ) : (
                         <div className="overflow-x-auto no-scrollbar">
-                          <table className="w-full text-sm table-fixed" style={{ borderSpacing: 0 }}>
+                          <table className="w-full text-sm table-fixed">
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th className="w-[13%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th className="w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="w-[18%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th className="w-[15%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
+                                <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
+                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -334,8 +386,8 @@ export function TeamShell({
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
                                     <td className={cn(td, 'text-[var(--txt2)] tabular-nums')}>{fmtGameDate(g.game_date)}</td>
-                                    <td className={cn(td, 'font-medium')}>
-                                      <div className="flex items-center gap-1.5 min-w-0">
+                                    <td className={cn(td, 'font-medium overflow-hidden')}>
+                                      <div className="flex items-center gap-1.5 min-w-0 overflow-hidden">
                                         <span className="text-xs text-[var(--muted)] shrink-0">{isHome ? 'vs' : 'at'}</span>
                                         {opLogo && (
                                           <Image src={opLogo} alt="" width={20} height={20} className="shrink-0 h-5 w-5 object-contain" unoptimized />
@@ -343,8 +395,9 @@ export function TeamShell({
                                         <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                       </div>
                                     </td>
+                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
-                                    <td className={cn(td, 'text-left')}>
+                                    <td className={cn(td, 'text-right')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
                                         result === 'W' ? 'text-green-700 bg-green-50' :
                                         result === 'L' ? 'text-red-700 bg-red-50' :
@@ -352,7 +405,6 @@ export function TeamShell({
                                         {result}
                                       </span>
                                     </td>
-                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                   </tr>
                                 )
                               })}

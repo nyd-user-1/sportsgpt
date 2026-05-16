@@ -125,6 +125,8 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
 
 // Player headshots keyed by player slug
 export const PLAYER_PHOTOS: Record<string, string> = {
+  'ja-quan-thomas':    `${BLOB_P}/jaquan-thomas.avif`,
+  'jason-pratt':       `${BLOB_P}/jason-pratt.avif`,
   'thomas-costarelli': `${BLOB_P}/thomas-costarelli.avif`,
   'derek-burrell':     `${BLOB_P}/derek-burrell.avif`,
   'joseph-filardi':    `${BLOB_P}/filardi-2.avif`,

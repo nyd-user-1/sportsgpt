@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -177,12 +177,12 @@ export function DivisionShell({
                 {availableSeasons.length > 1 && (
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={() => { setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length); setStandingsExpanded(false) }}
+                      onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
                       className={roundBtn}>
                       <ChevronLeft className="h-4 w-4" />
                     </button>
                     <button
-                      onClick={() => { setSeasonIdx(i => (i + 1) % availableSeasons.length); setStandingsExpanded(false) }}
+                      onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
                       className={roundBtn}>
                       <ChevronRight className="h-4 w-4" />
                     </button>
@@ -241,17 +241,29 @@ export function DivisionShell({
                 </div>
                 <div ref={passRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
-                    {topPassers.map(p => (
-                      <Link key={p.player_slug} href={`/player/${p.player_slug}`}
-                        className="shrink-0 w-52 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                        <p className="text-sm font-bold text-[var(--txt)] leading-snug">{p.player_name}</p>
-                        <p className="text-xs text-[var(--muted)] mt-0.5">{p.school_name}</p>
-                        <div className="mt-2 flex items-center gap-2">
-                          <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'} YDS</span>
-                          <span className="text-xs text-[var(--muted)]">{p.pass_tds ?? '—'} TD</span>
-                        </div>
-                      </Link>
-                    ))}
+                    {topPassers.map(p => {
+                      const photo = PLAYER_PHOTOS[p.player_slug]
+                      return (
+                        <Link key={p.player_slug} href={`/player/${p.player_slug}`}
+                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
+                            {photo
+                              ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                              : null}
+                          </div>
+                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
+                            <div>
+                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
+                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.school_name}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'} YDS</span>
+                              <span className="text-xs text-[var(--muted)]">{p.pass_tds ?? '—'} TD</span>
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
@@ -269,17 +281,29 @@ export function DivisionShell({
                 </div>
                 <div ref={rushRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
-                    {topRushers.map(p => (
-                      <Link key={p.player_slug} href={`/player/${p.player_slug}`}
-                        className="shrink-0 w-52 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                        <p className="text-sm font-bold text-[var(--txt)] leading-snug">{p.player_name}</p>
-                        <p className="text-xs text-[var(--muted)] mt-0.5">{p.school_name}</p>
-                        <div className="mt-2 flex items-center gap-2">
-                          <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'} YDS</span>
-                          <span className="text-xs text-[var(--muted)]">{p.rush_tds ?? '—'} TD</span>
-                        </div>
-                      </Link>
-                    ))}
+                    {topRushers.map(p => {
+                      const photo = PLAYER_PHOTOS[p.player_slug]
+                      return (
+                        <Link key={p.player_slug} href={`/player/${p.player_slug}`}
+                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
+                            {photo
+                              ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                              : null}
+                          </div>
+                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
+                            <div>
+                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
+                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.school_name}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'} YDS</span>
+                              <span className="text-xs text-[var(--muted)]">{p.rush_tds ?? '—'} TD</span>
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               </div>

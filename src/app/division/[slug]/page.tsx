@@ -24,7 +24,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
       FROM teams t
       JOIN team_season_stats s ON s.team_slug = t.slug
       WHERE t.division = ${division}
-        AND s.season IN (2021, 2022, 2023, 2024)
+        AND s.season IN (2021, 2022, 2023, 2024, 2025)
       ORDER BY s.season DESC, s.overall_wins DESC NULLS LAST, t.name
     `,
     sql`
