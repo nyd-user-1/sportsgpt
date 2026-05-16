@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { SectionShell } from './Shell'
-import { CURRENT_SEASON } from '@/lib/season'
+import { CURRENT_SEASON, AVAILABLE_SEASONS } from '@/lib/season'
 
 export const dynamic = 'force-dynamic'
 
@@ -9,7 +9,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
   const { slug } = await params
   if (slug !== 'section-xi') notFound()
 
-  const [divisionSummaryRows, recentChampsRows, allTeamRows] = await Promise.all([
+  const [divisionSummaryRows, recentChampsRows, allTeamRows, gameRows, leaderRows] = await Promise.all([
     sql`
       SELECT t.division,
         COUNT(DISTINCT t.slug)::int AS team_count,
@@ -37,11 +37,34 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       ORDER BY tss.season DESC, tss.division
     `,
     sql`
-      SELECT t.slug, t.name, t.division,
-        s.overall_wins, s.overall_losses
+      SELECT t.slug, t.name, t.division, t.school_slug,
+        s.overall_wins, s.overall_losses, s.conference_wins, s.conference_losses, s.season
       FROM teams t
-      LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
-      ORDER BY t.division, s.overall_wins DESC NULLS LAST
+      JOIN team_season_stats s ON s.team_slug = t.slug
+      WHERE s.season = ANY(${AVAILABLE_SEASONS})
+      ORDER BY s.season DESC, t.division, s.overall_wins DESC NULLS LAST
+    `,
+    sql`
+      SELECT g.id, g.game_date, g.season,
+        g.home_team_slug, g.away_team_slug, g.home_score, g.away_score,
+        ht.name AS home_name, ht.school_slug AS home_school_slug,
+        at2.name AS away_name, at2.school_slug AS away_school_slug
+      FROM games g
+      JOIN teams ht  ON ht.slug  = g.home_team_slug
+      JOIN teams at2 ON at2.slug = g.away_team_slug
+      WHERE g.season = ANY(${AVAILABLE_SEASONS})
+      ORDER BY g.season DESC, g.game_date DESC
+      LIMIT 100
+    `,
+    sql`
+      SELECT ps.player_slug, ps.player_name, ps.school_name, ps.school_slug,
+        ps.pass_yards, ps.pass_tds, ps.season
+      FROM player_season_stats ps
+      WHERE ps.stat_type = 'Passing'
+        AND ps.season = ANY(${AVAILABLE_SEASONS})
+        AND ps.pass_yards IS NOT NULL
+      ORDER BY ps.season DESC, ps.pass_yards DESC
+      LIMIT 100
     `,
   ])
 
@@ -61,11 +84,37 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
         overall_losses:r.overall_losses != null ? Number(r.overall_losses) : null,
       }))}
       allTeams={allTeamRows.map(r => ({
-        slug:          r.slug as string,
-        name:          r.name as string,
-        division:      r.division as string,
-        overall_wins:  r.overall_wins != null ? Number(r.overall_wins) : null,
-        overall_losses:r.overall_losses != null ? Number(r.overall_losses) : null,
+        slug:              r.slug as string,
+        name:              r.name as string,
+        division:          r.division as string,
+        school_slug:       r.school_slug as string | null,
+        overall_wins:      r.overall_wins != null ? Number(r.overall_wins) : null,
+        overall_losses:    r.overall_losses != null ? Number(r.overall_losses) : null,
+        conference_wins:   r.conference_wins != null ? Number(r.conference_wins) : null,
+        conference_losses: r.conference_losses != null ? Number(r.conference_losses) : null,
+        season:            Number(r.season),
+      }))}
+      games={gameRows.map(r => ({
+        id:               Number(r.id),
+        game_date:        r.game_date ? new Date(r.game_date as unknown as string).toISOString().slice(0, 10) : null,
+        season:           Number(r.season),
+        home_team_slug:   r.home_team_slug as string,
+        away_team_slug:   r.away_team_slug as string,
+        home_score:       r.home_score != null ? Number(r.home_score) : null,
+        away_score:       r.away_score != null ? Number(r.away_score) : null,
+        home_name:        (r.home_name as string).replace(/\s+Varsity\s+Football$/i, ''),
+        away_name:        (r.away_name as string).replace(/\s+Varsity\s+Football$/i, ''),
+        home_school_slug: r.home_school_slug as string | null,
+        away_school_slug: r.away_school_slug as string | null,
+      }))}
+      leaders={leaderRows.map(r => ({
+        player_slug: r.player_slug as string,
+        player_name: r.player_name as string,
+        school_name: r.school_name as string,
+        school_slug: r.school_slug as string | null,
+        pass_yards:  r.pass_yards != null ? Number(r.pass_yards) : null,
+        pass_tds:    r.pass_tds != null ? Number(r.pass_tds) : null,
+        season:      Number(r.season),
       }))}
     />
   )

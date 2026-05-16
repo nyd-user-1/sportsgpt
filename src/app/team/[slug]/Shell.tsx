@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, FileText, Info, ArrowUpRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Download, Info, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
@@ -114,8 +114,17 @@ export function TeamShell({
   const [chatOpen,   setChatOpen]       = useState(false)
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
+  const [downloadOpen, setDownloadOpen] = useState(false)
+  const downloadRef = useRef<HTMLDivElement>(null)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (!downloadRef.current?.contains(e.target as Node)) setDownloadOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -290,19 +299,34 @@ export function TeamShell({
               <div className="rounded-xl border border-[var(--border)] shadow-sm">
 
                 {/* Toolbar: title + chevrons left, PDF icon right */}
-                <div className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] rounded-t-xl">
+                <div onClick={() => setInfoExpanded(v => !v)}
+                  className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] rounded-t-xl cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
                   <div className="flex items-center gap-1">
                     <span className="text-sm font-semibold text-[var(--txt)]">{activeProfile.h2}</span>
-                    <button onClick={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
+                    <button onClick={e => { e.stopPropagation(); setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
                       <ChevronLeft className="h-4 w-4" />
                     </button>
-                    <button onClick={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
+                    <button onClick={e => { e.stopPropagation(); setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
                       <ChevronRight className="h-4 w-4" />
                     </button>
                   </div>
-                  <button className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Export PDF">
-                    <FileText className="h-4 w-4" />
-                  </button>
+                  <div ref={downloadRef} className="relative" onClick={e => e.stopPropagation()}>
+                    <button onClick={() => setDownloadOpen(v => !v)}
+                      className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Download">
+                      <Download className="h-4 w-4" />
+                    </button>
+                    {downloadOpen && (
+                      <div className="absolute right-0 top-full mt-1 z-50 min-w-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden">
+                        {['CSV', 'DOC', 'MD', 'PDF'].map((fmt, i) => (
+                          <button key={fmt} onClick={() => setDownloadOpen(false)}
+                            className={cn('w-full px-3 py-2 text-left text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors',
+                              i > 0 && 'border-t border-[var(--border)]')}>
+                            {fmt}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Season History */}

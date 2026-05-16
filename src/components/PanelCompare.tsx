@@ -144,16 +144,16 @@ function PlayerCard({
 function AccordionStatTable({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--border)] overflow-hidden">
+    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-4 py-2.5 bg-[var(--inp-bg)] hover:bg-[var(--border)]/40 transition-colors"
+        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors bg-[var(--surface)] hover:bg-[var(--inp-bg)]"
       >
-        <span className="text-xs font-bold text-[var(--txt)]">{title}</span>
-        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-200', !open && '-rotate-90')} />
+        <span className="text-sm font-bold text-[var(--txt)]">{title}</span>
+        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-200', open && 'rotate-180')} />
       </button>
       {open && (
-        <div className="divide-y divide-[var(--border)]">
+        <div className="divide-y divide-[var(--border)] border-t border-[var(--border)]">
           {children}
         </div>
       )}
@@ -168,7 +168,7 @@ function StatRow({ label, value, win }: { label: string; value: string; win: Win
   const isWin = win === 'win'
   return (
     <div className="flex items-center justify-between px-4 py-2.5">
-      <span className="text-sm text-[var(--txt)]">{label}</span>
+      <span className="text-sm text-[var(--muted)]">{label}</span>
       <div className="flex items-center gap-1">
         {isWin && <Check className="h-3.5 w-3.5 shrink-0" style={{ color: WIN_TEXT }} />}
         <span

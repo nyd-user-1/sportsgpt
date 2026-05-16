@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
+import { Switch } from '@/components/ui/switch'
+import { Label } from '@/components/ui/label'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { AppLayout } from '@/components/AppLayout'
 import { cn, formatSeason } from '@/lib/utils'
@@ -178,6 +180,17 @@ export default function LeaderboardTable({
     (urlTab === 'Rushing' || urlTab === 'Receiving') ? urlTab : 'Passing'
   )
   const [season, setSeason]   = useState<number | null>(null)
+  const [versusMode, setVersusMode] = useState(false)
+
+  function toggleVersus() {
+    if (versusMode) {
+      const params = new URLSearchParams(searchParams.toString())
+      params.delete('a')
+      params.delete('b')
+      router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
+    }
+    setVersusMode(v => !v)
+  }
 
   function handleTabChange(tab: StatTab) {
     setStatTab(tab)
@@ -302,6 +315,10 @@ export default function LeaderboardTable({
             ))}
             <div className="pb-1 flex items-center gap-2">
               <SeasonFilterMenu selected={season} onChange={setSeason} />
+              <div className="flex items-center gap-2">
+                <Switch id="versus-switch" checked={versusMode} onCheckedChange={toggleVersus} />
+                <Label htmlFor="versus-switch" className="text-sm font-semibold text-[var(--muted)] cursor-pointer select-none">Versus</Label>
+              </div>
             </div>
           </div>
         </div>
@@ -357,17 +374,22 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                    <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
-                      <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors min-w-[160px]')}>
+                    <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                      <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                           <button
                             onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
-                            className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
-                              compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
-                            style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                            className={cn(
+                              'shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                              !versusMode && 'hidden',
+                              compareActive
+                                ? '!opacity-100 text-white border-transparent'
+                                : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                            )}
+                            style={compareActive ? { background: ACCENT_COLOR } : { color: ACCENT_COLOR, borderColor: ACCENT_COLOR }}
                             aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
-                          >{compareLabel}</button>
+                          >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                         </div>
                       </td>
                       <td className={cn(td, 'text-[var(--muted)] min-w-[150px]')}>
@@ -437,8 +459,8 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors')}>
+                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
@@ -506,8 +528,8 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
-                        <td className={cn(td, 'sticky left-0 z-[1] bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)] font-semibold transition-colors')}>
+                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button

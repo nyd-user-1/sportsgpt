@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^2.2.10",
     "@neondatabase/serverless": "^1.1.0",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-switch": "^1.2.6",
     "@vercel/blob": "^2.3.3",
     "@vis.gl/react-google-maps": "^1.8.3",
     "clsx": "^2.1.1",
