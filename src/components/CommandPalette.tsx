@@ -4,9 +4,9 @@ import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid } from 'lucide-react'
-import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 
-type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; type: 'player' | 'team' | 'school' }
+type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: 'player' | 'team' | 'school' }
 const RECENTS_KEY = 'sportsgpt-recents'
 const MAX_RECENTS = 5
 
@@ -42,6 +42,7 @@ type Result = {
   subtitle?: string
   href: string
   schoolSlug?: string
+  logoUrl?: string
   score: number
 }
 
@@ -54,14 +55,31 @@ function matchScore(query: string, text: string): number {
   return i >= 0 ? i : Infinity
 }
 
-function buildResults(data: SearchData, query: string): { teams: Result[]; players: Result[]; schools: Result[] } {
+const DIVISIONS = [
+  { label: 'Division I',   slug: 'division-i',   num: 1 },
+  { label: 'Division II',  slug: 'division-ii',  num: 2 },
+  { label: 'Division III', slug: 'division-iii', num: 3 },
+  { label: 'Division IV',  slug: 'division-iv',  num: 4 },
+]
+
+function buildResults(data: SearchData, query: string): { divisions: Result[]; teams: Result[]; players: Result[]; schools: Result[] } {
   const q = query.trim()
-  if (!q) return { teams: [], players: [], schools: [] }
+  if (!q) return { divisions: [], teams: [], players: [], schools: [] }
+
+  const divisions: Result[] = []
+  for (const d of DIVISIONS) {
+    const s = matchScore(q, d.label)
+    if (s < Infinity) {
+      divisions.push({ key: `div-${d.slug}`, type: 'team', name: d.label, displayName: d.label, subtitle: 'Section XI', href: `/division/${d.slug}`, logoUrl: DIVISION_LOGOS[d.num], score: s })
+    }
+  }
 
   const teams: Result[] = []
   for (const t of data.teams) {
     const display = t.name.replace(/\s+Varsity\s+Football$/i, '')
-    const s = matchScore(q, display)
+    const nameScore = matchScore(q, display)
+    const divScore  = matchScore(q, `Division ${t.division}`)
+    const s = Math.min(nameScore, divScore === Infinity ? Infinity : divScore + 5)
     if (s < Infinity) {
       teams.push({ key: `team-${t.slug}`, type: 'team', name: t.name, displayName: display, subtitle: `Division ${t.division}`, href: `/team/${t.slug}`, schoolSlug: t.school_slug, score: s })
     }
@@ -70,9 +88,12 @@ function buildResults(data: SearchData, query: string): { teams: Result[]; playe
 
   const players: Result[] = []
   for (const p of data.players) {
-    const s = matchScore(q, p.name)
+    const nameScore  = matchScore(q, p.name)
+    const schoolName = p.team_name?.replace(/\s+Varsity\s+Football$/i, '') ?? ''
+    const teamScore  = matchScore(q, schoolName)
+    const s = Math.min(nameScore, teamScore === Infinity ? Infinity : teamScore + 10)
     if (s < Infinity) {
-      const parts = [p.position, p.team_name?.replace(/\s+Varsity\s+Football$/i, '')].filter(Boolean)
+      const parts = [p.position, schoolName].filter(Boolean)
       players.push({ key: `player-${p.slug}`, type: 'player', name: p.name, displayName: p.name, subtitle: parts.join(' · '), href: `/player/${p.slug}`, schoolSlug: p.school_slug, score: s })
     }
   }
@@ -87,11 +108,11 @@ function buildResults(data: SearchData, query: string): { teams: Result[]; playe
   }
   schools.sort((a, b) => a.score - b.score)
 
-  return { teams, players, schools }
+  return { divisions, teams, players, schools }
 }
 
 function ResultItem({ r, active, onHover, onClick }: { r: Result; active: boolean; onHover: () => void; onClick: () => void }) {
-  const logo = r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined
+  const logo = r.logoUrl ?? (r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined)
   return (
     <button
       className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${active ? 'bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
@@ -187,13 +208,14 @@ function Palette() {
     router.replace(`${pathname}?${p}`, { scroll: false })
   }
 
-  const { teams, players, schools } = data ? buildResults(data, query) : { teams: [], players: [], schools: [] }
+  const { divisions, teams, players, schools } = data ? buildResults(data, query) : { divisions: [], teams: [], players: [], schools: [] }
 
   // Flat list for keyboard nav — search results when typing, recents+quicknav when empty
   const allResults: Result[] = [
-    ...(teams.length   ? teams.slice(0, 5)   : []),
-    ...(players.length ? players.slice(0, 8) : []),
-    ...(schools.length ? schools.slice(0, 4) : []),
+    ...(divisions.length ? divisions.slice(0, 4) : []),
+    ...(teams.length     ? teams.slice(0, 5)     : []),
+    ...(players.length   ? players.slice(0, 8)   : []),
+    ...(schools.length   ? schools.slice(0, 4)   : []),
   ]
   const emptyNavItems = !query.trim() ? [
     ...recents.map(r => ({ ...r, score: 0, name: r.displayName })),
@@ -280,7 +302,7 @@ function Palette() {
                 <>
                   <SectionHeader label="Recent" />
                   {recents.map((r, i) => {
-                    const logo = r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined
+                    const logo = r.logoUrl ?? (r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined)
                     return (
                       <button key={r.key}
                         className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${i === activeIdx ? 'bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
@@ -326,6 +348,18 @@ function Palette() {
           )}
           {isEmpty && (
             <div className="py-10 text-center text-sm text-[var(--muted)]">No results for &ldquo;{query}&rdquo;</div>
+          )}
+
+          {divisions.length > 0 && (
+            <>
+              <SectionHeader label="Divisions" />
+              {divisions.slice(0, 4).map(r => (
+                <ResultItem key={r.key} r={r}
+                  active={idxMap[r.key] === activeIdx}
+                  onHover={() => setActiveIdx(idxMap[r.key])}
+                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+              ))}
+            </>
           )}
 
           {teams.length > 0 && (
