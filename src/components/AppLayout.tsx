@@ -101,10 +101,14 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
         return
       }
       setFabDragging(false)
-      setFabPos(prev => ({
-        x: window.innerWidth - FAB_SIZE - 8,
-        y: prev?.y ?? d.startY,
-      }))
+      setFabPos(prev => {
+        const currX = prev?.x ?? d.startX
+        const snapLeft = currX + FAB_SIZE / 2 < window.innerWidth / 2
+        return {
+          x: snapLeft ? 8 : window.innerWidth - FAB_SIZE - 8,
+          y: prev?.y ?? d.startY,
+        }
+      })
     }
 
     window.addEventListener('pointermove', onMove, { passive: false })
@@ -201,7 +205,7 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
           touchAction: 'none',
           ...(fabPos ? { left: fabPos.x, top: fabPos.y } : {}),
         }}
-        className={`sm:hidden fixed z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg hover:bg-[var(--inp-bg)] ${fabPos ? '' : 'bottom-4 right-2'} ${fabDragging ? '' : 'transition-[left,top] duration-300 ease-out'}`}
+        className={`sm:hidden fixed z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] shadow-lg hover:bg-[var(--inp-bg)] ${fabPos ? '' : 'bottom-4 right-2'} ${fabDragging ? '' : 'transition-[left,top] duration-200 ease-[cubic-bezier(0.32,0.72,0,1)]'}`}
       >
         {sidebarOpen
           ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
