@@ -119,10 +119,22 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
   return (
     <div className="flex h-dvh overflow-hidden p-0 sm:p-[18px] bg-[var(--surface)] sm:bg-[var(--bg)]">
 
-      <div className={`shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${sidebarOpen ? 'w-full sm:w-[240px] sm:mr-[18px]' : 'w-0'}`}>
-        <div className="w-[240px] h-full rounded-none sm:rounded-2xl overflow-hidden">
+      {/* Sidebar — desktop: pushes layout via width transition. Mobile: fixed overlay (does NOT affect main container width). */}
+      <div className={`hidden sm:block shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${sidebarOpen ? 'w-[240px] mr-[18px]' : 'w-0'}`}>
+        <div className="w-[240px] h-full rounded-2xl overflow-hidden">
           <Sidebar activeLabel={activeNav} />
         </div>
+      </div>
+
+      {/* Mobile sidebar — slides over the main container from the left, backdrop closes it. */}
+      <div
+        onClick={() => setSidebarOpen(false)}
+        className={`sm:hidden fixed inset-0 z-40 bg-black/40 transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      />
+      <div
+        className={`sm:hidden fixed top-0 bottom-0 left-0 z-50 w-[80vw] max-w-[300px] bg-[var(--surface)] shadow-xl transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      >
+        <Sidebar activeLabel={activeNav} onNavigate={() => setSidebarOpen(false)} />
       </div>
 
       <div className="relative flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
@@ -164,7 +176,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           <div className="flex-1" />
 
           {pathname === '/chat' && (
-            <div className="flex items-center gap-2">
+            <div className="hidden sm:flex items-center gap-2">
               <button className="h-9 px-4 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
                 Sign in
               </button>

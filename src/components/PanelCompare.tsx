@@ -77,11 +77,11 @@ function PlayerCard({
   if (!player) {
     return (
       <div className="shrink-0 border-b border-[var(--border)]">
-        <div className="relative mx-3 mt-3 h-[225px] rounded-xl bg-[var(--inp-bg)] flex items-center justify-center">
+        <div className="relative mx-3 mt-3 h-[140px] sm:h-[225px] rounded-xl bg-[var(--inp-bg)] flex items-center justify-center">
           <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold text-white" style={{ background: ACCENT_COLOR }}>
             {label}
           </span>
-          <span className="text-5xl font-black text-[var(--border)]">{slot}</span>
+          <span className="text-4xl sm:text-5xl font-black text-[var(--border)]">{slot}</span>
         </div>
         <div className="px-3 py-3">
           <span className="text-xs text-[var(--muted)]">Select from table</span>
@@ -97,7 +97,7 @@ function PlayerCard({
   return (
     <div className="shrink-0 border-b border-[var(--border)]">
       {/* Hero photo with Player N pill overlay */}
-      <div className="relative mx-3 mt-3 h-[225px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
+      <div className="relative mx-3 mt-3 h-[140px] sm:h-[225px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
         {heroSrc ? (
           <Image src={heroSrc} alt={player.player_name} fill className="object-cover" unoptimized />
         ) : (
@@ -266,16 +266,16 @@ const P2_COLOR = '#f97316'    // orange for player 2 leads
 
 function DiffCell({ label, delta, format }: { label: string; delta: number | null; format: (n: number) => string }) {
   if (delta == null) return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3">
-      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold">{label}</span>
-      <span className="text-sm tabular-nums text-[var(--muted)]">—</span>
+    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 px-1">
+      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold truncate">{label}</span>
+      <span className="text-xs sm:text-sm tabular-nums text-[var(--muted)]">—</span>
     </div>
   )
   const color = delta > 0 ? P1_COLOR : delta < 0 ? P2_COLOR : undefined
   return (
-    <div className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3">
-      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold">{label}</span>
-      <span className="text-sm tabular-nums font-semibold" style={color ? { color } : { color: 'var(--muted)' }}>
+    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 px-1">
+      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold truncate">{label}</span>
+      <span className="text-xs sm:text-sm tabular-nums font-semibold" style={color ? { color } : { color: 'var(--muted)' }}>
         {delta === 0 ? '—' : format(delta)}
       </span>
     </div>

@@ -12,9 +12,10 @@ import {
 
 interface SidebarProps {
   activeLabel?: string
+  onNavigate?: () => void
 }
 
-export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
+export function Sidebar({ activeLabel = 'Chat', onNavigate }: SidebarProps) {
   const [dataOpen, setDataOpen] = useState(false)
   const [mapOpen, setMapOpen] = useState(false)
   const router   = useRouter()
@@ -24,6 +25,7 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
     const p = new URLSearchParams(window.location.search)
     p.set('cmd', 'open')
     router.push(`${pathname}?${p}`, { scroll: false })
+    onNavigate?.()
   }
 
   return (
@@ -46,6 +48,7 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
           <Link
             key={label}
             href={href}
+            onClick={onNavigate}
             className={cn(
               'flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors',
               activeLabel === label
@@ -108,6 +111,7 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
           <Link
             key={label}
             href={href}
+            onClick={onNavigate}
             className={cn(
               'flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] font-medium transition-colors',
               activeLabel === label
@@ -123,10 +127,10 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
       {/* Footer */}
       <div className="p-3 space-y-1">
-        <Link href="/glossary" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
+        <Link href="/glossary" onClick={onNavigate} className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
           {SIDEBAR_FOOTER_LABEL}
         </Link>
-        <Link href="/admin" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
+        <Link href="/admin" onClick={onNavigate} className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
           Admin
         </Link>
         <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">

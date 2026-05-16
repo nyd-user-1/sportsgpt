@@ -301,23 +301,23 @@ export default function LeaderboardTable({
       <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
 
         {/* Stat type tabs + season filter */}
-        <div className="shrink-0 bg-[var(--surface)] px-5 pt-4 pb-0 border-b border-[var(--border)]">
-          <div className="flex items-center gap-2">
+        <div className="shrink-0 bg-[var(--surface)] px-3 sm:px-5 pt-4 pb-0 border-b border-[var(--border)]">
+          <div className="flex items-center gap-1 sm:gap-2">
             {statTabs.map(t => (
               <button key={t} onClick={() => handleTabChange(t)}
                 className={cn(
-                  'px-5 py-3 text-sm font-semibold border-b-2 transition-colors',
+                  'px-3 sm:px-5 py-3 text-sm font-semibold border-b-2 transition-colors',
                   statTab === t ? 'text-[var(--txt)]' : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]',
                 )}
                 style={statTab === t ? { borderBottomColor: ACCENT_COLOR } : undefined}>
                 {t}
               </button>
             ))}
-            <div className="pb-1 flex items-center gap-2">
+            <div className="pb-1 flex items-center gap-2 ml-auto sm:ml-0">
               <SeasonFilterMenu selected={season} onChange={setSeason} />
               <div className="flex items-center gap-2">
                 <Switch id="versus-switch" checked={versusMode} onCheckedChange={toggleVersus} />
-                <Label htmlFor="versus-switch" className="text-sm font-semibold text-[var(--muted)] cursor-pointer select-none">Versus</Label>
+                <Label htmlFor="versus-switch" className="hidden sm:inline text-sm font-semibold text-[var(--muted)] cursor-pointer select-none">Versus</Label>
               </div>
             </div>
           </div>
