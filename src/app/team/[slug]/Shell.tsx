@@ -327,15 +327,21 @@ export function TeamShell({
                   <div className="flex gap-3 pb-1">
                     {playerRows.map((p, i) => {
                       const stat = topStat(p)
+                      const playerPhoto = PLAYER_PHOTOS[p.player_slug as string]
+                      const fallbackLogo = SCHOOL_LOGOS[schoolSlug]
                       return (
                         <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
                           className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          {PLAYER_PHOTOS[p.player_slug as string] && (
+                          {playerPhoto ? (
                             <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
-                              <Image src={PLAYER_PHOTOS[p.player_slug as string]} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
+                              <Image src={playerPhoto} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
                             </div>
-                          )}
+                          ) : fallbackLogo ? (
+                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
+                              <Image src={fallbackLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
+                            </div>
+                          ) : null}
                           <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
                             <div>
                               <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
