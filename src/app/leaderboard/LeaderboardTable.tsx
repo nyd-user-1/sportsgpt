@@ -141,7 +141,7 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
         </button>
         {term && (
           <div className={cn(
-            'pointer-events-none group-hover/th:pointer-events-auto absolute top-full z-50 mt-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
+            'pointer-events-none group-hover/th:pointer-events-auto absolute bottom-full z-50 mb-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
             right ? 'right-0' : 'left-0'
           )}>
             <div className="px-3.5 py-3">
