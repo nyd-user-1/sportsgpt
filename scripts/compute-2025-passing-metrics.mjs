@@ -8,7 +8,7 @@ import { neon } from '@neondatabase/serverless'
 
 const sql = neon(process.env.DATABASE_URL)
 
-const INT_RATE_FLOOR = 0.5 // % — prevents CMD div/0 for 0-INT QBs
+const INT_RATE_FLOOR = 0.005 // decimal (= 0.5%) — prevents CMD div/0 for 0-INT QBs
 
 async function main() {
   const rows = await sql`
@@ -26,16 +26,19 @@ async function main() {
     const tds  = Number(r.pass_tds)   || 0
     const ints = Number(r.interceptions) ?? 0
 
-    const compPct       = att > 0 ? (comp / att) * 100 : null
+    const compPct       = att > 0 ? (comp / att) * 100 : null        // stored as % (e.g. 77.9)
     const ypa           = att > 0 ? yds / att : null
     const ypc           = comp > 0 ? yds / comp : null
-    const tdRate        = att > 0 ? (tds / att) * 100 : null
-    const intRate       = att > 0 ? (ints / att) * 100 : null
-    const intRateFloor  = Math.max(intRate ?? 0, INT_RATE_FLOOR)
-    const tdInt         = ints > 0 ? tds / ints : tds  // 0 INT → display TD count
+    const tdRate        = att > 0 ? (tds / att) * 100 : null          // stored as % (e.g. 13.4)
+    const intRate       = att > 0 ? (ints / att) * 100 : null         // stored as % (e.g. 2.77)
+    const intRateDec    = att > 0 ? (ints / att) : 0                  // decimal form for formulas
+    const intFloorDec   = Math.max(intRateDec, INT_RATE_FLOOR)
+    const compDec       = att > 0 ? comp / att : 0
+    const tdRateDec     = att > 0 ? tds / att : 0
+    const tdInt         = ints > 0 ? tds / ints : tds                 // 0 INT → display TD count
     const yva           = yds - avgYds
-    const cmd           = compPct != null && tdRate != null ? (compPct * tdRate) / intRateFloor : null
-    const gbi           = ypa != null && tdRate != null ? ypa + tdInt * 2 + tdRate * 0.5 : null
+    const cmd           = compPct != null ? (compDec * tdRateDec) / intFloorDec : null
+    const gbi           = ypa != null ? ypa + tdInt * 2 + tdRateDec * 0.5 : null
     const ies           = ypa != null ? (tds * ypa) / (ints + 1) : null
 
     await sql`
