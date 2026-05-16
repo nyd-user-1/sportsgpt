@@ -114,16 +114,6 @@ export function TeamShell({
         <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{teamName.replace(/\s*Varsity\s+/i, ' ').trim()}</p>
         <p className="text-[11px] text-[var(--muted)] leading-tight truncate">Section XI · Division {division}</p>
       </div>
-      <div className="shrink-0 flex items-center -mr-1">
-        <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} aria-label="Previous"
-          className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} aria-label="Next"
-          className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
     </div>
   )
 
@@ -199,6 +189,16 @@ export function TeamShell({
             <div className="mb-8">
               <div className="mb-4 flex items-center justify-between">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">{activeProfile.h2}</h2>
+                <div className="flex sm:hidden items-center -mr-1">
+                  <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} aria-label="Previous"
+                    className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} aria-label="Next"
+                    className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
                 <div className="hidden sm:flex items-center gap-2">
                   <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
                   <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
