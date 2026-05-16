@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useMemo } from 'react'
+import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
@@ -64,13 +64,25 @@ export function TeamShell({
   playerRows: Record<string, unknown>[]
   gameRows: GameRow[]
 }) {
-  const [profileIdx, setProfileIdx]   = useState(0)
+  const [profileIdx, setProfileIdx]     = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(true)
-  const [chartsOpen, setChartsOpen]   = useState(false)
-  const [mapsOpen,   setMapsOpen]     = useState(false)
-  const [chatOpen,   setChatOpen]     = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [chartsOpen, setChartsOpen]     = useState(false)
+  const [mapsOpen,   setMapsOpen]       = useState(false)
+  const [chatOpen,   setChatOpen]       = useState(false)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    if (dropdownOpen) document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [dropdownOpen])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -91,9 +103,11 @@ export function TeamShell({
     conf: fmtRecord(s.conference_wins as number | null, s.conference_losses as number | null, s.conference_ties as number | null),
   }))
 
+  const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
+
   const PROFILES = [
-    { title: 'Season History', h2: 'History',       kind: 'history' as const },
-    ...gameSeasons.map(s => ({ title: String(s), h2: String(s), kind: 'games' as const, season: s })),
+    { title: 'Seasons', h2: 'Seasons', kind: 'history' as const },
+    ...gameSeasons.map(s => ({ title: fmtSeason(s), h2: fmtSeason(s), kind: 'games' as const, season: s })),
   ]
 
   const activeProfile = PROFILES[profileIdx]
@@ -187,21 +201,27 @@ export function TeamShell({
 
             {/* Profiles */}
             <div className="mb-8">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">{activeProfile.h2}</h2>
-                <div className="flex sm:hidden items-center -mr-1">
-                  <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} aria-label="Previous"
-                    className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
-                    <ChevronLeft className="h-5 w-5" />
+              <div className="mb-4">
+                <div ref={dropdownRef} className="relative inline-block">
+                  <button
+                    onClick={() => setDropdownOpen(v => !v)}
+                    className="flex items-center gap-1 rounded-lg px-2 py-1 -ml-2 text-lg font-semibold text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+                  >
+                    {activeProfile.h2}
+                    <ChevronDown className={cn('h-4 w-4 text-[var(--muted)] transition-transform duration-150', dropdownOpen && 'rotate-180')} />
                   </button>
-                  <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} aria-label="Next"
-                    className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
-                    <ChevronRight className="h-5 w-5" />
-                  </button>
-                </div>
-                <div className="hidden sm:flex items-center gap-2">
-                  <button onClick={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                  <button onClick={() => setProfileIdx(i => (i + 1) % PROFILES.length)} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
+                  {dropdownOpen && (
+                    <div className="absolute top-full left-0 mt-1 z-20 bg-[var(--surface)] border border-[var(--border)] rounded-xl shadow-lg overflow-hidden min-w-[140px]">
+                      {PROFILES.map((p, i) => (
+                        <button key={p.h2}
+                          onClick={() => { setProfileIdx(i); setInfoExpanded(true); setDropdownOpen(false) }}
+                          className={cn('w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)]',
+                            i === profileIdx ? 'font-semibold text-[var(--txt)]' : 'text-[var(--muted)]')}>
+                          {p.h2}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 

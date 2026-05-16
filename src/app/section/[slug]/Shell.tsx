@@ -136,7 +136,7 @@ export function SectionShell({
                       style={{ opacity: i === divCardIdx ? 1 : 0 }}>
                       {photo && <Image src={photo} alt="" fill className="object-cover" unoptimized />}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                      <div className="absolute bottom-0 left-0 p-5 pb-10 pointer-events-none">
+                      <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
                         <p className="text-base font-bold text-white leading-snug">Division {div}</p>
                         <p className="text-sm text-white/80 mt-0.5">{summary?.team_count ?? 0} teams</p>
                         {summary?.avg_win_pct != null && (

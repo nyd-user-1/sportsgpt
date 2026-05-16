@@ -89,6 +89,8 @@ Display via `formatSeason()` in `src/lib/utils.ts`.
 - GSMHS → `greenport-southold-mattituck-varsity-football`
 - Mount Sinai → `mt-sinai-varsity-football`
 - East Hampton/Pierson → `east-hampton-bridgehampton-pierson-varsity-football`
+- Patchogue-Medford / Pat-Med → `patchogue-medford-varsity-football`
+- Shoreham-Wading River / SWR → `shoreham-wading-river-varsity-football`
 
 **Nassau County schools NOT in DB:** Farmingdale, Plainedge, Garden City, Massapequa, North Shore — skip those games.
 

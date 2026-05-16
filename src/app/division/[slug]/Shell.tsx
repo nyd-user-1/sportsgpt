@@ -1,9 +1,11 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
+import { TEAM_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -62,6 +64,23 @@ export function DivisionShell({
   const [chatOpen,   setChatOpen]   = useState(false)
   const [standingsExpanded, setStandingsExpanded] = useState(false)
   const [seasonIdx, setSeasonIdx] = useState(0)
+  const [slideIdx, setSlideIdx] = useState(0)
+
+  const DIVISION_SCHOOLS: Record<string, string[]> = {
+    I:   ['bay-shore',            'ward-melville', 'commack',      'sachem-east'],
+    II:  ['northport',            'bellport',      'west-islip',   'lindenhurst'],
+    III: ['hauppauge',            'kings-park',    'rocky-point',  'harborfields'],
+    IV:  ['shoreham-wading-river','glenn',         'hampton-bays'],
+  }
+  const slides = (DIVISION_SCHOOLS[division] ?? [])
+    .map(s => TEAM_PHOTOS[s]?.[0])
+    .filter(Boolean) as string[]
+
+  useEffect(() => {
+    if (slides.length < 2) return
+    const t = setInterval(() => setSlideIdx(i => (i + 1) % slides.length), 4000)
+    return () => clearInterval(t)
+  }, [slides.length])
   const passRef = useRef<HTMLDivElement>(null)
   const rushRef = useRef<HTMLDivElement>(null)
 
@@ -96,7 +115,6 @@ export function DivisionShell({
                 <div className="flex items-center gap-2 mt-1">
                   <span className="rounded-full px-2.5 py-0.5 text-xs font-semibold text-white"
                     style={{ background: ACCENT_COLOR }}>Section XI</span>
-                  <span className="text-xs text-[var(--muted)]">Long Island Football</span>
                 </div>
               </div>
               <div className="hidden sm:flex items-center shrink-0">
@@ -124,6 +142,33 @@ export function DivisionShell({
                 </div>
               </div>
             </div>
+
+            {/* Hero slider */}
+            {slides.length > 0 && (
+              <div className="mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
+                {slides.map((src, i) => (
+                  <div key={src}
+                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                    style={{ opacity: i === slideIdx ? 1 : 0 }}>
+                    <Image src={src} alt="" fill className="object-cover" unoptimized />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                  </div>
+                ))}
+                <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
+                  <p className="text-base font-bold text-white leading-snug">Division {division}</p>
+                  <p className="text-sm text-white/60 mt-0.5">Section XI Football</p>
+                </div>
+                {slides.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                    {slides.map((_, i) => (
+                      <button key={i} onClick={() => setSlideIdx(i)}
+                        className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
+                        style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Standings with season carousel */}
             <div className="mb-8">
