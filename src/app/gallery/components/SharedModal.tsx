@@ -15,20 +15,20 @@ function range(lo: number, hi: number) {
 
 export default function SharedModal({
   photos,
-  currentId,
+  currentIdx,
   direction,
 }: {
   photos: GalleryPhoto[]
-  currentId: number
+  currentIdx: number
   direction: number
 }) {
-  const router = useRouter()
-  const current = photos[currentId]
-  const hasNext = currentId < photos.length - 1
-  const hasPrev = currentId > 0
+  const router  = useRouter()
+  const current = photos[currentIdx]
+  const hasNext = currentIdx < photos.length - 1
+  const hasPrev = currentIdx > 0
 
-  function navigate(newId: number) {
-    router.push(`/gallery/p/${newId}`, { scroll: false })
+  function navigate(newIdx: number) {
+    router.push(`/gallery/p/${photos[newIdx].id}`, { scroll: false })
   }
 
   function close() {
@@ -38,22 +38,24 @@ export default function SharedModal({
   // Keyboard navigation
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'ArrowRight' && hasNext) navigate(currentId + 1)
-      if (e.key === 'ArrowLeft'  && hasPrev) navigate(currentId - 1)
+      if (e.key === 'ArrowRight' && hasNext) navigate(currentIdx + 1)
+      if (e.key === 'ArrowLeft'  && hasPrev) navigate(currentIdx - 1)
       if (e.key === 'Escape') close()
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
-  }, [currentId, hasNext, hasPrev])
+  }, [currentIdx, hasNext, hasPrev])
 
   const handlers = useSwipeable({
-    onSwipedLeft:  () => { if (hasNext) navigate(currentId + 1) },
-    onSwipedRight: () => { if (hasPrev) navigate(currentId - 1) },
+    onSwipedLeft:  () => { if (hasNext) navigate(currentIdx + 1) },
+    onSwipedRight: () => { if (hasPrev) navigate(currentIdx - 1) },
     trackMouse: true,
   })
 
   // Filmstrip: show ±15 around current
-  const strip = photos.filter(p => range(currentId - 15, currentId + 16).includes(p.id))
+  const stripStart = Math.max(0, currentIdx - 15)
+  const stripEnd   = Math.min(photos.length, currentIdx + 16)
+  const strip      = photos.slice(stripStart, stripEnd)
 
   async function download() {
     const res  = await fetch(current.url)
@@ -75,7 +77,16 @@ export default function SharedModal({
           <button onClick={close} className="rounded-full p-2 text-white/70 hover:text-white hover:bg-white/10 transition-colors">
             <X className="h-5 w-5" />
           </button>
-          <span className="text-white/40 text-sm">{currentId + 1} / {photos.length}</span>
+          <div className="text-center">
+            {current.playerName ? (
+              <>
+                <p className="text-white text-sm font-semibold leading-none">{current.playerName}</p>
+                <p className="text-white/35 text-xs mt-0.5">{current.teamName ?? `${currentIdx + 1} / ${photos.length}`}</p>
+              </>
+            ) : (
+              <span className="text-white/40 text-sm">{currentIdx + 1} / {photos.length}</span>
+            )}
+          </div>
           <div className="flex items-center gap-1">
             <a href={current.url} target="_blank" rel="noreferrer"
               className="rounded-full p-2 text-white/70 hover:text-white hover:bg-white/10 transition-colors">
@@ -90,7 +101,7 @@ export default function SharedModal({
 
         {/* Main image — fade + scale-up on mount */}
         <div className="relative flex-1 flex items-center justify-center overflow-hidden">
-          <motion.div key={currentId}
+          <motion.div key={currentIdx}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
@@ -107,14 +118,14 @@ export default function SharedModal({
 
           {/* Prev */}
           {hasPrev && (
-            <button onClick={() => navigate(currentId - 1)}
+            <button onClick={() => navigate(currentIdx - 1)}
               className="absolute left-4 z-10 rounded-full p-3 bg-black/40 text-white hover:bg-black/70 transition-colors backdrop-blur-sm">
               <ChevronLeft className="h-6 w-6" />
             </button>
           )}
           {/* Next */}
           {hasNext && (
-            <button onClick={() => navigate(currentId + 1)}
+            <button onClick={() => navigate(currentIdx + 1)}
               className="absolute right-4 z-10 rounded-full p-3 bg-black/40 text-white hover:bg-black/70 transition-colors backdrop-blur-sm">
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -126,7 +137,7 @@ export default function SharedModal({
           const THUMB_W = 80  // w-20
           const GAP     = 4   // gap-1
           const STEP    = THUMB_W + GAP  // 84px per slot
-          const idxInStrip = strip.findIndex(p => p.id === currentId)
+          const idxInStrip = strip.findIndex(p => p.id === current.id)
           // Center the active thumb: shift strip left so active thumb sits at viewport center
           const offsetPx = idxInStrip * STEP + THUMB_W / 2
           return (
@@ -138,9 +149,9 @@ export default function SharedModal({
                 animate={{ left: `calc(50% - ${offsetPx}px)` }}
                 transition={{ type: 'spring', stiffness: 320, damping: 32 }}>
                 {strip.map(p => {
-                  const isActive = p.id === currentId
+                  const isActive = p.id === current.id
                   return (
-                    <button key={p.id} onClick={() => navigate(p.id)}
+                    <button key={p.id} onClick={() => navigate(stripStart + strip.indexOf(p))}
                       className="relative shrink-0 overflow-hidden rounded transition-all duration-200"
                       style={{
                         width:   isActive ? 92  : THUMB_W,

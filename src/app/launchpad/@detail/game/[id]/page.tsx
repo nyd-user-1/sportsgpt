@@ -44,8 +44,8 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
   const homeWon    = scored && homeScore! > awayScore!
   const awayWon    = scored && awayScore! > homeScore!
 
-  const homePhoto  = TEAM_PHOTOS[homeSchool]
-  const awayPhoto  = TEAM_PHOTOS[awaySchool]
+  const homePhoto  = TEAM_PHOTOS[homeSchool]?.[0]
+  const awayPhoto  = TEAM_PHOTOS[awaySchool]?.[0]
   const homeLogo   = SCHOOL_LOGOS[homeSchool]
   const awayLogo   = SCHOOL_LOGOS[awaySchool]
   const gameNum    = g.game_number != null ? Number(g.game_number) : null

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo, useEffect } from 'react'
+import Link from 'next/link'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar,
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
@@ -9,7 +10,7 @@ import {
 import { ChevronRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { ChartsDrawer } from '@/components/ChartsDrawer'
-import { cn } from '@/lib/utils'
+import { cn, formatSeason } from '@/lib/utils'
 import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
@@ -34,19 +35,8 @@ function fmtVal(v: number, config: ChartConfig, period?: Period): string {
   return fmtNum(v)
 }
 
-function fmtKpi(v: number, config: ChartConfig, period?: Period): string {
-  const slug = config.slug
-  const isUsd = slug.includes('cost') || slug.includes('income')
-  if (isUsd) {
-    const label = period ? fmtPeriodLabel(period) : ''
-    return `$${Math.round(v).toLocaleString()}${label}`
-  }
-  if (slug === 'lfpr-by-county') return `${v.toFixed(1)}%`
-  return Math.round(v).toLocaleString()
-}
-
 /* ── Props ───────────────────────────────────────────────────────── */
-export type StdRow = { name: string; value: number }
+export type StdRow = { name: string; value: number; logoUrl?: string; winPct?: number }
 export type MultiRow = Record<string, string | number>
 export type ScatterRow = { name: string; x: number; y: number }
 export type SubRow = { label: string; value: number; extra?: string }
@@ -64,6 +54,10 @@ interface Props {
   subRows?: SubRowMap
   children?: React.ReactNode
   seasonFilters?: string[]
+  rowLinks?: Record<string, string>
+  seasonRows?: Record<string, StdRow[]>
+  valueLabel?: string
+  showRank?: boolean
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -73,6 +67,10 @@ export function ChartDetailPage({
   subRows,
   children,
   seasonFilters,
+  rowLinks,
+  seasonRows,
+  valueLabel,
+  showRank,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -96,21 +94,19 @@ export function ChartDetailPage({
 
   const scaledKpi = config.periodToggle ? applyPeriod(kpiValue, base, period) : kpiValue
 
-  /* Broadcast nav + KPI to AppLayout header */
+  /* Broadcast nav to AppLayout header */
   useEffect(() => {
     const detail = {
       prevHref: `/chart/${prevSlug}`,
       nextHref: `/chart/${nextSlug}`,
       color: config.color,
-      kpi: config.hideKpi ? '' : fmtKpi(scaledKpi, config, config.periodToggle ? period : undefined),
-      kpiLabel: config.hideKpi ? '' : config.kpiLabel,
       pageTitle: config.title,
     }
     window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
     return () => {
       window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail: null }))
     }
-  }, [prevSlug, nextSlug, config, scaledKpi, period])
+  }, [prevSlug, nextSlug, config])
 
   const scaledChart: StdRow[] = useMemo(() => {
     if (!config.periodToggle) return chartPoints
@@ -130,10 +126,28 @@ export function ChartDetailPage({
     })
   }, [multiPoints, config.periodToggle, config.series, base, period])
 
+  const activeRows: StdRow[] = seasonRows?.[activeSeason] ?? tableRows
+
   const scaledTable: StdRow[] = useMemo(() => {
-    if (!config.periodToggle) return tableRows
-    return tableRows.map(r => ({ ...r, value: applyPeriod(r.value, base, period) }))
-  }, [tableRows, config.periodToggle, base, period])
+    if (!config.periodToggle) return activeRows
+    return activeRows.map(r => ({ ...r, value: applyPeriod(r.value, base, period) }))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeRows, config.periodToggle, base, period])
+
+  const rankChanges = useMemo(() => {
+    if (!seasonRows || Object.keys(seasonRows).length < 2) return {} as Record<string, number>
+    const seasons = Object.keys(seasonRows).sort()
+    const activeIdx = seasons.indexOf(activeSeason)
+    const otherIdx = activeIdx > 0 ? activeIdx - 1 : 1
+    const otherSeason = seasons[otherIdx]
+    const otherRanks = new Map((seasonRows[otherSeason] ?? []).map((r, i) => [r.name, i + 1]))
+    const result: Record<string, number> = {}
+    ;(seasonRows[activeSeason] ?? []).forEach((r, i) => {
+      const other = otherRanks.get(r.name)
+      if (other !== undefined) result[r.name] = other - (i + 1)
+    })
+    return result
+  }, [seasonRows, activeSeason])
 
   const scaledScatter: ScatterRow[] = useMemo(() => {
     if (config.slug !== 'income-vs-cost') return scatterPoints
@@ -253,7 +267,7 @@ export function ChartDetailPage({
 
         {/* ── Shadcn chart (when children provided) ── */}
         {children && (
-          <div className="shrink-0 px-5 pt-4 pb-2">
+          <div className="shrink-0 px-5 pt-2 pb-2">
             {children}
           </div>
         )}
@@ -272,7 +286,7 @@ export function ChartDetailPage({
                       ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>
-                  {yr}
+                  {formatSeason(yr)}
                 </button>
               ))}
             </>
@@ -322,74 +336,116 @@ export function ChartDetailPage({
               ))}
             </div>
           ) : (
-            /* Standard table: name | value | share */
-            <div className="divide-y divide-[var(--border)]">
-              <div
-                className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
-                style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
-              >
-                {hasSubRows && <span />}
-                <span>Name</span>
-                <span className="text-right">Value</span>
-                <span className="text-right">Share</span>
-              </div>
-              {sorted.map(row => {
-                const pct = total > 0 ? (row.value / total) * 100 : 0
-                const isOpen = expanded.has(row.name)
-                const rowSubRows = subRows?.[row.name]
-                const hasRowSubRows = !!rowSubRows && rowSubRows.length > 0
-                return (
-                  <React.Fragment key={row.name}>
-                    <div
-                      className={cn(
-                        'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
-                        hasRowSubRows ? 'cursor-pointer' : 'cursor-default',
-                      )}
-                      style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
-                      onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
-                    >
-                      {hasSubRows && (
-                        <span className="flex items-center justify-center">
-                          {hasRowSubRows && (
-                            <ChevronRight className={cn('h-3.5 w-3.5 shrink-0 text-[var(--muted)] transition-transform duration-150', isOpen && 'rotate-90')} />
-                          )}
+            /* Standard table: [rank] | [expand] | name | [winPct] | value | share */
+            (() => {
+              const hasWinPct = sorted.some(r => r.winPct !== undefined)
+              const colParts: string[] = []
+              if (hasSubRows) colParts.push('20px')
+              if (showRank) colParts.push('32px')
+              colParts.push('1fr')
+              if (hasWinPct) colParts.push('80px')
+              colParts.push('100px')
+              colParts.push('80px')
+              const colTemplate = colParts.join(' ')
+              return (
+              <div className="divide-y divide-[var(--border)]">
+                <div
+                  className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+                  style={{ gridTemplateColumns: colTemplate }}
+                >
+                  {hasSubRows && <span />}
+                  {showRank && <span>#</span>}
+                  <span>Name</span>
+                  {hasWinPct && <span className="text-right">3yr Win %</span>}
+                  <span className="text-right">{valueLabel ?? 'Value'}</span>
+                  <span className="text-right">Share</span>
+                </div>
+                {sorted.map((row, idx) => {
+                  const pct = total > 0 ? (row.value / total) * 100 : 0
+                  const isOpen = expanded.has(row.name)
+                  const rowSubRows = subRows?.[row.name]
+                  const hasRowSubRows = !!rowSubRows && rowSubRows.length > 0
+                  const delta = rankChanges[row.name]
+                  return (
+                    <React.Fragment key={row.name}>
+                      <div
+                        className={cn(
+                          'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
+                          hasRowSubRows ? 'cursor-pointer' : rowLinks?.[row.name] ? 'cursor-pointer' : 'cursor-default',
+                        )}
+                        style={{ gridTemplateColumns: colTemplate }}
+                        onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
+                      >
+                        {hasSubRows && (
+                          <span className="flex items-center justify-center">
+                            {hasRowSubRows && (
+                              <ChevronRight className={cn('h-3.5 w-3.5 shrink-0 text-[var(--muted)] transition-transform duration-150', isOpen && 'rotate-90')} />
+                            )}
+                          </span>
+                        )}
+                        {showRank && (
+                          <span className="text-xs text-[var(--muted)] tabular-nums">{idx + 1}</span>
+                        )}
+                        {rowLinks?.[row.name] ? (
+                          <span className="flex items-center gap-2 min-w-0">
+                            {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                            <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                            {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
+                            {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
+                          </span>
+                        ) : (
+                          <span className="flex items-center gap-2 min-w-0">
+                            {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                            <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                            {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
+                            {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
+                          </span>
+                        )}
+                        {hasWinPct && (
+                          <span className="text-right text-sm tabular-nums text-[var(--muted)] group-hover/row:text-sky-500 transition-colors">
+                            {row.winPct !== undefined ? `${row.winPct.toFixed(1)}%` : '—'}
+                          </span>
+                        )}
+                        <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
+                          style={isOpen ? { color: config.color } : undefined}>
+                          {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
                         </span>
-                      )}
-                      <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
-                      <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
-                        style={isOpen ? { color: config.color } : undefined}>
-                        {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
-                      </span>
-                      <div className="flex items-center gap-1.5 justify-end">
-                        <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
-                          <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
+                        <div className="flex items-center gap-1.5 justify-end">
+                          <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
+                            <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
+                          </div>
+                          <span className="text-xs text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums w-7 text-right transition-colors">{pct.toFixed(0)}%</span>
                         </div>
-                        <span className="text-xs text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums w-7 text-right transition-colors">{pct.toFixed(0)}%</span>
                       </div>
-                    </div>
-                    {isOpen && rowSubRows?.map(sr => (
-                      <div key={sr.label}
-                        className="grid gap-3 px-5 py-2 items-center border-b border-[var(--border)] bg-[var(--inp-bg)]"
-                        style={{ gridTemplateColumns: '20px 1fr 120px 80px' }}>
-                        <span />
-                        <span className="text-xs text-[var(--muted)] pl-3">{sr.label}</span>
-                        <span className="text-right text-xs tabular-nums text-[var(--txt)]">{sr.extra ?? sr.value.toLocaleString()}</span>
-                        <span />
-                      </div>
-                    ))}
-                  </React.Fragment>
-                )
-              })}
-              <div
-                className="grid gap-3 px-5 py-4 bg-[var(--surface)] font-semibold text-[var(--txt)]"
-                style={{ gridTemplateColumns: hasSubRows ? '20px 1fr 120px 80px' : '1fr 120px 80px' }}
-              >
-                {hasSubRows && <span />}
-                <span>Total</span>
-                <span className="text-right tabular-nums">{fmtVal(total, config, config.periodToggle ? period : undefined)}</span>
-                <span className="text-right text-[var(--muted)]">100%</span>
+                      {isOpen && rowSubRows?.map(sr => (
+                        <div key={sr.label}
+                          className="grid gap-3 px-5 py-2 items-center border-b border-[var(--border)] bg-[var(--inp-bg)]"
+                          style={{ gridTemplateColumns: colTemplate }}>
+                          <span />
+                          {showRank && <span />}
+                          <span className="text-xs text-[var(--muted)] pl-3">{sr.label}</span>
+                          {hasWinPct && <span />}
+                          <span className="text-right text-xs tabular-nums text-[var(--txt)]">{sr.extra ?? sr.value.toLocaleString()}</span>
+                          <span />
+                        </div>
+                      ))}
+                    </React.Fragment>
+                  )
+                })}
+                <div
+                  className="grid gap-3 px-5 py-4 bg-[var(--surface)] font-semibold text-[var(--txt)]"
+                  style={{ gridTemplateColumns: colTemplate }}
+                >
+                  {hasSubRows && <span />}
+                  {showRank && <span />}
+                  <span>Total</span>
+                  {hasWinPct && <span />}
+                  <span className="text-right tabular-nums">{fmtVal(total, config, config.periodToggle ? period : undefined)}</span>
+                  <span className="text-right text-[var(--muted)]">100%</span>
+                </div>
               </div>
-            </div>
+              )
+            })()
           )}
         </div>
       </div>

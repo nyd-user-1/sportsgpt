@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ChevronDown, User, BarChart3, Map } from 'lucide-react'
+import { useRouter, usePathname } from 'next/navigation'
+import { ChevronDown, User, BarChart3, Map, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
   SIDEBAR_NAV_TOP, SIDEBAR_NAV_BOTTOM,
@@ -16,6 +17,14 @@ interface SidebarProps {
 export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
   const [dataOpen, setDataOpen] = useState(false)
   const [mapOpen, setMapOpen] = useState(false)
+  const router   = useRouter()
+  const pathname = usePathname()
+
+  function openSearch() {
+    const p = new URLSearchParams(window.location.search)
+    p.set('cmd', 'open')
+    router.push(`${pathname}?${p}`, { scroll: false })
+  }
 
   return (
     <aside className="flex h-full flex-col bg-[var(--surface)] overflow-hidden">
@@ -30,6 +39,16 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto no-scrollbar px-3 space-y-0.5">
+
+        {/* Search */}
+        <button
+          onClick={openSearch}
+          className="w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors"
+        >
+          <Search className="h-[18px] w-[18px] flex-shrink-0" />
+          <span className="flex-1 text-left">Search</span>
+          <kbd className="hidden sm:inline-flex text-[10px] bg-[var(--inp-bg)] text-[var(--muted)] px-1.5 py-0.5 rounded">⌘K</kbd>
+        </button>
 
         {SIDEBAR_NAV_TOP.map(({ label, icon: Icon, href }) => (
           <Link

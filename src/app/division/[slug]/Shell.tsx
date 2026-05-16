@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
@@ -61,11 +61,12 @@ export function DivisionShell({
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
   const [standingsExpanded, setStandingsExpanded] = useState(false)
-  const [selectedSeason, setSelectedSeason] = useState(2024)
+  const [seasonIdx, setSeasonIdx] = useState(0)
   const passRef = useRef<HTMLDivElement>(null)
   const rushRef = useRef<HTMLDivElement>(null)
 
   const availableSeasons = [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a)
+  const selectedSeason   = availableSeasons[seasonIdx] ?? 2024
   const filteredStandings = standings.filter(s => s.season === selectedSeason)
 
   const curIdx  = DIV_ORDER.indexOf(divSlug)
@@ -73,8 +74,7 @@ export function DivisionShell({
   const prevDiv = DIV_ORDER[(curIdx - 1 + n) % n]
   const nextDiv = DIV_ORDER[(curIdx + 1) % n]
 
-  const DEFAULT_ROWS = 5
-  const visibleStandings = standingsExpanded ? filteredStandings : filteredStandings.slice(0, DEFAULT_ROWS)
+  const visibleStandings = standingsExpanded ? filteredStandings : filteredStandings.slice(0, 2)
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
   const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
@@ -125,68 +125,62 @@ export function DivisionShell({
               </div>
             </div>
 
-            {/* Standings with season selector */}
+            {/* Standings with season carousel */}
             <div className="mb-8">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">{selectedSeason} Standings</h2>
                 {availableSeasons.length > 1 && (
-                  <div className="flex gap-1">
-                    {availableSeasons.map(s => (
-                      <button key={s} onClick={() => { setSelectedSeason(s); setStandingsExpanded(false) }}
-                        className={cn('px-3 py-1 rounded-full text-xs font-semibold border transition-colors',
-                          s === selectedSeason
-                            ? 'text-white border-transparent'
-                            : 'border-[var(--border)] text-[var(--muted)] hover:bg-[var(--inp-bg)]')}
-                        style={s === selectedSeason ? { background: ACCENT_COLOR } : undefined}>
-                        {s}
-                      </button>
-                    ))}
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => { setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length); setStandingsExpanded(false) }}
+                      className={roundBtn}>
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={() => { setSeasonIdx(i => (i + 1) % availableSeasons.length); setStandingsExpanded(false) }}
+                      className={roundBtn}>
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
                   </div>
                 )}
               </div>
               <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                <div className="overflow-x-auto no-scrollbar">
-                  <table className="w-full text-sm whitespace-nowrap" style={{ borderSpacing: 0 }}>
-                    <thead className="sticky top-0 z-10">
-                      <tr>
-                        <th className={cn(th, 'text-left sticky left-0 z-20 min-w-[32px]')}>#</th>
-                        <th className={cn(th, 'text-left sticky left-[32px] z-20 min-w-[180px]')}>Team</th>
-                        <th className={cn(th, 'text-right')}>W</th>
-                        <th className={cn(th, 'text-right')}>L</th>
-                        <th className={cn(th, 'text-right')}>PCT</th>
-                        <th className={cn(th, 'text-right')}>Conf W-L</th>
+                <table className="w-full text-sm table-fixed">
+                  <thead>
+                    <tr onClick={() => setStandingsExpanded(v => !v)}
+                      className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
+                      <th className={cn(th, 'text-left w-10')}>#</th>
+                      <th className={cn(th, 'text-left')}>Team</th>
+                      <th className={cn(th, 'text-right w-12')}>W</th>
+                      <th className={cn(th, 'text-right w-12')}>L</th>
+                      <th className={cn(th, 'text-right w-16')}>PCT</th>
+                      <th className={cn(th, 'text-right w-20')}>Conf W-L</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredStandings.length === 0 && (
+                      <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No standings data for {selectedSeason}</td></tr>
+                    )}
+                    {visibleStandings.map((t, i) => (
+                      <tr key={t.slug} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
+                        <td className={cn(td, 'text-[var(--muted)]')}>{i + 1}</td>
+                        <td className={cn(td, 'font-semibold')}>
+                          <Link href={`/team/${t.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>
+                            {t.name.replace(/\s+Varsity\s+Football$/i, '')}
+                          </Link>
+                        </td>
+                        <td className={cn(td, 'text-right font-bold text-[var(--txt)]')}>{t.overall_wins ?? '—'}</td>
+                        <td className={cn(td, 'text-right text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
+                        <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
+                        <td className={cn(td, 'text-right text-[var(--muted)]')}>
+                          {(t.conference_wins != null || t.conference_losses != null)
+                            ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0}`
+                            : '—'}
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {visibleStandings.map((t, i) => (
-                        <tr key={t.slug} className="group hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
-                          <td className={cn(td, 'text-[var(--muted)] sticky left-0 z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] transition-colors')}>{i + 1}</td>
-                          <td className={cn(td, 'sticky left-[32px] z-[1] bg-[var(--surface)] group-hover:bg-[var(--inp-bg)] font-semibold transition-colors')}>
-                            <Link href={`/team/${t.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{t.name}</Link>
-                          </td>
-                          <td className={cn(td, 'text-right font-bold text-[var(--txt)]')}>{t.overall_wins ?? '—'}</td>
-                          <td className={cn(td, 'text-right text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
-                          <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
-                          <td className={cn(td, 'text-right text-[var(--muted)]')}>
-                            {(t.conference_wins != null || t.conference_losses != null)
-                              ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0}`
-                              : '—'}
-                          </td>
-                        </tr>
-                      ))}
-                      {filteredStandings.length === 0 && (
-                        <tr><td colSpan={6} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No standings data for {selectedSeason}</td></tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-                {filteredStandings.length > DEFAULT_ROWS && (
-                  <button onClick={() => setStandingsExpanded(v => !v)}
-                    className="flex items-center justify-center w-full gap-1 px-4 py-2.5 bg-[var(--surface)] hover:bg-[var(--inp-bg)] border-t border-[var(--border)] transition-colors text-xs font-medium text-[var(--muted)]">
-                    {standingsExpanded ? 'Show fewer' : `Show all ${filteredStandings.length} teams`}
-                    <ChevronDown className={cn('h-3 w-3 transition-transform', standingsExpanded && 'rotate-180')} />
-                  </button>
-                )}
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
 

@@ -81,6 +81,7 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
         points_per_game:     r.points_per_game != null ? Number(r.points_per_game) : null,
         fg:                  r.fg != null ? Number(r.fg) : null,
         safeties:            r.safeties != null ? Number(r.safeties) : null,
+        ai_summary:          r.ai_summary as string | null,
       }))}
       school={school}
       prevSlug={prev?.player_slug ?? slug}

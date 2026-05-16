@@ -71,7 +71,7 @@ export function SportsLineMulti({
           ))}
         </div>
       </CardHeader>
-      <CardContent className="px-2 sm:p-6">
+      <CardContent>
         <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
           <LineChart accessibilityLayer data={data} margin={{ left: 12, right: 12 }}>
             <CartesianGrid vertical={false} />

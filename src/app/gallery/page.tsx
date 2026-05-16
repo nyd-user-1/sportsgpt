@@ -10,10 +10,10 @@ export default async function GalleryPage({
 }) {
   const { last } = await searchParams
   const photos   = await getPhotos()
-  const lastViewed = last ? Number(last) : undefined
+  const lastViewed = last ?? undefined
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <GalleryGrid photos={photos} lastViewed={lastViewed} />
     </div>
   )

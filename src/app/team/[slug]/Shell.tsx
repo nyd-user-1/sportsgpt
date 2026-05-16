@@ -164,7 +164,7 @@ export function TeamShell({
 
             {/* Hero — team photo or gradient fallback (hidden on mobile) */}
             {(() => {
-              const photo = TEAM_PHOTOS[schoolSlug]
+              const photo = TEAM_PHOTOS[schoolSlug]?.[0]
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
                 <div className="hidden sm:block mb-8 h-[390px] w-full rounded-2xl overflow-hidden relative">
@@ -220,9 +220,6 @@ export function TeamShell({
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
                           <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
-                          <th className="w-10 px-3 py-3 text-right text-[var(--muted)]">
-                            <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
-                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -237,7 +234,6 @@ export function TeamShell({
                                 return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
                               })()}
                             </td>
-                            <td className={cn(td, 'w-10')} />
                           </tr>
                         ))}
                       </tbody>
@@ -263,7 +259,7 @@ export function TeamShell({
                                 <th className="w-[14%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
                                 <th className="w-[38%] sm:w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
                                 <th className="w-[30%] sm:w-[20%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="w-[18%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="w-[18%] sm:w-[20%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                                 <th className="hidden sm:table-cell sm:w-10 px-3 py-3 text-right text-[var(--muted)]">
                                   <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
                                 </th>
