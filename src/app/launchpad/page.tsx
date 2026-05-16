@@ -1,4 +1,5 @@
 import { sql } from '@/lib/db'
+import { CURRENT_SEASON } from '@/lib/season'
 import { LaunchpadStandings, type StandingsRow } from './LaunchpadStandings'
 
 export const dynamic = 'force-dynamic'
@@ -9,7 +10,7 @@ export default async function LaunchpadPage() {
       s.overall_wins, s.overall_losses, s.overall_ties,
       s.conference_wins, s.conference_losses
     FROM teams t
-    LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
+    LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
     ORDER BY t.division, s.overall_wins DESC NULLS LAST, t.name`
 
   const standings: StandingsRow[] = rows.map(r => ({

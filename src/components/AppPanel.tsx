@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { X, Columns2, Columns3 } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export function AppPanel({
   open,
@@ -10,18 +11,22 @@ export function AppPanel({
   title,
   footer,
   children,
+  defaultExpanded,
+  bodyClass,
 }: {
   open: boolean
   onClose: () => void
   title: string
   footer?: React.ReactNode
   children: React.ReactNode
+  defaultExpanded?: boolean
+  bodyClass?: string
 }) {
   const [root, setRoot] = useState<Element | null>(null)
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(defaultExpanded ?? false)
 
-  useEffect(() => { setRoot(document.getElementById('chat-panel-root')) }, [])
-  useEffect(() => { if (!open) setExpanded(false) }, [open])
+  useEffect(() => { setRoot(document.getElementById('app-panel-root')) }, [])
+  useEffect(() => { if (!open) setExpanded(defaultExpanded ?? false) }, [open, defaultExpanded])
 
   if (!root) return null
 
@@ -52,7 +57,7 @@ export function AppPanel({
           </div>
 
           {/* Scrollable body */}
-          <div className="flex-1 overflow-y-auto no-scrollbar">
+          <div className={cn('flex-1 overflow-y-auto no-scrollbar', bodyClass)}>
             {children}
           </div>
 

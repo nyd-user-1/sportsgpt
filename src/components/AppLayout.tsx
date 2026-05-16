@@ -201,7 +201,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
 
       </div>
 
-      <div id="chat-panel-root" className="flex shrink-0 h-full" />
+      <div id="app-panel-root" className="flex shrink-0 h-full" />
 
       <button
         ref={fabRef}

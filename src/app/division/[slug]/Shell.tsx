@@ -3,9 +3,9 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, FileText } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -117,10 +117,20 @@ export function DivisionShell({
             {/* Header */}
             <div className="mb-8 flex items-center justify-between gap-2">
               <div>
-                <h1 className="text-2xl font-bold text-[var(--txt)]">Division {division}</h1>
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="rounded-full px-2.5 py-0.5 text-xs font-semibold text-white"
-                    style={{ background: ACCENT_COLOR }}>Section XI</span>
+                <div className="flex items-center gap-3">
+                  {(() => {
+                    const divNum = { I: 1, II: 2, III: 3, IV: 4 }[division as 'I'|'II'|'III'|'IV']
+                    const logo = divNum ? DIVISION_LOGOS[divNum] : undefined
+                    return logo ? (
+                      <Image src={logo} alt="" width={28} height={28} className="shrink-0 h-7 w-7 object-contain" unoptimized />
+                    ) : null
+                  })()}
+                  <h1 className="text-2xl font-bold text-[var(--txt)]">Division {division}</h1>
+                </div>
+                <div className="flex items-center gap-1.5 pl-[40px] text-xs text-[var(--muted)] mt-1">
+                  <Link href="/section/section-xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
+                  <span>/</span>
+                  <span className="font-medium" style={{ color: ACCENT_COLOR }}>Division {division}</span>
                 </div>
               </div>
               <div className="hidden sm:flex items-center shrink-0">
@@ -178,34 +188,37 @@ export function DivisionShell({
 
             {/* Standings with season carousel */}
             <div className="mb-8">
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">{fmtSeason(selectedSeason)} Standings</h2>
-                {availableSeasons.length > 1 && (
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
-                      className={roundBtn}>
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                      onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
-                      className={roundBtn}>
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
-              </div>
               <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                <table className="w-full text-sm table-fixed">
+                <div className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)]">
+                  <div className="flex items-center gap-1">
+                    <span className="text-sm font-semibold text-[var(--txt)]">{fmtSeason(selectedSeason)} Standings</span>
+                    {availableSeasons.length > 1 && (
+                      <>
+                        <button onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
+                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
+                          <ChevronLeft className="h-4 w-4" />
+                        </button>
+                        <button onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
+                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
+                          <ChevronRight className="h-4 w-4" />
+                        </button>
+                      </>
+                    )}
+                  </div>
+                  <button className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Export PDF">
+                    <FileText className="h-4 w-4" />
+                  </button>
+                </div>
+                <table className="w-full text-sm">
                   <thead>
                     <tr onClick={() => setStandingsExpanded(v => !v)}
                       className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                      <th className={cn(th, 'text-left w-10')}>#</th>
+                      <th className={cn(th, 'text-left')}>#</th>
                       <th className={cn(th, 'text-left')}>Team</th>
-                      <th className={cn(th, 'text-right w-12')}>W</th>
-                      <th className={cn(th, 'text-right w-12')}>L</th>
-                      <th className={cn(th, 'text-right w-16')}>PCT</th>
-                      <th className={cn(th, 'text-right w-20')}>Conf W-L</th>
+                      <th className={cn(th, 'text-right')}>W</th>
+                      <th className={cn(th, 'text-right')}>L</th>
+                      <th className={cn(th, 'text-right')}>PCT</th>
+                      <th className={cn(th, 'text-right')}>Conf W-L</th>
                     </tr>
                   </thead>
                   <tbody>

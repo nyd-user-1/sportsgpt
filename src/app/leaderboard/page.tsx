@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { sql } from '@/lib/db'
 import LeaderboardTable from './LeaderboardTable'
 import { AVAILABLE_SEASONS } from '@/lib/season'
@@ -55,5 +56,9 @@ export default async function LeaderboardPage() {
   } catch { /* DB not connected */ }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return <LeaderboardTable passers={passers as any} rushers={rushers as any} receivers={receivers as any} />
+  return (
+    <Suspense fallback={null}>
+      <LeaderboardTable passers={passers as any} rushers={rushers as any} receivers={receivers as any} />
+    </Suspense>
+  )
 }

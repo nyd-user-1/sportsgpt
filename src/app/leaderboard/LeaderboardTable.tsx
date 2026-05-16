@@ -4,12 +4,12 @@ import React, { useState, useRef, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { AppLayout } from '@/components/AppLayout'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
-import { PanelCompare } from '@/components/PanelCompare'
 
 // Build a lookup map from glossary term id → {definition, name}
 const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
@@ -167,38 +167,48 @@ export default function LeaderboardTable({
 }: {
   passers: Passer[]; rushers: Rusher[]; receivers: Receiver[]
 }) {
-  const [statTab, setStatTab] = useState<StatTab>('Passing')
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
+  const compareAKey = searchParams.get('a')
+  const compareBKey = searchParams.get('b')
+
+  const urlTab = searchParams.get('tab') as StatTab | null
+  const [statTab, setStatTab] = useState<StatTab>(
+    (urlTab === 'Rushing' || urlTab === 'Receiving') ? urlTab : 'Passing'
+  )
   const [season, setSeason]   = useState<number | null>(null)
-
-  const [compareA, setCompareA] = useState<Passer | Rusher | Receiver | null>(null)
-  const [compareB, setCompareB] = useState<Passer | Rusher | Receiver | null>(null)
-  const [panelOpen, setPanelOpen] = useState(false)
-
-  const compareAKey = compareA ? `${compareA.player_slug}__${compareA.season}` : null
-  const compareBKey = compareB ? `${compareB.player_slug}__${compareB.season}` : null
 
   function handleTabChange(tab: StatTab) {
     setStatTab(tab)
-    setCompareA(null)
-    setCompareB(null)
-    setPanelOpen(false)
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('tab', tab)
+    params.delete('a')
+    params.delete('b')
+    router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
   }
 
-  function handleAssign(rowKey: string, player: Passer | Rusher | Receiver) {
-    if (compareAKey === rowKey) {
-      setCompareA(null)
-    } else if (compareBKey === rowKey) {
-      setCompareB(null)
-    } else if (!compareA) {
-      setCompareA(player)
-    } else if (!compareB) {
-      setCompareB(player)
-      setPanelOpen(true)
+  function handleAssign(rowKey: string) {
+    const params = new URLSearchParams(searchParams.toString())
+    const curA = params.get('a')
+    const curB = params.get('b')
+    if (curA === rowKey) {
+      params.delete('a')
+      if (curB) { params.set('a', curB); params.delete('b') }
+    } else if (curB === rowKey) {
+      params.delete('b')
+    } else if (!curA) {
+      params.set('a', rowKey)
+      params.set('tab', statTab)
+    } else if (!curB) {
+      params.set('b', rowKey)
+      params.set('tab', statTab)
     } else {
-      setCompareA(compareB)
-      setCompareB(player)
-      setPanelOpen(true)
+      params.set('a', curB)
+      params.set('b', rowKey)
+      params.set('tab', statTab)
     }
+    router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
   }
 
   const [passCol, setPassCol] = useState<PassCol>('pass_yards')
@@ -292,16 +302,6 @@ export default function LeaderboardTable({
             ))}
             <div className="pb-1 flex items-center gap-2">
               <SeasonFilterMenu selected={season} onChange={setSeason} />
-              {(compareA || compareB) && (
-                <button onClick={() => setPanelOpen(true)}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors text-[var(--txt)]">
-                  Compare
-                  <span className="flex items-center gap-0.5">
-                    {compareA && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>1</span>}
-                    {compareB && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>2</span>}
-                  </span>
-                </button>
-              )}
             </div>
           </div>
         </div>
@@ -354,7 +354,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                     <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -362,7 +362,7 @@ export default function LeaderboardTable({
                         <div className="flex items-center gap-1.5 min-w-0">
                           <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                           <button
-                            onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                            onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
                             className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                               compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                             style={compareActive ? { background: ACCENT_COLOR } : undefined}
@@ -434,7 +434,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -442,7 +442,7 @@ export default function LeaderboardTable({
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
-                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
                               className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                                 compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                               style={compareActive ? { background: ACCENT_COLOR } : undefined}
@@ -503,7 +503,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -511,7 +511,7 @@ export default function LeaderboardTable({
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
-                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey, p) }}
+                              onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
                               className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                                 compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                               style={compareActive ? { background: ACCENT_COLOR } : undefined}
@@ -545,15 +545,6 @@ export default function LeaderboardTable({
           </div>
         </div>
       </div>
-      <PanelCompare
-        open={panelOpen}
-        onClose={() => setPanelOpen(false)}
-        playerA={compareA}
-        playerB={compareB}
-        onClearA={() => setCompareA(null)}
-        onClearB={() => setCompareB(null)}
-        statTab={statTab}
-      />
     </AppLayout>
   )
 }

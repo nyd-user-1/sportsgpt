@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
-import { cn } from '@/lib/utils'
+import { cn, formatSeason } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { CURRENT_SEASON } from '@/lib/app-config'
 import Image from 'next/image'
@@ -90,7 +90,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 ? 'border-[#033882] text-[var(--txt)]'
                 : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
             )}>
-            {s}
+            {formatSeason(Number(s))}
           </button>
         ))}
       </div>

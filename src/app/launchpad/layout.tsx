@@ -3,6 +3,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { ProviderSection, type GameRow } from './ProviderSection'
 import { LaunchpadTabs } from './LaunchpadTabs'
 import { sql } from '@/lib/db'
+import { CURRENT_SEASON } from '@/lib/season'
 
 export default async function LaunchpadLayout({
   children,
@@ -21,7 +22,7 @@ export default async function LaunchpadLayout({
     FROM games g
     JOIN teams ht  ON ht.slug  = g.home_team_slug
     JOIN teams at2 ON at2.slug = g.away_team_slug
-    WHERE g.season IN (2022, 2023, 2024)
+    WHERE g.season = ANY(${[CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2]})
     ORDER BY g.season DESC, g.game_date ASC NULLS LAST
   `
 
