@@ -29,16 +29,8 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
   return (
     <aside className="flex h-full flex-col bg-[var(--surface)] overflow-hidden">
 
-      {/* Header — Log In */}
-      <div className="px-3 pt-3 pb-2">
-        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5">
-          <User className="h-[18px] w-[18px] text-[var(--txt)] flex-shrink-0" />
-          <span className="text-[15px] font-medium text-[var(--txt)]">Log In</span>
-        </div>
-      </div>
-
       {/* Nav */}
-      <nav className="flex-1 overflow-y-auto no-scrollbar px-3 space-y-0.5">
+      <nav className="flex-1 overflow-y-auto no-scrollbar px-3 pt-3 space-y-0.5">
 
         {/* Search */}
         <button
@@ -65,6 +57,8 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
             {label}
           </Link>
         ))}
+
+        <div className="my-2 border-t border-[var(--border)]" />
 
         {SIDEBAR_DATA_ITEMS.length > 0 && (
           <>
@@ -129,15 +123,16 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
       {/* Footer */}
       <div className="p-3 space-y-1">
-        <Link href="/team/east-islip-redmen" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
-          East Islip
-        </Link>
-        <Link href="/glossary" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--txt)] bg-[var(--inp-bg)] hover:opacity-80">
+        <Link href="/glossary" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
           {SIDEBAR_FOOTER_LABEL}
         </Link>
         <Link href="/admin" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
           Admin
         </Link>
+        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
+          <User className="h-[18px] w-[18px] text-[var(--txt)] flex-shrink-0" />
+          <span className="text-[15px] font-medium text-[var(--txt)]">Log In</span>
+        </div>
       </div>
 
     </aside>

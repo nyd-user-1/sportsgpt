@@ -67,6 +67,33 @@ Client: `@neondatabase/serverless` — `import { sql } from '@/lib/db'`
 LEFT JOIN teams t ON t.school_slug = p.school_slug
 ```
 
+### Game data coverage (manually ingested from MaxPreps)
+
+| Season (DB) | School Year | Rows | Status |
+|-------------|-------------|------|--------|
+| 2021        | 2021-22     | 203  | ✅ Complete |
+| 2022        | 2022-23     | 219  | ✅ Complete (Hampton Bays + Eastport-South Manor had no 22-23 season per MaxPreps) |
+| 2023        | 2023-24     | 237  | ✅ Complete |
+| 2024        | 2024-25     | 240  | ✅ Complete |
+| 2025        | 2025-26     | 224  | ✅ Complete |
+
+**Season label convention:** DB `season=2024` = fall 2024 games = school year 2024-25.
+Display via `formatSeason()` in `src/lib/utils.ts`.
+
+**ALWAYS refer to seasons in school-year format** — say "2024-25 season" or "24-25 season", NEVER just "2024 season". This applies everywhere: code comments, user-facing text, conversations, memory, documentation. DB integer values (2024, 2023, etc.) are internal only.
+
+**Unexpected team slugs to know:**
+- Westhampton Beach → `westhampton-varsity-football`
+- Amityville Memorial → `amityville-varsity-football`
+- John Glenn → `glenn-varsity-football`
+- GSMHS → `greenport-southold-mattituck-varsity-football`
+- Mount Sinai → `mt-sinai-varsity-football`
+- East Hampton/Pierson → `east-hampton-bridgehampton-pierson-varsity-football`
+
+**Nassau County schools NOT in DB:** Farmingdale, Plainedge, Garden City, Massapequa, North Shore — skip those games.
+
+**No unique constraint** on games table — deduplicate carefully before inserting.
+
 ---
 
 ## Blob Storage (Vercel)

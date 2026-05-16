@@ -1,14 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronDown, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
 type DivisionSummary = {
   division: string
@@ -65,6 +67,12 @@ export function SectionShell({
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
   const [activeDiv,  setActiveDiv]  = useState<string>('I')
+  const [divCardIdx, setDivCardIdx] = useState(0)
+
+  useEffect(() => {
+    const t = setInterval(() => setDivCardIdx(i => (i + 1) % DIV_ORDER.length), 4000)
+    return () => clearInterval(t)
+  }, [])
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
   const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
@@ -74,12 +82,15 @@ export function SectionShell({
 
   const filteredTeams = allTeams.filter(t => t.division === activeDiv)
 
-  const GRADIENTS = [
-    'linear-gradient(135deg,#023887 0%,#0a52c7 100%)',
-    'linear-gradient(135deg,#14532d 0%,#166534 100%)',
-    'linear-gradient(135deg,#7c2d12 0%,#9a3412 100%)',
-    'linear-gradient(135deg,#581c87 0%,#6b21a8 100%)',
-  ]
+  const DIV_PHOTOS: Record<string, string> = {
+    I:   TEAM_PHOTOS['bay-shore']?.[0]             ?? '',
+    II:  TEAM_PHOTOS['northport']?.[0]             ?? '',
+    III: TEAM_PHOTOS['hauppauge']?.[0]             ?? '',
+    IV:  TEAM_PHOTOS['shoreham-wading-river']?.[0] ?? '',
+  }
+  const DIV_SCHOOL: Record<string, string> = {
+    I: 'bay-shore', II: 'northport', III: 'hauppauge', IV: 'shoreham-wading-river',
+  }
 
   return (
     <>
@@ -111,31 +122,46 @@ export function SectionShell({
               </div>
             </div>
 
-            {/* Division cards grid */}
+            {/* Division slider */}
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-[var(--txt)] mb-4">Divisions</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
+
+                {/* Image layers — all stacked, fade in/out */}
                 {DIV_ORDER.map((div, i) => {
                   const summary = divisionSummary.find(d => d.division === div)
+                  const photo   = DIV_PHOTOS[div]
                   return (
-                    <Link key={div} href={`/division/${DIV_SLUGS[div]}`}
-                      className="relative rounded-2xl overflow-hidden block"
-                      style={{ background: GRADIENTS[i], minHeight: 120 }}>
-                      <div className="p-4 flex flex-col h-full justify-between">
-                        <div>
-                          <p className="text-xs font-semibold text-white/70 uppercase tracking-wide">Division</p>
-                          <p className="text-3xl font-black text-white mt-0.5">{div}</p>
-                        </div>
-                        <div className="mt-3">
-                          <p className="text-xs text-white/70">{summary?.team_count ?? 0} teams</p>
-                          {summary?.avg_win_pct != null && (
-                            <p className="text-xs text-white/70">{fmtPctFromFloat(summary.avg_win_pct)} avg win%</p>
-                          )}
-                        </div>
+                    <div key={div}
+                      className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                      style={{ opacity: i === divCardIdx ? 1 : 0 }}>
+                      {photo && <Image src={photo} alt="" fill className="object-cover" unoptimized />}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 p-5 pb-10 pointer-events-none">
+                        <p className="text-base font-bold text-white leading-snug">Division {div}</p>
+                        <p className="text-sm text-white/80 mt-0.5">{summary?.team_count ?? 0} teams</p>
+                        {summary?.avg_win_pct != null && (
+                          <p className="text-xs text-white/60">{fmtPctFromFloat(summary.avg_win_pct)} avg win%</p>
+                        )}
                       </div>
-                    </Link>
+                    </div>
                   )
                 })}
+
+                {/* Clickable link for active slide */}
+                <Link href={`/division/${DIV_SLUGS[DIV_ORDER[divCardIdx]]}`}
+                  className="absolute inset-0 z-10" />
+
+                {/* Liquid dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                  {DIV_ORDER.map((_, i) => (
+                    <button key={i}
+                      onClick={(e) => { e.preventDefault(); setDivCardIdx(i) }}
+                      className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
+                      style={{ width: i === divCardIdx ? 28 : 8, opacity: i === divCardIdx ? 1 : 0.45 }}
+                    />
+                  ))}
+                </div>
+
               </div>
             </div>
 

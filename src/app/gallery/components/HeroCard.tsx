@@ -103,7 +103,7 @@ export default function HeroCard({
         </p>
 
         {/* CTA */}
-        <Link href="/team"
+        <Link href="/section/section-xi"
           className={`text-sm font-bold px-7 py-3 rounded-xl active:scale-95 transition-all ${dark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/80'}`}>
           Explore Teams
         </Link>

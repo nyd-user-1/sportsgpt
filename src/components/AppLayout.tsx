@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, ImageIcon } from 'lucide-react'
+import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
@@ -154,12 +154,8 @@ export function AppLayout({ children, mobileHeader }: { children: React.ReactNod
 
           <div className="flex-1" />
 
-          {pathname === '/' && (
+          {pathname === '/chat' && (
             <div className="flex items-center gap-2">
-              <Link href="/gallery"
-                className="flex h-9 w-9 items-center justify-center rounded-xl text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors">
-                <ImageIcon className="h-5 w-5" />
-              </Link>
               <button className="h-9 px-4 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
                 Sign in
               </button>

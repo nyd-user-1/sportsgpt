@@ -34,7 +34,8 @@ export const NAV_CYCLE = [
 
 // ── Sidebar active-label lookup (exact path → label) ──────────────────────
 export const PATH_NAV: Record<string, string> = {
-  '/':                    'Chat',
+  '/':                    'Gallery',
+  '/chat':                'Chat',
   '/charts':              'Charts',
   '/maps':                'Maps',
   '/team':                'Teams',
@@ -76,20 +77,21 @@ export const PATH_TITLE: Record<string, string> = {
 export type NavItem = { label: string; icon: React.ComponentType<{ className?: string }>; href: string }
 
 export const SIDEBAR_NAV_TOP: NavItem[] = [
-  { label: 'Chat',       icon: MessageCircle,   href: '/'                    },
+  { label: 'Chat',       icon: MessageCircle,   href: '/chat'                },
   { label: 'Charts',     icon: LayoutDashboard, href: '/charts'              },
-  { label: 'Maps',       icon: Map,             href: '/maps'                },
   { label: 'Teams',      icon: Building2,       href: '/team'                },
-  { label: 'Schools',    icon: School,          href: '/school'              },
-  { label: 'Players',      icon: User,          href: '/player'              },
-  { label: 'Leaderboard',  icon: ListOrdered,   href: '/leaderboard'         },
-  { label: 'Divisions',    icon: LayoutGrid,    href: '/division/division-i' },
-  { label: 'Section XI', icon: Trophy,          href: '/section/section-xi'  },
-  { label: 'Launchpad',  icon: Rocket,          href: '/launchpad'           },
-  { label: 'Gallery',    icon: Images,          href: '/gallery'             },
+  { label: 'Players',    icon: User,            href: '/player'              },
 ]
 
-export const SIDEBAR_NAV_BOTTOM: NavItem[] = []
+export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
+  { label: 'Maps',        icon: Map,           href: '/maps'                },
+  { label: 'Schools',     icon: School,        href: '/school'              },
+  { label: 'Leaderboard', icon: ListOrdered,   href: '/leaderboard'         },
+  { label: 'Divisions',   icon: LayoutGrid,    href: '/division/division-i' },
+  { label: 'Section XI',  icon: Trophy,        href: '/section/section-xi'  },
+  { label: 'Launchpad',   icon: Rocket,        href: '/launchpad'           },
+  { label: 'Gallery',     icon: Images,        href: '/'                    },
+]
 
 // Empty arrays = Data and Map accordion groups hidden from sidebar
 export const SIDEBAR_DATA_ITEMS: string[] = []
