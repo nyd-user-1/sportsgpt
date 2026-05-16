@@ -9,7 +9,7 @@ import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
-import { cn } from '@/lib/utils'
+import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 
 function fmtPct(w: number | null, l: number | null): string {
@@ -97,11 +97,18 @@ export function TeamShell({
   const schoolSlug = team.school_slug as string
 
   // Build season history rows
-  const historyRows = seasonRows.map(s => ({
-    season: String(s.season),
-    overall: fmtRecord(s.overall_wins as number | null, s.overall_losses as number | null, s.overall_ties as number | null),
-    conf: fmtRecord(s.conference_wins as number | null, s.conference_losses as number | null, s.conference_ties as number | null),
-  }))
+  const historyRows = seasonRows.map(s => {
+    const pf = s.points_for as number | null
+    const pa = s.points_against as number | null
+    const diff = pf != null && pa != null ? pf - pa : null
+    return {
+      seasonKey: s.season as number,
+      season: formatSeason(s.season as number),
+      overall: fmtRecord(s.overall_wins as number | null, s.overall_losses as number | null, s.overall_ties as number | null),
+      conf: fmtRecord(s.conference_wins as number | null, s.conference_losses as number | null, s.conference_ties as number | null),
+      diff,
+    }
+  })
 
   const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
 
@@ -239,6 +246,7 @@ export function TeamShell({
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Season</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Overall</th>
                           <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Conf</th>
+                          <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
                           <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Win%</th>
                         </tr>
                       </thead>
@@ -248,9 +256,12 @@ export function TeamShell({
                             <td className={td}>{row.season}</td>
                             <td className={cn(td, 'font-medium text-[var(--txt)]')}>{row.overall}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
+                            <td className={cn(td, 'text-right font-medium', row.diff == null ? 'text-[var(--muted)]' : row.diff >= 0 ? 'text-green-600' : 'text-red-500')}>
+                              {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
+                            </td>
                             <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>
                               {(() => {
-                                const s = seasonRows.find(s2 => String(s2.season) === row.season)
+                                const s = seasonRows.find(s2 => (s2.season as number) === row.seasonKey)
                                 return fmtPct(s?.overall_wins as number | null, s?.overall_losses as number | null)
                               })()}
                             </td>
@@ -276,13 +287,11 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th className="w-[14%] sm:w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
-                                <th className="w-[38%] sm:w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="w-[30%] sm:w-[20%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="w-[18%] sm:w-[20%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
-                                <th className="hidden sm:table-cell sm:w-10 px-3 py-3 text-right text-[var(--muted)]">
-                                  <ChevronDown className={cn('h-3.5 w-3.5 transition-transform duration-200 ml-auto', infoExpanded && 'rotate-180')} />
-                                </th>
+                                <th className="w-[13%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="w-[40%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
+                                <th className="w-[18%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
+                                <th className="w-[14%] px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="w-[15%] px-3 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -301,18 +310,21 @@ export function TeamShell({
                                   .replace(/-/g, ' ')
                                   .replace(/\b\w/g, c => c.toUpperCase())
                                 const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
-                                const opLogo = SCHOOL_LOGOS[opSchoolSlug]
+                                const opLogo  = SCHOOL_LOGOS[opSchoolSlug]
+                                const diff     = myScore != null && opScore != null ? myScore - opScore : null
+                                const diffStr  = diff == null ? '—' : diff > 0 ? `+${diff}` : String(diff)
+                                const diffColor = diff == null ? 'var(--muted)' : diff > 0 ? '#15803d' : diff < 0 ? '#b91c1c' : 'var(--muted)'
                                 return (
                                   <tr key={g.id} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
                                     <td className={cn(td, 'text-[var(--txt2)] tabular-nums')}>{fmtGameDate(g.game_date)}</td>
-                                    <td className={cn(td, 'font-medium whitespace-nowrap')}>
-                                      <span className="text-xs text-[var(--muted)] mr-1.5">{isHome ? 'vs' : 'at'}</span>
-                                      <Link href={`/team/${opSlug}`} className="hover:underline align-middle" style={{ color: ACCENT_COLOR }}>
+                                    <td className={cn(td, 'font-medium')}>
+                                      <div className="flex items-center gap-1.5 min-w-0">
+                                        <span className="text-xs text-[var(--muted)] shrink-0">{isHome ? 'vs' : 'at'}</span>
                                         {opLogo && (
-                                          <Image src={opLogo} alt={opDisplay} width={28} height={28} className="sm:hidden inline-block h-7 w-7 align-middle object-contain" unoptimized />
+                                          <Image src={opLogo} alt="" width={20} height={20} className="shrink-0 h-5 w-5 object-contain" unoptimized />
                                         )}
-                                        <span className={opLogo ? 'hidden sm:inline' : ''}>{opDisplay}</span>
-                                      </Link>
+                                        <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
+                                      </div>
                                     </td>
                                     <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
                                     <td className={cn(td, 'text-left')}>
@@ -323,7 +335,7 @@ export function TeamShell({
                                         {result}
                                       </span>
                                     </td>
-                                    <td className={cn(td, 'hidden sm:table-cell sm:w-10')} />
+                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                   </tr>
                                 )
                               })}

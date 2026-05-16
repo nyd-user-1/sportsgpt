@@ -14,9 +14,20 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const [allTeams, seasonRows, divTeams, playerRows, gameRows] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
-      SELECT * FROM team_season_stats
-      WHERE team_slug = ${slug}
-      ORDER BY season DESC`,
+      SELECT s.*,
+        COALESCE(s.points_for,  g.pf) AS points_for,
+        COALESCE(s.points_against, g.pa) AS points_against
+      FROM team_season_stats s
+      LEFT JOIN (
+        SELECT season,
+          SUM(CASE WHEN home_team_slug = ${slug} THEN home_score ELSE away_score END) AS pf,
+          SUM(CASE WHEN home_team_slug = ${slug} THEN away_score ELSE home_score END) AS pa
+        FROM games
+        WHERE home_team_slug = ${slug} OR away_team_slug = ${slug}
+        GROUP BY season
+      ) g ON g.season = s.season
+      WHERE s.team_slug = ${slug}
+      ORDER BY s.season DESC`,
     sql`
       SELECT t.slug, t.name, s.overall_wins, s.overall_losses
       FROM teams t
