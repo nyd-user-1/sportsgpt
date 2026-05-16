@@ -25,13 +25,15 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       ORDER BY s.overall_wins DESC NULLS LAST, t.name`,
     sql`
       WITH latest AS (
-        SELECT DISTINCT ON (player_slug, stat_type)
-          player_slug, player_name, stat_type, season,
-          pass_yards, pass_tds, rush_yards, rush_tds, recv_yards, recv_tds
-        FROM player_season_stats
-        WHERE school_slug = ${team.school_slug}
-          AND stat_type IN ('Passing', 'Rushing', 'Receiving')
-        ORDER BY player_slug, stat_type, season DESC
+        SELECT DISTINCT ON (pss.player_slug, pss.stat_type)
+          pss.player_slug, pss.player_name, pss.stat_type, pss.season,
+          pss.pass_yards, pss.pass_tds, pss.rush_yards, pss.rush_tds, pss.recv_yards, pss.recv_tds,
+          p.position
+        FROM player_season_stats pss
+        LEFT JOIN players p ON p.slug = pss.player_slug
+        WHERE pss.school_slug = ${team.school_slug}
+          AND pss.stat_type IN ('Passing', 'Rushing', 'Receiving')
+        ORDER BY pss.player_slug, pss.stat_type, pss.season DESC
       )
       SELECT * FROM latest
       ORDER BY

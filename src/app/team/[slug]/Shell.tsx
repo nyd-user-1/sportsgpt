@@ -345,7 +345,7 @@ export function TeamShell({
                           <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
                             <div>
                               <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5">{p.stat_type as string}</p>
+                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string)}</p>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
