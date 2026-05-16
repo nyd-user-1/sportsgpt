@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet" />
       </head>
-      <body className="h-full" style={{ fontFamily: "'DM Sans', sans-serif", background: 'var(--bg)' }}>
+      <body className="h-full bg-[var(--surface)] sm:bg-[var(--bg)]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         {children}
         <CommandPalette />
       </body>
