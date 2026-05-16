@@ -96,7 +96,7 @@ function PlayerHeader({
   player, slot, onClear,
 }: {
   player: ComparePlayer | null
-  slot: 'A' | 'B'
+  slot: '1' | '2'
   onClear: () => void
 }) {
   const photo = player ? PLAYER_PHOTOS[player.player_slug] : undefined
@@ -126,7 +126,7 @@ function PlayerHeader({
         ) : logo ? (
           <Image src={logo} alt="" width={36} height={36} className="object-contain" unoptimized />
         ) : (
-          <span className="text-xl font-bold text-[var(--muted)]">{slot}</span>
+          <span className="text-base font-bold text-[var(--muted)]">{slot}</span>
         )}
       </div>
 
@@ -228,9 +228,9 @@ export function PanelCompare({
 
         {/* Player headers */}
         <div className="shrink-0 flex border-b border-[var(--border)]">
-          <PlayerHeader player={playerA} slot="A" onClear={onClearA} />
+          <PlayerHeader player={playerA} slot="1" onClear={onClearA} />
           <div className="w-px bg-[var(--border)] self-stretch" />
-          <PlayerHeader player={playerB} slot="B" onClear={onClearB} />
+          <PlayerHeader player={playerB} slot="2" onClear={onClearB} />
         </div>
 
         {/* Stats */}

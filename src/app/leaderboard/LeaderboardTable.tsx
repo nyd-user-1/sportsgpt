@@ -295,11 +295,11 @@ export default function LeaderboardTable({
               {(compareA || compareB) && (
                 <button onClick={() => setPanelOpen(true)}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors text-[var(--txt)]">
-                  <span className="flex items-center gap-0.5">
-                    {compareA && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>A</span>}
-                    {compareB && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>B</span>}
-                  </span>
                   Compare
+                  <span className="flex items-center gap-0.5">
+                    {compareA && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>1</span>}
+                    {compareB && <span className="w-4 h-4 rounded-full text-[9px] font-bold text-white flex items-center justify-center" style={{ background: ACCENT_COLOR }}>2</span>}
+                  </span>
                 </button>
               )}
             </div>
@@ -354,7 +354,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                     <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -366,7 +366,7 @@ export default function LeaderboardTable({
                             className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                               compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                             style={compareActive ? { background: ACCENT_COLOR } : undefined}
-                            aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                            aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
                           >{compareLabel}</button>
                         </div>
                       </td>
@@ -434,7 +434,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -446,7 +446,7 @@ export default function LeaderboardTable({
                               className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                                 compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                               style={compareActive ? { background: ACCENT_COLOR } : undefined}
-                              aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                              aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
                             >{compareLabel}</button>
                           </div>
                         </td>
@@ -503,7 +503,7 @@ export default function LeaderboardTable({
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
-                    const compareLabel = isA ? 'A' : isB ? 'B' : (compareA ? 'B' : 'A')
+                    const compareLabel = isA ? '1' : isB ? '2' : (compareA ? '2' : '1')
                     const compareActive = isA || isB
                     return (
                       <tr key={p.player_slug + i} className="group/row hover:bg-[var(--inp-bg)] transition-colors">
@@ -515,7 +515,7 @@ export default function LeaderboardTable({
                               className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
                                 compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
                               style={compareActive ? { background: ACCENT_COLOR } : undefined}
-                              aria-label={isA ? 'Remove A' : isB ? 'Remove B' : `Compare as ${compareLabel}`}
+                              aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
                             >{compareLabel}</button>
                           </div>
                         </td>
