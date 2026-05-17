@@ -3,12 +3,13 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, Download } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import { InfoTable } from '@/components/InfoTable'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
 
@@ -85,15 +86,6 @@ export function DivisionShell({
     const t = setInterval(() => setSlideIdx(i => (i + 1) % slides.length), 4000)
     return () => clearInterval(t)
   }, [slides.length])
-  const [downloadOpen, setDownloadOpen] = useState(false)
-  const downloadRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (!downloadRef.current?.contains(e.target as Node)) setDownloadOpen(false)
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
   const passRef = useRef<HTMLDivElement>(null)
   const rushRef = useRef<HTMLDivElement>(null)
 
@@ -199,42 +191,12 @@ export function DivisionShell({
 
             {/* Standings with season carousel */}
             <div className="mb-8">
-              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                <div onClick={() => setStandingsExpanded(v => !v)}
-                  className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm font-semibold text-[var(--txt)]">{fmtSeason(selectedSeason)} Standings</span>
-                    {availableSeasons.length > 1 && (
-                      <>
-                        <button onClick={e => { e.stopPropagation(); setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length) }}
-                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
-                          <ChevronLeft className="h-4 w-4" />
-                        </button>
-                        <button onClick={e => { e.stopPropagation(); setSeasonIdx(i => (i + 1) % availableSeasons.length) }}
-                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
-                          <ChevronRight className="h-4 w-4" />
-                        </button>
-                      </>
-                    )}
-                  </div>
-                  <div ref={downloadRef} className="relative" onClick={e => e.stopPropagation()}>
-                    <button onClick={() => setDownloadOpen(v => !v)}
-                      className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Download">
-                      <Download className="h-4 w-4" />
-                    </button>
-                    {downloadOpen && (
-                      <div className="absolute right-0 top-full mt-1 z-50 min-w-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden">
-                        {['CSV', 'DOC', 'MD', 'PDF'].map((fmt, i) => (
-                          <button key={fmt} onClick={() => setDownloadOpen(false)}
-                            className={cn('w-full px-3 py-2 text-left text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors',
-                              i > 0 && 'border-t border-[var(--border)]')}>
-                            {fmt}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
+              <InfoTable
+                title={`${fmtSeason(selectedSeason)} Standings`}
+                onToggle={() => setStandingsExpanded(v => !v)}
+                onPrev={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length) : undefined}
+                onNext={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i + 1) % availableSeasons.length) : undefined}
+              >
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-[var(--surface)]">
@@ -275,7 +237,7 @@ export function DivisionShell({
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </InfoTable>
             </div>
 
             {/* Top Passers carousel */}

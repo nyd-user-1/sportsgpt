@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
 import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
+import { PanelPlayer, type AnyPlayerRow } from '@/components/PanelPlayer'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { AppLayout } from '@/components/AppLayout'
 import { cn, formatSeason } from '@/lib/utils'
@@ -181,6 +182,15 @@ export default function LeaderboardTable({
   )
   const [season, setSeason]   = useState<number | null>(null)
   const [versusMode, setVersusMode] = useState(false)
+  const [selectedPlayer, setSelectedPlayer] = useState<AnyPlayerRow | null>(null)
+
+  function handleRowClick(p: Passer | Rusher | Receiver) {
+    if (versusMode) return
+    const key = `${p.player_slug}__${p.season}`
+    const curKey = selectedPlayer ? `${selectedPlayer.player_slug}__${selectedPlayer.season}` : null
+    setSelectedPlayer(curKey === key ? null : p as AnyPlayerRow)
+  }
+
 
   function toggleVersus() {
     if (versusMode) {
@@ -188,12 +198,15 @@ export default function LeaderboardTable({
       params.delete('a')
       params.delete('b')
       router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
+    } else {
+      setSelectedPlayer(null)
     }
     setVersusMode(v => !v)
   }
 
   function handleTabChange(tab: StatTab) {
     setStatTab(tab)
+    setSelectedPlayer(null)
     const params = new URLSearchParams(searchParams.toString())
     params.set('tab', tab)
     params.delete('a')
@@ -283,6 +296,23 @@ export default function LeaderboardTable({
     if (typeof av === 'string') return recvDir === 'asc' ? av.localeCompare(bv as string) : (bv as string).localeCompare(av)
     return recvDir === 'asc' ? (av as number) - (bv as number) : (bv as number) - (av as number)
   }), [filteredReceivers, recvCol, recvDir])
+
+  useEffect(() => {
+    if (versusMode) return
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return
+      if (!selectedPlayer) return
+      e.preventDefault()
+      const list = statTab === 'Passing' ? sortedPassers : statTab === 'Rushing' ? sortedRushers : sortedReceivers
+      const curKey = `${selectedPlayer.player_slug}__${selectedPlayer.season}`
+      const idx = list.findIndex(p => `${p.player_slug}__${p.season}` === curKey)
+      if (idx === -1) return
+      const next = e.key === 'ArrowDown' ? Math.min(idx + 1, list.length - 1) : Math.max(idx - 1, 0)
+      if (next !== idx) setSelectedPlayer(list[next] as AnyPlayerRow)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [versusMode, selectedPlayer, statTab, sortedPassers, sortedRushers, sortedReceivers])
 
   function PTh({ col, label, right, className, style }: { col: PassCol; label: string; right?: boolean; className?: string; style?: React.CSSProperties }) {
     return <Th label={label} active={passCol === col} dir={passDir} onClick={() => handlePassSort(col)} right={right} className={className} style={style} glossaryId={PASS_COL_GLOSSARY[col]} />
@@ -374,20 +404,20 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                    <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                    <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
                       <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                           <button
                             onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
                             className={cn(
-                              'shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                              'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
                               !versusMode && 'hidden',
                               compareActive
                                 ? '!opacity-100 text-white border-transparent'
                                 : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
                             )}
-                            style={compareActive ? { background: ACCENT_COLOR } : { color: ACCENT_COLOR, borderColor: ACCENT_COLOR }}
+                            style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                             aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
                           >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                         </div>
@@ -459,17 +489,22 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
                         <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
-                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
                               onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
-                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
-                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
-                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              className={cn(
+                                'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                                !versusMode && 'hidden',
+                                compareActive
+                                  ? '!opacity-100 text-white border-transparent'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                              )}
+                              style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
-                            >{compareLabel}</button>
+                            >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                           </div>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>
@@ -528,17 +563,22 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
                         <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
-                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
                               onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
-                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
-                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
-                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              className={cn(
+                                'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                                !versusMode && 'hidden',
+                                compareActive
+                                  ? '!opacity-100 text-white border-transparent'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                              )}
+                              style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
-                            >{compareLabel}</button>
+                            >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                           </div>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>
@@ -567,6 +607,11 @@ export default function LeaderboardTable({
           </div>
         </div>
       </div>
+      <PanelPlayer
+        player={selectedPlayer}
+        statTab={statTab}
+        onClose={() => setSelectedPlayer(null)}
+      />
     </AppLayout>
   )
 }

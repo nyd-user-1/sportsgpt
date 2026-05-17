@@ -9,18 +9,22 @@ import { SportsBarChartInteractive, type SeasonBars } from './charts/SportsBarCh
 import { SportsBarChartMulti } from './charts/SportsBarChartMulti'
 import { SportsLineMulti } from './charts/SportsLineMulti'
 import { SportsPieDonut } from './charts/SportsPieDonut'
+import { SportsPFPAScatter, type PFPASeason } from './charts/SportsPFPAScatter'
+import { SportsWinLossBar, type WinLossSeason } from './charts/SportsWinLossBar'
 
 type StdRow = { name: string; value: number }
 type SubRow = { label: string; value: number; extra?: string }
 type SubRowMap = Record<string, SubRow[]>
 
 interface ChartData {
-  variant: 'bar' | 'bar-interactive' | 'bar-multi' | 'line-multi' | 'pie'
+  variant: 'bar' | 'bar-interactive' | 'bar-multi' | 'line-multi' | 'pie' | 'pfpa' | 'win-loss-h'
   tableRows: StdRow[]
   kpiValue: number
   seasonFilters?: string[]
   subRows?: SubRowMap
   seasonBars?: SeasonBars[]
+  pfpaSeasons?: PFPASeason[]
+  winLossSeasons?: WinLossSeason[]
   multiSeriesData?: Record<string, string | number>[]
   multiPoints?: Record<string, string | number>[]
   pieItems?: { name: string; value: number; fill: string }[]
@@ -67,9 +71,13 @@ function ChartPanelContent({ slug }: { slug: string }) {
     chartNode = <SportsLineMulti data={data.multiPoints as any} xKey="name" series={data.series} title={config.title} description={config.description} valueSuffix={data.valueSuffix ?? ''} />
   } else if (data.variant === 'pie' && data.pieItems && data.pieConfig) {
     chartNode = <SportsPieDonut data={data.pieItems} config={data.pieConfig} title={config.title} description={config.description} />
+  } else if (data.variant === 'pfpa' && data.pfpaSeasons) {
+    chartNode = <SportsPFPAScatter seasons={data.pfpaSeasons} />
+  } else if (data.variant === 'win-loss-h' && data.winLossSeasons) {
+    chartNode = <SportsWinLossBar seasons={data.winLossSeasons} />
   }
 
-  const sorted = [...data.tableRows].sort((a, b) => b.value - a.value)
+  const sorted = [...(data.tableRows ?? [])].sort((a, b) => b.value - a.value)
   const total = sorted.reduce((s, r) => s + r.value, 0) || data.kpiValue
 
   return (

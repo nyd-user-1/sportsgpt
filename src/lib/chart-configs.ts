@@ -1,6 +1,6 @@
 import { CURRENT_SEASON } from '@/lib/season'
 
-export type ChartType = 'bar' | 'area' | 'line' | 'scatter' | 'multi-bar' | 'line-multi' | 'pie-donut'
+export type ChartType = 'bar' | 'area' | 'line' | 'scatter' | 'multi-bar' | 'line-multi' | 'pie-donut' | 'scatter-pfpa' | 'win-loss-h'
 export type Period = 'weekly' | 'monthly' | 'annual'
 
 export interface SeriesDef {
@@ -30,6 +30,30 @@ export interface ChartConfig {
 
 export const CHART_CONFIGS: ChartConfig[] = [
   // ── Team / Season ────────────────────────────────────────────────────────────
+  {
+    slug: 'home-away-record',
+    title: 'Home vs. Away Record',
+    description: `Home wins vs. away wins per team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'bar', kpiLabel: 'home wins',
+  },
+  {
+    slug: 'pf-pa',
+    title: 'PF vs. PA',
+    description: `Points for vs. points against by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'scatter-pfpa', kpiLabel: 'most points scored',
+  },
+  {
+    slug: 'win-loss-division',
+    title: 'Win/Loss by Division',
+    description: `Team wins and losses by division · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'win-loss-h', kpiLabel: 'teams tracked',
+  },
+  {
+    slug: 'strength-of-schedule',
+    title: 'Strength of Schedule',
+    description: `Average opponent win rate by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'bar', kpiLabel: 'toughest schedule',
+  },
   {
     slug: 'season-records',
     title: 'Season Records',
