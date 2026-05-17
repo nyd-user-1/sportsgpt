@@ -30,7 +30,7 @@ export default async function LeaderboardPage() {
       sql`
         WITH ranked AS (
           SELECT player_slug, player_name, school_slug, school_name, rush_attempts,
-                 rush_yards, rush_tds, season,
+                 rush_yards, rush_tds, games_played, yards_per_game, season,
                  ROW_NUMBER() OVER (PARTITION BY season ORDER BY rush_yards DESC NULLS LAST) AS rn
           FROM player_season_stats
           WHERE stat_type = 'Rushing' AND season = ANY(${[2020, ...AVAILABLE_SEASONS]})

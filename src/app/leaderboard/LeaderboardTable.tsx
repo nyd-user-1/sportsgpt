@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
@@ -93,7 +94,7 @@ function SeasonFilterMenu({ selected, onChange }: { selected: number | null; onC
 
 type SortDir = 'asc' | 'desc'
 type PassCol = 'player_name' | 'school_name' | 'season' | 'pass_yards' | 'attempts' | 'completions' | 'comp_pct' | 'pass_tds' | 'interceptions' | 'ypa' | 'ypc' | 'td_rate' | 'int_rate' | 'td_int_ratio' | 'yva' | 'cmd_score' | 'gbi_score' | 'ies_score'
-type RushCol = 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds'
+type RushCol = 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds' | 'ypg' | 'td_pct' | 'tds_per_g' | 'r_exp'
 type RecvCol = 'player_name' | 'school_name' | 'season' | 'recv_yards' | 'receptions' | 'ypr' | 'recv_tds'
 
 type Passer = {
@@ -108,7 +109,8 @@ type Passer = {
 type Rusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   rush_attempts: number | null; rush_yards: number | null
-  rush_tds: number | null; season: number
+  rush_tds: number | null; games_played: number | null; yards_per_game: number | null
+  season: number
 }
 type Receiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
@@ -122,6 +124,23 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
   right?: boolean; className?: string; style?: React.CSSProperties; glossaryId?: string
 }) {
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
+  const [show, setShow] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [triggerRect, setTriggerRect] = useState<DOMRect | null>(null)
+
+  function enter() {
+    if (leaveTimer.current) clearTimeout(leaveTimer.current)
+    if (triggerRef.current) setTriggerRect(triggerRef.current.getBoundingClientRect())
+    setShow(true)
+  }
+
+  function leave() {
+    leaveTimer.current = setTimeout(() => setShow(false), 80)
+  }
+
+  useEffect(() => () => { if (leaveTimer.current) clearTimeout(leaveTimer.current) }, [])
+
   return (
     <th
       style={style}
@@ -131,9 +150,12 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
         className
       )}
     >
-      <div className={cn('relative inline-block group/th', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
+      <div className={cn('relative inline-block', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
         <button
+          ref={triggerRef}
           onClick={onClick}
+          onMouseEnter={term ? enter : undefined}
+          onMouseLeave={term ? leave : undefined}
           className={cn(
             'inline-flex items-center gap-1 rounded-md px-1 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5',
             active ? 'text-[var(--txt)]' : 'text-[var(--muted)]'
@@ -143,22 +165,31 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
             ? (dir === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />)
             : <ChevronUp className="h-3 w-3 opacity-0" />}
         </button>
-        {term && (
-          <div className={cn(
-            'pointer-events-none group-hover/th:pointer-events-auto absolute bottom-full z-50 mb-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
-            right ? 'right-0' : 'left-0'
-          )}>
+        {term && show && triggerRect && createPortal(
+          <div
+            onMouseEnter={() => { if (leaveTimer.current) clearTimeout(leaveTimer.current) }}
+            onMouseLeave={leave}
+            style={{
+              position: 'fixed',
+              top: triggerRect.top - 8,
+              left: right ? triggerRect.right - 256 : triggerRect.left,
+              transform: 'translateY(-100%)',
+              zIndex: 9999,
+            }}
+            className="w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden"
+          >
             <div className="px-3.5 py-3">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)] mb-1.5">{term.name}</p>
               <p className="text-[12px] text-[var(--muted)] leading-relaxed font-normal">{term.definition}</p>
             </div>
             <Link href={`/glossary#${glossaryId}`} onClick={e => e.stopPropagation()}
-              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--border)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--inp-bg)] transition-colors"
+              className="flex items-center justify-between gap-2 border-t border-[var(--border)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--inp-bg)] transition-colors"
               style={{ color: ACCENT_COLOR }}>
               <span className="inline-flex items-center gap-1.5"><Info className="h-3 w-3" />Learn more</span>
               <ArrowUpRight className="h-3 w-3" />
             </Link>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
     </th>
@@ -276,6 +307,18 @@ export default function LeaderboardTable({
     if (rushCol === 'ypc') {
       av = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : 0
       bv = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : 0
+    } else if (rushCol === 'ypg') {
+      av = a.yards_per_game != null ? Number(a.yards_per_game) : 0
+      bv = b.yards_per_game != null ? Number(b.yards_per_game) : 0
+    } else if (rushCol === 'td_pct') {
+      av = a.rush_attempts ? (a.rush_tds ?? 0) / a.rush_attempts * 100 : 0
+      bv = b.rush_attempts ? (b.rush_tds ?? 0) / b.rush_attempts * 100 : 0
+    } else if (rushCol === 'tds_per_g') {
+      av = a.games_played ? (a.rush_tds ?? 0) / a.games_played : 0
+      bv = b.games_played ? (b.rush_tds ?? 0) / b.games_played : 0
+    } else if (rushCol === 'r_exp') {
+      av = a.rush_attempts ? ((a.rush_yards ?? 0) / a.rush_attempts) * ((a.rush_tds ?? 0) / a.rush_attempts) * 100 : 0
+      bv = b.rush_attempts ? ((b.rush_yards ?? 0) / b.rush_attempts) * ((b.rush_tds ?? 0) / b.rush_attempts) * 100 : 0
     } else {
       av = (a[rushCol as keyof Rusher] ?? '') as number | string
       bv = (b[rushCol as keyof Rusher] ?? '') as number | string
@@ -317,8 +360,8 @@ export default function LeaderboardTable({
   function PTh({ col, label, right, className, style }: { col: PassCol; label: string; right?: boolean; className?: string; style?: React.CSSProperties }) {
     return <Th label={label} active={passCol === col} dir={passDir} onClick={() => handlePassSort(col)} right={right} className={className} style={style} glossaryId={PASS_COL_GLOSSARY[col]} />
   }
-  function RTh({ col, label, right, className }: { col: RushCol; label: string; right?: boolean; className?: string }) {
-    return <Th label={label} active={rushCol === col} dir={rushDir} onClick={() => handleRushSort(col)} right={right} className={className} />
+  function RTh({ col, label, right, className, style }: { col: RushCol; label: string; right?: boolean; className?: string; style?: React.CSSProperties }) {
+    return <Th label={label} active={rushCol === col} dir={rushDir} onClick={() => handleRushSort(col)} right={right} className={className} style={style} />
   }
   function VTh({ col, label, right, className }: { col: RecvCol; label: string; right?: boolean; className?: string }) {
     return <Th label={label} active={recvCol === col} dir={recvDir} onClick={() => handleRecvSort(col)} right={right} className={className} />
@@ -456,33 +499,35 @@ export default function LeaderboardTable({
               </table>
             )}
 
-            {/* Rushing: Player, Team, Season, YDS, ATT, YPC, TDs */}
+            {/* Rushing: Player, Team, Season, YDS, ATT, YPC, TDs, YPG, TD%, TDs/G */}
             {statTab === 'Rushing' && (
-              <table className="text-sm w-full table-fixed border-separate" style={{ borderSpacing: 0 }}>
-                <colgroup>
-                  <col style={{ width: '25%' }} />
-                  <col style={{ width: '23%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '12%' }} />
-                </colgroup>
+              <table className="text-sm w-full border-separate" style={{ borderSpacing: 0 }}>
                 <thead className="sticky top-0 z-20">
                   <tr>
-                    <RTh col="player_name"   label="Player" className={playerCls} />
-                    <RTh col="school_name"   label="Team" />
-                    <RTh col="season"        label="Season" />
-                    <RTh col="rush_yards"    label="YDS"  right />
-                    <RTh col="rush_attempts" label="ATT"  right />
-                    <RTh col="ypc"           label="YPC"  right />
-                    <RTh col="rush_tds"      label="TDs"  right />
+                    <RTh col="player_name"   label="Player"  className={playerCls} />
+                    <RTh col="school_name"   label="Team"    className="min-w-[150px]" />
+                    <RTh col="season"        label="Season"  className="w-[70px]" />
+                    <RTh col="rush_yards"    label="YDS"     right className="w-[65px]" />
+                    <RTh col="rush_attempts" label="ATT"     right className="w-[55px]" />
+                    <RTh col="ypc"           label="YPC"     right className="w-[55px]" />
+                    <RTh col="rush_tds"      label="TDs"     right className="w-[55px]" />
+                    <RTh col="ypg"           label="YPG"     right className="w-[65px] border-l border-[var(--border)] bg-gray-50" />
+                    <RTh col="td_pct"        label="TD%"     right className="w-[60px] bg-gray-50" />
+                    <RTh col="tds_per_g"     label="TDs/G"   right className="w-[65px] bg-gray-50" />
+                    <RTh col="r_exp"         label="R-EXP"   right className="w-[70px] border-l border-[var(--border)]" style={{ background: '#f0f4ff' }} />
                   </tr>
                 </thead>
                 <tbody>
                   {sortedRushers.map((p, i) => {
                     const ypc = (p.rush_attempts && p.rush_yards != null && p.rush_attempts > 0)
                       ? (p.rush_yards / p.rush_attempts).toFixed(1) : '—'
+                    const tdPct = (p.rush_attempts && p.rush_tds != null && p.rush_attempts > 0)
+                      ? ((p.rush_tds / p.rush_attempts) * 100).toFixed(1) + '%' : '—'
+                    const tdsPerG = (p.games_played && p.rush_tds != null && p.games_played > 0)
+                      ? (p.rush_tds / p.games_played).toFixed(1) : '—'
+                    const ypg = p.yards_per_game != null ? Number(p.yards_per_game).toFixed(1) : '—'
+                    const rExp = (p.rush_attempts && p.rush_yards != null && p.rush_tds != null && p.rush_attempts > 0)
+                      ? (((p.rush_yards / p.rush_attempts) * (p.rush_tds / p.rush_attempts)) * 100).toFixed(1) : '—'
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
@@ -490,7 +535,7 @@ export default function LeaderboardTable({
                     const compareActive = isA || isB
                     return (
                       <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
-                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
@@ -507,7 +552,7 @@ export default function LeaderboardTable({
                             >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>
+                        <td className={cn(td, 'text-[var(--muted)] min-w-[150px]')}>
                           <div className="flex items-center gap-2 min-w-0">
                             {SCHOOL_LOGOS[p.school_slug] && (
                               <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={20} height={20} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
@@ -515,16 +560,20 @@ export default function LeaderboardTable({
                             <span className="truncate">{p.school_name}</span>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>{formatSeason(p.season)}</td>
-                        <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
-                        <td className={tdR}>{p.rush_attempts ?? '—'}</td>
-                        <td className={tdR}>{ypc}</td>
-                        <td className={tdR}>{p.rush_tds ?? '—'}</td>
+                        <td className={cn(td, 'text-[var(--muted)] w-[70px]')}>{formatSeason(p.season)}</td>
+                        <td className={cn(tdR, 'font-bold w-[65px]')} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{p.rush_attempts ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{ypc}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{p.rush_tds ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[65px] border-l border-[var(--border)] bg-gray-50/60')}>{ypg}</td>
+                        <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{tdPct}</td>
+                        <td className={cn(tdR, 'w-[65px] bg-gray-50/60')}>{tdsPerG}</td>
+                        <td className={cn(tdR, 'w-[70px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{rExp}</td>
                       </tr>
                     )
                   })}
                   {sortedRushers.length === 0 && (
-                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
+                    <tr><td colSpan={11} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
                 </tbody>
               </table>

@@ -1,0 +1,2763 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "7941",
+    "box": {
+      "gameId": "7941",
+      "title": "Longwood vs Ward Melville",
+      "dateLine": "Friday September 12, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Longwood 7: Joe Benedetto had nine carries for 84 yards and a touchdown and caught a 74 yard touchdown to lead host Ward Melville in Suffolk I. Hudson Philbrick had three completions for 140 yards and two touchdowns. Joe Karpowicz had a 22-yard touchdown reception and JJ Alcindor had a 44-yard reception. Jesse Spronck had an interception. Kyon Sarwari had 105 rushing yards and a touchdown for Longwood.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 18,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Julian Jackson",
+            "att": 7,
+            "yds": 71,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 3,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mark Davis",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nyyir Thomas",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 9,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 7,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 2,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 7,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Chris Retzlaff",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 13,
+            "comp": 6,
+            "yds": 39,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 2,
+            "comp": 1,
+            "yds": 3,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 5,
+            "comp": 3,
+            "yds": 140,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Giovanni Johnson",
+            "rec": 3,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Travis Gibbs",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 1,
+            "yds": 74,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Cameron  Clemons",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Quinn Kurtz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Anthony Fardellone",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 14,
+    "gameId": "8170",
+    "box": {
+      "gameId": "8170",
+      "title": "Ward Melville vs Bay Shore",
+      "dateLine": "Saturday September 20, 2025 at Bay Shore",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 49, Bay Shore 14: Ward Melville middle linebacker Liam Cronin opened the scoring by blocking the punt on Bay Shore's first possession, recovering the ball, and scoring a 4-yard touchdown to set the tone as Ward Melville defeated host Bay Shore in Suffolk I. Hudson Philbrick had four passing touchdowns, including two touchdowns to Angelo Sorbera. Sorbera also had a key block to spring Joey Benedetto's 70-yard touchdown run in the second quarter for Ward Melville (2-0). Ethan Jargo was 7 of 7 on PATs. Bay Shore is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 11,
+            "yds": 142,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 4,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 3,
+            "yds": 21,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 14,
+            "comp": 10,
+            "yds": 173,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 1,
+            "comp": 1,
+            "yds": 29,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 2,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 3,
+            "yds": 51,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "8171",
+    "box": {
+      "gameId": "8171",
+      "title": "Ward Melville vs Whitman",
+      "dateLine": "Friday September 26, 2025 at Whitman",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Whitman 7: Angelo Sorbera returned the opening kickoff 85 yards for a touchdown in Ward Melville's 35-7 road win over Whitman in Suffolk I Friday night. Hudson Philbrick connected with Jesse Spronck for a 54-yard TD on the Patriots' first offensive possession. Liam Cronin led the defense with 10 tackles. Joe Benedetto rushed nine times for 56 yards and two scores. Ethan Jargo converted all five of his PAT attempts for Ward Melville (3-0). Shamel Greene ran for an 8-yard TD for Whitman (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 7,
+            "yds": 68,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 9,
+            "yds": 56,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 5,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Shamel Greene",
+            "att": 7,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "att": 9,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "att": 4,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 7,
+            "comp": 5,
+            "yds": 91,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 1,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "att": 12,
+            "comp": 8,
+            "yds": 73,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Shamel Greene",
+            "rec": 3,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 4,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Whitman",
+            "player": "Edwin Miranda",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Duffy",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 13,
+    "gameId": "8082",
+    "box": {
+      "gameId": "8082",
+      "title": "Sachem North vs Ward Melville",
+      "dateLine": "Saturday October 04, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "16",
+          "q2": "13",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 43, Sachem North 13: Hudson Philbrick completed all but two of his 12 passing attempts for 215 yards and two touchdowns for Ward Melville in its home win in Suffolk I. Victor Bergamaschi led the defense with two sacks and two tackles for loss. Joe Benedetto rushed 18 times for 159 yards and three scores for Ward Melville (4-0). Luke LaRocca threw a 28-yard TD pass to Lucas Bouchard for Sachem North (2-2). Henry Sarro added a rushing TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 10,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 8,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 18,
+            "yds": 144,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 8,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 13,
+            "comp": 9,
+            "yds": 149,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 13,
+            "comp": 10,
+            "yds": 215,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 2,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 7,
+            "yds": 135,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Niko Valenza",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Victor Bergamaschi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2025",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 0,
+    "gameId": "7737",
+    "box": {
+      "gameId": "7737",
+      "title": "Central Islip vs Ward Melville",
+      "dateLine": "Friday October 10, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 56, Central Islip 0: Tony Gorsky had 10 carries for 157 yards a touchdown to lead host Ward Melville () in Suffolk I. Gorsky was one of seven Patriots to score a TD. Joe Benedetto ran for two touchdowns and Hudson Philbrick ran for a score and threw a 44-yard TD pass to Jesse Spronck. Angelo Sorbera, Christian Hubbard and LJ DePaul each added a TD run. Joey Karpowicz had two interceptions. Central Islip is 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 10,
+            "yds": 115,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 9,
+            "yds": 156,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 6,
+            "yds": 76,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 5,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 10,
+            "comp": 4,
+            "yds": 40,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 5,
+            "comp": 5,
+            "yds": 91,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 28,
+    "gameId": "8172",
+    "box": {
+      "gameId": "8172",
+      "title": "Ward Melville vs Floyd",
+      "dateLine": "Saturday October 18, 2025 at Floyd",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "6",
+          "q2": "7",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 28, Ward Melville 21: Ja'Quan Thomas ran for 201 yards and four touchdowns on 30 carries to keep the host Floyd undefeated (6-0) in Suffolk I. Evan Commodore picked up a third quarter INT and Aisays Wallace forced a fumble in the fourth quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 14,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 10,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 31,
+            "yds": 201,
+            "tds": 4
+          },
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 5,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Matt Taiani",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 29,
+            "comp": 18,
+            "yds": 258,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Matt Taiani",
+            "att": 4,
+            "comp": 3,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 5,
+            "comp": 3,
+            "yds": 18,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 8,
+            "yds": 131,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 5,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 3,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josiah Lors",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Derek Glock",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Isaac Monroy",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Divine Bennett",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 20,
+    "gameId": "8173",
+    "box": {
+      "gameId": "8173",
+      "title": "Ward Melville vs Brentwood",
+      "dateLine": "Saturday October 25, 2025 at Brentwood",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 42, Brentwood 20: Hudson Philbrick completed 12 of 14 passes for 183 yards and 4 TDs to lead visiting Ward Melville (6-1) in Suffolk I. Joe Benedetto rushed 19 times for 126 yards and 2 TDs, and added a TD reception. Cris Peralta, Julius Herrera and Evan Johnson each had a TD for Brentwood (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 19,
+            "yds": 135,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 24,
+            "yds": 128,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 2,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 1,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Rai Ferrer",
+            "att": 3,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 17,
+            "comp": 14,
+            "yds": 188,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 9,
+            "comp": 7,
+            "yds": 95,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 5,
+            "yds": 116,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 4,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 4,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 3,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 2,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Mizael Taveras",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Argueta",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "8079",
+    "box": {
+      "gameId": "8079",
+      "title": "Sachem East vs Ward Melville",
+      "dateLine": "Friday October 31, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Sachem East 0: Anthony Fardellone had seven tackles to lead host Ward Melville (7-1) in Suffolk I. Joe Karpowicz ran for a 6-yard touchdown and caught a 26-yard score from Hudson Philbrick, who added a 40-yard TD pass to Alcindor. Joe Benedetto ran for 178 yards and a touchdown. Sachem East is 3-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 18,
+            "yds": 178,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "att": 1,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 6,
+            "comp": 3,
+            "yds": 83,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 3,
+            "comp": 2,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/07/2025",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 27,
+    "gameId": "8667",
+    "box": {
+      "gameId": "8667",
+      "title": "Brentwood vs Ward Melville",
+      "dateLine": "Friday November 07, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "28",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 56, Brentwood 27: After a 14-13 1st quarter, Ward Melville scored 35 unanswered points. Hudson Philbrick completed 8 of 10 passes for 163 yards and 2 TDs, and added 95 yards on 7 carries and 3 TDs on the ground to lead host Ward Melville (8-1) in Suffolk I. Tony Gorsky had an interception returned for a TD and a rushing TD. Joe Benedetto had a 15-yard receiving TD and added 12 carries for 54 yards and a rushing TD. Cris Peralta had 2 rushing TDs for Brentwood (4-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 30,
+            "yds": 147,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Galileo Mejia",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 7,
+            "yds": 96,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 4,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 12,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 4,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Manny Lopez",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 10,
+            "comp": 3,
+            "yds": 140,
+            "tds": 1,
+            "int": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 10,
+            "comp": 8,
+            "yds": 154,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 127,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 3,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 1,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Argueta",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Rodgers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/14/2025",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "8714",
+    "box": {
+      "gameId": "8714",
+      "title": "Sachem North vs Ward Melville",
+      "dateLine": "Friday November 14, 2025 at Ward Melville",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 42, Sachem North 7: Joe Karpowicz caught three passes for 104 yards and two touchdowns and Hudson Philbrick completed 12 of 15 passes for 295 yards and three TDs to lead host No. 2 Ward Melville over No. 3 Sachem North in the Suffolk Division I semifinals. Joe Benedetto had 15 carries for 77 yards and three touchdowns.  Austin Sicoli led the Patriots' defense with seven tackles. Ward Melville (9-1) will face the winner of No. 1 Floyd/No. 4 Longwood in the final at 7:30 p.m. on Friday at Stony Brook University. \nLuke LaRocca threw for 117 yards, including a 48-yard TD pass to Jon Giraulo for Sachem North, which finished 7-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 19,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 17,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 8,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 14,
+            "yds": 79,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 8,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 4,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Manny Lopez",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 9,
+            "comp": 4,
+            "yds": 117,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 17,
+            "comp": 15,
+            "yds": 294,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 4,
+            "yds": 109,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 6,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Logan  Schaefer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Victor Bergamaschi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/21/2025",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 28,
+    "gameId": "8746",
+    "box": {
+      "gameId": "8746",
+      "title": "Ward Melville vs Floyd",
+      "dateLine": "Friday November 21, 2025 at Floyd",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "7",
+          "q2": "10",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 2 Ward Melville defeats No. 1 Floyd for the Suffolk Division I title. Ward Melville (10-1) will face Massapequa in the LIC at noon on Friday at Hofstra.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 19,
+            "yds": 98,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 13,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 23,
+            "yds": 184,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 18,
+            "yds": 80,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 18,
+            "comp": 12,
+            "yds": 230,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 7,
+            "comp": 6,
+            "yds": 143,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 6,
+            "yds": 141,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 3,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "rec": 3,
+            "yds": 78,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Christian Hobson",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josiah Lors",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          },
+          {
+            "team": "Floyd",
+            "player": "Isaac Monroy",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/28/2025",
+    "opponent": "Massapequa",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 14,
+    "gameId": "8753",
+    "box": {
+      "gameId": "8753",
+      "title": "Ward Melville vs Massapequa",
+      "dateLine": "Friday November 28, 2025 at Massapequa",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Massapequa",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Massapequa (12-0) defeats Ward Melville (10-2) to claim its third straight Long Island Class I title.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 14,
+            "yds": 62,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 12,
+            "yds": 33,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Massapequa",
+            "player": "Andrew  Pedalino",
+            "att": 26,
+            "yds": 125,
+            "tds": 1
+          },
+          {
+            "team": "Massapequa",
+            "player": "Joe Brooks",
+            "att": 10,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Massapequa",
+            "player": "Cole Villalta",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Massapequa",
+            "player": "Anthony  DiNello",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Massapequa",
+            "player": "Luke Garguilo",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 21,
+            "comp": 9,
+            "yds": 83,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Massapequa",
+            "player": "Luke Garguilo",
+            "att": 9,
+            "comp": 3,
+            "yds": 4,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 3,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Massapequa",
+            "player": "Joe Brooks",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Massapequa",
+            "player": "Chris Bascetta",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Liam  Cronin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

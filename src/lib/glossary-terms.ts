@@ -79,6 +79,42 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     source: 'Newsday / Section XI official stats',
     caveats: 'Top 25 rushers per season only.',
   },
+  {
+    id: 'rush-ypg',
+    name: 'YPG (Rushing)',
+    category: 'Standard — Rushing',
+    formula: 'YPG = Rush Yards / Games Played',
+    definition: 'Rushing yards per game — how many yards a ball carrier averages each time his team takes the field. Where a season total tells you who ran for the most yards, YPG normalizes for schedule length and missed games, making it a fairer measure of game-to-game production. A player who runs for 1,200 yards in 10 games (120 YPG) is outperforming a player who runs for 1,400 yards in 14 games (100 YPG), even though his season total is lower.',
+    source: 'Derived from Newsday / Section XI official stats',
+    caveats: 'Games played data available for 2023–24 and 2024–25 seasons only. Displayed as — for earlier seasons.',
+  },
+  {
+    id: 'rush-td-pct',
+    name: 'TD% (Rushing)',
+    category: 'Standard — Rushing',
+    formula: 'TD% = (Rush TDs / Rush Attempts) × 100',
+    definition: 'Touchdown rate per carry — how often does a rushing attempt end in a score? This metric reveals how dangerous a ball carrier is on any given handoff, independent of volume or game count. It is especially useful for identifying high-leverage backs who play limited roles: a goal-line specialist who touches the ball 30 times and scores 12 touchdowns has a TD% of 40%, far higher than a workhorse back with 250 carries and 25 touchdowns (10%). High TD% with low total attempts often signals a targeted, situational role rather than full-game production.',
+    source: 'Derived from Newsday / Section XI official stats',
+    caveats: 'Top 25 rushers per season only.',
+  },
+  {
+    id: 'rush-tds-per-g',
+    name: 'TDs/G (Rushing)',
+    category: 'Standard — Rushing',
+    formula: 'TDs/G = Rush TDs / Games Played',
+    definition: 'Rushing touchdowns per game — how consistently does a back find the end zone each week? Where TD% measures efficiency per carry (how lethal each touch is), TDs/G measures frequency per game (how reliably he scores regardless of how many touches he gets). A workhorse back who gets 25 carries a game and scores once has a modest TD% but a reliable TDs/G. A specialist with a sky-high TD% may only play in two or three series, producing a low TDs/G. Together, TD% and TDs/G answer different questions: one tells you how dangerous the carry is, the other tells you how often the scoreboard changes.',
+    source: 'Derived from Newsday / Section XI official stats',
+    caveats: 'Games played data available for 2023–24 and 2024–25 seasons only. Displayed as — for earlier seasons.',
+  },
+  {
+    id: 'r-exp',
+    name: 'R-EXP (Rushing Explosiveness Score)',
+    category: 'Standard — Rushing',
+    formula: 'R-EXP = YPC × TD%',
+    definition: 'Rushing Explosiveness Score — a composite that combines yards-per-carry efficiency with touchdown conversion rate into a single number. YPC measures how much ground a back gains per touch; TD% measures how often those touches end in a score. Multiplying them rewards backs who do both simultaneously: a player gaining 8.0 yards per carry and scoring on 12% of his attempts produces an R-EXP of 96, while a player at 5.0 YPC and 5% TD rate scores only 25. The compounding nature of the formula is intentional — a back who is merely good at one dimension is not rewarded the same way as one who excels at both. Think of R-EXP as a single answer to the question: how dangerous is this back, per carry, in both space and around the goal line?',
+    source: 'Derived from Newsday / Section XI official stats',
+    caveats: 'Top 25 rushers per season only. Available for all seasons (2020–25).',
+  },
 
   // ── Standard — Receiving ─────────────────────────────────────────────────
 

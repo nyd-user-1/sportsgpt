@@ -25,6 +25,7 @@ export type CompareRusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   position?: string | null; season: number
   rush_attempts: number | null; rush_yards: number | null; rush_tds: number | null
+  games_played: number | null; yards_per_game: number | null
 }
 export type CompareReceiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
@@ -218,8 +219,16 @@ function RushingStatBlock({ player, opponent }: { player: AnyPlayer | null; oppo
   if (!player) return <EmptyBlock />
   const p = player as CompareRusher
   const o = opponent as CompareRusher | null
-  const pYpc = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
-  const oYpc = o?.rush_attempts ? ((o.rush_yards ?? 0) / o.rush_attempts) : null
+  const pYpc    = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
+  const oYpc    = o?.rush_attempts ? ((o.rush_yards ?? 0) / o.rush_attempts) : null
+  const pTdPct  = p.rush_attempts ? ((p.rush_tds ?? 0) / p.rush_attempts) * 100 : null
+  const oTdPct  = o?.rush_attempts ? (((o.rush_tds ?? 0) / o.rush_attempts) * 100) : null
+  const pYpg    = p.yards_per_game != null ? Number(p.yards_per_game) : null
+  const oYpg    = o?.yards_per_game != null ? Number(o.yards_per_game) : null
+  const pTdsG   = p.games_played ? (p.rush_tds ?? 0) / p.games_played : null
+  const oTdsG   = o?.games_played ? ((o.rush_tds ?? 0) / o.games_played) : null
+  const pRExp   = (pYpc != null && p.rush_attempts) ? (pYpc * ((p.rush_tds ?? 0) / p.rush_attempts)) * 100 : null
+  const oRExp   = (oYpc != null && o?.rush_attempts) ? (oYpc * ((o.rush_tds ?? 0) / o.rush_attempts)) * 100 : null
   return (
     <div className="pt-2">
       <AccordionStatTable title="Rushing">
@@ -227,6 +236,14 @@ function RushingStatBlock({ player, opponent }: { player: AnyPlayer | null; oppo
         <StatRow label="ATT" value={fmt(p.rush_attempts)} win={winFor(p.rush_attempts, o?.rush_attempts ?? null)} />
         <StatRow label="YPC" value={pYpc != null ? pYpc.toFixed(1) : '—'} win={winFor(pYpc, oYpc)} />
         <StatRow label="TDs" value={fmt(p.rush_tds)}      win={winFor(p.rush_tds, o?.rush_tds ?? null)} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Per Game">
+        <StatRow label="YPG"   value={pYpg != null ? pYpg.toFixed(1) : '—'}     win={winFor(pYpg, oYpg)} />
+        <StatRow label="TDs/G" value={pTdsG != null ? pTdsG.toFixed(1) : '—'}   win={winFor(pTdsG, oTdsG)} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Efficiency">
+        <StatRow label="TD%"   value={pTdPct != null ? pTdPct.toFixed(1) + '%' : '—'} win={winFor(pTdPct, oTdPct)} />
+        <StatRow label="R-EXP" value={pRExp != null ? pRExp.toFixed(1) : '—'}           win={winFor(pRExp, oRExp)} />
       </AccordionStatTable>
     </div>
   )
@@ -299,13 +316,21 @@ function buildDiffs(playerA: AnyPlayer, playerB: AnyPlayer, statTab: StatTab): D
   }
   if (statTab === 'Rushing') {
     const a = playerA as CompareRusher, b = playerB as CompareRusher
-    const aYpc = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : null
-    const bYpc = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : null
+    const aYpc   = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : null
+    const bYpc   = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : null
+    const aTdPct = a.rush_attempts ? ((a.rush_tds ?? 0) / a.rush_attempts) * 100 : null
+    const bTdPct = b.rush_attempts ? ((b.rush_tds ?? 0) / b.rush_attempts) * 100 : null
+    const aYpg   = a.yards_per_game != null ? Number(a.yards_per_game) : null
+    const bYpg   = b.yards_per_game != null ? Number(b.yards_per_game) : null
+    const aRExp  = (aYpc != null && a.rush_attempts) ? (aYpc * ((a.rush_tds ?? 0) / a.rush_attempts)) * 100 : null
+    const bRExp  = (bYpc != null && b.rush_attempts) ? (bYpc * ((b.rush_tds ?? 0) / b.rush_attempts)) * 100 : null
     return [
-      { label: 'YDS', delta: d(a.rush_yards,    b.rush_yards),    format: fmtInt },
-      { label: 'ATT', delta: d(a.rush_attempts,  b.rush_attempts), format: fmtInt },
-      { label: 'YPC', delta: aYpc != null && bYpc != null ? aYpc - bYpc : null, format: fmtDp1 },
-      { label: 'TDs', delta: d(a.rush_tds,       b.rush_tds),      format: fmtInt },
+      { label: 'YDS',   delta: d(a.rush_yards,    b.rush_yards),    format: fmtInt },
+      { label: 'ATT',   delta: d(a.rush_attempts,  b.rush_attempts), format: fmtInt },
+      { label: 'YPC',   delta: aYpc != null && bYpc != null ? aYpc - bYpc : null,         format: fmtDp1 },
+      { label: 'TDs',   delta: d(a.rush_tds,       b.rush_tds),      format: fmtInt },
+      { label: 'YPG',   delta: aYpg != null && bYpg != null ? aYpg - bYpg : null,         format: fmtDp1 },
+      { label: 'R-EXP', delta: aRExp != null && bRExp != null ? aRExp - bRExp : null,     format: fmtDp1 },
     ]
   }
   const a = playerA as CompareReceiver, b = playerB as CompareReceiver

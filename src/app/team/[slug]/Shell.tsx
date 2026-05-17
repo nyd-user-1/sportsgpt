@@ -13,6 +13,7 @@ import { InfoTable } from '@/components/InfoTable'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
+import { CardLandscapeMini, WLBadge } from '@/components/CardLandscapeMini'
 
 const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
 
@@ -432,6 +433,55 @@ export function TeamShell({
               </InfoTable>
             </div>
 
+            {/* Games carousel — synced to active InfoTable season */}
+            {(() => {
+              const carouselSeason = activeProfile.kind === 'games'
+                ? (activeProfile as { season: number }).season
+                : gameSeasons[0]
+              if (carouselSeason == null) return null
+              const carouselGames = gameRows.filter(g => g.season === carouselSeason)
+              if (carouselGames.length === 0) return null
+              return (
+                <div className="mb-8">
+                  <div className="mb-4">
+                    <h2 className="text-lg font-semibold text-[var(--txt)]">Games · {fmtSeason(carouselSeason)}</h2>
+                  </div>
+                  <div className="overflow-x-auto no-scrollbar">
+                    <div className="flex gap-3 pb-1">
+                      {carouselGames.map(g => {
+                        const isHome    = g.home_team_slug === team.slug
+                        const opSlug    = isHome ? g.away_team_slug  : g.home_team_slug
+                        const opName    = isHome ? g.away_team_name  : g.home_team_name
+                        const myScore   = isHome ? g.home_score      : g.away_score
+                        const opScore   = isHome ? g.away_score      : g.home_score
+                        const result    = myScore == null || opScore == null ? null
+                          : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
+                        const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+                        const opLogo    = SCHOOL_LOGOS[opSchoolSlug]
+                        const opDisplay = (opName ?? opSlug)
+                          .replace(/\s+Varsity\s+Football$/i, '')
+                          .replace(/-varsity-football$/, '')
+                          .replace(/-/g, ' ')
+                          .replace(/\b\w/g, c => c.toUpperCase())
+                        return (
+                          <CardLandscapeMini
+                            key={g.id}
+                            href={`/game/${g.id}`}
+                            title={isHome ? opDisplay : `at ${opDisplay}`}
+                            titlePadRight
+                            badge={result ? <WLBadge result={result as 'W' | 'L' | 'T'} /> : undefined}
+                            image={opLogo ? <Image src={opLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                            row2={{ text: fmtGameDate(g.game_date) ?? '—' }}
+                            stat={{ value: myScore != null && opScore != null ? `${myScore}–${opScore}` : '—' }}
+                          />
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )
+            })()}
+
             {/* Top Players carousel */}
             {playerRows.length > 0 && (
               <div className="mb-8">
@@ -444,30 +494,20 @@ export function TeamShell({
                       const stat = topStat(p)
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug as string]
                       const fallbackLogo = SCHOOL_LOGOS[schoolSlug]
+                      const img = playerPhoto
+                        ? <Image src={playerPhoto} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                        : fallbackLogo
+                        ? <Image src={fallbackLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                        : undefined
                       return (
-                        <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
+                        <CardLandscapeMini
+                          key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          {playerPhoto ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
-                              <Image src={playerPhoto} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                            </div>
-                          ) : fallbackLogo ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                              <Image src={fallbackLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                            </div>
-                          ) : null}
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string)}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
-                              <span className="text-xs text-[var(--muted)]">{stat.label}</span>
-                            </div>
-                          </div>
-                        </Link>
+                          image={img}
+                          title={p.player_name as string}
+                          row2={{ text: p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string) }}
+                          stat={{ value: stat.value, label: stat.label }}
+                        />
                       )
                     })}
                   </div>
@@ -486,29 +526,15 @@ export function TeamShell({
                     const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
                     const tLogo = SCHOOL_LOGOS[tSchoolSlug]
                     return (
-                      <Link key={t.slug as string} href={`/team/${t.slug}`}
-                        className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                        {/* Logo */}
-                        <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                          {tLogo ? (
-                            <Image src={tLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                          ) : (
-                            <div className="w-full h-full" />
-                          )}
-                        </div>
-                        {/* Text */}
-                        <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                          <div>
-                            <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
-                            <p className="text-xs font-bold mt-0.5 truncate" style={{ color: ACCENT_COLOR }}>
-                              {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
-                            </p>
-                          </div>
-                          <span className="text-xs text-[var(--muted)]">
-                            {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
-                          </span>
-                        </div>
-                      </Link>
+                      <CardLandscapeMini
+                        key={t.slug as string}
+                        href={`/team/${t.slug}`}
+                        image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                        title={(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}
+                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                        statFirst
+                        row2={{ text: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                      />
                     )
                   })}
                 </div>

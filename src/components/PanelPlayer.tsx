@@ -22,6 +22,7 @@ export type PlayerPasser = {
 export type PlayerRusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string; season: number
   rush_attempts: number | null; rush_yards: number | null; rush_tds: number | null
+  games_played: number | null; yards_per_game: number | null
 }
 export type PlayerReceiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string; season: number
@@ -149,13 +150,25 @@ function PassingStats({ player }: { player: PlayerPasser }) {
 
 function RushingStats({ player }: { player: PlayerRusher }) {
   const ypc = player.rush_attempts ? (player.rush_yards ?? 0) / player.rush_attempts : null
+  const tdPct = player.rush_attempts ? ((player.rush_tds ?? 0) / player.rush_attempts) * 100 : null
+  const tdsPerG = player.games_played ? (player.rush_tds ?? 0) / player.games_played : null
+  const ypg = player.yards_per_game != null ? Number(player.yards_per_game) : null
+  const rExp = (ypc != null && player.rush_attempts) ? (ypc * ((player.rush_tds ?? 0) / player.rush_attempts)) * 100 : null
   return (
     <div className="pt-2">
       <AccordionStatTable title="Rushing">
-        <StatRow label="YDS" value={fmt(player.rush_yards)} />
-        <StatRow label="ATT" value={fmt(player.rush_attempts)} />
-        <StatRow label="YPC" value={ypc != null ? ypc.toFixed(1) : '—'} />
-        <StatRow label="TDs" value={fmt(player.rush_tds)} />
+        <StatRow label="YDS"   value={fmt(player.rush_yards)} />
+        <StatRow label="ATT"   value={fmt(player.rush_attempts)} />
+        <StatRow label="YPC"   value={ypc != null ? ypc.toFixed(1) : '—'} />
+        <StatRow label="TDs"   value={fmt(player.rush_tds)} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Per Game">
+        <StatRow label="YPG"   value={ypg != null ? ypg.toFixed(1) : '—'} />
+        <StatRow label="TDs/G" value={tdsPerG != null ? tdsPerG.toFixed(1) : '—'} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Efficiency">
+        <StatRow label="TD%"   value={tdPct != null ? tdPct.toFixed(1) + '%' : '—'} />
+        <StatRow label="R-EXP" value={rExp != null ? rExp.toFixed(1) : '—'} />
       </AccordionStatTable>
     </div>
   )
