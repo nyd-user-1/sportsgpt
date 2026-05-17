@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 
 export function AppPanel({
   open,
+  mobileOpen,
   onClose,
   title,
   footer,
@@ -15,6 +16,7 @@ export function AppPanel({
   bodyClass,
 }: {
   open: boolean
+  mobileOpen?: boolean
   onClose: () => void
   title: string
   footer?: React.ReactNode
@@ -31,6 +33,7 @@ export function AppPanel({
   if (!root) return null
 
   const w = expanded ? 'sm:w-[50vw]' : 'sm:w-[423px]'
+  const mOpen = mobileOpen ?? open
 
   // The desktop panel mounts into #app-panel-root and pushes the layout via a width transition.
   // On mobile it would steal the entire viewport, hiding the main container — so on mobile
@@ -82,10 +85,10 @@ export function AppPanel({
       {/* Mobile: bottom sheet overlay. */}
       <div
         onClick={onClose}
-        className={`sm:hidden fixed inset-0 z-40 bg-black/40 transition-opacity duration-200 ${open ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+        className={`sm:hidden fixed inset-0 z-40 bg-black/40 transition-opacity duration-200 ${mOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
       />
       <div
-        className={`sm:hidden fixed left-0 right-0 bottom-0 z-50 h-[88dvh] rounded-t-2xl bg-[var(--surface)] shadow-[0_-8px_32px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${open ? 'translate-y-0' : 'translate-y-full'}`}
+        className={`sm:hidden fixed left-0 right-0 bottom-0 z-50 h-[88dvh] rounded-t-2xl bg-[var(--surface)] shadow-[0_-8px_32px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${mOpen ? 'translate-y-0' : 'translate-y-full'}`}
         role="dialog"
         aria-modal="true"
       >
@@ -108,7 +111,7 @@ export function AppPanel({
 
         {/* Scrollable body */}
         <div className={cn('flex-1 overflow-y-auto no-scrollbar', bodyClass)}>
-          {open && children}
+          {mOpen && children}
         </div>
 
         {/* Footer */}

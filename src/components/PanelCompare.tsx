@@ -77,13 +77,14 @@ function PlayerCard({
   if (!player) {
     return (
       <div className="shrink-0 border-b border-[var(--border)]">
-        <div className="relative mx-3 mt-3 h-[140px] sm:h-[225px] rounded-xl bg-[var(--inp-bg)] flex items-center justify-center">
+        <div className="hidden sm:flex relative mx-3 mt-3 h-[225px] rounded-xl bg-[var(--inp-bg)] items-center justify-center">
           <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold text-white" style={{ background: ACCENT_COLOR }}>
             {label}
           </span>
-          <span className="text-4xl sm:text-5xl font-black text-[var(--border)]">{slot}</span>
+          <span className="text-5xl font-black text-[var(--border)]">{slot}</span>
         </div>
-        <div className="px-3 py-3">
+        <div className="px-3 py-3 flex items-center gap-2">
+          <span className="sm:hidden px-2 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ background: ACCENT_COLOR }}>{label}</span>
           <span className="text-xs text-[var(--muted)]">Select from table</span>
         </div>
       </div>
@@ -96,8 +97,8 @@ function PlayerCard({
 
   return (
     <div className="shrink-0 border-b border-[var(--border)]">
-      {/* Hero photo with Player N pill overlay */}
-      <div className="relative mx-3 mt-3 h-[140px] sm:h-[225px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
+      {/* Hero photo with Player N pill overlay — desktop only on mobile we lead with the name+logo row */}
+      <div className="hidden sm:block relative mx-3 mt-3 h-[225px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
         {heroSrc ? (
           <Image src={heroSrc} alt={player.player_name} fill className="object-cover" unoptimized />
         ) : (
@@ -124,7 +125,10 @@ function PlayerCard({
           </Link>
         )}
         <div className="flex-1 min-w-0">
-          <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{nameWithPosition}</p>
+          <div className="flex items-center gap-1.5 min-w-0">
+            <span className="sm:hidden shrink-0 px-1.5 py-0.5 rounded-full text-[9px] font-bold text-white leading-none" style={{ background: ACCENT_COLOR }}>{slot}</span>
+            <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{nameWithPosition}</p>
+          </div>
           <p className="text-xs text-[var(--muted)] mt-0.5">{player.school_name} · {formatSeason(player.season)}</p>
         </div>
         <button
@@ -372,6 +376,7 @@ export function PanelCompare({
   return (
     <AppPanel
       open={!!(playerA || playerB)}
+      mobileOpen={!!(playerA && playerB)}
       onClose={closeAll}
       title={panelTitle(playerA, playerB)}
       defaultExpanded={true}
