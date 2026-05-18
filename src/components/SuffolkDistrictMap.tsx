@@ -30,6 +30,7 @@ const DISTRICT_SCHOOLS: Record<string, string[]> = {
   'BRENTWOOD UFSD':                ['brentwood'],
   'BROOKHAVEN-COMSEWOGUE UFSD':    ['comsewogue'],
   'CENTER MORICHES UFSD':          ['center-moriches'],
+  'EAST MORICHES UFSD':            ['center-moriches'],
   'CENTRAL ISLIP UFSD':            ['central-islip'],
   'COMMACK UFSD':                  ['commack'],
   'CONNETQUOT CSD':                ['connetquot'],
