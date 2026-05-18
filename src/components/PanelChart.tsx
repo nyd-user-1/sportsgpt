@@ -49,23 +49,23 @@ function sparkData(slug: string) {
 function ChartPickerGrid({ onSelect }: { onSelect: (slug: string) => void }) {
   return (
     <div className="p-4">
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 gap-3">
         {CHART_CONFIGS.map(chart => (
           <button
             key={chart.slug}
             onClick={() => onSelect(chart.slug)}
             className="group text-left rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:shadow-md hover:border-[var(--accent,#033882)] transition-all overflow-hidden"
           >
-            <div className="h-16 px-2 pt-2">
+            <div className="aspect-[4/3] px-2 pt-2">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={sparkData(chart.slug)} margin={{ top: 2, right: 2, bottom: 0, left: 2 }}>
-                  <Bar dataKey="y" fill={chart.color} radius={[2, 2, 0, 0]} animationDuration={300} />
+                <BarChart data={sparkData(chart.slug)} margin={{ top: 4, right: 4, bottom: 0, left: 4 }}>
+                  <Bar dataKey="y" fill={chart.color} radius={[3, 3, 0, 0]} animationDuration={300} />
                   <XAxis dataKey="x" hide />
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="px-3 pb-3 pt-1">
-              <p className="text-xs font-semibold text-[var(--txt)] leading-snug line-clamp-2">{chart.title}</p>
+            <div className="px-3 pb-3 pt-1.5">
+              <p className="text-sm font-semibold text-[var(--txt)] leading-snug">{chart.title}</p>
             </div>
           </button>
         ))}
