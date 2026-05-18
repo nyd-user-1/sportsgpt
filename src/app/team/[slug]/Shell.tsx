@@ -299,13 +299,23 @@ export function TeamShell({
                   <p className="text-sm text-white/60 mt-0.5">Section XI · Division {division}</p>
                 </div>
                 {heroPhotos.length > 1 && (
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-                    {heroPhotos.map((_, i) => (
-                      <button key={i} onClick={() => setSlideIdx(i)}
-                        className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
-                        style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
-                    ))}
-                  </div>
+                  <>
+                    <button onClick={() => setSlideIdx(i => (i - 1 + heroPhotos.length) % heroPhotos.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button onClick={() => setSlideIdx(i => (i + 1) % heroPhotos.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                      {heroPhotos.map((_, i) => (
+                        <button key={i} onClick={() => setSlideIdx(i)}
+                          className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
+                          style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
+                      ))}
+                    </div>
+                  </>
                 )}
               </div>
             ) : (
