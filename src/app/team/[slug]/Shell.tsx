@@ -131,6 +131,7 @@ export function TeamShell({
   const [chatOpen,   setChatOpen]       = useState(false)
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
+  const [slideIdx, setSlideIdx]         = useState(0)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
 
@@ -144,7 +145,14 @@ export function TeamShell({
   const section  = team.section as string
   const level    = team.level as string | undefined
   const gender   = team.gender as string | undefined
-  const schoolSlug = team.school_slug as string
+  const schoolSlug  = team.school_slug as string
+  const heroPhotos  = TEAM_PHOTOS[schoolSlug] ?? []
+
+  useEffect(() => {
+    if (heroPhotos.length < 2) return
+    const t = setInterval(() => setSlideIdx(i => (i + 1) % heroPhotos.length), 4000)
+    return () => clearInterval(t)
+  }, [heroPhotos.length])
 
   // Build season history rows
   const historyRows = seasonRows.map(s => {
@@ -275,28 +283,42 @@ export function TeamShell({
               </div>
             </div>
 
-            {/* Hero — team photo or gradient fallback (hidden on mobile) */}
-            {(() => {
-              const photo = TEAM_PHOTOS[schoolSlug]?.[0]
-              const logo  = SCHOOL_LOGOS[schoolSlug]
-              return photo ? (
-                <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
-                  <Image src={photo} alt={teamName} fill className="object-cover object-top" unoptimized />
-                </div>
-              ) : (
-                <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
-                  style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
-                  {logo ? (
-                    <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
-                  ) : (
-                    <Map className="h-12 w-12 text-[var(--muted)]" />
-                  )}
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
+            {/* Hero slider */}
+            {heroPhotos.length > 0 ? (
+              <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 400 }}>
+                {heroPhotos.map((src, i) => (
+                  <div key={src}
+                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                    style={{ opacity: i === slideIdx ? 1 : 0 }}>
+                    <Image src={src} alt="" fill className="object-cover object-top" unoptimized />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                   </div>
+                ))}
+                <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
+                  <p className="text-base font-bold text-white leading-snug">{teamName.replace(/\s*Varsity\s+Football\s*/i, '').trim()}</p>
+                  <p className="text-sm text-white/60 mt-0.5">Section XI · Division {division}</p>
                 </div>
-              )
-            })()}
+                {heroPhotos.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                    {heroPhotos.map((_, i) => (
+                      <button key={i} onClick={() => setSlideIdx(i)}
+                        className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
+                        style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+                style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
+                {SCHOOL_LOGOS[schoolSlug] ? (
+                  <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={64} height={64} className="object-contain" unoptimized />
+                ) : (
+                  <Map className="h-12 w-12 text-[var(--muted)]" />
+                )}
+                <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
+              </div>
+            )}
 
             {/* Profiles */}
             <div className="mb-8">
