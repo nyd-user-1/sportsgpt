@@ -43,6 +43,7 @@ const DISTRICT_SCHOOLS: Record<string, string[]> = {
   'SAG HARBOR UFSD':               ['east-hampton-bridgehampton-pierson'],
   'SAGAPONACK COMN SD':            ['east-hampton-bridgehampton-pierson'],
   'SPRINGS UFSD':                  ['east-hampton-bridgehampton-pierson'],
+  'WAINSCOTT COMN SD':             ['east-hampton-bridgehampton-pierson'],
   'EAST ISLIP UFSD':               ['east-islip'],
   'EASTPORT-SOUTH MANOR CSD':      ['eastport-south-manor'],
   'ELWOOD UFSD':                   ['glenn'],
