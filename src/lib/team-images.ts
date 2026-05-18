@@ -76,7 +76,7 @@ export const SCHOOL_LOGOS: Record<string, string> = {
 // Team photos: first entry is the detail page hero; all entries enrich the gallery
 export const TEAM_PHOTOS: Record<string, string[]> = {
   'amityville':                        [`${BLOB_T}/amityville.jpeg`],
-  'babylon':                           [`${BLOB_T}/babylon.jpeg`],
+  'babylon':                           [`${BLOB_T}/babylon-team.avif`],
   'bay-shore':                         [`${BLOB_T}/bay-shore-1.avif`],
   'bayport-blue-point':                [`${BLOB_T}/bayport-blue-point.jpg`],
   'bellport':                          [`${BLOB_T}/bellport.avif`],
