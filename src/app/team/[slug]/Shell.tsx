@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, Me
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
+import { SCHOOL_COLORS } from '@/lib/school-colors'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -148,11 +149,18 @@ export function TeamShell({
   const schoolSlug  = team.school_slug as string
   const heroPhotos  = TEAM_PHOTOS[schoolSlug] ?? []
 
+  // Single-photo teams get a color placeholder as slide 0 so missing photos are obvious
+  type HeroSlide = { kind: 'photo'; url: string } | { kind: 'placeholder' }
+  const heroSlides: HeroSlide[] = heroPhotos.length === 1
+    ? [{ kind: 'placeholder' }, { kind: 'photo', url: heroPhotos[0] }]
+    : heroPhotos.map(url => ({ kind: 'photo', url }))
+
   useEffect(() => {
-    if (heroPhotos.length < 2) return
-    const t = setInterval(() => setSlideIdx(i => (i + 1) % heroPhotos.length), 4000)
+    if (heroSlides.length < 2) return
+    const t = setInterval(() => setSlideIdx(i => (i + 1) % heroSlides.length), 4000)
     return () => clearInterval(t)
-  }, [heroPhotos.length])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [heroSlides.length])
 
   // Build season history rows
   const historyRows = seasonRows.map(s => {
@@ -284,32 +292,44 @@ export function TeamShell({
             </div>
 
             {/* Hero slider */}
-            {heroPhotos.length > 0 ? (
+            {heroSlides.length > 0 ? (
               <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 400 }}>
-                {heroPhotos.map((src, i) => (
-                  <div key={src}
+                {heroSlides.map((slide, i) => (
+                  <div key={i}
                     className="absolute inset-0 transition-opacity duration-700 ease-in-out"
                     style={{ opacity: i === slideIdx ? 1 : 0 }}>
-                    <Image src={src} alt="" fill className="object-cover object-top" unoptimized />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                    {slide.kind === 'placeholder' ? (
+                      <div className="absolute inset-0 flex items-center justify-center"
+                        style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? ACCENT_COLOR }}>
+                        {SCHOOL_LOGOS[schoolSlug] && (
+                          <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={96} height={96} className="object-contain opacity-70" unoptimized />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      </div>
+                    ) : (
+                      <>
+                        <Image src={slide.url} alt="" fill className="object-cover object-top" unoptimized />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                      </>
+                    )}
                   </div>
                 ))}
                 <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
                   <p className="text-base font-bold text-white leading-snug">{teamName.replace(/\s*Varsity\s+Football\s*/i, '').trim()}</p>
                   <p className="text-sm text-white/60 mt-0.5">Section XI · Division {division}</p>
                 </div>
-                {heroPhotos.length > 1 && (
+                {heroSlides.length > 1 && (
                   <>
-                    <button onClick={() => setSlideIdx(i => (i - 1 + heroPhotos.length) % heroPhotos.length)}
+                    <button onClick={() => setSlideIdx(i => (i - 1 + heroSlides.length) % heroSlides.length)}
                       className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
                       <ChevronLeft className="h-5 w-5" />
                     </button>
-                    <button onClick={() => setSlideIdx(i => (i + 1) % heroPhotos.length)}
+                    <button onClick={() => setSlideIdx(i => (i + 1) % heroSlides.length)}
                       className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
                       <ChevronRight className="h-5 w-5" />
                     </button>
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-                      {heroPhotos.map((_, i) => (
+                      {heroSlides.map((_, i) => (
                         <button key={i} onClick={() => setSlideIdx(i)}
                           className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
                           style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
