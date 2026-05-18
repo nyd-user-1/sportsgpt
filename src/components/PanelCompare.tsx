@@ -381,7 +381,7 @@ function DiffStrip({ playerA, playerB, statTab }: { playerA: AnyPlayer; playerB:
 // ── Panel title ───────────────────────────────────────────────────────────────
 
 function panelTitle(a: AnyPlayer | null, b: AnyPlayer | null): string {
-  if (a && b) return `${a.player_name.split(' ').pop()} vs ${b.player_name.split(' ').pop()}`
+  if (a && b) return `${a.player_name.split(' ').pop()} vs. ${b.player_name.split(' ').pop()}`
   if (a) return a.player_name
   if (b) return b.player_name
   return 'Compare Players'
