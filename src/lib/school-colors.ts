@@ -51,7 +51,7 @@ export const SCHOOL_COLORS: Record<string, SchoolColor> = {
   'shoreham-wading-river':              { primary: '#D4A017', secondary: '#1E3A8A', label: 'Gold & Navy' },
   'smithtown-east':                     { primary: '#CC0000', secondary: '#1E3A8A', label: 'Red & Navy' },
   'smithtown-west':                     { primary: '#1E3A8A', secondary: '#CC0000', label: 'Navy & Red' },
-  'southampton':                        { primary: '#7B1C32', secondary: '#9CA3AF', label: 'Maroon & Gray' },
+  'southampton':                        { primary: '#111827', secondary: '#FFFFFF', label: 'Black & White' },
   'ward-melville':                      { primary: '#166534', secondary: '#F59E0B', label: 'Green & Gold' },
   'west-babylon':                       { primary: '#1E3A8A', secondary: '#D4A017', label: 'Navy & Gold' },
   'west-islip':                         { primary: '#1E3A8A', secondary: '#D4A017', label: 'Blue & Gold' },

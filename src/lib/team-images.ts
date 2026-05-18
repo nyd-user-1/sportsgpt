@@ -61,7 +61,7 @@ export const SCHOOL_LOGOS: Record<string, string> = {
   'sachem-north':                      `${BLOB}/sachem-north-circle.png`,
   'sayville':                          `${BLOB}/Sayville%2080.png`,
   'shoreham-wading-river':             `${BLOB}/SWR%2080.svg`,
-  'southampton':                       `${BLOB}/Southampton%2080.jpg`,
+  'southampton':                       `${BLOB}/Southampton%2080.webp`,
   'swr':                               `${BLOB}/SWR%2080.svg`,
   'smithtown-east':                    `${BLOB}/Smithtown%20East%2080.webp`,
   'smithtown-west':                    `${BLOB}/Smithtown%20West%2080.webp`,
