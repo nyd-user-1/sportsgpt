@@ -70,13 +70,24 @@ async function findGame(entry) {
   const gameDate    = parseDate(entry.date)
   const oppWords    = nameToWords(entry.opponent)
 
-  const candidates = await sql`
+  let candidates = await sql`
     SELECT id, home_team_slug, away_team_slug
     FROM games
     WHERE game_date::date = ${gameDate}::date
       AND season = ${season}
       AND (home_team_slug = ${teamSlug} OR away_team_slug = ${teamSlug})
   `
+
+  // Fallback: ±2 day window (Newsday and MaxPreps sometimes differ by a day)
+  if (candidates.length === 0) {
+    candidates = await sql`
+      SELECT id, home_team_slug, away_team_slug
+      FROM games
+      WHERE game_date::date BETWEEN (${gameDate}::date - interval '2 days') AND (${gameDate}::date + interval '2 days')
+        AND season = ${season}
+        AND (home_team_slug = ${teamSlug} OR away_team_slug = ${teamSlug})
+    `
+  }
 
   if (candidates.length === 0) return null
   if (candidates.length === 1) return candidates[0]
