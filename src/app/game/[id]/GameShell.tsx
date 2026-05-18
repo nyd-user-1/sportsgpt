@@ -460,7 +460,7 @@ export function GameShell({
 
   // Header styling (matches team/division pages)
   const homeLogo = SCHOOL_LOGOS[homeSchool]
-  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
+  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[#033882] hover:bg-[var(--inp-bg)] transition-colors'
   const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
 
   const mobileHeader = (
@@ -496,19 +496,19 @@ export function GameShell({
                     <span className={tip}>Previous game</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setPhotoOpen(v => !v)} className={`${btn} ${photoOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ImageIcon className="h-4 w-4" /></button>
+                    <button onClick={() => setPhotoOpen(v => !v)} className={`${btn} ${photoOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><ImageIcon className="h-4 w-4" /></button>
                     <span className={tip}>Photos</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
+                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setPlayerOpen(v => !v)} className={`${btn} ${playerOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><FileUser className="h-4 w-4" /></button>
+                    <button onClick={() => setPlayerOpen(v => !v)} className={`${btn} ${playerOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><FileUser className="h-4 w-4" /></button>
                     <span className={tip}>Player</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
+                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
                     <span className={tip}>Ask SportsGPT</span>
                   </div>
                   <div className="relative group">
