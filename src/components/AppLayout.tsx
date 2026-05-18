@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { flushSync } from 'react-dom'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
@@ -33,11 +34,30 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
     document.documentElement.classList.toggle('dark', isDark)
   }, [])
 
-  function toggleTheme() {
+  function toggleTheme(e: React.MouseEvent) {
+    const x = e.clientX
+    const y = e.clientY
     const next = !dark
-    setDark(next)
-    document.documentElement.classList.toggle('dark', next)
-    localStorage.setItem('theme', next ? 'dark' : 'light')
+
+    const apply = () => {
+      setDark(next)
+      document.documentElement.classList.toggle('dark', next)
+      localStorage.setItem('theme', next ? 'dark' : 'light')
+    }
+
+    if (!document.startViewTransition) { apply(); return }
+
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    )
+    const transition = document.startViewTransition(() => { flushSync(apply) })
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
+        { duration: 600, easing: 'cubic-bezier(.76,.32,.29,.99)', pseudoElement: '::view-transition-new(root)' }
+      )
+    })
   }
 
   useEffect(() => {
@@ -180,7 +200,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           <div className="flex-1" />
 
           <button
-            onClick={toggleTheme}
+            onClick={e => toggleTheme(e)}
             aria-label="Toggle dark mode"
             className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors mr-2"
           >
