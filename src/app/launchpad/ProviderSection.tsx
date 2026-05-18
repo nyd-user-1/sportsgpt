@@ -23,7 +23,7 @@ export type GameRow = {
   away_div: string
 }
 
-const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2].map(String)
+const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2, CURRENT_SEASON - 3, CURRENT_SEASON - 4].map(String)
 
 // Map "Division I" → "I", etc.
 const SEARCH_DIV_MAP: Record<string, string> = {

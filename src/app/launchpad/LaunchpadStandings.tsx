@@ -69,7 +69,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
             {filtered.map((t, i) => (
               <tr
                 key={t.slug}
-                onClick={() => router.push(`/launchpad/${t.slug}`, { scroll: false })}
+                onClick={() => { const qs = searchParams.toString(); router.push(`/launchpad/${t.slug}${qs ? `?${qs}` : ''}`, { scroll: false }) }}
                 className={cn(
                   'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',
                   selectedSlug === t.slug ? 'bg-blue-50 shadow-[inset_3px_0_0_#033882]' : ''

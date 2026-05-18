@@ -22,7 +22,7 @@ export default async function LaunchpadLayout({
     FROM games g
     JOIN teams ht  ON ht.slug  = g.home_team_slug
     JOIN teams at2 ON at2.slug = g.away_team_slug
-    WHERE g.season = ANY(${[CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2]})
+    WHERE g.season = ANY(${[CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2, CURRENT_SEASON - 3, CURRENT_SEASON - 4]})
     ORDER BY g.season DESC, g.game_date ASC NULLS LAST
   `
 
