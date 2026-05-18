@@ -100,9 +100,9 @@ export function SportsWinLossBar({ seasons }: Props) {
             </div>
           )}
         </div>
-        <div className="h-[220px] w-full">
+        <div className="h-[260px] sm:h-[220px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart layout="vertical" data={data} margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
+            <BarChart layout="vertical" data={data} margin={{ top: 0, right: 12, bottom: 0, left: 0 }}>
               <CartesianGrid horizontal={false} strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis
                 type="number"
@@ -116,7 +116,7 @@ export function SportsWinLossBar({ seasons }: Props) {
                 tickLine={false}
                 axisLine={false}
                 tick={{ fontSize: 9, fill: '#374151' }}
-                width={100}
+                width={84}
               />
               <Tooltip
                 content={({ active, payload }) => (

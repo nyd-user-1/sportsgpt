@@ -173,11 +173,11 @@ export function ChartDetailPage({
 
         {/* ── Header band — only renders when inline chart or filters are present ── */}
         {(!children || config.filters?.length || config.periodToggle) && (
-        <div className="shrink-0 bg-[var(--surface)] px-5 pt-3 pb-0">
+        <div className="shrink-0 bg-[var(--surface)] px-3 sm:px-5 pt-3 pb-0">
 
           {/* Inline recharts preview — hidden when shadcn chart children are provided */}
           {children ? null : (
-          <div className="h-40 md:h-52 -mx-1 mb-3">
+          <div className="h-36 sm:h-40 md:h-52 -mx-1 mb-3">
             <ResponsiveContainer width="100%" height="100%">
               {config.chartType === 'area' ? (
                 <AreaChart data={scaledChart} margin={{ top: 4, right: 8, bottom: 0, left: 8 }}>
@@ -239,23 +239,23 @@ export function ChartDetailPage({
 
           {/* Filter tabs + period toggle (only when present) */}
           {(config.filters?.length || config.periodToggle) ? (
-            <div className="flex items-center gap-1.5 pb-3 flex-wrap">
+            <div className="flex items-center gap-1.5 pb-3 flex-nowrap sm:flex-wrap overflow-x-auto no-scrollbar -mx-3 px-3 sm:mx-0 sm:px-0">
               {config.filters?.map(f => (
                 <button key={f.key} onClick={() => setFilter(f.key)}
                   className={cn(
-                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
+                    'shrink-0 px-2.5 sm:px-3 py-1.5 rounded-lg text-[13px] sm:text-sm font-medium transition-colors',
                     filter === f.key
                       ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>{f.label}</button>
               ))}
               {config.periodToggle && config.filters && (
-                <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
+                <div className="shrink-0 h-4 w-px bg-[var(--border)] mx-0.5" />
               )}
               {config.periodToggle && (['weekly', 'monthly', 'annual'] as Period[]).map(p => (
                 <button key={p} onClick={() => setPeriod(p)}
                   className={cn(
-                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize',
+                    'shrink-0 px-2.5 sm:px-3 py-1.5 rounded-lg text-[13px] sm:text-sm font-medium transition-colors capitalize',
                     period === p
                       ? 'text-[var(--txt)] border border-sky-500/50 bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
@@ -268,21 +268,21 @@ export function ChartDetailPage({
 
         {/* ── Shadcn chart (when children provided) ── */}
         {children && (
-          <div className="shrink-0 px-5 pt-2 pb-2">
+          <div className="shrink-0 px-3 sm:px-5 pt-2 pb-2">
             {children}
           </div>
         )}
 
         {/* ── Charts button + season buttons ── */}
-        <div className="shrink-0 flex items-center gap-1.5 px-5 py-3 border-b border-[var(--border)]">
+        <div className="shrink-0 flex items-center gap-1.5 px-3 sm:px-5 py-2.5 sm:py-3 border-b border-[var(--border)] overflow-x-auto no-scrollbar">
           <ChartsDrawer />
           {seasonFilters && seasonFilters.length > 0 && (
             <>
-              <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
+              <div className="shrink-0 h-4 w-px bg-[var(--border)] mx-0.5" />
               {[...seasonFilters].reverse().map(yr => (
                 <button key={yr} onClick={() => emitSeason(yr)}
                   className={cn(
-                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
+                    'shrink-0 px-2.5 sm:px-3 py-1.5 rounded-lg text-[13px] sm:text-sm font-medium transition-colors',
                     activeSeason === yr
                       ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
@@ -299,67 +299,90 @@ export function ChartDetailPage({
           {config.chartType === 'scatter' ? (
             /* Scatter table: name | income | cost | ratio */
             <div className="divide-y divide-[var(--border)]">
-              <div className="sticky top-0 grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10">
+              <div
+                className="sticky top-0 grid gap-2 sm:gap-3 px-3 sm:px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 grid-cols-[1fr_80px_64px] sm:grid-cols-[1fr_110px_110px_80px]"
+              >
                 <span>County</span>
-                <span className="text-right">Ann. Income</span>
-                <span className="text-right">Ann. Care Cost</span>
-                <span className="text-right">% of Income</span>
+                <span className="hidden sm:block text-right">Ann. Income</span>
+                <span className="text-right">Ann. Cost</span>
+                <span className="text-right">% Inc.</span>
               </div>
               {[...scaledScatter].sort((a, b) => (b.y / b.x) - (a.y / a.x)).map(row => (
                 <div key={row.name}
-                  className="group/row grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors cursor-default">
-                  <span className="text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors truncate">{row.name}</span>
-                  <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.x).toLocaleString()}</span>
-                  <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.y).toLocaleString()}</span>
-                  <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">{((row.y / row.x) * 100).toFixed(1)}%</span>
+                  className="group/row grid gap-2 sm:gap-3 px-3 sm:px-5 py-3 sm:py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors cursor-default grid-cols-[1fr_80px_64px] sm:grid-cols-[1fr_110px_110px_80px]">
+                  <span className="text-[13px] sm:text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors truncate">{row.name}</span>
+                  <span className="hidden sm:block text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.x).toLocaleString()}</span>
+                  <span className="text-right text-[13px] sm:text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.y).toLocaleString()}</span>
+                  <span className="text-right text-[13px] sm:text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">{((row.y / row.x) * 100).toFixed(1)}%</span>
                 </div>
               ))}
             </div>
           ) : config.series ? (
             /* Multi-series table: name | series[0] | series[1] */
-            <div className="divide-y divide-[var(--border)]">
-              <div className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
-                style={{ gridTemplateColumns: `1fr repeat(${config.series.length}, 110px)` }}>
-                <span>Year</span>
-                {config.series.map(s => <span key={s.key} className="text-right">{s.label}</span>)}
-              </div>
-              {scaledMulti.map((row, i) => (
-                <div key={i}
-                  className="group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors"
-                  style={{ gridTemplateColumns: `1fr repeat(${config.series!.length}, 110px)` }}>
-                  <span className="text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors">{row.name}</span>
-                  {config.series!.map(s => (
-                    <span key={s.key} className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">
-                      {fmtVal(Number(row[s.key] ?? 0), config, config.periodToggle ? period : undefined)}
-                    </span>
-                  ))}
+            (() => {
+              const mobileCols = `1fr repeat(${config.series!.length}, 72px)`
+              const desktopCols = `1fr repeat(${config.series!.length}, 110px)`
+              const colStyle = { '--cols-m': mobileCols, '--cols-d': desktopCols } as React.CSSProperties
+              return (
+              <div className="divide-y divide-[var(--border)]">
+                <div className="sticky top-0 grid gap-2 sm:gap-3 px-3 sm:px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 grid-cols-[var(--cols-m)] sm:grid-cols-[var(--cols-d)]"
+                  style={colStyle}>
+                  <span>Year</span>
+                  {config.series!.map(s => <span key={s.key} className="text-right">{s.label}</span>)}
                 </div>
-              ))}
-            </div>
+                {scaledMulti.map((row, i) => (
+                  <div key={i}
+                    className="group/row grid gap-2 sm:gap-3 px-3 sm:px-5 py-3 sm:py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors grid-cols-[var(--cols-m)] sm:grid-cols-[var(--cols-d)]"
+                    style={colStyle}>
+                    <span className="text-[13px] sm:text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors">{row.name}</span>
+                    {config.series!.map(s => (
+                      <span key={s.key} className="text-right text-[13px] sm:text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">
+                        {fmtVal(Number(row[s.key] ?? 0), config, config.periodToggle ? period : undefined)}
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              )
+            })()
           ) : (
-            /* Standard table: [rank] | [expand] | name | [winPct] | value | share */
+            /* Standard table: [chevron] | [rank] | name | [winPct] | value | share */
             (() => {
               const hasWinPct = sorted.some(r => r.winPct !== undefined)
-              const colParts: string[] = []
-              if (hasSubRows) colParts.push('20px')
-              if (showRank) colParts.push('32px')
-              colParts.push('1fr')
-              if (hasWinPct) colParts.push('80px')
-              colParts.push('100px')
-              colParts.push('80px')
-              const colTemplate = colParts.join(' ')
+
+              // Mobile template — drops WinPct & Share columns; tighter widths.
+              const mParts: string[] = []
+              if (hasSubRows) mParts.push('16px')
+              if (showRank)   mParts.push('22px')
+              mParts.push('1fr')
+              mParts.push('72px')
+              const mobileCols = mParts.join(' ')
+
+              // Desktop template — original layout.
+              const dParts: string[] = []
+              if (hasSubRows) dParts.push('20px')
+              if (showRank)   dParts.push('32px')
+              dParts.push('1fr')
+              if (hasWinPct)  dParts.push('80px')
+              dParts.push('100px')
+              dParts.push('80px')
+              const desktopCols = dParts.join(' ')
+
+              const colStyle = { '--cols-m': mobileCols, '--cols-d': desktopCols } as React.CSSProperties
+              const rowGrid  = 'grid grid-cols-[var(--cols-m)] sm:grid-cols-[var(--cols-d)]'
+
               return (
               <div className="divide-y divide-[var(--border)]">
                 <div
-                  className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
-                  style={{ gridTemplateColumns: colTemplate }}
+                  className={cn('sticky top-0 gap-2 sm:gap-3 px-3 sm:px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10', rowGrid)}
+                  style={colStyle}
                 >
                   {hasSubRows && <span />}
                   {showRank && <span>#</span>}
                   <span>Name</span>
-                  {hasWinPct && <span className="text-right">3yr Win %</span>}
+                  {hasWinPct && <span className="hidden sm:block text-right">3yr Win %</span>}
                   <span className="text-right">{valueLabel ?? 'Value'}</span>
-                  <span className="text-right">Share</span>
+                  <span className="hidden sm:block text-right">Share</span>
                 </div>
                 {sorted.map((row, idx) => {
                   const pct = total > 0 ? (row.value / total) * 100 : 0
@@ -371,10 +394,11 @@ export function ChartDetailPage({
                     <React.Fragment key={`${row.name}-${idx}`}>
                       <div
                         className={cn(
-                          'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
+                          'group/row gap-2 sm:gap-3 px-3 sm:px-5 py-3 sm:py-3.5 items-center hover:bg-[var(--inp-bg)] active:bg-[var(--inp-bg)] transition-colors',
+                          rowGrid,
                           hasRowSubRows ? 'cursor-pointer' : rowLinks?.[row.name] ? 'cursor-pointer' : 'cursor-default',
                         )}
-                        style={{ gridTemplateColumns: colTemplate }}
+                        style={colStyle}
                         onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
                       >
                         {hasSubRows && (
@@ -385,39 +409,45 @@ export function ChartDetailPage({
                           </span>
                         )}
                         {showRank && (
-                          <span className="text-xs text-[var(--muted)] tabular-nums">{idx + 1}</span>
+                          <span className="text-[11px] sm:text-xs text-[var(--muted)] tabular-nums">{idx + 1}</span>
                         )}
                         {rowLinks?.[row.name] ? (
                           <span className="flex items-center gap-2 min-w-0">
-                            {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                            {row.logoUrl && <img src={row.logoUrl} alt="" width={20} height={20} className="rounded-full object-cover shrink-0 sm:w-[22px] sm:h-[22px]" />}
                             <span className="flex flex-col min-w-0">
-                              <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
-                              {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                              <Link href={rowLinks[row.name]} className="text-[13px] sm:text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                              {row.subtitle && <span className="text-[10px] sm:text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                              {hasWinPct && row.winPct !== undefined && (
+                                <span className="sm:hidden text-[10px] text-[var(--muted)] tabular-nums">3yr {row.winPct.toFixed(1)}%</span>
+                              )}
                             </span>
-                            {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
-                            {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
+                            {delta > 0 && <span className="text-[10px] sm:text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
+                            {delta < 0 && <span className="text-[10px] sm:text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
                           </span>
                         ) : (
                           <span className="flex items-center gap-2 min-w-0">
-                            {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                            {row.logoUrl && <img src={row.logoUrl} alt="" width={20} height={20} className="rounded-full object-cover shrink-0 sm:w-[22px] sm:h-[22px]" />}
                             <span className="flex flex-col min-w-0">
-                              <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
-                              {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                              <span className={cn('text-[13px] sm:text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                              {row.subtitle && <span className="text-[10px] sm:text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                              {hasWinPct && row.winPct !== undefined && (
+                                <span className="sm:hidden text-[10px] text-[var(--muted)] tabular-nums">3yr {row.winPct.toFixed(1)}%</span>
+                              )}
                             </span>
-                            {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
-                            {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
+                            {delta > 0 && <span className="text-[10px] sm:text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
+                            {delta < 0 && <span className="text-[10px] sm:text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
                           </span>
                         )}
                         {hasWinPct && (
-                          <span className="text-right text-sm tabular-nums text-[var(--muted)] group-hover/row:text-sky-500 transition-colors">
+                          <span className="hidden sm:block text-right text-sm tabular-nums text-[var(--muted)] group-hover/row:text-sky-500 transition-colors">
                             {row.winPct !== undefined ? `${row.winPct.toFixed(1)}%` : '—'}
                           </span>
                         )}
-                        <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
+                        <span className={cn('text-right text-[13px] sm:text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
                           style={isOpen ? { color: config.color } : undefined}>
                           {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
                         </span>
-                        <div className="flex items-center gap-1.5 justify-end">
+                        <div className="hidden sm:flex items-center gap-1.5 justify-end">
                           <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
                             <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
                           </div>
@@ -426,29 +456,29 @@ export function ChartDetailPage({
                       </div>
                       {isOpen && rowSubRows?.map(sr => (
                         <div key={sr.label}
-                          className="grid gap-3 px-5 py-2 items-center border-b border-[var(--border)] bg-[var(--inp-bg)]"
-                          style={{ gridTemplateColumns: colTemplate }}>
+                          className={cn('gap-2 sm:gap-3 px-3 sm:px-5 py-2 items-center border-b border-[var(--border)] bg-[var(--inp-bg)]', rowGrid)}
+                          style={colStyle}>
                           <span />
                           {showRank && <span />}
-                          <span className="text-xs text-[var(--muted)] pl-3">{sr.label}</span>
-                          {hasWinPct && <span />}
-                          <span className="text-right text-xs tabular-nums text-[var(--txt)]">{sr.extra ?? sr.value.toLocaleString()}</span>
-                          <span />
+                          <span className="text-[11px] sm:text-xs text-[var(--muted)] pl-2 sm:pl-3">{sr.label}</span>
+                          {hasWinPct && <span className="hidden sm:block" />}
+                          <span className="text-right text-[11px] sm:text-xs tabular-nums text-[var(--txt)]">{sr.extra ?? sr.value.toLocaleString()}</span>
+                          <span className="hidden sm:block" />
                         </div>
                       ))}
                     </React.Fragment>
                   )
                 })}
                 <div
-                  className="grid gap-3 px-5 py-4 bg-[var(--surface)] font-semibold text-[var(--txt)]"
-                  style={{ gridTemplateColumns: colTemplate }}
+                  className={cn('gap-2 sm:gap-3 px-3 sm:px-5 py-3 sm:py-4 bg-[var(--surface)] font-semibold text-[var(--txt)] text-[13px] sm:text-base', rowGrid)}
+                  style={colStyle}
                 >
                   {hasSubRows && <span />}
                   {showRank && <span />}
                   <span>Total</span>
-                  {hasWinPct && <span />}
+                  {hasWinPct && <span className="hidden sm:block" />}
                   <span className="text-right tabular-nums">{fmtVal(total, config, config.periodToggle ? period : undefined)}</span>
-                  <span className="text-right text-[var(--muted)]">100%</span>
+                  <span className="hidden sm:block text-right text-[var(--muted)]">100%</span>
                 </div>
               </div>
               )

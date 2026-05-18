@@ -151,13 +151,13 @@ export default function ChartsPage() {
 
   return (
       <div className="flex-1 overflow-y-auto no-scrollbar">
-        <div className="p-4 space-y-8">
+        <div className="p-3 sm:p-4 space-y-5 sm:space-y-8">
           {ROWS.map(row => (
             <section key={row.label}>
-              <h2 className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-widest mb-3 px-1">
+              <h2 className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-widest mb-2 sm:mb-3 px-1">
                 {row.label}
               </h2>
-              <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+              <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 no-scrollbar snap-x snap-mandatory sm:snap-none -mx-3 sm:mx-0 px-3 sm:px-0">
                 {row.charts.map(item => {
                   if (typeof item === 'string') {
                     const chart = CHART_CONFIGS.find(c => c.slug === item)!
@@ -166,16 +166,16 @@ export default function ChartsPage() {
                       <button
                         key={item}
                         onClick={() => openChart(item)}
-                        className={`group flex-shrink-0 w-[400px] flex flex-col rounded-xl border bg-[var(--surface)] overflow-hidden transition-all text-left ${
+                        className={`group flex-shrink-0 w-[78vw] max-w-[300px] sm:w-[400px] sm:max-w-none flex flex-col rounded-xl border bg-[var(--surface)] overflow-hidden transition-all text-left snap-start sm:snap-align-none ${
                           isActive
                             ? 'border-[#033882] shadow-md ring-1 ring-[#033882]/20'
-                            : 'border-[var(--border)] hover:border-[#033882]/40 hover:shadow-md'
+                            : 'border-[var(--border)] hover:border-[#033882]/40 active:border-[#033882]/40 hover:shadow-md active:shadow-md'
                         }`}
                       >
-                        <div className="h-[180px]">
+                        <div className="h-[120px] sm:h-[180px]">
                           <MiniPreview slug={item} color={chart.color} />
                         </div>
-                        <div className="px-4 pt-2 pb-3">
+                        <div className="px-3 sm:px-4 pt-2 pb-2.5 sm:pb-3">
                           <p className={`text-[13px] font-bold leading-snug transition-colors ${
                             isActive ? 'text-[#033882]' : 'text-[var(--txt)] group-hover:text-sky-500'
                           }`}>
@@ -191,12 +191,12 @@ export default function ChartsPage() {
                   return (
                     <div
                       key={item.slug}
-                      className="flex-shrink-0 w-[400px] flex flex-col rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface)] overflow-hidden opacity-40"
+                      className="flex-shrink-0 w-[78vw] max-w-[300px] sm:w-[400px] sm:max-w-none flex flex-col rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface)] overflow-hidden opacity-40 snap-start sm:snap-align-none"
                     >
-                      <div className="h-[180px]">
+                      <div className="h-[120px] sm:h-[180px]">
                         <MiniBarChart color="#94a3b8" data={PLACEHOLDER_BARS} />
                       </div>
-                      <div className="px-4 pt-2 pb-3">
+                      <div className="px-3 sm:px-4 pt-2 pb-2.5 sm:pb-3">
                         <p className="text-[13px] font-bold leading-snug text-[var(--txt)]">{item.title}</p>
                         <p className="text-[10px] font-medium mt-1 text-[var(--muted)]">Coming soon</p>
                       </div>

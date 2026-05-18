@@ -13,16 +13,21 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { useIsMobile } from './use-is-mobile'
 
 export interface PFPAPoint { name: string; school_slug: string; pf: number; pa: number; wins: number }
 export interface PFPASeason { season: string; points: PFPAPoint[] }
 
 const MIN_SIZE = 18
 const MAX_SIZE = 42
+const MIN_SIZE_MOBILE = 14
+const MAX_SIZE_MOBILE = 32
 
-function dotSize(pf: number, minPf: number, maxPf: number): number {
+function dotSize(pf: number, minPf: number, maxPf: number, mobile: boolean): number {
   const range = maxPf - minPf || 1
-  return Math.round(MIN_SIZE + ((pf - minPf) / range) * (MAX_SIZE - MIN_SIZE))
+  const min = mobile ? MIN_SIZE_MOBILE : MIN_SIZE
+  const max = mobile ? MAX_SIZE_MOBILE : MAX_SIZE
+  return Math.round(min + ((pf - minPf) / range) * (max - min))
 }
 
 interface DotProps {
@@ -32,12 +37,13 @@ interface DotProps {
   payload?: PFPAPoint
   minPf: number
   maxPf: number
+  mobile?: boolean
 }
 
-function LogoDot({ cx, cy, index = 0, payload, minPf, maxPf }: DotProps) {
+function LogoDot({ cx, cy, index = 0, payload, minPf, maxPf, mobile = false }: DotProps) {
   if (cx == null || cy == null || !payload) return null
   const logo = SCHOOL_LOGOS[payload.school_slug]
-  const size = dotSize(payload.pf, minPf, maxPf)
+  const size = dotSize(payload.pf, minPf, maxPf, mobile)
   const r = size / 2
   const clipId = `pfpa-clip-${index}`
   if (!logo) return <circle cx={cx} cy={cy} r={r} fill="#033882" fillOpacity={0.7} />
@@ -86,6 +92,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: unknow
 export function SportsPFPAScatter({ seasons }: { seasons: PFPASeason[] }) {
   const defaultSeason = seasons[seasons.length - 1]?.season ?? ''
   const [active, setActive] = React.useState(defaultSeason)
+  const isMobile = useIsMobile()
 
   React.useEffect(() => {
     function handler(e: Event) {
@@ -102,27 +109,27 @@ export function SportsPFPAScatter({ seasons }: { seasons: PFPASeason[] }) {
 
   // Capture minPf/maxPf in the shape closure so LogoDot can size correctly
   const shape = React.useMemo(
-    () => (props: DotProps) => <LogoDot {...props} minPf={minPf} maxPf={maxPf} />,
-    [minPf, maxPf]
+    () => (props: DotProps) => <LogoDot {...props} minPf={minPf} maxPf={maxPf} mobile={isMobile} />,
+    [minPf, maxPf, isMobile]
   )
 
   return (
     <Card className="border-0 shadow-none py-0">
       <CardContent className="px-0 pb-0">
-        <div className="h-[250px] w-full">
+        <div className="h-[220px] sm:h-[250px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart margin={{ top: 16, right: 32, bottom: 20, left: 0 }}>
+            <ScatterChart margin={isMobile ? { top: 12, right: 12, bottom: 16, left: 0 } : { top: 16, right: 32, bottom: 20, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis
                 type="number" dataKey="pf" name="Points For"
-                label={{ value: 'Points For →', position: 'insideBottom', offset: -4, fontSize: 10, fill: '#94a3b8' }}
+                label={{ value: isMobile ? 'PF →' : 'Points For →', position: 'insideBottom', offset: -4, fontSize: 10, fill: '#94a3b8' }}
                 tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }}
               />
               <YAxis
                 type="number" dataKey="pa" name="Points Against"
                 reversed
-                label={{ value: '← Points Against', angle: -90, position: 'insideLeft', fontSize: 10, fill: '#94a3b8' }}
-                tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }} width={40}
+                label={{ value: isMobile ? '← PA' : '← Points Against', angle: -90, position: 'insideLeft', fontSize: 10, fill: '#94a3b8' }}
+                tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }} width={isMobile ? 28 : 40}
               />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} content={({ active, payload }) => (
                 <CustomTooltip active={active} payload={payload as unknown[]} />

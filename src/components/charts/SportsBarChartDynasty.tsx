@@ -5,6 +5,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from '
 import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
+import { useIsMobile } from './use-is-mobile'
 import { formatSeason } from '@/lib/utils'
 
 export interface DynastyBar {
@@ -86,6 +87,7 @@ interface Props {
 export function SportsBarChartDynasty({ windows }: Props) {
   const defaultFilter = windows[windows.length - 1]?.filterYear ?? ''
   const [active, setActive] = React.useState(defaultFilter)
+  const isMobile = useIsMobile()
 
   React.useEffect(() => {
     const handle = (e: Event) => {
@@ -97,14 +99,15 @@ export function SportsBarChartDynasty({ windows }: Props) {
   }, [windows])
 
   const activeWindow = windows.find(w => w.filterYear === active)
-  const bars = activeWindow?.bars ?? []
+  const allBars = activeWindow?.bars ?? []
+  const bars = isMobile ? allBars.slice(0, 15) : allBars
 
   const renderTopLogo = (props: { x?: number; y?: number; width?: number; index?: number }) => {
     const { x = 0, y = 0, width = 0, index = 0 } = props
     if (index >= 5) return null
     const bar = bars[index]
     if (!bar?.logoUrl) return null
-    const size = 22
+    const size = isMobile ? 18 : 22
     const cx = x + width / 2
     const cy = y - size / 2 - 4
     const clipId = `dcl-${active}-${index}`
@@ -133,7 +136,7 @@ export function SportsBarChartDynasty({ windows }: Props) {
   return (
     <Card>
       <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
+        <ChartContainer config={chartConfig} className="aspect-auto h-[210px] sm:h-[250px] w-full">
           <BarChart data={bars} margin={{ top: 30, left: 0, right: 0 }}>
             <CartesianGrid vertical={false} />
             <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />

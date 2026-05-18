@@ -5,6 +5,7 @@ import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
+import { useIsMobile } from './use-is-mobile'
 
 export interface StackedSeasonBars {
   season: string
@@ -68,6 +69,7 @@ function CustomTooltip({
 export function SportsBarChartStackedInteractive({ seasons, color }: Props) {
   const defaultSeason = seasons[seasons.length - 1]?.season ?? ''
   const [active, setActive] = React.useState(defaultSeason)
+  const isMobile = useIsMobile()
 
   React.useEffect(() => {
     const handle = (e: Event) => {
@@ -78,7 +80,8 @@ export function SportsBarChartStackedInteractive({ seasons, color }: Props) {
     return () => window.removeEventListener(SEASON_CHANGE_EVENT, handle)
   }, [seasons])
 
-  const activeBars = seasons.find(s => s.season === active)?.bars ?? []
+  const allBars = seasons.find(s => s.season === active)?.bars ?? []
+  const activeBars = isMobile ? allBars.slice(0, 20) : allBars
 
   const chartConfig = {
     wins:   { label: 'Wins',   color },
@@ -88,7 +91,7 @@ export function SportsBarChartStackedInteractive({ seasons, color }: Props) {
   return (
     <Card>
       <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
+        <ChartContainer config={chartConfig} className="aspect-auto h-[200px] sm:h-[250px] w-full">
           <BarChart data={activeBars} margin={{ left: 0, right: 0 }}>
             <CartesianGrid vertical={false} />
             <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />

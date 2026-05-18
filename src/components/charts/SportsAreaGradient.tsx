@@ -82,7 +82,7 @@ export function SportsAreaGradient({ seasons, valueLabel = 'Points' }: Props) {
   return (
     <Card className="border-0 shadow-none py-0">
       <CardContent className="px-0 pb-0">
-        <ChartContainer config={chartConfig} className="h-[200px] w-full">
+        <ChartContainer config={chartConfig} className="h-[170px] sm:h-[200px] w-full">
           <AreaChart data={chartData} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>
             <defs>
               <linearGradient id="fillPoints" x1="0" y1="0" x2="0" y2="1">

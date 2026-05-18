@@ -5,6 +5,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Card, CardContent } from '@/components/ui/card'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { useIsMobile } from './use-is-mobile'
 
 export interface HomeAwayTeam {
   name: string
@@ -50,6 +51,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: unknow
 export function SportsHomeAwayBar({ seasons }: { seasons: HomeAwaySeason[] }) {
   const defaultSeason = seasons[seasons.length - 1]?.season ?? ''
   const [active, setActive] = React.useState(defaultSeason)
+  const isMobile = useIsMobile()
 
   React.useEffect(() => {
     function handler(e: Event) {
@@ -60,14 +62,14 @@ export function SportsHomeAwayBar({ seasons }: { seasons: HomeAwaySeason[] }) {
     return () => window.removeEventListener(SEASON_CHANGE_EVENT, handler)
   }, [seasons])
 
-  const data = (seasons.find(s => s.season === active)?.teams ?? []).slice(0, 40)
+  const data = (seasons.find(s => s.season === active)?.teams ?? []).slice(0, isMobile ? 20 : 40)
 
   return (
     <Card className="border-0 shadow-none py-0">
       <CardContent className="px-0 pb-0">
-        <div className="h-[250px] w-full">
+        <div className="h-[200px] sm:h-[250px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data} margin={{ left: 0, right: 12, top: 8, bottom: 0 }}>
+            <BarChart data={data} margin={isMobile ? { left: 0, right: 4, top: 8, bottom: 0 } : { left: 0, right: 12, top: 8, bottom: 0 }}>
               <CartesianGrid vertical={false} stroke="#f0f0f0" strokeDasharray="3 3" />
               <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
               <YAxis hide tickCount={10} />
