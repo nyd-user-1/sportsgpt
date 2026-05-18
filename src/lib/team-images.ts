@@ -112,7 +112,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
   'port-jefferson':                    [`${BLOB_T}/pj1.jpg`,        `${BLOB_T}/pj3.jpg`,     `${BLOB_T}/pj4.jpg`,  `${BLOB_T}/pj5.jpg`],
   'rocky-point':                       [`${BLOB_T}/rp1.jpg`,        `${BLOB_T}/rp2.jpg`,     `${BLOB_T}/rp3.jpg`,  `${BLOB_T}/rp4.jpg`,  `${BLOB_T}/rp5.jpg`],
   'sachem-east':                       [`${BLOB_T}/sh1.jpg`,        `${BLOB_T}/sh2.jpg`,     `${BLOB_T}/sh4.jpg`,  `${BLOB_T}/sh6.jpg`],
-  'sachem-north':                      [`${BLOB_T}/sh3.jpg`],
+  'sachem-north':                      [`${BLOB_T}/sachem-north-team.png`],
   'islip':                             [`${BLOB_T}/islip-fb.jpg`],
   'lindenhurst':                       [`${BLOB_T}/lindenhurst.avif`],
   'sayville':                          [`${BLOB_T}/sayville.avif`],
