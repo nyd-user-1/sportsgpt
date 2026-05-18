@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight } from 'lucide-react'
-import { AppLogo } from '@/components/AppLogo'
+import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
 import { Sidebar } from '@/components/Sidebar'
 import {
-  APP_NAME, ACCENT_COLOR, CHART_NAV_EVENT,
+  CHART_NAV_EVENT,
   NAV_CYCLE, PATH_NAV, PATH_TITLE,
 } from '@/lib/app-config'
 
@@ -18,9 +16,25 @@ type ChartNavDetail = {
   pageTitle?: string
 } | null
 
-export function AppLayout({ children, mobileHeader, hideHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean }) {
+export function AppLayout({ children, mobileHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
+  const [dark, setDark] = useState(false)
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isDark = saved ? saved === 'dark' : prefersDark
+    setDark(isDark)
+    document.documentElement.classList.toggle('dark', isDark)
+  }, [])
+
+  function toggleTheme() {
+    const next = !dark
+    setDark(next)
+    document.documentElement.classList.toggle('dark', next)
+    localStorage.setItem('theme', next ? 'dark' : 'light')
+  }
   const pathname = usePathname()
   const router = useRouter()
 
@@ -43,11 +57,6 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
     pathname.startsWith('/launchpad') ? 'Launchpad' :
     pathname.startsWith('/chart/')    ? 'Charts'    : undefined
   )
-  const title = PATH_TITLE[pathname] ?? (
-    pathname.startsWith('/launchpad') ? 'Launchpad' :
-    pathname.startsWith('/chart/')    ? 'Charts'    : undefined
-  )
-
   const navIdx  = NAV_CYCLE.indexOf(pathname)
   const n       = NAV_CYCLE.length
   const prevNav = navIdx >= 0 ? NAV_CYCLE[(navIdx - 1 + n) % n] : null
@@ -127,74 +136,46 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
 
       <div className="relative flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
 
-        {hideHeader ? (
-          <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-            className="hidden sm:flex absolute top-5 left-5 z-20 h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
-            {sidebarOpen
-              ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
-              : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
-            }
+        {/* Desktop: floating sidebar toggle — top left */}
+        <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
+          className="hidden sm:flex absolute top-4 left-4 z-20 h-9 w-9 items-center justify-center rounded-xl outline-none transition-colors hover:bg-[var(--inp-bg)]">
+          {sidebarOpen
+            ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
+            : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+          }
+        </button>
+
+        {/* Desktop: dark mode + nav arrows — top right */}
+        <div className="hidden sm:flex absolute top-4 right-4 z-20 items-center gap-1.5">
+          <button onClick={toggleTheme} aria-label="Toggle dark mode"
+            className={navBtnCls}>
+            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-        ) : (
-        <div className="flex items-center px-5 pt-5 pb-5">
-
-          <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-            className="hidden sm:flex h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
-            {sidebarOpen
-              ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
-              : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
-            }
-          </button>
-
-          {mobileHeader && (
-            <div className="flex sm:hidden flex-1 min-w-0">{mobileHeader}</div>
-          )}
-
-          {title && (
-            <div className="ml-4 flex items-center gap-2 text-[var(--txt)]">
-              <Link href="/" className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xl font-bold hover:bg-[var(--inp-bg)] transition-colors">
-                <AppLogo className="h-5 w-5 shrink-0" />
-                {APP_NAME}
-              </Link>
-              <span className="text-[var(--muted)] text-xl select-none">|</span>
-              <span className="text-xl font-medium">{chartNav?.pageTitle ?? title}</span>
-            </div>
-          )}
-
-          <div className="flex-1" />
-
-          {pathname === '/chat' && (
-            <div className="flex items-center gap-2">
-              <button className="h-9 px-4 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
-                Sign in
-              </button>
-              <button className="h-9 px-4 rounded-full bg-[var(--txt)] text-sm font-medium text-[var(--surface)] hover:opacity-80 transition-opacity">
-                Sign up
-              </button>
-            </div>
-          )}
-
           {chartNav ? (
-            <div className="hidden sm:flex items-center gap-1.5">
-              <button onClick={() => router.push(chartNav.prevHref)} className={navBtnCls}>
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button onClick={() => router.push(chartNav.nextHref)} className={navBtnCls}>
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
+            <>
+              <button onClick={() => router.push(chartNav.prevHref)} className={navBtnCls}><ChevronLeft className="h-4 w-4" /></button>
+              <button onClick={() => router.push(chartNav.nextHref)} className={navBtnCls}><ChevronRight className="h-4 w-4" /></button>
+            </>
           ) : navIdx >= 0 ? (
-            <div className="hidden sm:flex items-center gap-1.5">
-              <button onClick={() => prevNav && router.push(prevNav)} className={navBtnCls}>
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button onClick={() => nextNav && router.push(nextNav)} className={navBtnCls}>
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
+            <>
+              <button onClick={() => prevNav && router.push(prevNav)} className={navBtnCls}><ChevronLeft className="h-4 w-4" /></button>
+              <button onClick={() => nextNav && router.push(nextNav)} className={navBtnCls}><ChevronRight className="h-4 w-4" /></button>
+            </>
           ) : null}
-
         </div>
+
+        {/* Mobile: thin top bar with mobileHeader */}
+        {mobileHeader && (
+          <div className="flex sm:hidden items-center gap-3 px-4 pt-4 pb-3">
+            <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
+              className="shrink-0 h-8 w-8 flex items-center justify-center rounded-xl transition-colors hover:bg-[var(--inp-bg)]">
+              {sidebarOpen
+                ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
+                : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+              }
+            </button>
+            <div className="flex-1 min-w-0">{mobileHeader}</div>
+          </div>
         )}
 
         {children}
