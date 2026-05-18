@@ -145,7 +145,7 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
     <th
       style={style}
       className={cn(
-        'px-3 py-3 bg-gray-100 border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none',
+        'px-3 py-3 bg-[var(--inp-bg)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none',
         right ? 'text-right' : 'text-left',
         className
       )}
@@ -157,7 +157,7 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
           onMouseEnter={term ? enter : undefined}
           onMouseLeave={term ? leave : undefined}
           className={cn(
-            'inline-flex items-center gap-1 rounded-md px-1 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5',
+            'inline-flex items-center gap-1 rounded-md px-1 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-[var(--inp-bg)]',
             active ? 'text-[var(--txt)]' : 'text-[var(--muted)]'
           )}>
           {label}
@@ -406,15 +406,15 @@ export default function LeaderboardTable({
                 <thead className="sticky top-0 z-20">
                   {/* Group header row */}
                   <tr>
-                    <th colSpan={3} className="bg-gray-100 border-b border-[var(--border)]" />
-                    <th colSpan={6} className="px-3 py-1 bg-gray-100 border-b border-[var(--border)] text-left">
+                    <th colSpan={3} className="bg-[var(--inp-bg)] border-b border-[var(--border)]" />
+                    <th colSpan={6} className="px-3 py-1 bg-[var(--inp-bg)] border-b border-[var(--border)] text-left">
                       <span className="text-[9px] font-semibold uppercase tracking-widest text-[var(--muted)]">Standard</span>
                     </th>
-                    <th colSpan={6} className="px-3 py-1 bg-gray-50 border-b border-l border-[var(--border)] text-left">
+                    <th colSpan={6} className="px-3 py-1 bg-[var(--section-bg)] border-b border-l border-[var(--border)] text-left">
                       <span className="text-[9px] font-semibold uppercase tracking-widest text-[var(--muted)]">Foundational QB</span>
                     </th>
-                    <th colSpan={3} className="px-3 py-1 border-b border-l border-[var(--border)] text-left" style={{ background: '#f0f4ff' }}>
-                      <span className="text-[9px] font-semibold uppercase tracking-widest" style={{ color: ACCENT_COLOR }}>Advanced QB</span>
+                    <th colSpan={3} className="px-3 py-1 border-b border-l border-[var(--border)] text-left" style={{ background: 'var(--advanced-bg)' }}>
+                      <span className="text-[9px] font-semibold uppercase tracking-widest" style={{ color: 'var(--advanced-text)' }}>Advanced QB</span>
                     </th>
                   </tr>
                   {/* Column header row */}
@@ -428,15 +428,15 @@ export default function LeaderboardTable({
                     <PTh col="comp_pct"      label="COMP%"   right className="w-[65px]" />
                     <PTh col="pass_tds"      label="TD"      right className="w-[50px]" />
                     <PTh col="interceptions" label="INT"     right className="w-[50px]" />
-                    <PTh col="ypa"           label="YPA"     right className="w-[55px] border-l border-[var(--border)] bg-gray-50" />
-                    <PTh col="ypc"           label="YPC"     right className="w-[55px] bg-gray-50" />
-                    <PTh col="td_rate"       label="TD%"     right className="w-[60px] bg-gray-50" />
-                    <PTh col="int_rate"      label="INT%"    right className="w-[60px] bg-gray-50" />
-                    <PTh col="td_int_ratio"  label="TD:INT"  right className="w-[65px] bg-gray-50" />
-                    <PTh col="yva"           label="YVA"     right className="w-[70px] bg-gray-50" />
-                    <PTh col="cmd_score"     label="CMD"     right className="w-[60px] border-l border-[var(--border)]" style={{ background: '#f0f4ff' }} />
-                    <PTh col="gbi_score"     label="GBI"     right className="w-[60px]" style={{ background: '#f0f4ff' }} />
-                    <PTh col="ies_score"     label="IES"     right className="w-[60px]" style={{ background: '#f0f4ff' }} />
+                    <PTh col="ypa"           label="YPA"     right className="w-[55px] border-l border-[var(--border)] bg-[var(--section-bg)]" />
+                    <PTh col="ypc"           label="YPC"     right className="w-[55px] bg-[var(--section-bg)]" />
+                    <PTh col="td_rate"       label="TD%"     right className="w-[60px] bg-[var(--section-bg)]" />
+                    <PTh col="int_rate"      label="INT%"    right className="w-[60px] bg-[var(--section-bg)]" />
+                    <PTh col="td_int_ratio"  label="TD:INT"  right className="w-[65px] bg-[var(--section-bg)]" />
+                    <PTh col="yva"           label="YVA"     right className="w-[70px] bg-[var(--section-bg)]" />
+                    <PTh col="cmd_score"     label="CMD"     right className="w-[60px] border-l border-[var(--border)]" style={{ background: 'var(--advanced-bg)' }} />
+                    <PTh col="gbi_score"     label="GBI"     right className="w-[60px]" style={{ background: 'var(--advanced-bg)' }} />
+                    <PTh col="ies_score"     label="IES"     right className="w-[60px]" style={{ background: 'var(--advanced-bg)' }} />
                   </tr>
                 </thead>
                 <tbody>
@@ -458,7 +458,7 @@ export default function LeaderboardTable({
                               !versusMode && 'hidden',
                               compareActive
                                 ? '!opacity-100 text-white border-transparent'
-                                : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                                : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                             )}
                             style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                             aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
@@ -480,15 +480,15 @@ export default function LeaderboardTable({
                       <td className={cn(tdR, 'w-[65px]')}>{p.comp_pct != null ? Number(p.comp_pct).toFixed(1) + '%' : '—'}</td>
                       <td className={cn(tdR, 'w-[50px]')}>{p.pass_tds ?? '—'}</td>
                       <td className={cn(tdR, 'w-[50px]')}>{p.interceptions ?? '—'}</td>
-                      <td className={cn(tdR, 'w-[55px] border-l border-[var(--border)] bg-gray-50/60')}>{p.ypa != null ? Number(p.ypa).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[55px] bg-gray-50/60')}>{p.ypc != null ? Number(p.ypc).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{p.td_rate != null ? Number(p.td_rate).toFixed(1) + '%' : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{p.int_rate != null ? Number(p.int_rate).toFixed(1) + '%' : '—'}</td>
-                      <td className={cn(tdR, 'w-[65px] bg-gray-50/60')}>{p.td_int_ratio != null ? Number(p.td_int_ratio).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[70px] bg-gray-50/60')}>{p.yva != null ? (Number(p.yva) > 0 ? '+' : '') + Number(p.yva).toFixed(0) : '—'}</td>
+                      <td className={cn(tdR, 'w-[55px] border-l border-[var(--border)] bg-[var(--section-bg)]/60')}>{p.ypa != null ? Number(p.ypa).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[55px] bg-[var(--section-bg)]/60')}>{p.ypc != null ? Number(p.ypc).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{p.td_rate != null ? Number(p.td_rate).toFixed(1) + '%' : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{p.int_rate != null ? Number(p.int_rate).toFixed(1) + '%' : '—'}</td>
+                      <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{p.td_int_ratio != null ? Number(p.td_int_ratio).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[70px] bg-[var(--section-bg)]/60')}>{p.yva != null ? (Number(p.yva) > 0 ? '+' : '') + Number(p.yva).toFixed(0) : '—'}</td>
                       <td className={cn(tdR, 'w-[60px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{p.cmd_score != null ? Number(p.cmd_score).toFixed(2) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
                     </tr>
                   )
                   })}
@@ -511,10 +511,10 @@ export default function LeaderboardTable({
                     <RTh col="rush_attempts" label="ATT"     right className="w-[55px]" />
                     <RTh col="ypc"           label="YPC"     right className="w-[55px]" />
                     <RTh col="rush_tds"      label="TDs"     right className="w-[55px]" />
-                    <RTh col="ypg"           label="YPG"     right className="w-[65px] border-l border-[var(--border)] bg-gray-50" />
-                    <RTh col="td_pct"        label="TD%"     right className="w-[60px] bg-gray-50" />
-                    <RTh col="tds_per_g"     label="TDs/G"   right className="w-[65px] bg-gray-50" />
-                    <RTh col="r_exp"         label="R-EXP"   right className="w-[70px] border-l border-[var(--border)]" style={{ background: '#f0f4ff' }} />
+                    <RTh col="ypg"           label="YPG"     right className="w-[65px] border-l border-[var(--border)] bg-[var(--section-bg)]" />
+                    <RTh col="td_pct"        label="TD%"     right className="w-[60px] bg-[var(--section-bg)]" />
+                    <RTh col="tds_per_g"     label="TDs/G"   right className="w-[65px] bg-[var(--section-bg)]" />
+                    <RTh col="r_exp"         label="R-EXP"   right className="w-[70px] border-l border-[var(--border)]" style={{ background: 'var(--advanced-bg)' }} />
                   </tr>
                 </thead>
                 <tbody>
@@ -545,7 +545,7 @@ export default function LeaderboardTable({
                                 !versusMode && 'hidden',
                                 compareActive
                                   ? '!opacity-100 text-white border-transparent'
-                                  : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                               )}
                               style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
@@ -565,9 +565,9 @@ export default function LeaderboardTable({
                         <td className={cn(tdR, 'w-[55px]')}>{p.rush_attempts ?? '—'}</td>
                         <td className={cn(tdR, 'w-[55px]')}>{ypc}</td>
                         <td className={cn(tdR, 'w-[55px]')}>{p.rush_tds ?? '—'}</td>
-                        <td className={cn(tdR, 'w-[65px] border-l border-[var(--border)] bg-gray-50/60')}>{ypg}</td>
-                        <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{tdPct}</td>
-                        <td className={cn(tdR, 'w-[65px] bg-gray-50/60')}>{tdsPerG}</td>
+                        <td className={cn(tdR, 'w-[65px] border-l border-[var(--border)] bg-[var(--section-bg)]/60')}>{ypg}</td>
+                        <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{tdPct}</td>
+                        <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{tdsPerG}</td>
                         <td className={cn(tdR, 'w-[70px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{rExp}</td>
                       </tr>
                     )
@@ -623,7 +623,7 @@ export default function LeaderboardTable({
                                 !versusMode && 'hidden',
                                 compareActive
                                   ? '!opacity-100 text-white border-transparent'
-                                  : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                               )}
                               style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
