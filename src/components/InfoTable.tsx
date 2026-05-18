@@ -50,10 +50,11 @@ interface InfoTableProps {
   onToggle: () => void
   onPrev?: () => void
   onNext?: () => void
+  onViewToggle?: () => void
   children: React.ReactNode
 }
 
-export function InfoTable({ title, onToggle, onPrev, onNext, children }: InfoTableProps) {
+export function InfoTable({ title, onToggle, onPrev, onNext, onViewToggle, children }: InfoTableProps) {
   return (
     <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
       <div
@@ -81,7 +82,18 @@ export function InfoTable({ title, onToggle, onPrev, onNext, children }: InfoTab
             </button>
           )}
         </div>
-        <DownloadMenu />
+        <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
+          {onViewToggle && (
+            <button
+              onClick={onViewToggle}
+              className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors"
+              aria-label="Toggle view"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          )}
+          <DownloadMenu />
+        </div>
       </div>
       {children}
     </div>

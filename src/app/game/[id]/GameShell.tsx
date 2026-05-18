@@ -1,15 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChartSpline, ChevronLeft, ChevronRight, FileUser, MessageCircle } from 'lucide-react'
+import { ChartSpline, ChevronLeft, ChevronRight, FileUser, Image as ImageIcon, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { AppPanel } from '@/components/AppPanel'
 import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelChat } from '@/components/PanelChat'
+import { PanelImage } from '@/components/PanelImage'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { cn } from '@/lib/utils'
@@ -123,11 +125,14 @@ function GameHero({ homeSlug, awaySlug, homeName, awayName, homeSchool, awayScho
 
 // ── Score table ───────────────────────────────────────────────────────────────
 
-function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow[]; homeSlug: string; gameNumber: number | null; gameDate: string | Date | null }) {
+function ScoreTable({ rows, homeSlug, gameNumber, gameDate, onToggle }: {
+  rows: QuarterRow[]; homeSlug: string; gameNumber: number | null
+  gameDate: string | Date | null; onToggle?: () => void
+}) {
   const hasOT = rows.some(r => r.ot1 > 0 || r.ot2 > 0 || r.ot3 > 0)
   const ordered = [...rows].sort((a, b) => (a.team_slug === homeSlug ? -1 : 1))
   const maxFinal = Math.max(...ordered.map(r => r.final))
-  const th = 'px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right first:text-left'
+  const th = 'px-3 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right first:text-left'
   const td = 'px-3 py-3 text-sm tabular-nums text-right text-[var(--muted)]'
   return (
     <div className="overflow-x-auto no-scrollbar">
@@ -139,6 +144,13 @@ function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow
             <th className={th}>Q3</th><th className={th}>Q4</th>
             {hasOT && <th className={th}>OT</th>}
             <th className={cn(th, 'font-black text-[var(--txt)]')}>F</th>
+            <th className="px-2 py-3 w-9 text-right">
+              {onToggle && (
+                <button onClick={onToggle} className="inline-flex items-center justify-center p-1 rounded-md text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="View player stats">
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              )}
+            </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-[var(--border)]">
@@ -164,6 +176,7 @@ function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow
                 <td className={td}>{r.q3}</td><td className={td}>{r.q4}</td>
                 {hasOT && <td className={td}>{r.ot1 || r.ot2 || r.ot3}</td>}
                 <td className={cn(td, 'font-black text-[var(--txt)]')}>{r.final}</td>
+                <td className="px-2 py-3 w-9" />
               </tr>
             )
           })}
@@ -412,6 +425,8 @@ export function GameShell({
       .catch(() => {})
       .finally(() => setLoadingHighlights(false))
   }, [gameIdNum, box])
+  const [view, setView] = useState<'score' | 'stats'>('score')
+  const [photoOpen,  setPhotoOpen]    = useState(false)
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [playerOpen, setPlayerOpen]   = useState(false)
   const [chatOpen,   setChatOpen]     = useState(false)
@@ -481,6 +496,10 @@ export function GameShell({
                     <span className={tip}>Previous game</span>
                   </div>
                   <div className="relative group">
+                    <button onClick={() => setPhotoOpen(v => !v)} className={`${btn} ${photoOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ImageIcon className="h-4 w-4" /></button>
+                    <span className={tip}>Photos</span>
+                  </div>
+                  <div className="relative group">
                     <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
                     <span className={tip}>Charts</span>
                   </div>
@@ -511,13 +530,49 @@ export function GameShell({
               gameDate={game.game_date as string | Date | null}
             />
 
-            {/* Standalone score table */}
-            {quarterRows.length > 0 && (
-              <div className="mb-[30px]">
-              <h2 className="text-lg font-semibold text-[var(--txt)] mb-3">Box Score</h2>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
-                <ScoreTable rows={quarterRows} homeSlug={homeSlug} gameNumber={gameNumber} gameDate={game.game_date as string | Date | null} />
-              </div>
+            {/* Box Score / Stats toggle */}
+            {(quarterRows.length > 0 || (PROFILES.length > 0 && active)) && (
+              <div className="mb-8 relative" style={{ overflowX: 'clip' }}>
+                <AnimatePresence mode="popLayout" initial={false}>
+                  {(view === 'score' || !active) ? (
+                    <motion.div key="score"
+                      initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
+                      transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
+                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden"
+                    >
+                      <ScoreTable
+                        rows={quarterRows}
+                        homeSlug={homeSlug}
+                        gameNumber={gameNumber}
+                        gameDate={game.game_date as string | Date | null}
+                        onToggle={PROFILES.length > 0 && active ? () => setView('stats') : undefined}
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div key="stats"
+                      initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
+                      transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
+                    >
+                      <InfoTable
+                        title={active.label}
+                        onToggle={() => setStatExpanded(v => !v)}
+                        onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setStatExpanded(false) }}
+                        onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setStatExpanded(false) }}
+                        onViewToggle={quarterRows.length > 0 ? () => setView('score') : undefined}
+                      >
+                        {active.kind === 'stat' && active.statType && (
+                          <StatTable
+                            players={[...getTeamStats(active.statType, homeName), ...getTeamStats(active.statType, awayName)]}
+                            statType={active.statType}
+                            schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
+                            playerSlugs={playerSlugs}
+                            expanded={statExpanded}
+                          />
+                        )}
+                      </InfoTable>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
 
@@ -551,37 +606,11 @@ export function GameShell({
               </div>
             )}
 
-            {/* Divider */}
-            {PROFILES.length > 0 && highlights && (
-              <hr className="border-t border-[var(--border)] mb-6" />
-            )}
-
-            {/* InfoTable — stat types only */}
-            {PROFILES.length > 0 && active && (
-              <div className="mb-8">
-                <InfoTable
-                  title={active.label}
-                  onToggle={() => setStatExpanded(v => !v)}
-                  onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setStatExpanded(false) }}
-                  onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setStatExpanded(false) }}
-                >
-                  {active.kind === 'stat' && active.statType && (
-                    <StatTable
-                      players={[...getTeamStats(active.statType, homeName), ...getTeamStats(active.statType, awayName)]}
-                      statType={active.statType}
-                      schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
-                      playerSlugs={playerSlugs}
-                      expanded={statExpanded}
-                    />
-                  )}
-                </InfoTable>
-              </div>
-            )}
-
           </div>
         </div>
       </AppLayout>
 
+      <PanelImage open={photoOpen} onClose={() => setPhotoOpen(false)} homeSchool={homeSchool} homeName={homeName} awaySchool={awaySchool} awayName={awayName} />
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Players">
         <PanelPlayers
