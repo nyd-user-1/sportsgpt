@@ -1,8 +1,6 @@
 import { sql } from '@/lib/db'
 import { AppLayout } from '@/components/AppLayout'
 import SuffolkDistrictMap, { type SchoolRecord } from '@/components/SuffolkDistrictMap'
-import { CURRENT_SEASON } from '@/lib/season'
-import { formatSeason } from '@/lib/utils'
 
 export const dynamic = 'force-dynamic'
 
@@ -13,34 +11,28 @@ export default async function MapsPage() {
       s.name    AS school_name,
       t.slug    AS team_slug,
       t.division,
-      COALESCE(ts.overall_wins,   0)::int AS wins,
-      COALESCE(ts.overall_losses, 0)::int AS losses
+      COALESCE(SUM(ts.overall_wins),   0)::int AS wins,
+      COALESCE(SUM(ts.overall_losses), 0)::int AS losses
     FROM schools s
     JOIN teams t ON t.school_slug = s.slug AND t.level = 'Varsity'
-    LEFT JOIN team_season_stats ts
-      ON ts.team_slug = t.slug AND ts.season = ${CURRENT_SEASON}
+    LEFT JOIN team_season_stats ts ON ts.team_slug = t.slug
+    GROUP BY s.slug, s.name, t.slug, t.division
     ORDER BY s.name
   `
 
-  const schools: SchoolRecord[] = rows.map(r => {
-    const wins   = Number(r.wins)
-    const losses = Number(r.losses)
-    const games  = wins + losses
-    return {
-      school_slug: String(r.school_slug),
-      school_name: String(r.school_name),
-      team_slug:   String(r.team_slug),
-      division:    String(r.division),
-      wins,
-      losses,
-      win_pct: games > 0 ? wins / games : null,
-    }
-  })
+  const schools: SchoolRecord[] = rows.map(r => ({
+    school_slug: String(r.school_slug),
+    school_name: String(r.school_name),
+    team_slug:   String(r.team_slug),
+    division:    String(r.division),
+    wins:        Number(r.wins),
+    losses:      Number(r.losses),
+  }))
 
   return (
     <AppLayout>
       <div className="flex-1 overflow-hidden">
-        <SuffolkDistrictMap schools={schools} season={formatSeason(String(CURRENT_SEASON))} />
+        <SuffolkDistrictMap schools={schools} />
       </div>
     </AppLayout>
   )

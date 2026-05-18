@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import Image from 'next/image'
 import { APIProvider, Map, useMap } from '@vis.gl/react-google-maps'
 import { useRouter } from 'next/navigation'
 import { SCHOOL_COLORS } from '@/lib/school-colors'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 const GEOJSON_URL = 'https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/geojson/suffolk-schools.geojson'
 
@@ -104,10 +106,14 @@ export type SchoolRecord = {
   division: string
   wins: number
   losses: number
-  win_pct: number | null
 }
 
-type ChipData = { title: string; subtitle: string | null; record: string | null }
+type ChipData = {
+  logoUrl: string | null
+  title: string
+  subtitle: string | null
+  record: string | null
+}
 
 function FitBounds() {
   const map = useMap()
@@ -178,13 +184,14 @@ function DistrictLayer({ schools, onHover, onLoaded }: {
           const records = slugs.map(s => bySlug[s]).filter(Boolean)
           map.data.overrideStyle(e.feature, { strokeWeight: 2.5, strokeColor: '#033882', fillOpacity: 0.95 })
           if (records.length > 0) {
-            const names = records.map(r => r.school_name).join(' / ')
+            const firstSlug = slugs.find(s => bySlug[s]) ?? ''
             const totalW = records.reduce((s, r) => s + r.wins, 0)
             const totalL = records.reduce((s, r) => s + r.losses, 0)
             onHover({
-              title: names,
-              subtitle: records[0].division ? `Division ${records[0].division}` : name,
-              record: totalW + totalL > 0 ? `${totalW}–${totalL}` : 'No games',
+              logoUrl:  SCHOOL_LOGOS[firstSlug] ?? null,
+              title:    records.map(r => r.school_name).join(' / '),
+              subtitle: records[0].division ? `Division ${records[0].division}` : null,
+              record:   totalW + totalL > 0 ? `${totalW}–${totalL} all time` : 'No games recorded',
             })
           }
         })
@@ -201,23 +208,14 @@ function DistrictLayer({ schools, onHover, onLoaded }: {
   return null
 }
 
-export default function SuffolkDistrictMap({ schools, season }: {
+export default function SuffolkDistrictMap({ schools }: {
   schools: SchoolRecord[]
-  season: string
 }) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   const [hoveredChip, setHoveredChip] = useState<ChipData | null>(null)
   const [loaded, setLoaded] = useState(false)
   const handleLoaded = useCallback(() => setLoaded(true), [])
   const handleHover = useCallback((chip: ChipData | null) => setHoveredChip(chip), [])
-
-  const defaultChip = useMemo<ChipData>(() => ({
-    title: 'Section XI Football',
-    subtitle: `${season} · ${schools.length} schools`,
-    record: null,
-  }), [season, schools.length])
-
-  const chip = hoveredChip ?? defaultChip
 
   if (!apiKey) {
     return (
@@ -249,12 +247,32 @@ export default function SuffolkDistrictMap({ schools, season }: {
       {/* Skeleton */}
       <div className={`absolute inset-0 z-10 bg-[var(--inp-bg)] pointer-events-none transition-opacity duration-700 ${loaded ? 'opacity-0' : 'opacity-100'}`} />
 
-      {/* Chip */}
-      <div className="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md px-3 py-2.5 min-w-[180px] max-w-[240px]">
-        <p className="text-sm font-bold text-[#1a1a1a] truncate">{chip.title}</p>
-        {chip.subtitle && <p className="text-[11px] text-[#666] truncate">{chip.subtitle}</p>}
-        {chip.record && <p className="text-[11px] font-semibold mt-0.5" style={{ color: '#033882' }}>{chip.record}</p>}
-      </div>
+      {/* Hover chip — logo + division + all-time record */}
+      {hoveredChip && (
+        <div className="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md overflow-hidden pointer-events-none">
+          <div className="flex items-center gap-3 px-3 py-2.5 min-w-[200px] max-w-[280px]">
+            {hoveredChip.logoUrl && (
+              <Image
+                src={hoveredChip.logoUrl}
+                alt={hoveredChip.title}
+                width={44}
+                height={44}
+                className="object-contain shrink-0"
+                unoptimized
+              />
+            )}
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-[#1a1a1a] truncate">{hoveredChip.title}</p>
+              {hoveredChip.subtitle && <p className="text-[11px] text-[#666]">{hoveredChip.subtitle}</p>}
+              {hoveredChip.record && (
+                <p className="text-[11px] font-semibold mt-0.5" style={{ color: '#033882' }}>
+                  {hoveredChip.record}
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
