@@ -426,6 +426,12 @@ export function GameShell({
       .finally(() => setLoadingHighlights(false))
   }, [gameIdNum, box])
   const [view, setView] = useState<'score' | 'stats'>('score')
+  const [slideDir, setSlideDir] = useState(1) // 1 = forward (score→stats), -1 = back (stats→score)
+  const slideVariants = {
+    enter: (d: number) => ({ x: `${d * 100}%` }),
+    center: { x: 0 },
+    exit: (d: number) => ({ x: `${d * -100}%` }),
+  }
   const [photoOpen,  setPhotoOpen]    = useState(false)
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [playerOpen, setPlayerOpen]   = useState(false)
@@ -533,10 +539,12 @@ export function GameShell({
             {/* Box Score / Stats toggle */}
             {(quarterRows.length > 0 || (PROFILES.length > 0 && active)) && (
               <div className="mb-8 relative" style={{ overflowX: 'clip' }}>
-                <AnimatePresence mode="popLayout" initial={false}>
+                <AnimatePresence mode="popLayout" initial={false} custom={slideDir}>
                   {(view === 'score' || !active) ? (
                     <motion.div key="score"
-                      initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
+                      custom={slideDir}
+                      variants={slideVariants}
+                      initial="enter" animate="center" exit="exit"
                       transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
                       className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden"
                     >
@@ -545,12 +553,14 @@ export function GameShell({
                         homeSlug={homeSlug}
                         gameNumber={gameNumber}
                         gameDate={game.game_date as string | Date | null}
-                        onToggle={PROFILES.length > 0 && active ? () => setView('stats') : undefined}
+                        onToggle={PROFILES.length > 0 && active ? () => { setSlideDir(1); setView('stats') } : undefined}
                       />
                     </motion.div>
                   ) : (
                     <motion.div key="stats"
-                      initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '-100%' }}
+                      custom={slideDir}
+                      variants={slideVariants}
+                      initial="enter" animate="center" exit="exit"
                       transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
                     >
                       <InfoTable
@@ -558,7 +568,7 @@ export function GameShell({
                         onToggle={() => setStatExpanded(v => !v)}
                         onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setStatExpanded(false) }}
                         onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setStatExpanded(false) }}
-                        onViewToggle={quarterRows.length > 0 ? () => setView('score') : undefined}
+                        onViewToggle={quarterRows.length > 0 ? () => { setSlideDir(-1); setView('score') } : undefined}
                       >
                         {active.kind === 'stat' && active.statType && (
                           <StatTable
