@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
@@ -12,7 +13,7 @@ function cleanName(name: string) {
 function fmtDate(raw: unknown) {
   if (!raw) return null
   const d = new Date(new Date(raw as string).toISOString().slice(0, 10) + 'T12:00:00')
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
 export default async function GameDetailSlot({ params }: { params: Promise<{ id: string }> }) {
@@ -79,29 +80,32 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
         </div>
       </div>
 
-      {/* Game number top-right */}
-      {gameNum != null && (
-        <div className="absolute top-3 right-4 z-10">
-          <span className="text-xs font-medium text-white/50">Game {gameNum}</span>
-        </div>
-      )}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40 z-[1]" />
+
+      {/* Top bar — week badge left, date right */}
+      <div className="absolute top-3 left-4 right-4 z-10 flex items-center justify-between">
+        {gameNum != null && (
+          <span className="text-xs font-semibold text-white bg-black rounded-full px-2.5 py-0.5">Week {gameNum}</span>
+        )}
+        {fmtDate(g.game_date) && (
+          <span className="text-xs font-medium text-white/60">{fmtDate(g.game_date)}</span>
+        )}
+      </div>
 
       {/* Score badge — centered */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <div className="bg-black/65 backdrop-blur-md rounded-2xl px-5 py-3 text-center border border-white/10 shadow-xl">
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <Link href={`/game/${gameId}`} className="bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
           {scored ? (
-            <>
-              <p className="text-3xl font-black text-white tabular-nums leading-none">
-                <span className={homeWon ? 'text-white' : 'text-white/40'}>{homeScore}</span>
-                <span className="text-white/25 mx-2">–</span>
-                <span className={awayWon ? 'text-white' : 'text-white/40'}>{awayScore}</span>
-              </p>
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-white/40 mt-1.5">Final</p>
-            </>
+            <p className="text-8xl font-black text-white tabular-nums leading-none">
+              <span className="text-white">{homeScore}</span>
+              <span className="text-white mx-3">–</span>
+              <span className="text-white">{awayScore}</span>
+            </p>
           ) : (
             <p className="text-sm text-white/40">vs</p>
           )}
-        </div>
+        </Link>
       </div>
 
       {/* Home team overlay — bottom left */}
@@ -111,11 +115,8 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
             className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
         )}
         <div>
-          <p className="text-xs font-bold text-white leading-snug">
-            {homeName}
-            {scored && <span className={homeWon ? ' text-green-400' : ' text-red-400'}> {homeWon ? 'W' : 'L'}</span>}
-          </p>
           <p className="text-[10px] uppercase tracking-wider text-white/50">Home</p>
+          <p className="text-xs font-bold text-white leading-snug">{homeName}</p>
         </div>
       </div>
 
@@ -126,11 +127,8 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
             className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
         )}
         <div className="text-right">
-          <p className="text-xs font-bold text-white leading-snug">
-            {awayName}
-            {scored && <span className={awayWon ? ' text-green-400' : ' text-red-400'}> {awayWon ? 'W' : 'L'}</span>}
-          </p>
           <p className="text-[10px] uppercase tracking-wider text-white/50">Away</p>
+          <p className="text-xs font-bold text-white leading-snug">{awayName}</p>
         </div>
       </div>
 

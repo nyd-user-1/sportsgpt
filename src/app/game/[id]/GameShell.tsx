@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { ChartSpline, ChevronLeft, ChevronRight, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
@@ -48,10 +49,11 @@ function fmtDate(raw: string | Date | null): string {
 // ── Split-screen hero (ported from launchpad) ─────────────────────────────────
 
 function GameHero({ homeSlug, awaySlug, homeName, awayName, homeSchool, awaySchool,
-  homeScore, awayScore, gameNumber }: {
+  homeScore, awayScore, gameNumber, division, awayDivision, gameDate }: {
   homeSlug: string; awaySlug: string; homeName: string; awayName: string
   homeSchool: string; awaySchool: string
   homeScore: number | null; awayScore: number | null; gameNumber: number | null
+  division: string | null; awayDivision: string | null; gameDate: string | Date | null
 }) {
   const homePhoto = TEAM_PHOTOS[homeSchool]?.[0]
   const awayPhoto = TEAM_PHOTOS[awaySchool]?.[0]
@@ -68,70 +70,73 @@ function GameHero({ homeSlug, awaySlug, homeName, awayName, homeSchool, awayScho
         <div className="relative flex-1">
           {homePhoto
             ? <><Image src={homePhoto} alt={homeName} fill className="object-cover" unoptimized />
-                <div className="absolute inset-0 bg-black/55" /></>
+</>
             : <div className="h-full" style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}55,${ACCENT_COLOR}99)` }} />}
         </div>
         <div className="relative flex-1">
           {awayPhoto
             ? <><Image src={awayPhoto} alt={awayName} fill className="object-cover" unoptimized />
-                <div className="absolute inset-0 bg-black/55" /></>
+</>
             : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
         </div>
       </div>
 
+      {/* Bottom gradient for text legibility */}
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/65 to-transparent z-[5]" />
+
       {gameNumber != null && (
-        <div className="absolute top-3 right-4 z-10">
-          <span className="text-xs font-medium text-white/40">Game {gameNumber}</span>
+        <div className="absolute top-3 left-4 z-10">
+          <span className="text-xs font-medium text-white/40">Week {gameNumber}</span>
         </div>
       )}
+
+      {/* Home team — bottom left */}
+      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2.5">
+        {homeLogo && (
+          <Image src={homeLogo} alt="" width={36} height={36}
+            className="shrink-0 rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
+        )}
+        <div>
+          <p className="text-sm font-bold text-white leading-snug">{homeName}</p>
+          <p className="text-xs text-white/70">Home</p>
+        </div>
+      </div>
+
+      {/* Away team — bottom right */}
+      <div className="absolute bottom-4 right-4 z-10 flex flex-row-reverse items-center gap-2.5">
+        {awayLogo && (
+          <Image src={awayLogo} alt="" width={36} height={36}
+            className="shrink-0 rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
+        )}
+        <div className="text-right">
+          <p className="text-sm font-bold text-white leading-snug">{awayName}</p>
+          <p className="text-xs text-white/70">Away</p>
+        </div>
+      </div>
 
       {/* Scoreboard — centered, three-column */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="flex items-center w-full max-w-xl px-8 gap-6">
 
-          {/* Home team */}
-          <Link href={`/team/${homeSlug}`} className="flex-1 flex flex-col items-center gap-2.5 text-center hover:opacity-80 transition-opacity">
-            {homeLogo
-              ? <Image src={homeLogo} alt={homeName} width={72} height={72} className="object-contain" unoptimized />
-              : <div className="w-[72px] h-[72px] rounded-full bg-white/20" />}
-            <div>
-              <p className="text-[13px] font-bold text-white uppercase tracking-wide leading-snug">{homeName}</p>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">
-                Home
-                {scored && <> · <span className={homeWon ? 'text-green-400' : 'text-red-400'}>{homeWon ? 'W' : 'L'}</span></>}
-              </p>
-            </div>
-          </Link>
+          <div className="flex-1" />
 
           {/* Score badge */}
-          <div className="shrink-0 text-center bg-black/65 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/10 shadow-xl">
+          <div className="shrink-0 text-center bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 border border-white/10 shadow-xl min-w-[380px]">
             {scored ? (
               <>
-                <p className="text-5xl font-black tabular-nums leading-none">
-                  <span className={homeWon ? 'text-white' : 'text-white/35'}>{homeScore}</span>
-                  <span className="text-white/20 mx-3">–</span>
-                  <span className={awayWon ? 'text-white' : 'text-white/35'}>{awayScore}</span>
-                </p>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-white/35 mt-2">Final</p>
+                <div className="flex items-center justify-center gap-3">
+                  <span className={`text-8xl font-black tabular-nums leading-none ${homeWon ? 'text-white' : 'text-white/35'}`}>{homeScore}</span>
+                  <span className="text-8xl font-black tabular-nums leading-none text-white/20">–</span>
+                  <span className={`text-8xl font-black tabular-nums leading-none ${awayWon ? 'text-white' : 'text-white/35'}`}>{awayScore}</span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-wide text-white/40 mt-3">{fmtDate(gameDate)}</p>
               </>
             ) : (
               <p className="text-2xl font-bold text-white/40">vs</p>
             )}
           </div>
 
-          {/* Away team */}
-          <Link href={`/team/${awaySlug}`} className="flex-1 flex flex-col items-center gap-2.5 text-center hover:opacity-80 transition-opacity">
-            {awayLogo
-              ? <Image src={awayLogo} alt={awayName} width={72} height={72} className="object-contain" unoptimized />
-              : <div className="w-[72px] h-[72px] rounded-full bg-white/20" />}
-            <div>
-              <p className="text-[13px] font-bold text-white uppercase tracking-wide leading-snug">{awayName}</p>
-              <p className="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">
-                Away
-                {scored && <> · <span className={awayWon ? 'text-green-400' : 'text-red-400'}>{awayWon ? 'W' : 'L'}</span></>}
-              </p>
-            </div>
-          </Link>
+          <div className="flex-1" />
 
         </div>
       </div>
@@ -218,11 +223,15 @@ function StatTeamTable({ label, players, statType }: {
 // ── Main shell ────────────────────────────────────────────────────────────────
 
 export function GameShell({
-  game, box,
+  game, box, prevGameId, nextGameId, refSlug,
 }: {
   game: Record<string, unknown>
   box: Record<string, unknown> | null
+  prevGameId: number | null
+  nextGameId: number | null
+  refSlug: string
 }) {
+  const router = useRouter()
   const [profileIdx, setProfileIdx] = useState(0)
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
@@ -236,7 +245,8 @@ export function GameShell({
   const awayName   = cleanName(game.away_team_name as string)
   const homeScore  = game.home_score as number | null
   const awayScore  = game.away_score as number | null
-  const division   = game.division as string | null
+  const division      = game.division      as string | null
+  const awayDivision  = game.away_division as string | null
   const gameNumber = game.game_number as number | null
 
   const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
@@ -276,12 +286,9 @@ export function GameShell({
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
-                  {homeLogo && (
-                    <Image src={homeLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 object-contain" unoptimized />
-                  )}
                   <h1 className="text-2xl font-bold text-[var(--txt)]">{awayName} at {homeName}</h1>
                 </div>
-                <div className="flex items-center gap-1.5 pl-[48px] text-xs text-[var(--muted)]">
+                <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]">
                   {division && (
                     <><Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {division}</Link>
                     <span>/</span></>
@@ -294,7 +301,11 @@ export function GameShell({
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
                   <div className="relative group">
-                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} rounded-l-full ${chartsOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
+                    <button onClick={() => prevGameId && router.push(`/game/${prevGameId}?ref=${refSlug}`)} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></button>
+                    <span className={tip}>Previous game</span>
+                  </div>
+                  <div className="relative group">
+                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
@@ -302,8 +313,12 @@ export function GameShell({
                     <span className={tip}>Map</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} rounded-r-full ${chatOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
+                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
                     <span className={tip}>Ask SportsGPT</span>
+                  </div>
+                  <div className="relative group">
+                    <button onClick={() => nextGameId && router.push(`/game/${nextGameId}?ref=${refSlug}`)} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></button>
+                    <span className={tip}>Next game</span>
                   </div>
                 </div>
               </div>
@@ -316,6 +331,8 @@ export function GameShell({
               homeSchool={homeSchool} awaySchool={awaySchool}
               homeScore={homeScore} awayScore={awayScore}
               gameNumber={gameNumber}
+              division={division} awayDivision={awayDivision}
+              gameDate={game.game_date as string | Date | null}
             />
 
             {/* InfoTable — Score + per-stat-type profiles */}

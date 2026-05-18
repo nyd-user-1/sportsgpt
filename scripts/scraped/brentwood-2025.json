@@ -1,0 +1,1987 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2025",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 24,
+    "gameId": "7923",
+    "box": {
+      "gameId": "7923",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "10",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 24, Brentwood 14: Ryan Murgatroyd caught three passes for 84 yards and three touchdowns and had five tackles, one for a loss and one interception to lead visiting Lindenhurst in Suffolk I. Mikey Russo threw for 280 yards and three touchdowns. Cris Peralta had two rushing touchdowns for Brentwood.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Joe Scavone",
+            "att": 14,
+            "yds": 102,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 12,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 25,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 4,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 3,
+            "yds": 24,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 15,
+            "comp": 10,
+            "yds": 200,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 16,
+            "comp": 9,
+            "yds": 186,
+            "tds": 0,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "rec": 4,
+            "yds": 85,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gino  Thevenin",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jacob Burmeister",
+            "rec": 36,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "rec": 31,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Brandon Leftenant",
+            "rec": 3,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Andreone",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Delvani Valdivia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gino  Thevenin",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 20,
+    "gameId": "7704",
+    "box": {
+      "gameId": "7704",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Floyd",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 20, Brentwood 0: Ja'Quan Thomas rushed for 304 yards and three touchdowns on 22 carries to lead host Floyd (2-0) in Suffolk I. Thomas scored a 28-yard touchdown in the first quarter and an 8-yard and 44-yard touchdowns in the fourth. Jake Rivera had 13 tackles, four tackles for loss, and three sacks. Jaylen Johnson had 11 tackles and four sacks. Brentwood is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 17,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 5,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 22,
+            "yds": 304,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Derek Glock",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 14,
+            "comp": 3,
+            "yds": 53,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 6,
+            "comp": 3,
+            "yds": 29,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 3,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Christian Hobson",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Isaac Monroy",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Steven Cuello",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jayden Johnson",
+            "int": 0,
+            "sacks": 5,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jake Rivera",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 50,
+    "gameId": "7705",
+    "box": {
+      "gameId": "7705",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "22",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 50, Brentwood 19: Kyon Sarwari rushed for 83 yards on 8 carries and 2 TDs to lead host Longwood (2-1) in Suffolk I. Mark Davis and Makai Jacobs each added a rushing TD. Ryan Greene completed 9 of 11 passes for 142 yards and 2 TDs. Craig Harty had 9 tackles and Gio Johnson had 8. Ed Princivil had a sack, and Marko Tricarico had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 21,
+            "yds": 119,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 5,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 4,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Rai Ferrer",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 8,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 6,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Mark Davis",
+            "att": 4,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 3,
+            "comp": 2,
+            "yds": 32,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 6,
+            "comp": 2,
+            "yds": 22,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 11,
+            "comp": 9,
+            "yds": 142,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Micah Laney",
+            "rec": 1,
+            "yds": 64,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Giovanni Johnson",
+            "rec": 3,
+            "yds": 44,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "rec": 4,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Travis Gibbs",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herson Flores",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Cameron  Clemons",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Mizael Taveras",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ed  Princivil",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nick  McDowell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Marko Tricarico",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "8061",
+    "box": {
+      "gameId": "8061",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "23",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Cris Peralta rushed for 263 yards and four touchdowns on 18 carries. He also added a 2-point conversion and two receptions for 24 yards to finish with 284 total yards and lead host Brentwood (1-3) in Suffolk I. Malachi Baker added 58 yards rushing and a touchdown. Herson Flores recovered a fumble while Justin Rivera had an interception and a fumble recovery on defense. Josiah Rodney threw an 18-yard TD pass to William Healy for Riverhead (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 12,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 18,
+            "yds": 263,
+            "tds": 4
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 3,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 10,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 4,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Elias Diaz",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 14,
+            "comp": 5,
+            "yds": 96,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 3,
+            "comp": 2,
+            "yds": 24,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "rec": 2,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Herson Flores",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Luis Velasquez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jeremyah Reyes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herson Flores",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 21,
+    "gameId": "8077",
+    "box": {
+      "gameId": "8077",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "12",
+          "q3": "0",
+          "q4": "22",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 34, Sachem East 21: Cris Peralta led host Brentwood (2-3) with 273 yards, three TDs and two 2-point runs in Suffolk I. He added three receptions for 31 yards and a receiving touchdown. Peralta also added 10 tackles and a fumble recovery on defense. Julius Herrera threw the go-ahead score to Mizael Taveras with 7:37 left in the game and Nate Bouquet had the game-sealing interception with 3:22 remaining. Amari Wallace finished with six tackles and two TFLs and Julius Herrara had eight total tackles. Cristian Amaya added a sack and a forced fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 39,
+            "yds": 273,
+            "tds": 3
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 2,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 15,
+            "comp": 7,
+            "yds": 95,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 3,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Mizael Taveras",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Cristian Amaya",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 21,
+    "gameId": "7706",
+    "box": {
+      "gameId": "7706",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "6",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 34, Central Islip 21: Cris Peralta rushed for 249 yards on 28 carries and 5 TDs and added two 2-point conversions to lead visiting Brentwood (3-3) in Suffolk I. On defense, he had 7 total tackles and 3 TFLs. Cristian Amaya finished with 5 tackles and 1 TFL, Tulio Chavez added 5 tackles and 2 TFLs, and Jeremyah Reyes added two sacks, a pass breakup, and a forced fumble. Elijah Wellington had a rushing TD and a passing TD for Central Islip (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 28,
+            "yds": 249,
+            "tds": 5
+          },
+          {
+            "team": "Brentwood",
+            "player": "Rai Ferrer",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Isaiah Vasquez",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 9,
+            "yds": 126,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 13,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 4,
+            "comp": 3,
+            "yds": 60,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 19,
+            "comp": 10,
+            "yds": 98,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 4,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 4,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Jeremyah Reyes",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 42,
+    "gameId": "8173",
+    "box": {
+      "gameId": "8173",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 42, Brentwood 20: Hudson Philbrick completed 12 of 14 passes for 183 yards and 4 TDs to lead visiting Ward Melville (6-1) in Suffolk I. Joe Benedetto rushed 19 times for 126 yards and 2 TDs, and added a TD reception. Cris Peralta, Julius Herrera and Evan Johnson each had a TD for Brentwood (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 19,
+            "yds": 135,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 24,
+            "yds": 128,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 2,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 1,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Rai Ferrer",
+            "att": 3,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 17,
+            "comp": 14,
+            "yds": 188,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 9,
+            "comp": 7,
+            "yds": 95,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 5,
+            "yds": 116,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 4,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 4,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 3,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 2,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Mizael Taveras",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Argueta",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/01/2025",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 14,
+    "gameId": "7707",
+    "box": {
+      "gameId": "7707",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "14",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 20, Patchogue-Medford 14: Mizael Taveras forced a fumble and Cris Peralta recovered it on the Brentwood 8-yard line with 18 seconds left to lead visiting Brentwood (4-4) in Suffolk I. Peralta finished with 8 tackles, a TFL, and a fumble recovery, and Cris Peralta finished with 227 yards rushing on 30 carries and 2 TDs. Mizael Taveras finished with 9 tackles and a forced fumble, and Julius Herrera finished with 7 tackles. Brett Rupulo had a rushing TD and threw a TD pass for Patchogue-Medford (3-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 30,
+            "yds": 227,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "att": 2,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 5,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "att": 13,
+            "yds": 32,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 7,
+            "comp": 2,
+            "yds": 32,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 25,
+            "comp": 20,
+            "yds": 250,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "rec": 5,
+            "yds": 91,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Andrew Johnstone",
+            "rec": 8,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Argueta",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brady Melito",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Cristian Amaya",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/07/2025",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 56,
+    "gameId": "8667",
+    "box": {
+      "gameId": "8667",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "28",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 56, Brentwood 27: After a 14-13 1st quarter, Ward Melville scored 35 unanswered points. Hudson Philbrick completed 8 of 10 passes for 163 yards and 2 TDs, and added 95 yards on 7 carries and 3 TDs on the ground to lead host Ward Melville (8-1) in Suffolk I. Tony Gorsky had an interception returned for a TD and a rushing TD. Joe Benedetto had a 15-yard receiving TD and added 12 carries for 54 yards and a rushing TD. Cris Peralta had 2 rushing TDs for Brentwood (4-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 30,
+            "yds": 147,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Galileo Mejia",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 7,
+            "yds": 96,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 4,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 12,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 4,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Manny Lopez",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 10,
+            "comp": 3,
+            "yds": 140,
+            "tds": 1,
+            "int": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 10,
+            "comp": 8,
+            "yds": 154,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 127,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 3,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 1,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Argueta",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Rodgers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

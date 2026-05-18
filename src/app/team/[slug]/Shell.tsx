@@ -225,12 +225,9 @@ export function TeamShell({
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
-                  {heroLogo && (
-                    <Image src={heroLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 object-contain" unoptimized />
-                  )}
                   <h1 className="text-2xl font-bold text-[var(--txt)]">{teamName}</h1>
                 </div>
-                <div className="flex items-center gap-1.5 pl-[48px] text-xs text-[var(--muted)]">
+                <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]">
                   <Link href="/section/xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
                   <span>/</span>
                   <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {division}</Link>
@@ -410,7 +407,11 @@ export function TeamShell({
                                         <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                       </div>
                                     </td>
-                                    <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
+                                    <td className={cn(td, 'text-right font-medium whitespace-nowrap')}>
+                                      {g.id ? (
+                                        <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{scoreStr}</Link>
+                                      ) : scoreStr}
+                                    </td>
                                     <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',

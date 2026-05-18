@@ -56,10 +56,7 @@ export default async function TeamDetailSlot({ params }: { params: Promise<{ slu
           )}
           <div className="min-w-0">
             <p className="text-sm font-bold text-white leading-snug truncate">{teamName}</p>
-            <p className="text-xs text-white/70">Division {division} · Section XI</p>
-            {wins != null && losses != null && (
-              <p className="text-xs font-semibold text-white/90 mt-0.5">{wins}–{losses} · 2024</p>
-            )}
+            <p className="text-xs text-white/70">Section XI · Division {division}</p>
           </div>
         </div>
 

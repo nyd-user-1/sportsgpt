@@ -8,7 +8,8 @@ export default async function LaunchpadPage() {
   const rows = await sql`
     SELECT t.slug, t.name, t.division,
       s.overall_wins, s.overall_losses, s.overall_ties,
-      s.conference_wins, s.conference_losses
+      s.conference_wins, s.conference_losses,
+      s.points_for, s.points_against
     FROM teams t
     LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
     ORDER BY t.division, s.overall_wins DESC NULLS LAST, t.name`
@@ -22,6 +23,8 @@ export default async function LaunchpadPage() {
     overall_ties:       r.overall_ties != null ? Number(r.overall_ties) : null,
     conference_wins:    r.conference_wins != null ? Number(r.conference_wins) : null,
     conference_losses:  r.conference_losses != null ? Number(r.conference_losses) : null,
+    points_for:         r.points_for != null ? Number(r.points_for) : null,
+    points_against:     r.points_against != null ? Number(r.points_against) : null,
   }))
 
   return <LaunchpadStandings rows={standings} />

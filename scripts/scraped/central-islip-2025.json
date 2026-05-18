@@ -1,0 +1,1700 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2025",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 7,
+    "gameId": "7679",
+    "box": {
+      "gameId": "7679",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Central Islip 26, Bay Shore 7: Elijah Wellington completed 6-of-10 passes for 158 yards and two touchdowns to lead Central Islip to a win in Suffolk I. Camari McDonald caught three passes for 54 yards and a score, and Zequan Marrow had three catches for 81 yards. Jimmy Gaston Jr. rushed 10 times for 140 yards and two touchdowns. Jonathan Rubio had an interception and Benjamin Maldonado had a sack. Cato Thomas rushed for a touchdown for Bay Shore.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 10,
+            "yds": 140,
+            "tds": 2
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 6,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 10,
+            "comp": 6,
+            "yds": 158,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 2,
+            "comp": 2,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 3,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 3,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 1,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Central Islip",
+            "player": "Benjamin  Maldonado",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jonathan  Rubio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 12,
+    "gameId": "8060",
+    "box": {
+      "gameId": "8060",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "With 58 seconds left in the game, Camari McDonald and Jimmy Gaston Jr. forced an incompletion with quarterback hurries on a two-point conversion attempt to win it for Central Islip (2-0) in Suffolk I. While leading 7-6 with 2:45 remaining, Elijah Wellington rushed for an 11-yard touchdown, which was the difference in the game. Gaston Jr. also rushed 15 times for 120 yards and a touchdown in the third quarter to give CI the lead. For Riverhead (0-2), Josiah Rodney and Kavion Hobbs each rushed for touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 16,
+            "yds": 106,
+            "tds": 1
+          },
+          {
+            "team": "Riverhead",
+            "player": "Braeden Messina",
+            "att": 9,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 15,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 11,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 15,
+            "comp": 7,
+            "yds": 80,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "rec": 3,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Braeden Messina",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jonathan  Rubio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 24,
+    "gameId": "7735",
+    "box": {
+      "gameId": "7735",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "10",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 24, Central Islip 14: Aidyn Modeste had 281 yards and three touchdowns as Patchouge-Medford (1-2) won a Suffolk I matchup and its first home game since 2022. Modeste also had an interception and 25 receiving yards, totaling 306 yards of total offense. Ramone Mateo made seven tackles, with two being for a loss. Andrew Johnstone had five tackles, with two for a loss. Amare Motley had receiving scores of 50 and 38 yards for Central Islip (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 7,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "att": 23,
+            "yds": 281,
+            "tds": 3
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Ontonio Papaleo",
+            "att": 5,
+            "yds": 34,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 10,
+            "comp": 5,
+            "yds": 154,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 2,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 5,
+            "comp": 3,
+            "yds": 42,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 3,
+            "yds": 132,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Andrew Johnstone",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brady Melito",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 15,
+    "gameId": "7736",
+    "box": {
+      "gameId": "7736",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Whitman",
+          "q1": "2",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 15, Central Islip 0: Mark Rutledge ran for 163 yards on 16 carries, and Jarone Park added 59 yards on 8 carries and 2 TDs to lead host Whitman (2-2) in Suffolk I. Micah Brandon had 10 tackles, Jordan Churchman and Rutledge each added 8 tackles, and Aiden Jorgensen and Dom Chiusano each had 6 tackles. Churchman had a interception to seal the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 6,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 9,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "att": 6,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "att": 16,
+            "yds": 163,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jarone Park",
+            "att": 8,
+            "yds": 59,
+            "tds": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "Micah Brandon",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "Dez Holman",
+            "att": 4,
+            "comp": 4,
+            "yds": 44,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 1,
+            "comp": 4,
+            "yds": 39,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Dodge Alahverdian",
+            "att": 15,
+            "comp": 9,
+            "yds": 92,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 3,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 3,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "John Mannino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2025",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 56,
+    "gameId": "7737",
+    "box": {
+      "gameId": "7737",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 56, Central Islip 0: Tony Gorsky had 10 carries for 157 yards a touchdown to lead host Ward Melville () in Suffolk I. Gorsky was one of seven Patriots to score a TD. Joe Benedetto ran for two touchdowns and Hudson Philbrick ran for a score and threw a 44-yard TD pass to Jesse Spronck. Angelo Sorbera, Christian Hubbard and LJ DePaul each added a TD run. Joey Karpowicz had two interceptions. Central Islip is 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 10,
+            "yds": 115,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 9,
+            "yds": 156,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 6,
+            "yds": 76,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 5,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 10,
+            "comp": 4,
+            "yds": 40,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 5,
+            "comp": 5,
+            "yds": 91,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 34,
+    "gameId": "7706",
+    "box": {
+      "gameId": "7706",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "6",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 34, Central Islip 21: Cris Peralta rushed for 249 yards on 28 carries and 5 TDs and added two 2-point conversions to lead visiting Brentwood (3-3) in Suffolk I. On defense, he had 7 total tackles and 3 TFLs. Cristian Amaya finished with 5 tackles and 1 TFL, Tulio Chavez added 5 tackles and 2 TFLs, and Jeremyah Reyes added two sacks, a pass breakup, and a forced fumble. Elijah Wellington had a rushing TD and a passing TD for Central Islip (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 28,
+            "yds": 249,
+            "tds": 5
+          },
+          {
+            "team": "Brentwood",
+            "player": "Rai Ferrer",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Isaiah Vasquez",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 9,
+            "yds": 126,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 13,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 4,
+            "comp": 3,
+            "yds": 60,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 19,
+            "comp": 10,
+            "yds": 98,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 4,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 4,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Jeremyah Reyes",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 41,
+    "gameId": "7925",
+    "box": {
+      "gameId": "7925",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "6",
+          "q2": "28",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 41, Central Islip 14: Mikey Russo threw three touchdowns, two to Alex Burmeister and one to Ryan Murgatroyd to lead visiting Lindenhurst (5-2) in Suffolk I. Donovan Argueta had two rushing TDs and Joe Scavone had two fumble recoveries. Elijah Wellington connected with Mare Motley on a 35-yard score for Central Islip (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 7,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joe Scavone",
+            "att": 7,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "att": 1,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Donovan Argueta",
+            "att": 4,
+            "yds": 7,
+            "tds": 2
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 20,
+            "yds": 195,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 11,
+            "yds": 62,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 21,
+            "comp": 16,
+            "yds": 230,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 7,
+            "comp": 2,
+            "yds": 53,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "rec": 6,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "rec": 4,
+            "yds": 68,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Petzold Cole",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Cook Zach",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Andreone",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Louis Drago",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Daniel  Morales",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 28,
+    "gameId": "7738",
+    "box": {
+      "gameId": "7738",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 28, Central Islip 6: Jake Spera had 15 carries for 108 yards and two touchdowns to lead host Sachem North (6-2) in Suffolk I. Tyler Jerome added four carries for 33 yards and a TD and Luke LaRocca ran five times for 27 yards and a score. Elijah Wellington ran for a 5-yard TD for Central Islip (2-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 20,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 15,
+            "yds": 68,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 15,
+            "yds": 108,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Jerome",
+            "att": 4,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 5,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 18,
+            "comp": 9,
+            "yds": 89,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 3,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Jerome",
+            "att": 1,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 4,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Drew  Fong-Rodriguez",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Evan  Traola",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

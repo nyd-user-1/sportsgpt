@@ -1,0 +1,2101 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 21,
+    "gameId": "8219",
+    "box": {
+      "gameId": "8219",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "7",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "6",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 21, Sachem North 20: Ja'Quan Thomas led visiting Floyd in Suffolk I with 180 rushing yards and three touchdowns on 25 carries. David Gonzalez racked up 14 tackles, two sacks and three tackles for loss. Jayden Johnson tallied 11 tackles, two sacks and three tackles for loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 20,
+            "yds": 180,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 3,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 9,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 16,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 9,
+            "yds": 28,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 9,
+            "comp": 2,
+            "yds": 45,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 21,
+            "comp": 15,
+            "yds": 162,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "rec": 2,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 7,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Jack Meyer",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "David Gonzalez",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jayden Johnson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aiden Williams",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Anthony Caputo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 7,
+    "gameId": "8080",
+    "box": {
+      "gameId": "8080",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "13",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 33, Whitman 7: Henry Sarro rushed for 132 yards and two touchdowns on 10 carries and Jake Spera rushed for 65 yards and two touchdowns on seven carries as Sachem North defeated host Whitman in Suffolk I. Luke LaRocca completed 6 of 10 passes for 94 yards and a touchdown for Sachem North (1-1). Whitman is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 10,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 7,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 3,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "att": 7,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Shamel Greene",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "att": 2,
+            "yds": 2,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 10,
+            "comp": 6,
+            "yds": 94,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "att": 6,
+            "comp": 6,
+            "yds": 64,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dodge Alahverdian",
+            "att": 9,
+            "comp": 6,
+            "yds": 48,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 3,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Gavin Nuzzi",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jarone Park",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Whitman",
+            "player": "Edwin Miranda",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Edwin Miranda",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Dom Chiusano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 0,
+    "gameId": "8081",
+    "box": {
+      "gameId": "8081",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "17",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 38, Bay Shore 0: Jake Spera had an 80-yard touchdown run for visiting Sachem North (2-1) in Suffolk I. Jevon Alfonso had 59 rushing yards and a score and Dominique Alexander ran for 51 yards and a TD. Lucas Bouchard and Henry Sarro each had a rushing score. John Licata , Gavin Nuzzi and Sarro each had an interception. Bay Shore is 0-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 1,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 5,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 4,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Dominique  Alexander",
+            "att": 4,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 8,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Jerome",
+            "att": 3,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "att": 5,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Gavin Nuzzi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 43,
+    "gameId": "8082",
+    "box": {
+      "gameId": "8082",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "16",
+          "q2": "13",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 43, Sachem North 13: Hudson Philbrick completed all but two of his 12 passing attempts for 215 yards and two touchdowns for Ward Melville in its home win in Suffolk I. Victor Bergamaschi led the defense with two sacks and two tackles for loss. Joe Benedetto rushed 18 times for 159 yards and three scores for Ward Melville (4-0). Luke LaRocca threw a 28-yard TD pass to Lucas Bouchard for Sachem North (2-2). Henry Sarro added a rushing TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 10,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 8,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 18,
+            "yds": 144,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 8,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 13,
+            "comp": 9,
+            "yds": 149,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 13,
+            "comp": 10,
+            "yds": 215,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 2,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 7,
+            "yds": 135,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Niko Valenza",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Victor Bergamaschi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 20,
+    "gameId": "8032",
+    "box": {
+      "gameId": "8032",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "7",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 42, Patchogue-Medford 20: Jake Spera had 137 rushing yards and two touchdowns on nine carries to lead host Sachem North (3-2) in Suffolk I. Henry Sarro had two rushing scores and Jon Giraulo had a 34-yard fumble return TD. Lucas Bouchard had six receptions for 86 yards and a touchdown. Aidyn Modeste had three rushing TDs for Patchouge-Medford (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "att": 21,
+            "yds": 142,
+            "tds": 3
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 9,
+            "yds": 137,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 6,
+            "yds": 32,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 6,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 13,
+            "comp": 8,
+            "yds": 130,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 17,
+            "comp": 10,
+            "yds": 110,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Andrew Johnstone",
+            "rec": 5,
+            "yds": 102,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 6,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 2,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brady Melito",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Kuhlman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 14,
+    "gameId": "8078",
+    "box": {
+      "gameId": "8078",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "24",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 31, Sachem East 14: Luke LaRocca went 9 for 12 with 203 yards and three touchdowns for the host Sachem North (4-2) in Suffolk I. Lucas Bouchard caught four passes for 120 yards. Dylan Barker went 4 for 4 kicking extra points and notched a 16-yard field goal.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 12,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 4,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Karim Cheikhali",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Dominique  Alexander",
+            "att": 6,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 12,
+            "comp": 9,
+            "yds": 203,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 4,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 14,
+    "gameId": "8083",
+    "box": {
+      "gameId": "8083",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 24, Longwood 14: Luke LaRocca completed 14 of 19 passes for 195 yards and 2 TDs to lead visiting Sachem North (5-2) in Suffolk I. Jake Spera had a rushing TD and Lucas Bouchard and Gavin Nuzzi each had a receiving TD. Micah Laney caught a 49-yard TD pass from Ryan Greene for Longwood (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 16,
+            "yds": 73,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 10,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 5,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 22,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Julian Jackson",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 19,
+            "comp": 14,
+            "yds": 195,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 14,
+            "comp": 5,
+            "yds": 73,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 5,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 4,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Gavin Nuzzi",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Micah Laney",
+            "rec": 1,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          },
+          {
+            "team": "Longwood",
+            "player": "Cameron  Clemons",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Tyler Lorentzen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nyyir Thomas",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Travis Gibbs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "7738",
+    "box": {
+      "gameId": "7738",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 28, Central Islip 6: Jake Spera had 15 carries for 108 yards and two touchdowns to lead host Sachem North (6-2) in Suffolk I. Tyler Jerome added four carries for 33 yards and a TD and Luke LaRocca ran five times for 27 yards and a score. Elijah Wellington ran for a 5-yard TD for Central Islip (2-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 20,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 15,
+            "yds": 68,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Christian Williams",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 15,
+            "yds": 108,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Jerome",
+            "att": 4,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 5,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 18,
+            "comp": 9,
+            "yds": 89,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 3,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Jerome",
+            "att": 1,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Amare Motley",
+            "rec": 4,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Drew  Fong-Rodriguez",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Evan  Traola",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/07/2025",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 0,
+    "gameId": "8669",
+    "box": {
+      "gameId": "8669",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 28, Lindenhurst 0: Luke LaRocca completed 16 of 22 passes for 313 yards and four touchdowns in No.3 Sachem North's win over No.6 Lindenhurst in the quarterfinals of the Suffolk I playoffs. According to coach David Caputo set the single-season passing yards record for Sachem North with 1,357. Sachem North (7-2) will face No.2 Ward Melville 4 p.m. at Ward Melville in the semifinals. Lindenhurst finished 5-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 7,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 7,
+            "comp": 3,
+            "yds": 45,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 16,
+            "comp": 22,
+            "yds": 313,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 6,
+            "yds": 138,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 3,
+            "yds": 119,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 4,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Gavin Nuzzi",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Aaron Vladikin",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 3,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem North",
+            "player": "Dylan  Barker",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/14/2025",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "8714",
+    "box": {
+      "gameId": "8714",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 42, Sachem North 7: Joe Karpowicz caught three passes for 104 yards and two touchdowns and Hudson Philbrick completed 12 of 15 passes for 295 yards and three TDs to lead host No. 2 Ward Melville over No. 3 Sachem North in the Suffolk Division I semifinals. Joe Benedetto had 15 carries for 77 yards and three touchdowns.  Austin Sicoli led the Patriots' defense with seven tackles. Ward Melville (9-1) will face the winner of No. 1 Floyd/No. 4 Longwood in the final at 7:30 p.m. on Friday at Stony Brook University. \nLuke LaRocca threw for 117 yards, including a 48-yard TD pass to Jon Giraulo for Sachem North, which finished 7-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 19,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 17,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 8,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 14,
+            "yds": 79,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 8,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 4,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Manny Lopez",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 9,
+            "comp": 4,
+            "yds": 117,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 17,
+            "comp": 15,
+            "yds": 294,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 2,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 2,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 4,
+            "yds": 109,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 6,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Logan  Schaefer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Victor Bergamaschi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Christian Hubbard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]
