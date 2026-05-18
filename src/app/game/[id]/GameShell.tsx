@@ -1,14 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChartSpline, ChevronLeft, ChevronRight, Map, MessageCircle } from 'lucide-react'
+import { ChartSpline, ChevronLeft, ChevronRight, FileUser, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
+import { AppPanel } from '@/components/AppPanel'
 import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
@@ -222,8 +222,8 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
                       ? <Image src={logo} alt="" width={20} height={20} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
                       : <div className="shrink-0 h-5 w-5 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
                     {playerSlug
-                      ? <Link href={`/player/${playerSlug}`} className="hover:underline" style={{ color: 'inherit' }}>{p.player}</Link>
-                      : <span>{p.player}</span>}
+                      ? <Link href={`/player/${playerSlug}`} className="font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>{p.player}</Link>
+                      : <span className="font-semibold">{p.player}</span>}
                   </div>
                 </td>
                 {statCells(p).map((v, j) => <td key={j} className={td}>{v}</td>)}
@@ -236,10 +236,107 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
   )
 }
 
+// ── Player panel list ─────────────────────────────────────────────────────────
+
+const STAT_ORDER: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
+
+function mainStat(p: PlayerStat): string {
+  if (p.stat_type === 'Rushing')   return `${p.yds ?? 0} yds`
+  if (p.stat_type === 'Passing')   return `${p.yds ?? 0} yds`
+  if (p.stat_type === 'Receiving') return `${p.yds ?? 0} yds`
+  if (p.stat_type === 'Kicking')   return `${p.points ?? 0} pts`
+  if (p.stat_type === 'Defense')   return `${p.sacks ?? 0} sacks`
+  return ''
+}
+
+function PanelPlayers({ stats, schoolSlugs, playerSlugs }: {
+  stats: PlayerStat[]
+  schoolSlugs: Record<string, string>
+  playerSlugs: Record<string, string>
+}) {
+  if (stats.length === 0) return (
+    <div className="flex items-center justify-center h-32 text-sm text-[var(--muted)]">No player data</div>
+  )
+  return (
+    <div className="pb-4">
+      {STAT_ORDER.map(type => {
+        const group = stats.filter(p => p.stat_type === type)
+        if (group.length === 0) return null
+        return (
+          <div key={type}>
+            <div className="px-4 pt-5 pb-1.5">
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">{type}</span>
+            </div>
+            <div className="divide-y divide-[var(--border)]">
+              {group.map((p, i) => {
+                const schoolSlug = schoolSlugs[p.team_name] ?? ''
+                const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
+                const playerSlug = playerSlugs[p.player.toLowerCase()]
+                return (
+                  <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--inp-bg)] transition-colors">
+                    {logo
+                      ? <Image src={logo} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
+                      : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
+                    <div className="flex-1 min-w-0">
+                      {playerSlug
+                        ? <Link href={`/player/${playerSlug}`} className="text-sm font-semibold hover:underline truncate block" style={{ color: ACCENT_COLOR }}>{p.player}</Link>
+                        : <span className="text-sm font-semibold text-[var(--txt)] truncate block">{p.player}</span>}
+                      <p className="text-xs text-[var(--muted)] truncate">{cleanName(p.team_name)}</p>
+                    </div>
+                    <span className="text-sm tabular-nums font-medium text-[var(--txt)] shrink-0">{mainStat(p)}</span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 // ── Main shell ────────────────────────────────────────────────────────────────
 
+function parseInline(text: string, playerSlugs: Record<string, string>): React.ReactNode[] {
+  const names = Object.keys(playerSlugs).sort((a, b) => b.length - a.length)
+  const escaped = names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  const pattern = escaped.length > 0
+    ? `\\*\\*(.+?)\\*\\*|\\*(.+?)\\*|(${escaped.join('|')})`
+    : `\\*\\*(.+?)\\*\\*|\\*(.+?)\\*`
+  const regex = new RegExp(pattern, 'gi')
+  const nodes: React.ReactNode[] = []
+  let last = 0
+  let match: RegExpExecArray | null
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index))
+    if (match[1]) {
+      nodes.push(<strong key={match.index}>{match[1]}</strong>)
+    } else if (match[2]) {
+      nodes.push(<em key={match.index}>{match[2]}</em>)
+    } else {
+      const raw = match[0]
+      const slug = playerSlugs[raw.toLowerCase()]
+      nodes.push(slug
+        ? <Link key={match.index} href={`/player/${slug}`} className="font-semibold text-[var(--txt)] hover:underline">{raw}</Link>
+        : <span key={match.index} className="font-semibold text-[var(--txt)]">{raw}</span>
+      )
+    }
+    last = match.index + match[0].length
+  }
+  if (last < text.length) nodes.push(text.slice(last))
+  return nodes
+}
+
+function renderHighlights(text: string, playerSlugs: Record<string, string>) {
+  return text.split('\n\n').filter(Boolean).map((para, i) => (
+    <p key={i} className="text-sm text-[var(--txt2)] leading-relaxed">
+      {parseInline(para, playerSlugs)}
+    </p>
+  ))
+}
+
 export function GameShell({
-  game, box, prevGameId, nextGameId, refSlug, playerSlugs, rewrittenHighlights,
+  game, box, prevGameId, nextGameId, refSlug, playerSlugs,
 }: {
   game: Record<string, unknown>
   box: Record<string, unknown> | null
@@ -247,14 +344,77 @@ export function GameShell({
   nextGameId: number | null
   refSlug: string
   playerSlugs: Record<string, string>
-  rewrittenHighlights?: string | null
 }) {
   const router = useRouter()
   const [profileIdx, setProfileIdx] = useState(0)
   const [statExpanded, setStatExpanded] = useState(false)
-  const [chartsOpen, setChartsOpen] = useState(false)
-  const [mapsOpen,   setMapsOpen]   = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
+  const [aiTitle, setAiTitle] = useState<string | null>(null)
+  const [aiHighlights, setAiHighlights] = useState<string | null>(null)
+  const [loadingHighlights, setLoadingHighlights] = useState(false)
+
+  const gameIdNum = game.id as number
+
+  useEffect(() => {
+    const rawHighlights = box?.highlights as string | null
+    if (!rawHighlights) return
+
+    // Serve from sessionStorage on repeat visits
+    const cacheKey = `hl-${gameIdNum}`
+    try {
+      const cached = sessionStorage.getItem(cacheKey)
+      if (cached) {
+        const p = JSON.parse(cached)
+        setAiTitle(p.title ?? null)
+        setAiHighlights(p.text ?? null)
+        return
+      }
+    } catch {}
+
+    setLoadingHighlights(true)
+
+    let buffer = ''
+    let titleDone = false
+    let titleEndIdx = 0
+
+    fetch(`/api/game/${gameIdNum}/highlights`)
+      .then(async res => {
+        if (!res.body) return
+        const reader = res.body.getReader()
+        const decoder = new TextDecoder()
+
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+          buffer += decoder.decode(value, { stream: true })
+
+          if (!titleDone) {
+            const nl = buffer.indexOf('\n')
+            if (nl !== -1) {
+              setAiTitle(buffer.slice(0, nl).trim())
+              titleDone = true
+              titleEndIdx = nl + 1
+              setLoadingHighlights(false)
+            }
+          }
+          if (titleDone) {
+            setAiHighlights(buffer.slice(titleEndIdx).trimStart())
+          }
+        }
+
+        // Cache for this session
+        try {
+          sessionStorage.setItem(cacheKey, JSON.stringify({
+            title: buffer.slice(0, titleEndIdx - 1).trim(),
+            text: buffer.slice(titleEndIdx).trimStart(),
+          }))
+        } catch {}
+      })
+      .catch(() => {})
+      .finally(() => setLoadingHighlights(false))
+  }, [gameIdNum, box])
+  const [chartsOpen, setChartsOpen]   = useState(false)
+  const [playerOpen, setPlayerOpen]   = useState(false)
+  const [chatOpen,   setChatOpen]     = useState(false)
 
   const homeSlug   = game.home_team_slug as string
   const awaySlug   = game.away_team_slug as string
@@ -270,7 +430,7 @@ export function GameShell({
 
   const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
   const allStats    = (box?.player_stats  as PlayerStat[] | null)  ?? []
-  const highlights  = rewrittenHighlights ?? (box?.highlights as string | null)
+  const highlights  = box?.highlights as string | null
 
   const STAT_TYPES: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
   const availableStats = STAT_TYPES.filter(t => allStats.some(p => p.stat_type === t))
@@ -325,8 +485,8 @@ export function GameShell({
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><Map className="h-4 w-4" /></button>
-                    <span className={tip}>Map</span>
+                    <button onClick={() => setPlayerOpen(v => !v)} className={`${btn} ${playerOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><FileUser className="h-4 w-4" /></button>
+                    <span className={tip}>Player</span>
                   </div>
                   <div className="relative group">
                     <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[var(--txt)]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
@@ -353,17 +513,47 @@ export function GameShell({
 
             {/* Standalone score table */}
             {quarterRows.length > 0 && (
-              <div className="mb-10 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+              <div className="mb-[30px]">
+              <h2 className="text-lg font-semibold text-[var(--txt)] mb-3">Box Score</h2>
+              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
                 <ScoreTable rows={quarterRows} homeSlug={homeSlug} gameNumber={gameNumber} gameDate={game.game_date as string | Date | null} />
+              </div>
               </div>
             )}
 
             {/* Highlights */}
             {highlights && (
               <div className="mb-6">
-                <h2 className="text-lg font-semibold text-[var(--txt)] mb-2">Game Highlights</h2>
-                <p className="text-sm text-[var(--txt2)] leading-relaxed">{highlights}</p>
+                {loadingHighlights ? (
+                  <div className="animate-pulse mb-3 h-6 bg-[var(--inp-bg)] rounded w-2/3" />
+                ) : (
+                  <>
+                    <h2 className="text-lg font-semibold text-[var(--txt)] mb-1">
+                      {aiTitle ?? 'Game Highlights'}
+                    </h2>
+                    <p className="text-xs text-[var(--muted)] mb-3">By NYSgpt</p>
+                  </>
+                )}
+                {loadingHighlights ? (
+                  <div className="space-y-2 animate-pulse">
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-full" />
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[95%]" />
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[88%]" />
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-full mt-3" />
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[92%]" />
+                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[75%]" />
+                  </div>
+                ) : aiHighlights ? (
+                  <div className="space-y-3">{renderHighlights(aiHighlights, playerSlugs)}</div>
+                ) : (
+                  <p className="text-sm text-[var(--txt2)] leading-relaxed">{highlights}</p>
+                )}
               </div>
+            )}
+
+            {/* Divider */}
+            {PROFILES.length > 0 && highlights && (
+              <hr className="border-t border-[var(--border)] mb-6" />
             )}
 
             {/* InfoTable — stat types only */}
@@ -393,7 +583,13 @@ export function GameShell({
       </AppLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)} />
+      <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Players">
+        <PanelPlayers
+          stats={allStats}
+          schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
+          playerSlugs={playerSlugs}
+        />
+      </AppPanel>
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)} countyName={`${awayName} at ${homeName}`} />
     </>
   )
