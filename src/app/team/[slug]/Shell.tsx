@@ -149,11 +149,12 @@ export function TeamShell({
   const schoolSlug  = team.school_slug as string
   const heroPhotos  = TEAM_PHOTOS[schoolSlug] ?? []
 
-  // Single-photo teams get a color placeholder as slide 0 so missing photos are obvious
+  // Placeholder is always slide 0 — makes it easy to spot teams needing more photos
   type HeroSlide = { kind: 'photo'; url: string } | { kind: 'placeholder' }
-  const heroSlides: HeroSlide[] = heroPhotos.length === 1
-    ? [{ kind: 'placeholder' }, { kind: 'photo', url: heroPhotos[0] }]
-    : heroPhotos.map(url => ({ kind: 'photo', url }))
+  const heroSlides: HeroSlide[] = [
+    { kind: 'placeholder' },
+    ...heroPhotos.map(url => ({ kind: 'photo' as const, url })),
+  ]
 
   useEffect(() => {
     if (heroSlides.length < 2) return
