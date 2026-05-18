@@ -217,6 +217,25 @@ export default function SuffolkDistrictMap({ schools }: {
   const handleLoaded = useCallback(() => setLoaded(true), [])
   const handleHover = useCallback((chip: ChipData | null) => setHoveredChip(chip), [])
 
+  const containerRef = useRef<HTMLDivElement>(null)
+  const chipRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    const handler = (e: MouseEvent) => {
+      const chip = chipRef.current
+      if (!chip) return
+      const rect = el.getBoundingClientRect()
+      const x = Math.min(e.clientX - rect.left + 16, rect.width - 300)
+      const y = Math.max(e.clientY - rect.top - chip.offsetHeight - 8, 8)
+      chip.style.left = `${x}px`
+      chip.style.top = `${y}px`
+    }
+    el.addEventListener('mousemove', handler)
+    return () => el.removeEventListener('mousemove', handler)
+  }, [])
+
   if (!apiKey) {
     return (
       <div className="h-full flex flex-col items-center justify-center gap-2 text-[var(--muted)]">
@@ -227,7 +246,7 @@ export default function SuffolkDistrictMap({ schools }: {
   }
 
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-full w-full overflow-hidden">
       <APIProvider apiKey={apiKey}>
         <Map
           defaultCenter={{ lat: 40.83, lng: -72.92 }}
@@ -247,9 +266,13 @@ export default function SuffolkDistrictMap({ schools }: {
       {/* Skeleton */}
       <div className={`absolute inset-0 z-10 bg-[var(--inp-bg)] pointer-events-none transition-opacity duration-700 ${loaded ? 'opacity-0' : 'opacity-100'}`} />
 
-      {/* Hover chip — logo + division + all-time record */}
+      {/* Hover tooltip — follows cursor */}
       {hoveredChip && (
-        <div className="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md overflow-hidden pointer-events-none">
+        <div
+          ref={chipRef}
+          className="absolute z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md overflow-hidden pointer-events-none"
+          style={{ left: 0, top: 0 }}
+        >
           <div className="flex items-center gap-3 px-3 py-2.5 min-w-[200px] max-w-[280px]">
             {hoveredChip.logoUrl && (
               <Image
