@@ -126,6 +126,7 @@ function GameHero({ homeSlug, awaySlug, homeName, awayName, homeSchool, awayScho
 function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow[]; homeSlug: string; gameNumber: number | null; gameDate: string | Date | null }) {
   const hasOT = rows.some(r => r.ot1 > 0 || r.ot2 > 0 || r.ot3 > 0)
   const ordered = [...rows].sort((a, b) => (a.team_slug === homeSlug ? -1 : 1))
+  const maxFinal = Math.max(...ordered.map(r => r.final))
   const th = 'px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right first:text-left'
   const td = 'px-3 py-3 text-sm tabular-nums text-right text-[var(--muted)]'
   return (
@@ -147,13 +148,16 @@ function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow
             const logo = SCHOOL_LOGOS[schoolSlug]
             return (
               <tr key={i}>
-                <td className="px-3 py-3 text-sm font-semibold text-[var(--txt)]">
+                <td className="px-3 py-3 text-sm font-semibold">
                   <div className="flex items-center gap-2">
                     {logo
                       ? <Image src={logo} alt="" width={22} height={22} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
                       : <div className="shrink-0 h-[22px] w-[22px] rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
-                    <span>{r.team_name}</span>
+                    <Link href={`/team/${r.team_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{r.team_name}</Link>
                     <span className="text-[10px] font-normal text-[var(--muted)]">{isHome ? '(H)' : '(A)'}</span>
+                    {r.final === maxFinal
+                      ? <span className="text-[10px] font-bold" style={{ color: '#16a34a' }}>W</span>
+                      : <span className="text-[10px] font-bold" style={{ color: '#dc2626' }}>L</span>}
                   </div>
                 </td>
                 <td className={td}>{r.q1}</td><td className={td}>{r.q2}</td>
@@ -171,12 +175,14 @@ function ScoreTable({ rows, homeSlug, gameNumber, gameDate }: { rows: QuarterRow
 
 // ── Player stat table ─────────────────────────────────────────────────────────
 
-function StatTable({ players, statType, schoolSlugs, playerSlugs }: {
+function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
   players: PlayerStat[]
   statType: PlayerStat['stat_type']
-  schoolSlugs: Record<string, string>  // team_name → school_slug
-  playerSlugs: Record<string, string>  // player name (lowercase) → slug
+  schoolSlugs: Record<string, string>
+  playerSlugs: Record<string, string>
+  expanded: boolean
 }) {
+  const visible = expanded ? players : players.slice(0, 2)
   const colHeaders: Record<string, string[]> = {
     Rushing:   ['ATT', 'YDS', 'TDS'],
     Passing:   ['ATT', 'COMP', 'YDS', 'TDS', 'INT'],
@@ -191,7 +197,7 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs }: {
     if (statType === 'Kicking')   return [p.fg ?? 0, p.pat ?? 0, p.points ?? 0]
     return [p.int ?? 0, p.sacks ?? 0, p.fumbles ?? 0]
   }
-  const th = 'px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right bg-[var(--inp-bg)]'
+  const th = 'px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right border-b border-[var(--border)]'
   const td = 'px-3 py-2.5 text-sm tabular-nums text-right text-[var(--muted)]'
   if (players.length === 0) return null
   return (
@@ -199,17 +205,17 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs }: {
       <table className="w-full text-sm">
         <thead>
           <tr>
-            <th className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-left bg-[var(--inp-bg)]">Player</th>
+            <th className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-left border-b border-[var(--border)]">Player</th>
             {colHeaders[statType].map(h => <th key={h} className={th}>{h}</th>)}
           </tr>
         </thead>
         <tbody className="divide-y divide-[var(--border)]">
-          {players.map((p, i) => {
+          {visible.map((p, i) => {
             const schoolSlug = schoolSlugs[p.team_name] ?? ''
             const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
             const playerSlug = playerSlugs[p.player.toLowerCase()]
             return (
-              <tr key={i} className="hover:bg-[var(--inp-bg)] transition-colors">
+              <tr key={i}>
                 <td className="px-3 py-2.5 text-sm text-[var(--txt)]">
                   <div className="flex items-center gap-2">
                     {logo
@@ -233,7 +239,7 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs }: {
 // ── Main shell ────────────────────────────────────────────────────────────────
 
 export function GameShell({
-  game, box, prevGameId, nextGameId, refSlug, playerSlugs,
+  game, box, prevGameId, nextGameId, refSlug, playerSlugs, rewrittenHighlights,
 }: {
   game: Record<string, unknown>
   box: Record<string, unknown> | null
@@ -241,9 +247,11 @@ export function GameShell({
   nextGameId: number | null
   refSlug: string
   playerSlugs: Record<string, string>
+  rewrittenHighlights?: string | null
 }) {
   const router = useRouter()
   const [profileIdx, setProfileIdx] = useState(0)
+  const [statExpanded, setStatExpanded] = useState(false)
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
@@ -262,7 +270,7 @@ export function GameShell({
 
   const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
   const allStats    = (box?.player_stats  as PlayerStat[] | null)  ?? []
-  const highlights  = box?.highlights as string | null
+  const highlights  = rewrittenHighlights ?? (box?.highlights as string | null)
 
   const STAT_TYPES: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
   const availableStats = STAT_TYPES.filter(t => allStats.some(p => p.stat_type === t))
@@ -345,7 +353,7 @@ export function GameShell({
 
             {/* Standalone score table */}
             {quarterRows.length > 0 && (
-              <div className="mb-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+              <div className="mb-10 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
                 <ScoreTable rows={quarterRows} homeSlug={homeSlug} gameNumber={gameNumber} gameDate={game.game_date as string | Date | null} />
               </div>
             )}
@@ -363,9 +371,9 @@ export function GameShell({
               <div className="mb-8">
                 <InfoTable
                   title={active.label}
-                  onToggle={() => {}}
-                  onPrev={() => setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length)}
-                  onNext={() => setProfileIdx(i => (i + 1) % PROFILES.length)}
+                  onToggle={() => setStatExpanded(v => !v)}
+                  onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setStatExpanded(false) }}
+                  onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setStatExpanded(false) }}
                 >
                   {active.kind === 'stat' && active.statType && (
                     <StatTable
@@ -373,6 +381,7 @@ export function GameShell({
                       statType={active.statType}
                       schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
                       playerSlugs={playerSlugs}
+                      expanded={statExpanded}
                     />
                   )}
                 </InfoTable>
