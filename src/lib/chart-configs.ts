@@ -138,6 +138,44 @@ export const CHART_CONFIGS: ChartConfig[] = [
     color: '#033882', chartType: 'bar', kpiLabel: 'most points',
   },
 
+  // ── Game Records & Scoring ────────────────────────────────────────────────
+  {
+    slug: 'scoring-offense',
+    title: 'Scoring Offense',
+    description: 'Average points scored per game by team — season by season',
+    color: '#033882', chartType: 'bar', kpiLabel: 'avg pts/game',
+  },
+  {
+    slug: 'scoring-defense',
+    title: 'Scoring Defense',
+    description: 'Average points allowed per game — fewest is best',
+    color: '#10b981', chartType: 'bar', kpiLabel: 'fewest pts allowed',
+  },
+  {
+    slug: 'top-scoring-games',
+    title: 'Highest Scoring Games',
+    description: 'Games with the most combined points scored — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'pts combined',
+  },
+  {
+    slug: 'biggest-blowouts',
+    title: 'Biggest Blowouts',
+    description: 'Largest margins of victory — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'point margin',
+  },
+  {
+    slug: 'single-game-rushing',
+    title: 'Single-Game Rushing',
+    description: 'Top single-game rushing performances — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'rush yds in one game',
+  },
+  {
+    slug: 'single-game-passing',
+    title: 'Single-Game Passing',
+    description: 'Top single-game passing performances — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'pass yds in one game',
+  },
+
 ]
 
 export function getChartConfig(slug: string): ChartConfig | undefined {

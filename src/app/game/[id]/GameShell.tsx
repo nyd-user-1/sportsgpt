@@ -262,10 +262,11 @@ function mainStat(p: PlayerStat): string {
   return ''
 }
 
-function PanelPlayers({ stats, schoolSlugs, playerSlugs }: {
+function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
   stats: PlayerStat[]
   schoolSlugs: Record<string, string>
   playerSlugs: Record<string, string>
+  onPlayerSelect: (slug: string) => void
 }) {
   if (stats.length === 0) return (
     <div className="flex items-center justify-center h-32 text-sm text-[var(--muted)]">No player data</div>
@@ -286,14 +287,19 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs }: {
                 const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
                 const playerSlug = playerSlugs[p.player.toLowerCase()]
                 return (
-                  <div key={i} className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--inp-bg)] transition-colors">
+                  <div
+                    key={i}
+                    className={`flex items-center gap-3 px-4 py-3 transition-colors ${playerSlug ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
+                    onClick={() => {
+                      if (!playerSlug) return
+                      onPlayerSelect(playerSlug)
+                    }}
+                  >
                     {logo
                       ? <Image src={logo} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
                       : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
                     <div className="flex-1 min-w-0">
-                      {playerSlug
-                        ? <Link href={`/player/${playerSlug}`} className="text-sm font-semibold hover:underline truncate block" style={{ color: ACCENT_COLOR }}>{p.player}</Link>
-                        : <span className="text-sm font-semibold text-[var(--txt)] truncate block">{p.player}</span>}
+                      <span className={`text-sm font-semibold truncate block ${playerSlug ? 'hover:underline' : 'text-[var(--txt)]'}`} style={playerSlug ? { color: ACCENT_COLOR } : undefined}>{p.player}</span>
                       <p className="text-xs text-[var(--muted)] truncate">{cleanName(p.team_name)}</p>
                     </div>
                     <span className="text-sm tabular-nums font-medium text-[var(--txt)] shrink-0">{mainStat(p)}</span>
@@ -310,7 +316,7 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs }: {
 
 // ── Main shell ────────────────────────────────────────────────────────────────
 
-function parseInline(text: string, playerSlugs: Record<string, string>): React.ReactNode[] {
+function parseInline(text: string, playerSlugs: Record<string, string>, gameId: number): React.ReactNode[] {
   const names = Object.keys(playerSlugs).sort((a, b) => b.length - a.length)
   const escaped = names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
   const pattern = escaped.length > 0
@@ -330,7 +336,7 @@ function parseInline(text: string, playerSlugs: Record<string, string>): React.R
       const raw = match[0]
       const slug = playerSlugs[raw.toLowerCase()]
       nodes.push(slug
-        ? <Link key={match.index} href={`/player/${slug}`} className="font-semibold text-[var(--txt)] hover:underline">{raw}</Link>
+        ? <Link key={match.index} href={`/game/${gameId}/player/${slug}`} className="font-semibold text-[var(--txt)] hover:underline">{raw}</Link>
         : <span key={match.index} className="font-semibold text-[var(--txt)]">{raw}</span>
       )
     }
@@ -340,10 +346,10 @@ function parseInline(text: string, playerSlugs: Record<string, string>): React.R
   return nodes
 }
 
-function renderHighlights(text: string, playerSlugs: Record<string, string>) {
+function renderHighlights(text: string, playerSlugs: Record<string, string>, gameId: number) {
   return text.split('\n\n').filter(Boolean).map((para, i) => (
     <p key={i} className="text-sm text-[var(--txt2)] leading-relaxed">
-      {parseInline(para, playerSlugs)}
+      {parseInline(para, playerSlugs, gameId)}
     </p>
   ))
 }
@@ -511,7 +517,7 @@ export function GameShell({
                   </div>
                   <div className="relative group">
                     <button onClick={() => setPlayerOpen(v => !v)} className={`${btn} ${playerOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><FileUser className="h-4 w-4" /></button>
-                    <span className={tip}>Player</span>
+                    <span className={tip}>Game Log</span>
                   </div>
                   <div className="relative group">
                     <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
@@ -609,7 +615,7 @@ export function GameShell({
                     <div className="h-4 bg-[var(--inp-bg)] rounded w-[75%]" />
                   </div>
                 ) : aiHighlights ? (
-                  <div className="space-y-3">{renderHighlights(aiHighlights, playerSlugs)}</div>
+                  <div className="space-y-3">{renderHighlights(aiHighlights, playerSlugs, gameIdNum)}</div>
                 ) : (
                   <p className="text-sm text-[var(--txt2)] leading-relaxed">{highlights}</p>
                 )}
@@ -622,11 +628,12 @@ export function GameShell({
 
       <PanelImage open={photoOpen} onClose={() => setPhotoOpen(false)} homeSchool={homeSchool} homeName={homeName} awaySchool={awaySchool} awayName={awayName} />
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Players">
+      <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Game Log">
         <PanelPlayers
           stats={allStats}
           schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
           playerSlugs={playerSlugs}
+          onPlayerSelect={(slug) => router.push(`/game/${gameIdNum}/player/${slug}`, { scroll: false })}
         />
       </AppPanel>
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)} countyName={`${awayName} at ${homeName}`} />

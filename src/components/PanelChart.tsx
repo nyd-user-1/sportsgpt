@@ -192,7 +192,7 @@ export function PanelChart({
   ) : 'Charts'
 
   return (
-    <AppPanel open={open} onClose={onClose} title={panelTitle}>
+    <AppPanel open={open} onClose={onClose} title={panelTitle} defaultExpanded={true}>
       {selectedSlug
         ? <ChartPanelContent slug={selectedSlug} />
         : <ChartPickerGrid onSelect={setSelectedSlug} />

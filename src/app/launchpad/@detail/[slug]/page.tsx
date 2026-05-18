@@ -51,8 +51,10 @@ export default async function TeamDetailSlot({ params }: { params: Promise<{ slu
       <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-2">
         <div className="flex items-center gap-2.5 min-w-0">
           {logo && (
-            <Image src={logo} alt="" width={36} height={36}
-              className="shrink-0 rounded-full bg-white/90 p-0.5 object-contain" unoptimized />
+            <Link href={`/team/${slug}`} className="shrink-0">
+              <Image src={logo} alt={teamName} width={36} height={36}
+                className="rounded-full bg-white/90 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all" unoptimized />
+            </Link>
           )}
           <div className="min-w-0">
             <p className="text-sm font-bold text-white leading-snug truncate">{teamName}</p>

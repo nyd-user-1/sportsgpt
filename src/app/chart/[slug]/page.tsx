@@ -98,6 +98,12 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     'pf-pa':                      [...ALL_SEASONS, 'all'],
     'win-loss-division':          ALL_SEASONS,
     'strength-of-schedule':       [...ALL_SEASONS, 'all'],
+    'scoring-offense':            [...ALL_SEASONS, 'all'],
+    'scoring-defense':            [...ALL_SEASONS, 'all'],
+    'top-scoring-games':          LAST3_SEASONS,
+    'biggest-blowouts':           LAST3_SEASONS,
+    'single-game-rushing':        LAST3_SEASONS,
+    'single-game-passing':        LAST3_SEASONS,
   }
   seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
@@ -695,6 +701,213 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
       chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="SoS %" showAvgLine />
+      break
+    }
+
+    // ── scoring-offense ───────────────────────────────────────────────────────
+    case 'scoring-offense': {
+      const rows = await sql`
+        WITH tg AS (
+          SELECT home_team_slug AS team_slug, home_score AS score, season
+          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
+          UNION ALL
+          SELECT away_team_slug, away_score, season
+          FROM games WHERE away_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
+        )
+        SELECT t.name, t.school_slug, ROUND(AVG(tg.score)::numeric,1) AS value, tg.season::text AS season
+        FROM tg JOIN teams t ON t.slug = tg.team_slug
+        WHERE t.level = 'Varsity'
+        GROUP BY t.name, t.school_slug, tg.season
+        ORDER BY tg.season, value DESC`
+
+      const seasonBarsArr = buildSeasonBars(
+        rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
+        ALL_SEASONS
+      )
+      const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
+      seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
+      seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Avg Pts/Game" />
+      break
+    }
+
+    // ── scoring-defense ───────────────────────────────────────────────────────
+    case 'scoring-defense': {
+      const rows = await sql`
+        WITH tg AS (
+          SELECT home_team_slug AS team_slug, away_score AS allowed, season
+          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
+          UNION ALL
+          SELECT away_team_slug, home_score AS allowed, season
+          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
+        )
+        SELECT t.name, t.school_slug, ROUND(AVG(tg.allowed)::numeric,1) AS value, tg.season::text AS season
+        FROM tg JOIN teams t ON t.slug = tg.team_slug
+        WHERE t.level = 'Varsity'
+        GROUP BY t.name, t.school_slug, tg.season
+        ORDER BY tg.season, value ASC`
+
+      const BOX_SEASONS = ['2023', '2024', '2025']
+      const defenseSeasonBars: SeasonBars[] = ALL_SEASONS.map(yr => {
+        const yrows = rows
+          .filter(r => String(r.season) === yr)
+          .sort((a, b) => Number(a.value) - Number(b.value))
+          .slice(0, 52)
+          .map(r => ({
+            name: String(r.name),
+            value: Number(r.value),
+            logoUrl: r.school_slug ? (SCHOOL_LOGOS[String(r.school_slug)] ?? '') : '',
+          }))
+        return { season: yr, topValue: yrows[0]?.value ?? 0, bars: yrows }
+      })
+      const allDefBars = [...rows]
+        .sort((a, b) => Number(a.value) - Number(b.value))
+        .reduce((acc: typeof defenseSeasonBars[0]['bars'], r) => {
+          const ex = acc.find(b => b.name === String(r.name))
+          if (!ex) acc.push({ name: String(r.name), value: Number(r.value), logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '' })
+          return acc
+        }, [])
+      defenseSeasonBars.push({ season: 'all', topValue: allDefBars[0]?.value ?? 0, bars: allDefBars })
+
+      seasonRows = Object.fromEntries(defenseSeasonBars.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      void BOX_SEASONS
+      chartChild = <SportsBarChartInteractive seasons={defenseSeasonBars} color="#10b981" valueLabel="Avg Pts Allowed" />
+      break
+    }
+
+    // ── top-scoring-games ─────────────────────────────────────────────────────
+    case 'top-scoring-games': {
+      const BOX_SEASONS = LAST3_SEASONS
+      const rows = await sql`
+        SELECT g.id, ht.name AS home, at2.name AS away,
+          g.home_score, g.away_score, (g.home_score + g.away_score) AS total,
+          g.season::text AS season
+        FROM games g
+        JOIN game_box_scores bs ON bs.game_id = g.id
+        JOIN teams ht ON ht.slug = g.home_team_slug
+        JOIN teams at2 ON at2.slug = g.away_team_slug
+        WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
+        ORDER BY g.season, total DESC`
+
+      const scoringGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+        const bars = rows
+          .filter(r => String(r.season) === yr)
+          .slice(0, 25)
+          .map(r => ({
+            name: `${r.home} vs ${r.away}`,
+            value: Number(r.total),
+            subtitle: `${r.home_score}–${r.away_score} · ${formatSeason(yr)}`,
+          }))
+        return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+      })
+      tableRows = scoringGameBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      seasonRows = Object.fromEntries(scoringGameBars.map(s => [s.season, s.bars]))
+      chartChild = <SportsBarChartInteractive seasons={scoringGameBars} color={config.color} valueLabel="Combined Pts" />
+      break
+    }
+
+    // ── biggest-blowouts ──────────────────────────────────────────────────────
+    case 'biggest-blowouts': {
+      const BOX_SEASONS = LAST3_SEASONS
+      const rows = await sql`
+        SELECT g.id,
+          ABS(g.home_score - g.away_score) AS margin,
+          CASE WHEN g.home_score > g.away_score THEN ht.name ELSE at2.name END AS winner,
+          CASE WHEN g.home_score > g.away_score THEN at2.name ELSE ht.name END AS loser,
+          CASE WHEN g.home_score > g.away_score THEN g.home_score ELSE g.away_score END AS winner_score,
+          CASE WHEN g.home_score > g.away_score THEN g.away_score ELSE g.home_score END AS loser_score,
+          g.season::text AS season
+        FROM games g
+        JOIN game_box_scores bs ON bs.game_id = g.id
+        JOIN teams ht ON ht.slug = g.home_team_slug
+        JOIN teams at2 ON at2.slug = g.away_team_slug
+        WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
+        ORDER BY g.season, margin DESC`
+
+      const blowoutBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+        const bars = rows
+          .filter(r => String(r.season) === yr)
+          .slice(0, 25)
+          .map(r => ({
+            name: `${r.winner} def. ${r.loser}`,
+            value: Number(r.margin),
+            subtitle: `${r.winner_score}–${r.loser_score} · ${formatSeason(yr)}`,
+          }))
+        return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+      })
+      tableRows = blowoutBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      seasonRows = Object.fromEntries(blowoutBars.map(s => [s.season, s.bars]))
+      chartChild = <SportsBarChartInteractive seasons={blowoutBars} color={config.color} valueLabel="Point Margin" />
+      break
+    }
+
+    // ── single-game-rushing ───────────────────────────────────────────────────
+    case 'single-game-rushing': {
+      const BOX_SEASONS = LAST3_SEASONS
+      const rows = await sql`
+        SELECT s->>'player' AS player, (s->>'yds')::int AS yds,
+          s->>'team_name' AS team_name, g.season::text AS season
+        FROM game_box_scores bs
+        JOIN games g ON g.id = bs.game_id,
+        LATERAL jsonb_array_elements(bs.player_stats) s
+        WHERE s->>'stat_type' = 'Rushing'
+          AND (s->>'yds') IS NOT NULL AND (s->>'yds')::int > 0
+          AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
+        ORDER BY g.season, (s->>'yds')::int DESC`
+
+      const rushingGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+        const bars = rows
+          .filter(r => String(r.season) === yr)
+          .slice(0, 25)
+          .map(r => ({
+            name: String(r.player),
+            value: Number(r.yds),
+            subtitle: String(r.team_name ?? '') + ' · ' + formatSeason(yr),
+          }))
+        return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+      })
+      tableRows = rushingGameBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      seasonRows = Object.fromEntries(rushingGameBars.map(s => [s.season, s.bars]))
+      chartChild = <SportsBarChartInteractive seasons={rushingGameBars} color={config.color} valueLabel="Rush Yards" />
+      break
+    }
+
+    // ── single-game-passing ───────────────────────────────────────────────────
+    case 'single-game-passing': {
+      const BOX_SEASONS = LAST3_SEASONS
+      const rows = await sql`
+        SELECT s->>'player' AS player, (s->>'yds')::int AS yds,
+          s->>'team_name' AS team_name, g.season::text AS season
+        FROM game_box_scores bs
+        JOIN games g ON g.id = bs.game_id,
+        LATERAL jsonb_array_elements(bs.player_stats) s
+        WHERE s->>'stat_type' = 'Passing'
+          AND (s->>'yds') IS NOT NULL AND (s->>'yds')::int > 0
+          AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
+        ORDER BY g.season, (s->>'yds')::int DESC`
+
+      const passingGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+        const bars = rows
+          .filter(r => String(r.season) === yr)
+          .slice(0, 25)
+          .map(r => ({
+            name: String(r.player),
+            value: Number(r.yds),
+            subtitle: String(r.team_name ?? '') + ' · ' + formatSeason(yr),
+          }))
+        return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+      })
+      tableRows = passingGameBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      seasonRows = Object.fromEntries(passingGameBars.map(s => [s.season, s.bars]))
+      chartChild = <SportsBarChartInteractive seasons={passingGameBars} color={config.color} valueLabel="Pass Yards" />
       break
     }
 

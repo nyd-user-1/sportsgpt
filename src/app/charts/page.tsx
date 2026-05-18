@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { AppLayout } from '@/components/AppLayout'
+import { useRouter, usePathname } from 'next/navigation'
 import {
   MiniBarChart,
   MiniStackedBarChart,
@@ -9,7 +8,6 @@ import {
   MiniScatterChart,
   MiniHorizontalStackedBar,
 } from '@/components/MiniCharts'
-import { PanelChart } from '@/components/PanelChart'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // Standard descending-bar previews
@@ -26,6 +24,12 @@ const BAR_PREVIEW: Record<string, number[]> = {
   'total-tds-leaders':           [28, 25, 22, 19, 17, 15, 13, 12, 10, 9],
   'total-yards-leaders':         [3800, 3400, 3050, 2750, 2500, 2250, 2000, 1780, 1580, 1400],
   'total-points-leaders':        [168, 150, 132, 114, 102, 90, 78, 72, 66, 54],
+  'scoring-offense':             [38, 36, 34, 32, 30, 28, 27, 25, 24, 22],
+  'scoring-defense':             [6, 8, 10, 12, 14, 16, 18, 20, 22, 25],
+  'top-scoring-games':           [113, 108, 103, 98, 94, 90, 86, 82, 78, 74],
+  'biggest-blowouts':            [63, 57, 54, 49, 46, 43, 40, 37, 34, 31],
+  'single-game-rushing':         [361, 345, 320, 298, 275, 252, 230, 210, 192, 175],
+  'single-game-passing':         [420, 395, 368, 342, 318, 295, 274, 255, 238, 222],
 }
 
 const PLACEHOLDER_BARS = [80, 72, 65, 58, 52, 46, 40, 34, 28, 22]
@@ -123,29 +127,29 @@ const ROWS: { label: string; charts: RowItem[] }[] = [
     ],
   },
   {
-    label: 'Advanced Metrics',
+    label: 'Game Records & Scoring',
     charts: [
-      { slug: '__eff',  title: 'Scoring Efficiency',  placeholder: true },
-      { slug: '__to',   title: 'Turnover Margin',     placeholder: true },
-      { slug: '__ypc',  title: 'Yards Per Carry',     placeholder: true },
-      { slug: '__cmp',  title: 'Completion Rate',     placeholder: true },
-      { slug: '__ppg',  title: 'Points Per Game',     placeholder: true },
-      { slug: '__ypa',  title: 'Yards Per Attempt',   placeholder: true },
+      'scoring-offense',
+      'scoring-defense',
+      'top-scoring-games',
+      'biggest-blowouts',
+      'single-game-rushing',
+      'single-game-passing',
     ],
   },
 ]
 
 export default function ChartsPage() {
-  const [panelOpen, setPanelOpen] = useState(false)
-  const [activeSlug, setActiveSlug] = useState<string | null>(null)
+  const router   = useRouter()
+  const pathname = usePathname()
+  const match    = pathname.match(/^\/charts\/(.+)$/)
+  const activeSlug = match ? match[1] : null
 
   function openChart(slug: string) {
-    setActiveSlug(slug)
-    setPanelOpen(true)
+    router.push(`/charts/${slug}`, { scroll: false })
   }
 
   return (
-    <AppLayout showNavArrows>
       <div className="flex-1 overflow-y-auto no-scrollbar">
         <div className="p-4 space-y-8">
           {ROWS.map(row => (
@@ -157,7 +161,7 @@ export default function ChartsPage() {
                 {row.charts.map(item => {
                   if (typeof item === 'string') {
                     const chart = CHART_CONFIGS.find(c => c.slug === item)!
-                    const isActive = item === activeSlug && panelOpen
+                    const isActive = item === activeSlug
                     return (
                       <button
                         key={item}
@@ -205,7 +209,5 @@ export default function ChartsPage() {
         </div>
       </div>
 
-      <PanelChart open={panelOpen} onClose={() => setPanelOpen(false)} activeSlug={activeSlug} />
-    </AppLayout>
   )
 }

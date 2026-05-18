@@ -87,7 +87,7 @@ export default async function GameDetailSlot({
   const arrowCls = 'absolute top-1/2 -translate-y-1/2 z-20 h-8 w-8 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 text-white transition-colors'
 
   return (
-    <div className="h-full relative overflow-hidden">
+    <div className="group/card h-full relative overflow-hidden">
 
       {/* Split photo background */}
       <div className="absolute inset-0 flex">
@@ -115,6 +115,9 @@ export default async function GameDetailSlot({
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-[1]" />
+
+      {/* Full-image link to game page — sits above dark overlay, below interactive elements */}
+      <Link href={`/game/${gameId}`} className="absolute inset-0 z-[5]" aria-label={`View game: ${homeName} vs ${awayName}`} />
 
       {/* Prev arrow */}
       {prevId && (
@@ -155,24 +158,32 @@ export default async function GameDetailSlot({
         </Link>
       </div>
 
-      {/* Home team overlay — bottom left */}
-      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2">
-        {homeLogo && (
-          <Image src={homeLogo} alt="" width={32} height={32}
-            className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
-        )}
+      {/* Home team overlay — bottom left, revealed on hover */}
+      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+        <Link href={`/team/${homeSlug}`} className="shrink-0">
+          {homeLogo ? (
+            <Image src={homeLogo} alt={homeName} width={32} height={32}
+              className="rounded-full bg-white/90 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all" unoptimized />
+          ) : (
+            <div className="h-8 w-8 rounded-full bg-white/20 border border-white/30" />
+          )}
+        </Link>
         <div>
           <p className="text-[10px] uppercase tracking-wider text-white/50">Home</p>
           <p className="text-xs font-bold text-white leading-snug">{homeName}</p>
         </div>
       </div>
 
-      {/* Away team overlay — bottom right */}
-      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse">
-        {awayLogo && (
-          <Image src={awayLogo} alt="" width={32} height={32}
-            className="rounded-full bg-white/90 p-0.5 object-contain shrink-0" unoptimized />
-        )}
+      {/* Away team overlay — bottom right, revealed on hover */}
+      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+        <Link href={`/team/${awaySlug}`} className="shrink-0">
+          {awayLogo ? (
+            <Image src={awayLogo} alt={awayName} width={32} height={32}
+              className="rounded-full bg-white/90 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all" unoptimized />
+          ) : (
+            <div className="h-8 w-8 rounded-full bg-white/20 border border-white/30" />
+          )}
+        </Link>
         <div className="text-right">
           <p className="text-[10px] uppercase tracking-wider text-white/50">Away</p>
           <p className="text-xs font-bold text-white leading-snug">{awayName}</p>

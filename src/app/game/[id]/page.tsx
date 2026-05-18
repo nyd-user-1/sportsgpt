@@ -1,25 +1,6 @@
 import { sql } from '@/lib/db'
 import { notFound } from 'next/navigation'
-import { unstable_cache } from 'next/cache'
-import Anthropic from '@anthropic-ai/sdk'
 import { GameShell } from './GameShell'
-
-const anthropic = new Anthropic()
-
-const rewriteHighlights = unstable_cache(
-  async (gameId: number, raw: string): Promise<string> => {
-    const msg = await anthropic.messages.create({
-      model: 'claude-haiku-4-5',
-      max_tokens: 1024,
-      system: 'You are a high school sports beat reporter. Rewrite the following game summary in a vivid, engaging voice — active verbs, player-first storytelling, sense of atmosphere. 2-3 short paragraphs. End with the final score bolded in markdown. Keep all stats accurate.',
-      messages: [{ role: 'user', content: raw }],
-    })
-    const block = msg.content.find(b => b.type === 'text')
-    return block?.type === 'text' ? block.text : raw
-  },
-  ['highlight'],
-  { revalidate: false }
-)
 
 export const dynamic = 'force-dynamic'
 
@@ -74,12 +55,6 @@ export default async function GamePage({
   const prevGameId = ids[(cur - 1 + ids.length) % ids.length] ?? null
   const nextGameId = ids[(cur + 1) % ids.length] ?? null
 
-  // Rewrite highlights with beat-reporter voice (cached permanently per game)
-  const rawHighlights = boxRows[0]?.highlights as string | null | undefined
-  const rewrittenHighlights = rawHighlights
-    ? await rewriteHighlights(gameId, rawHighlights)
-    : null
-
   // Player slug lookup for both teams
   const playerRows = await sql`
     SELECT name, slug FROM players
@@ -99,7 +74,6 @@ export default async function GamePage({
       nextGameId={nextGameId ?? null}
       refSlug={refSlug}
       playerSlugs={playerSlugs}
-      rewrittenHighlights={rewrittenHighlights}
     />
   )
 }

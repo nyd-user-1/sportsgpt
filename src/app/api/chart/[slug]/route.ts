@@ -279,6 +279,136 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
         return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: ['2023','2024','2025'], valueLabel: 'Differential' })
       }
 
+      case 'scoring-offense': {
+        const rows = await sql`
+          WITH tg AS (
+            SELECT home_team_slug AS team_slug, home_score AS score, season FROM games WHERE home_score IS NOT NULL AND season IN (2021,2022,2023,2024,2025)
+            UNION ALL SELECT away_team_slug, away_score, season FROM games WHERE away_score IS NOT NULL AND season IN (2021,2022,2023,2024,2025)
+          )
+          SELECT t.name, ROUND(AVG(tg.score)::numeric,1) AS value, tg.season::text AS season
+          FROM tg JOIN teams t ON t.slug = tg.team_slug WHERE t.level = 'Varsity'
+          GROUP BY t.name, tg.season ORDER BY tg.season, value DESC`
+        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2021','2022','2023','2024','2025'])
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: ['2021','2022','2023','2024','2025'], valueLabel: 'Avg Pts/Game' })
+      }
+
+      case 'scoring-defense': {
+        const rows = await sql`
+          WITH tg AS (
+            SELECT home_team_slug AS team_slug, away_score AS allowed, season FROM games WHERE home_score IS NOT NULL AND season IN (2021,2022,2023,2024,2025)
+            UNION ALL SELECT away_team_slug, home_score AS allowed, season FROM games WHERE home_score IS NOT NULL AND season IN (2021,2022,2023,2024,2025)
+          )
+          SELECT t.name, ROUND(AVG(tg.allowed)::numeric,1) AS value, tg.season::text AS season
+          FROM tg JOIN teams t ON t.slug = tg.team_slug WHERE t.level = 'Varsity'
+          GROUP BY t.name, tg.season ORDER BY tg.season, value ASC`
+        const seasons = ['2021','2022','2023','2024','2025']
+        const seasonBars = seasons.map(yr => {
+          const bars = rows
+            .filter(r => String(r.season) === yr)
+            .sort((a, b) => Number(a.value) - Number(b.value))
+            .slice(0, 25)
+            .map(r => ({ name: String(r.name), value: Number(r.value) }))
+          return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+        })
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasons, valueLabel: 'Avg Pts Allowed' })
+      }
+
+      case 'top-scoring-games': {
+        const rows = await sql`
+          SELECT g.id, ht.name AS home, at2.name AS away,
+            g.home_score, g.away_score, (g.home_score + g.away_score) AS total,
+            g.season::text AS season
+          FROM games g
+          JOIN game_box_scores bs ON bs.game_id = g.id
+          JOIN teams ht ON ht.slug = g.home_team_slug
+          JOIN teams at2 ON at2.slug = g.away_team_slug
+          WHERE g.home_score IS NOT NULL AND g.season IN (2023,2024,2025)
+          ORDER BY g.season, total DESC`
+        const seasons = ['2023','2024','2025']
+        const seasonBars = seasons.map(yr => {
+          const bars = rows
+            .filter(r => String(r.season) === yr)
+            .slice(0, 25)
+            .map(r => ({ name: `${r.home} vs ${r.away}`, value: Number(r.total) }))
+          return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+        })
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasons, valueLabel: 'Combined Pts' })
+      }
+
+      case 'biggest-blowouts': {
+        const rows = await sql`
+          SELECT g.id,
+            ABS(g.home_score - g.away_score) AS margin,
+            CASE WHEN g.home_score > g.away_score THEN ht.name ELSE at2.name END AS winner,
+            CASE WHEN g.home_score > g.away_score THEN at2.name ELSE ht.name END AS loser,
+            g.season::text AS season
+          FROM games g
+          JOIN game_box_scores bs ON bs.game_id = g.id
+          JOIN teams ht ON ht.slug = g.home_team_slug
+          JOIN teams at2 ON at2.slug = g.away_team_slug
+          WHERE g.home_score IS NOT NULL AND g.season IN (2023,2024,2025)
+          ORDER BY g.season, margin DESC`
+        const seasons = ['2023','2024','2025']
+        const seasonBars = seasons.map(yr => {
+          const bars = rows
+            .filter(r => String(r.season) === yr)
+            .slice(0, 25)
+            .map(r => ({ name: `${r.winner} def. ${r.loser}`, value: Number(r.margin) }))
+          return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+        })
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasons, valueLabel: 'Point Margin' })
+      }
+
+      case 'single-game-rushing': {
+        const rows = await sql`
+          SELECT s->>'player' AS player, (s->>'yds')::int AS yds,
+            s->>'team_name' AS team_name, g.season::text AS season
+          FROM game_box_scores bs
+          JOIN games g ON g.id = bs.game_id,
+          LATERAL jsonb_array_elements(bs.player_stats) s
+          WHERE s->>'stat_type' = 'Rushing'
+            AND (s->>'yds') IS NOT NULL AND (s->>'yds')::int > 0
+            AND g.season IN (2023,2024,2025)
+          ORDER BY g.season, yds DESC`
+        const seasons = ['2023','2024','2025']
+        const seasonBars = seasons.map(yr => {
+          const bars = rows
+            .filter(r => String(r.season) === yr)
+            .slice(0, 25)
+            .map(r => ({ name: String(r.player), value: Number(r.yds) }))
+          return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+        })
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasons, valueLabel: 'Rush Yards' })
+      }
+
+      case 'single-game-passing': {
+        const rows = await sql`
+          SELECT s->>'player' AS player, (s->>'yds')::int AS yds,
+            s->>'team_name' AS team_name, g.season::text AS season
+          FROM game_box_scores bs
+          JOIN games g ON g.id = bs.game_id,
+          LATERAL jsonb_array_elements(bs.player_stats) s
+          WHERE s->>'stat_type' = 'Passing'
+            AND (s->>'yds') IS NOT NULL AND (s->>'yds')::int > 0
+            AND g.season IN (2023,2024,2025)
+          ORDER BY g.season, yds DESC`
+        const seasons = ['2023','2024','2025']
+        const seasonBars = seasons.map(yr => {
+          const bars = rows
+            .filter(r => String(r.season) === yr)
+            .slice(0, 25)
+            .map(r => ({ name: String(r.player), value: Number(r.yds) }))
+          return { season: yr, topValue: bars[0]?.value ?? 0, bars }
+        })
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasons, valueLabel: 'Pass Yards' })
+      }
+
       case 'team-scoring-avg': {
         const rows = await sql`
           WITH tg AS (

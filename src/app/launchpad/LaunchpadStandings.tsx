@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -45,6 +46,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   const router       = useRouter()
   const pathname     = usePathname()
   const searchParams = useSearchParams()
+  const tableRef     = useRef<HTMLDivElement>(null)
 
   const parts = pathname.split('/').filter(Boolean)
   const selectedSlug = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game') ? parts[1] : null
@@ -53,10 +55,41 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null
   const filtered  = activeDivision ? rows.filter(r => r.division === activeDivision) : rows
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return
+      const tag = (e.target as HTMLElement).tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return
+
+      const curIdx = selectedSlug ? filtered.findIndex(r => r.slug === selectedSlug) : -1
+      if (curIdx === -1 && !selectedSlug) return
+
+      e.preventDefault()
+      const nextIdx = e.key === 'ArrowDown'
+        ? Math.min(curIdx + 1, filtered.length - 1)
+        : Math.max(curIdx - 1, 0)
+
+      const next = filtered[nextIdx]
+      if (!next || next.slug === selectedSlug) return
+
+      const qs = searchParams.toString()
+      router.push(`/launchpad/${next.slug}${qs ? `?${qs}` : ''}`, { scroll: false })
+
+      // Scroll row into view within the table container
+      requestAnimationFrame(() => {
+        const el = tableRef.current?.querySelector(`[data-slug="${next.slug}"]`)
+        el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+      })
+    }
+
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [selectedSlug, filtered, router, searchParams])
+
   return (
     <div className="w-[55%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
       {/* Table */}
-      <div className="overflow-y-auto no-scrollbar flex-1">
+      <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10 bg-[var(--surface)]">
             <tr className="border-b border-[var(--border)]">
@@ -69,6 +102,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
             {filtered.map((t, i) => (
               <tr
                 key={t.slug}
+                data-slug={t.slug}
                 onClick={() => { const qs = searchParams.toString(); router.push(`/launchpad/${t.slug}${qs ? `?${qs}` : ''}`, { scroll: false }) }}
                 className={cn(
                   'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',

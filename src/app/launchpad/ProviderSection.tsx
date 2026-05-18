@@ -98,7 +98,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   return (
     <div>
       {/* Season tabs */}
-      <div className="sticky top-0 z-10 bg-white -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
+      <div className="sticky top-0 z-10 bg-[var(--surface)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
         {SEASONS.map((s, i) => (
           <button key={s} onClick={() => handleSeason(i)}
             className={cn(

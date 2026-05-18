@@ -58,6 +58,7 @@ interface Props {
   seasonRows?: Record<string, StdRow[]>
   valueLabel?: string
   showRank?: boolean
+  panelMode?: boolean
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -71,6 +72,7 @@ export function ChartDetailPage({
   seasonRows,
   valueLabel,
   showRank,
+  panelMode,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -166,9 +168,8 @@ export function ChartDetailPage({
     fontSize: '12px',
   }
 
-  return (
-    <AppLayout>
-      <div className="flex-1 flex flex-col overflow-hidden">
+  const inner = (
+      <div className={panelMode ? 'flex flex-col' : 'flex-1 flex flex-col overflow-hidden'}>
 
         {/* ── Header band — only renders when inline chart or filters are present ── */}
         {(!children || config.filters?.length || config.periodToggle) && (
@@ -244,7 +245,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
                     filter === f.key
-                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>{f.label}</button>
               ))}
@@ -256,7 +257,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize',
                     period === p
-                      ? 'text-[var(--txt)] border border-sky-500/50 bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-sky-500/50 bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>{p}</button>
               ))}
@@ -283,7 +284,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
                     activeSeason === yr
-                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>
                   {formatSeason(yr)}
@@ -455,6 +456,6 @@ export function ChartDetailPage({
           )}
         </div>
       </div>
-    </AppLayout>
   )
+  return panelMode ? inner : <AppLayout>{inner}</AppLayout>
 }
