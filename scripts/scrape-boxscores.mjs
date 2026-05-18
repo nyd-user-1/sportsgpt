@@ -39,7 +39,12 @@ async function fetchHtml(url) {
 }
 
 async function getTeamGames(teamSlug) {
-  const url = `${BASE}/sports/highschool/team/football/${teamSlug}`
+  // Current season: no suffix. Prior seasons: append /{endCalendarYear}
+  // e.g. 2025-26 season (DB season=2025) → no suffix (current)
+  //      2024-25 season (DB season=2024) → /2025
+  //      2023-24 season (DB season=2023) → /2024
+  const seasonSuffix = season === '2025' ? '' : `/${parseInt(season) + 1}`
+  const url = `${BASE}/sports/highschool/team/football/${teamSlug}${seasonSuffix}`
   console.log(`Fetching team page: ${url}`)
   const html = await fetchHtml(url)
   const $    = cheerio.load(html)

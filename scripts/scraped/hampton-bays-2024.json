@@ -1,0 +1,1284 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 40,
+    "gameId": "7250",
+    "box": {
+      "gameId": "7250",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "14",
+          "q2": "19",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 40, Hampton Bays 12: Sean Casey rushed for 132 yards and three touchdowns on nine carries and returned two kickoffs for touchdowns to lead host Shoreham-Wading River in a Suffolk IV opener. Noah Gregorek completed 8 of 9 passes for 102 yards and a 7-yard TD pass to Michael Iberger. Michael Single ran for a 41-yard touchdown and Nathan Donahue had a 5-yard rushing touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 16,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "att": 3,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 9,
+            "yds": 132,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "att": 1,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Lucas Diamond",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 5,
+            "comp": 4,
+            "yds": 49,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 9,
+            "comp": 8,
+            "yds": 102,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kyler Kuck",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/20/2024",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": true,
+    "result": "W",
+    "myScore": 25,
+    "oppScore": 36,
+    "gameId": "6988",
+    "box": {
+      "gameId": "6988",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "13",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "6",
+          "q2": "16",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 14,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Michael DeNicola",
+            "att": 10,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Kenny McGunnigle",
+            "att": 5,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Matt McGunnigle",
+            "att": 12,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Chris Palencia",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 14,
+            "comp": 8,
+            "yds": 139,
+            "tds": 3,
+            "int": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Michael DeNicola",
+            "att": 9,
+            "comp": 6,
+            "yds": 127,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 5,
+            "yds": 104,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Taiquan Brumsey",
+            "rec": 3,
+            "yds": 72,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Luke Weir",
+            "rec": 2,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Ethan Linker",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Taiquan Brumsey",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "James Felakos",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Matt McGunnigle",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Wyandanch",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 6,
+    "gameId": "7002",
+    "box": {
+      "gameId": "7002",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "14",
+          "q2": "12",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hampton Bays 38, Wyandanch 6: Nate Donahue rushed for 86 yards and four touchdowns and had a forced fumble to lead host Hampton Bays (1-2) in Suffolk IV. Cj Seymore rushed for 93 yards and one touchdown and Michael Single added a 25-yard touchdown run, two interceptions and one forced fumble. Owen Haynes had one interception and one fumble recovery, Hunter Halsey had one interception and Kade Arkinson had one fumble recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 0,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 15,
+            "yds": 86,
+            "tds": 4
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "att": 0,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 5,
+            "comp": 4,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Hunter Halsey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Kade  Arkinson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 14,
+    "gameId": "6867",
+    "box": {
+      "gameId": "6867",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 14, Hampton Bays 0: Shane Gallagher had a 32-yard touchdown reception from Richard Roberts in the first quarter and Brayden Hromada had a 58-yard touchdown run in the fourth quarter for Center Moriches (2-2) in Suffolk IV. Dan Heller had three sacks, Hromada had 12 tackles and Mike Gold and Gallagher each had an interception in the shutout. Hampton Bays falls to 1-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Dennis Hayes",
+            "att": 13,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 4,
+            "yds": 76,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Rich Roberts",
+            "att": 11,
+            "comp": 5,
+            "yds": 95,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane  Gallagher",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Dan Heller",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nate Davis",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jeremy  Barada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane  Gallagher",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Michael Gold",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 47,
+    "gameId": "6999",
+    "box": {
+      "gameId": "6999",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "6",
+          "q2": "28",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 47, Hampton Bays 0: KaRahn King had 200 all-purpose yards and three touchdowns and Cole Madden completed 13 of 14 passes for 150 yards and two TDs to lead visiting Glenn (2-3) in Suffolk IV. Jayce Boyle-Summers returned and interception 70 yards for a TD and Joe LaMay and Keith King each added an interception. Joe Competiello caught five passes for 47 yards and a score. Anthony Soto and Grayden Aebisher each added a TD run. Hampton Bays is 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 6,
+            "yds": 117,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 1,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "att": 4,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 3,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 9,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 14,
+            "comp": 13,
+            "yds": 150,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 1,
+            "comp": 1,
+            "yds": 2,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 11,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 3,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 5,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Justus Awadalla",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jace Boyles Summers",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Southampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 14,
+    "gameId": "7001",
+    "box": {
+      "gameId": "7001",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Southampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "14",
+          "q2": "12",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hampton Bays 39, Southampton 14: Nate Donahue rushed for 91 yards and three touchdowns on four carries, completed 7 of 12 passes for 111 yards and a touchdown and had six tackles to lead host Hampton Bays (2-4) in Suffolk IV. CJ Seymore added 92 yards and a touchdown on nine carries, Brayden Talmage had three receptions for 55 yards and a touchdown and Michael Single had three receptions for 53 yards and a fumble recovery for a touchdown. Gabriel DiFrancesco also had a fumble recovery and Peter Scelfo had six tackles and a fumble recovery. Southampton falls to 0-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 9,
+            "yds": 92,
+            "tds": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 4,
+            "yds": 91,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 12,
+            "comp": 7,
+            "yds": 111,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 3,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 3,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 35,
+    "gameId": "7138",
+    "box": {
+      "gameId": "7138",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "14",
+          "q2": "21",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 35, Hampton Bays 12: Max Sorrentino completed all eight of his passes for 211 yards and three touchdowns to lead host Mt. Sinai (4-3) in Suffolk IV. Logan Geraghty had 197 all-purpose yards, two touchdowns, eight tackles, an interception and a forced fumble. John Pramataris caught a touchdown pass and added a TD run and Ryan Filippi had a TD catch. Ethan Arita had seven tackles. Nathan Donahue had TD runs of 21 and 63 yards for Hampton Bays (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 13,
+            "yds": 145,
+            "tds": 2
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan Geraghty",
+            "att": 5,
+            "yds": 83,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "att": 6,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Danny Paolella",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent  Cardone",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Hunter Pancir",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 9,
+            "comp": 6,
+            "yds": 61,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 8,
+            "comp": 8,
+            "yds": 211,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 4,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan Geraghty",
+            "rec": 2,
+            "yds": 105,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "rec": 3,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Marcus Maglore",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "rec": 1,
+            "yds": 7,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Arda Dincer",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Alex Bottomley",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan Geraghty",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Port Jefferson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 28,
+    "gameId": "7000",
+    "box": {
+      "gameId": "7000",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "7",
+          "q2": "27",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hampton Bays 48, Port Jefferson 28: Nate Donahue had 242 all-purpose yards and six total touchdowns to lead Hampton Bays (3-5) in Suffolk IV. Donahue rushed for 112 yards on nine carries and four touchdowns. He also completed seven of his nine passes for 130 yards and two touchdowns. On the defensive end he made five tackles and had an interception. CJ Seymore rushed for 92 yards on 10 carries and a touchdown. Brayden Talmage had five receptions for 65 yards and a touchdown. Michael Single caught two passes for 65 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 9,
+            "yds": 112,
+            "tds": 4
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 10,
+            "yds": 92,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 9,
+            "comp": 7,
+            "yds": 130,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 5,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -56,9 +56,11 @@ export default async function LaunchpadLayout({
             <Suspense fallback={null}>
               {children}
             </Suspense>
-            <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
-              {detail}
-            </div>
+            <Suspense fallback={null}>
+              <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+                {detail}
+              </div>
+            </Suspense>
           </div>
 
           {/* Game cards section */}

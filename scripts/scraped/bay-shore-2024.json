@@ -1,0 +1,926 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Whitman",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 22,
+    "gameId": "6820",
+    "box": {
+      "gameId": "6820",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "2",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 22, Bay Shore 7: Xavier Ali opened the scoring with a sack in the end zone resulting in a safety and finished with 11 tackles, three sacks and four tackles for loss to lead Whitman in its Suffolk I opener. Ryan Downes rushed for 109 yards on 17 carries and a touchdown. Jonas Templeton had 79 yards on 15 carries. Dylan Kollmer went 7-for-13 for 104 yards and a touchdown to Aiden Jorgensen. Downes and Joshir Lyons each had an interception and Matt Gervasio added 12 tackles. Mike Mannino made two field goals of 46 and 21 yards and kicked two extra points.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 17,
+            "yds": 109,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonas Templeton",
+            "att": 15,
+            "yds": 79,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Matt Gervasio",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 15,
+            "yds": 60,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 13,
+            "comp": 7,
+            "yds": 104,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 3,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 2,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 14,
+    "gameId": "6817",
+    "box": {
+      "gameId": "6817",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 27, Brentwood 14: Jaden Jean rushed for 102 yards and two touchdowns and had eight tackles, including two for a loss and a sack to lead host Bay Shore (1-1). Joshua Holliman returned an interception 40 yards for a TD and Eriq St. Louis threw a 23-yard score to Xavier Hector. James Sobotka had 123 all-purpose yards and an interception. Cato Thomas had a sack and a fumble recovery. Chris Peralta had two rushing TDs for Brentwood (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 10,
+            "yds": 103,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 14,
+            "yds": 102,
+            "tds": 2
+          },
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "att": 0,
+            "yds": 50,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 16,
+            "comp": 6,
+            "yds": 72,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 31,
+    "gameId": "7227",
+    "box": {
+      "gameId": "7227",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "17",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 31, Bay Shore 6: Lucas Singleton rushed for 72 yards and three touchdowns on 12 carries to lead Sachem North (1-2) in Suffolk I. He also had two interceptions. He also had a 49-yard reception. Henry Sarro caught a 47-yard touchdown pass from Luke LaRocca and Zach DeMilt kicked a 44-yard field goal. Bay Shore is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 15,
+            "yds": 43,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 43,
+    "gameId": "6818",
+    "box": {
+      "gameId": "6818",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "20",
+          "q2": "0",
+          "q3": "7",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 43, Bay Shore 21: Vincent Feraca completed 17 of 29 passes for 324 yards and four touchdowns to lead Connetquot (3-1) in Suffolk I. Andrew Amarando caught eight passes for 152 yards and two TDs. Javon Barnwell ran for two TDs and caught a 40-yard score. Kyle McLaughlin added a 55-yard TD reception. Reid Harvey had 11 tackles and Camryn D'Ambrosio had 10 tackles, including three for a loss and one for a safety. Brandon Hunter returned a kickoff 85 yards for a TD for Bay Shore (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 14,
+            "yds": 47,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 32,
+            "yds": 88,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 28,
+            "comp": 17,
+            "yds": 324,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 8,
+            "yds": 152,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 0,
+    "gameId": "6873",
+    "box": {
+      "gameId": "6873",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "19",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 40, Central Islip 0: Jayden Jean and Cato Thomas combined to rush for 274 yards and three touchdowns as Bay Shore rushed for 301 yards and had 478 yards of total offense in Suffolk I. Xavier Hector had three touchdown passes and Eriq St. Louis had five receptions for 85 yards and two touchdowns for Bay Shore (2-3). Central Islip falls to 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 22,
+            "yds": 193,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 14,
+    "gameId": "7178",
+    "box": {
+      "gameId": "7178",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "12",
+          "q2": "0",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 27, Patchogue-Medford 14: Jayden Jean ran 25 times for 174 yards and two touchdowns to lead Bay Shore (3-3). Both of Jean's TDs, from 14 and 1 yard out, came in the first quarter and propelled the Marauders to a 12-0 lead. Eriq St. Louis had a 75-yard TD reception from Xavier Hector in the third quarter and the two-point conversion stretched the lead to 20-7. Hector hit James Sobotka for a 25-yard score in the fourth. Sobotka also had an interception. Brett Rupolo ran for one touchdown and threw for another for Patchogue-Medford (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 25,
+            "yds": 174,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "6819",
+    "box": {
+      "gameId": "6819",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore defeated Riverhead, 35-7, in Suffolk Division I football.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 26,
+            "yds": 171,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "7303",
+    "box": {
+      "gameId": "7303",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 41, Bay Shore 7: Joey Benedetto rushed for 251 yards and three touchdowns on 17 carries to lead host Ward Melville in Suffolk I. Benedetto had touchdown runs of 28, 97 and 5 yards. Ward Melville (7-1) rushed for 369 yards on 31 carries, averaging 11.9 yards per attempt. Hudson Philbrick threw for two touchdowns, a 29-yard pass to Jesse Spronck and a 24-yard toss to Logan Seta. JJ Alcindor had five carries for 86 yards and a touchdown. Joey Karpowicz had three interceptions. Xavier Hector threw a 14-yard touchdown pass to Nehemiah Wilkinson for Bay Shore (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 17,
+            "yds": 251,
+            "tds": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "att": 5,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "George Cosentino",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jaylen Thomas",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tyler Blasco",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 6,
+            "comp": 4,
+            "yds": 81,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Logan Seta",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Matt Hubbard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

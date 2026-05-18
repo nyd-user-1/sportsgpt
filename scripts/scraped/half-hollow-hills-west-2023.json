@@ -1,0 +1,2013 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/02/2023",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 20,
+    "gameId": "6382",
+    "box": {
+      "gameId": "6382",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "14",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 42, East Hampton/Bridgehampton 20: Joseph Filardi threw for 255 yards and four touchdowns and rushed for 52 yards and two touchdowns to lead Half Hollow Hills West (1-0) over East Hampton/Bridgehampton (0-1) in Suffolk III. Anthony Raio had 168 yards and two touchdowns on five receptions. Michael Redd and Jesse Brook each had a receiving touchdown. Matt Louie made 10 tackles and one for a loss, and Connor McLees made 10 tackles and two for a loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 7,
+            "yds": 52,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "att": 2,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 17,
+            "comp": 10,
+            "yds": 265,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 5,
+            "yds": 168,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 1,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 4,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Rayan Azfal",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 33,
+    "gameId": "6385",
+    "box": {
+      "gameId": "6385",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "13",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "6",
+          "q2": "15",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 48, East Islip 33: Joseph Filardi was 28-for-42 for 531 yards and seven touchdowns to lead Half Hollow Hills West in Suffolk III.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 22,
+            "yds": 162,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Parker",
+            "att": 17,
+            "yds": 144,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 9,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 18,
+            "comp": 12,
+            "yds": 103,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 42,
+            "comp": 28,
+            "yds": 531,
+            "tds": 7,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Matt Mcintee",
+            "rec": 7,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Parker",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Ferraro",
+            "rec": 3,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 9,
+            "yds": 202,
+            "tds": 2,
+            "pat": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 10,
+            "yds": 192,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 3,
+            "yds": 111,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Rayan Azfal",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 22,
+    "gameId": "6409",
+    "box": {
+      "gameId": "6409",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 42, Amityville 22: Joseph Filardi went 19-for-25 for 354 yards and five touchdowns to lead Half Hollow Hills West (3-0) in Suffolk III. Filardi threw to Jesse Brooks for 60- and 65-yard scores. Brooks finished with seven catches for 162 yards and three TDs, and Anthony Raio made five catches for 141 yards and a touchdown. Jahiem Mason ran 15 times for 100 yards and a touchdown. Elijah Kongolo had eight tackles, including three for a loss, and a sack, and Connor Mclees had seven tackles, including three for a loss, for Hills West, which led, 28-6, at halftime. Jesse Porter Bell and Mike Redd each made an interception in the victory. Amityville's DaJon Clinton ran for two TDs and connected with Noah Robinson for a 45-yard touchdown pass.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jahiem Mason",
+            "att": 15,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 3,
+            "yds": 31,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 25,
+            "comp": 19,
+            "yds": 354,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 7,
+            "yds": 162,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 5,
+            "yds": 141,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 4,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 2,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Elijah Kongolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 34,
+    "gameId": "6681",
+    "box": {
+      "gameId": "6681",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "6",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "att": 26,
+            "yds": 197,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 12,
+            "yds": 127,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 7,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Lahman",
+            "att": 1,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Leo Mongiello",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 8,
+            "yds": 46,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 1,
+            "comp": 2,
+            "yds": 30,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 3,
+            "comp": 6,
+            "yds": 16,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 34,
+            "comp": 12,
+            "yds": 122,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Luke Hansen",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "dylan kent",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Noah Jabour",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 3,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 4,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jahiem Mason",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Nicky  Watson",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Tommy Mccann",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dominic Franzese",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jackson  Neugebaurer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Elijah Kongolo",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 28,
+    "gameId": "6471",
+    "box": {
+      "gameId": "6471",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 48, Eastport-South Manor 28: Joseph Filardi completed 14 of 20 passes for 309 yards and six touchdowns and had eight carries for 119 yards and a touchdown to lead Half Hollow Hills West in Suffolk III. Jesse Brooks had five catches for 185 yards and five touchdowns. Anthony Raio had six catches for 100 yards and a touchdown for Half Hollow Hills West (4-1). Daniel Odell had 26 carries for 246 yards and two touchdowns, Max Ferraro threw for a touchdown and rushed for another, and John Izzo had a receiving touchdown for Eastport-South Manor (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 8,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "att": 26,
+            "yds": 246,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 9,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt  Boffoli",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Keegan Lides",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 20,
+            "comp": 14,
+            "yds": 309,
+            "tds": 6,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 7,
+            "comp": 4,
+            "yds": 54,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 5,
+            "yds": 185,
+            "tds": 5,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 6,
+            "yds": 100,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Payton Timoney",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "John  Izzo",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Aidan Murfitt",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 46,
+    "oppScore": 36,
+    "gameId": "6503",
+    "box": {
+      "gameId": "6503",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "15",
+          "q2": "13",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "22",
+          "q2": "14",
+          "q3": "0",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "46"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 46, Kings Park 36: Joseph Filardi was 24 for 36 with 381 yards and five touchdowns to lead host Half Hollow Hills West (5-1) over Kings Park (2-3) in Suffolk III on Saturday. Filardi also rushed for 110 yards and one touchdown on 14 carries and had 11 tackles. Jesse Brooks had 149 receiving yards and three touchdowns on eight catches. Anthony Raio also had eight receptions, finishing with 104 yards and one touchdown. Luca Baggot had 10 tackles, and Nolan Doerrie had six tackles, two for a loss.   Kings Park's Kyle Weeks carried the ball 25 times for 269 yards with 3 Touchdowns and a 2 point conversion. Weeks was also 7 for 22 passing for 107 yards and had an interception on defense. John Flynn carried the ball 13 times for 72 yards and 2 touchdowns and a 2 point conversion.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 25,
+            "yds": 269,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 13,
+            "yds": 72,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 14,
+            "yds": 110,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "att": 4,
+            "yds": 73,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "att": 4,
+            "yds": 37,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 22,
+            "comp": 7,
+            "yds": 107,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 36,
+            "comp": 24,
+            "yds": 381,
+            "tds": 5,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "rec": 2,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Paliotta",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony LoBasso",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 8,
+            "yds": 145,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 8,
+            "yds": 104,
+            "tds": 1,
+            "pat": 3
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 1,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 5,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Matthew Munsinger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aaron Shapiro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Elijah Kongolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/20/2023",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 42,
+    "gameId": "6534",
+    "box": {
+      "gameId": "6534",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ethan Alvarado caught eight passes for 72 yards and three touchdowns, including the winning 4-yard score from Brayden Stahl with 45 seconds left to lead host Smithtown West to a 42-35 win over Half Hollow Hills West in Suffolk Division III football. Stahl completed 20 of 28 pass for 274 yards and five touchdowns and Jason Antunes rushed 15 times for 137 yards and a touchdown. Jack Melore caught eight passes for 84 yards and a touchdown became Long Island's all-time leader in receptions with 137. He entered the game tied with Patchogue-Medford's Connor Coughlin, who totaled 129 receptions between 2011-2013. George Siolos caught three passes for 80 yards and a score for Smithtown West (3-4). Joseph Filardi completed 27 of 42 pass for 282 yards and two touchdowns and added 17 carries for 157 yards and two scores for Half Hollow Hills West (5-2). Jesse Brooks rushed for a touchdown and added two receiving scores and Anthony Raio caught 16 passes for 112 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 17,
+            "yds": 157,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "att": 3,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 15,
+            "yds": 137,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Isiaha  Woodhall",
+            "att": 4,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Ethan Alvarado",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jax  Casscione",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 42,
+            "comp": 27,
+            "yds": 282,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 28,
+            "comp": 20,
+            "yds": 274,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 16,
+            "yds": 112,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 3,
+            "yds": 88,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 5,
+            "yds": 39,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 8,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George  Siolos",
+            "rec": 3,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Ethan Alvarado",
+            "rec": 8,
+            "yds": 72,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Smithtown West",
+            "player": "James Martino",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 42,
+    "gameId": "6564",
+    "box": {
+      "gameId": "6564",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "13",
+          "q3": "0",
+          "q4": "28",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 31,
+            "yds": 285,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "att": 33,
+            "yds": 255,
+            "tds": 5
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 56,
+            "comp": 33,
+            "yds": 364,
+            "tds": 5,
+            "int": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 13,
+            "comp": 8,
+            "yds": 147,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 10,
+            "yds": 181,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 10,
+            "yds": 110,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 9,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 5,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 2,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Heath Sumwalt",
+            "rec": 3,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Elijah Kongolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2023",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 70,
+    "oppScore": 68,
+    "gameId": "6733",
+    "box": {
+      "gameId": "6733",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "14",
+          "q2": "13",
+          "q3": "28",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "68"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "21",
+          "q3": "28",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "70"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 17,
+            "yds": 183,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 47,
+            "comp": 32,
+            "yds": 473,
+            "tds": 7,
+            "int": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 38,
+            "comp": 30,
+            "yds": 404,
+            "tds": 7,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 17,
+            "yds": 253,
+            "tds": 5,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 15,
+            "yds": 266,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 11,
+            "yds": 114,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "James Martino",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 10,
+            "points": 10
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/11/2023",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 42,
+    "gameId": "6766",
+    "box": {
+      "gameId": "6766",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 9,
+            "yds": 68,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "att": 27,
+            "yds": 247,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 15,
+            "yds": 134,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 37,
+            "comp": 18,
+            "yds": 325,
+            "tds": 2,
+            "int": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 9,
+            "comp": 4,
+            "yds": 25,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 7,
+            "yds": 180,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 6,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Michael Redd",
+            "rec": 3,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "dylan kent",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Levy",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Sayville",
+            "player": "Nicky  Watson",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Javen Taff",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jackson  Neugebaurer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Leo Mongiello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Keith Kolar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Alex LaBella",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Donovan Bartolotta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke Hansen",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1513 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/01/2023",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 61,
+    "gameId": "6380",
+    "box": {
+      "gameId": "6380",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "7",
+          "q2": "34",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "61"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "22",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 61, Rocky Point 22: John Margolies rushed for 154 yards and three touchdowns on 13 carries and added a 65-yard interception return for a touchdown to lead Hauppauge in its Suffolk III opener. Christian Russo added 186 rushing yards and three touchdowns on 12 carries and Gershon Diaz rushed for 114 yards and a touchdown on 10 carries.  Elvis Cortes had six tackles, Andrew Sharrer had five tackles and John Passanante added four tackles in the win. Jeremy Graham completed 12 of 19 passes for 234 yards and two touchdowns and added a 1-yard rushing touchdown for Rocky Point.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Christian  Russo",
+            "att": 12,
+            "yds": 186,
+            "tds": 3
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 13,
+            "yds": 154,
+            "tds": 3
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Gershon  Diaz",
+            "att": 10,
+            "yds": 114,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  Lachapelle",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 9,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 3,
+            "comp": 2,
+            "yds": 38,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  Lachapelle",
+            "att": 1,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 19,
+            "comp": 12,
+            "yds": 234,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Cole  Wood",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joe Pistritto",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Gershon  Diaz",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 3,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 4,
+            "yds": 90,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlacich",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Hauppauge",
+            "player": "Jackson Ruple",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 32,
+    "gameId": "6657",
+    "box": {
+      "gameId": "6657",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "8",
+          "q2": "12",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton/Bridgehampton/Pierson 32, Rocky Point 8: Charlie Corwin rushed for 112 yards on 12 carries and had one rushing touchdown and one passing touchdown to lead East Hampton/Bridgehampton/Pierson (1-1) over Rocky Point (0-2) in Suffolk III. Eddie Cobb rushed for 92 yards and two touchdowns, and Jai Feaster had one touchdown catch and one interception on defense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 13,
+            "comp": 4,
+            "yds": 57,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 3,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominic Lamacchia",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Aidan Flynn",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "DJ Xavier",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 27,
+    "gameId": "6416",
+    "box": {
+      "gameId": "6416",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "14",
+          "q2": "0",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 27, Rocky Point 14: Vinny Bolognino rushed for 124 yards and two touchdowns on five carries to lead Harborfields (1-2) in Suffolk III. Jake Cornodo added 75 yards on 13 carries and Andrew White had 50 yards on nine carries, including two touchdowns. White, who also had 10 tackles including three for a loss, had a 5-yard touchdown to give Harborfields a 27-7 lead in the third quarter. Ethan Appolon had seven tackles, including three sacks and five for a loss and two forced fumbles and Noah Agliar had two forced fumbles, a fumble recovery and five tackles. Jeremy Graham completed 8 of 17 passes for 75 yards and a touchdown, rushed for 44 yards on nine carries, including a 5-yard touchdown, and went 2 of 2 on PATs for Rocky Point (0-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 5,
+            "yds": 124,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "att": 13,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 9,
+            "yds": 50,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 9,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "comp": 17,
+            "yds": 75,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 3,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominic Lamacchia",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 41,
+    "gameId": "6449",
+    "box": {
+      "gameId": "6449",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "14",
+          "q2": "27",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 41, Rocky Point 0: Danny Odell rushed for 160 yards on nine carries to lead Eastport-South Manor over Rocky Point in Suffolk III on Saturday. Matt Boffoil rushed for 125 yards on eight carries and Max Ferraro rushed for 77 yards on 10 carries for Eastport-South Manor (2-1). Matt Pompei made five tackles, two for a loss and had one sack. Rocky Point is 0-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "att": 9,
+            "yds": 160,
+            "tds": 3
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt  Boffoli",
+            "att": 8,
+            "yds": 125,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 10,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Sean Connelly",
+            "att": 8,
+            "yds": 28,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 4,
+            "comp": 1,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "David Curtis",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Aidan Murfitt",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Pompei",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "David Curtis",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 47,
+    "gameId": "6469",
+    "box": {
+      "gameId": "6469",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "8",
+          "q2": "18",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "12",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 47, Rocky Point 18: Shane Grant carried 21 times for 215 yards and three touchdowns and Kaeden West rushed for 220 yards and three touchdowns on 15 carries to lead Comsewogue in Suffolk III. Doug Annacelli had seven tackles and an interception and Lucas Shannon had eight tackles, a sack and an interception for Comsewogue (3-1). Ryan Meyers rushed for a touchdown and caught a 48-yard touchdown pass from Jeremy Graham for Rocky Point (0-5). Graham also threw a 16-yard touchdown pass to Christian Vlacich.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 15,
+            "yds": 219,
+            "tds": 3
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 21,
+            "yds": 215,
+            "tds": 3
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 17,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 7,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 3,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 13,
+            "comp": 6,
+            "yds": 208,
+            "tds": 2,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominic Lamacchia",
+            "rec": 1,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 2,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlacich",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "6507",
+    "box": {
+      "gameId": "6507",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "28",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 41, Rocky Point 7: Brayden Stahl completed 14 of 19 passes for 314 yards and three touchdowns to lead host Smithtown West in Suffolk Division III football Saturday. Ethan Alvarado caught five passes for 132 yards and two touchdowns and Jack Melore added 81 yards on five catches and a 3-yard rushing touchdown. Max Nicholas caught a 36-yard touchdown pass, Jayson Antunes rushed for a 30-yard score and Jax Casccione had six carries for 55 yards and a TD. Melore had two interceptions and Brian Hope made eight tackles for Smithtown West (2-3). AJ Aschettino rushed for a 30-yard touchdown for Rocky Point (0-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 11,
+            "yds": 79,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 6,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 13,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlacich",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jax  Casscione",
+            "att": 6,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 3,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jaiden Roman",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Green",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vincent LePore",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "comp": 17,
+            "yds": 53,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 14,
+            "comp": 19,
+            "yds": 314,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlacich",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Ethan Alvarado",
+            "rec": 5,
+            "yds": 132,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 5,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George  Siolos",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Max Nicholas",
+            "rec": 1,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jake Rearick",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 6,
+    "gameId": "6548",
+    "box": {
+      "gameId": "6548",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "10",
+          "q3": "10",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 23, Amityville 6: Jeremy Graham completed six passes for 48 yards and a touchdown and kicked field goals of 25, 30 and 27 yards to lead visiting Rocky Point in Suffolk III. Ryan Meyers carried 14 times for 72 yards and caught three passes for 37 yards and a touchdown and forced a fumble that Dominic Lamacchia returned 22 yards for a touchdown. AJ Aschettino rushed for 80 yards, caught three passes for 20 yards and completed one pass for 30 yards. Brennan Protosow had two sacks and an interception for Rocky Point (1-6). RJ Barrea caught a 15-yard touchdown pass from Matthew Bean for Amityville (0-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 11,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 14,
+            "yds": 72,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 10,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 6,
+            "comp": 12,
+            "yds": 48,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 1,
+            "comp": 1,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 3,
+            "pat": 2,
+            "points": 11
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Concessi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 56,
+    "gameId": "6567",
+    "box": {
+      "gameId": "6567",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "0",
+          "q2": "21",
+          "q3": "21",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 56, Rocky Point 13: Kyle Weeks carried the ball seven times for 136 yards and four touchdowns for Kings Park against Rocky Point. Weeks completed seven of his 15 attempts for 84 yards and a touchdown. Weeks also had an interception on defense. John Flynn had 137 yards and a touchdown on 11 rushes. Flynn had two receptions for 25 yards and a touchdown. Flynn also had an interception on defense. Brandon Hauk had 10 tackles and Matt Munsinger had a 29-yard fumble return for a touchdown. Kings Park (4-4) scored 56 unanswered points. Jeremy Graham scored 20 and 74-yard rushing touchdowns for Rocky Point (1-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 11,
+            "yds": 137,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 7,
+            "yds": 136,
+            "tds": 4
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "att": 10,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "att": 2,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon  Shapiro",
+            "att": 4,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Matt Corrado",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "yds": 119,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 5,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 16,
+            "yds": 40,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 15,
+            "comp": 7,
+            "yds": 84,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 9,
+            "comp": 1,
+            "yds": 40,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 1,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Kings Park",
+            "player": "Matt Corrado",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Sean Richardson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tommy  Cassar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Matthew Munsinger",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

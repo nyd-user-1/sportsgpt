@@ -1,0 +1,1645 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 12,
+    "gameId": "6398",
+    "box": {
+      "gameId": "6398",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 27, Smithtown East 12: Hunter Lovinsky rushed for 120 yards and three touchdowns on 23 carries and made nine tackles to lead Deer Park (1-0) in Suffolk II. Hayden Lovinsky rushed for 65 yards on eight carries, caught three passes for 58 yards and blocked an extra point. Devin Cherry had five tackles and a sack. Jake Fields and Lucas Santangelo scored for Smithtown East (0-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Lucas Santangelo",
+            "att": 24,
+            "yds": 191,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 23,
+            "yds": 117,
+            "tds": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 8,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 10,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 23,
+            "comp": 6,
+            "yds": 77,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 20,
+            "comp": 7,
+            "yds": 88,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Lucas Santangelo",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Tedeschi",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 3,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Damien  Scott",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Juan Mayoral-Gonzalez",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Devin Cherry",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/14/2023",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 21,
+    "gameId": "6431",
+    "box": {
+      "gameId": "6431",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "13",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 28, Newfield 21: Hayden Lovinsky had seven catches for 152 yards and two touchdowns, five carries for 40 yards, a 77-yard kickoff return touchdown and a fumble recovery to lead Deer Park (2-0) in Suffolk II. Hunter Lovinsky intercepted a pass with 1:15 left to give Deer Park possession, then caught the winning touchdown with six seconds remaining. Aaron Smith completed 12-of-20 passes for 229 yards and three touchdowns and Anthony Almanzar had 90 all-purpose yards. Newfield is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Sean  Sullivan",
+            "att": 7,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "JC Gamble",
+            "att": 4,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny  Petit Frere",
+            "att": 3,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 13,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 7,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "att": 2,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 4,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Matt  Evers",
+            "att": 5,
+            "comp": 8,
+            "yds": 107,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 18,
+            "comp": 12,
+            "yds": 231,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Chris  Mastres",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny  Petit Frere",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 7,
+            "yds": 141,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 2,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "rec": 3,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Newfield",
+            "player": "Dom DeAlmeida",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Damien  Scott",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 40,
+    "gameId": "6437",
+    "box": {
+      "gameId": "6437",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "28",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "14",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 56, Copiague 40: Hayden Lovinsky rushed 16 times for 178 yards and three touchdowns and added a 75-yard kickoff return for a touchdown to lead Deer Park (3-0) in Suffolk II. His brother, Hunter, had 12 carries for 143 yards and three touchdowns. Anthony Almanzar returned a kickoff 66 yards for a touchdown. Nadal Charles and Damien Scott each forced a fumble and had a fumble recovery. Fabrice Cormier had three rushing touchdowns, Carl Dezume rushed for two touchdowns and Michael Mais III caught a 5-yard touchdown pass from Cody Tiringer for Copiague (0-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 16,
+            "yds": 179,
+            "tds": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 12,
+            "yds": 140,
+            "tds": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 2,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 1,
+            "comp": 4,
+            "yds": 36,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Juan Mayoral-Gonzalez",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 26,
+    "gameId": "6477",
+    "box": {
+      "gameId": "6477",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "14",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 27, Centereach 26: Hunter Lovinsky had a kickoff return touchdown, a receiving touchdown and two rushing touchdowns - including the 5-yard winning score with four minutes left - to lead Deer Park (4-0) in Suffolk II. Hayden Lovinsky made two defensive plays to seal the win, forcing the Centereach kick returner to fumble at the Deer Park 2-yard line for a touchback on the ensuing kickoff. Hayden Lovinsky also had an interception in the end zone on the final play of the game. Aaron Smith threw a 76-yard touchdown pass, and Joel Nash had 12 tackles and a forced fumble. Joseph Prokop had a fumble recovery touchdown, and TJ Doyle II had two 1-yard touchdown runs and a five-yard touchdown pass to Jason Zaita for Centereach (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 20,
+            "yds": 37,
+            "tds": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 8,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 10,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 15,
+            "comp": 7,
+            "yds": 166,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "rec": 1,
+            "yds": 67,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Huntley  Swaby",
+            "rec": 2,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Damien  Scott",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Juan Mayoral-Gonzalez",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Maismy Desir",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Alex Moore-Brooks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 27,
+    "gameId": "6495",
+    "box": {
+      "gameId": "6495",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "16",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "6",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 27, Deer Park 24: Daniel White rushed for 260 yards and  three rushing touchdowns to lead Half Hollow Hills East (4-1) in Suffolk II. Shakie Bethea added a 25-yard rushing touchdown and 13 tackles on defense. Tyler Sanders had two interceptions and Half Hollow Hills forced five Deer Park turnovers. Huntley Swaby, Hunter and Hayden Lovinsky scored touchdowns for Deer Park (4-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 10,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 7,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 28,
+            "yds": 260,
+            "tds": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Shakie Bethea",
+            "att": 4,
+            "yds": 50,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 45,
+            "comp": 27,
+            "yds": 278,
+            "tds": 2,
+            "int": 4
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jordan Heyman",
+            "att": 10,
+            "comp": 4,
+            "yds": 100,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 10,
+            "yds": 135,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Huntley  Swaby",
+            "rec": 4,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Damien  Scott",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "rec": 3,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 4,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Malachi  Baker",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Futter",
+            "rec": 4,
+            "yds": 100,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Futter",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "max  kulberg",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas Martin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler sanders",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Adrian  Merchant",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 25,
+    "gameId": "6526",
+    "box": {
+      "gameId": "6526",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "6",
+          "q2": "13",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 25, Deer Park 22: Thomas Smith had 10 solo tackles, three for a loss and two forced fumbles, including one with 39 seconds left in the game to seal Huntington's 25-22 win over Deer Park in Suffolk Division II football on Saturday. Gabe Abreu recovered the fourth quarter fumble to give Huntington (1-5) it's first win of the season. Deer Park is 4-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 14,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 12,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "att": 6,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 27,
+            "comp": 15,
+            "yds": 206,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Roony  Elmon",
+            "rec": 4,
+            "yds": 98,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 3,
+            "yds": 74,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "rec": 4,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Damien  Scott",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Huntley  Swaby",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Juan Mayoral-Gonzalez",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/20/2023",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 42,
+    "gameId": "6537",
+    "box": {
+      "gameId": "6537",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 42, Deer Park 0: Elijah Outlaw had eight carries for 137 yards and four touchdowns and threw for 100 yards and two touchdowns to lead visiting West Babylon (6-1) in Suffolk II. Nicholas Serrano had 11 carries for 104 yards. Jace Alvino had a 54-yard touchdown catch and five tackles and two pass breakups on defense. Thomas Raccomandato had four sacks and 10 tackles. Tristan Trellis had a touchdown reception, Anthony Borawski had two sacks and an interception and Justin Baldwin had an interception. Liam Henshaw made six PATs. Deer Park fell to 4-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 8,
+            "yds": 137,
+            "tds": 4
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nicholas Serrano",
+            "att": 11,
+            "yds": 104,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "att": 2,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jerry Merolla",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Andrew Meyer",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hunter Lovinsky",
+            "att": 7,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 11,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 6,
+            "comp": 5,
+            "yds": 100,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 4,
+            "comp": 23,
+            "yds": 43,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Jace Alvino",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Tristan Trellis",
+            "rec": 3,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Luke Barrera",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 3,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Liam Henshaw",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Anthony Borawski",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2023",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 37,
+    "gameId": "6577",
+    "box": {
+      "gameId": "6577",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "0",
+          "q3": "13",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        },
+        {
+          "team": "Bellport",
+          "q1": "12",
+          "q2": "6",
+          "q3": "6",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 37, Deer Park 32: Caleb White threw for 226 yards and three touchdowns to lead host Bellport (4-4) in Suffolk II. LJ Brooks and Jovahn Salomon each had a touchdown reception. Michael Frankie had 93 receiving yards and a touchdown. Braydon Cipp had a rushing touchdown. Hayden Lovinsky scored two rushing touchdowns and caught a 61-yard touchdown from Aaron Smith for Deer Park (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 20,
+            "yds": 88,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Roony  Elmon",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 14,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Caleb White",
+            "att": 9,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Ray",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 11,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Izaiah Green",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 34,
+            "comp": 17,
+            "yds": 375,
+            "tds": 3,
+            "int": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 2,
+            "comp": 1,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Caleb White",
+            "att": 20,
+            "comp": 9,
+            "yds": 226,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Roony  Elmon",
+            "rec": 3,
+            "yds": 132,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 4,
+            "yds": 116,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Malachi  Baker",
+            "rec": 5,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony  Almanazar",
+            "rec": 2,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Huntley  Swaby",
+            "rec": 3,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 2,
+            "yds": 93,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Marcine Allen-Boutwell",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Shane Abrams",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "LJ  Brooks",
+            "rec": 1,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jovahn Salomon",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Ray",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2023",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 37,
+    "oppScore": 69,
+    "gameId": "6716",
+    "box": {
+      "gameId": "6716",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "13",
+          "q2": "18",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "21",
+          "q3": "34",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "69"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 69, Deer Park 37: Jawara Keahey ran for 275 and seven touchdowns on 24 carries to lead host No. 1 North Babylon (8-1) over No. 8 Deer Park (4-5) in the Suffolk II quarterfinals. Jordan Konig added 208 yards and three touchdowns on 16 carries. Deer Park's Aaron Smith threw for 415 yards and five touchdowns, four of them to Roony Elmon. Jacob Serigano converted nine extra point attempts. North Babylon will host No. 4 West Babylon on Saturday in the semifinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 24,
+            "yds": 275,
+            "tds": 7
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 16,
+            "yds": 208,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 5,
+            "yds": 31,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Aaron  Smith",
+            "att": 44,
+            "comp": 21,
+            "yds": 420,
+            "tds": 5,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "att": 1,
+            "comp": 1,
+            "yds": 68,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Roony  Elmon",
+            "rec": 7,
+            "yds": 205,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Hayden Lovinsky",
+            "rec": 11,
+            "yds": 176,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Malachi  Baker",
+            "rec": 4,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Huntley  Swaby",
+            "rec": 1,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 0,
+            "pat": 9,
+            "points": 9
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

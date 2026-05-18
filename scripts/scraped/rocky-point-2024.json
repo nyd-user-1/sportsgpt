@@ -1,0 +1,1643 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 12,
+    "gameId": "7214",
+    "box": {
+      "gameId": "7214",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 13, Eastport-South Manor 12: Grayson Marmol rushed for 58 yards and a touchdown on seven carries, made four catches for 60 yards and had an interception to lead host Rocky Point in a Suffolk III opener. Aidan Flynn and Brogan Casper combined to block the tying PAT with 4:30 remaining. Thomas Doran ran for 54 yards and a touchdown on 16 carries. Brennan Protosow forced and recovered a fumble. Ryan Espinal had an interception and Brogan Casper had 17 tackles, including four for a loss. Max Ferraro and Philip Samuel each had touchdown runs for Eastport-South Manor.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 12,
+            "yds": 157,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 13,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Philip Samuel III",
+            "att": 7,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 7,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 16,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Don Wilkinson",
+            "att": 1,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 10,
+            "comp": 5,
+            "yds": 140,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 1,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 40,
+    "gameId": "7213",
+    "box": {
+      "gameId": "7213",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "7",
+          "q2": "13",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton/Bridgehampton/Pierson 40, Rocky Point 7: Alex Davis ran for two touchdowns and Jackson Ronick returned an interception 35 yards for a TD to lead visiting East Hampton/Bridgehampton/Pierson (1-1) in Suffolk III. Jai Feaster ran for a 50-yard TD and James Corwin added a rushing score. Livs Kuplins caught a 40-yard TD pass from Theo Ball. Rocky Point is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Alex Davis",
+            "att": 15,
+            "yds": 123,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 4,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 13,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 8,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Evan Cruz",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Theo Ball",
+            "att": 5,
+            "comp": 2,
+            "yds": 65,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 9,
+            "comp": 4,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Manny Morales",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dylan Colon",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "East Hampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 40,
+    "gameId": "7539",
+    "box": {
+      "gameId": "7539",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Pierson",
+          "q1": "7",
+          "q2": "13",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Hampton / Pierson",
+            "player": "alex davis",
+            "att": 15,
+            "yds": 128,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 20,
+    "gameId": "6806",
+    "box": {
+      "gameId": "6806",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "6",
+          "q2": "6",
+          "q3": "8",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Amityville",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 28, Amityville 20: Grayson Marmol had a 25-yard touchdown run to give Rocky Point a 28-14 in the fourth quarter following a two-point conversion run by John Nadaeu in Suffolk III. Ryan Espinal sealed the win with an interception with less than two minutes left for Rocky Point (2-1). Keegan Davanzo had a 60-yard interception return for a touchdown to give Rocky Point a 12-6 lead before halftime. Thomas Doran rushed for 80 yards and a touchdown. Brogan Casper and DJ Xavier each had two sacks and Dylan Colon added a sack. DaJon Clinton rushed for 135 yards on 16 carries with two touchdowns for Amityville (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 11,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 4,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "att": 6,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "comp": 3,
+            "yds": 40,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dylan Colon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "DJ Xavier",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Keegan Davanzo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 34,
+    "gameId": "7010",
+    "box": {
+      "gameId": "7010",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "12",
+          "q2": "8",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 34, Rocky Point 7: Gershon Diaz 134 yards and a touchdown on 18 carries to lead host Hauppauge (3-1) in Suffolk III. Liam O'Connor had eight carries for 41 yards and two TDs. Nick Lachapelle completed 10 of 15 passes for 129 yards and two TDs and Joe Pistritto caught four passes for 40 yards and two scores and added an interception. Grayson Marmol ran for an 8-yard TD for Rocky Point (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "att": 8,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 5,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 10,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Gershon Diaz",
+            "att": 18,
+            "yds": 134,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Wally Faiz",
+            "att": 6,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "att": 8,
+            "yds": 41,
+            "tds": 2
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Roman  Dixon",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "comp": 2,
+            "yds": 40,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 15,
+            "comp": 11,
+            "yds": 129,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Alex Posillico",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "rec": 4,
+            "yds": 40,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Oscar Jakubowlski",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Roman  Dixon",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Dan Martinez",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "DJ Xavier",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Carter Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Oscar Jakubowlski",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 49,
+    "gameId": "6997",
+    "box": {
+      "gameId": "6997",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "21",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 49, Rocky Point 6: Joseph Filardi completed 6 of 6 passes for 261 yards and four touchdowns, leading Half Hollow Hills West (5-0) to a home win in Suffolk III. Anthony Raio returned a 42-yard punt for a TD and had a 70-yard touchdown reception. Christian Alfaro rushed for 86 yards and two scores on six rushes. Mason Reisch caught two balls for 92 yards, including a 56-yard touchdown. Reisch had four tackles on defense, including three for a loss and a sack. Jesse Brooks had two receptions for 82 yards and two scores. Defensive tackle Sal Santoro had nine tackles. Jayden Smith had seven tackles, with two going for a loss, as well as a forced fumble and recovery. Brogan Casper punched in a 3-yard rushing touchdown for Rocky Point (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "att": 9,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "att": 6,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 6,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 5,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "att": 6,
+            "yds": 86,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "att": 5,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 6,
+            "comp": 6,
+            "yds": 261,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 2,
+            "yds": 82,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 1,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan  Levy",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 49,
+    "gameId": "7215",
+    "box": {
+      "gameId": "7215",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 49, Rocky Point 14: Dylan Smith had nine receptions for 140 yards and three touchdowns as Brady Nash completed 13 of 16 passes for 244 yards and four touchdowns and rushed for 94 yards on nine carries to lead visiting Islip (5-1) in Suffolk III. Jake DeGennaro added 65 yards on six carries, including a 17-yard touchdown, a 65-yard touchdown reception and an interception. Najee Simpson had eight tackles, including three for a loss. Thomas Doran had two rushing touchdowns for Rocky Point (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 9,
+            "yds": 94,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Najee Simpson",
+            "att": 2,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "att": 6,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 2,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Rodriguez Nikko",
+            "att": 3,
+            "yds": 28,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 2,
+            "yds": 100,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "att": 7,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 4,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 16,
+            "comp": 13,
+            "yds": 244,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "comp": 1,
+            "yds": 35,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 9,
+            "yds": 140,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 31,
+    "gameId": "7216",
+    "box": {
+      "gameId": "7216",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "10",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 31, Rocky Point 21: Brandon Shapiro completed 9 of his 14 passes for 151 yards and two touchdowns, both of which were to Nick Paliotta, to lead King Park (1-6) in Suffolk III. Shapiro also carried the ball 11 times for 55 yards and a touchdown. Paliotta finished with five receptions for 110 yards and two touchdowns. Kevin Vasquez rushed 14 times for 63 yards and a touchdown and had three catches for 32 yards. Zach Lampert had eight tackles and caught three interceptions. Frankie Buffolino had 13 tackles, two sacks and an interception. John Nadaeu rushed eight times for 53 yards and a score for Rocky Point (2-5). Jack Negus had an interception, and Grayson Marmol caught five passes for 100 yards and a TD. Brogan Casper added four catches for 63 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "att": 14,
+            "yds": 63,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 11,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 8,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "att": 10,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 9,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 14,
+            "comp": 9,
+            "yds": 151,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 17,
+            "comp": 12,
+            "yds": 225,
+            "tds": 1,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Nick  Paliotta",
+            "rec": 5,
+            "yds": 110,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony LoBasso",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 5,
+            "yds": 100,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "rec": 4,
+            "yds": 63,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          },
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Frankie Buffolino",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gage McKigney",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Zach  Lampert",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Aidan Flynn",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "7005",
+    "box": {
+      "gameId": "7005",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 35, Rocky Point 7: Tyler D'Amico had eight carries for 145 yards and two touchdowns to lead Harborfields (2-6) against the visiting Rocky Point (2-7) in Suffolk III. Chase Ritcey rushed for 75 yards and two TD's on five carries. Jack Weiss completed 8 of 12 passes for 150 yards and a TD. Anthony Sangoivanni led the defense with eight tackles, four sacks, and a fumble recovery. Ryan Olson had five solo tackles and six tackles. Ritcey had four tackles and one interception. Matthew Ferranti had five tackles and one interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Tyler D'Amico",
+            "att": 8,
+            "yds": 145,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Chase Ritcey",
+            "att": 5,
+            "yds": 75,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack Weiss",
+            "att": 3,
+            "yds": 15,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Jack Weiss",
+            "att": 12,
+            "comp": 8,
+            "yds": 150,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Colin  Burke",
+            "rec": 2,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew Hoppe",
+            "rec": 2,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Tyler D'Amico",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Chase Ritcey",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Jason Melhado",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Anthony  Sangiovanni",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Chase Ritcey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Ferranti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

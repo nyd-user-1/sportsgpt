@@ -1,0 +1,1897 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 25,
+    "gameId": "6807",
+    "box": {
+      "gameId": "6807",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "13",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 25, Glenn 7: Aidan Winter rushed for 171 yards on 21 carries and four touchdowns to lead Babylon in their Suffolk IV season-opener. Dan DeBetta had nine carries and 69 yards and nine tackles. On defense, Savion Millner had six tackles, Alex Keilitz had five tackles and Ben King added five tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 14,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 21,
+            "yds": 171,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 9,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 17,
+            "comp": 10,
+            "yds": 110,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 3,
+            "comp": 1,
+            "yds": 10,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2024",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 42,
+    "gameId": "7249",
+    "box": {
+      "gameId": "7249",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "14",
+          "q3": "9",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "14",
+          "q3": "13",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River  42, Glenn 36: Sean Casey ran 28 times for 178 yards and three touchdowns, including the winning 1-yard score with 1:29 left to lead host Shoreham-Wading River (2-0) in Suffolk IV. Noah Gregorek completed 9 of 11 passes for 147 yards and two touchdowns. Casey's twin brother, Michael, caught five passes for 62 yards and a TD and Anthony Mullen caught a 26-yard TD pass. George Greene returned an interception 9 yards for a score. Anthony Soto ran for three touchdowns and Keith King had two rushing TDs for Glenn (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 28,
+            "yds": 173,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 6,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 11,
+            "comp": 9,
+            "yds": 147,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 5,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 2,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kyler Kuck",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Lucas Diamond",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 0,
+    "gameId": "6983",
+    "box": {
+      "gameId": "6983",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 36, Center Moriches 0: Keith King rushed for 83 yards on 14 carries with two touchdowns and Cole Madden completed 8 of 9 passes for 118 yards, including a 35-yard touchdown pass to Joe Competiello, for Glenn (1-2) in Suffolk IV. Competiello also had a 39-yard touchdown pass to CJ Mascia. CJ Cook had a 46-yard interception return for a touchdown to give Glenn a 22-0 lead in the second quarter. Anthony Soto led the defense with eight tackles. Center Moriches is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 14,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jace Boyles Summers",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 8,
+            "comp": 9,
+            "yds": 157,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "att": 1,
+            "comp": 1,
+            "yds": 39,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 4,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Dan Heller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 27,
+    "gameId": "6823",
+    "box": {
+      "gameId": "6823",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "6",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 27, Glenn 7: Sean Coffey rushed for 76 yards on four carries and two touchdowns to lead Bayport-Blue Point (4-0) in Suffolk IV. Dylan Craig added a one-yard run and Cooper Fuller added a 49-yard run. KaRahn King scored a four-yard run for Glenn (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 18,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 12,
+            "yds": 153,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "att": 15,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "att": 4,
+            "yds": 76,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 2,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Athearn",
+            "att": 4,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 9,
+            "comp": 16,
+            "yds": 98,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 8,
+            "comp": 4,
+            "yds": 35,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 4,
+            "yds": 64,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Traigh Tomassone",
+            "rec": 4,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Hampton Bays",
+    "isAway": true,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 0,
+    "gameId": "6999",
+    "box": {
+      "gameId": "6999",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "6",
+          "q2": "28",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 47, Hampton Bays 0: KaRahn King had 200 all-purpose yards and three touchdowns and Cole Madden completed 13 of 14 passes for 150 yards and two TDs to lead visiting Glenn (2-3) in Suffolk IV. Jayce Boyle-Summers returned and interception 70 yards for a TD and Joe LaMay and Keith King each added an interception. Joe Competiello caught five passes for 47 yards and a score. Anthony Soto and Grayden Aebisher each added a TD run. Hampton Bays is 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 6,
+            "yds": 117,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 1,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "att": 4,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 3,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 9,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 14,
+            "comp": 13,
+            "yds": 150,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 1,
+            "comp": 1,
+            "yds": 2,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 11,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 3,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 5,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Justus Awadalla",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jace Boyles Summers",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 24,
+    "gameId": "6985",
+    "box": {
+      "gameId": "6985",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "3",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "13",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 41, Mt. Sinai 24: Joe Competiello had 250 all-purpose yards and a touchdown, adding 10 tackles and an interception on defense to lead host Glenn (3-3) in Suffolk IV. KaRahn King had 19 carries for 164 yards and four touchdowns, and Cole Madden completed 12 of 14 passes for 222 yards and two touchdowns. Ethan Levy caught a touchdown and Luca Palisciano and Joe LaMay added sacks. Max Sorrentino threw three touchdown passes for Mt. Sinai (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan Geraghty",
+            "att": 16,
+            "yds": 93,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "att": 11,
+            "yds": 59,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent Graziano",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ethan Arita",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 19,
+            "yds": 164,
+            "tds": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 7,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 25,
+            "comp": 17,
+            "yds": 334,
+            "tds": 3,
+            "int": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 14,
+            "comp": 12,
+            "yds": 222,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "rec": 10,
+            "yds": 212,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Marcus Maglore",
+            "rec": 3,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "rec": 3,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 6,
+            "yds": 147,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Arda Dincer",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Alex Bottomley",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Luca  Palisciano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 21,
+    "gameId": "6984",
+    "box": {
+      "gameId": "6984",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "14",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 21, Glenn 14: Shane Kiernan completed 25 of 34 passing attempts for 333 yards and three touchdowns, and Dane LaGrasta had eight receptions for 190 yards and two TDs as the duo lead Miller Place (5-2) to a road win in Suffolk IV. Kiernan connected with LaGrasta for a 6-yard touchdown with seven minutes remaining in the fourth quarter for the go-ahead score. Kevin Washington ended Glenn's final drive with a sack in the red zone on 4th down. Braeden Murphy led the defense with 12 tackles, including one for a loss and a pass break-up. DJ Williamson added 9 catches for 91 yards and a touchdown. Russell Dada impressed on the edge. Cole Madden threw a 13-yard touchdown pass to Joe Competiello to start the scoring for Glenn (3-4), and KaRahn King added a 13-yard rushing score in the second quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "att": 17,
+            "yds": 68,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 34,
+            "comp": 25,
+            "yds": 333,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "rec": 8,
+            "yds": 190,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 10,
+            "yds": 104,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "rec": 7,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Kevin  Washington",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jackson Thompson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Wyandanch",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 8,
+    "gameId": "6986",
+    "box": {
+      "gameId": "6986",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Glenn",
+          "q1": "14",
+          "q2": "6",
+          "q3": "7",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 42, Wyandanch 8: Cole Madden completed 14 of 15 passes for 235 yards and threw three touchdowns to CJ Mascia, Anthony Soto and Justus Awadalla as Glenn earned a home win in Suffolk IV. Keith King had 11 carries for 112 yards and two touchdowns. Anthony Soto led the Glenn (4-4) defense with seven tackles and GJ Cook added an interception, headlining a defense that finished with six sacks. Michael Dalrymple's sack resulted in a safety. Anthony Wilkinson punched in a 3-yard rushing score for Wyandanch (2-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 11,
+            "yds": 112,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 4,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "att": 2,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 3,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 15,
+            "comp": 14,
+            "yds": 235,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 6,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 3,
+            "yds": 50,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 1,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Justus Awadalla",
+            "rec": 1,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael Dalrymple",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Sebastian Domerecki",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Karim Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/09/2024",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "7583",
+    "box": {
+      "gameId": "7583",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Glenn",
+          "q1": "15",
+          "q2": "27",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 42, Center Moriches 7: Cole Madden completed 15 of 19 passes for 207 yards and four touchdowns to lead No. 4 Glenn over No. 5 Center Moriches in a Suffolk Division IV quarterfinal. Joe Competiello had seven catches for 100 yards and a touchdown. He also had an interception and seven tackles. Michael Kilgannon had two catches for 45 yards and a touchdown. CJ Mascia had two catches for 44 yards and a touchdown. Keith King had 10 carries for 130 yards and a touchdown and had a sack. Anthony Soto had an 8-yard touchdown reception and GJ Cook had an 8-yard touchdown run. Glenn (5-4) will play at No. 1 Bayport-Blue Point in the county semifinals at 6 p.m. Friday. Brayden Hromada had a 17-yard touchdown for Center Moriches, which finished 5-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 10,
+            "yds": 130,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "att": 1,
+            "yds": 8,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 19,
+            "comp": 15,
+            "yds": 207,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 7,
+            "yds": 100,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 2,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 3,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/15/2024",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 28,
+    "gameId": "7609",
+    "box": {
+      "gameId": "7609",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 28, Glenn 7: Cooper Fuller had 25 carries for 236 yards and three touchdowns to lead host No. 1 Bayport-Blue Point over No. 4 Glenn in the Suffolk Division IV semifinals. Fuller also had an interception and threw for 32 yards and a touchdown. Colin Most had a 27-yard touchdown catch. Aiden Richman had an interception. Patrick Ahern and Dylan Spano each had a sack. Dylan Craig went 4 of 4 on extra-point attempts. Bayport-Blue Point (10-0) will face No. 3 Miller Place in the Suffolk IV championship at 6 p.m. Thursday at Stony Brook's LaValle Stadium. Cole Madden threw a 77-yard touchdown pass to Joe Competiello for Glenn, which finished 5-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 25,
+            "yds": 236,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 7,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Athearn",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 3,
+            "comp": 2,
+            "yds": 32,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Spano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Patrick Ahern",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aidan  Richman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

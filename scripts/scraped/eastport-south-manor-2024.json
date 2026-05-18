@@ -1,0 +1,1768 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 13,
+    "gameId": "7214",
+    "box": {
+      "gameId": "7214",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 13, Eastport-South Manor 12: Grayson Marmol rushed for 58 yards and a touchdown on seven carries, made four catches for 60 yards and had an interception to lead host Rocky Point in a Suffolk III opener. Aidan Flynn and Brogan Casper combined to block the tying PAT with 4:30 remaining. Thomas Doran ran for 54 yards and a touchdown on 16 carries. Brennan Protosow forced and recovered a fumble. Ryan Espinal had an interception and Brogan Casper had 17 tackles, including four for a loss. Max Ferraro and Philip Samuel each had touchdown runs for Eastport-South Manor.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 12,
+            "yds": 157,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 13,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Philip Samuel III",
+            "att": 7,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 7,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 16,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Don Wilkinson",
+            "att": 1,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 10,
+            "comp": 5,
+            "yds": 140,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "rec": 1,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2024",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 49,
+    "gameId": "6940",
+    "box": {
+      "gameId": "6940",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "15",
+          "q2": "20",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 49, Eastport-South Manor 12: Joseph Filardi completed 13 of 16 passes for 270 yards and four touchdowns and added five carries for 121 yards, including an 80-yard TD run to lead visiting Half Hollow Hills West (2-0) in Suffolk III. Jesse Brooks caught four passes for 120 yards and a 75-yard TD and Anthony Raio had three catches for 81 yards and two TDs. Christian Alfaro rushed nine times for 58 yards and a TD. Luke Taff had a 15-yard touchdown reception and Sal Ciazzo returned a fumble 20 yards for a score. Jayden Smith had seven tackles, including three for a loss and Ben Vogt had seven tackles (two for a loss) and a sack. Thomas Powers caught a 52-yard TD pass from Max Ferraro and Joey Hershey added a rushing score for Eastport-South Manor (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 5,
+            "yds": 121,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "att": 9,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 3,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 2,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 17,
+            "yds": 103,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 11,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Keegan Lides",
+            "att": 5,
+            "yds": 52,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 16,
+            "comp": 13,
+            "yds": 278,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 4,
+            "yds": 120,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 3,
+            "yds": 84,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "rec": 2,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Tommy Powers",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan  Levy",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin Vogt",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Salvatore Caiazzo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 12,
+    "gameId": "6941",
+    "box": {
+      "gameId": "6941",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "14",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 21, Harborfields 12: Max Ferraro ran 12 times for 100 yards and two rushing touchdowns, and he threw a 9-yard touchdown pass to Cole Klein to lead Eastport-South Manor (1-2) in Suffolk III. Joey Hershey added 16 rushes for 109 yards. Stevey Pacella Gordon and Tommy Powers had three sacks each, and Collin Fessel had two sacks. Jack Weiss scored both touchdowns for Harborfields (0-3). Landon Paulino rushed 12 times for 145 yards. He also had four catches for 100 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Landon Paulino",
+            "att": 12,
+            "yds": 145,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack Weiss",
+            "att": 10,
+            "yds": 57,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Chase Ritcey",
+            "att": 2,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 16,
+            "yds": 109,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 12,
+            "yds": 100,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Keegan Lides",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Jack Weiss",
+            "att": 16,
+            "comp": 9,
+            "yds": 160,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 8,
+            "comp": 5,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Landon Paulino",
+            "rec": 4,
+            "yds": 100,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack Weiss",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Chase Ritcey",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew Hoppe",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Tommy Powers",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 3,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Keegan Lides",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen  Loomis",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Stevey Pacella Gordon",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Tommy Powers",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Collin Fessel",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Nolan Douglas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Chris Laguerra",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 9,
+    "gameId": "6803",
+    "box": {
+      "gameId": "6803",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "14",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Amityville",
+          "q1": "3",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 34, Amityville 9: Max Ferraro ran 23 times for 268 yards and four touchdowns and threw one 43-yard touchdown pass to Cole Klein to lead Eastport-South Manor (2-2) in Suffolk III. Klein had one reception for 43 yards and one touchdown and rushed for 23 yards on two carries. Jeremiah Luciano scored a 12-yard run for Amityville (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 23,
+            "yds": 268,
+            "tds": 4
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 8,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "att": 2,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Philip Samuel III",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 9,
+            "comp": 3,
+            "yds": 58,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 1,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen  Loomis",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Tommy Powers",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Aiden Westra",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Chris Laguerra",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 35,
+    "gameId": "6942",
+    "box": {
+      "gameId": "6942",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "7",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "12",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 35, Eastport-South Manor 20: Joe Pistritto caught six passes for 227 yards and three touchdowns and added an interception and forced a fumble to help visiting Hauppauge (4-1) overcome a 12-0 first quarter deficit in Suffolk III. Nick Lachapelle completed 9 of 13 passes for 260 yards and three TDs. Gershon Diaz had 15 carries for 85 yards and a TD. Guy Donnelly recovered a fumble forced by a Liam O'Connor strip sack and returned it 40 yards for a score. Dan Martinez made all five of his PATs. Max Ferraro ran for two touchdowns and a two-point conversion for Eastport-South Manor (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Gershon Diaz",
+            "att": 15,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 23,
+            "yds": 273,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 14,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Philip Samuel III",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 13,
+            "comp": 9,
+            "yds": 260,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 9,
+            "comp": 3,
+            "yds": 30,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "rec": 6,
+            "yds": 227,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Christian Mooney",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Gershon Diaz",
+            "rec": 2,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Hauppauge",
+            "player": "Dan Martinez",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Guy  Donnelly",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Brian  Pierre",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Stevey Pacella Gordon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Kings Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 20,
+    "gameId": "7058",
+    "box": {
+      "gameId": "7058",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "2",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 23, Kings Park 20: Max Ferraro rushed for 275 yards and two touchdowns on 31 carries for Eastport-South Manor (3-3) in Suffolk III. Joey Hershey rushed for 111 yards and a touchdown on 18 carries. Steve Pacella Gordon and Bryan Pierre each had two sacks. Brandon Shapiro scored a 22-yard touchdown on the ground and completed a 17-yard touchdown pass to Kevin Vasquez for Kings Park (0-6).  Brandon Shapiro was 12 for 17 passing for 161 yards and a touchdown and also had a rushing touchdown for Kings Park.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 31,
+            "yds": 275,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 18,
+            "yds": 111,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "att": 1,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "att": 5,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 8,
+            "yds": 38,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 9,
+            "comp": 5,
+            "yds": 34,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 1,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 17,
+            "comp": 12,
+            "yds": 161,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 4,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick  Paliotta",
+            "rec": 5,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "rec": 4,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Frankie Buffolino",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony LoBasso",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen  Loomis",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Brian  Pierre",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Stevey Pacella Gordon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tom Bailes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Clark",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 54,
+    "gameId": "6943",
+    "box": {
+      "gameId": "6943",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "13",
+          "q2": "21",
+          "q3": "20",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "54"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "3",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 54, Eastport-South Manor 10: Patrick Coan completed 8 of 11 passes for 183 yards and four touchdowns to lead visiting Sayville (7-0) in Suffolk III. Kyle Messina had four carries for 139 yards and a touchdown and caught two passes for 79 yards and a score. Tommy McCann, Donovan Bartolotta and Mikey Sands each added a TD catch. Tristan Vitale and Stash Chorowski each added a rushing TD. Sands had 12 tackles, including two for a loss and Dylan Kent returned an interception 33 yards for a TD. McCann and Messinaeach had eight tackles. Joe Hershey ran for a TD for Eastport-South Manor (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "att": 4,
+            "yds": 139,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 6,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "leo  mongiello",
+            "att": 6,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "att": 5,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "att": 2,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 24,
+            "yds": 122,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 7,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 11,
+            "comp": 8,
+            "yds": 183,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "att": 1,
+            "comp": 1,
+            "yds": 1,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "rec": 2,
+            "yds": 79,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "donovan bartolotta",
+            "rec": 1,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dylan Kent",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "michael carmody",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tomas McCann",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Frankie Miller",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 4,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jason Buckley",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Nicholas  Watson",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen  Loomis",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Dylan Kent",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Nolan Douglas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Aiden Westra",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Stevey Pacella Gordon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "6920",
+    "box": {
+      "gameId": "6920",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton/Bridgehampton/Pierson 42, Eastport-South Manor 7: Theo Ball completed 14 of 17 passes for 260 yards and four touchdowns to lead host East Hampton/Bridgehampton/Pierson (5-3) in Suffolk III. Livs Kuplins caught eight passes for 133 yards and two TDs and Alex Davis ran for 129 yards and a score. Jackson Ronick caught a 19-yard TD pass and ran for a 75-yard score. Charlie Stern added a 7-yard TD reception. Braiden Huff had a 19-yard interception return TD for Eastport-South Manor (3-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 18,
+            "yds": 91,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Alex Davis",
+            "att": 16,
+            "yds": 129,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 10,
+            "comp": 6,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Theo Ball",
+            "att": 17,
+            "comp": 14,
+            "yds": 260,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole  Klein",
+            "rec": 4,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Livs Kuplins",
+            "rec": 8,
+            "yds": 133,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen  Loomis",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Manny Morales",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Nolan Douglas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joe Green",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Brian  Pierre",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 59,
+    "gameId": "7578",
+    "box": {
+      "gameId": "7578",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Sayville",
+          "q1": "30",
+          "q2": "23",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "59"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 59, Eastport-South Manor 13: Kyle Messina led team in rushing with nine carries and 159 yards, scoring three touchdowns on the way to a Suffolk III qualifying win for No. 1 Sayville over No. 8 Eastport-South Manor Friday night. Patrick Coan turned all three of his passes into touchdowns, finishing with 84 yards. Tommy McCann had two catches for 77 yards and two TDs, and Mikey Sands added a 7-yard touchdown reception. Sands also had seven tackles, two TFLs, a fumble recovery and a 35-yard pick-six. Tristan Vitale added the final score, finishing with three carries for 78 yards and a score. He also forced a safety. Dylan Kent and Donovan Bartolotta both had an interception. Ryan Linker led the team in tackles with eight. John Metz and Joey Hershey added rushing scores for Eastport-South Manor (3-6). Sayville (9-0) will host No. 4 Westhampton in the semifinal round on Friday, Nov. 15, at 6 p.m.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "att": 9,
+            "yds": 159,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "att": 3,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 1,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "John Clampett",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 3,
+            "comp": 3,
+            "yds": 84,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "att": 2,
+            "comp": 2,
+            "yds": 31,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Tomas McCann",
+            "rec": 2,
+            "yds": 77,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "michael carmody",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "rec": 1,
+            "yds": 7,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Nicholas  Watson",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Dylan Kent",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "donovan bartolotta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

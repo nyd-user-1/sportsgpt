@@ -1,0 +1,1632 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 39,
+    "gameId": "6792",
+    "box": {
+      "gameId": "6792",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "6",
+          "q2": "21",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 39, North Babylon 0: Daniel White ran 17 times for 218 yards and four touchdowns to lead Half Hollow Hills East in its Suffolk II opener. On the last play of the first half, Logan Soler strip-sacked the quarterback and scooped the ball up before returning it for a touchdown. On his first career pass attempt, James Bruno threw a 46-yard touchdown pass to Max Drehwing.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 17,
+            "yds": 218,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 11,
+            "yds": 72,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 5,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 6,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 7,
+            "comp": 4,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Wojt",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 15,
+    "gameId": "6793",
+    "box": {
+      "gameId": "6793",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 20, Bellport 15: Jawara Keahey rushed for 262 yards and three touchdowns, including a 62-yard rushing touchdown with 1:17 remaining to give host North Babylon (1-1) the lead in Suffolk II. Jordan Konig sealed the game with an interception for North Babylon with 1:07 remaining. Konig also ran for 84 yards on 15 carries. Bellport took the lead with 1:32 left in the game on a Malcolm Elie six-yard touchdown run and a two-point conversion run by Braydon Cipp. Cipp also had an 80-yard touchdown reception for Bellport (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 24,
+            "yds": 255,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 15,
+            "yds": 84,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "RJ DeJesus",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "comp": 7,
+            "yds": 130,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 6,
+            "yds": 122,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 25,
+    "gameId": "6794",
+    "box": {
+      "gameId": "6794",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "3",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "6",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 25, North Babylon 23: Timmy Smith made the tackle on North Babylon's potential tying two-point attempt with six seconds left in the game. Jacob Guzik rushed for 301 yards on 17 carries and three touchdowns and completed six of nine passes for 85 yards to lead host Huntington (1-2) in Suffolk II. Thomas Kline had four receptions for 42 yards, Timmy McDonald had 13 tackles and one fumble and Keegan Malone had seven tackles and one fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 32,
+            "yds": 202,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 15,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 17,
+            "yds": 301,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 9,
+            "comp": 6,
+            "yds": 85,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Thomas Kline",
+            "rec": 5,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Timmy  McDonald",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Keegan Malone",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 20,
+    "gameId": "6795",
+    "box": {
+      "gameId": "6795",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "12",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 20, North Babylon 19: Enrique Hernandez had a 6-yard touchdown run with 40 seconds left in the fourth quarter to cap off an 85-yard drive over the final two minutes for the game's final points to give Northport a 20-19 victory in Suffolk II. Hernandez found Christian Campoli for a key 40-yard pass during the winning drive.\nLuke Loiacono intercepted a North Babylon pass on the ensuing drive to seal the win. \nHernandez threw for 186 yards and rushed for 88 yards and had two total touchdowns for Northport (3-1). Gio Valenti had 10 tackles to lead the Tigers. Hernandez found Campoli for a 12-yard touchdown to give Northport a 14-7 lead in the second quarter. Jordan Konig had a 2-yard touchdown run in the fourth quarter to give North Babylon (1-3) a 19-14 lead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 18,
+            "yds": 212,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 9,
+            "yds": 32,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 11,
+            "yds": 88,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 14,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jesse Castillo",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 15,
+            "comp": 9,
+            "yds": 186,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 66,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 2,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny  Miller",
+            "rec": 2,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zac Loh",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Drew Schuttinger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Gio  Valenti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton  Hamada",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Scotty Triolo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "West Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 28,
+    "gameId": "6796",
+    "box": {
+      "gameId": "6796",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "13",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "20",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 55, West Islip 28: Jawara Keahey rushed for 230 yard on 14 carries and scored four touchdowns to lead North Babylon (2-3) in Suffolk II. Jordan Konig rushed for 132 yards and scored three touchdowns on 11 carries. Malyk Montenegro had an interception return in the game to help aide in the victory.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 13,
+            "yds": 200,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 11,
+            "yds": 132,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 5,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Will Dekanoy",
+            "att": 3,
+            "yds": 83,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake  Leila",
+            "att": 5,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake Kramer",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 10,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Matt McDermott",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack Harvel",
+            "att": 6,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 22,
+            "comp": 12,
+            "yds": 168,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Dylan Kozik",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack Harvel",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "6797",
+    "box": {
+      "gameId": "6797",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 42, North Babylon 7: Ryan Parker rushed for 112 yards on seven carries and three touchdowns to lead East Islip (6-0) in Suffolk II. Thomas Costarelli completed four of seven passes for 112 yards and one 49-yard touchdown pass. Parker Redding added a rushing touchdown and PJ Gannon had two interceptions. Logan Baptist threw a 37-yard touchdown pass to Jordan Konig for North Babylon (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 7,
+            "yds": 112,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 4,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 9,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Parker Redding",
+            "att": 1,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 15,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 8,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 7,
+            "comp": 4,
+            "yds": 112,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 11,
+            "comp": 6,
+            "yds": 84,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 1,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 19,
+    "gameId": "6798",
+    "box": {
+      "gameId": "6798",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "12",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Jawara Keahey had 24 carries for 197 yards and scored the winning 4-yard touchdown with 58 seconds left in North Babylon's 22-19 win over West Babylon in Suffolk Division II football on Saturday. Keahey's TD capped an 80-yard drive that spanned 4:53. Jordan Konig ran for 117 yards and a TD on 23 carries and Malyk Montenegro added a 15-yard TD run for North Babylon (3-4). Elijah Outlaw had 19 carries for 191 yards and three TDs and threw for 112 yards for West Babylon (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 16,
+            "yds": 217,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 22,
+            "yds": 173,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 23,
+            "yds": 117,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 5,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "att": 1,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 19,
+            "comp": 11,
+            "yds": 110,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Joe Dispigno",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Vladimir Doricent",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Alex  Allen",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Josiah Price",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Nolan Graham",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Kalel Nunez",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sha'Brece Fuller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Josiah Price",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 21,
+    "gameId": "6799",
+    "box": {
+      "gameId": "6799",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "35",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 56, Centereach 21: Jawara Keahey ran for 293 yards and five touchdowns on 15 carries to lead North Babylon (4-4) over Centereach (2-6) in a Suffolk II matchup.  Malyk Montenegro had three interceptions, including one for a touchdown.  Montenegro also added an 84 yard kick return.  Peter Banculli added a touchdown for the Bulldogs on a five yard run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 15,
+            "yds": 293,
+            "tds": 5
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 7,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 4,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/09/2024",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 20,
+    "gameId": "7556",
+    "box": {
+      "gameId": "7556",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "7",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Fifth-seeded North Babylon (5-4) beat fourth-seeded Northport (5-4) in overtime in a Suffolk II quarterfinal on Jawara Keahey's 14-yard touchdown run. The Bulldogs will play at No. 1 East Islip on Friday night in the semifinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 16,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 13,
+            "yds": 77,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 7,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 12,
+            "yds": 84,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 16,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 4,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 2,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 5,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 2,
+            "comp": 1,
+            "yds": 32,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 5,
+            "comp": 9,
+            "yds": 98,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 2,
+            "comp": 2,
+            "yds": 26,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Tristan Wojt",
+            "rec": 1,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny  Miller",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tommy O'Brien",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zac Loh",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Jacob  Serigano",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Marquis Mais",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Anthony  Sylvanus",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/15/2024",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 38,
+    "gameId": "7602",
+    "box": {
+      "gameId": "7602",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "12",
+          "q3": "13",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 38, North Babylon 12\nRyan Parker rushed for 145 yards on 10 carries including a 58 touchdown run for East Islip. Parker also had a touchdown reception. He had three interceptions including a pick-six and 13 tackles from his linebacker spot. Thomas Costarelli completed 9 of 11 passes for 161 yards and three touchdowns for East Islip (10-0). Jack Kalinowski had seven receptions for 155 yards and touchdowns. North Babylon finished 5-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 10,
+            "yds": 145,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 5,
+            "yds": 9,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 11,
+            "comp": 9,
+            "yds": 161,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 7,
+            "yds": 155,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Dylan Bayer",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

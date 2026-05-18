@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { sql } from '@/lib/db'
 import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -16,10 +17,23 @@ function fmtDate(raw: unknown) {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
-export default async function GameDetailSlot({ params }: { params: Promise<{ id: string }> }) {
+function navUrl(id: number, team: string | null) {
+  return `/launchpad/game/${id}${team ? `?team=${team}` : ''}`
+}
+
+export default async function GameDetailSlot({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>
+  searchParams: Promise<Record<string, string>>
+}) {
   const { id } = await params
+  const sp = await searchParams
   const gameId = Number(id)
   if (!gameId) notFound()
+
+  const teamParam = sp.team ?? null
 
   const rows = await sql`
     SELECT g.*,
@@ -33,6 +47,28 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
   const g = rows[0]
   if (!g) notFound()
 
+  const season    = Number(g.season)
+  const gameNum   = g.game_number != null ? Number(g.game_number) : null
+
+  // Prev / next within same season (team-filtered if team param set)
+  const [prevRows, nextRows] = await Promise.all([
+    teamParam
+      ? sql`SELECT id FROM games WHERE season = ${season} AND game_number < ${gameNum}
+              AND (home_team_slug = ${teamParam} OR away_team_slug = ${teamParam})
+            ORDER BY game_number DESC LIMIT 1`
+      : sql`SELECT id FROM games WHERE season = ${season} AND game_number < ${gameNum}
+            ORDER BY game_number DESC, id DESC LIMIT 1`,
+    teamParam
+      ? sql`SELECT id FROM games WHERE season = ${season} AND game_number > ${gameNum}
+              AND (home_team_slug = ${teamParam} OR away_team_slug = ${teamParam})
+            ORDER BY game_number ASC LIMIT 1`
+      : sql`SELECT id FROM games WHERE season = ${season} AND game_number > ${gameNum}
+            ORDER BY game_number ASC, id ASC LIMIT 1`,
+  ])
+
+  const prevId = prevRows[0]?.id ? Number(prevRows[0].id) : null
+  const nextId = nextRows[0]?.id ? Number(nextRows[0].id) : null
+
   const homeSlug   = g.home_team_slug as string
   const awaySlug   = g.away_team_slug as string
   const homeSchool = (g.home_school as string) ?? homeSlug.replace(/-varsity-football$/, '')
@@ -42,21 +78,19 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
   const homeScore  = g.home_score != null ? Number(g.home_score) : null
   const awayScore  = g.away_score != null ? Number(g.away_score) : null
   const scored     = homeScore != null && awayScore != null
-  const homeWon    = scored && homeScore! > awayScore!
-  const awayWon    = scored && awayScore! > homeScore!
 
   const homePhoto  = TEAM_PHOTOS[homeSchool]?.[0]
   const awayPhoto  = TEAM_PHOTOS[awaySchool]?.[0]
   const homeLogo   = SCHOOL_LOGOS[homeSchool]
   const awayLogo   = SCHOOL_LOGOS[awaySchool]
-  const gameNum    = g.game_number != null ? Number(g.game_number) : null
+
+  const arrowCls = 'absolute top-1/2 -translate-y-1/2 z-20 h-8 w-8 flex items-center justify-center rounded-full bg-black/30 hover:bg-black/55 text-white transition-colors'
 
   return (
     <div className="h-full relative overflow-hidden">
 
       {/* Split photo background */}
       <div className="absolute inset-0 flex">
-        {/* Home side */}
         <div className="relative flex-1">
           {homePhoto ? (
             <>
@@ -67,7 +101,6 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
             <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
           )}
         </div>
-        {/* Away side */}
         <div className="relative flex-1">
           {awayPhoto ? (
             <>
@@ -83,10 +116,24 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
+      {/* Prev arrow */}
+      {prevId && (
+        <Link href={navUrl(prevId, teamParam)} scroll={false} className={`${arrowCls} left-2`}>
+          <ChevronLeft className="h-4 w-4" />
+        </Link>
+      )}
+
+      {/* Next arrow */}
+      {nextId && (
+        <Link href={navUrl(nextId, teamParam)} scroll={false} className={`${arrowCls} right-2`}>
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+      )}
+
       {/* Top bar — week badge left, date right */}
       <div className="absolute top-3 left-4 right-4 z-10 flex items-center justify-between">
         {gameNum != null && (
-          <span className="text-xs font-semibold text-white bg-black rounded-full px-2.5 py-0.5">Week {gameNum}</span>
+          <span className="text-xs font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {gameNum}</span>
         )}
         {fmtDate(g.game_date) && (
           <span className="text-xs font-medium text-white/60">{fmtDate(g.game_date)}</span>
@@ -98,9 +145,9 @@ export default async function GameDetailSlot({ params }: { params: Promise<{ id:
         <Link href={`/game/${gameId}`} className="bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
           {scored ? (
             <p className="text-8xl font-black text-white tabular-nums leading-none">
-              <span className="text-white">{homeScore}</span>
-              <span className="text-white mx-3">–</span>
-              <span className="text-white">{awayScore}</span>
+              <span>{homeScore}</span>
+              <span className="mx-3">–</span>
+              <span>{awayScore}</span>
             </p>
           ) : (
             <p className="text-sm text-white/40">vs</p>

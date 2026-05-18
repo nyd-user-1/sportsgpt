@@ -1,0 +1,1951 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 35,
+    "gameId": "6399",
+    "box": {
+      "gameId": "6399",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Whitman 21: Griffin Kramer rushed for 216 yards on 18 carries, Dan Brausch rushed for 90 yards and two touchdowns and Ethan Burgos rushed for 80 yards and two touchdowns to lead Ward Melville (1-0) in Suffolk I. Ward Melville scored 21 unanswered points and rushed for over 400 yards. Jayden Taylor threw 212 yards and three touchdowns for Whitman (0-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 7,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 18,
+            "yds": 216,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "att": 9,
+            "yds": 90,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 11,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Sebastian Jolley",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 29,
+            "comp": 14,
+            "yds": 212,
+            "tds": 3,
+            "int": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 19,
+            "comp": 8,
+            "yds": 90,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Johnny Lineen",
+            "rec": 2,
+            "yds": 64,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 2,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 3,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 1,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Naggar",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 2,
+            "yds": 30,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Marzovilla",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Johnny Lineen",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brennan Kurtz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "CJ Ward",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Massaro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tyler Blasco",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 7,
+    "gameId": "6412",
+    "box": {
+      "gameId": "6412",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "14",
+          "q2": "10",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 31, Brentwood 7: Jayden Taylor completed 13 of 17 passes for 148 yards, including a 10-yard touchdown pass to Jason Burke, for Whitman (1-1) in Suffolk I. JD Harrison had a 33-yard interception return for a touchdown followed by a 3-yard touchdown run to give Whitman a 21-0 lead in the second quarter. Carter Schum added five receptions for 62 yards. Xavier Ali had seven tackles, including three for a loss, and a sack. Mike Mannino made a 33-yard field goal, went 4-for-4 on PATs and had six touchbacks. Brentwood is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 8,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "att": 4,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 2,
+            "yds": 5,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 17,
+            "comp": 13,
+            "yds": 148,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Nick Sevilla",
+            "att": 3,
+            "comp": 3,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 5,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 3,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Johnny Lineen",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Kaivonn Harris",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Matt Gervasio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "6447",
+    "box": {
+      "gameId": "6447",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Whitman",
+          "q1": "6",
+          "q2": "22",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 35, Bay Shore 0: Carter Schum had two interceptions, including a 38-yard touchdown return, and a successful two-point conversion rush to lead Whitman in Suffolk I. Xavier Ali had 13 tackles, six for loss, and two sacks, and Luis Navarro had 10 tackles, six for loss, and two sacks. Jayden Taylor completed 7 of 11 passes for 47 yards and a touchdown and rushed for a touchdown. Ryan Downes had eight carries for 97 yards and a touchdown and Chase Hinson had three carries for 41 yards and a touchdown. JD Harrison had an interception and Matt Gervasio had 14 tackles for Whitman (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 8,
+            "yds": 97,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonas Templeton",
+            "att": 7,
+            "yds": 77,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 3,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 3,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Nick Sevilla",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 11,
+            "comp": 7,
+            "yds": 47,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Nick Sevilla",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Johnny Lineen",
+            "rec": 2,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 4,
+            "yds": 14,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 20,
+    "gameId": "6458",
+    "box": {
+      "gameId": "6458",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Whitman",
+          "q1": "3",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 20, Whitman 17: Caleib Corbett ran for two touchdowns, including the winning score in the fourth quarter to lead visiting Longwood (3-1) over Whitman (2-2) in Suffolk I football on Saturday. Angel Chestnut set up Corbett's winning touchdown with an 89-yard kickoff return. Davien Benjamin-Sheffey started the offense off with an 88-yard touchdown run. He finished with 105 yards on eight carries. Nnamdi Nwanyanwu made 10 tackles. Corbett had two pass breakups and an interception, while Stephen McCleod-Houston and Mike Warren both recovered fumbles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Davien Benjamin-Sheffey",
+            "att": 8,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 18,
+            "yds": 67,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 6,
+            "yds": 51,
+            "tds": 2
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Jordan Gibbs",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 8,
+            "yds": 118,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "att": 4,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 4,
+            "yds": 3,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 8,
+            "comp": 3,
+            "yds": 95,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 26,
+            "comp": 14,
+            "yds": 206,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "rec": 1,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 5,
+            "yds": 101,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 1,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Johnny Lineen",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel Blank",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Anthony Fraser",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mike Warren",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Stephen  McCleod-Houston",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Danny Vasquez",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Kaivon Harris",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 7,
+    "gameId": "6489",
+    "box": {
+      "gameId": "6489",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Whitman",
+          "q1": "10",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 17, Sachem North 7: Dylan Kollmer completed 8 of 11 passes for 95 yards and ran for a 1-yard touchdown to lead Whitman (3-2) in Suffolk I. Ryan Downes had 25 carries for 102 yards and forced a fumble and a turnover on downs defensively. Kole Gottesman had a 26-yard fumble return touchdown, and Xavier Ali, Luis Navarro and Matt Gervasio each had 10 tackles and a sack. Mike Mannino made a 43-yard field goal and Joshir Lyons had an interception with four minutes remaining. Lucas Singleton had a rushing touchdown for Sachem North (3-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 25,
+            "yds": 102,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 3,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 11,
+            "comp": 8,
+            "yds": 95,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Matt Gervasio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kaivon Harris",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Commack",
+    "isAway": false,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 20,
+    "gameId": "6527",
+    "box": {
+      "gameId": "6527",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "7",
+          "q3": "10",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "9",
+          "q3": "0",
+          "q4": "9",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 20, Whitman 18: Ryan Wald kicked a game-winning 27-yard field goal with two seconds remaining to lead visiting Commack (4-2) in Suffolk I. Wald also kicked a 47-yard field goal at the end of the 3rd quarter. Jeremy Weiss completed 18-of-24 passes for 228 yards and two touchdowns. Matt Rosenoff caught seven passes for 122 yards and a touchdown. Andrew Riggs caught two interceptions and made eight tackles. Jackson Pellegrino made 10 tackles, including five for a loss. Ryan Downes scored a rushing touchdown and JD Harrison caught a touchdown for Whitman (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "att": 14,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 20,
+            "yds": 74,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "att": 1,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Jeremy Weiss",
+            "att": 17,
+            "comp": 24,
+            "yds": 198,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 16,
+            "comp": 9,
+            "yds": 96,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 1,
+            "comp": 1,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Matthew  Rosenoff",
+            "rec": 9,
+            "yds": 102,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Sam  Lustig",
+            "rec": 4,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Andrew Riggs",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 7,
+            "yds": 85,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          },
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Cole Lipra",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 21,
+    "gameId": "6546",
+    "box": {
+      "gameId": "6546",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 21, Whitman 7: Jason Pratt rushed for 133 yards and two touchdowns, and AJ Cannet threw for 97 yards and a touchdown to lead Floyd (6-1) in Suffolk I. Tyree Hubbard caught three passes for 53 yards and a touchdown, and Aaron Fisher had six tackles and three sacks. Dylan Kollmer threw a touchdown pass to JD Harrison for Whitman (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Gevonne Henderson",
+            "att": 7,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 29,
+            "yds": 133,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Keasean Hamilton",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "att": 4,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 14,
+            "comp": 7,
+            "yds": 97,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 4,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 5,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 3,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Bonner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 7,
+    "gameId": "6561",
+    "box": {
+      "gameId": "6561",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 48, Patchogue-Medford 7: Gevonne Henderson rushed for 115 yards and three touchdowns on nine carries to lead visiting Whitman (4-4) in Suffolk I. Jayden Taylor completed 8-of-12 passes for 136 yards, including a 43-yard touchdown pass to Jack David. JD Harrison had six receptions for 86 yards and caught an interception. Xavier Ali made eight tackles, including five for a loss, a sack a forced fumble and led the offensive line that helped accumulate 303 rushing yards. Ryan Downes, Jonas Templeton and Cedrick David each scored a rushing touchdown. Jake Hatton converted all six extra point attempts. Brett Rupolo threw a 72-yard touchdown to Jacob Faison for Patchogue-Medford (0-8).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Gevonne Henderson",
+            "att": 9,
+            "yds": 115,
+            "tds": 3
+          },
+          {
+            "team": "Whitman",
+            "player": "Chase Hinson",
+            "att": 5,
+            "yds": 56,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonas Templeton",
+            "att": 6,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 10,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Cedrick David",
+            "att": 3,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Jayden Taylor",
+            "att": 12,
+            "comp": 8,
+            "yds": 136,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 6,
+            "yds": 86,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 2,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Jake Hatton",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 42,
+    "gameId": "6729",
+    "box": {
+      "gameId": "6729",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "7",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "14",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 42, Whitman 10: Lucas Singleton rushed for 273 yards and four touchdowns on 26 carries to lead host No. 2 Sachem North over No. 7 Walt Whitman in the Suffolk I quarterfinals. His 80-yard TD run gave Sachem North a 14-10 lead in the second quarter. Jayden Berrios and Nasir Altes each added a rushing touchdown. David Santiago had 10 tackles, Shane Reilly had six tackles and two interceptions and Thomas Volpe had five tackles and an interception. Chase Hinson scored a 1-yard rushing touchdown and Mike Mannino kicked a 31-yard field goal for Whitman, which finished 4-5. Sachem North (7-2) will host No. 3 Ward Melville in the semifinals on Friday.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Lucas Singleton",
+            "att": 26,
+            "yds": 273,
+            "tds": 4
+          },
+          {
+            "team": "Sachem North",
+            "player": "Nasir Altes",
+            "att": 4,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jayden Berrios",
+            "att": 9,
+            "yds": 19,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 10,
+            "comp": 8,
+            "yds": 92,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Andrew Eaton",
+            "rec": 3,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Logan  Reilly",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "rec": 3,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Thomas Volpe",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

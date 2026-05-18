@@ -1,0 +1,786 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 10,
+    "gameId": "5633",
+    "box": {
+      "gameId": "5633",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 28, Eastport-South Manor 10: Jermaine Jackson scored two rushing touchdowns for Amityville in Suffolk III. Triston Trellis added a seven-yard touchdown run and Tyler Hinton scored a two-yard rushing touchdown. Amityville scored 28 unanswered points to earn its first home win since 2016.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 36,
+    "gameId": "6034",
+    "box": {
+      "gameId": "6034",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "20",
+          "q2": "9",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 36, Amityville 18: William Gambino ran two yards for one touchdown and completed 14 of 20 passes for 208 yards and three touchdowns in Suffolk III. TJ Hill caught four passes for 61 yards and one touchdown. Jordyn Brown caught two passes for 46 yards and one touchdown followed by a sack in the endzone to give Westhampton a 29-6 lead at the end of the first half. Luke Kilroy made six tackles and Noah Hebberd made five tackles for Westhampton (2-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Nolan  Michalowski",
+            "att": 10,
+            "yds": 39,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 20,
+            "comp": 14,
+            "yds": 208,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 4,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 61,
+    "gameId": "5663",
+    "box": {
+      "gameId": "5663",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "24",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        },
+        {
+          "team": "East Islip",
+          "q1": "27",
+          "q2": "14",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "61"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 61, Amityville 32: Thomas Costarelli ran for 109 yards and two touchdowns and caught to lead East Islip (2-1) in Suffolk III. Ryan Parker ran for two touchdowns and had a sack. Matt McIntee had a 35 yard touchdown run and an interception. Anthony Avitable returned a kick 81 yards for a touchdown and a fumble 52 yards for a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas  Costarelli",
+            "att": 7,
+            "yds": 109,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Avitabile",
+            "att": 9,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Mcintee",
+            "att": 1,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Parker",
+            "att": 3,
+            "yds": 26,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 2,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "KJ Scholl",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas  Costarelli",
+            "att": 2,
+            "comp": 1,
+            "yds": 66,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Matt Baldino",
+            "rec": 1,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 35,
+    "gameId": "5585",
+    "box": {
+      "gameId": "5585",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "21",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 35, Amityville 0: Joseph Filardi threw for 178 yards and four touchdowns and ran for 53 yards and a touchdown to lead Half Hollow Hills West (4-0) in Suffolk III. Jesse Brooks had two receiving touchdowns and an interception on defense. Jalyn Jacques had a 45-yard receiving touchdown and a fumble recovery. Anthony Raio had an interception and a fumble recovery. Teruno Hayman had two tackles for a loss, a sack and a forced fumble. Ryan Bonacor made eight tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 9,
+            "yds": 53,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 16,
+            "comp": 9,
+            "yds": 178,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 4,
+            "yds": 74,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "rec": 0,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin  Stummer",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Teruno Hayman",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "East Hampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 13,
+    "gameId": "5708",
+    "box": {
+      "gameId": "5708",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 20, East Hampton 13: Joshua Garrett rushed 20 yards for the winning touchdown and ran in the ensuing two-point conversion in Suffolk III. Tyree Jones opened the scoring with an 8-yard run for Amityville (2-3). Will Darrell answered for East Hampton (1-4) with a 60-yard touchdown pass to Charlie Corwin. Amityville struck down the lead with a 20-yard touchdown run by Jermaine Jackson. Jackson made eight tackles and rushed 106 yards on 12 carries. Darrell blocked a punt to gain possession and took the ball 40 yards for a touchdown for East Hampton's final score before Amityville took the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 0,
+    "gameId": "5737",
+    "box": {
+      "gameId": "5737",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 43, Wyandanch 0: Triston Trellis threw for 170 yards on 5-of-9 passes for two touchdowns for Amityville (3-3) in Division III. Trellis also returned a punt return for a 70-yard touchdown and had a 30-yard interception return touchdown. Jermaine Jackson had 10 carries and 112 yards for one touchdown. Tyler Hinton had 90 yards, one receiving touchdown and a two-point conversion reception. On the defensive end, Jackson had 10 tackles.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 28,
+    "gameId": "5749",
+    "box": {
+      "gameId": "5749",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 28, Amityville 6: Joey Cecere had 140 all-purpose yards and two touchdowns. Jeremy Graham passed for 130 yards and a touchdown. Mark Byrnes and Ryan Meyers both forced fumbles and Liam Reisinger added an interception for Rocky Point (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 18,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "comp": 3,
+            "yds": 135,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "rec": 1,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 38,
+    "gameId": "5764",
+    "box": {
+      "gameId": "5764",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "16",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 38, Amityville 12: Kaiden Lewis ran for 152 yards and three touchdowns on 14 carries to lead Islip (3-5) in Suffolk III. Christian Hall had 105 yards on 14 carries and Jake Lindskog had three receptions for 72 yards and a touchdown and returned a kick 45 yards for a score. Connor Dobson had eight tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 14,
+            "yds": 152,
+            "tds": 3
+          },
+          {
+            "team": "Islip",
+            "player": "Christian  Hall",
+            "att": 14,
+            "yds": 105,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 15,
+            "comp": 6,
+            "yds": 96,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "rec": 3,
+            "yds": 72,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "AJ Dromerhauser",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1986 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Deer Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 14,
+    "gameId": "6907",
+    "box": {
+      "gameId": "6907",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "21",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 27, Deer Park 14: Jaheim Talford, Michael Frankie and Elie Malcom each scored a rushing touchdown in the second quarter of visiting Bellport's Suffolk II win. Braydon Cipp rushed for 41 yards on seven carries and added an 8-yard score in the fourth quarter. Treyvon Holland had 12 Tackles and Frankie had two interceptions. LJ Brooks added eight tackles and a sack. Aaron Smith rushed for a 2-yard score and threw an 18-yard TD pass to Anthony Almanzar for Deer Park.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 2,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "att": 3,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 7,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "att": 11,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 4,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 16,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 12,
+            "comp": 5,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "rec": 1,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 3,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "LJ  Brooks",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 15,
+    "oppScore": 20,
+    "gameId": "6793",
+    "box": {
+      "gameId": "6793",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 20, Bellport 15: Jawara Keahey rushed for 262 yards and three touchdowns, including a 62-yard rushing touchdown with 1:17 remaining to give host North Babylon (1-1) the lead in Suffolk II. Jordan Konig sealed the game with an interception for North Babylon with 1:07 remaining. Konig also ran for 84 yards on 15 carries. Bellport took the lead with 1:32 left in the game on a Malcolm Elie six-yard touchdown run and a two-point conversion run by Braydon Cipp. Cipp also had an 80-yard touchdown reception for Bellport (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 24,
+            "yds": 255,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 15,
+            "yds": 84,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "RJ DeJesus",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "comp": 7,
+            "yds": 130,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 6,
+            "yds": 122,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 0,
+    "gameId": "6832",
+    "box": {
+      "gameId": "6832",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 7, Northport 0: Kingston John's 46-yard TD run lifted Bellport (2-1) over Northport (2-1) in Suffolk II. He finished with 12 rushes for 67 yards and a score.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Simon  Blissett",
+            "att": 3,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 10,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 12,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "att": 6,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 4,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 12,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon  Blissett",
+            "att": 8,
+            "comp": 3,
+            "yds": 44,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 7,
+            "comp": 2,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "comp": 7,
+            "yds": 42,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "LJ  Brooks",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Ben  Pipolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Gio  Valenti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Drew Schuttinger",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Joey Zarcone",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Treyvon Holland",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 21,
+    "gameId": "6830",
+    "box": {
+      "gameId": "6830",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "13",
+          "q3": "8",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 31, Copiague 21: Braydon Cipp completed 10 of his 19 passes for 123 yards and two touchdowns to lead Bellport (3-1) in Suffolk II. Cipp added 55 rushes on 12 carries. Michael Frankie had three receptions with 96 yards and a touchdown. Kingston John rushed for 93 yards and a touchdown on 19 carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 19,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 12,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "att": 6,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 2,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 19,
+            "comp": 10,
+            "yds": 123,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 3,
+            "yds": 96,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "rec": 4,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "LJ  Brooks",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 21,
+    "gameId": "7033",
+    "box": {
+      "gameId": "7033",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 21, Bellport 0: Jacob Guzik completed 11 of 14 passes for 128 yards and a touchdown and rushed for 30 yards for Huntington in Suffolk II. Tommy Kline had six catches for 88 yards and a touchdown and had a 31-yard rushing touchdown. Timmy McDonald had seven tackles., three tackles for loss and a pass deflection. \nEthan Lawless had three tackles, two tackles for loss and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "att": 6,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 5,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan Elysee",
+            "att": 4,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Thomas Kline",
+            "att": 1,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 9,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Timmy  McDonald",
+            "att": 10,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 5,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 14,
+            "comp": 6,
+            "yds": 47,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 11,
+            "comp": 14,
+            "yds": 128,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "LJ  Brooks",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Tommy  Kline",
+            "rec": 6,
+            "yds": 88,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jordan  Thorbourne",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "tommy smith",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Timmy  McDonald",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Robbie Campbell",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Treyvon Holland",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Davide Lopes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "ethan lawless",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "tommy smith",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 21,
+    "gameId": "6991",
+    "box": {
+      "gameId": "6991",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 21, Bellport 0: Daniel White rushed for 242 yards and two touchdowns to lead Half Hollow Hills East (5-1) in Suffolk II. Jayden Bryant rushed for 17 yards and a touchdown while Marco D'Agnese made all three of his extra points to round out the scoring. Bryant made eight tackles and recovered a fumble on defense. Najeh Sexil also racked up eight tackles while forcing a fumble on a sack. Noah Chlap led the defense with 10 tackles. Logan Soler and Jacob Gianatassio each contributed three tackles and a sack to help complete Hills East's fifth shutout of the year.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 17,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 7,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 4,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 22,
+            "yds": 242,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 16,
+            "comp": 6,
+            "yds": 56,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "rec": 0,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 0,
+    "gameId": "6833",
+    "box": {
+      "gameId": "6833",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bellport",
+          "q1": "23",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 43, Smithtown East 0: Kingston John had five carries for 100 yards, including a 65-yard touchdown run to lead host Bellport (4-3) in Suffolk II. Michael Frankie caught TD passes of 13 and 23 yards from Braydon Cipp, who added a TD run. Hayden Tooker returned a fumble 82 yards for a TD and Nazir Turner had a 23-yard interception return for a score. Jaheim Talford had eight tackles, three sacks and three forced fumbles and Trey'von Holland had eight tackles and a forced fumble. Smithtown East is 2-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Matthew Donahue",
+            "att": 8,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 4,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Cusamano",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 5,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jerome Willett",
+            "att": 4,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 2,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Everick Sheffey",
+            "att": 4,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Varuolo",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Tritsch",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 36,
+            "comp": 13,
+            "yds": 123,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 6,
+            "comp": 4,
+            "yds": 52,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 1,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "rec": 4,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "rec": 4,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Joseph Fallon",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matthew Santangelo",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan  Wallace",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 2,
+            "yds": 35,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Gerard Giles",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Davide Lopes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Hayden  Tooker",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Treyvon Holland",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 40,
+    "gameId": "6831",
+    "box": {
+      "gameId": "6831",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "12",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Bellport",
+          "q1": "14",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 40, Bellport 14: Alex Ciampi and Jack Kalinowski each had a touchdown reception and an interception to lead visiting East Islip (8-0) in Suffolk II. Thomas Costarelli ran for a 47-yard touchdown and threw three TD passes. Ryan Parker caught a 50-yard TD pass and ran for a 5-yard score. Jake Simmons added a TD run. Kingston John ran for touchdowns of 60 and 6 yards for Bellport (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 13,
+            "yds": 135,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 9,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 8,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 11,
+            "yds": 89,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jerome Willett",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Luciano Cunha",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Everick Sheffey",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 15,
+            "comp": 9,
+            "yds": 209,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "comp": 4,
+            "yds": 51,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 4,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 2,
+            "yds": 67,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 2,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 35,
+    "gameId": "7569",
+    "box": {
+      "gameId": "7569",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 35, Bellport 21: Jack Kalinowski had four receptions for 179 yards and three touchdowns and ran for an 8-yard touchdown as host No. 1 East Islip defeated No. 8 Bellport in the Suffolk Division II quarterfinals. He also had an interception. Thomas Costarelli completed 6 of 13 passes for 203 yards and three touchdowns and rushed for 83 yards on seven carries. Ryan Parker rushed for 76 yards on 14 carries, including an 18-yard touchdown run. Kingston John had two rushing touchdowns for Bellport (4-5). East Islip (9-0) will host a semifinal game.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 16,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 6,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 6,
+            "yds": 24,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 7,
+            "yds": 83,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 14,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 2,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 15,
+            "comp": 6,
+            "yds": 64,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 1,
+            "comp": 1,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "comp": 6,
+            "yds": 203,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 4,
+            "yds": 179,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Billy Bast",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

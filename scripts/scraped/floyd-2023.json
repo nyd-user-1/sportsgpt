@@ -1,0 +1,2443 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 0,
+    "gameId": "6401",
+    "box": {
+      "gameId": "6401",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Floyd",
+          "q1": "21",
+          "q2": "10",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 31, Connetquot 0: Caden Lesiewicz scored a school record 53-yard field goal, two touchdowns, and made two interceptions including a 55-yard pick-six for Floyd (1-0) in its Suffolk I opener. Lesiewicz was also 4-for-4 on PATs and had five touchbacks. Jaden Montalvo rushed for 115 yards on six carries including a 54-yard touchdown run. AJ Cannet completed four of five passes for 64 yards, including a 29-yard touchdown pass to Geo Alvarez. Michael Mastriano made four tackles and had a sack for Connnetquot.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon  Barnwell",
+            "att": 11,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Buttino",
+            "att": 6,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 4,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 6,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "att": 1,
+            "yds": 29,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 3,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 5,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 11,
+            "comp": 4,
+            "yds": 28,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 3,
+            "comp": 2,
+            "yds": 27,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 5,
+            "comp": 4,
+            "yds": 64,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Kenny Jozwicki",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aydan DeLiso",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aidan Connell",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Buttino",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 2,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Mastriano",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 21,
+    "gameId": "6413",
+    "box": {
+      "gameId": "6413",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "17",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 31, Ward Melville 21\nCaden Lesiewicz had two interceptions, kicked a 36 yard field goal, and had a rushing touchdown to propel Floyd (2-0) to a pivotal 31-21 victory in Division I. Jaden Montalvo rushed 16 times for 193 yards and two scores for the Colonials. Ward Melville is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 14,
+            "yds": 92,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 14,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 16,
+            "yds": 193,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 6,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 5,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 28,
+            "comp": 12,
+            "yds": 161,
+            "tds": 2,
+            "int": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 9,
+            "comp": 5,
+            "yds": 73,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 9,
+            "comp": 2,
+            "yds": 38,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "rec": 3,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Sebastian Jolley",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Marzovilla",
+            "rec": 3,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 2,
+            "yds": 14,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 3,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Devon Larsen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Javon Delaney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Sachem East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "6444",
+    "box": {
+      "gameId": "6444",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 42, Sachem East 7: Jaden Montalvo had eight carried for 115 yards and a touchdown and AJ Cannet completed four passes for 137 yards and two touchdowns to lead Floyd (3-0) in Suffolk I. Terrell Collum caught touchdown passes of 36 and 38 yards and Jack Molini threw a 16-yard touchdown pass to Gio Alvarez, who also had six tackles, including two for a loss and one sack. Joe Christie caught a 10-yard touchdown pass from AJ Vurchio for Sachem East (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 8,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 6,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Keasean Hamilton",
+            "att": 1,
+            "yds": 9,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 8,
+            "yds": 22,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 11,
+            "comp": 5,
+            "yds": 137,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 4,
+            "comp": 2,
+            "yds": 16,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 16,
+            "comp": 7,
+            "yds": 72,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 2,
+            "yds": 74,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 2,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 6,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/29/2023",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 21,
+    "gameId": "6465",
+    "box": {
+      "gameId": "6465",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "14",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 41, Lindenhurst 21: Jaden Montalvo had 10 carries for 161 yards and a touchdown to lead Floyd in Suffolk I. AJ Cannet threw for 115 yards and two touchdowns and Gio Alvarez caught two passes for 95 yards and two touchdowns. Jack Molini had a touchdown pass and Jason Pratt had 12 carries for 132 yards and a touchdown. Aaron Fisher had nine tackles, four for loss, and a sack for Floyd (4-0). Christian Capogna had a passing and a rushing touchdown, Christian Aquino had a touchdown catch and Maddox Collier-Little had a rush touchdown for Lindenhurst (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 10,
+            "yds": 161,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 12,
+            "yds": 132,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 6,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 12,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Maddox Collier-Little",
+            "att": 2,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 6,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 7,
+            "comp": 3,
+            "yds": 115,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 4,
+            "comp": 2,
+            "yds": 24,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 14,
+            "comp": 10,
+            "yds": 140,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 2,
+            "yds": 95,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 3,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 4,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny  Aquino",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Bonner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 0,
+    "gameId": "6492",
+    "box": {
+      "gameId": "6492",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Longwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 21, Longwood 0: Caden Lesiewicz had rushed 13 times for 124 yards and touchdowns of 13 and 60 yards to lead visiting Floyd in Suffolk I. Lesiewicz also had eight tackles and converted all three of his PATs. Jason Pratt rushed for 85 yards and a touchdown on nine carries. Aaron Fisher had 11 tackles, including one for a loss and Wally Crane added 11 tackles for Floyd (5-0). Longwood is 3-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 13,
+            "yds": 124,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 10,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Keasean Hamilton",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 10,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 14,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Davien Benjamin-Sheffey",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 11,
+            "comp": 3,
+            "yds": 38,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 12,
+            "comp": 6,
+            "yds": 6,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Jordan Gibbs",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 22,
+    "gameId": "6516",
+    "box": {
+      "gameId": "6516",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 22, Floyd 21: Andrew Eaton ran in a 12-yard touchdown and Lucas Singleton ran in a two-point conversion with 1:32 remaining in the fourth quarter to lead visiting Sachem North (4-2) over Floyd (5-1) in Suffolk Division I football on Saturday. Eaton also returned a kickoff for a 90-yard touchdown in the third quarter. Singleton rushed for 110 yards and one touchdown on 21 carries. Nasir Altes made eight tackles, and Thomas Volpe had six tackles and one sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 29,
+            "yds": 128,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 2,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 16,
+            "comp": 7,
+            "yds": 85,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Donovan Codrington",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 2,
+            "yds": 30,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Whitman",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "6546",
+    "box": {
+      "gameId": "6546",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 21, Whitman 7: Jason Pratt rushed for 133 yards and two touchdowns, and AJ Cannet threw for 97 yards and a touchdown to lead Floyd (6-1) in Suffolk I. Tyree Hubbard caught three passes for 53 yards and a touchdown, and Aaron Fisher had six tackles and three sacks. Dylan Kollmer threw a touchdown pass to JD Harrison for Whitman (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Gevonne Henderson",
+            "att": 7,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 29,
+            "yds": 133,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Keasean Hamilton",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "att": 4,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 14,
+            "comp": 7,
+            "yds": 97,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 4,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 5,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 3,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Bonner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2023",
+    "opponent": "Commack",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 9,
+    "gameId": "6576",
+    "box": {
+      "gameId": "6576",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Commack",
+          "q1": "3",
+          "q2": "3",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 14, Commack 9: Jason Pratt rushed for 155 yards and a touchdown on 26 carries to lead Floyd (7-1) in Suffolk I. AJ Cannet completed nine passes for 177 yards and a 52-yard touchdown to Josh Jordan, who caught three passes for 79 yards. Javon Delaney made seven tackles, two tackles for loss and had an interception in the fourth quarter. Ryan Wald kicked three field goals for Commack (5-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 25,
+            "yds": 155,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 4,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "att": 11,
+            "yds": 86,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jeremy Weiss",
+            "att": 5,
+            "yds": 34,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 22,
+            "comp": 9,
+            "yds": 177,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 5,
+            "comp": 2,
+            "yds": 14,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jeremy Weiss",
+            "att": 31,
+            "comp": 14,
+            "yds": 145,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "att": 0,
+            "comp": 0,
+            "yds": 60,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "rec": 3,
+            "yds": 79,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 1,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Donovan Codrington",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Matthew  Rosenoff",
+            "rec": 0,
+            "yds": 122,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Andrew Riggs",
+            "rec": 0,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 3,
+            "pat": 0,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Javon Delaney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2023",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 26,
+    "gameId": "6732",
+    "box": {
+      "gameId": "6732",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "6",
+          "q2": "6",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "27",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 55, Sachem East 26: Terrell Collum caught three passes for 37 yards and a touchdown and returned a 90-yard kickoff return to lead host No. 1 Floyd (8-1) over No. 8 Sachem East (5-4) in the Suffolk I quarterfinals. Jason Pratt rushed for 122 yards and a touchdown on 22 carries, and Ja'Quan Thomas rushed for 91 yards and a touchdown on 11 carries. AJ Cannet completed 5 of 7 passes for 57 yards and a touchdown to Collum. Floyd will host No. 4 Longwood on Saturday.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 22,
+            "yds": 122,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 9,
+            "yds": 98,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 11,
+            "yds": 91,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 2,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "att": 1,
+            "yds": 5,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 5,
+            "comp": 7,
+            "yds": 59,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 1,
+            "comp": 4,
+            "yds": 28,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Donovan Codrington",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/11/2023",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 13,
+    "gameId": "6765",
+    "box": {
+      "gameId": "6765",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Floyd",
+          "q1": "6",
+          "q2": "29",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 49, Longwood 13: Jason Pratt had 13 carries for 123 yards and two touchdowns to lead No. 1 Floyd over No. 4 Longwood in the Suffolk Division I semifinals. AJ Cannet completed 9 of 14 passes for 183 yards, four touchdowns and a successful two-point coversion. Gio Alvarez caught five passes for 105 yards and two touchdowns. Justice Darling and Jay'don Peacock each caught a touchdown. Nnamdi Nwanyanwu and Vinny Rosario each had 1-yard touchdown runs for Longwood. Floyd will play No. 2 Sachem North in the Suffolk I final at 7:30 p.m. Friday at Stony Brook University.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 7,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 16,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Angel Chestnut",
+            "att": 5,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kalen  Percer",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "att": 2,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 13,
+            "yds": 123,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 9,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 16,
+            "comp": 5,
+            "yds": 54,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 14,
+            "comp": 9,
+            "yds": 183,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Anthony Fraser",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 5,
+            "yds": 105,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 2,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jay'Don Peacock",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Floyd",
+            "player": "D.J. Blankenship",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/17/2023",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 9,
+    "gameId": "6771",
+    "box": {
+      "gameId": "6771",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "0",
+          "q3": "3",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 1 Floyd def. No. 2 Sachem North in the Suffolk Division I final at Stony Brook University",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 3,
+            "yds": 82,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 15,
+            "yds": 82,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 11,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 12,
+            "comp": 7,
+            "yds": 201,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 3,
+            "yds": 155,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Spencer Link",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Justice  Darling",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron  Fisher",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Derek Amato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Dylan Tenes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Jordan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaydon Peacock",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/24/2023",
+    "opponent": "Massapequa",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "6780",
+    "box": {
+      "gameId": "6780",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Massapequa",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 8,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 2,
+            "comp": 1,
+            "yds": 11,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 8,
+            "comp": 1,
+            "yds": 4,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Massapequa",
+            "player": "Joe Diesso",
+            "att": 15,
+            "comp": 11,
+            "yds": 146,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Donovan Codrington",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Derek Amato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1622 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 13,
+    "gameId": "6396",
+    "box": {
+      "gameId": "6396",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 21, Shoreham-Wading River 13: Cole Madden threw for 110 yards and two touchdowns and Matt Triolo caught six passes for 102 yards and two touchdowns to lead Glenn (1-0) in Suffolk IV. Kahran King rushed for 154 yards and a touchdown on 12 carries, Joe Competiello had an interception and Jack Smith had eight tackles and a fumble recovery. Tyler Hermans threw two touchdowns for Shoreham-Wading River (0-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 12,
+            "yds": 154,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 14,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "att": 17,
+            "yds": 56,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 7,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Gregorek",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 13,
+            "comp": 7,
+            "yds": 110,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 26,
+            "comp": 13,
+            "yds": 190,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 6,
+            "yds": 102,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "rec": 3,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 3,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "rec": 4,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Zack Wilson",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Alex Kershis",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Gregorek",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/14/2023",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 19,
+    "gameId": "6430",
+    "box": {
+      "gameId": "6430",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "13",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 20, Miller Place 19: KaRahn King rushed for 220 yards and three touchdowns on 28 carries to lead Glenn (2-0) in Suffolk IV. Cole Madden threw for 112 yards and King caught three passes for 45 yards. Jack Smith and David Rafiq each made six tackles. Glenn scored 20 unanswered points in the second half. Michael Giuliano scored two touchdowns for Miller Place (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 28,
+            "yds": 220,
+            "tds": 3
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 25,
+            "yds": 147,
+            "tds": 2
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan Monaco",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden Meadows",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 15,
+            "comp": 11,
+            "yds": 112,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 15,
+            "comp": 7,
+            "yds": 84,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 3,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 4,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "DJ  Williamson",
+            "rec": 7,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jackson Thompson",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Logan  LaMountain",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braedon Murphy",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Kevin Washington",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2023",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 14,
+    "gameId": "6433",
+    "box": {
+      "gameId": "6433",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Glenn",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 19, Mt. Sinai 14: Jasai McKay made a game-sealing interception on Glenn's 5-yard line with one minute left in the Knights' win over visiting Mt. Sinai on Thursday. Cole Madden completed 10 of 12 passes for 121 yards and a touchdown to Matt Triolo, who caught four passes for 59 yards. Kahran King added 97 rushing yards and two touchdowns. Jack Sikes recorded two sacks and Anothony Soto had an interception for Glenn (3-0). Nicholas Caretta rushed 14 times for 56 yards and a touchdown and Dontae Spadaro caught a 31-yard touchdown pass from John Pramataris for Mt. Sinai (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 14,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 12,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan  Geraghty",
+            "att": 5,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 15,
+            "yds": 97,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 6,
+            "comp": 10,
+            "yds": 101,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 12,
+            "comp": 10,
+            "yds": 121,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "rec": 3,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan  Geraghty",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Millen",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 4,
+            "yds": 59,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Maire",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Youssef Elbahey",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Carmine Gerbino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/29/2023",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 27,
+    "gameId": "6466",
+    "box": {
+      "gameId": "6466",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "20",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 27, Glenn 7: Dan Aiello rushed for 183 yards and two touchdowns on 14 carries, and returned an interception for a touchdown to lead Bayport-Blue Point (4-0) in Suffolk IV. Maclin Keyser added 45 rushing yards and a touchdown. Cole Madden caught a 57-yard touchdown in the fourth quarter for Glenn (3-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 14,
+            "yds": 183,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 10,
+            "yds": 45,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 6,
+    "gameId": "6496",
+    "box": {
+      "gameId": "6496",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "27",
+          "q2": "21",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 48, Wyandanch 6: Cole Madden completed all seven of his passes for 129 yards and four touchdowns to lead visiting Glenn in Suffolk IV. Matt Triolo caught two passes for 35 yards and two touchdowns, Michael St. Croix caught a 44-yard score and and Jack Smith added a 12-yard TD reception. Khaleif Anthony, David Rafiq and Keith King each rushed for a score. St. Croix had an interception for Glenn (4-1). Elijah Duncan rushed for a 30-yard touchdown for Wyandanch (0-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 4,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "att": 2,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 7,
+            "comp": 7,
+            "yds": 129,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 1,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 2,
+            "yds": 35,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 2,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 14,
+    "gameId": "6531",
+    "box": {
+      "gameId": "6531",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 20, Babylon 14: KaRahn King totaled 331 all purpose touchdowns and three rushing touchdowns to lead host Glenn to a 20-14 win over Babylon in Suffolk Division IV football on Saturday. Cole Madden passed for 71 yards, and Jack Sikes had three sacks to lead Glenn's (5-1) defense. Aidan Winter threw two touchdown passes of 10 and 36 yards for Babylon (5-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 16,
+            "yds": 152,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 24,
+            "yds": 277,
+            "tds": 3
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 6,
+            "comp": 11,
+            "yds": 71,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 4,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2023",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 41,
+    "gameId": "6532",
+    "box": {
+      "gameId": "6532",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 49, Islip 41: Kahran King had 368 all-purpose yards and four touchdowns to lead Glenn (6-1) in Suffolk IV. Cole Madden threw for 164 yards and two touchdowns, and Matt Triolo had 86 receiving yards and two touchdowns. Jack Sikes and Jack Smith each had five tackles. Brady Nash accounted for five touchdowns and Collin Haug scored three touchdowns for Islip (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 26,
+            "yds": 290,
+            "tds": 3
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 3,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 15,
+            "comp": 10,
+            "yds": 164,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 3,
+            "yds": 86,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Carmine Gerbino",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2023",
+    "opponent": "Port Jefferson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 13,
+    "gameId": "6557",
+    "box": {
+      "gameId": "6557",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Glenn",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 49, Port Jefferson 13: Cole Madden completed 9 of 12 passes for 148 yards and three touchdowns to lead host Glenn in Suffolk IV. Kahran King rushed for 108 yards and two touchdowns on six carries and Cameron Rossi had seven carries for 79 yards and a 53-yard TD. Sebastian Guevara added a 1-yard rushing score and Matt Triolo, Khaleif Anthony and Jack Smith each caught a TD pass. Joe Competiello made 10 tackles for Glenn (7-1). Ryan Filippi had two rushing touchdowns for Port Jefferson (3-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 6,
+            "yds": 108,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 7,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Sebastian Guevara",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 12,
+            "comp": 9,
+            "yds": 148,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 1,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 1,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 14,
+    "gameId": "6718",
+    "box": {
+      "gameId": "6718",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Zach Molomo made six tackles and had a sack with 6:43 left in the fourth quarter to force a punt and allow No. 7 Mt. Sinai to pick up three first downs and run the clock out on the final drive of its 14-13 win over No. 2 Glenn in the Suffolk Division IV football quarterfinals at Manor Field Park in Huntington Friday night. Nicholas Carretta had 22 carries for 106 yards and returned an interception 30 yards for a touchdown in the first quarter. Dontae Spadaro rushed for a 30-yard TD in the second quarter to give Mt. Sinai a 14-7 lead. He finished with 66 yards and on 12 carries and Jimmy Millen had eight tackles.  \nMatt Triolo caught a 25-yard touchdown pass from Cole Madden and KaRahn King scored a 5-yard TD run in the second quarter for Glenn, but a bad snap on the tying PAT allowed Mt. Sinai to keep the lead heading into halftime.\nMt. Sinai (5-4) will visit No. 1 Bayport-Blue Point in the semifinals on Friday. Glenn finished 7-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 22,
+            "yds": 106,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 12,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan  Geraghty",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 1,
+            "comp": 1,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Maire",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "John Graziano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Zachary Molomo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

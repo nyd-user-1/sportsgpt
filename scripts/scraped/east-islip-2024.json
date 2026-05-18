@@ -1,0 +1,2089 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 7,
+    "gameId": "6926",
+    "box": {
+      "gameId": "6926",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "East Islip",
+          "q1": "21",
+          "q2": "17",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ryan Parker had two sacks, two tackles for loss, a receiving touchdown and a rushing touchdown in the first half for East Islip.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Jake Kramer",
+            "att": 10,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Nick Klimatas",
+            "att": 8,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 11,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake  Leila",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 8,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 2,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 2,
+            "yds": 12,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 6,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 5,
+            "comp": 2,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 6,
+            "comp": 4,
+            "yds": 77,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Nils Haugen",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Matt McDermott",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Dylan Kozik",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Wattson Pierre-Louis",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 0,
+    "gameId": "6870",
+    "box": {
+      "gameId": "6870",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "27",
+          "q2": "13",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 43, Centereach 0: Ryan Parker had seven carries for 70 yards and three touchdown to lead visiting East Islip (2-0). Thomas Costarelli, Jack Kalinowski and Jake Simmons each added a TD run. Niko Myers had a sack and two tackles for a loss. Centereach is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 5,
+            "yds": 81,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 8,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 13,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 7,
+            "yds": 70,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Nick Weber",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 1,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Aiden McConell",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 10,
+            "yds": 73,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Dylan  Duran",
+            "att": 19,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "TJ  Doyle",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 1,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "TJ  Doyle",
+            "att": 24,
+            "comp": 8,
+            "yds": 57,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Gavin Bishop",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Christian Vasquez",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jack  Cavalieri",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Joe Hughes",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Dylan  Duran",
+            "rec": 3,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Anthony  Innocent",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 14,
+    "gameId": "6925",
+    "box": {
+      "gameId": "6925",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "East Islip",
+          "q1": "28",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 42, Smithtown West 14: Thomas Costarelli ran for three touchdowns and threw one 13-yard touchdown pass to Niko Meyers to lead host East Islip (3-0) in Suffolk II. Brendan McCaffrey and Jaden Schmidt had a sack and Jack Kalinowski had an interception, a fumble, and a 37-yard interception return.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "yds": 80,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 10,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 6,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Nick Weber",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 8,
+            "comp": 15,
+            "yds": 114,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 2,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 3,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "James Martino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jaden Schmidt",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Brendan McCaffrey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 14,
+    "gameId": "6923",
+    "box": {
+      "gameId": "6923",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 33, Half Hollow Hills East 14: Thomas Costarelli completed 6 of 12 pass attempts for 162 yards, a touchdown and an interception, adding 128 rushing yards on 20 attempts with a score on the ground for East Islip in Suffolk II. Ryan Parker toted the ball 15 times for 65 yards and two touchdowns. Parker added 82 yards on three receptions. Jake Simmons had two sacks, and Niko Myers had one. Myers also caught a 19-yard touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 14,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 20,
+            "yds": 128,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 15,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 1,
+            "yds": 29,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 12,
+            "comp": 6,
+            "yds": 162,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 3,
+            "yds": 82,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 2,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 1,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 2,
+            "pat": 3,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 0,
+    "gameId": "7309",
+    "box": {
+      "gameId": "7309",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "21",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 42, West Babylon 0: Ryan Parker capped off East Islip's opening drive with an 8-yard TD run before intercepting West Babylon's first play from scrimmage and scoring on a 22-yard rush the next play in a road Suffolk II win. Parker finished with 144 yards rushing and four touchdowns on 18 carries, adding an interception and a sack on defense. Jaden Schmidt's sack and forced fumble led Wattson Pierre-Louis to jump on the ball in the end zone for a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 18,
+            "yds": 144,
+            "tds": 4
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 9,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 9,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Parker Redding",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Nick Weber",
+            "att": 5,
+            "yds": 5,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "att": 7,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jonathan Rosario",
+            "att": 7,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jonathan Espinal",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 5,
+            "comp": 3,
+            "yds": 44,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 6,
+            "comp": 2,
+            "yds": 22,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Brayden Black",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jaden Schmidt",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Wattson Pierre-Louis",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jalen Campbell",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jah'rece Matthews",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Tyren Roache",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "6797",
+    "box": {
+      "gameId": "6797",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 42, North Babylon 7: Ryan Parker rushed for 112 yards on seven carries and three touchdowns to lead East Islip (6-0) in Suffolk II. Thomas Costarelli completed four of seven passes for 112 yards and one 49-yard touchdown pass. Parker Redding added a rushing touchdown and PJ Gannon had two interceptions. Logan Baptist threw a 37-yard touchdown pass to Jordan Konig for North Babylon (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 7,
+            "yds": 112,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 4,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Will Gonzalez",
+            "att": 9,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Parker Redding",
+            "att": 1,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 15,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 8,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 7,
+            "comp": 4,
+            "yds": 112,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 11,
+            "comp": 6,
+            "yds": 84,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 1,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 27,
+    "gameId": "6924",
+    "box": {
+      "gameId": "6924",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "East Islip",
+          "q1": "6",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 41, Northport 27: Ryan Parker had four touchdowns with 145 rushing yards and 93 receiving yards to lead host East Islip (7-0) in Suffolk II. Jack Kalinowski had two interceptions and six catches for 110 yards and a touchdown and Thomas Costarelli completed eight of 10 passes to for 203 yards and two touchdowns. Enrique Hernandez threw three touchdown passes including a 50-yard pass to Christian Campoli for Northport (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 9,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 12,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 17,
+            "yds": 145,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 12,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 24,
+            "comp": 12,
+            "yds": 258,
+            "tds": 3,
+            "int": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 10,
+            "comp": 8,
+            "yds": 203,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 112,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 4,
+            "yds": 78,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny  Miller",
+            "rec": 1,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 6,
+            "yds": 110,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 2,
+            "yds": 93,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zac Loh",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 14,
+    "gameId": "6831",
+    "box": {
+      "gameId": "6831",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "12",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Bellport",
+          "q1": "14",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 40, Bellport 14: Alex Ciampi and Jack Kalinowski each had a touchdown reception and an interception to lead visiting East Islip (8-0) in Suffolk II. Thomas Costarelli ran for a 47-yard touchdown and threw three TD passes. Ryan Parker caught a 50-yard TD pass and ran for a 5-yard score. Jake Simmons added a TD run. Kingston John ran for touchdowns of 60 and 6 yards for Bellport (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 13,
+            "yds": 135,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 9,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 8,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 11,
+            "yds": 89,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jerome Willett",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Luciano Cunha",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Everick Sheffey",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Javion Tate",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 15,
+            "comp": 9,
+            "yds": 209,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "comp": 4,
+            "yds": 51,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 4,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 2,
+            "yds": 67,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 2,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael  Ray",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 21,
+    "gameId": "7569",
+    "box": {
+      "gameId": "7569",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 35, Bellport 21: Jack Kalinowski had four receptions for 179 yards and three touchdowns and ran for an 8-yard touchdown as host No. 1 East Islip defeated No. 8 Bellport in the Suffolk Division II quarterfinals. He also had an interception. Thomas Costarelli completed 6 of 13 passes for 203 yards and three touchdowns and rushed for 83 yards on seven carries. Ryan Parker rushed for 76 yards on 14 carries, including an 18-yard touchdown run. Kingston John had two rushing touchdowns for Bellport (4-5). East Islip (9-0) will host a semifinal game.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 16,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 6,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 6,
+            "yds": 24,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 7,
+            "yds": 83,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 14,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 2,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 15,
+            "comp": 6,
+            "yds": 64,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 1,
+            "comp": 1,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "comp": 6,
+            "yds": 203,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 4,
+            "yds": 179,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Billy Bast",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/15/2024",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 12,
+    "gameId": "7602",
+    "box": {
+      "gameId": "7602",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "12",
+          "q3": "13",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 38, North Babylon 12\nRyan Parker rushed for 145 yards on 10 carries including a 58 touchdown run for East Islip. Parker also had a touchdown reception. He had three interceptions including a pick-six and 13 tackles from his linebacker spot. Thomas Costarelli completed 9 of 11 passes for 161 yards and three touchdowns for East Islip (10-0). Jack Kalinowski had seven receptions for 155 yards and touchdowns. North Babylon finished 5-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 10,
+            "yds": 145,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 5,
+            "yds": 9,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 11,
+            "comp": 9,
+            "yds": 161,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "rec": 7,
+            "yds": 155,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Dylan Bayer",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/22/2024",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 41,
+    "gameId": "7624",
+    "box": {
+      "gameId": "7624",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "East Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 41, East Islip 14\nDaniel White rushed for 273 yards and four touchdowns on 24 carries to lead Hills East to its first ever Suffolk football title. Noah Chlap returned an interception 100 yards for a touchdown for the RedHawks (10-1). It is the longest play of any kind in Suffolk football finals history. East Islip finished the season at 10-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 24,
+            "yds": 273,
+            "tds": 4
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 7,
+            "comp": 4,
+            "yds": 113,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 32,
+            "comp": 17,
+            "yds": 172,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 7,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Robbie  Kapovic",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah Chlap",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

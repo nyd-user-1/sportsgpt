@@ -1,0 +1,1087 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "Southampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 8,
+    "gameId": "6404",
+    "box": {
+      "gameId": "6404",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Southampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "7",
+          "q2": "21",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Port Jefferson 41, Southampton 8: Ryan Filippi ran for 139 yards and four touchdowns on 11 carries to lead Port Jefferson (1-0). Filippi also threw 3-for-4 for 68 yards and one touchdown and had an interception on defense. Jaden Katsaros ran for 98 yards and a touchdown on nine carries. Malachi Bourjolly caught one touchdown for 41 yards and rushed for 18 yards on six carries. Alexander Layne-Stasik caught two passes for 47 yards. On defense, Brandon Verruto had with 11 tackles, five for a loss and two forced fumbles. James Dowd made 12 tackles, two for a loss and Gavin Argyros made six tackles, two for a loss. Owen Whiffen had an interception. Nehemiah Mack ran for a 40 yard touchdown for Southampton (0-1).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/14/2023",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 32,
+    "gameId": "6427",
+    "box": {
+      "gameId": "6427",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "6",
+          "q3": "13",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 32, Port Jefferson 0: Dontae Spadaro and Nicholas Carretta both ran for 57 yards and two touchdowns on six carries to lead Mt. Sinai (1-1). John Graziano ran for 88 yards and one touchdown on seven carries, and John Pramataris ran for 50 yards on seven carries. Port Jefferson is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "John Graziano",
+            "att": 7,
+            "yds": 88,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 6,
+            "yds": 57,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 6,
+            "yds": 57,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 7,
+            "yds": 50,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "att": 5,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Zachary Molomo",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Maire",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 0,
+    "gameId": "6453",
+    "box": {
+      "gameId": "6453",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "20",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Port Jefferson 28, Wyandanch 0: Ryan Filippi had 14 carries for 97 yards and two touchdowns and a two-point conversion rush to lead Port Jefferson in Suffolk IV. Filippi also completed 4 of 7 passes for 79 yards. Jaden Katsaros had a 60-yard interception return touchdown, five carries for 30 yards and three receptions for 67 yards. James Dowd had six carries for 25 yards and a touchdown, a successful two-point conversion run and eight tackles. Gavin Argyros forced a fumble that Albert J. Peterson recovered for Port Jefferson (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Port Jefferson",
+            "player": "Ryan Filippi",
+            "att": 14,
+            "yds": 97,
+            "tds": 2
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "James Dowd",
+            "att": 6,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Port Jefferson",
+            "player": "Ryan Filippi",
+            "att": 7,
+            "comp": 4,
+            "yds": 79,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2023",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 41,
+    "gameId": "6476",
+    "box": {
+      "gameId": "6476",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "27",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 41, Port Jefferson 0: Liam Kershis ran for four touchdowns to lead host Shoreham-Wading River (2-2) over Port Jefferson (2-2) in Suffolk IV. Kieran Clifford ran for a 70-yard touchdown and threw a 67-yard touchdown pass to Mike Casey.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 12,
+            "yds": 141,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "att": 8,
+            "yds": 83,
+            "tds": 4
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 2,
+            "yds": 34,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 8,
+            "comp": 4,
+            "yds": 113,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "att": 2,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "rec": 1,
+            "yds": 67,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 2,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Gregorek",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Alex Kershis",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 41,
+    "gameId": "6499",
+    "box": {
+      "gameId": "6499",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "34",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 41, Port Jefferson 0: Dan Aiello rushed for 110 yards and three touchdowns on six carries all in the first quarter to lead visiting Bayport-Blue Point (5-0) over Port Jefferson (2-3) in Suffolk IV on Friday. Maclin Keyser rushed for 50 yards and two touchdowns on four carries and Ryan Athearn rushed for one touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 6,
+            "yds": 110,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 4,
+            "yds": 50,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brendan  Mattimore",
+            "att": 4,
+            "comp": 3,
+            "yds": 150,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Mike Luce",
+            "rec": 2,
+            "yds": 85,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 16,
+    "gameId": "6524",
+    "box": {
+      "gameId": "6524",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "8",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 16, Port Jefferson 6: Xavier Bryant had one rushing touchdown and one receiving touchdown to lead Center Moriches (5-1) in Suffolk IV. Michael Gold caught a pass from Xavier Bryant for a two-point conversion. Shane Gallagher and Donte Pomara each had one interception. Ryan Fillipi made a seven-yard touchdown run for Port Jefferson (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matt Albino",
+            "att": 17,
+            "yds": 185,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Connor Planz",
+            "att": 3,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "att": 2,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "att": 5,
+            "yds": 16,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Connor Planz",
+            "att": 7,
+            "comp": 3,
+            "yds": 61,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 3,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Dante Pomara",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/20/2023",
+    "opponent": "Mattituck / Greenport / Southold",
+    "isAway": true,
+    "result": "W",
+    "myScore": 37,
+    "oppScore": 0,
+    "gameId": "6536",
+    "box": {
+      "gameId": "6536",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        },
+        {
+          "team": "Mattituck / Greenport / Southold",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Port Jefferson 37, Greenport/Southold 0: Ryan Filippi ran for 108 yards and a touchdown and threw for 164 yards and two touchdowns to lead Port Jefferson (3-4) in Suffolk IV. Jaden Katsaros ran for 45 yards and scored two rushing touchdowns. Owen Whiffen made 14 tackles, including three for a loss. Gavin Argos made six tackles, including two for a loss and Brandon Verruto made eight tackles three for a loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Port Jefferson",
+            "player": "Ryan Filippi",
+            "att": 10,
+            "yds": 108,
+            "tds": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Jaden Katsaros",
+            "att": 9,
+            "yds": 45,
+            "tds": 2
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Malachi Bourjolly",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "James Dowd",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Port Jefferson",
+            "player": "Ryan Filippi",
+            "att": 11,
+            "comp": 8,
+            "yds": 164,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Port Jefferson",
+            "player": "Jaden Katsaros",
+            "rec": 3,
+            "yds": 71,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Malachi Bourjolly",
+            "rec": 2,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Malachi",
+            "rec": 2,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Jack Donarummo",
+            "rec": 2,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Alexander Layne-Stasik",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/26/2023",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 49,
+    "gameId": "6557",
+    "box": {
+      "gameId": "6557",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Glenn",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 49, Port Jefferson 13: Cole Madden completed 9 of 12 passes for 148 yards and three touchdowns to lead host Glenn in Suffolk IV. Kahran King rushed for 108 yards and two touchdowns on six carries and Cameron Rossi had seven carries for 79 yards and a 53-yard TD. Sebastian Guevara added a 1-yard rushing score and Matt Triolo, Khaleif Anthony and Jack Smith each caught a TD pass. Joe Competiello made 10 tackles for Glenn (7-1). Ryan Filippi had two rushing touchdowns for Port Jefferson (3-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 6,
+            "yds": 108,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 7,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Sebastian Guevara",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 12,
+            "comp": 9,
+            "yds": 148,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 1,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 1,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "6725",
+    "box": {
+      "gameId": "6725",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "21",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 35, Port Jefferson 7: Maclin Keyser threw for three touchdowns and ran for another to lead host No. 1 Bayport-Blue Point (9-0) over No. 8 Port Jefferson (3-6) in the Suffolk IV quarterfinals. Danny Aiello rushed for one touchdown of 75 yards, totaling 175 yards on the ground, and added a 34-yard touchdown reception. Aiello also was 5-for-5 on extra point attempts. Mike Luce caught two touchdowns to go with his 85 receiving yards. Bayport-Blue Point will host No. 7 Mt. Sinai (5-4) on Friday in the semifinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 8,
+            "yds": 175,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 2,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 7,
+            "comp": 5,
+            "yds": 125,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Mike Luce",
+            "rec": 3,
+            "yds": 85,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "rec": 1,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brendan Waters",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

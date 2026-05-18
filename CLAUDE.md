@@ -155,8 +155,18 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/division/[slug]` | `Shell.tsx` | Standings (2 rows default, header click expands) + circular season carousel arrows |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
 
+### Game Detail (`/game/[id]`)
+- `page.tsx` — fetches game + box score + prev/next game IDs + player slugs
+- `GameShell.tsx` — split-screen hero (400px), Week badge, score box, nav chevrons, stat profiles
+- `?ref={team-slug}` param — keeps chevron navigation anchored to the referring team's schedule
+- Score links in team game log (`/team/[slug]`) append `?ref={team.slug}` to game URLs
+
 ### Launchpad (`/launchpad`)
 Parallel routes (`@detail` slot): standings left, team photo or game split-screen right.
+
+**Standings table:** Team, W, L, PCT, Conf, PF, PA, DIFF. Selected row = blue-50 + inset left accent.
+
+**ProviderSection cards:** Horizontal scroll, `w-[400px]`, split-screen photos, black Week badge, long date. `?team={slug}` param preserves team filter when navigating from team context to a game card.
 
 ---
 
@@ -242,8 +252,61 @@ Used in: Top Players + Division Standings carousels on `/team/[slug]`.
 |--------|---------|
 | `scripts/ingest-extended.mjs` | Full DB ingest: schema, schools, standings, player stats, games |
 | `scripts/ingest-blob-photos.mjs` | Upload to Blob `gallery/` prefix (now legacy — `/public` is empty) |
+| `scripts/scrape-boxscores.mjs` | **Generalized Newsday box score scraper.** Args: `<newsday-slug> <db-season>` |
+| `scripts/ingest-boxscores.mjs` | **Generalized box score ingest.** Args: `<json-file> <db-team-slug> <season>` |
 
 Run with: `node --env-file=.env.local scripts/<name>.mjs`
+
+---
+
+## Box Score Scraping Pipeline
+
+### Newsday URL pattern by season
+- **2025-26** (DB `season=2025`): no suffix
+- **2024-25** (DB `season=2024`): append `/2025`
+- **2023-24** (DB `season=2023`): append `/2024`
+- **2022-23** (DB `season=2022`): append `/2023`
+- **2021-22** (DB `season=2021`): append `/2022`
+
+Formula: suffix = `/${DB_season + 1}`. Already handled automatically by `scrape-boxscores.mjs`.
+
+### Full run for a single team + season
+```bash
+node scripts/scrape-boxscores.mjs longwood 2025
+# → writes scripts/scraped/longwood-2025.json
+
+node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood-2025.json longwood-varsity-football 2025
+```
+
+### Box score coverage (as of 2026-05-18)
+| Season | Coverage |
+|--------|----------|
+| 2025-26 | 224/224 ✅ Complete |
+| 2024-25 | 238/240 ✅ Complete |
+| 2023-24 | 234/237 ✅ Complete |
+| 2022-23 | ⏳ Scrape ran overnight — ingest pending next session |
+| 2021-22 | ⏳ Not started |
+
+### **NEXT SESSION — resume here:**
+1. Check `ls scripts/scraped/*-2022.json` — see which teams scraped overnight
+2. Re-scrape any missing: `node scripts/scrape-boxscores.mjs <slug> 2022`
+3. Ingest 2022-23 (all teams, use `pat-med` and `swr` slug overrides — see slug table above)
+4. Scrape + ingest 2021-22 (season=2021, suffix=/2022)
+5. Build Newsday player scraper (see below)
+
+### Newsday player scraper — NEXT AFTER BOX SCORES
+The same team page URLs have a **ROSTER** table below TEAM RESULTS. Each player links to:
+`https://scores.newsday.com/sports/highschool/player/football/{newsday_player_id}/{end_year}`
+
+e.g. Jake Simmons (East Islip) 2025-26: `/24993/2026`; 2024-25: `/23568/2025`
+
+**What we'd gain:** jersey numbers (not in DB at all), current active rosters, season totals.
+Note: player IDs are season-specific — not stable cross-season identifiers.
+
+**Scrape approach:**
+1. Parse `ROSTER` table on team page → player name + newsday_id (from href) + jersey number
+2. Optionally fetch each player page for season totals
+3. Store jersey numbers in `players` table or a new `player_rosters` table
 
 ---
 

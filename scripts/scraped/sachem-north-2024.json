@@ -1,0 +1,1430 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 21,
+    "gameId": "7230",
+    "box": {
+      "gameId": "7230",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 21, Sachem North 14: Hudson Philbrick went 12-for-18 for 145 yards and one touchdown to lead Ward Melville in the Suffolk I opener. Joe Karpowicz had an interception and 16 yard touchdown reception. Joe Benedetto added 101 yards rushing, on 18 carries, including one for a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 18,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "George Cosentino",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor Prussen",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jaylen Thomas",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 18,
+            "comp": 12,
+            "yds": 145,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Logan Seta",
+            "rec": 5,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "George Cosentino",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Devon Larsen",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Massaro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Pat Vasquez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 21,
+    "gameId": "6901",
+    "box": {
+      "gameId": "6901",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "7",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 14,
+            "yds": 34,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 30,
+            "comp": 17,
+            "yds": 255,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 7,
+            "yds": 176,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 4,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 3,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Sonny Kowalevich",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 6,
+    "gameId": "7227",
+    "box": {
+      "gameId": "7227",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "17",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 31, Bay Shore 6: Lucas Singleton rushed for 72 yards and three touchdowns on 12 carries to lead Sachem North (1-2) in Suffolk I. He also had two interceptions. He also had a 49-yard reception. Henry Sarro caught a 47-yard touchdown pass from Luke LaRocca and Zach DeMilt kicked a 44-yard field goal. Bay Shore is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 15,
+            "yds": 43,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 28,
+    "gameId": "7228",
+    "box": {
+      "gameId": "7228",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Davien Benjamin-Sheffey",
+            "att": 13,
+            "yds": 105,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 7,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Madison Murrell",
+            "att": 4,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Kalen Percer",
+            "att": 5,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "att": 3,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Eddie  Wesche",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "att": 4,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel Blank",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Makai Bell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Mike Warren",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Rashawn Holman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 14,
+    "gameId": "7335",
+    "box": {
+      "gameId": "7335",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Whitman",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 14, Sachem North 7: Jonas Templeton rushed for 148 yards on 24 carries, including a 6-yard touchdown run to give Whitman a 7-0 lead in the first quarter in Suffolk I. He also had a run on fourth down with less than two minutes left in the fourth quarter to secure the win for Whitman (3-2). Dylan Kollmer completed 6 of 9 passes for 46 yards and a touchdown to Jack David, who had five catches for 35 yards. Xavier Ali had 14 tackles and Dom Chiusano had two sacks. Matt Gervasio added nine tackles and Aiden Jorgensen had eight tackles. Sachem North falls to 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Jonas Templeton",
+            "att": 24,
+            "yds": 148,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 10,
+            "yds": 41,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 9,
+            "comp": 6,
+            "yds": 46,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 5,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Dom Chiusano",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 48,
+    "gameId": "6964",
+    "box": {
+      "gameId": "6964",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Floyd",
+          "q1": "14",
+          "q2": "14",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 48, Sachem North 28: AJ Cannet completed 11 of 16 passes for 200 yards and a score for Floyd (5-1) in Suffolk I. Running back Ja'Quan Thomas rushed for 301 yards and four touchdowns on 30 carries and wideout Geo Alvarez caught six passes for 102 yards. Defensive lineman Aaron Fisher collected 13 tackles, four tackles for loss, and three sacks. Luke LaRocca threw for two touchdowns of 69 and 25 yards and running back Lucas Singleton rushed for two scores of 1 and 45 yards for Sachem North (1-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 30,
+            "yds": 301,
+            "tds": 4
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 8,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Aiden Williams",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 16,
+            "comp": 11,
+            "yds": 200,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 6,
+            "yds": 102,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Joshua Jordan",
+            "rec": 3,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Dongvort DJ",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 22,
+    "gameId": "7229",
+    "box": {
+      "gameId": "7229",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "21",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 42, Sachem East 22: Lucas Singleton had 21 carries for 135 yards and three touchdowns to lead host Sachem North (2-5) in Suffolk I. Luke LaRocca completed 11 of 14 passes for 148 yards and touchdowns of 27 and 13 yards to Brayden Tappin. Nasir Altes added a 30-yard TD run. AJ Vurchio ran for a TD and threw a score to Gianni Spinelli, who added a 10-yard TD run for Sachem East (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Lucas Singleton",
+            "att": 21,
+            "yds": 135,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 11,
+            "comp": 14,
+            "yds": 148,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Brayden Tappin",
+            "rec": 4,
+            "yds": 61,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jack Turano",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Singleton",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Gary Flesicher",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "7069",
+    "box": {
+      "gameId": "7069",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "0",
+          "q3": "35",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 35, Lindenhurst 7: Lucas Singleton rushed for 85 yards and two touchdowns on 19 carries and Luke LaRocca completed 8 of 14 passes for 124 yards and a touchdown and rushed for 61 yards on seven carries to lead visiting Sachem North (3-5) in Suffolk I. Henry Sarro had five receptions for 105 yards and a touchdown and added 21 yards on three carries. Sachem North scored all 35 of its points in the third quarter, which included a 45-yard interception return for a touchdown by Gary Fleischer and a 45-yard fumble recovery touchdown by Jack Pitman. Lindenhurst falls to 5-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Joseph Scavone",
+            "att": 14,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "James Gorman",
+            "att": 11,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Reece Wrightington",
+            "att": 5,
+            "yds": 27,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Reece Wrightington",
+            "att": 30,
+            "comp": 15,
+            "yds": 171,
+            "tds": 0,
+            "int": 4
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Marty Pusey",
+            "rec": 6,
+            "yds": 82,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Murgatroyd",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jacob  Burmeister",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Pusey",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joseph Scavone",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 21,
+    "gameId": "7572",
+    "box": {
+      "gameId": "7572",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "20",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 5 Sachem North defeats No. 4 Connetquot in the Suffolk Division I quarterfinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 6,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 40,
+            "comp": 24,
+            "yds": 237,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 9,
+            "yds": 109,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 8,
+            "yds": 94,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 3,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/16/2024",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 35,
+    "gameId": "7612",
+    "box": {
+      "gameId": "7612",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ja'Quan Thomas rushed for 232 yards and three touchdowns on 30 carries to lead No. 1 Floyd over No. 4 Sachem North in the Suffolk Division I semfinals. AJ Cannet completed 8 of 12 passes for 135 yards and two touchdowns and Josh Jordan caught three passes for 63 yards and a 33-yard score. Aaron Fisher and Jayden Johnson each had nine tackles, including three for a loss and two sacks. Jake Rivera had nine tackles, including four for a loss and a sack. Floyd will face No. 3 Ward Melville in the final at 7 p.m. Saturday at Stony Brook University.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 30,
+            "yds": 232,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 12,
+            "comp": 8,
+            "yds": 135,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Joshua Jordan",
+            "rec": 3,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "rec": 3,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Dongvort DJ",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Jayden Johnson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jake Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kris Watkins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

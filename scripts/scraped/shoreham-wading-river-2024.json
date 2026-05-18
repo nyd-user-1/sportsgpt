@@ -1,0 +1,1328 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Hampton Bays",
+    "isAway": false,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 12,
+    "gameId": "7250",
+    "box": {
+      "gameId": "7250",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "14",
+          "q2": "19",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 40, Hampton Bays 12: Sean Casey rushed for 132 yards and three touchdowns on nine carries and returned two kickoffs for touchdowns to lead host Shoreham-Wading River in a Suffolk IV opener. Noah Gregorek completed 8 of 9 passes for 102 yards and a 7-yard TD pass to Michael Iberger. Michael Single ran for a 41-yard touchdown and Nathan Donahue had a 5-yard rushing touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 16,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "att": 3,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 9,
+            "yds": 132,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "att": 1,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Lucas Diamond",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 5,
+            "comp": 4,
+            "yds": 49,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 9,
+            "comp": 8,
+            "yds": 102,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kyler Kuck",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/20/2024",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 36,
+    "gameId": "7249",
+    "box": {
+      "gameId": "7249",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "14",
+          "q3": "9",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "14",
+          "q3": "13",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River  42, Glenn 36: Sean Casey ran 28 times for 178 yards and three touchdowns, including the winning 1-yard score with 1:29 left to lead host Shoreham-Wading River (2-0) in Suffolk IV. Noah Gregorek completed 9 of 11 passes for 147 yards and two touchdowns. Casey's twin brother, Michael, caught five passes for 62 yards and a TD and Anthony Mullen caught a 26-yard TD pass. George Greene returned an interception 9 yards for a score. Anthony Soto ran for three touchdowns and Keith King had two rushing TDs for Glenn (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 28,
+            "yds": 173,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 6,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 11,
+            "comp": 9,
+            "yds": 147,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 5,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 2,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kyler Kuck",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Lucas Diamond",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "7248",
+    "box": {
+      "gameId": "7248",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "13",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Cooper Fuller accounted for five touchdowns in visiting Bayport-Blue Point's 41-7 win over Shoreham-Wading River in Suffolk IV.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 13,
+            "yds": 133,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "att": 11,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 5,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 5,
+            "comp": 5,
+            "yds": 93,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 22,
+            "comp": 9,
+            "yds": 70,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Traigh Tomassone",
+            "rec": 2,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 3,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "rec": 2,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 5,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kyler Kuck",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Athearn",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 59,
+    "oppScore": 14,
+    "gameId": "7339",
+    "box": {
+      "gameId": "7339",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "18",
+          "q2": "28",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "59"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 59, Wyandanch 14: Sean Casey rushed 20 times for 138 yards and three touchdowns and also returned an interception for a 40-yard touchdown to lead Shoreham-Wading River (3-1) in Suffolk IV. Noah Gregorek completed eight passes in 12 attempts for 172 yards and two touchdowns while also running 10 times for 84 yards and two touchdowns in the win. Anthony Mullen contributed 74 rushing yards and a touchdown on just three carries. Gavin Cleary caught two passes for 85 yards and a touchdown, while Michael Casey added four receptions for 73 yards. Michael Iberger caught Gregorek's other touchdown pass. Dominick Correnthi rushed for a 56-yard touchdown for Wyandanch (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 20,
+            "yds": 138,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 10,
+            "yds": 84,
+            "tds": 2
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "att": 3,
+            "yds": 74,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 12,
+            "comp": 8,
+            "yds": 172,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 2,
+            "yds": 85,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 4,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Huebner",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 17,
+    "gameId": "6868",
+    "box": {
+      "gameId": "6868",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 17, Shoreham-Wading River 14: Brayden Hromada carried the ball 24 times for 232 yards, including a 56-yard rushing touchdown, and added a 21-yard passing touchdown to Shane Gallagher through the air to lead Center Moriches to a come-from-behind home win in Suffolk IV. Hromada also had 14 tackles, an interception and a sack on defense. After Center Moriches's defense managed a stop on fourth down on its own 2-yard line, Hromada led an eight-minute drive to set up Dan Jurgens' game-winning 29-yard field goal as time expired.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 24,
+            "yds": 232,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dennis Hayes",
+            "att": 4,
+            "yds": 27,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 6,
+            "comp": 4,
+            "yds": 78,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane  Gallagher",
+            "rec": 2,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dan Heller",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Dan Jurgens",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "7125",
+    "box": {
+      "gameId": "7125",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "7",
+          "q2": "14",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 41, Shoreham-Wading River 7: Shane Kiernan completed 28 of 34 passes for 237 yards and one touchdown and one rushing touchdown to lead host Miller Place (4-2) in Suffolk IV. Braeden Murphy had two rushing touchdowns and one receiving touchdown and had 13 tackles and 5 TFLs on defense. Dane Lagrasta had six receptions for 100 yards and Ethan Monaco added a 45-yard touchdown run. Sean Casey caught a 5-yard touchdown pass from Noah Gregorek for Shoreham-Wading River (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "att": 13,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "att": 1,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Camryn Hardy",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "att": 2,
+            "yds": 3,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 33,
+            "comp": 27,
+            "yds": 237,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "rec": 6,
+            "yds": 100,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "rec": 4,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "rec": 9,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 4,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "rec": 3,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jackson Thompson",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Southampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 2,
+    "oppScore": 0,
+    "gameId": "7251",
+    "box": {
+      "gameId": "7251",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Southampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "2",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "2"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 48,
+    "gameId": "6810",
+    "box": {
+      "gameId": "6810",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "10",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Babylon",
+          "q1": "14",
+          "q2": "20",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 48, Shoreham-Wading River 10:  Kai Jankow rushed for 146 yards and three touchdowns on 17 carries, had a 55-yard touchdown pass to Charlie Bunger and had a 65-yard interception return for a touchdown to lead host Babylon (7-1) in Suffolk IV. Aidan Winter had 11 carries for 218 yards and 2 TDs.  Ben King had nine tackles and Dan DeBetta added seven tackles. Charlie Bunger, Kai Jankow and Ryan Polletta each had an interception.  Sarah Klienitzke was 3 for 3 on PATs.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 11,
+            "yds": 218,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 17,
+            "yds": 146,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 1,
+            "comp": 1,
+            "yds": 55,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 1,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "Sarah Klienitzke",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Ryan  Polletta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 36,
+    "gameId": "7596",
+    "box": {
+      "gameId": "7596",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "8",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 36, Shoreham-Wading River 12: D.J. Williamson had five receptions for 121 yards and three touchdowns to lead host No. 3 Miller Place over No. 6 Shoreham-Wading River in the Suffolk Division IV quarterfinals. Ethan Monaco had an 20-yard interception return for a touchdown with 2:30 left in the second quarter to give Miller Place a 22-0 lead. Monaco also added a 4-yard rushing touchdown. Shane Kiernan threw for 170 yards and three touchdowns. Jayden Meadows rushed for 128 yards on 17 carries. Braeden Murphy had 12 tackles, including two for a loss. Kevin Washington added seven tackles and 1 tackle for loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "att": 17,
+            "yds": 128,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "att": 7,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "att": 4,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Gavin Peterson",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Camryn Hardy",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 29,
+            "comp": 11,
+            "yds": 170,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 5,
+            "yds": 121,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { cn, formatSeason } from '@/lib/utils'
@@ -50,8 +51,20 @@ function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?:
   )
 }
 
+const slideVariants = {
+  enter:  (dir: number) => ({ x: dir >= 0 ? '100%' : '-100%' }),
+  center: { x: 0 },
+  exit:   (dir: number) => ({ x: dir >= 0 ? '-100%' : '100%' }),
+}
+
 export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  function handleSeason(i: number) {
+    setDirection(i > seasonIdx ? 1 : -1)
+    setSeasonIdx(i)
+  }
   const router        = useRouter()
   const pathname      = usePathname()
   const searchParams  = useSearchParams()
@@ -87,7 +100,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
       {/* Season tabs */}
       <div className="sticky top-0 z-10 bg-white -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
         {SEASONS.map((s, i) => (
-          <button key={s} onClick={() => setSeasonIdx(i)}
+          <button key={s} onClick={() => handleSeason(i)}
             className={cn(
               'px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap',
               seasonIdx === i
@@ -99,6 +112,17 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
         ))}
       </div>
 
+      <div className="overflow-hidden">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={activeSeason}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
+          >
       {filtered.length === 0 ? (
         <p className="text-sm text-[var(--muted)] py-8 text-center">
           No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
@@ -139,7 +163,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 {/* Week badge + date */}
                 <div className="relative z-10 flex items-center justify-between px-3 pt-3">
                   {g.game_number != null
-                    ? <span className="text-[11px] font-semibold text-white bg-black rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
+                    ? <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
                     : <span />}
                   <span className="text-[11px] text-white/60">{fmtDate(g.game_date)}</span>
                 </div>
@@ -171,6 +195,9 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
           })}
         </div>
       )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }

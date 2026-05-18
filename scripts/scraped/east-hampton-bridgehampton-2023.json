@@ -1,0 +1,476 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 14,
+    "gameId": "6506",
+    "box": {
+      "gameId": "6506",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 14, East Hampton 0: Kaeden West rushed for a touchdown and threw another to Tyler Strohm to lead Comsewogue (4-1) in Suffolk III. Shane Grant rushed for 140 yards on 27 carries and Matt Nowlan had eight tackles and a sack. Comsewogue held East Hampton (2-4) to 59 total yards of offense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 27,
+            "yds": 140,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 15,
+            "yds": 69,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 12,
+            "comp": 5,
+            "yds": 50,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "John Then",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Strohm",
+            "rec": 1,
+            "yds": 6,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Matt Nowlan",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Kings Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 37,
+    "gameId": "6520",
+    "box": {
+      "gameId": "6520",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "9",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 37, East Hampton/Bridgehampton 6: Kyle Weeks threw for 175 yards and two touchdowns, and rushed for 50 yards and two touchdowns to lead Kings Park (3-3) in Suffolk III. Weeks also had 10 tackles and an interception. Kevin Greabell caught four passes for 78 yards and a touchdown, made seven tackles and recovered a fumble. Brandon Hauk and Tommy Cassar each had seven tackles and a sack, and Ryan Bubeck blocked a punt. Jai Feaster caught a touchdown pass from Jason Lester for East Hampton/Bridgehampton (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 11,
+            "yds": 50,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 1,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 8,
+            "yds": 22,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 15,
+            "comp": 9,
+            "yds": 175,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Kevin Greabell",
+            "rec": 4,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "rec": 1,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Tommy  Cassar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Paliotta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Greabell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 14,
+    "gameId": "6551",
+    "box": {
+      "gameId": "6551",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "att": 19,
+            "yds": 137,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 6,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Keegan Lides",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt  Boffoli",
+            "att": 7,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Sean Connelly",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Froberg",
+            "att": 3,
+            "comp": 7,
+            "yds": 58,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 6,
+            "comp": 4,
+            "yds": 29,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Aidan Murfitt",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Payton Timoney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Daniel Odell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

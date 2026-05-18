@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -89,8 +89,9 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
                     <span className="truncate">{cleanName(t.name)}</span>
                     <Link href={`/team/${t.slug}`}
                       onClick={e => e.stopPropagation()}
-                      className="shrink-0 ml-0.5 inline-flex items-center text-[var(--muted)] hover:text-[var(--txt)] transition-colors translate-y-[-1px] hover:translate-x-[1px] hover:translate-y-[-2px] transition-transform duration-150">
-                      <ArrowUpRight className="h-3.5 w-3.5" />
+                      className="group/arrow shrink-0 ml-1 relative inline-flex items-center justify-center w-5 h-5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors duration-150">
+                      <ArrowUpRight className="h-4 w-4 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
+                      <ArrowRight className="h-4 w-4 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
                     </Link>
                   </div>
                 </td>

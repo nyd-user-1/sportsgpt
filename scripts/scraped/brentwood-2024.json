@@ -1,0 +1,1745 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 34,
+    "gameId": "6843",
+    "box": {
+      "gameId": "6843",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "13",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 34, Brentwood 0: Reece Wrightington threw for 180 yards and threw three touchdown passes to lead visitor Lindenhurst in their Suffolk I opener. Joseph Scavone rushed for 101 yards on 11 carries and one touchdown and Michael Russo added a five-yard rushing touchdown. Cameron McDonald had eight tackles and one fumble recovery, Chris Camacho had four tackles and one fumble recovery and Chase Frole had four tackles and two sacks.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Joseph Scavone",
+            "att": 9,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 6,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "James Gorman",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Reece Wrightington",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Cameron McDonald",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Camacho",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Luke Jordan",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Hugo Molina",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Reece Wrightington",
+            "att": 20,
+            "comp": 13,
+            "yds": 183,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 3,
+            "comp": 1,
+            "yds": 4,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 15,
+            "comp": 6,
+            "yds": 27,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 5,
+            "comp": 1,
+            "yds": 3,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 5,
+            "yds": 94,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Marty Pusey",
+            "rec": 3,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joseph Scavone",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "James Gorman",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Murgatroyd",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Choden",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Josh Tarte",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chase Frole",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussilo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Josh Tarte",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Luke Jordan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Cameron McDonald",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Camacho",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Murgatroyd",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jacob  Burmeister",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 27,
+    "gameId": "6817",
+    "box": {
+      "gameId": "6817",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 27, Brentwood 14: Jaden Jean rushed for 102 yards and two touchdowns and had eight tackles, including two for a loss and a sack to lead host Bay Shore (1-1). Joshua Holliman returned an interception 40 yards for a TD and Eriq St. Louis threw a 23-yard score to Xavier Hector. James Sobotka had 123 all-purpose yards and an interception. Cato Thomas had a sack and a fumble recovery. Chris Peralta had two rushing TDs for Brentwood (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 10,
+            "yds": 103,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 14,
+            "yds": 102,
+            "tds": 2
+          },
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "att": 0,
+            "yds": 50,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 16,
+            "comp": 6,
+            "yds": 72,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 52,
+    "gameId": "7081",
+    "box": {
+      "gameId": "7081",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Longwood",
+          "q1": "3",
+          "q2": "26",
+          "q3": "21",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "52"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 52, Brentwood 0: Kaden Reid had two interceptions and returned one 38 yards for a touchdown to lead host Longwood (2-1) in Suffolk I. Eddie Wesche forced a fumble and Clint Chichester had a fumble recovery. Davien Benjamin-Sheffey ran for touchdowns of 14 and 48 yards. Ryan Mandaro ran for a TD and threw an 18-yard score to Anthony Fraser. Kyon Sarwari added a 20-yard TD run and Daniel Blank kicked a 23-yard field goal. Brentwood is 0-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 11,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 6,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bounquet",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Davien Benjamin-Sheffey",
+            "att": 7,
+            "yds": 156,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 5,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 3,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "att": 3,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Ricky Torres Jr.",
+            "att": 6,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kalen Percer",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Madison Murrell",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nick McDowell",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 13,
+            "comp": 4,
+            "yds": 73,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 1,
+            "comp": 1,
+            "yds": 11,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Ryan Mandaro",
+            "att": 7,
+            "comp": 5,
+            "yds": 42,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Anthony  Fraser",
+            "rec": 3,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel Blank",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Mike Warren",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Davien Benjamin-Sheffey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Clint Chichester",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Riverhead",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "7209",
+    "box": {
+      "gameId": "7209",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 35, Riverhead 0: Cris Peralta finished with 270 total yards of offense, rushing for 234 yards on 19 carries and four touchdowns to lead Brentwood (1-3) in Suffolk I. Peralta added 10 tackles and one forced fumble on defense. Keenan Walls Jr. added a rushing touchdown and Amari Wallace and Adonis Singletary finished with seven tackles and a tackle for a loss each.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 19,
+            "yds": 234,
+            "tds": 4
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Dennis Cisneros",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 4,
+            "comp": 1,
+            "yds": 36,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 24,
+    "gameId": "6844",
+    "box": {
+      "gameId": "6844",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 24, Brentwood 7: Patchogue-Medford forced four turnovers and had eight sacks on defense in its road win in Suffolk I. Jeremy Marciano, Hazard Perry, and Artie Borak recovered fumbles, and Dom Pertillar and Javen Eason had two sacks each. Kayden Tillett had an interception. Aaron Huether had 29 carries for 133 yards and a TD. Tommy Kelly rushed three times for 31 yards and two scores. Alex Deluca went 3 for 3 on PATs, and he kicked a clutch 33-yard field goal to give the Raiders (2-3) a 10-point lead with 7:47 left in the fourth quarter. Tulio Chavez recovered a fumble for Brentwood (1-4) and returned it for a 10-yard touchdown in the third quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 13,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 4,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 12,
+            "comp": 5,
+            "yds": 33,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bounquet",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Sachem East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 49,
+    "gameId": "7223",
+    "box": {
+      "gameId": "7223",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "13",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 49, Brentwood 34: AJ Vurchio completed 11 of 18 passes for 178 yards and four touchdowns for host Sachem East (2-4) in Suffolk I. Gianni Spinelli had four receptions for 68 yards and 13 rushes for 185 yards and three touchdowns. Brady King, James Dee, and Max Bennett also had touchdowns. Cris Peralta had 15 carries for 115 yards and a score for Brentwood (1-5). Malachi Baker added four catches for 115 yards and two scores, and Kenneth Walls caught five passes for 87 yards. Jayden Ramnarace completed his only passing attempt to Baker for an 80-yard touchdown",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 15,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 4,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 2,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Dennis Cisneros",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gianni Spinelli",
+            "att": 13,
+            "yds": 185,
+            "tds": 3
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan  Perotti",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Johnny  Pitocco",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Chris Freriks",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gavin  McCune",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 23,
+            "comp": 11,
+            "yds": 177,
+            "tds": 2,
+            "int": 3
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 1,
+            "comp": 1,
+            "yds": 80,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 18,
+            "comp": 11,
+            "yds": 178,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 4,
+            "yds": 115,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 5,
+            "yds": 87,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bounquet",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gianni Spinelli",
+            "rec": 4,
+            "yds": 68,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "James  Dee",
+            "rec": 2,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "rec": 3,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Max  Bennett",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Brayden  King",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Amari Wallace",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Brayden  King",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan  Perotti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody  Quinlivan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Jack Ventura",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Commack",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 34,
+    "gameId": "6842",
+    "box": {
+      "gameId": "6842",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "14",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 34, Brentwood 6: Andrew Riggs had four receptions for 77 yards, 18 tackles and a 75-yard interception return touchdown for visiting Commack (4-3) in Suffolk I. Brady Curry had  146 all-purpose yards, a rushing touchdown and made 11 tackles. AJ Arizonis had a 15-yard touchdown and James Brusca had an 11-yard touchdown reception. Cris Peralta scored a three-yard rushing touchdown for Brentwood (1-6), finishing with 18 carries for 96 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "att": 15,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 18,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 3,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 4,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 24,
+            "comp": 13,
+            "yds": 172,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 14,
+            "comp": 6,
+            "yds": 57,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Andrew Riggs",
+            "rec": 4,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 5,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 4,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bounquet",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Aidan Cooper",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Andrew Riggs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 8,
+    "gameId": "6841",
+    "box": {
+      "gameId": "6841",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 27, Central Islip 8: Cris Peralta rushed for 225 yards and two touchdowns on 28 carries, and also added seven tackles with four for a loss for Brentwood in its Suffolk I win. Justin Rivera and Erick Council added six tackles each, as well as a tackle for loss. Kenneth Walls and Adonis Singletary both had one interception. Jayden Ramnarace rushed five times for 35 yards and a touchdown as Brentwood (2-6) sealed its home victory. Camarri McDonald returned an interception for a 30-yard touchdown, and Khaneil Reid punched in the two-point conversion on the ground to give Central Islip (1-7) the lead in the third quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 28,
+            "yds": 225,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 5,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 2,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 5,
+            "comp": 3,
+            "yds": 37,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Ramnarace",
+            "att": 7,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Dennis Cisneros",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Juan Rosales",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Adonis Singletary",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

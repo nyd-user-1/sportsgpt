@@ -1,0 +1,1444 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 19,
+    "gameId": "6905",
+    "box": {
+      "gameId": "6905",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "6",
+          "q2": "16",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Copiague",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 35, Copiague 19: Matthew Evers completed 6 of 8 passes for 90 yards and three touchdowns to lead Newfield in its Suffolk II season-opener. Chris Mastres had eight carries for 48 yards and a TD and Luis Fernandez carried 10 times for 44 yards and a score. Nick Leoni, Anthony Vitale and Dante Powell each caught a TD pass. Newfield collectively rushed for over 200 yards and five different players scored. Roger Rowe rushed for two touchdowns and Fabrice Cormier caught a TD pass from Cody Tiringer for Copiague.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 10,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "att": 8,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 10,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Dom  DeAlmeida",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Ajay Sullivan",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 8,
+            "comp": 6,
+            "yds": 90,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "att": 1,
+            "comp": 1,
+            "yds": 44,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dom  DeAlmeida",
+            "rec": 1,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Anthony Vitale",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Gavin  Smith",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Newfield",
+            "player": "Dom  DeAlmeida",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Ajay Sullivan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 23,
+    "gameId": "7035",
+    "box": {
+      "gameId": "7035",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "18",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "15",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 31, Huntington 23: Branden McDaniels had two interceptions and returned one for a touchdown while Matthew Evers threw for 169 yards and two touchdowns to lead Newfield (2-0) in Suffolk II. In the fourth quarter, Max Chery and David Spooner helped engineer a pair of goal-line stands in the fourth quarter by the Newfield defense. Spooner also rushed for a touchdown and a two-point conversion. Jacob Guzik threw two touchdown passes to Jack Kamenstein for Huntington (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 6,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 6,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "att": 5,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 13,
+            "yds": 79,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 23,
+            "comp": 12,
+            "yds": 169,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 26,
+            "comp": 12,
+            "yds": 189,
+            "tds": 2,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Gavin  Smith",
+            "rec": 4,
+            "yds": 74,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack  Kamenstein",
+            "rec": 5,
+            "yds": 90,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "tommy smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Thomas Kline",
+            "rec": 4,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Ajay Sullivan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "7149",
+    "box": {
+      "gameId": "7149",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 28, Smithtown East 6: Chris Mastres had six sacks, two tackles-for-loss and a forced fumble to lead host Newfield (3-0) in Suffolk II. Newfield's defense held Smithtown East to total of 101 yards. Matthew Evers completed nine of 12 passes for 126 yards and two touchdowns and Jacob Russo had one touchdown run and one receiving touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Dylan Zizzo",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Hunter Hughes",
+            "att": 7,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matthew Donahue",
+            "att": 5,
+            "yds": 11,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dylan Cogliano",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan  Wallace",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 8,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dom  DeAlmeida",
+            "att": 1,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Jacob Russo",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Dylan Cogliano",
+            "att": 23,
+            "comp": 6,
+            "yds": 58,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 12,
+            "comp": 9,
+            "yds": 126,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "rec": 3,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matthew Santangelo",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Joseph Fallon",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Gavin  Smith",
+            "rec": 2,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Jacob Russo",
+            "rec": 3,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "int": 0,
+            "sacks": 6,
+            "fumbles": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 7,
+    "gameId": "7148",
+    "box": {
+      "gameId": "7148",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Newfield",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield defeated Deer Park, 49-7, in Suffolk Division II action.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 12,
+            "yds": 128,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Jacob Russo",
+            "att": 9,
+            "yds": 88,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dom  DeAlmeida",
+            "att": 6,
+            "yds": 77,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 6,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "att": 2,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 2,
+            "yds": 32,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 6,
+            "comp": 11,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 3,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Ajay Sullivan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 10,
+    "gameId": "6871",
+    "box": {
+      "gameId": "6871",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 10, Newfield 8: Dylan Duran found Jack Cavelieri for a 5-yard reception touchdown in the second quarter to give Centereach (2-3) a 7-0 lead in the first half. Patrick Bono made a 25-yard field goal to extend the lead to 10-0 in the second quarter. Duran also forced a fumble, which was recovered by Jamal Joda. Cavelieri Christian Vasques and Anthony Innocent each had an interception. Joda also had two sacks, Anthony Secker had a sack and Jake Mikochik had a sack. Chris Mastres had a 60-yard touchdown reception and a two-point conversion run in the fourth quarter for Newfield (4-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 6,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Dylan  Duran",
+            "att": 24,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "TJ  Doyle",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 11,
+            "comp": 21,
+            "yds": 189,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "TJ  Doyle",
+            "att": 18,
+            "comp": 5,
+            "yds": 100,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Dylan  Duran",
+            "att": 1,
+            "comp": 1,
+            "yds": 5,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 2,
+            "yds": 105,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 3,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 4,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Elijah  Adams",
+            "rec": 3,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Anthony  Innocent",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jack  Cavalieri",
+            "rec": 2,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Dylan  Duran",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamal  Joda",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jack  Cavalieri",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Anthony  Innocent",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Christian Vasquez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 21,
+    "gameId": "7151",
+    "box": {
+      "gameId": "7151",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "13",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 28, West Islip 21: Matthew Evers completed six of nine passes for 157 yards and two touchdowns while Chris Mastres scored three total touchdowns (two rushing, one receiving) to lead Newfield (5-1) in Suffolk II. Jaysiah Deliat racked up 101 yards receiving and a touchdown for Newfield. Branden McDaniels caught three passes for 87 yards on offense picked off two passes on defense. James Blair ran in a two-point conversion attempt while Dominic DeAlmaida made two extra points in the win. For West Islip (1-5), Jake Leila caught a touchdown pass from TJ Sonnenberg, Jack Harvell rushed for a 22-yard touchdown and Nils Haugen returned a pick for a 23-yard touchdown on defense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 17,
+            "yds": 91,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack Harvel",
+            "att": 15,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake Kramer",
+            "att": 8,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake  Leila",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 11,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "att": 11,
+            "yds": 33,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 16,
+            "comp": 6,
+            "yds": 73,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Matthew Evers",
+            "att": 8,
+            "comp": 11,
+            "yds": 177,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Jake  Leila",
+            "rec": 2,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Nick Murphy",
+            "rec": 3,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jake Kramer",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "rec": 3,
+            "yds": 85,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastres",
+            "rec": 2,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Gavin  Smith",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Dylan Kozik",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Nils Haugen",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Luis Fernandez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Brandon  McDaniels",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 20,
+    "gameId": "7258",
+    "box": {
+      "gameId": "7258",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 20, Newfield 8: Michael Cascione intercepted two passes and returned one for a touchdown while also making nine tackles to lead Smithtown West (6-1) in a defensive slugfest over Newfield (5-2) in Suffolk II. Jason Antunes rushed for a three-yard touchdown to start the scoring. In the fourth quarter, while trailing 8-7, Nick Devito threw an 87-yard touchdown to Jake Rearick to give Smithtown West the lead for good. Afterwards, Cascione's 35-yard pick six iced the game. Nick Zins added six tackles in the win. Matthew Evers threw an 18-yard touchdown pass to Branden McDaniels for Newfield.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 21,
+    "gameId": "7150",
+    "box": {
+      "gameId": "7150",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Newfield",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 21, Newfield 12: Elijah Outlaw ran for 130 yards and two touchdowns and completed seven of his nine passes for 88 yards to lead West Babylon (4-4) in Suffolk II. Joe Dispigno had four receptions for 44 yards, including two clutch catches on fourth down to keep a scoring drive alive. Kendrick Mohan had seven carries for 52 yards and had eight tackles on defense.  Justin Baldwin had a rushing touchdown and six tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 19,
+            "yds": 130,
+            "tds": 2
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "att": 7,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "att": 11,
+            "yds": 38,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 9,
+            "comp": 7,
+            "yds": 88,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Joe Dispigno",
+            "rec": 4,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Josiah Price",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Nolan Graham",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

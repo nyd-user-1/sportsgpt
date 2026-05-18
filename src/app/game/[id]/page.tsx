@@ -55,6 +55,17 @@ export default async function GamePage({
   const prevGameId = ids[(cur - 1 + ids.length) % ids.length] ?? null
   const nextGameId = ids[(cur + 1) % ids.length] ?? null
 
+  // Player slug lookup for both teams
+  const playerRows = await sql`
+    SELECT name, slug FROM players
+    WHERE school_slug = ${homeSlug.replace(/-varsity-football$/, '')}
+       OR school_slug = ${awaySlug.replace(/-varsity-football$/, '')}
+  `
+  const playerSlugs: Record<string, string> = {}
+  for (const p of playerRows) {
+    playerSlugs[(p.name as string).toLowerCase()] = p.slug as string
+  }
+
   return (
     <GameShell
       game={game as Record<string, unknown>}
@@ -62,6 +73,7 @@ export default async function GamePage({
       prevGameId={prevGameId ?? null}
       nextGameId={nextGameId ?? null}
       refSlug={refSlug}
+      playerSlugs={playerSlugs}
     />
   )
 }

@@ -267,7 +267,7 @@ export function TeamShell({
               const logo  = SCHOOL_LOGOS[schoolSlug]
               return photo ? (
                 <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
-                  <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
+                  <Image src={photo} alt={teamName} fill className="object-cover object-top" unoptimized />
                 </div>
               ) : (
                 <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
@@ -467,7 +467,7 @@ export function TeamShell({
                         return (
                           <CardLandscapeMini
                             key={g.id}
-                            href={`/game/${g.id}`}
+                            href={`/game/${g.id}?ref=${team.slug}`}
                             title={isHome ? opDisplay : `at ${opDisplay}`}
                             titlePadRight
                             badge={result ? <WLBadge result={result as 'W' | 'L' | 'T'} /> : undefined}
