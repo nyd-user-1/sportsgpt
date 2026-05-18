@@ -458,7 +458,7 @@ export default function LeaderboardTable({
                               !versusMode && 'hidden',
                               compareActive
                                 ? '!opacity-100 text-white border-transparent'
-                                : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
+                                : 'opacity-100 sm:opacity-0 sm:group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                             )}
                             style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                             aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
@@ -545,7 +545,7 @@ export default function LeaderboardTable({
                                 !versusMode && 'hidden',
                                 compareActive
                                   ? '!opacity-100 text-white border-transparent'
-                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
+                                  : 'opacity-100 sm:opacity-0 sm:group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                               )}
                               style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
@@ -623,7 +623,7 @@ export default function LeaderboardTable({
                                 !versusMode && 'hidden',
                                 compareActive
                                   ? '!opacity-100 text-white border-transparent'
-                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
+                                  : 'opacity-100 sm:opacity-0 sm:group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                               )}
                               style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}

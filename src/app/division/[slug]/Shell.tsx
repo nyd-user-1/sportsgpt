@@ -109,23 +109,34 @@ export function DivisionShell({
   const th = 'px-3 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap'
   const td = 'px-3 py-2.5 text-sm border-b border-[var(--border)]'
 
+  const divNum = { I: 1, II: 2, III: 3, IV: 4 }[division as 'I'|'II'|'III'|'IV']
+  const divLogo = divNum ? DIVISION_LOGOS[divNum] : undefined
+
+  const mobileHeader = (
+    <div className="flex items-center gap-2 w-full">
+      {divLogo ? (
+        <Image src={divLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 object-contain" unoptimized />
+      ) : null}
+      <div className="flex-1 min-w-0">
+        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">Division {division}</p>
+        <p className="text-[11px] text-[var(--muted)] leading-tight truncate">Section XI Football</p>
+      </div>
+    </div>
+  )
+
   return (
     <>
-      <AppLayout>
+      <AppLayout mobileHeader={mobileHeader}>
         <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 py-8">
+          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
-            {/* Header */}
-            <div className="mb-8 flex items-center justify-between gap-2">
+            {/* Header — hidden on mobile (division info moved to AppLayout header) */}
+            <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div>
                 <div className="flex items-center gap-3">
-                  {(() => {
-                    const divNum = { I: 1, II: 2, III: 3, IV: 4 }[division as 'I'|'II'|'III'|'IV']
-                    const logo = divNum ? DIVISION_LOGOS[divNum] : undefined
-                    return logo ? (
-                      <Image src={logo} alt="" width={48} height={48} className="shrink-0 h-12 w-12 object-contain" unoptimized />
-                    ) : null
-                  })()}
+                  {divLogo ? (
+                    <Image src={divLogo} alt="" width={48} height={48} className="shrink-0 h-12 w-12 object-contain" unoptimized />
+                  ) : null}
                   <div className="flex flex-col">
                     <h1 className="text-2xl font-bold text-[var(--txt)]">Division {division}</h1>
                     <div className="flex items-center gap-1.5 text-xs text-[var(--muted)] mt-1">
@@ -162,9 +173,9 @@ export function DivisionShell({
               </div>
             </div>
 
-            {/* Hero slider */}
+            {/* Hero slider — hidden on mobile to free up vertical space */}
             {slides.length > 0 && (
-              <div className="mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
+              <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
                 {slides.map((src, i) => (
                   <div key={src}
                     className="absolute inset-0 transition-opacity duration-700 ease-in-out"

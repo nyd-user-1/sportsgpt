@@ -51,13 +51,13 @@ export default async function LaunchpadLayout({
             <LaunchpadTabs />
           </Suspense>
 
-          {/* Two-slot row */}
-          <div className="h-[380px] shrink-0 flex gap-4">
+          {/* Two-slot row — stacks vertically on mobile */}
+          <div className="shrink-0 flex flex-col sm:flex-row gap-4 sm:h-[380px]">
             <Suspense fallback={null}>
               {children}
             </Suspense>
             <Suspense fallback={null}>
-              <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+              <div className="flex-1 min-w-0 min-h-[300px] sm:min-h-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
                 {detail}
               </div>
             </Suspense>

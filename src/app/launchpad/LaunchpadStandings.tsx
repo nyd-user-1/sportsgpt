@@ -87,7 +87,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   }, [selectedSlug, filtered, router, searchParams])
 
   return (
-    <div className="w-[55%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
+    <div className="w-full sm:w-[55%] min-w-0 shrink-0 min-h-[300px] sm:min-h-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
       {/* Table */}
       <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
         <table className="w-full text-sm">

@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
+import { cn } from '@/lib/utils'
 import {
   APP_NAME, ACCENT_COLOR, CHART_NAV_EVENT,
   NAV_CYCLE, PATH_NAV, PATH_TITLE,
@@ -199,13 +200,17 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           )}
 
           {title && (
-            <div className="ml-4 flex items-center gap-2 text-[var(--txt)]">
-              <Link href="/" className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xl font-bold hover:bg-[var(--inp-bg)] transition-colors">
+            <div className={cn(
+              'sm:ml-4 flex items-center gap-2 text-[var(--txt)] min-w-0 sm:flex-initial',
+              // When a mobileHeader is provided, the title block is desktop-only to avoid two competing headers on mobile
+              mobileHeader ? 'hidden sm:flex' : 'flex flex-1'
+            )}>
+              <Link href="/" className="hidden sm:inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xl font-bold hover:bg-[var(--inp-bg)] transition-colors">
                 <AppLogo className="h-5 w-5 shrink-0" />
                 {APP_NAME}
               </Link>
-              <span className="text-[var(--muted)] text-xl select-none">|</span>
-              <span className="text-xl font-medium">{chartNav?.pageTitle ?? title}</span>
+              <span className="hidden sm:inline text-[var(--muted)] text-xl select-none">|</span>
+              <span className="text-lg sm:text-xl font-semibold sm:font-medium truncate">{chartNav?.pageTitle ?? title}</span>
             </div>
           )}
 
