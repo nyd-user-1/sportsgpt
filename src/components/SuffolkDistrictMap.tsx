@@ -175,7 +175,7 @@ function DistrictLayer({ schools, onHover, onLoaded }: {
           const name = String(e.feature.getProperty('POPULAR_NA') ?? '')
           const slugs = DISTRICT_SCHOOLS[name] ?? []
           const first = slugs.find(s => bySlug[s])
-          if (first) router.push(`/team/${bySlug[first].team_slug}`)
+          if (first) router.push(`/maps/${bySlug[first].team_slug}`, { scroll: false })
         })
 
         map.data.addListener('mouseover', (e: google.maps.Data.MouseEvent) => {

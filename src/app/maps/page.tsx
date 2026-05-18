@@ -1,5 +1,4 @@
 import { sql } from '@/lib/db'
-import { AppLayout } from '@/components/AppLayout'
 import SuffolkDistrictMap, { type SchoolRecord } from '@/components/SuffolkDistrictMap'
 
 export const dynamic = 'force-dynamic'
@@ -30,10 +29,8 @@ export default async function MapsPage() {
   }))
 
   return (
-    <AppLayout>
-      <div className="flex-1 overflow-hidden">
-        <SuffolkDistrictMap schools={schools} />
-      </div>
-    </AppLayout>
+    <div className="flex-1 overflow-hidden">
+      <SuffolkDistrictMap schools={schools} />
+    </div>
   )
 }

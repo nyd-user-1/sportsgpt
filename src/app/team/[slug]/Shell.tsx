@@ -98,8 +98,22 @@ function fmtGameDate(raw: string | null) {
   return `${d.getMonth() + 1}/${d.getDate()}`
 }
 
+function MaybeLayout({ panelMode, mobileHeader, children }: {
+  panelMode: boolean; mobileHeader: React.ReactNode; children: React.ReactNode
+}) {
+  if (panelMode) return <>{children}</>
+  return (
+    <AppLayout mobileHeader={mobileHeader}>
+      <div className="flex-1 overflow-y-auto no-scrollbar">
+        {children}
+      </div>
+    </AppLayout>
+  )
+}
+
 export function TeamShell({
   team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, gameRows,
+  panelMode = false,
 }: {
   team: Record<string, unknown>
   prevSlug: string
@@ -108,6 +122,7 @@ export function TeamShell({
   divTeams: Record<string, unknown>[]
   playerRows: Record<string, unknown>[]
   gameRows: GameRow[]
+  panelMode?: boolean
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(true)
@@ -217,9 +232,8 @@ export function TeamShell({
 
   return (
     <>
-      <AppLayout mobileHeader={mobileHeader}>
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
+      <MaybeLayout panelMode={panelMode} mobileHeader={mobileHeader}>
+        <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
@@ -543,8 +557,7 @@ export function TeamShell({
             </div>
 
           </div>
-        </div>
-      </AppLayout>
+      </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
