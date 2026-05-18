@@ -92,7 +92,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
   'patchogue-medford':                 [`${BLOB_T}/pat-med.jpg`],
   'riverhead':                         [`${BLOB_T}/riverhead.jpg`],
   'west-islip':                        [`${BLOB_T}/west-islip.avif`],
-  'floyd':                             [`${BLOB_T}/wf.webp`],
+  'floyd':                             [`${BLOB_T}/wf.webp`, `${BLOB_T}/floyd-team-1.jpg`, `${BLOB_T}/floyd-team-2.jpg`, `${BLOB_T}/floyd-team-3.jpg`],
   'longwood':                          [`${BLOB_T}/longwood.jpg`],
   'ward-melville':                     [`${BLOB_T}/ward-melville.jpg`],
   'center-moriches':                   [`${BLOB_T}/cm%201.jpg`,    `${BLOB_T}/cm2%201.png`, `${BLOB_T}/cm2.jpg`,  `${BLOB_T}/cm3.jpg`,  `${BLOB_T}/cm4.jpg`,  `${BLOB_T}/cm5.jpg`],
