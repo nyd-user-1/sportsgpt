@@ -1,0 +1,1155 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2025",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 31,
+    "gameId": "7756",
+    "box": {
+      "gameId": "7756",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "8",
+          "q2": "6",
+          "q3": "14",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 31, Comsewogue 12: Joe Pistritto had seven catches for 194 yards and a touchdown, leading host Hauppauge to a win in Suffolk III. Pistritto also blocked a PAT. Nick LaChapelle threw for 261 yards and three touchdowns. Roman Dixon caught four passes for 68 yards and two touchdowns. Liam O'Connor added a rushing score. The Hauppauge defense had five takeaways, including a fumble recovery from Carter Dolan and interceptions from Pistritto, Mooney, LaChapelle and O'Connor.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Liam O'Connor",
+            "att": 5,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Xavier  Chavez",
+            "att": 10,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Anthony  Barbera",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John  Passanante",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Oscar  Jakubowski",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 24,
+            "comp": 13,
+            "yds": 261,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Anthony  Barbera",
+            "att": 3,
+            "comp": 2,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Joe  Pistritto",
+            "rec": 7,
+            "yds": 194,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Roman Dixon",
+            "rec": 4,
+            "yds": 68,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam O'Connor",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Hauppauge",
+            "player": "Danny Youngworth",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Hauppauge",
+            "player": "Dominic  Green",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam O'Connor",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joe  Pistritto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 15,
+    "gameId": "8064",
+    "box": {
+      "gameId": "8064",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "8",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "21",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 21, Rocky Point 15: Robert DiFazio ran for 160 yards and two touchdowns on 28 carries to lead Comsewogue (1-1) in Suffolk III. Nick Saladino added 15 rushes for 90 yards and one score. James Ward had five solo tackles and two sacks in the win. For Rocky Point (1-1), Peyton Reisinger threw a touchdown pass to Brogan Casper and rushed for a two-point conversion while Cristian Romero ran for the team's first score.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "att": 8,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "att": 4,
+            "yds": 38,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "att": 25,
+            "comp": 9,
+            "yds": 120,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "rec": 2,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "rec": 4,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Don Wilkinson",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Don Wilkinson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Nick Moore",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Cordova",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 56,
+    "gameId": "7640",
+    "box": {
+      "gameId": "7640",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 56, Comsewogue 7: Patrick Coan completed 13 passes for 181 yards and two touchdowns and had five carries for 34 yards and two scores to lead visiting Sayville (3-0) in Suffolk III. Colin Darling had nine receptions for 129 yards and two TDs. Tristan Vitale ran for 77 yards and a score and Timmy Holahan added 56 rushing yards and a TD. Luke Neugebauer had an interception. Robert DiFazio scored a 4-yard rushing touchdown for Comsewogue (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "att": 2,
+            "yds": 77,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Frankie Hanley",
+            "att": 4,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Timmy Holahan",
+            "att": 4,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 5,
+            "yds": 34,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Cole  Cantarella",
+            "att": 3,
+            "yds": 21,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 16,
+            "comp": 13,
+            "yds": 181,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Frankie Hanley",
+            "att": 1,
+            "comp": 1,
+            "yds": 8,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Colin Darling",
+            "rec": 9,
+            "yds": 129,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Gabe Bethea",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke Neugebauer",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Arato",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Saad Abid",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Henry Reiss",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Luke Neugebauer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 18,
+    "gameId": "7757",
+    "box": {
+      "gameId": "7757",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "21",
+          "q2": "13",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "18",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 41, Amityville 18: Nick Saladino went eight for eight in passing with 150 yards and two TDs to lead visiting Comsewogue (2-2) in Suffolk III. Saladino also rushed for 83 yards and two TDs on eight carries. Dylan Giorlando had 115 yards receiving and caught two TDs. Robert DiFazio had 95 yards rushing and two TDs on 15 carries. On defense, AJ Davis had six tackles and an interception.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 42,
+    "gameId": "7907",
+    "box": {
+      "gameId": "7907",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "10",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 42, Comsewogue 23: Jake DeGennaro rushed for 110 yards and two touchdowns on eight carries and added five catches for 65 yards to lead Islip (4-1) in Suffolk III. Jack Rao completed 14 of 19 passes for 170 yards and a score and rushed for 80 yards and two TDs on nine carries. Jack Gardner had six catches for 70 yards and a TD. Carmine Rosselli had 10 tackles. Jhon Elmonuce had a 25-yard INT return.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Jake  DeGennaro",
+            "att": 8,
+            "yds": 110,
+            "tds": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 9,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Carmine  Rosselli",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 19,
+            "comp": 14,
+            "yds": 170,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jack Gardner",
+            "rec": 6,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake  DeGennaro",
+            "rec": 5,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Carmine  Rosselli",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Brody Deutsch",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "7758",
+    "box": {
+      "gameId": "7758",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 35, Wyandanch 0: Jack Campagna rushed for 110 yards and 2 TDs to lead Comsewogue (3-3) in Suffolk III. Geremias Hernandez had 6 tackles, 1 sack, and 2 fumble recoveries and James Lanze had 4 tackles and 2 interceptions.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 14,
+    "gameId": "7759",
+    "box": {
+      "gameId": "7759",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "14",
+          "q2": "3",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 24, Harborfields 14: Jack Campagna ran 30 times for 176 yards, including a 39-yard TD, for Comsewogue (4-3) in a Suffolk III road win. Robert DiFazio scored a 17-yard rushing TD to open the scoring. Nick Saladino punched in a 2-yard rushing TD. Sean Griffin converted 3 of 3 PATs and kicked a 45-yard field goal. Landon Paulino threw a 72-yard TD to Ethan Roman and a 26-yard TD to Matthew Rampersaud for Harborfields (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 7,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vern Bratton",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Ferranti",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Rampersaud",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Cameron Ballard",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 10,
+            "comp": 5,
+            "yds": 128,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan  Roman",
+            "rec": 1,
+            "yds": 72,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Rampersaud",
+            "rec": 2,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Joesph Eussanio",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Jason Melhado",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 14,
+    "gameId": "7856",
+    "box": {
+      "gameId": "7856",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 41, Half Hollow Hills West 14: Nick Saldino had 11 carries for 180 yards and four touchdowns to lead host Comsewogue (5-3) in Suffolk III. Jack Campagna ran 13 times for 123 yards and a TD. Dylan Giorlando recovered a fumble for a touchdown and James Ward had six tackles and two fumble recoveries. Sal Caiazzo ran for a 44-yard score and Kade Diaz added a fumble recovery for a score for Half Hollow Hills West (0-8).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 14,
+            "yds": 88,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 7,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 7,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 5,
+            "comp": 2,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/07/2025",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 48,
+    "gameId": "8674",
+    "box": {
+      "gameId": "8674",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "3",
+          "q3": "2",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "28",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 48, Comsewogue 18: Nick DeVito completed 9 of 15 passes for 253 yards and three touchdowns and added six carries for 110 yards to lead host No. 2 Smithtown West over No. 7 Comsewogue in the Suffolk III quarterfinals. Jake Rearick caught four passes for 133 yards and two TDs and Colton Ford added a 25-yard TD catch. Michael Cascione had 17 carries for 145 yards and three scores. Joey Cantave ran seven times for 96 yards and a TD. Smithtown West (7-2) will host the winner of No. 4 West Islip/No. 5 Hauppauge in the semifinals at 4 p.m. on Friday. \nNick Saladino and Jack Campagna each ran for a TD for Comsewogue, which finished 5-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Michael Cascione",
+            "att": 17,
+            "yds": 145,
+            "tds": 3
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 6,
+            "yds": 110,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joey Cantave",
+            "att": 7,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Sean Searing",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vin Lepore",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joe  Fitzsimmons",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 15,
+            "comp": 9,
+            "yds": 253,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jake Rearick",
+            "rec": 4,
+            "yds": 133,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joe  Fitzsimmons",
+            "rec": 3,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Colton Ford",
+            "rec": 1,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vin Lepore",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "Tommy  Maloney",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1787 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "8174",
+    "box": {
+      "gameId": "8174",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "21",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 35, West Babylon 7: Jalen Jean-Louise ran for 159 yards and two touchdowns and caught a 50-yard touchdown. Lincoln Riggs completed 12 passes for 242 yards and three touchdowns. James Brusca had 89 yards, a receiving touchdown and an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Jacob Gaertner",
+            "att": 11,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Brandon Pensabene",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "James Guzman",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Daniel Rose",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Richard Straus",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "att": 5,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 13,
+            "yds": 159,
+            "tds": 2
+          },
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "att": 5,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Josh Bater",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Corey Jacobs",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 18,
+            "yds": 12,
+            "tds": 242
+          },
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 15,
+            "comp": 7,
+            "yds": 57,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jacob Gaertner",
+            "att": 6,
+            "comp": 2,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 18,
+            "comp": 12,
+            "yds": 242,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "James Guzman",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Richard Straus",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 4,
+            "yds": 89,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "rec": 1,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Brady Patrick",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "James Guzman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Marine Adrian",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "7781",
+    "box": {
+      "gameId": "7781",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip defeats Commack in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 22,
+            "yds": 166,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Arena",
+            "att": 4,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Aiden McConnell",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Logan Curry",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 8,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 5,
+            "comp": 5,
+            "yds": 71,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 18,
+            "comp": 10,
+            "yds": 85,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "att": 2,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "rec": 2,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Eddie Simonetti",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Parker Redding",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 3,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Chris Coreas",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Parker Redding",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 47,
+    "gameId": "7753",
+    "box": {
+      "gameId": "7753",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bellport",
+          "q1": "14",
+          "q2": "13",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 47, Commack 7: Braydon Cipp completed 6 of 10 passes for 91 yards and two touchdowns and rushed for 58 yards and a touchdown on four carries to lead host Bellport (2-1) in Suffolk II. Cameron Casher rushed for 78 yards on nine carries, Kingston John rushed for 65 yards and a touchdown on nine carries and Luciano Cunha rushed for 42 yards and a touchdown on five carries. Jahiem Talford had five tackles, including one for a loss, and John had an interception. Commack is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Corey Jacobs",
+            "att": 8,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Cameron Casher",
+            "att": 9,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 9,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 4,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jerome Willett",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Luciano Cunha",
+            "att": 5,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Matt Chojnacki",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie  Malcom",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahiem Talford",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 27,
+            "comp": 12,
+            "yds": 120,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 10,
+            "comp": 6,
+            "yds": 91,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 3,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie  Malcom",
+            "rec": 2,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 2,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Aiden Kerr",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Anthony Diaz",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jahiem Talford",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 37,
+    "gameId": "7754",
+    "box": {
+      "gameId": "7754",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "10",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown East 37, Commack 34: Niko Stroveglia made a game- winning 30-yard field goal with eight seconds remaining to lead host Smithtown East (2-2) in Suffolk II. Stroveglia went 3-for-3 on field goals, converting attempts of 37, 35 and 30 yards. Jonathan Jean had an interception with 50 seconds remaining to set up the game-winning score.\nAntonio Marrone completed 12-of-20 passes for 203 yards and two touchdowns. Ryan Farrell had 21 rushes for 142 yards.\nHenry Craft had a 90-yard kick off return score. James Brusca had two receiving TDs and retunred a fumble 75 yards for a score for Commack (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 14,
+            "yds": 96,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 6,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "att": 4,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Rayn Farrell",
+            "att": 21,
+            "yds": 142,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Hunter  Hughes",
+            "att": 12,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matt  Donohue",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 18,
+            "comp": 14,
+            "yds": 227,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 20,
+            "comp": 12,
+            "yds": 203,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 6,
+            "yds": 102,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "rec": 2,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "rec": 4,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jack Reddock",
+            "rec": 4,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Henry Craft",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Marco Intintoli",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Nicolas Stroveglia",
+            "fg": 3,
+            "pat": 4,
+            "points": 13
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Leo Medina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Marco Intintoli",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 29,
+    "gameId": "7766",
+    "box": {
+      "gameId": "7766",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Commack",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 36, Copiague 29: Lincoln Riggs threw the go-ahead TD with a 50-yard TD pass to Mason Ruocco with 47 seconds left to lead host Commack (2-3) in Suffolk II. Ruocco sealed the game with an interception on the next play from scrimmage. Riggs threw 4 TD passes, 3 to Ruocco, and passed for 327 yards. On the ground, Jalen Jean-Louis ran for 118 yards and a TD, adding 79 receiving yards. Kevin Mackey had 2 TD runs for Copiague (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 4,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "Copiague",
+            "player": "Kevin  Mackey",
+            "att": 12,
+            "yds": 54,
+            "tds": 2
+          },
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "att": 8,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 13,
+            "yds": 118,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 12,
+            "comp": 8,
+            "yds": 131,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 33,
+            "comp": 26,
+            "yds": 327,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Copiague",
+            "player": "Jayden  James",
+            "rec": 4,
+            "yds": 69,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Aiden  Boswell",
+            "rec": 3,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 14,
+            "yds": 196,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "rec": 3,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 6,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 3,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Copiague",
+            "player": "Alden Fortin",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Copiague",
+            "player": "Jonathan Marine Suarez",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Gregory  Brooks",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Keon  Williams",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Nolan Bair",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 53,
+    "gameId": "7651",
+    "box": {
+      "gameId": "7651",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "22",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "22",
+          "q3": "14",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "53"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babyon 53, Commack 43: North Babylon (3-3) ran for 572 yards on 60 total carries in Suffolk II. Dominic Prestano had 252 yards on 29 carries and a touchdown. Jovan Greenhill added 185 yards and two touchdowns.  Tristan Garcia had two touchdown runs. Lincoln Riggs of Commack (2-4) threw for 496 yards and five touchdowns.  AJ Arizonis had 182 receiving yards and four touchdowns. Mason Ruocco had 196 receiving yards and added a touchdown catch. Christian Creaven-Tintella sealed the win for North Babylon with a 28-yard field goal with 1:22 remaining.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 5,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Dominic  Prestano",
+            "att": 29,
+            "yds": 252,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jovan Greenhill",
+            "att": 11,
+            "yds": 185,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jack Miller",
+            "att": 8,
+            "yds": 69,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Garcia",
+            "att": 5,
+            "yds": 40,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "TJ Shaw",
+            "att": 7,
+            "yds": 26,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 25,
+            "comp": 18,
+            "yds": 496,
+            "tds": 5,
+            "int": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "att": 1,
+            "comp": 1,
+            "yds": 3,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 5,
+            "yds": 196,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 6,
+            "yds": 182,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 5,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "rec": 2,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "North Babylon",
+            "player": "Christian Creaven - Tintella",
+            "fg": 1,
+            "pat": 6,
+            "points": 9
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Deer Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 8,
+    "gameId": "7755",
+    "box": {
+      "gameId": "7755",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 13, Deer Park 8: Logan Curry began the game by returning the opening kickoff 71 yards for a touchdown for Commack (3-4) in its Suffolk II road win. Jordan Hamilton snagged two interceptions and Andrew Bergman had one. Mason Justus, Logan Curry and Tom Conover all had a sack as the Cougars posted three shutout quarters. Lincoln Riggs threw for 171 yards, including a 12-yard touchdown to AJ Arizonas. Christian Myrick had a 25-yard pick-6 for Deer Park (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 9,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 15,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 5,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 29,
+            "comp": 16,
+            "yds": 171,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 22,
+            "comp": 9,
+            "yds": 114,
+            "tds": 0,
+            "int": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 9,
+            "yds": 109,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 3,
+            "yds": 49,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jalen Francis",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Thomas Conover",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Justus",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Logan Curry",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Andrew Bergman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jordan  Hamilton",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2025",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 43,
+    "gameId": "7853",
+    "box": {
+      "gameId": "7853",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "14",
+          "q2": "22",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 43, Commack 0: Jaiden Bryan rushed for 194 yards on 10 carries and 3 TDs to lead visiting Half Hollow Hills East (6-2) in Suffolk II. Daniel White rushed for 200 yards on 13 carries and 2 TDs, and Tony Keahey had a rushing TD. Dante Milano and Akio Johnson each had 6 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "att": 0,
+            "yds": 200,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 0,
+            "yds": 194,
+            "tds": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah reinstein",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "att": 6,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 7,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Corey Jacobs",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Keith Abruzzo",
+            "att": 12,
+            "comp": 5,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Andrew Bergman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

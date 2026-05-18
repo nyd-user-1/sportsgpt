@@ -1,0 +1,1253 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Sachem East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 35,
+    "gameId": "8059",
+    "box": {
+      "gameId": "8059",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "12",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "35",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Logan Perotti had five carries for 98 yards and two touchdowns to lead host Sachem East in Suffolk I. Ryan Lane had 42 rushing yards and touchdown and threw a 16-yard touchdown to James Dee. Cody Quinlivan had a rushing touchdown and Brayden King had a sack and a fumble recovery. Nathan Netwich had two rushing touchdowns for Riverhead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 11,
+            "yds": 127,
+            "tds": 2
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan Perotti",
+            "att": 5,
+            "yds": 98,
+            "tds": 2
+          },
+          {
+            "team": "Sachem East",
+            "player": "Alex Schneider",
+            "att": 4,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 5,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "att": 3,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Chase Reynolds",
+            "att": 5,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Pickersgill",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 5,
+            "comp": 3,
+            "yds": 33,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "James Dee",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Brayden King",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Andrew Sosa",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 13,
+    "gameId": "8060",
+    "box": {
+      "gameId": "8060",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "With 58 seconds left in the game, Camari McDonald and Jimmy Gaston Jr. forced an incompletion with quarterback hurries on a two-point conversion attempt to win it for Central Islip (2-0) in Suffolk I. While leading 7-6 with 2:45 remaining, Elijah Wellington rushed for an 11-yard touchdown, which was the difference in the game. Gaston Jr. also rushed 15 times for 120 yards and a touchdown in the third quarter to give CI the lead. For Riverhead (0-2), Josiah Rodney and Kavion Hobbs each rushed for touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 16,
+            "yds": 106,
+            "tds": 1
+          },
+          {
+            "team": "Riverhead",
+            "player": "Braeden Messina",
+            "att": 9,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "att": 15,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 11,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Central Islip",
+            "player": "EliJah  Wellington",
+            "att": 15,
+            "comp": 7,
+            "yds": 80,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "rec": 3,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Camari  McDonald",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Central Islip",
+            "player": "Orlin  Acosta",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Braeden Messina",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jimmy  Gaston Jr.",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Central Islip",
+            "player": "Zequan Marrow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Central Islip",
+            "player": "Jonathan  Rubio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 45,
+    "gameId": "7924",
+    "box": {
+      "gameId": "7924",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "21",
+          "q2": "24",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "45"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 45, Riverhead 12: Hunter Deronde had two touchdowns, including a 14-yard run, and had two interceptions to lead Lindenhurst (3-0) over host Riverhead (0-3) in Suffolk I. Mikey Russo had three total touchdowns, two rushing scores and 40-yard passing touchdown to Ryan Murgatroyd. Christian Canales had a 53-yard fumble recovery for a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "att": 7,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 2,
+            "yds": 7,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 5,
+            "comp": 5,
+            "yds": 69,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "rec": 2,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gino  Thevenin",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Andreone",
+            "fg": 1,
+            "pat": 6,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Delvani Valdivia",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Louis Drago",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joseph Tota",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Estevez James",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gino  Thevenin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "8061",
+    "box": {
+      "gameId": "8061",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "23",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Cris Peralta rushed for 263 yards and four touchdowns on 18 carries. He also added a 2-point conversion and two receptions for 24 yards to finish with 284 total yards and lead host Brentwood (1-3) in Suffolk I. Malachi Baker added 58 yards rushing and a touchdown. Herson Flores recovered a fumble while Justin Rivera had an interception and a fumble recovery on defense. Josiah Rodney threw an 18-yard TD pass to William Healy for Riverhead (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 12,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 18,
+            "yds": 263,
+            "tds": 4
+          },
+          {
+            "team": "Brentwood",
+            "player": "Evan Johnson",
+            "att": 3,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 10,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 4,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Elias Diaz",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 14,
+            "comp": 5,
+            "yds": 96,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "att": 3,
+            "comp": 2,
+            "yds": 24,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "rec": 2,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Herson Flores",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Luis Velasquez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jeremyah Reyes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herson Flores",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 36,
+    "gameId": "7944",
+    "box": {
+      "gameId": "7944",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "22",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 36, Riverhead 0: Kyon Sarwari had 159 all-purpose yards and 3 TDs to lead visiting Longwood (3-2) in Suffolk I. Nyyir Thomas had four tackles and 2 sacks and Travis Gibbs, Tyler Lorentzen, Hayri Ozgun, Caleb Munoz, Craig Harty, and Ed Princivil each added sacks. Craig Harty had 5 tackles and a sack, Matt Reany had 4 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 9,
+            "yds": 79,
+            "tds": 2
+          },
+          {
+            "team": "Longwood",
+            "player": "Julian Jackson",
+            "att": 8,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Dior Kokason",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nick  McDowell",
+            "att": 2,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Jeremyh Jean-Baptiste",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Orion Bodden",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleb  Munoz",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Hayri Ozgun",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 2,
+            "comp": 2,
+            "yds": 125,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Jacobs",
+            "att": 2,
+            "comp": 1,
+            "yds": 25,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "rec": 1,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Micah Laney",
+            "rec": 1,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Keyshawn Profitt",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Cameron  Clemons",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Nyyir Thomas",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Travis Gibbs",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Tyler Lorentzen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Ed  Princivil",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 26,
+    "gameId": "8033",
+    "box": {
+      "gameId": "8033",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "3",
+          "q2": "3",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 26, Riverhead 12: Aidyn Modeste ran 24 times for 179 and 2 TDs and added 5 catches for 60 yards to lead visiting Patchogue-Medford (3-3) in Suffolk I. Brett Rupolo completed 8 of 13 passes for 80 yards and 1 TD. Ontonio Papaleo added 50 yards on the ground, 6 tackles and 2 for loss. Josiah Rodney threw 2 TD passes for Riverhead (0-6).Brady melito kicked two field goals for Pat-Med.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "att": 24,
+            "yds": 179,
+            "tds": 2
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Ontonio Papaleo",
+            "att": 5,
+            "yds": 50,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 13,
+            "comp": 8,
+            "yds": 120,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brady Melito",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 47,
+    "gameId": "8062",
+    "box": {
+      "gameId": "8062",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Whitman",
+          "q1": "20",
+          "q2": "21",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 47, Riverhead 0: Jason Thompson, Mark Rutledge, and Shamel Greene each had rushing touchdowns to lead Whitman (5-2) in Suffolk I. Aiden Jorgensen had a receiving TD and five tackles for loss. Lucas Tonna and Jordan Churchman each had interceptions returned for touchdowns. Alex Cerna had a fumble recovery and Timmy Harrison had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "att": 8,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Thompson",
+            "att": 1,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jarone Park",
+            "att": 3,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Pastore",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dodge Alahverdian",
+            "att": 1,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Shamel Greene",
+            "att": 1,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Dodge Alahverdian",
+            "att": 2,
+            "comp": 1,
+            "yds": 23,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 1,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "John Mannino",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Richard Bello",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Lucas Tonna",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Timmy Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2025",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 26,
+    "gameId": "7682",
+    "box": {
+      "gameId": "7682",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "6",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 26, Riverhead 0: Xavier Hector completed 10 of 10 passes for 171 yards and three touchdowns to lead Bay Shore (1-7) in Suffolk I. Cato Thomas and Khayden Alexander combined for 140 yards rushing. Kaleb Bryant caught two passes for two scores and had an interception.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

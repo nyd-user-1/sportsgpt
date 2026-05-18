@@ -1,0 +1,1708 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2025",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 20,
+    "gameId": "7764",
+    "box": {
+      "gameId": "7764",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 21, Copiague 20: Joey Berrios made a tackle for loss on Copiague's two point conversion to seal the victory for Deer Park (1-0) in a Suffolk II matchup. Nusanti Delbridge caught four passes for 58 yards and a touchdown. Christian Myrick caught five catches for 65 yards as well as rushing for 55 yards and a touchdown on three carries. Anthony Kern threw for 126 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "att": 13,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 17,
+            "yds": 81,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 7,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 3,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 9,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 16,
+            "comp": 11,
+            "yds": 126,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 5,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "rec": 4,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Sean Donovan",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Copiague",
+            "player": "Charles Williams",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 23,
+    "gameId": "7768",
+    "box": {
+      "gameId": "7768",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "8",
+          "q2": "0",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 23, Deer Park 20: Jahavi Reyes rushed 14 times for 65 yards and two touchdowns, adding three completions on 5 attempts for 76 yards and a touchdown through the air for host West Babylon in its Suffolk II win. Reyes' 7-yard rushing touchdown gave West Babylon (1-1) a 10-point lead with 10:02 remaining in the fourth quarter. Reyes added 13 tackles and two pass deflections on defense. Deer Park drove the ball to West Babylon's 32-yard line with two minutes remaining before Xavier Estevez and Jaysen Reyes recorded a sack apiece to end the game.\n\nAnthony Kern threw three touchdown passes, with Christian Myrick, Nusanti Delbridge and Jaheim McCallum all catching one for Deer Park (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 13,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 6,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 8,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 14,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "West Babylon",
+            "player": "Xavier Estevez",
+            "att": 8,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 19,
+            "comp": 10,
+            "yds": 175,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 5,
+            "comp": 3,
+            "yds": 76,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "rec": 6,
+            "yds": 89,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaheim McCallum",
+            "rec": 2,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 1,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Daniel Rose",
+            "rec": 1,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jacob Simonson",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "James Guzman",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Brady Patrick",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Xavier Estevez",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jaysen Reyes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Richard Straus",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 48,
+    "gameId": "7648",
+    "box": {
+      "gameId": "7648",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "6",
+          "q2": "8",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "13",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 48, Deer Park 28: Dominic Prestano had 30 carries for 187 yards and 4 TDs to lead host North Babylon (2-1) in Suffolk II. Jovan Greenhill added 95 yards on 13 carries and 1 TD and Jack Miller had 80 yards and a TD. Christian Myrick had 4 receptions for 183 yards and 3 TDs for Deer Park (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 9,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Rylan  Keating",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Dominic  Prestano",
+            "att": 30,
+            "yds": 187,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jovan Greenhill",
+            "att": 13,
+            "yds": 95,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jack Miller",
+            "att": 7,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Garcia",
+            "att": 2,
+            "yds": 33,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 16,
+            "comp": 10,
+            "yds": 211,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Garcia",
+            "att": 2,
+            "comp": 2,
+            "yds": 19,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 4,
+            "yds": 191,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Nusanti Delbridge",
+            "rec": 4,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "TJ Shaw",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Wojt",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Sean Donovan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Christian Creaven - Tintella",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Cesar Caraballo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 33,
+    "gameId": "7769",
+    "box": {
+      "gameId": "7769",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "6",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 33, Deer Park 6: Simon Blissett threw for 335 yards and rushed for 71 with three touchdowns passing and one rushing to lead host Northport (4-0) in Suffolk II. Danny Miller contributed two touchdowns and three sacks. Tommy Zarcone added 11 tackles including three for loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Gio Grotta",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 8,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Dimitri Pissanos",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 8,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 7,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Deutsch",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 13,
+            "comp": 8,
+            "yds": 81,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 20,
+            "comp": 16,
+            "yds": 335,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaheim McCallum",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Marley Witzman",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 141,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 4,
+            "yds": 112,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryder Maag",
+            "rec": 5,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Shawn Aliperti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton Hamada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2025",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 31,
+    "gameId": "8108",
+    "box": {
+      "gameId": "8108",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown East 31, Deer Park 21: Antonio Marrone led Smithtown East in rushing with two TDs on 17 carries in Suffolk II. He also went 11 for 19 in passing with 212 yards and one TD. Jonathan Jean totaled 106 yards and a TD on four catches and Hunter Hughes amassed 47 yards rushing and one TD on 14 carries. David Sack led the defense with seven tackles and two sacks while Dylan Zizzo added seven tackles. James Huxtable and Jack Reddock added six tackles and a pass break-up each.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 17,
+            "yds": 71,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Hunter  Hughes",
+            "att": 14,
+            "yds": 47,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Rayn Farrell",
+            "att": 7,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matt  Donohue",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 8,
+            "yds": 73,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 9,
+            "yds": 71,
+            "tds": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 5,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Rylan  Keating",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 19,
+            "comp": 11,
+            "yds": 212,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "rec": 4,
+            "yds": 106,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jack Reddock",
+            "rec": 4,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "rec": 6,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown East",
+            "player": "Nicolas Stroveglia",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown East",
+            "player": "David Sack",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Rob Martino",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 42,
+    "gameId": "8003",
+    "box": {
+      "gameId": "8003",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "13",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 42, Deer Park 21: Micah Washington ran nine times for 77 yards and two touchdowns, helping Newfield (3-3) overcome an early 13-point deficit in its Suffolk II win. Stephen Carney returned an interception 60 yards to set up his own 8-yard receiving touchdown from Connor Stebbins. Carney finished with four catches for 57 yards. Stebbins went 6 for 14 for 98 yards and a TD through the air and added a 3-yard rushing score. Richie Almonte blocked and returned a punt 15 yards for a TD. Christian Myrick scored three TDs for Deer Park (1-5) and opened the scoring with a 71-yard punt return TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 9,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 14,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 6,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 5,
+            "yds": 14,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 9,
+            "yds": 62,
+            "tds": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaheim McCallum",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Dimitri Pissanos",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 14,
+            "comp": 6,
+            "yds": 98,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chase Wolmart",
+            "att": 1,
+            "comp": 2,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 5,
+            "comp": 4,
+            "yds": 43,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 7,
+            "comp": 1,
+            "yds": 12,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 3,
+            "yds": 57,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 2,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Noah Adla",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Richi Almonte",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Sean Donovan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Commack",
+    "isAway": false,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 13,
+    "gameId": "7755",
+    "box": {
+      "gameId": "7755",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 13, Deer Park 8: Logan Curry began the game by returning the opening kickoff 71 yards for a touchdown for Commack (3-4) in its Suffolk II road win. Jordan Hamilton snagged two interceptions and Andrew Bergman had one. Mason Justus, Logan Curry and Tom Conover all had a sack as the Cougars posted three shutout quarters. Lincoln Riggs threw for 171 yards, including a 12-yard touchdown to AJ Arizonas. Christian Myrick had a 25-yard pick-6 for Deer Park (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 9,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jalen Jean-Louis",
+            "att": 15,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Danny Levine",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 5,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 29,
+            "comp": 16,
+            "yds": 171,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 22,
+            "comp": 9,
+            "yds": 114,
+            "tds": 0,
+            "int": 3
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Spencer Weiss",
+            "rec": 9,
+            "yds": 109,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "AJ Arizonis",
+            "rec": 3,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Ruocco",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 3,
+            "yds": 49,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jalen Francis",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Elias Entizar",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Thomas Conover",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Mason Justus",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Logan Curry",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Andrew Bergman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jordan  Hamilton",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 6,
+    "gameId": "7770",
+    "box": {
+      "gameId": "7770",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "6",
+          "q2": "8",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 26, Centereach 6: Christian Myrick ran for 165 yards on 18 carries including touchdowns of 2 and 74 yards to lead visiting Deer Park (2-6) in Suffolk II. Anthony DeCastro ran for a 36-yard TD and a two-point conversion and Jalen Francis caught an 11-yard TD pass from Vinny Vento. Jake Mikochik ran for a touchdown for Centereach (1-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 18,
+            "yds": 165,
+            "tds": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 5,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 26,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Owen Faunce",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Jalen Francis",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

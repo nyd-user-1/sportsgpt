@@ -1,0 +1,1632 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2025",
+    "opponent": "East Hampton / Bridgehampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 17,
+    "gameId": "8516",
+    "box": {
+      "gameId": "8516",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "0",
+          "q2": "10",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "12",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 18, East Hampton 17: Jayden Durham caught the winning 8-yard touchdown pass from Matthew Beardsley with 30 seconds left to lead host Eastport-South Manor in a Suffolk III opener. Durham caught five passes for 51 and TDs. Tommy Powers forced fumble and Brayden Huff recovered it at midfield with four minutes left to set the Sharks up for their game-winning drive. Beardsley completed 11 of 19 pass for 156 yards and three TDs and Max Ferraro had an 8-yard TD catch. Huff had six tackles, Powers had four tackles and a sack. Joe Hersey had 14 carries for 60 yards, a 29-yard reception and an interception. Livs Kuplins caught a 15-yard TD pass from Theo Ball, Jai Feaster had a 3-yard TD run and Manny Morales kicked a 25-yard field goal for East Hampton.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Jai Feaster",
+            "att": 13,
+            "yds": 73,
+            "tds": 1
+          },
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Alex Davis",
+            "att": 5,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 14,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Theo Ball",
+            "att": 16,
+            "comp": 7,
+            "yds": 64,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 19,
+            "comp": 11,
+            "yds": 156,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Livs Kuplins",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 5,
+            "yds": 51,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "rec": 2,
+            "yds": 49,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "rec": 2,
+            "yds": 14,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Manny Morales",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 14,
+    "gameId": "7861",
+    "box": {
+      "gameId": "7861",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "14",
+          "q2": "0",
+          "q3": "10",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 31, Harborfields 14: Joey Hershey rushed for 145 yards and three touchdowns on 17 carries to lead Eastport-South Manor (2-0) in Suffolk III. On defense, Hershey recorded eight tackles. Tommy Powers caught four passes for 37 yards and a touchdown while picking up four tackles and two sacks. Nolan Douglas also totaled four tackles and two sacks. William Thomas had 12 carries for 43 yards. Jayden Durham had seven carries for 42 yards. Owen Loomis went 4-for-4 on extra-point attempts and made a 39-yard field goal. For Harborfields (0-2), Brayden Matarese and Matthew Ferranti each rushed for 25 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Maughan",
+            "att": 2,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ethan  Roman",
+            "att": 2,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Ferranti",
+            "att": 5,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Brayden  Matarese",
+            "att": 4,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Rampersaud",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vern Bratton",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 17,
+            "yds": 145,
+            "tds": 3
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 12,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 7,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 11,
+            "comp": 5,
+            "yds": 65,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 12,
+            "comp": 6,
+            "yds": 49,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "rec": 4,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Jason Melhado",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Nolan Douglas",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 40,
+    "gameId": "7794",
+    "box": {
+      "gameId": "7794",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "6",
+          "q2": "13",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "0",
+          "q2": "13",
+          "q3": "6",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 40, Eastport-South Manor 19: Nic Simone had 26 carries for 257 yards and five touchdowns and added an interception to lead host Westhampton (1-2) in Suffolk III. Nate Logelfo caught three passes for 83 yards and a TD and had an interception to help the Hurricanes overcome a 19-7 second quarter deficit. Pat Fay completed 6 of 9 passes for 103 yards and a score and Andrew Lewis had six tackles. Joey Hershey ran for a TD and Thomas Powers and Cole Klein each caught a TD pass from Matt Beardsley for Eastport-South Manor (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 8,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nic Simone",
+            "att": 26,
+            "yds": 257,
+            "tds": 5
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 22,
+            "comp": 16,
+            "yds": 304,
+            "tds": 2,
+            "int": 2
+          },
+          {
+            "team": "Westhampton",
+            "player": "Pat Fay",
+            "att": 9,
+            "comp": 6,
+            "yds": 103,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 3,
+            "yds": 115,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "rec": 6,
+            "yds": 98,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "rec": 4,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nate LoGelfo",
+            "rec": 3,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Riley Maire",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Collin Fessel",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nic Simone",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nate LoGelfo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 27,
+    "gameId": "8191",
+    "box": {
+      "gameId": "8191",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "20",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 27, Eastport-South Manor 0: TJ Sonnenberg completed 7 of 14 passes for 160 yards and three touchdowns and had nine carries for 45 yards and a TD to lead visiting West Islip (3-1) in Suffolk III. Conor Kenefick caught five passes for 109 yards and two touchdowns. Jovan Brewster had 15 carries for 62 yards and caught a 20-yard TD pass. Jayson Carlson had 10 tackles and two sacks and Max Tate had 11 tackles, including three tackles for loss. Emmanuel Obayi and Kenefick each had an interception. Eastport-South Manor is 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Jovan Brewster",
+            "att": 15,
+            "yds": 62,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 9,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Peter Malone",
+            "att": 3,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jayson Carlson",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Ben Delanoy",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 12,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 8,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 8,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "TJ Sonnenberg",
+            "att": 14,
+            "comp": 7,
+            "yds": 160,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Conor Kenefick",
+            "rec": 5,
+            "yds": 109,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Peter Malone",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jovan Brewster",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Conor Kenefick",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Jayson Carlson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Conor Kenefick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Emmanuel Obayi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Alfonzo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Wyandanch",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 0,
+    "gameId": "7795",
+    "box": {
+      "gameId": "7795",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "13",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 41, Wyandanch 0: Max Ferraro had 50 rushing yards and a touchdown on seven carries and caught a 6-yard TD for Easport-South Manor (3-2). Joey Hershey rushed 10 times for 75 yards and had a 40-yard TD. Jayden Durham ran for 43 yards and added a 62-yard TD reception. Will Thomas added a 5-yard TD run. Matt Beardsley completed four passes for 133 yards and three scores. Wyandanch is 0-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 10,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 7,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 7,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 2,
+            "yds": 10,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 7,
+            "comp": 4,
+            "yds": 133,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 1,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "rec": 1,
+            "yds": 6,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Mahkai Brown",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joe  McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Tristan McCue",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 45,
+    "oppScore": 0,
+    "gameId": "7796",
+    "box": {
+      "gameId": "7796",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "14",
+          "q2": "17",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "45"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 45, Amityville 0: Max Ferraro scored three touchdowns to lead Eastport-South Manor (4-2) in Suffolk III. Ferraro's first touchdown came early in the first quarter with a 6-yard run. Matt Beardsley threw for two touchdowns. Beardsley's first touchdown came was a 50-yard to Thomas Powers in the first quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 10,
+            "yds": 86,
+            "tds": 3
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 9,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Braiden Huff",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 10,
+            "comp": 8,
+            "yds": 134,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "rec": 2,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Cole Klein",
+            "rec": 2,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Alfonzo",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Collin Fessel",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Gabe Garcia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Alfonzo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 35,
+    "gameId": "8066",
+    "box": {
+      "gameId": "8066",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "8",
+          "ot2": "6",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "8",
+          "ot2": "3",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Peyton Reisinger threw for 176 yards and two touchdowns and ran for 93 yards and the winning 6-yard TD in the second overtime period of visiting Rocky Point's 35-32 win over Eastport-South Manor in Suffolk Division III football Friday night. Ryan Espinal caught five passes for 131 yards and two touchdowns, including the tying 11-yard TD and two-point conversion pass in the fourth quarter. Reisinger intercepted a pass as time expired in regulation to force overtime.\nWill Thomas ran for a 4-yard touchdown and the two-point conversion for Eastport-South Manor in the first OT. Cristian Romero answered with a 2-yard run and Espinal caught another two-point pass from Reisinger. Rocky Point held ESM to a 41-yard field goal by Owen Loomis before Reisinger's winning score.\nRomero ran for 52 yards and two touchdowns for Rocky Point (4-3). Max Ferraro ran for touchdowns of 48, 8 and 14 yards for ESM (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "att": 18,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cristian Romero",
+            "att": 16,
+            "yds": 56,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "DJ Xavier",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 21,
+            "yds": 157,
+            "tds": 3
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "att": 6,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "att": 16,
+            "comp": 9,
+            "yds": 176,
+            "tds": 2,
+            "int": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "att": 1,
+            "comp": 1,
+            "yds": 28,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 7,
+            "comp": 2,
+            "yds": 41,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Espinal",
+            "rec": 5,
+            "yds": 131,
+            "tds": 2,
+            "pat": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "DJ Xavier",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Alfonzo",
+            "rec": 1,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Peyton Reisinger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Nolan Douglas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Collin Fessel",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Will Thomas",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Zach Alfonzo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 14,
+    "gameId": "7797",
+    "box": {
+      "gameId": "7797",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 14, Eastport-South Manor 13: Michael Cascione had 23 carries for 188 yards and two touchdowns and blocked Eastport-South Manor's tying PAT kick with 10 minutes left in the fourth quarter to lead host Smithtown West (6-2) in Suffolk III. Cascione added eight tackles. Nick Zins had nine tackles and Joe Fitzsimmons had six tackles, including one for loss and a sack. Max Ferraro ran for 64 yards and two touchdowns for ESM (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "att": 17,
+            "yds": 64,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "att": 6,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Michael Cascione",
+            "att": 23,
+            "yds": 188,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 8,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joe  Fitzsimmons",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Colton Ford",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Matt Beardsley",
+            "att": 7,
+            "comp": 3,
+            "yds": 39,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 10,
+            "comp": 2,
+            "yds": 66,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Jayden Durham",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Joey Hershey",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Colton Ford",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jake Rearick",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Owen Loomis",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tommy  Maloney",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Thomas Powers",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Max Ferraro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joe  Fitzsimmons",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vin Lepore",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Colton Ford",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1650 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "8014",
+    "box": {
+      "gameId": "8014",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 41, Centereach 7: Simon Blissett had 265 yards of offense and four touchdowns to lead visiting Northport in Suffolk II. Luke Loiacono scored on a nine-yard run and a 31-yard pass from Blissett. Daniel Miller had three receptions for 70 yards and a touchdown. Greyson Cabrera added 73 yards and a score for the Tigers.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 8,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Deutsch",
+            "att": 4,
+            "yds": 69,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 8,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 23,
+            "yds": 124,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 6,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 10,
+            "comp": 8,
+            "yds": 193,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 11,
+            "comp": 3,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 3,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 3,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Brandon Julien",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Centereach",
+            "player": "Juan Hernandez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tyler Naughton",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 43,
+    "gameId": "7731",
+    "box": {
+      "gameId": "7731",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "15",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown East 43, Centereach 7: Antonio Marrone completed 4 of 7 passing attempts for 114 yards and a touchdown, adding five carries for 81 yards and two more scores to lead Smithtown East to a home victory in Suffolk II. Hunter Hughes rushed 10 times for 45 yards and a TD.  \nJonathan Jean lead the team in receiving, catching two passes for 75 yards and a touchdown. Charlie Weydig had a 37-yard interception returned for a touchdown in the first quarter and finished with eight tackles. Matt Santangelo had six tackles, a sack and an interception. David Sack had five tackles and one sack, leading a defense that recorded four interceptions and two fumble recoveries for Smithtown East (1-1). Zach Sandora caught an 8-yard touchdown pass from Jason Cesa for Centereach (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 32,
+            "yds": 164,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 5,
+            "yds": 81,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Hunter  Hughes",
+            "att": 10,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Rayn Farrell",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matt  Donohue",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 10,
+            "comp": 4,
+            "yds": 44,
+            "tds": 1,
+            "int": 3
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "att": 2,
+            "comp": 1,
+            "yds": 4,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Antonio Marrone",
+            "att": 4,
+            "comp": 7,
+            "yds": 114,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Huxtable",
+            "att": 1,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 5,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jonathan Jean",
+            "rec": 2,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Henry Craft",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dylan Zizzo",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Nicolas Stroveglia",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Matt Santangelo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie  Weydid",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Henry Craft",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 56,
+    "gameId": "7732",
+    "box": {
+      "gameId": "7732",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "35",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 56, Centereach 13: Chase Northrop had 3 tackles,a pass deflection, and an interception for a 15-yard TD to lead host Huntington (3-0) in Suffolk II. Yasir Jones had 19 carries for 251 yards and 3 TDs and Jacob Guzik completed 5 of 6 passes for 105 yards and 3 TDs. Jack Kamenstein caught 2 TD passes and Chase Northrop added a 26-yard TD reception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 18,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 19,
+            "yds": 251,
+            "tds": 3
+          },
+          {
+            "team": "Huntington",
+            "player": "Shates Miller",
+            "att": 5,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "att": 2,
+            "yds": 29,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 6,
+            "comp": 3,
+            "yds": 86,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "comp": 5,
+            "yds": 105,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Joe Mongiardo",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 4,
+            "yds": 79,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 27,
+    "gameId": "7733",
+    "box": {
+      "gameId": "7733",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "6",
+          "q2": "8",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Copiague 27, Centereach 17: Centereach (0-4) jumped to an early 14-0 lead and forced a safety in the second quarter. Roger Rowe battled back with 96 and 65-yard rushing TDs to bring a second-half win to host Copiague (2-2) in Suffolk II. Rowe also added a 54-yard touchdown pass to Jayden Herrera. Copiague forced three turnovers in the second half. Keon Williams had two interceptions and Charles Williams had one interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 37,
+            "yds": 187,
+            "tds": 2
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 4,
+            "yds": 163,
+            "tds": 2
+          },
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "att": 6,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Copiague",
+            "player": "Kevin  Mackey",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 6,
+            "comp": 2,
+            "yds": 25,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 8,
+            "comp": 3,
+            "yds": 17,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 2,
+            "comp": 10,
+            "yds": 67,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Brandon Julien",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Rashad  Giggetts",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Copiague",
+            "player": "Alden Fortin",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Owen Faunce",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Frandi  Fernandez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Gregory  Brooks",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Trameer  Jones",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Copiague",
+            "player": "Charles Williams",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Keon  Williams",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 0,
+    "gameId": "8176",
+    "box": {
+      "gameId": "8176",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 20, West Babylon 0: Jake Mikochik had 31 carries for 201 yards and a TD to lead the host Centereach (1-4) in Suffolk II. He added a 13-yard passing TD. Gunner Periano led the team in passing, going 7 for 14 for 101 yards. Zach Sandora made five catches for 83 yards and a TD. On defense, Jeremiah Rivera had five tackles and a sack while Jake Vitiello had an interception and four tackles. Joe Farrugia had five tackles and a sack and Jamal Joda had a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 31,
+            "yds": 201,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 7,
+            "yds": 63,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 1,
+            "yds": 10,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 14,
+            "comp": 7,
+            "yds": 101,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 5,
+            "yds": 83,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Joe Mongiardo",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamal Joda",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Vitiello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/17/2025",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "7734",
+    "box": {
+      "gameId": "7734",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 42, Centereach 14: Javon Barnwell had 20 carries for 142 yards and two touchdowns to lead host Connetquot (2-4) in Suffolk II. Vincent Feraca completed 9 of 10 passes for 147 yards and two TDs to Jonas Mendez, who caught four passes for 68 yards. Marcus Anglin ran for 80 yards and a TD. Angelo Prestigiacomo had a 40-yard pick-6. Danny Ryan had 15 tackles and a sack and Sonny Kowalevich had 10 tackles, including two for loss, and two sacks. Jason Cesa ran for a touchdown and threw a 73-yard TD pass to Nasir Jean Louis for Centereach (1-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 17,
+            "yds": 95,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 2,
+            "yds": 12,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 20,
+            "yds": 142,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 4,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "att": 1,
+            "yds": 36,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 12,
+            "comp": 8,
+            "yds": 190,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 4,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 10,
+            "comp": 9,
+            "yds": 147,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "rec": 3,
+            "yds": 82,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 1,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 4,
+            "yds": 44,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamal Joda",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "rec": 4,
+            "yds": 68,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Danny Ryan",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo Price",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Joe Parise",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamal Joda",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Sonny Kowalevich",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Christian Altamirano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Danny Ryan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Angelo Prestigiacomo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Damian Sosa",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 50,
+    "gameId": "8004",
+    "box": {
+      "gameId": "8004",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "14",
+          "q2": "21",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 50, Centereach 0: Connor Stebbins completed  8 of 11 passes for 143 yards and 2 TDs and added 2 rushing TDs to lead visiting Newfield (4-3) in Suffolk II. Dante Powell added 2 rushing TDs and \nMicah Washington had a 35-yard running TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 3,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Richi Almonte",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 10,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 5,
+            "yds": 36,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 7,
+            "yds": 13,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 19,
+            "yds": 99,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Owen Faunce",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 11,
+            "comp": 8,
+            "yds": 143,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 4,
+            "comp": 2,
+            "yds": 10,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 3,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 4,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 2,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 26,
+    "gameId": "7770",
+    "box": {
+      "gameId": "7770",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "6",
+          "q2": "8",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 26, Centereach 6: Christian Myrick ran for 165 yards on 18 carries including touchdowns of 2 and 74 yards to lead visiting Deer Park (2-6) in Suffolk II. Anthony DeCastro ran for a 36-yard TD and a two-point conversion and Jalen Francis caught an 11-yard TD pass from Vinny Vento. Jake Mikochik ran for a touchdown for Centereach (1-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 18,
+            "yds": 165,
+            "tds": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 5,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 26,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Owen Faunce",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Jalen Francis",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]
