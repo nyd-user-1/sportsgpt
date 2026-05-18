@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
 import { APIProvider, Map, useMap } from '@vis.gl/react-google-maps'
 import { useRouter } from 'next/navigation'
-import { ChevronDown } from 'lucide-react'
+import { SCHOOL_COLORS } from '@/lib/school-colors'
 
 const GEOJSON_URL = 'https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/geojson/suffolk-schools.geojson'
 
@@ -73,23 +73,13 @@ const DISTRICT_SCHOOLS: Record<string, string[]> = {
   'WYANDANCH UFSD':                ['wyandanch'],
 }
 
-function winColor(pct: number | null): string {
-  if (pct === null) return '#e5e7eb'
-  if (pct >= 0.80) return '#1e3a8a'
-  if (pct >= 0.60) return '#2563eb'
-  if (pct >= 0.40) return '#60a5fa'
-  if (pct >= 0.20) return '#bfdbfe'
-  return '#eff6ff'
+function districtColor(slugs: string[]): string {
+  for (const s of slugs) {
+    const c = SCHOOL_COLORS[s]?.primary
+    if (c) return c
+  }
+  return '#e5e7eb'
 }
-
-const LEGEND = [
-  { color: '#1e3a8a', label: '80%+ win rate' },
-  { color: '#2563eb', label: '60 – 80%' },
-  { color: '#60a5fa', label: '40 – 60%' },
-  { color: '#bfdbfe', label: '20 – 40%' },
-  { color: '#eff6ff', label: 'Under 20%' },
-  { color: '#e5e7eb', label: 'No data' },
-]
 
 export type SchoolRecord = {
   school_slug: string
@@ -150,13 +140,9 @@ function DistrictLayer({ schools, onHover, onLoaded }: {
         map.data.setStyle((feature: google.maps.Data.Feature) => {
           const name = String(feature.getProperty('POPULAR_NA') ?? '')
           const slugs = DISTRICT_SCHOOLS[name] ?? []
-          const records = slugs.map(s => bySlug[s]).filter(Boolean)
-          // Average win% across all schools in district
-          const pcts = records.map(r => r.win_pct).filter((p): p is number => p !== null)
-          const avgPct = pcts.length > 0 ? pcts.reduce((a, b) => a + b, 0) / pcts.length : null
           return {
-            fillColor: winColor(avgPct),
-            fillOpacity: 0.78,
+            fillColor: districtColor(slugs),
+            fillOpacity: 0.75,
             strokeColor: '#ffffff',
             strokeWeight: 1.2,
             strokeOpacity: 1,
@@ -205,7 +191,6 @@ export default function SuffolkDistrictMap({ schools, season }: {
 }) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   const [hoveredChip, setHoveredChip] = useState<ChipData | null>(null)
-  const [legendOpen, setLegendOpen] = useState(false)
   const [loaded, setLoaded] = useState(false)
   const handleLoaded = useCallback(() => setLoaded(true), [])
   const handleHover = useCallback((chip: ChipData | null) => setHoveredChip(chip), [])
@@ -248,34 +233,11 @@ export default function SuffolkDistrictMap({ schools, season }: {
       {/* Skeleton */}
       <div className={`absolute inset-0 z-10 bg-[var(--inp-bg)] pointer-events-none transition-opacity duration-700 ${loaded ? 'opacity-0' : 'opacity-100'}`} />
 
-      {/* Chip + legend */}
-      <div className="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md overflow-hidden min-w-[200px] max-w-[240px]">
-        <button
-          type="button"
-          onClick={() => setLegendOpen(o => !o)}
-          className="w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-black/[0.03] transition-colors"
-        >
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-[#1a1a1a] truncate">{chip.title}</p>
-            {chip.subtitle && <p className="text-[11px] text-[#666] truncate">{chip.subtitle}</p>}
-            {chip.record && <p className="text-[11px] font-semibold mt-0.5" style={{ color: '#033882' }}>{chip.record}</p>}
-          </div>
-          <ChevronDown className={`h-4 w-4 shrink-0 text-[#aaa] transition-transform ${legendOpen ? 'rotate-180' : ''}`} />
-        </button>
-        {legendOpen && (
-          <>
-            <div className="border-t border-black/08 mx-3" />
-            <div className="px-3 pt-2 pb-3 space-y-1">
-              <p className="text-[9px] font-semibold uppercase tracking-widest text-[#aaa] mb-1.5">Win Rate — {season}</p>
-              {LEGEND.map(({ color, label }) => (
-                <div key={label} className="flex items-center gap-1.5">
-                  <div className="h-3 w-3 rounded-[3px] shrink-0 border border-black/10" style={{ background: color }} />
-                  <span className="text-[11px] text-[#444]">{label}</span>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+      {/* Chip */}
+      <div className="absolute top-3 left-3 z-20 bg-white/95 backdrop-blur-sm rounded-xl shadow-md px-3 py-2.5 min-w-[180px] max-w-[240px]">
+        <p className="text-sm font-bold text-[#1a1a1a] truncate">{chip.title}</p>
+        {chip.subtitle && <p className="text-[11px] text-[#666] truncate">{chip.subtitle}</p>}
+        {chip.record && <p className="text-[11px] font-semibold mt-0.5" style={{ color: '#033882' }}>{chip.record}</p>}
       </div>
     </div>
   )
