@@ -1,0 +1,1098 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 49,
+    "gameId": "6390",
+    "box": {
+      "gameId": "6390",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Babylon",
+          "q1": "14",
+          "q2": "7",
+          "q3": "22",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 49, Islip 19: Aidan Winter rushed for 264 yards and four touchdowns on 15 carries to lead Babylon (1-0) in Suffolk IV. Jack Pinna rushed for 96 yards on eight carries and caught a 45-yard receiving touchdown. Sincere McDougal rushed for 55 yards and two touchdowns on three carries. Winter had seven tackles and an interception, Pinna had nine tackles, Dan DeBetta had 10 tackles and Savion Miller had six tackles and three sacks. Colin Haug caught two touchdowns and returned another off an interception for Islip (0-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 4,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 2,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Pierre Destra",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Simpson Najee",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 15,
+            "yds": 264,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Jack  Pinna",
+            "att": 8,
+            "yds": 96,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Sincere McDougal",
+            "att": 3,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 10,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Savion Millner",
+            "att": 0,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 8,
+            "comp": 5,
+            "yds": 100,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 8,
+            "comp": 4,
+            "yds": 41,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 5,
+            "yds": 63,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matthew Trovato",
+            "rec": 2,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Collin Haug",
+            "rec": 2,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Collin Haug",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/14/2023",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 49,
+    "gameId": "6432",
+    "box": {
+      "gameId": "6432",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 49, Islip 20: Danny Aiello recorded 292 all-purpose yards and scored five touchdowns to lead Bayport-Blue Point (2-0) in Suffolk IV. Cooper Fuller added 82 rushing yards and a touchdown, and threw for 60 yards and a touchdown on three completions. Islip is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 16,
+            "yds": 160,
+            "tds": 4
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 11,
+            "yds": 82,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 4,
+            "comp": 3,
+            "yds": 60,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Mike Luce",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brendan Waters",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 43,
+    "gameId": "6445",
+    "box": {
+      "gameId": "6445",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "7",
+          "q3": "14",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 43, Islip 14: Matt Albino rushed for 240 yards and four touchdowns on 21 carries to lead Center Moriches over Islip in Suffolk IV on Friday. Xavier Bryant rushed for 71 yards and caught a touchdown pass. Brayden Hromada made 16 tackles and forced a fumble. Noah Reed and Connor Planz each had an interception, Daniel Heller and Matt Albino each had a sack for Center Moriches (3-0). Michael Vitale returned a kickoff 86 yards for a touchdown and Brady Nash scored a 1-yard rushing touchdown for Islip (0-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matt Albino",
+            "att": 21,
+            "yds": 240,
+            "tds": 4
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "att": 2,
+            "yds": 71,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Connor Planz",
+            "att": 5,
+            "comp": 4,
+            "yds": 13,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 4,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Matt Albino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Daniel Heller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Noah Reed",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Connor Planz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 33,
+    "gameId": "6470",
+    "box": {
+      "gameId": "6470",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "6",
+          "q2": "7",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 33, Islip 7: DJ Williamson caught three passes for 136 yards and two touchdowns to lead Miller Place (1-3) in Suffolk IV. Shane Kiernan completed 6 of 10 passes for 161 yards and two touchdowns and Ethan Monaco had two carries for 115 yards and two touchdowns. Monaco added three receptions for 25 yards and made nine tackles. Michael Giugliano had nine carries for 130 yards and a touchdown. Colin Haug caught a 28-yard touchdown pass from Brady Nash for Islip (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 9,
+            "yds": 130,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan Monaco",
+            "att": 2,
+            "yds": 115,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 10,
+            "comp": 6,
+            "yds": 161,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "DJ  Williamson",
+            "rec": 3,
+            "yds": 136,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan Monaco",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Southampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 0,
+    "gameId": "6493",
+    "box": {
+      "gameId": "6493",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Southampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Islip",
+          "q1": "14",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 41, Southampton 0: Jack Rao threw for two touchdowns and had a 27-yard rushing score to lead host Islip (1-4) in Suffolk IV. Jake DeGennaro returned the opening kickoff 75 yards for a touchdown. Pierre Destra scored a 58-yard rushing touchdown on his only carry. Brady Nash had a 40-yard rushing score. Jack McLoughlin and Dominick Albertelli each had two sacks. Michael Vitale made six tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "att": 5,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Pierre Destra",
+            "att": 1,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 2,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 1,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 4,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joseph DeLucca",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 3,
+            "comp": 3,
+            "yds": 92,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Collin Haug",
+            "rec": 1,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 34,
+    "gameId": "6522",
+    "box": {
+      "gameId": "6522",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 34, Islip 7:",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "att": 22,
+            "yds": 156,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 12,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 9,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "att": 2,
+            "yds": 10,
+            "tds": 2
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Brandon Meskill",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 10,
+            "comp": 6,
+            "yds": 112,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "rec": 3,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Chris Johnson",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "rec": 1,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2023",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 49,
+    "gameId": "6532",
+    "box": {
+      "gameId": "6532",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 49, Islip 41: Kahran King had 368 all-purpose yards and four touchdowns to lead Glenn (6-1) in Suffolk IV. Cole Madden threw for 164 yards and two touchdowns, and Matt Triolo had 86 receiving yards and two touchdowns. Jack Sikes and Jack Smith each had five tackles. Brady Nash accounted for five touchdowns and Collin Haug scored three touchdowns for Islip (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 26,
+            "yds": 290,
+            "tds": 3
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 3,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 15,
+            "comp": 10,
+            "yds": 164,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 3,
+            "yds": 86,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael St Croix",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Sikes",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Andrew Tartaglia",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Carmine Gerbino",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 14,
+    "gameId": "6711",
+    "box": {
+      "gameId": "6711",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Islip",
+          "q1": "27",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 41, Greenport/Southold/Mattituck 14: Christian Hall had 10 carries for 111 yards and a touchdown to lead host Islip (2-6) in Suffolk IV. Brady Nash threw for two touchdowns and ran for another. Jack Rao threw a 61-yard touchdown pass to Owen MacManus and caught a 24-yard touchdown pass from Nash. Kaiden White had an 88-yard kickoff return touchdown and Michael Vitale had a receiving touchdown. Dylan Spooner threw a 75-yard touchdown to Luke Newman and had a 14-yard touchdown run for Greenport/Southold/Mattituck (2-6).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

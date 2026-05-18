@@ -1,0 +1,1523 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 42,
+    "gameId": "8001",
+    "box": {
+      "gameId": "8001",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 42, Newfield 6: Vincent Feraca completed 14 of 16 passes for 265 yards and four touchdowns to lead host Connetquot in a Suffolk II opener. Nick Mastriano caught six passes for 93 yards and two touchdowns, Jonas Mendez caught a 40-yard touchdown pass and Kingston Maugeri added a 13-yard touchdown catch. Javon Barnwell ran for 158 yards and two touchdowns on 21 carries. Danny Ryan had 10 tackles and Sonny Kowalevich had three tackles-for-loss. Nicholas Leoni caught a 77-yard touchdown pass from Connor Stebbins for Newfield.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 21,
+            "yds": 158,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 8,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 8,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vince Marshall",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 17,
+            "comp": 9,
+            "yds": 212,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 16,
+            "comp": 14,
+            "yds": 265,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 2,
+            "yds": 107,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "rec": 1,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "rec": 6,
+            "yds": 93,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "rec": 2,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Damian Sosa",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kingston Maugeri",
+            "rec": 2,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Bryan  Boss",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Joe Parise",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Jadon Anglin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kingston Maugeri",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Angelo Prestigiacomo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2025",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 18,
+    "gameId": "7765",
+    "box": {
+      "gameId": "7765",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 20, Copiague 18: Connor Stebbins completed 13 of his 20 passes throwing for 164 yards and two touchdowns and rushes for 70 yards and a touchdown on 10 carries to lead Newfield (1-1) in a Suffolk II matchup. Dante Powell rushed for 90 yards on 11 carries as well as catching four passes and scored a touchdown for the Wolverines. Copiague is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "att": 11,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 10,
+            "yds": 42,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Copiague",
+            "player": "Roger Rowe",
+            "att": 10,
+            "comp": 4,
+            "yds": 76,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Copiague",
+            "player": "Trameer  Jones",
+            "rec": 1,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Aiden  Boswell",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Copiague",
+            "player": "Jayden Herrera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Copiague",
+            "player": "Jayden  James",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 57,
+    "gameId": "7850",
+    "box": {
+      "gameId": "7850",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "21",
+          "q2": "22",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "57"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 57, Newfield 7: Nick Sevilla completed 6 of 8 passes for 250 yards and three touchdowns and Daniel White rushed for 130 yards and two touchdowns and had 60 receiving yards as Half Hollow Hills East (1-2) defeated host Newfield (1-2) in Suffolk II. Akio Johnson has 12 tackles, a sack, and a 20-yard interception return for a touchdown. Michai Crump had eight tackles and Ryan Soto had six tackles, five pass break-ups and a 54-yard touchdown reception. RJ Peters had touchdown receptions of 59 and 62 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "att": 10,
+            "yds": 130,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 6,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "att": 3,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Vinncent Banculli",
+            "att": 2,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 6,
+            "comp": 8,
+            "yds": 250,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Vinncent Banculli",
+            "att": 1,
+            "comp": 1,
+            "yds": 54,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "RJ Peters",
+            "rec": 2,
+            "yds": 121,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "rec": 2,
+            "yds": 63,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "rec": 2,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah reinstein",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Akio Johnson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 7,
+    "gameId": "8002",
+    "box": {
+      "gameId": "8002",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield's offensive line led the wolverines to 289 yards rushing on 32 carries for an average of 9 yards per attempt.  Dante Powell had 11 tackles for Newfield and had 74 yards rushing on 8 carries and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 8,
+            "yds": 74,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 12,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 1,
+            "yds": 59,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 2,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Richi Almonte",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 12,
+            "comp": 6,
+            "yds": 91,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 2,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 21,
+    "gameId": "8016",
+    "box": {
+      "gameId": "8016",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Newfield 7: Luke Loiacono blocked a 1st quarter field goal attempt and returned it 52 yards and then scored a 3-yard TD to lead visiting Northport (5-0) in Suffolk II. Loiacono also caught a 25-yard pass from Simon Blissett. Carson Ciaio closed the scoring on a 4-yard pass from Blissett. Dante Powell scored a rushing TD for Newfield (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 8,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 2,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 5,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 16,
+            "yds": 94,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 4,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 12,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "comp": 6,
+            "yds": 102,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 10,
+            "comp": 17,
+            "yds": 113,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 2,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 1,
+            "yds": 4,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 6,
+            "yds": 90,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Shawn Aliperti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Thomas McGovern",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Liam Cassidy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton Hamada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Deer Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 21,
+    "gameId": "8003",
+    "box": {
+      "gameId": "8003",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "13",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 42, Deer Park 21: Micah Washington ran nine times for 77 yards and two touchdowns, helping Newfield (3-3) overcome an early 13-point deficit in its Suffolk II win. Stephen Carney returned an interception 60 yards to set up his own 8-yard receiving touchdown from Connor Stebbins. Carney finished with four catches for 57 yards. Stebbins went 6 for 14 for 98 yards and a TD through the air and added a 3-yard rushing score. Richie Almonte blocked and returned a punt 15 yards for a TD. Christian Myrick scored three TDs for Deer Park (1-5) and opened the scoring with a 71-yard punt return TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 9,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 14,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 6,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 5,
+            "yds": 14,
+            "tds": 1
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 9,
+            "yds": 62,
+            "tds": 2
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaheim McCallum",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Dimitri Pissanos",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Decastro",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 14,
+            "comp": 6,
+            "yds": 98,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chase Wolmart",
+            "att": 1,
+            "comp": 2,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 5,
+            "comp": 4,
+            "yds": 43,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 7,
+            "comp": 1,
+            "yds": 12,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 3,
+            "yds": 57,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 2,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Noah Adla",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Richi Almonte",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Deer Park",
+            "player": "Sean Donovan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 50,
+    "oppScore": 0,
+    "gameId": "8004",
+    "box": {
+      "gameId": "8004",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "14",
+          "q2": "21",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 50, Centereach 0: Connor Stebbins completed  8 of 11 passes for 143 yards and 2 TDs and added 2 rushing TDs to lead visiting Newfield (4-3) in Suffolk II. Dante Powell added 2 rushing TDs and \nMicah Washington had a 35-yard running TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 3,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Richi Almonte",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 10,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 5,
+            "yds": 36,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 7,
+            "yds": 13,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 19,
+            "yds": 99,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Owen Faunce",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 11,
+            "comp": 8,
+            "yds": 143,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 4,
+            "comp": 2,
+            "yds": 10,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Gunner Peranio",
+            "att": 3,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 4,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 2,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 34,
+    "gameId": "7897",
+    "box": {
+      "gameId": "7897",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 34, Newfield 21: Yasir Jones rushed for 267 yards and four touchdowns on 18 carries to lead Huntington (6-2) in Suffolk II. Defensively, Ethan Lawless had an interception and two sacks. Jacob Guzik completed two of his six passes for 85 yards and a touchdown. Chase Northrop caught a pass for 56 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 18,
+            "yds": 267,
+            "tds": 4
+          },
+          {
+            "team": "Huntington",
+            "player": "Zayvion McCoy",
+            "att": 3,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 11,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 8,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 7,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 6,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chase Wolmart",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "comp": 2,
+            "yds": 85,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 16,
+            "comp": 8,
+            "yds": 57,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Frankie  Algieri",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 3,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Banny Soc Concua",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

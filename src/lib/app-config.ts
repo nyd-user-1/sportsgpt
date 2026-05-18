@@ -80,20 +80,23 @@ export const PATH_TITLE: Record<string, string> = {
 export type NavItem = { label: string; icon: React.ComponentType<{ className?: string }>; href: string }
 
 export const SIDEBAR_NAV_TOP: NavItem[] = [
-  { label: 'Chat',       icon: MessageCircle,   href: '/chat'                },
-  { label: 'Charts',     icon: LayoutDashboard, href: '/charts'              },
-  { label: 'Teams',      icon: Building2,       href: '/team'                },
-  { label: 'Players',    icon: User,            href: '/player'              },
+  { label: 'Launchpad', icon: Rocket,          href: '/launchpad'           },
+  { label: 'Chat',      icon: MessageCircle,   href: '/chat'                },
+  { label: 'Charts',    icon: LayoutDashboard, href: '/charts'              },
+  { label: 'Players',   icon: User,            href: '/player'              },
+  { label: 'Teams',     icon: Building2,       href: '/team'                },
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
-  { label: 'Maps',        icon: Map,           href: '/maps'                },
-  { label: 'Schools',     icon: School,        href: '/school'              },
-  { label: 'Leaderboard', icon: ListOrdered,   href: '/leaderboard'         },
-  { label: 'Divisions',   icon: LayoutGrid,    href: '/division/division-i' },
-  { label: 'Section XI',  icon: Trophy,        href: '/section/section-xi'  },
-  { label: 'Launchpad',   icon: Rocket,        href: '/launchpad'           },
-  { label: 'Gallery',     icon: Images,        href: '/'                    },
+  { label: 'Gallery',     icon: Images,      href: '/'           },
+  { label: 'Leaderboard', icon: ListOrdered, href: '/leaderboard' },
+]
+
+export const SIDEBAR_NAV_MORE: NavItem[] = [
+  { label: 'Maps',       icon: Map,         href: '/maps'                },
+  { label: 'Schools',    icon: School,      href: '/school'              },
+  { label: 'Divisions',  icon: LayoutGrid,  href: '/division/division-i' },
+  { label: 'Section XI', icon: Trophy,      href: '/section/section-xi'  },
 ]
 
 // Empty arrays = Data and Map accordion groups hidden from sidebar

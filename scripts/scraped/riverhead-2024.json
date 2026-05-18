@@ -1,0 +1,1074 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 14,
+    "gameId": "6876",
+    "box": {
+      "gameId": "6876",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "6",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 19, Central Islip 14: Kevin Qualey caught a 46-yard touchdown pass from Karter Doyle with 29 seconds left in visiting Riverhead's 19-14 win over Central Islip in a Suffolk I opener Friday night. Chris Ramos had an interception to seal the game with 15 seconds left. Doyle rushed for 131 yards and two touchdowns and Nate Nentwich added 119 yards on 13 carries. Qualey totaled five catches for 76 yards. Jimmy Gaston Jr. ran for touchdowns of 50 and 15 yards for Central Islip.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Karter Doyle",
+            "att": 19,
+            "yds": 131,
+            "tds": 2
+          },
+          {
+            "team": "Riverhead",
+            "player": "Nate Nentwich",
+            "att": 13,
+            "yds": 119,
+            "tds": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Karter Doyle",
+            "att": 9,
+            "comp": 5,
+            "yds": 76,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "rec": 5,
+            "yds": 76,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Riverhead",
+            "player": "Anthony Elias",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Chris Ramos",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Commack",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 43,
+    "gameId": "6893",
+    "box": {
+      "gameId": "6893",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Commack",
+          "q1": "21",
+          "q2": "15",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 43, Riverhead 13: Brady Curry had 13 carries for 179 yards and two touchdowns to lead Commack (1-1) in Suffolk I. Andrew Riggs had 108 receiving yards and caught two touchdowns from his brother, Lincoln, who completed 5 of 6 passes for 125 yards. Andrew Riggs had six tackles. Christopher Mosquera and Jalen Jean-Louis each ran for a TD for Commack. Riverhead is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 9,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Riverhead",
+            "player": "Malik Dennis",
+            "att": 7,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Riverhead",
+            "player": "Karter Doyle",
+            "att": 5,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Brady Curry",
+            "att": 13,
+            "yds": 179,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Lincoln Riggs",
+            "att": 6,
+            "comp": 5,
+            "yds": 125,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Andrew Riggs",
+            "rec": 4,
+            "yds": 108,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "James Brusca",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Riverhead",
+            "player": "Anthony Elias",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Aidan Cooper",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 34,
+    "gameId": "7210",
+    "box": {
+      "gameId": "7210",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "13",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "8",
+          "q3": "15",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 34, Riverhead 29: Tommy Kelly rushed 12 times for 86 yards and three touchdowns, and Brett Rupolo completed 4 of 6 passing attempts, including the game-winning 33-yard touchdown to Jackson Wustenhoff with 1:42 remaining in the game, for Patchogue-Medford football (1-2) Saturday at Riverhead in Suffolk I. Kelly also completed a 65-yard passing touchdown to Monty Degasperi, who later iced the game by forcing and recovering a fumble on the final Riverhead drive. Patchogue-Medford finished with 193 yards rushing, with Aaron Heuther adding 48 yards on seven carries. Dominic Pertillar had had 11 tackles on defense and had a great game on offense as a lead blocker. Monty Degasperi forced and recovered a fumble on the ensuing drive to close the game. Karter Doyle ran in three touchdowns for Riverhead (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Karter Doyle",
+            "att": 21,
+            "yds": 121,
+            "tds": 3
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 10,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Karter Doyle",
+            "att": 9,
+            "comp": 7,
+            "yds": 72,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "rec": 6,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Riverhead",
+            "player": "Anthony Elias",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 35,
+    "gameId": "7209",
+    "box": {
+      "gameId": "7209",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 35, Riverhead 0: Cris Peralta finished with 270 total yards of offense, rushing for 234 yards on 19 carries and four touchdowns to lead Brentwood (1-3) in Suffolk I. Peralta added 10 tackles and one forced fumble on defense. Keenan Walls Jr. added a rushing touchdown and Amari Wallace and Adonis Singletary finished with seven tackles and a tackle for a loss each.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 19,
+            "yds": 234,
+            "tds": 4
+          },
+          {
+            "team": "Brentwood",
+            "player": "Keenan Walls Jr.",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Kenneth Walls",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Dennis Cisneros",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 4,
+            "comp": 1,
+            "yds": 36,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 1,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almanderez",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 55,
+    "gameId": "6900",
+    "box": {
+      "gameId": "6900",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "28",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 55, Riverhead 0: Andrew Amarando had six receptions for 93 yards and three touchdowns and Vinny Feraca completed 10 of 12 passes for 163 yards and three scores to lead Connetquot (4-1) in Suffolk I. Javon Barnwell rushed for 69 yards and three touchdowns on five carries. Connetquot forced five turnovers, led by Mike Catera, who had an interception, fumble recovery and three tackles for loss. Lucas Weaver had twelve tackles, including three for a loss, and a forced fumble. Riverhead falls to 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 5,
+            "yds": 69,
+            "tds": 3
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 4,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Logan Cordes",
+            "att": 6,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vince Marshall",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Blake Coppinger",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 8,
+            "comp": 7,
+            "yds": 112,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 6,
+            "yds": 93,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Blake Coppinger",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Joe Tierno",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 48,
+    "gameId": "7212",
+    "box": {
+      "gameId": "7212",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "21",
+          "q2": "20",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 48, Riverhead 7: Hudson Philbrick completed four of his five passes for 108 yards and two touchdowns for Ward Melville (6-0). JJ Alcindor ran five times for 95 yards and two scores, one for 34 yards and then one for 35. Jaylen Thomas rushed five times for 85 yards. Joe Benedetto had seven carries for 41 yards and two TDs. Joe Massaro began the game with a 65-yard kickoff return for a touchdown. Karter Doyle threw a 45-yard scoring pass to Kevin Qualey for Riverhead (1-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "att": 5,
+            "yds": 98,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jaylen Thomas",
+            "att": 5,
+            "yds": 83,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 5,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Aidan Hutchinson",
+            "att": 8,
+            "yds": 29,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 5,
+            "comp": 4,
+            "yds": 105,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 2,
+            "yds": 83,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 2,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Liam Cronin",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "6819",
+    "box": {
+      "gameId": "6819",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore defeated Riverhead, 35-7, in Suffolk Division I football.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 26,
+            "yds": 171,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Whitman",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 49,
+    "gameId": "7211",
+    "box": {
+      "gameId": "7211",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "14",
+          "q2": "22",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 49, Riverhead 7: Aiden Jorgensen had three catches for 75 yards and two touchdowns to lead visiting Whitman (4-4) in Suffolk I. Peter Ramos and Will Bozic combined for a strip sack, and Xavier Ali picked up the fumble and ran 22 yards for a touchdown. Dylan Kollmer completed 4 of 6 passes for 92 yards and two touchdowns. Ryan Downes rushed for 61 yards on 11 carries and Mark Rutledge ran for 53 yards and a touchdown on nine carries. Kyle Schombs had a 43-yard interception return touchdown. Michael Mannino went 6-for-6 on PATs, kicked six touchbacks and ran for a two-point conversion. Karter Doyle had a 3-yard touchdown run for Riverhead (1-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 11,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Mark Rutledge",
+            "att": 9,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Micah Brandon",
+            "att": 1,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 6,
+            "comp": 4,
+            "yds": 92,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 3,
+            "yds": 75,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Will Bozic",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Peter Ramos",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Kyle Schombs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Taha Bilal",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

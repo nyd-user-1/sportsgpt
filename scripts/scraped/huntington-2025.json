@@ -1,0 +1,2012 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2025",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 14,
+    "gameId": "7894",
+    "box": {
+      "gameId": "7894",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 26,
+            "yds": 124,
+            "tds": 3
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 5,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "att": 16,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 7,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "RJ Peters",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 12,
+            "comp": 6,
+            "yds": 138,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 15,
+            "comp": 20,
+            "yds": 170,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 5,
+            "yds": 130,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "rec": 7,
+            "yds": 69,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "RJ Peters",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Adrian  Merchant",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Donnie Jones",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah reinstein",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 34,
+    "gameId": "7647",
+    "box": {
+      "gameId": "7647",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "6",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Huntington",
+          "q1": "13",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 40, North Babylon 34: Jacob Guzik completed 7 of 14 passing attempts for 231 yards and two touchdowns in Huntington's home win over North Babylon in Suffolk I. Guzik added six rushes for 38 yards and two touchdowns. Yasir Jones took 20 carries for 148 yards and four touchdowns and Jack Kamenstein erupted for six catches, 202 yards and two touchdowns for Huntington (2-0). Dominic Prestano ran 23 times for 186 yards and four touchdowns for North Babylon (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Dominic  Prestano",
+            "att": 23,
+            "yds": 186,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jovan Greenhill",
+            "att": 6,
+            "yds": 56,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "TJ Shaw",
+            "att": 8,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Garcia",
+            "att": 8,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jack Miller",
+            "att": 8,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 20,
+            "yds": 148,
+            "tds": 4
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "yds": 38,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 14,
+            "comp": 7,
+            "yds": 231,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jason Mack",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Wojt",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 6,
+            "yds": 202,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Christian Creaven - Tintella",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie Campbell",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Centereach",
+    "isAway": false,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 13,
+    "gameId": "7732",
+    "box": {
+      "gameId": "7732",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "35",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 56, Centereach 13: Chase Northrop had 3 tackles,a pass deflection, and an interception for a 15-yard TD to lead host Huntington (3-0) in Suffolk II. Yasir Jones had 19 carries for 251 yards and 3 TDs and Jacob Guzik completed 5 of 6 passes for 105 yards and 3 TDs. Jack Kamenstein caught 2 TD passes and Chase Northrop added a 26-yard TD reception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 18,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 19,
+            "yds": 251,
+            "tds": 3
+          },
+          {
+            "team": "Huntington",
+            "player": "Shates Miller",
+            "att": 5,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "att": 2,
+            "yds": 29,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 6,
+            "comp": 3,
+            "yds": 86,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "comp": 5,
+            "yds": 105,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Joe Mongiardo",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 4,
+            "yds": 79,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Joseph Farrugia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 14,
+    "gameId": "7895",
+    "box": {
+      "gameId": "7895",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "East Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Jake Simmons had 23 carries for 130 yards and two TDs for East Islip (4-0) in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 16,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 8,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 23,
+            "yds": 130,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "att": 6,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 25,
+            "comp": 15,
+            "yds": 204,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 6,
+            "comp": 5,
+            "yds": 71,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Patrick Hassett",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Henry Gerberg",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "rec": 3,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Mikey Tramaglini",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Chris Coreas",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Banny Soc Concua",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jovan Bonilla",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2025",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 14,
+    "gameId": "7896",
+    "box": {
+      "gameId": "7896",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 21, Connetquot 14: Jacob Guzik went 12 for 15 in passing with 131 yards and a TD to lead Huntington (4-1) in Suffolk II. Yasir Jones had 84 yards and a touchdown on 15 carries while Titan Elysee recorded an 85-yard kick return touchdown. Vincent Feraca went 11 for 17 with 117 yards and a touchdown for Connetquot (1-4). Jonas Mendez added 60 yards and a touchdown on two receptions.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 15,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 28,
+            "yds": 145,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 15,
+            "comp": 12,
+            "yds": 131,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 17,
+            "comp": 11,
+            "yds": 117,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "att": 1,
+            "comp": 1,
+            "yds": 30,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "rec": 6,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 4,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "rec": 4,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Damian Sosa",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kingston Maugeri",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo Price",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Connetquot",
+            "player": "Joe Parise",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Will Peters",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Henry Gerberg",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Christian Altamirano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Sonny Kowalevich",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Danny Ryan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 16,
+    "gameId": "8017",
+    "box": {
+      "gameId": "8017",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "9",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport defeats Huntington in Suffolk II to earn its first 6-0 start since 2009.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 10,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Thomas McGovern",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 12,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 16,
+            "yds": 54,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 12,
+            "comp": 7,
+            "yds": 119,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 11,
+            "comp": 20,
+            "yds": 74,
+            "tds": 1,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "rec": 5,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 5,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Liam Cassidy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 21,
+    "gameId": "7695",
+    "box": {
+      "gameId": "7695",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 42, Bellport 21: Jack Kamenstein had eight catches for 122 yards and two touchdowns to lead Huntington (5-2) in Suffolk II. Jacob Guzik completed 13 of 15 passes for 205 yards and three touchdowns. Yasir Jones had 20 carries for 126 yards and two touchdowns. Kamenstein had touchdown receptions of 23 and 19 yards in the second half. Ethan Lawless had eight tackles, two sacks and a tackle for loss. Braydon Cipp passed for 136 yards and two touchdowns and ran for 116 yards and a touchdown. Elie Malcom caught seven passes for 105 yards and two touchdowns for Bellport (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 10,
+            "yds": 116,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Cameron Casher",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Matt Chojnacki",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 7,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Luciano Cunha",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahiem Talford",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 20,
+            "yds": 106,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 5,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 21,
+            "comp": 13,
+            "yds": 136,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 1,
+            "comp": 1,
+            "yds": 4,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 15,
+            "comp": 13,
+            "yds": 205,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Elie  Malcom",
+            "rec": 7,
+            "yds": 105,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Horace Smith",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jimmy Salvador",
+            "rec": 3,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Aiden Kerr",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jay Nichols",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 8,
+            "yds": 131,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 4,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Anthony Diaz",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 21,
+    "gameId": "7897",
+    "box": {
+      "gameId": "7897",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 34, Newfield 21: Yasir Jones rushed for 267 yards and four touchdowns on 18 carries to lead Huntington (6-2) in Suffolk II. Defensively, Ethan Lawless had an interception and two sacks. Jacob Guzik completed two of his six passes for 85 yards and a touchdown. Chase Northrop caught a pass for 56 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 18,
+            "yds": 267,
+            "tds": 4
+          },
+          {
+            "team": "Huntington",
+            "player": "Zayvion McCoy",
+            "att": 3,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 11,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 8,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 7,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 6,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chase Wolmart",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "comp": 2,
+            "yds": 85,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 16,
+            "comp": 8,
+            "yds": 57,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Chase  Northrop",
+            "rec": 1,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Frankie  Algieri",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Stephen  Carney",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 3,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Banny Soc Concua",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2025",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 14,
+    "gameId": "8665",
+    "box": {
+      "gameId": "8665",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 41, North Babylon 14: Yasir Jones had three rushing touchdowns to lead host No. 3 Huntington over No. 6 North Babylon in a Suffolk II quarterfinal. Huntington will travel to No. 2 Half Hollow Hills East in the Suffolk II semi-finals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Dominic  Prestano",
+            "att": 24,
+            "yds": 118,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "TJ Shaw",
+            "att": 15,
+            "yds": 102,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 9,
+            "yds": 120,
+            "tds": 3
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 8,
+            "comp": 6,
+            "yds": 142,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 5,
+            "yds": 134,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Christian Creaven - Tintella",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/15/2025",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 49,
+    "gameId": "8717",
+    "box": {
+      "gameId": "8717",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "28",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 2 Half Hollow Hills East defeats No. 3 Huntington in the Suffolk Division II semifinals. The RedHawks will face top-seeded East Islip in the final at 6 p.m. on Saturday, Nov. 22 at Stony Brook University.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "att": 1,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 15,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "att": 7,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 10,
+            "yds": 173,
+            "tds": 4
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "att": 13,
+            "yds": 129,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "att": 8,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Kaylib  Merchant",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 24,
+            "comp": 17,
+            "yds": 200,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 2,
+            "comp": 2,
+            "yds": 62,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 8,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "rec": 4,
+            "yds": 72,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Henry Gerberg",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Adrian  Merchant",
+            "rec": 2,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Robbie Campbell",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah reinstein",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

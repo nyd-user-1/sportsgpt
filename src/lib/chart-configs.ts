@@ -1,6 +1,6 @@
 import { CURRENT_SEASON } from '@/lib/season'
 
-export type ChartType = 'bar' | 'area' | 'line' | 'scatter' | 'multi-bar' | 'line-multi' | 'pie-donut'
+export type ChartType = 'bar' | 'area' | 'line' | 'scatter' | 'multi-bar' | 'line-multi' | 'pie-donut' | 'scatter-pfpa' | 'win-loss-h'
 export type Period = 'weekly' | 'monthly' | 'annual'
 
 export interface SeriesDef {
@@ -30,6 +30,30 @@ export interface ChartConfig {
 
 export const CHART_CONFIGS: ChartConfig[] = [
   // ── Team / Season ────────────────────────────────────────────────────────────
+  {
+    slug: 'home-away-record',
+    title: 'Home vs. Away Record',
+    description: `Home wins vs. away wins per team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'bar', kpiLabel: 'home wins',
+  },
+  {
+    slug: 'pf-pa',
+    title: 'PF vs. PA',
+    description: `Points for vs. points against by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'scatter-pfpa', kpiLabel: 'most points scored',
+  },
+  {
+    slug: 'win-loss-division',
+    title: 'Win/Loss by Division',
+    description: `Team wins and losses by division · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'win-loss-h', kpiLabel: 'teams tracked',
+  },
+  {
+    slug: 'strength-of-schedule',
+    title: 'Strength of Schedule',
+    description: `Average opponent win rate by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    color: '#033882', chartType: 'bar', kpiLabel: 'toughest schedule',
+  },
   {
     slug: 'season-records',
     title: 'Season Records',
@@ -112,6 +136,44 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Total Points Leaders',
     description: `Top scorers by total points including TDs, FGs, and PATs · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most points',
+  },
+
+  // ── Game Records & Scoring ────────────────────────────────────────────────
+  {
+    slug: 'scoring-offense',
+    title: 'Scoring Offense',
+    description: 'Average points scored per game by team — season by season',
+    color: '#033882', chartType: 'bar', kpiLabel: 'avg pts/game',
+  },
+  {
+    slug: 'scoring-defense',
+    title: 'Scoring Defense',
+    description: 'Average points allowed per game — fewest is best',
+    color: '#10b981', chartType: 'bar', kpiLabel: 'fewest pts allowed',
+  },
+  {
+    slug: 'top-scoring-games',
+    title: 'Highest Scoring Games',
+    description: 'Games with the most combined points scored — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'pts combined',
+  },
+  {
+    slug: 'biggest-blowouts',
+    title: 'Biggest Blowouts',
+    description: 'Largest margins of victory — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'point margin',
+  },
+  {
+    slug: 'single-game-rushing',
+    title: 'Single-Game Rushing',
+    description: 'Top single-game rushing performances — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'rush yds in one game',
+  },
+  {
+    slug: 'single-game-passing',
+    title: 'Single-Game Passing',
+    description: 'Top single-game passing performances — seasons with box scores',
+    color: '#033882', chartType: 'bar', kpiLabel: 'pass yds in one game',
   },
 
 ]

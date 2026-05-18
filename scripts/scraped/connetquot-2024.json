@@ -1,0 +1,1809 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 0,
+    "gameId": "6899",
+    "box": {
+      "gameId": "6899",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "20",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 41, Patchogue-Medford 0: Andrew Amarando caught touchdown passes of 55, 31 and 10 yards to lead host Connetquot in a Suffolk I opener. Amarando had 132 yards receiving on five receptions. Vincent Feraca threw four touchdown passes, including a 23-yard strike to Caden McLaughlin. Feraca was 22-for-32 for 337 yards passing. Andrew Kwansah had two interceptions, returning one interception 52 yards for a score and Javon Barnwell rushed for 170 yards on 21 carries and added a three-yard rushing touchdown. Michael Catera made made 5 of 6 PATs.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 21,
+            "yds": 170,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Logan Cordes",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 32,
+            "comp": 22,
+            "yds": 337,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 5,
+            "yds": 132,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 4,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 5,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "rec": 1,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 3,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 3,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Kwansah",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 14,
+    "gameId": "6901",
+    "box": {
+      "gameId": "6901",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "7",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 14,
+            "yds": 34,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 30,
+            "comp": 17,
+            "yds": 255,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 7,
+            "yds": 176,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 4,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 3,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Sonny Kowalevich",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/28/2024",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 8,
+    "gameId": "7304",
+    "box": {
+      "gameId": "7304",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 8, Connetquot 0: Tyler Blasco caught a seven-yard touchdown late in the fourth quarter to lead host Ward Melville (3-0) in Suffolk I. Joe Karpowicz made his fourth interception on the season on Connetquot's final drive. Connetquot is 2-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 19,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tyler Blasco",
+            "att": 14,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 13,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 11,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 30,
+            "comp": 16,
+            "yds": 151,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 27,
+            "comp": 15,
+            "yds": 171,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 9,
+            "yds": 84,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 5,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 4,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "George Cosentino",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "rec": 3,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Logan Seta",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tyler Blasco",
+            "rec": 2,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Devon Larsen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe  Karpowicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 21,
+    "gameId": "6818",
+    "box": {
+      "gameId": "6818",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "20",
+          "q2": "0",
+          "q3": "7",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 43, Bay Shore 21: Vincent Feraca completed 17 of 29 passes for 324 yards and four touchdowns to lead Connetquot (3-1) in Suffolk I. Andrew Amarando caught eight passes for 152 yards and two TDs. Javon Barnwell ran for two TDs and caught a 40-yard score. Kyle McLaughlin added a 55-yard TD reception. Reid Harvey had 11 tackles and Camryn D'Ambrosio had 10 tackles, including three for a loss and one for a safety. Brandon Hunter returned a kickoff 85 yards for a TD for Bay Shore (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 14,
+            "yds": 47,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 4,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jayden Jean",
+            "att": 32,
+            "yds": 88,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 28,
+            "comp": 17,
+            "yds": 324,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 8,
+            "yds": 152,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 0,
+    "gameId": "6900",
+    "box": {
+      "gameId": "6900",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "28",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 55, Riverhead 0: Andrew Amarando had six receptions for 93 yards and three touchdowns and Vinny Feraca completed 10 of 12 passes for 163 yards and three scores to lead Connetquot (4-1) in Suffolk I. Javon Barnwell rushed for 69 yards and three touchdowns on five carries. Connetquot forced five turnovers, led by Mike Catera, who had an interception, fumble recovery and three tackles for loss. Lucas Weaver had twelve tackles, including three for a loss, and a forced fumble. Riverhead falls to 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 5,
+            "yds": 69,
+            "tds": 3
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 4,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Logan Cordes",
+            "att": 6,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vince Marshall",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Blake Coppinger",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 8,
+            "comp": 7,
+            "yds": 112,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 6,
+            "yds": 93,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Blake Coppinger",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Joe Tierno",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 27,
+    "gameId": "7334",
+    "box": {
+      "gameId": "7334",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "7",
+          "ot2": "7",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "7",
+          "ot2": "6",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 28, Whitman 27: Vinny Feraca completed 28 of 37 passes for 268 yards and two touchdown passes and rushed for two touchdowns including the 8-yard game-winner to lead Connetquot (5-1) in Suffolk I. In the second overtime, Whitman went for two for the win but was stopped by Steven Frias. Andrew Amarando had nine receptions for 93 yards and two touchdowns. Mike Catera led the defense with seven tackles, a QB sack, and three tackles for loss and Lucas Weaver had 10 tackles. Dylan Kollmer threw three touchdown passes for Whitman (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 9,
+            "yds": 38,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 6,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "att": 22,
+            "yds": 82,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonas Templeton",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 37,
+            "comp": 28,
+            "yds": 268,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Dylan Kollmer",
+            "att": 19,
+            "comp": 10,
+            "yds": 125,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 9,
+            "yds": 93,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 10,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ebo  Price",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Alex Cerna",
+            "rec": 2,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Joshir Lyons",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jordan Churchman",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Downes",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 1,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jack David",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 7,
+    "gameId": "6875",
+    "box": {
+      "gameId": "6875",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "14",
+          "q2": "26",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 47, Central Islip 7: Vincent Feraca threw for 255 yards and five touchdown passes on 10-of-14 passing to lead Connetquot (6-1) in Suffolk I. Javon Barnwell caught three passes for 128 yards and three touchdowns while also rushing three times for 46 yards. Andrew Amarando had five receptions for 101 yards and two touchdowns. Lucas Weaver led the defense with eleven tackles -- three of which were for a loss -- and one sack. Steve Frias rushed five times for 20 yards and a touchdown and added a sack. Reid Harvey rushed for a one-yard touchdown on his only touch. Kevin Unterweiser recorded a sack, forced a fumble and broke up two passes. Nick Mastriano got a sack, Mike Catera intercepted a pass and Sonny Kowalevich recovered a fumble in the win. Vensley Jean Louis rushed for a touchdown for Central Islip (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 3,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "att": 5,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Reid  Harvey",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 14,
+            "comp": 10,
+            "yds": 255,
+            "tds": 5,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 4,
+            "yds": 144,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 5,
+            "yds": 88,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Connetquot",
+            "player": "Blake Coppinger",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Kevin  Unterweiser",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Mastriano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Sonny Kowalevich",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 42,
+    "gameId": "6902",
+    "box": {
+      "gameId": "6902",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "3",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 42, Connetquot 30: Ja'Quan Thomas ran for 241 yards and three touchdowns on 34 carries to lead visiting Floyd (7-1) in Suffolk I. AJ Cannet completed 8 of 14 passes for 197 yards and two touchdowns and ran for 1-yard touchdown. Geo Alvarez had four catches for 98 yards and a touchdown. Aisays Wallace had 12 tackles, two tackles for loss and a pass breakup. Vinny Feraca threw for 247 yards and two touchdowns, ran for 52 yards and had an interception for Connetquot (6-2). Andrew Amarando had seven catches for 117 yards and a touchdown. Lucas Weaver had 23 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 34,
+            "yds": 241,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 2,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 5,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 10,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "att": 3,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 14,
+            "comp": 8,
+            "yds": 197,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 32,
+            "comp": 16,
+            "yds": 247,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 4,
+            "yds": 98,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Joshua Jordan",
+            "rec": 22,
+            "yds": 88,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 7,
+            "yds": 117,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 4,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Dongvort DJ",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Jake Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 33,
+    "gameId": "7572",
+    "box": {
+      "gameId": "7572",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "20",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 5 Sachem North defeats No. 4 Connetquot in the Suffolk Division I quarterfinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 6,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 40,
+            "comp": 24,
+            "yds": 237,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "AJ Jeffares",
+            "rec": 9,
+            "yds": 109,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Andrew Amarando",
+            "rec": 8,
+            "yds": 94,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 3,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Mike Catera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Steve Frias",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Caden McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

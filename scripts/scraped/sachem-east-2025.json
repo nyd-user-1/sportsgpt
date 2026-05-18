@@ -1,0 +1,1524 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 18,
+    "gameId": "8059",
+    "box": {
+      "gameId": "8059",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "12",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "35",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Logan Perotti had five carries for 98 yards and two touchdowns to lead host Sachem East in Suffolk I. Ryan Lane had 42 rushing yards and touchdown and threw a 16-yard touchdown to James Dee. Cody Quinlivan had a rushing touchdown and Brayden King had a sack and a fumble recovery. Nathan Netwich had two rushing touchdowns for Riverhead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "att": 11,
+            "yds": 127,
+            "tds": 2
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan Perotti",
+            "att": 5,
+            "yds": 98,
+            "tds": 2
+          },
+          {
+            "team": "Sachem East",
+            "player": "Alex Schneider",
+            "att": 4,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 5,
+            "yds": 42,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "att": 3,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Chase Reynolds",
+            "att": 5,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Pickersgill",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 5,
+            "comp": 3,
+            "yds": 33,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "James Dee",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Kavion Hobbs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Brayden King",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Andrew Sosa",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/19/2025",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 19,
+    "gameId": "7942",
+    "box": {
+      "gameId": "7942",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 19, Sachem East 7: Kyon Sarwari rushed for 158 yards and three touchdowns on 23 carries to lead Longwood (1-1) over host Sachem East in Suffolk I. Travis Gibbs blocked a key field goal in the fourth quarter, which was returned 48 yards by Caleb Munoz. Sarwari capped the ensuing drive, which included a 21-yard catch by Craig Harty, with a 3-yard touchdown run to give Longwood a 12-7 lead in the fourth quarter. Sarwari later had a 12-yard touchdown run to secure the victory. Mark Davis had an interceptions and Nyyir Thomas had a fumble recovery as well. Sachem East is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Kyon Sarwari",
+            "att": 23,
+            "yds": 158,
+            "tds": 3
+          },
+          {
+            "team": "Longwood",
+            "player": "Kaden Reid",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Craig Harty",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mark Davis",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Ryan Greene",
+            "att": 11,
+            "comp": 5,
+            "yds": 48,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Cameron  Clemons",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Mark Davis",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Nyyir Thomas",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 34,
+    "gameId": "8220",
+    "box": {
+      "gameId": "8220",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "13",
+          "q2": "21",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 34, Sachem East 0: Ja'Quan Thomas had 11 carries for 128 yards and two touchdowns and added a two-point conversion run to lead Floyd (3-0) in Suffolk I. Thomas ran for a 90-yard score in the second quarter to close the scoring. Aisays Wallace had two carries for 76 yards, including a 25-yard TD. He added five tackles and a sack. Alex Salamone ran for 53 yards and a TD and threw a 22-yard score to Evan Commodore. Sachem East is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 11,
+            "yds": 128,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "J.P. Galasso",
+            "att": 17,
+            "yds": 120,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 2,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 2,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Matt Taiani",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "Alex Salamone",
+            "att": 2,
+            "comp": 2,
+            "yds": 39,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Christian Hobson",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Isaac Monroy",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Rashaun Wright",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 13,
+    "gameId": "8076",
+    "box": {
+      "gameId": "8076",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 14, Lindenhurst 13: Sal Sinacore's blocked punt midway through the fourth quarter sparked a Cody Quinlivan three-yard TD run to lead visiting Sachem East (2-2) in Suffolk I. Sinacore added an 18-yard reception TD. Mikey Russo had a TD pass and a 2-yard TD run for Lindenhurst (3-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "att": 28,
+            "yds": 136,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "James Dee",
+            "att": 7,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan Perotti",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 15,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "att": 2,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joe Scavone",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "James Dee",
+            "att": 8,
+            "comp": 6,
+            "yds": 43,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Pickersgill",
+            "att": 3,
+            "comp": 3,
+            "yds": 36,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mikey Russo",
+            "att": 28,
+            "comp": 16,
+            "yds": 169,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "rec": 4,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Johnny Pitocco",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Alex Burmeister",
+            "rec": 5,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jacob Burmeister",
+            "rec": 2,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter  DeRonde",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Joe Scavone",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "rec": 3,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan Andreone",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Luke Watson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Vinny Babino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Brayden King",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Johnny Pitocco",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Chase Reynolds",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Estevez James",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ryan  Murgatroyd",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Adrien Rodriguez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Delvani Valdivia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 34,
+    "gameId": "8077",
+    "box": {
+      "gameId": "8077",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "12",
+          "q3": "0",
+          "q4": "22",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 34, Sachem East 21: Cris Peralta led host Brentwood (2-3) with 273 yards, three TDs and two 2-point runs in Suffolk I. He added three receptions for 31 yards and a receiving touchdown. Peralta also added 10 tackles and a fumble recovery on defense. Julius Herrera threw the go-ahead score to Mizael Taveras with 7:37 left in the game and Nate Bouquet had the game-sealing interception with 3:22 remaining. Amari Wallace finished with six tackles and two TFLs and Julius Herrara had eight total tackles. Cristian Amaya added a sack and a forced fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "att": 39,
+            "yds": 273,
+            "tds": 3
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tulio Chavez",
+            "att": 2,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Julius Herrera",
+            "att": 15,
+            "comp": 7,
+            "yds": 95,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "rec": 3,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Mizael Taveras",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Tyler Seda",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Cristian Amaya",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Justin Rivera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Cris Peralta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nathanael Bouquet",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 31,
+    "gameId": "8078",
+    "box": {
+      "gameId": "8078",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "7",
+          "q2": "24",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 31, Sachem East 14: Luke LaRocca went 9 for 12 with 203 yards and three touchdowns for the host Sachem North (4-2) in Suffolk I. Lucas Bouchard caught four passes for 120 yards. Dylan Barker went 4 for 4 kicking extra points and notched a 16-yard field goal.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "att": 12,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jevon  Alfonso",
+            "att": 4,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Karim Cheikhali",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Dominique  Alexander",
+            "att": 6,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Luke LaRocca",
+            "att": 12,
+            "comp": 9,
+            "yds": 203,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Lucas Bouchard",
+            "rec": 4,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "John Licata",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Henry Sarro",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jake Spera",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Jon Giraulo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 9,
+    "gameId": "8034",
+    "box": {
+      "gameId": "8034",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 14, Patchogue-Medford 9: Brady King made a TFL on 4th down to force a turnover on downs to seal the game and lead host Sachem East (3-4) in Suffolk I. Ryan Lane completed a 22-yard TD pass to Sal Sinacore and Cody Quinlivan had a 2-yard TD run. Aidyn Modeste had a rushing TD for Patchogue-Medford (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "att": 26,
+            "yds": 141,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "att": 9,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Logan Perotti",
+            "att": 9,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brett Rupolo",
+            "att": 12,
+            "comp": 6,
+            "yds": 92,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan Lane",
+            "att": 13,
+            "comp": 8,
+            "yds": 100,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Aidyn  Modeste",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Sal Sinacore",
+            "rec": 6,
+            "yds": 98,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Cody Quinlivan",
+            "rec": 2,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Brady Melito",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Sachem East",
+            "player": "Dom Marchitto",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Brayden King",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 35,
+    "gameId": "8079",
+    "box": {
+      "gameId": "8079",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Sachem East 0: Anthony Fardellone had seven tackles to lead host Ward Melville (7-1) in Suffolk I. Joe Karpowicz ran for a 6-yard touchdown and caught a 26-yard score from Hudson Philbrick, who added a 40-yard TD pass to Alcindor. Joe Benedetto ran for 178 yards and a touchdown. Sachem East is 3-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Benedetto",
+            "att": 18,
+            "yds": 178,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Connor McCrain",
+            "att": 1,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Grande",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Hudson Philbrick",
+            "att": 6,
+            "comp": 3,
+            "yds": 83,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "LJ DePaul",
+            "att": 3,
+            "comp": 2,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "JJ Alcindor",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Karpowicz",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Angelo Sorbera",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Louie  Laap",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Jargo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Jesse Spronck",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2025",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 34,
+    "gameId": "8681",
+    "box": {
+      "gameId": "8681",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 34, Sachem East 14: Ja'Quan Thomas rushed for 147 yards on nine carries and two touchdowns in No.1 Floyd's win over No.8 Sachem East in the quarterfinals of the Suffolk Division I playoffs. Jayden Johnson had eight tackles, two tackles for loss, and a sack. Jake Rivera had six tackles, four tackles for loss, and three sacks. David Gonzalez had 15 tackles. Derek Glock had two punt returns for TDs. Floyd will face No.4 Longwood in the semifinals 12 p.m. Saturday at Floyd. The Colonials are now 26-0 all-time against Sachem East (3-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Ja'Quan Thomas",
+            "att": 9,
+            "yds": 147,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Aisays Wallace",
+            "att": 6,
+            "yds": 71,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "J.P. Galasso",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Riley Permenter",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "Matt Taiani",
+            "att": 2,
+            "comp": 1,
+            "yds": 30,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Evan Commodore",
+            "rec": 1,
+            "yds": 30,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Isaac Monroy",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Jake Rivera",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Zack Baxter",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jayden Johnson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

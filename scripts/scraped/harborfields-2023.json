@@ -1,0 +1,1737 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/02/2023",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 56,
+    "gameId": "6383",
+    "box": {
+      "gameId": "6383",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "28",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 56, Harborfields 27: William Gambino completed 16 of 25 passes for 260 yards and five touchdowns for Westhampton (1-0) in Suffolk III. Kevin Smith made four catches for 79 yards and two touchdowns.\nNolan Michalowski ran for 137 yards and two touchdowns on nine carries and made six tackles and an interception. Ryan O'Connor made five tackles and recovered a fumble. Jordyn Brown made five tackles and had a sack. Vinny Bolognino returned a kickoff 75 yards for a touchdown and Jack Weiss had a rushing touchdown and threw a 22-yard score to Jack Poller for Harborfields.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "att": 10,
+            "yds": 137,
+            "tds": 2
+          },
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "att": 1,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "att": 7,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Heath Sumwalt",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 24,
+            "comp": 16,
+            "yds": 260,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 4,
+            "yds": 79,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "rec": 2,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Heath Sumwalt",
+            "rec": 4,
+            "yds": 26,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Jordyn Brown",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Connor  Rodgers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Ryan  O'Conner",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "6400",
+    "box": {
+      "gameId": "6400",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 42, Harborfields 14: Jack Melore caught a 37-yard touchdown, scored on a 20-yard strip and score, made four tackles and had two pass breakups to lead Smithtown West (1-1) in Suffolk III. Brayden Stahl threw four touchdown passes, including two to George Siolos. Joe Fitzsimmons made four tackles, had an interception and recovered an onside kick, and Joe DeVito added five tackles. Jack Weiss accounted for two touchdowns for Harborfields (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Josh Hoffman",
+            "att": 9,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 8,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Isiaha  Woodhall",
+            "att": 6,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George  Siolos",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 4,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Rocco Pesola",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 20,
+            "comp": 13,
+            "yds": 220,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "George  Siolos",
+            "rec": 2,
+            "yds": 67,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Ethan Alvarado",
+            "rec": 6,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 3,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick  Briffa",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "James Martino",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 14,
+    "gameId": "6416",
+    "box": {
+      "gameId": "6416",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "14",
+          "q2": "0",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 27, Rocky Point 14: Vinny Bolognino rushed for 124 yards and two touchdowns on five carries to lead Harborfields (1-2) in Suffolk III. Jake Cornodo added 75 yards on 13 carries and Andrew White had 50 yards on nine carries, including two touchdowns. White, who also had 10 tackles including three for a loss, had a 5-yard touchdown to give Harborfields a 27-7 lead in the third quarter. Ethan Appolon had seven tackles, including three sacks and five for a loss and two forced fumbles and Noah Agliar had two forced fumbles, a fumble recovery and five tackles. Jeremy Graham completed 8 of 17 passes for 75 yards and a touchdown, rushed for 44 yards on nine carries, including a 5-yard touchdown, and went 2 of 2 on PATs for Rocky Point (0-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 5,
+            "yds": 124,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "att": 13,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 9,
+            "yds": 50,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 9,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "comp": 17,
+            "yds": 75,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 4,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 3,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominic Lamacchia",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 13,
+    "gameId": "6452",
+    "box": {
+      "gameId": "6452",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "10",
+          "q2": "14",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 32, East Hampton/Bridgehampton 13: Vincent Bolognino caught two touchdowns for 40-plus yards to lead Harborfields over East Hampton/Bridgehampton in Suffolk III on Saturday. Jack Weiss threw both touchdowns to Bolognino and ran for two more for Harborfields (2-2). Alex Davis blocked a punt and returned it 24 yards for a touchdown for East Hampton/Bridgehampton (1-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 6,
+            "yds": 60,
+            "tds": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "att": 8,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 8,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 24,
+    "gameId": "6479",
+    "box": {
+      "gameId": "6479",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "7",
+          "q2": "3",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 28, Hauppauge 24: Vincent Bolognino had 310 all-purpose yards, five catches for 190 yards and three touchdowns, six carries for 65 yards and a touchdown and six tackles and an interception to lead Harborfields (3-2) in Suffolk III. Jack Weiss completed 23 of 29 passes for 390 yards and three touchdowns. John Margolies had two pass touchdowns and a rush touchdown and Jackson Ruple hit a 26-yard field goal for Hauppauge (3-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 11,
+            "yds": 47,
+            "tds": 2
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Christian  Russo",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 5,
+            "yds": 45,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 13,
+            "comp": 8,
+            "yds": 168,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  Lachapelle",
+            "att": 5,
+            "comp": 3,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 29,
+            "comp": 23,
+            "yds": 390,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Christian  Russo",
+            "rec": 4,
+            "yds": 88,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joe Pistritto",
+            "rec": 2,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Cole  Wood",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Connor  Haggerty",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "rec": 5,
+            "yds": 190,
+            "tds": 3,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/13/2023",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 7,
+    "gameId": "6514",
+    "box": {
+      "gameId": "6514",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 29, Comsewogue 7: Harborfields 3-2 played a complete game against Comsewogue 4-1. Jack Weiss went 14-for-22 with 230 yards and a touchdown to lead host Harborfields (3-2) in Suffolk III. Michael Ferranti had six receptions for 120 yards, made four tackles and caught an interception. Nico Markowski had15 carries for 85 yards and a touchdown. Markowski also made 10 tackles. The Harborfields defense held Comsewogue to less then 100 yards rushing.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 12,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 6,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "att": 15,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 8,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 5,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 7,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "att": 2,
+            "yds": 24,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 9,
+            "comp": 4,
+            "yds": 46,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 22,
+            "comp": 14,
+            "yds": 230,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Brayden Arias",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "rec": 6,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "rec": 6,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "rec": 3,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Poller",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 41,
+    "gameId": "6552",
+    "box": {
+      "gameId": "6552",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "6",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 41, Harborfields 7: Thomas Costarelli threw two touchdown passes and added a rushing touchdown to lead East Islip (5-2) in Suffolk III. Andrew Cooper scored two rushing touchdowns, Matt Ferraro had two receiving touchdowns and Sebastian Regis had two sacks and 3 tackles for loss. Nicholas Markowski scored a rushing touchdown for Harborfields (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "att": 14,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 5,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "yds": 104,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 11,
+            "yds": 101,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Parker",
+            "att": 6,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Nick Weber",
+            "att": 9,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 2,
+            "yds": 10,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 9,
+            "comp": 7,
+            "yds": 50,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 6,
+            "comp": 3,
+            "yds": 68,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Ferraro",
+            "rec": 2,
+            "yds": 57,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Mcintee",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jaden  Schmidt",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Sebastian Regis",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Dylan Bayer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Sam Henderson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Billy Bast",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 35,
+    "gameId": "6562",
+    "box": {
+      "gameId": "6562",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 35, Harborfields 0: Jake Tripptree completed 10 of 14 passes for 195 yards and a touchdown and rushed eight times for 108 yards and two scores to lead host Sayville (8-0) in Suffolk III. Kyle Messina rushed 14 times for 132 yards and two TDs and completed four passes for 89 yards and Luke Hansen had five completions for 88 yards a score. Sayville's defense allowed just two first downs in the first half as Harborfields fell to 4-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "att": 14,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 8,
+            "yds": 108,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 6,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael McGuinness",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "dylan kent",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 14,
+            "comp": 10,
+            "yds": 195,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael  McGuinnes",
+            "att": 1,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 4,
+            "comp": 2,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "rec": 4,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke Hansen",
+            "rec": 5,
+            "yds": 88,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "dylan kent",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "rec": 3,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Noah Jabour",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Alex LaBella",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Leo Mongiello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Contaldi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 35,
+    "gameId": "6720",
+    "box": {
+      "gameId": "6720",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "East Islip",
+          "q1": "0",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 35, Harborfields 12: Andrew Cooper ran for 110 yards and two touchdowns on 10 carries to lead host No. 2 East Islip (7-2) over No. 7 Harborfields (4-5) in the Suffolk III quarterfinals. Ryan Parker rushed for 85 yards and two touchdowns on 14 carries. Jack Kalinowski intercepted a pass on fourth down in the fourth quarter. Jaden Schmidt and Charlie Heffernan each had a sack. East Islip will host No. 3 Westhampton (6-3) on Friday in the semifinals.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 5,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "att": 5,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 2,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 10,
+            "yds": 110,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Parker",
+            "att": 14,
+            "yds": 85,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 8,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 23,
+            "comp": 12,
+            "yds": 180,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 12,
+            "comp": 6,
+            "yds": 65,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "rec": 5,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Poller",
+            "rec": 1,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "rec": 4,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Mcintee",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Baldino",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Ferraro",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jaden  Schmidt",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Charlie Heffernan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,504 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 21,
+    "gameId": "5630",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5630"
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 23,
+    "gameId": "5652",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5652"
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 13,
+    "gameId": "5662",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5662"
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "West Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 17,
+    "gameId": "5681",
+    "box": {
+      "gameId": "5681",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "8",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "West Islip",
+          "q1": "3",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 22, West Islip 17: Bellport linebacker Caleb White recovered a fumble on the Clippers 5 with 2:46 to play to snuff a West Islip drive and preserve the Suffolk II win. Jason Hunt had a 58-yard touchdown reception, an 88-yard kickoff return for a touchdown and three sacks for Bellport (3-1). Justin Miles was 8-for-12 passing for 183 yards and the touchdown to Hunt and Donte Phillips had 110 rushing yards on 21 carries, a touchdown and a two-point conversion.\nWest Islip's Chris Piropato scored on a 5-yard run and by recovering a Lions fumble in the end zone. Patrick Kennan rushed for 71 yards, Sal Calderone rushed for 69 yards and Piropato rushed for 62 yards for West Islip (3-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 19,
+            "yds": 102,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 6,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 18,
+            "yds": 71,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 12,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 12,
+            "yds": 62,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 12,
+            "comp": 8,
+            "yds": 183,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "rec": 4,
+            "yds": 115,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 1,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nick Anderson",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Tyler  Burke",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 10,
+    "gameId": "5709",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5709"
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "5722",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5722"
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 9,
+    "gameId": "5750",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5750"
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 16,
+    "gameId": "5762",
+    "box": {
+      "gameId": "5762",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "16",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 36, Smithtown West 16: Donte Phillips rushed for four touchdowns and a two point conversion and caught a 29-yard touchdown pass from Justin Miles for Bellport (7-1) in Suffolk II. Phillips accounted for all of Bellport's touchdowns and had touchdown runs of 8, 6, 10 and 26 yards. Jacque LaPrarie caught two touchdown passes from Brayden Stahl for Smithtown West (5-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 23,
+            "yds": 174,
+            "tds": 4
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 10,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 2,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 14,
+            "comp": 7,
+            "yds": 86,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 50,
+            "comp": 27,
+            "yds": 343,
+            "tds": 2,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 3,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 9,
+            "yds": 165,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 7,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 6,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 4,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dean Schaeffer",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dean Schaeffer",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2022",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 32,
+    "gameId": "6077",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/6077"
+  },
+  {
+    "date": "11/12/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 21,
+    "gameId": "6128",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/6128"
+  },
+  {
+    "date": "11/18/2022",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 14,
+    "gameId": "6140",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/6140"
+  },
+  {
+    "date": "11/25/2022",
+    "opponent": "Garden City",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 28,
+    "gameId": "6147",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/6147"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

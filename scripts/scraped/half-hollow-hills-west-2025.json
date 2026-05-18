@@ -1,0 +1,1662 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 32,
+    "gameId": "7638",
+    "box": {
+      "gameId": "7638",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Sayville",
+          "q1": "6",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 32, Half Hollow Hills West 0: Patrick Coan completed all nine of his passes for 131 yards and two touchdowns and added 14 carries for 107 yards and a TD to lead host Sayville in a Suffolk III opener. Tristan Vitale rushed for 71 yards and a TD on 12 carries. Luke Neugebauer caught a 52-yard TD pass and Timmy Holahan caught a 5-yard TD pass. Jack Andruszkiewicz had seven tackles, incuding three sacks and three tackles for loss as Sayville held Half Hollow Hills West to 75 total yards of offense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 10,
+            "yds": 67,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 10,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 14,
+            "yds": 107,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "att": 12,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Timmy Holahan",
+            "att": 6,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Cole  Cantarella",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 10,
+            "comp": 4,
+            "yds": 62,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 9,
+            "comp": 9,
+            "yds": 131,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke Neugebauer",
+            "rec": 1,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Colin Darling",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Arato",
+            "rec": 2,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Gabe Bethea",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Javen Taff",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Henry Reiss",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gerald Jackson Jr",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayme Lapointe",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jack Andruszkiewicz",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Brady Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "East Hampton / Bridgehampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 35,
+    "gameId": "8587",
+    "box": {
+      "gameId": "8587",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "21",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "3",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton/Bridgehampton/Pierson 35, Half Hollow Hills West 10: Theo Ball threw for 190 yards and three TDs in East Hampton/Bridgehampton/Pierson's Suffolk III win on the road at Half Hollow Hills West. Jackson Ronick rushed for 75 yards and two touchdowns, adding another touchdown through the air. Charlie Stern had three receptions for 115 yards and six tackles on defense. Livs Kuplins had six tackles and an interception, as well as a 25 yard reception for a score for East Hampton/Bridgehampton/Pierson (1-1).\nJayden Smith blocked a punt and returned it 15 yards for a touchdown for Hills West (0-2). Hazem Nassar kicked a 31-yard field goal and a PAT.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Jackson Ronick",
+            "att": 0,
+            "yds": 75,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 15,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 4,
+            "yds": 27,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Theo Ball",
+            "att": 0,
+            "comp": 0,
+            "yds": 190,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 17,
+            "comp": 8,
+            "yds": 142,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Charlie Stern",
+            "rec": 3,
+            "yds": 115,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 2,
+            "yds": 102,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Manny Morales",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Hazem Nassar",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Hampton / Bridgehampton",
+            "player": "Livs Kuplins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 15,
+    "oppScore": 18,
+    "gameId": "7862",
+    "box": {
+      "gameId": "7862",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 18, Half Hollow Hills West 15: Jason Melhado kicked a 38-yard field goal with six seconds remaining to lead Harborfields (1-2) to an 18-15 win over Hills West in Suffolk III. Vern Bratton finished with 10 rushes for 85 yards and set up the game-winning field goal for Harborfields (1-2) with key runs. Luke Taff completed a 13-yard TD pass to Gavin Engelhardt, with Taff rushing in the 2-point conversion to tie the game for Hills West (0-3) with 1:16 seconds left before Melhado's winner. Brayden Matarese maximized his three carries by ripping off a 66-yard touchdown run. \n\nMatthew Rampersaud had three carries for 40 yards for Harborfields. Ethan Roman had an interception, returning it to the 2-yard line.  Kasim Oliver and Isaha Ballard did well to stop the run, and Ethan Roman returned an interception to the 2-yard line. Melhado kicked a 32-yard field goal earlier in the fourth quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Vern Bratton",
+            "att": 10,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Brayden  Matarese",
+            "att": 3,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Rampersaud",
+            "att": 3,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Ferranti",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 22,
+            "yds": 165,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 4,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Landon  Paulindo",
+            "att": 6,
+            "comp": 2,
+            "yds": 32,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 12,
+            "comp": 6,
+            "yds": 78,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Matthew  Rampersaud",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ethan  Roman",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 3,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Jason Melhado",
+            "fg": 2,
+            "pat": 0,
+            "points": 6
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Hazem Nassar",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan  Roman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 35,
+    "gameId": "7854",
+    "box": {
+      "gameId": "7854",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "12",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "0",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 35, Half Hollow Hills West 18: Nic Simone had 35 carries for 268 yards and five touchdowns to lead host Westhampton (2-2) in Suffolk III. Simone has run for 525 yards and 10 TDs in his last two games. He added six tackles and a sack. Andrew Lewis had six tackles and Jaedyn Cobb had four tackles and a sack. Gavin Engelhardt and Myles Redd each caught a TD pass from Luke Taff and Jayden Smith ran for a 15-yard TD for Half Hollow Hills West (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 9,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 5,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nic Simone",
+            "att": 35,
+            "yds": 268,
+            "tds": 5
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 31,
+            "comp": 18,
+            "yds": 244,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 7,
+            "yds": 123,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "rec": 1,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 4,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Sala",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Jaedyn Cobb",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nic Simone",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2025",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 49,
+    "gameId": "7855",
+    "box": {
+      "gameId": "7855",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "14",
+          "q3": "10",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "6",
+          "q2": "14",
+          "q3": "22",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 49, Half Hollow Hills West 38: Liam O'Connor rumbled for 296 yards and two touchdowns on 27 carries for Hauppauge (2-3) in Suffolk III. He also added 10 tackles and an interception on defense. Nick LaChapelle had five carries for 57 yards and three TDs and added a passing TD. Anthony Barbera also added a TD pass. Danny Youngworth went 6 for 6 kicking extra points.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 7,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 2,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam O'Connor",
+            "att": 27,
+            "yds": 296,
+            "tds": 2
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 5,
+            "yds": 57,
+            "tds": 3
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Anthony  Barbera",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Cruz Vargas",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Xavier  Chavez",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 33,
+            "comp": 18,
+            "yds": 328,
+            "tds": 4,
+            "int": 2
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Anthony  Barbera",
+            "att": 8,
+            "comp": 5,
+            "yds": 42,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 5,
+            "comp": 3,
+            "yds": 41,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 6,
+            "yds": 167,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 8,
+            "yds": 131,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 3,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Giuseppe  Calabrese",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Christian  Mooney",
+            "rec": 2,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Oscar  Jakubowski",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joe  Pistritto",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Hauppauge",
+            "player": "Danny Youngworth",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gerald Jackson Jr",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Dominic  Green",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam O'Connor",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 48,
+    "gameId": "7908",
+    "box": {
+      "gameId": "7908",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "21",
+          "q3": "21",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 48, Half Hollow Hills West 42: Jack Rao hit Alex Morales who pitched it to Jake DeGennaro to complete a 63-yard TD catch as time expired to lead visiting Islip in Suffolk III. Ezequiel Lazo blocked a 31-yard FG attempt with eight seconds remaining to set up the scoring play. Jack Rao went 25 for 35 with 505 yards and rushed four times for 122 yards and a TD. Jack Halpin had seven catches for 248 yards and three TDs. DeGennaro finished with six catches for 110 yards and a TD while Alex Morales had four catches for 55 yards and two TDs. Najee Simpson led the defense with eight tackles and two sacks.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 4,
+            "yds": 122,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 11,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 8,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 4,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 35,
+            "comp": 25,
+            "yds": 505,
+            "tds": 6,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 25,
+            "comp": 14,
+            "yds": 282,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jack Halpin",
+            "rec": 7,
+            "yds": 248,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake  DeGennaro",
+            "rec": 6,
+            "yds": 110,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Gardner",
+            "rec": 6,
+            "yds": 90,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "rec": 4,
+            "yds": 55,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Carmine  Rosselli",
+            "rec": 2,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 3,
+            "yds": 134,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 4,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 4,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Brody Deutsch",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Hazem Nassar",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Najee Simpson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gerald Jackson Jr",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Sala",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 50,
+    "gameId": "8114",
+    "box": {
+      "gameId": "8114",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Michael Casscione rushed for 233 yards on 17 carries and scored 4 touchdowns.  He added a 65 yard Punt return for his 5th touchdown of the day.  Nick Devito threw for 168 yards and 2 touchdowns.  Vin Lepore had 3 catches for 87 yards and two touchdowns.  Casscione had 5 tackles defensively and an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Michael Cascione",
+            "att": 17,
+            "yds": 233,
+            "tds": 4
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Sean Searing",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Connor  Barry",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 8,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 13,
+            "yds": 73,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 3,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Nick DeVito",
+            "att": 7,
+            "comp": 16,
+            "yds": 168,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 27,
+            "comp": 14,
+            "yds": 178,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jake Rearick",
+            "rec": 3,
+            "yds": 87,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vin Lepore",
+            "rec": 3,
+            "yds": 80,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Joe  Fitzsimmons",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Gavin Engelhardt",
+            "rec": 4,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 4,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Myles Redd",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "Tommy  Maloney",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Hazem Nassar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Antony Cusumano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Michael Cascione",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2025",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 41,
+    "gameId": "7856",
+    "box": {
+      "gameId": "7856",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 41, Half Hollow Hills West 14: Nick Saldino had 11 carries for 180 yards and four touchdowns to lead host Comsewogue (5-3) in Suffolk III. Jack Campagna ran 13 times for 123 yards and a TD. Dylan Giorlando recovered a fumble for a touchdown and James Ward had six tackles and two fumble recoveries. Sal Caiazzo ran for a 44-yard score and Kade Diaz added a fumble recovery for a score for Half Hollow Hills West (0-8).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 14,
+            "yds": 88,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Sal Caiazzo",
+            "att": 7,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 7,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 5,
+            "comp": 2,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

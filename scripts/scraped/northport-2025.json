@@ -1,0 +1,2219 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/12/2025",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 7,
+    "gameId": "8014",
+    "box": {
+      "gameId": "8014",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 41, Centereach 7: Simon Blissett had 265 yards of offense and four touchdowns to lead visiting Northport in Suffolk II. Luke Loiacono scored on a nine-yard run and a 31-yard pass from Blissett. Daniel Miller had three receptions for 70 yards and a touchdown. Greyson Cabrera added 73 yards and a score for the Tigers.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 8,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Deutsch",
+            "att": 4,
+            "yds": 69,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 8,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "att": 23,
+            "yds": 124,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 6,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jeremiah Rivera",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Nasir Jeanlouis",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 10,
+            "comp": 8,
+            "yds": 193,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Cesa",
+            "att": 11,
+            "comp": 3,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 3,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 3,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Brandon Julien",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Jake Mikochik",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Zach Sandora",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Centereach",
+            "player": "Juan Hernandez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tyler Naughton",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 21,
+    "gameId": "8015",
+    "box": {
+      "gameId": "8015",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "6",
+          "q2": "35",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 55, Half Hollow Hills East 21: Simon Blissett found Carson Ciaio for a 76-yard touchdown through the air, kickstarting Northport's win at Half Hollow Hills East in Suffolk II. Greyson Cabrera followed with a 28-yard interception return for a score and later added a 55-yard pick six, as well as a 53-yard receiving touchdown from Blissett. Blissett finished with 245 passing yards and four touchdowns, throwing 34 and 51-yard scores to Daniel Miller. Tommy Zarcone scored on a 65-yard fumble recovery for the Tigers (2-0). Daniel White scored a three-yard rushing touchdown for Half Hollow Hills East (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 10,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 7,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Acosta",
+            "att": 6,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson  McDonnell",
+            "att": 2,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Cole Stanco",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "att": 16,
+            "yds": 150,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "att": 3,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Brody  Pleasents",
+            "att": 3,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 9,
+            "comp": 8,
+            "yds": 261,
+            "tds": 4,
+            "int": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick  Sevilla",
+            "att": 9,
+            "comp": 16,
+            "yds": 102,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 3,
+            "yds": 110,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 1,
+            "yds": 77,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 3,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony keahey",
+            "rec": 1,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "RJ Peters",
+            "rec": 4,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Adrian  Merchant",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel  White",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "chase McCoy",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah reinstein",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tom Zarcone",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "RJ Peters",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2025",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 13,
+    "gameId": "7761",
+    "box": {
+      "gameId": "7761",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Connetquot 13: Greyson Cabrera had a 35-yard rushing touchdown and a 38-yard receiving score to lead host Northport (3-0) in Suffolk II. Cabrera had 135 yards of offense and made 16 tackles. Ryder Maag took a screen pass 71 yards for a score in the third quarter. Carson Ciaio batted down the final pass as time expired as Northport stopped Connetquot four times from inside the 10-yard line in the final minute. Vincent Feraca had a rushing touchdown for Connetquot (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "att": 20,
+            "yds": 118,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Marcus Anglin",
+            "att": 11,
+            "yds": 68,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 6,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 4,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 6,
+            "yds": 27,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Vincent Feraca",
+            "att": 37,
+            "comp": 23,
+            "yds": 218,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 19,
+            "comp": 12,
+            "yds": 204,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Nick  Mastriano",
+            "rec": 6,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Kingston Maugeri",
+            "rec": 7,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jonas Mendez",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon Barnwell",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Bryan  Boss",
+            "rec": 4,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryder Maag",
+            "rec": 1,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Joe Parise",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Christian Altamirano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Bryan  Boss",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton Hamada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/04/2025",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 6,
+    "gameId": "7769",
+    "box": {
+      "gameId": "7769",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "6",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 33, Deer Park 6: Simon Blissett threw for 335 yards and rushed for 71 with three touchdowns passing and one rushing to lead host Northport (4-0) in Suffolk II. Danny Miller contributed two touchdowns and three sacks. Tommy Zarcone added 11 tackles including three for loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Gio Grotta",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Tyler  Cummings",
+            "att": 8,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Vinny  Vento",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Dimitri Pissanos",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 8,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 7,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Deutsch",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Deer Park",
+            "player": "Anthony Kern",
+            "att": 13,
+            "comp": 8,
+            "yds": 81,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 20,
+            "comp": 16,
+            "yds": 335,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Deer Park",
+            "player": "Christian Myrick",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaheim McCallum",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Jaden  Gray",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Marley Witzman",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Deer Park",
+            "player": "Joey  Berrios",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 141,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 4,
+            "yds": 112,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryder Maag",
+            "rec": 5,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Shawn Aliperti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton Hamada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "8016",
+    "box": {
+      "gameId": "8016",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Newfield 7: Luke Loiacono blocked a 1st quarter field goal attempt and returned it 52 yards and then scored a 3-yard TD to lead visiting Northport (5-0) in Suffolk II. Loiacono also caught a 25-yard pass from Simon Blissett. Carson Ciaio closed the scoring on a 4-yard pass from Blissett. Dante Powell scored a rushing TD for Newfield (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 8,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 2,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 5,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dante  Powell",
+            "att": 16,
+            "yds": 94,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "att": 4,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 12,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick  Lucenti",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Aiden Perrino",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "comp": 6,
+            "yds": 102,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Connor Stebbins",
+            "att": 10,
+            "comp": 17,
+            "yds": 113,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 2,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 1,
+            "yds": 4,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Nick Leoni",
+            "rec": 6,
+            "yds": 90,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Micah Washington",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Shawn Aliperti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Thomas McGovern",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Liam Cassidy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Peyton Hamada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2025",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 14,
+    "gameId": "8017",
+    "box": {
+      "gameId": "8017",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "9",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport defeats Huntington in Suffolk II to earn its first 6-0 start since 2009.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 10,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Thomas McGovern",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 12,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 16,
+            "yds": 54,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 12,
+            "comp": 7,
+            "yds": 119,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 11,
+            "comp": 20,
+            "yds": 74,
+            "tds": 1,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "rec": 5,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Gevonne Henderson",
+            "rec": 5,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jack Kamenstein",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Max Carino",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Liam Cassidy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ethan Lawless",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Titan  Elysee",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2025",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 0,
+    "gameId": "8177",
+    "box": {
+      "gameId": "8177",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Northport",
+          "q1": "28",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 42, West Babylon 0: Simon Blissett completed 5 of 5 passes for 152 yards and 3 TDs and added a 51-yard rushing TD to lead host Northport (7-0) in Suffolk II. Greyson Cabrera had 2 TD receptions and a sack on defense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Reese CIaio",
+            "att": 4,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 3,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 1,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Acosta",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Deutsch",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 5,
+            "comp": 5,
+            "yds": 152,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson  McDonnell",
+            "att": 2,
+            "comp": 2,
+            "yds": 54,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 3,
+            "yds": 103,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Kevin Campbell",
+            "rec": 2,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Thomas McGovern",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Jack Driscoll",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Kevin Campbell",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tyler Naughton",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2025",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 31,
+    "gameId": "7783",
+    "box": {
+      "gameId": "7783",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 31, Northport 21: Jake Simmons rushed for 242 on 35 carries and 3TDs to lead visiting East Islip (7-1) in Suffolk II. Niko Meyers rushed for 37 yards on 4 carries and 1 TD and Chris Coreas had an 18-yard FG. Simon Blissett completed 13 of 24 passes for 287 yards and 2 TDs for Northport (7-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 35,
+            "yds": 244,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "att": 4,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 7,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 12,
+            "yds": 51,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 8,
+            "comp": 3,
+            "yds": 74,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 24,
+            "comp": 13,
+            "yds": 287,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 4,
+            "yds": 107,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 2,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryder Maag",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Chris Coreas",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          },
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Liam Cassidy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2025",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 21,
+    "gameId": "8686",
+    "box": {
+      "gameId": "8686",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Northport",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 28, Bellport 21: Greyson Cabrera had 3 TDs and an interception to lead host Northport (8-1) in Suffolk II. Simon Blissett completed 13 of 20 passes for 253 yards and Tommy Zarcone and Tristen Magro each had 8 tackles. Shawn Aliperti added 7 tackles and a sack. Cameron Casher had 2 TD runs for Bellport (5-4), including a 60-yard run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 13,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Cameron Casher",
+            "att": 2,
+            "yds": 57,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 10,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 11,
+            "yds": 88,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 2,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 11,
+            "yds": 28,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 25,
+            "comp": 14,
+            "yds": 125,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 20,
+            "comp": 13,
+            "yds": 253,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Elie  Malcom",
+            "rec": 7,
+            "yds": 75,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jimmy Salvador",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jay Nichols",
+            "rec": 3,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 8,
+            "yds": 149,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 2,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Carson Ciaio",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Anthony Diaz",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Northport",
+            "player": "Nicolas Escobar",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Shawn Aliperti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/14/2025",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 28,
+    "gameId": "8716",
+    "box": {
+      "gameId": "8716",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 1 East Islip defeats No. 4 Northport in the Suffolk Division IV semifinals. East Islip (9-1) will face the winner of No. 2 Half Hollow Hills East/No. 3 Huntington in the final at 6 p.m. on Saturday, Nov. 22 at Stony Brook University.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 6,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "att": 29,
+            "yds": 176,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "att": 5,
+            "yds": 27,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 19,
+            "comp": 8,
+            "yds": 85,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "AJ Ierardi",
+            "att": 7,
+            "comp": 5,
+            "yds": 165,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 5,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny Miller",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Morrissey",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryder Maag",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Eddie Simonetti",
+            "rec": 3,
+            "yds": 81,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko Meyers",
+            "rec": 1,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Chris Coreas",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "PJ Gannon",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

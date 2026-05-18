@@ -75,6 +75,112 @@ export function MiniBarChart({ color, data }: BarProps) {
   )
 }
 
+/* ── Stacked Bar Chart ────────────────────────────────────────────── */
+// bottom segment = wins (blue), top segment = losses (red)
+
+interface StackedBarProps { wins: number[]; losses: number[] }
+
+export function MiniStackedBarChart({ wins, losses }: StackedBarProps) {
+  const W = 200, H = 100, pad = 2
+  const maxTotal = Math.max(...wins.map((w, i) => w + (losses[i] ?? 0)))
+  const slot = W / wins.length
+  const barW = slot * 0.6
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-full" preserveAspectRatio="none">
+      {wins.map((w, i) => {
+        const l = losses[i] ?? 0
+        const totalH = ((w + l) / maxTotal) * (H - pad)
+        const winH  = (w + l) > 0 ? (w / (w + l)) * totalH : 0
+        const lossH = totalH - winH
+        const x = i * slot + (slot - barW) / 2
+        return (
+          <g key={i}>
+            {lossH > 0 && <rect x={x} y={H - totalH} width={barW} height={lossH} fill="#ef4444" />}
+            {winH  > 0 && <rect x={x} y={H - winH}   width={barW} height={winH}  fill="#033882" />}
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
+/* ── Grouped Bar Chart ────────────────────────────────────────────── */
+// Two bars per group: a (gray/away left), b (blue/home right)
+
+interface GroupedBarProps { a: number[]; b: number[] }
+
+export function MiniGroupedBarChart({ a, b }: GroupedBarProps) {
+  const W = 200, H = 100, pad = 2
+  const maxVal = Math.max(...a, ...b)
+  const n = a.length
+  const groupW = W / n
+  const barW = groupW * 0.28
+  const gap  = groupW * 0.05
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-full" preserveAspectRatio="none">
+      {a.map((av, i) => {
+        const bv = b[i] ?? 0
+        const aH = (av / maxVal) * (H - pad)
+        const bH = (bv / maxVal) * (H - pad)
+        const gx = i * groupW + (groupW - 2 * barW - gap) / 2
+        return (
+          <g key={i}>
+            <rect x={gx}                y={H - aH} width={barW} height={aH} fill="#94a3b8" />
+            <rect x={gx + barW + gap}   y={H - bH} width={barW} height={bH} fill="#033882" />
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
+/* ── Scatter Chart ────────────────────────────────────────────────── */
+
+interface ScatterDot { x: number; y: number; r: number }
+
+export function MiniScatterChart({ color, points }: { color: string; points: ScatterDot[] }) {
+  return (
+    <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="none">
+      {points.map((p, i) => (
+        <circle key={i} cx={p.x} cy={p.y} r={p.r} fill={color} fillOpacity={0.72} />
+      ))}
+    </svg>
+  )
+}
+
+/* ── Horizontal Stacked Bar Chart ─────────────────────────────────── */
+// Wins (blue) left, losses (red) right — horizontal bars
+
+interface HorizStackedProps { wins: number[]; losses: number[] }
+
+export function MiniHorizontalStackedBar({ wins, losses }: HorizStackedProps) {
+  const W = 200, H = 100, pad = 2
+  const maxTotal = Math.max(...wins.map((w, i) => w + (losses[i] ?? 0)))
+  const n = wins.length
+  const rowH = H / n
+  const barH = rowH * 0.55
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-full" preserveAspectRatio="none">
+      {wins.map((w, i) => {
+        const l = losses[i] ?? 0
+        const totalW = ((w + l) / maxTotal) * (W - pad)
+        const winW  = (w + l) > 0 ? (w / (w + l)) * totalW : 0
+        const lossW = totalW - winW
+        const y = i * rowH + (rowH - barH) / 2
+        return (
+          <g key={i}>
+            {winW  > 0 && <rect x={0}    y={y} width={winW}  height={barH} fill="#033882" />}
+            {lossW > 0 && <rect x={winW} y={y} width={lossW} height={barH} fill="#ef4444" />}
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
 /* ── Pie Chart (kept for future pages) ───────────────────────────── */
 
 function polar(cx: number, cy: number, r: number, deg: number): [number, number] {

@@ -20,7 +20,7 @@ async function fetchPlayer(slug: string, season: number, tab: string): Promise<A
              pss.completions, pss.attempts, pss.pass_yards, pss.pass_tds, pss.interceptions, pss.season,
              pss.comp_pct, pss.ypa, pss.ypc, pss.td_rate, pss.int_rate, pss.td_int_ratio, pss.yva,
              pss.cmd_score, pss.gbi_score, pss.ies_score,
-             pss.rush_yards, pss.rush_attempts, pss.rush_tds,
+             pss.rush_yards, pss.rush_attempts, pss.rush_tds, pss.games_played, pss.yards_per_game,
              pss.recv_yards, pss.receptions, pss.recv_tds,
              pl.position
       FROM player_season_stats pss

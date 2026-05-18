@@ -36,7 +36,7 @@ function fmtVal(v: number, config: ChartConfig, period?: Period): string {
 }
 
 /* ── Props ───────────────────────────────────────────────────────── */
-export type StdRow = { name: string; value: number; logoUrl?: string; winPct?: number }
+export type StdRow = { name: string; value: number; logoUrl?: string; winPct?: number; subtitle?: string; record?: string }
 export type MultiRow = Record<string, string | number>
 export type ScatterRow = { name: string; x: number; y: number }
 export type SubRow = { label: string; value: number; extra?: string }
@@ -58,6 +58,7 @@ interface Props {
   seasonRows?: Record<string, StdRow[]>
   valueLabel?: string
   showRank?: boolean
+  panelMode?: boolean
 }
 
 /* ── Component ───────────────────────────────────────────────────── */
@@ -71,6 +72,7 @@ export function ChartDetailPage({
   seasonRows,
   valueLabel,
   showRank,
+  panelMode,
 }: Props) {
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
@@ -135,16 +137,16 @@ export function ChartDetailPage({
   }, [activeRows, config.periodToggle, base, period])
 
   const rankChanges = useMemo(() => {
-    if (!seasonRows || Object.keys(seasonRows).length < 2) return {} as Record<string, number>
-    const seasons = Object.keys(seasonRows).sort()
+    if (!seasonRows || activeSeason === 'all') return {} as Record<string, number>
+    const seasons = Object.keys(seasonRows).filter(s => s !== 'all').sort()
     const activeIdx = seasons.indexOf(activeSeason)
-    const otherIdx = activeIdx > 0 ? activeIdx - 1 : 1
-    const otherSeason = seasons[otherIdx]
-    const otherRanks = new Map((seasonRows[otherSeason] ?? []).map((r, i) => [r.name, i + 1]))
+    if (activeIdx <= 0) return {} as Record<string, number>
+    const prevSeason = seasons[activeIdx - 1]
+    const prevRanks = new Map((seasonRows[prevSeason] ?? []).map((r, i) => [r.name, i + 1]))
     const result: Record<string, number> = {}
     ;(seasonRows[activeSeason] ?? []).forEach((r, i) => {
-      const other = otherRanks.get(r.name)
-      if (other !== undefined) result[r.name] = other - (i + 1)
+      const prev = prevRanks.get(r.name)
+      if (prev !== undefined) result[r.name] = prev - (i + 1)
     })
     return result
   }, [seasonRows, activeSeason])
@@ -166,9 +168,8 @@ export function ChartDetailPage({
     fontSize: '12px',
   }
 
-  return (
-    <AppLayout>
-      <div className="flex-1 flex flex-col overflow-hidden">
+  const inner = (
+      <div className={panelMode ? 'flex flex-col' : 'flex-1 flex flex-col overflow-hidden'}>
 
         {/* ── Header band — only renders when inline chart or filters are present ── */}
         {(!children || config.filters?.length || config.periodToggle) && (
@@ -244,7 +245,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
                     filter === f.key
-                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>{f.label}</button>
               ))}
@@ -256,7 +257,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors capitalize',
                     period === p
-                      ? 'text-[var(--txt)] border border-sky-500/50 bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-sky-500/50 bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>{p}</button>
               ))}
@@ -283,7 +284,7 @@ export function ChartDetailPage({
                   className={cn(
                     'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
                     activeSeason === yr
-                      ? 'text-[var(--txt)] border border-[var(--border)] bg-white shadow-sm'
+                      ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
                       : 'text-[var(--muted)] hover:text-[var(--txt)]',
                   )}>
                   {formatSeason(yr)}
@@ -367,7 +368,7 @@ export function ChartDetailPage({
                   const hasRowSubRows = !!rowSubRows && rowSubRows.length > 0
                   const delta = rankChanges[row.name]
                   return (
-                    <React.Fragment key={row.name}>
+                    <React.Fragment key={`${row.name}-${idx}`}>
                       <div
                         className={cn(
                           'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
@@ -389,14 +390,20 @@ export function ChartDetailPage({
                         {rowLinks?.[row.name] ? (
                           <span className="flex items-center gap-2 min-w-0">
                             {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
-                            <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                            <span className="flex flex-col min-w-0">
+                              <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                              {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                            </span>
                             {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
                             {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
                           </span>
                         ) : (
                           <span className="flex items-center gap-2 min-w-0">
                             {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
-                            <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                            <span className="flex flex-col min-w-0">
+                              <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                              {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
+                            </span>
                             {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
                             {delta < 0 && <span className="text-[11px] font-semibold text-red-500 shrink-0">↓{Math.abs(delta)}</span>}
                           </span>
@@ -449,6 +456,6 @@ export function ChartDetailPage({
           )}
         </div>
       </div>
-    </AppLayout>
   )
+  return panelMode ? inner : <AppLayout>{inner}</AppLayout>
 }

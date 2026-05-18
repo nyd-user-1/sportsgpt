@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Cell, ReferenceLine } from 'recharts'
 import { Card, CardContent } from '@/components/ui/card'
 import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
@@ -9,13 +9,13 @@ import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 export interface SeasonBars {
   season: string        // '2022', '2023', '2024'
   topValue: number      // KPI shown in the toggle button (top player's value or total)
-  bars: { name: string; value: number; logoUrl?: string }[]
+  bars: { name: string; value: number; logoUrl?: string; record?: string }[]
 }
 
 interface TooltipPayloadEntry {
   color?: string
   value?: number
-  payload?: { name: string; value: number; logoUrl?: string }
+  payload?: { name: string; value: number; logoUrl?: string; record?: string }
 }
 
 function CustomTooltip({
@@ -56,6 +56,9 @@ function CustomTooltip({
           {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
         </span>
       </div>
+      {item.record && (
+        <div style={{ color: '#6b7280', marginTop: '4px', fontSize: '11px' }}>{item.record}</div>
+      )}
     </div>
   )
 }
@@ -64,9 +67,11 @@ interface Props {
   seasons: SeasonBars[]
   color: string
   valueLabel: string
+  negativeColor?: string
+  showAvgLine?: boolean
 }
 
-export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props) {
+export function SportsBarChartInteractive({ seasons, color, valueLabel, negativeColor, showAvgLine }: Props) {
   const defaultSeason = seasons[seasons.length - 1]?.season ?? ''
   const [active, setActive] = React.useState(defaultSeason)
 
@@ -80,6 +85,10 @@ export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props)
   }, [seasons])
 
   const activeBars = seasons.find(s => s.season === active)?.bars ?? []
+
+  const avgValue = showAvgLine && activeBars.length
+    ? Math.round(activeBars.reduce((s, b) => s + b.value, 0) / activeBars.length)
+    : null
 
   const chartConfig = {
     value: { label: valueLabel, color },
@@ -98,12 +107,25 @@ export function SportsBarChartInteractive({ seasons, color, valueLabel }: Props)
             <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
             <YAxis hide tickCount={25} />
             <Tooltip
-              cursor={false}
+              cursor={{ fill: 'rgba(0,0,0,0.04)' }}
               content={({ active, payload }) => (
                 <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
               )}
             />
-            <Bar dataKey="value" fill="var(--color-value)" radius={0} />
+            {avgValue !== null && (
+              <ReferenceLine
+                y={avgValue}
+                stroke="#94a3b8"
+                strokeDasharray="4 3"
+                strokeWidth={1.5}
+                label={{ value: `Avg ${avgValue}%`, position: 'insideTopRight', fontSize: 10, fill: '#94a3b8', dy: -4 }}
+              />
+            )}
+            <Bar dataKey="value" fill="var(--color-value)" radius={0}>
+              {negativeColor && activeBars.map((b, i) => (
+                <Cell key={i} fill={b.value >= 0 ? color : negativeColor} />
+              ))}
+            </Bar>
           </BarChart>
         </ChartContainer>
       </CardContent>

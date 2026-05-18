@@ -1,0 +1,1042 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 48,
+    "gameId": "6869",
+    "box": {
+      "gameId": "6869",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "13",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 48, Wyandanch 8: Brayden Hromada rushed for 127 yards on 10 carries and scored three touchdowns to lead Center Moriches in a Suffolk IV opener. Dennis Hayes rushed for 165 yards on 11 carries and scored two touchdowns. Dan Heller, Hromada and Max Cintron each had a sack and Shane Gallagher, Peter Nizza and Mason Walsh each had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Dennis Hayes",
+            "att": 11,
+            "yds": 165,
+            "tds": 2
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 10,
+            "yds": 127,
+            "tds": 3
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "att": 1,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dan Jurgens",
+            "att": 6,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Caleb Delgado",
+            "att": 1,
+            "yds": 5,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Dan Jurgens",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dan Heller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Max Cintron",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane  Gallagher",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Mason Walsh",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Southampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 14,
+    "gameId": "7340",
+    "box": {
+      "gameId": "7340",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Southampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "39",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Wyandanch 39, Southampton 14: Elijah Duncan had 18 carries for 311 yards and four touchdowns and returned two kickoffs for 130 yards and a TD to lead host Wyandanch to a 39-14 win in Suffolk Division IV football. Duncan also had eight tackles and two pass deflections for Wyandanch (1-1). Southampton is 0-2.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Hampton Bays",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 38,
+    "gameId": "7002",
+    "box": {
+      "gameId": "7002",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "14",
+          "q2": "12",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hampton Bays 38, Wyandanch 6: Nate Donahue rushed for 86 yards and four touchdowns and had a forced fumble to lead host Hampton Bays (1-2) in Suffolk IV. Cj Seymore rushed for 93 yards and one touchdown and Michael Single added a 25-yard touchdown run, two interceptions and one forced fumble. Owen Haynes had one interception and one fumble recovery, Hunter Halsey had one interception and Kade Arkinson had one fumble recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hampton Bays",
+            "player": "CJ Seymore",
+            "att": 0,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 15,
+            "yds": 86,
+            "tds": 4
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "att": 0,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hampton Bays",
+            "player": "Nate Donahue",
+            "att": 5,
+            "comp": 4,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hampton Bays",
+            "player": "Brayden Talmage",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Hampton Bays",
+            "player": "Michael Single",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Hunter Halsey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Hampton Bays",
+            "player": "Kade  Arkinson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 59,
+    "gameId": "7339",
+    "box": {
+      "gameId": "7339",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "18",
+          "q2": "28",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "59"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 59, Wyandanch 14: Sean Casey rushed 20 times for 138 yards and three touchdowns and also returned an interception for a 40-yard touchdown to lead Shoreham-Wading River (3-1) in Suffolk IV. Noah Gregorek completed eight passes in 12 attempts for 172 yards and two touchdowns while also running 10 times for 84 yards and two touchdowns in the win. Anthony Mullen contributed 74 rushing yards and a touchdown on just three carries. Gavin Cleary caught two passes for 85 yards and a touchdown, while Michael Casey added four receptions for 73 yards. Michael Iberger caught Gregorek's other touchdown pass. Dominick Correnthi rushed for a 56-yard touchdown for Wyandanch (0-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sean Casey",
+            "att": 20,
+            "yds": 138,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 10,
+            "yds": 84,
+            "tds": 2
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "att": 3,
+            "yds": 74,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 12,
+            "comp": 8,
+            "yds": 172,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 2,
+            "yds": 85,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "rec": 4,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Iberger",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Huebner",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Michael Casey",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/11/2024",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 42,
+    "gameId": "7337",
+    "box": {
+      "gameId": "7337",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "21",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 42, Wyandanch 6: Sean Coffey rushed for 100 yards on five carries, including 30 and 19-yard touchdown runs for Bayport-Blue Point (5-0) in Suffolk IV. He also had a 63-yard touchdown reception from Cooper Fuller. Frank Josh rushed for 42 yards and a touchdown, and Dylan Crag had an 8-yard touchdown run. Craig also went 6 for 6 on PATs. Elijah Duncan had an 87-yard kick return for a touchdown for Wyandanch (0-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "att": 5,
+            "yds": 100,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "att": 2,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Athearn",
+            "att": 4,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Frank Josh",
+            "att": 4,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Hank Bosse",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 5,
+            "comp": 3,
+            "yds": 101,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "rec": 1,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Athearn",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/19/2024",
+    "opponent": "Port Jefferson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 27,
+    "gameId": "7338",
+    "box": {
+      "gameId": "7338",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "8",
+          "q3": "7",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "14",
+          "q2": "0",
+          "q3": "8",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 46,
+    "gameId": "6990",
+    "box": {
+      "gameId": "6990",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "14",
+          "q3": "26",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "46"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Greenport/Southold/Mattituck 46, Wyandanch 8: Michael DeNicola completed 14 passes for 244 yards, four touchdowns and two interceptions to lead host Greenport/Southold/Mattituck (4-3) in Suffolk IV. He added two interceptions on defense. Luke Weir caught an 88-yard touchdown, finishing with four catches for 134 yards and the score as well as an interception on defense. Matt McGunnigle caught three passes for 44 yards and two TDs. Brady Woods had four catches for 66 yards and a touchdown. Alex Felakos and James Felakos each had a sack. Collie Wint caught a 28-yard touchdown scored for Wyandanch (2-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Michael DeNicola",
+            "att": 11,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Matt McGunnigle",
+            "att": 8,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Chris Palencia",
+            "att": 11,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Brady Woods",
+            "att": 7,
+            "yds": 31,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Michael DeNicola",
+            "att": 0,
+            "comp": 14,
+            "yds": 244,
+            "tds": 4,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Luke Weir",
+            "rec": 4,
+            "yds": 134,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Brady Woods",
+            "rec": 4,
+            "yds": 66,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Matt McGunnigle",
+            "rec": 3,
+            "yds": 44,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Alex Felakos",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "James Felakos",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Michael DeNicola",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Luke Weir",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 42,
+    "gameId": "6986",
+    "box": {
+      "gameId": "6986",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Glenn",
+          "q1": "14",
+          "q2": "6",
+          "q3": "7",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 42, Wyandanch 8: Cole Madden completed 14 of 15 passes for 235 yards and threw three touchdowns to CJ Mascia, Anthony Soto and Justus Awadalla as Glenn earned a home win in Suffolk IV. Keith King had 11 carries for 112 yards and two touchdowns. Anthony Soto led the Glenn (4-4) defense with seven tackles and GJ Cook added an interception, headlining a defense that finished with six sacks. Michael Dalrymple's sack resulted in a safety. Anthony Wilkinson punched in a 3-yard rushing score for Wyandanch (2-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 11,
+            "yds": 112,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Grayden Aebisher",
+            "att": 4,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "att": 2,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "att": 3,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Benny Lee",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 15,
+            "comp": 14,
+            "yds": 235,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 6,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "rec": 3,
+            "yds": 50,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 1,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Justus Awadalla",
+            "rec": 1,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Joe LaMay",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael Dalrymple",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Sebastian Domerecki",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Karim Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "David Rafiq",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Ethan Levy",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

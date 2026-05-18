@@ -1,0 +1,1657 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2024",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 25,
+    "oppScore": 7,
+    "gameId": "6807",
+    "box": {
+      "gameId": "6807",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "13",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 25, Glenn 7: Aidan Winter rushed for 171 yards on 21 carries and four touchdowns to lead Babylon in their Suffolk IV season-opener. Dan DeBetta had nine carries and 69 yards and nine tackles. On defense, Savion Millner had six tackles, Alex Keilitz had five tackles and Ben King added five tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "att": 14,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 21,
+            "yds": 171,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 9,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Cole Madden",
+            "att": 17,
+            "comp": 10,
+            "yds": 110,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 3,
+            "comp": 1,
+            "yds": 10,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike Kilgannon",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "KaRahn King",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Anthony Soto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 13,
+    "gameId": "7197",
+    "box": {
+      "gameId": "7197",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "20",
+          "q2": "12",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 32, Port Jefferson 13: Aidan Winter rushed for 175 yards and two touchdowns on seven carries to lead Babylon (1-1) in Suffolk IV.    Kai Jankow completed 6-of-10 passes for 93 yards and a touchdown and ran for 89 yards on 14 carries. Dan DeBetta made six tackles and Ben King had six tackles and two sacks. Kai Donnelly had five tackles, a sack and a fumble recovery. Chris Diot caught a 37-yard touchdown and scored a 40-yard rushing touchdown for Port Jefferson (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 7,
+            "yds": 175,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 14,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 5,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 2,
+            "yds": 5,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 6,
+            "comp": 10,
+            "yds": 93,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Christian Molnar",
+            "rec": 2,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Paul Forthmuller",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "7136",
+    "box": {
+      "gameId": "7136",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 21, Mt. Sinai 7: Aidan Winter had 26 rushes for 224 and a rushing touchdown and caught a 29 -touchdown pass from Kai Jankow to lead Babylon (3-0) in Suffolk IV. Jankow had 12 rushes for 84 yards and a touchdown and completed both of his passes for 37 yards and another touchdown. On defense, Jankow made six tackles and recorded an interception. The defense was led by Dan DeBetta with eight tackles, followed by Ben King with seven tackles. Ryan Filippi rushed for a one-yard touchdown for Mt. Sinai (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 26,
+            "yds": 224,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 12,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 4,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "att": 11,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 6,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Logan Geraghty",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Hunter Pancir",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 2,
+            "comp": 2,
+            "yds": 37,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 8,
+            "comp": 6,
+            "yds": 24,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "att": 4,
+            "comp": 3,
+            "yds": 19,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 1,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "John Pramataris",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Arda Dincer",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 57,
+    "oppScore": 48,
+    "gameId": "6809",
+    "box": {
+      "gameId": "6809",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "0",
+          "q2": "13",
+          "q3": "16",
+          "q4": "19",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Babylon",
+          "q1": "9",
+          "q2": "21",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "57"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 57, Miller Place 48: Aidan Winter had 21 carries for 284 yards and two touchdowns to lead host Babylon (4-0) in Suffolk IV. Kai Jankow had 17 rushes for 188 yards and four touchdowns. Keven Bonilla threw a 75-yard touchdown pass to Charlie Bunger to put Babylon ahead 30-13 before halftime. Daniel DeBetta had a 1-yard touchdown run. Babylon earned a stop on the potential tying two-point conversion pass with four minutes left. Jankow's 4-yard TD run with a minute left extended Babylon's lead to 57-48.\nShane Kiernan completed 38 of 54 passes for 523 yards and six touchdowns for Miller Place (2-2). Kiernan broke the single-game school records for completions, passing yards and touchdown passes, according to coach Adam St. Nicholas. Dane Lagrasta had 11 catches for 216 yards and three touchdowns. Dj Williamson had 11 catches for 219 yards and three touchdowns, and he also had a two-point conversion reception. Williamson and Lagrasta both broke the school record for receptions in a single game and Williamson broke the school record for receiving yards in a single game.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 3,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "att": 5,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 21,
+            "yds": 284,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 17,
+            "yds": 188,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 2,
+            "yds": 68,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 3,
+            "yds": 20,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 56,
+            "comp": 39,
+            "yds": 550,
+            "tds": 6,
+            "int": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 1,
+            "comp": 1,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 2,
+            "comp": 3,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 17,
+            "yds": 235,
+            "tds": 3,
+            "pat": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "rec": 11,
+            "yds": 216,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "rec": 6,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 1,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/09/2024",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "6808",
+    "box": {
+      "gameId": "6808",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Babylon",
+          "q1": "21",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 35, Greenport/Southold/Mattituck 0: Aidan Winter rushed for 109 yards and two touchdowns on five carries and Kai Jankow rushed for 44 yards and two touchdowns to lead Babylon (5-0) in Suffolk IV. Keven Bonilla rushed for 42 yards on four carries, Joe Rubendall rushed for 35 yards on six carries and Christian Arrington rushed for 32 yards on seven carries. Ben King had five tackles, Dan DeBetta had four tackles and Hayden Baudille went 4 for 4 on PATs. Greenport/Southold/Mattituck falls to 3-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 5,
+            "yds": 109,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 5,
+            "yds": 44,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 4,
+            "yds": 42,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 3,
+            "comp": 3,
+            "yds": 44,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Sarah Klienitzke",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 12,
+    "gameId": "6821",
+    "box": {
+      "gameId": "6821",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 12, Babylon 7: Cooper Fuller rushed for the game-winning touchdown in the fourth-quarter to lead Bayport-Blue Point (6-0) in Suffolk IV. After Fuller's touchdown, Traigh Tommasone recorded a crucial interception and allowed the offense to run the clock out and lock down the victory. Fuller rushed 24 times for 180 yards, while Colin Reyer chipped in four carries for 65 yards. In the second quarter, Christian Saur recorded a strip-sack in the second quarter and Dylan Spano recovered the loose ball in the end zone for a touchdown to tie the game. Kai Jankow rushed for Babylon's (5-1) only touchdown from 39 yards out.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 17,
+            "yds": 122,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 12,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 24,
+            "yds": 180,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 4,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "att": 3,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 6,
+            "comp": 3,
+            "yds": 28,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Cooper Fuller",
+            "att": 12,
+            "comp": 5,
+            "yds": 43,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Coffey",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Craig",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 14,
+    "gameId": "6866",
+    "box": {
+      "gameId": "6866",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "7",
+          "q2": "21",
+          "q3": "20",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 48, Center Moriches 14: Aidan Winter had 352 all-purpose yards and five touchdowns to lead visiting Babylon (6-1) in Suffolk IV. He had 16 carries for 217 yards and three scores, two catches for 48 yards and a touchdown and a 97-yard kickoff return touchdown. Kai Jankow had 13 carries for 109 yards and a touchdown and went 3 for 4 passing for 70 yards and a touchdown. Dan DeBetta had a 3-yard touchdown run. Ben King had nine tackles, DeBetta had eight tackles and Alex Keilitz had six tackles. Hayden Baudille went 3-for-3 on PATs and Sarah Klienitzke went 3-for-4. Shane Gallagher had five receptions for 73 yards and a touchdown for Center Moriches (4-3), and Brayden Hromada completed 9 of 13 passes for 148 yards and two TDs. Peter Nizza caught a 28-yard touchdown, and Dan Heller forced a fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 16,
+            "yds": 217,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 13,
+            "yds": 109,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dennis Hayes",
+            "att": 6,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 10,
+            "yds": 36,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 3,
+            "comp": 4,
+            "yds": 70,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 9,
+            "comp": 13,
+            "yds": 148,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 2,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane  Gallagher",
+            "rec": 5,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dan Jurgens",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "Sarah Klienitzke",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dan Jurgens",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Dan Heller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/01/2024",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 10,
+    "gameId": "6810",
+    "box": {
+      "gameId": "6810",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "10",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Babylon",
+          "q1": "14",
+          "q2": "20",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 48, Shoreham-Wading River 10:  Kai Jankow rushed for 146 yards and three touchdowns on 17 carries, had a 55-yard touchdown pass to Charlie Bunger and had a 65-yard interception return for a touchdown to lead host Babylon (7-1) in Suffolk IV. Aidan Winter had 11 carries for 218 yards and 2 TDs.  Ben King had nine tackles and Dan DeBetta added seven tackles. Charlie Bunger, Kai Jankow and Ryan Polletta each had an interception.  Sarah Klienitzke was 3 for 3 on PATs.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 11,
+            "yds": 218,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 17,
+            "yds": 146,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 1,
+            "comp": 1,
+            "yds": 55,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "rec": 1,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "Sarah Klienitzke",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Charlie  Bunger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Ryan  Polletta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 21,
+    "gameId": "7557",
+    "box": {
+      "gameId": "7557",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Babylon",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 42, Mt. Sinai 21: Aidan Winter had 19 carries for 238 yards and four touchdowns and caught two passes for 80 yards to lead host No. 2 Babylon over No. 7 Mt. Sinai in the Suffolk IV quarterfinals. Kai Jankow had six carries for 103 yards and two TDs. Ben King and Dan Debetta who each had five tackles apiece and Christian Molnar had an interception. Hayden Baudille made all five of his PATs. Babylon (8-1) will host a semifinal game on Friday. Max Sorrentino threw two TD passes to Marcus Maglore and one to Ryan Filippi for Mt. Sinai (4-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent Graziano",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 19,
+            "yds": 238,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 6,
+            "yds": 103,
+            "tds": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Dan  DeBetta",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Keven Bonilla",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 26,
+            "comp": 13,
+            "yds": 280,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai Jankow",
+            "att": 3,
+            "comp": 3,
+            "yds": 85,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Marcus Maglore",
+            "rec": 4,
+            "yds": 103,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ryan Filippi",
+            "rec": 4,
+            "yds": 74,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent Graziano",
+            "rec": 2,
+            "yds": 66,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 2,
+            "yds": 80,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Jake  Ostertag",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Arda Dincer",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Hayden Baudille",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Babylon",
+            "player": "Sarah Klienitzke",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/15/2024",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 43,
+    "gameId": "7614",
+    "box": {
+      "gameId": "7614",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "10",
+          "q2": "20",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 43, Babylon 14: Shane Kiernan completed 20-of-26 passes for 421 yards and five touchdowns to lead visiting No. 3 Miller Place over No. 2 Babylon in the Suffolk IV semifinals on Friday night. On the third play of the game, DJ Williamson had a 37-yard reception to set up a one-yard touchdown run by Braeden Murphy. Williamosn had three catches for 92 yards and a touchdown.Ethan Monaco had eight catches for 133 yards a touchdown and caught an interception in the endzone. Dane LaGrasta had three catches for 108 yards, two touchdowns and an interception. AJ Rudolph had five catches for 65 yards and a touchdown and Jayden Meadows rushed for 60 yards on 13 carries. Quinn Doyen made 10 tackles and Braeden Murphy had eight. Kevin Washington and Jackson Thompson each had six tackles. Miller Place (8-2) will face No. 1 Bayport-Blue Point at 6 p.m. on Thursday at Stony Brook University in the championship. Kai Jankow had two rushing touchdowns for Babylon (8-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Jayden  Meadows",
+            "att": 13,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Braeden  Murphy",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Camryn Hardy",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Lee Walcott",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Gavin Peterson",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 26,
+            "comp": 20,
+            "yds": 421,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "rec": 8,
+            "yds": 133,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "rec": 3,
+            "yds": 108,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 3,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Aj Rudolph",
+            "rec": 5,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Gavin Peterson",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Matthew Perry",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Ethan  Monaco",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dane Lagrasta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

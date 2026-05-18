@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, Rocket } from 'lucide-react'
 
 export default function HeroCard({
   dark = true,
@@ -103,8 +103,8 @@ export default function HeroCard({
         </p>
 
         {/* CTA */}
-        <Link href="/section/section-xi"
-          className={`text-sm font-bold px-7 py-3 rounded-xl active:scale-95 transition-all ${dark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/80'}`}>
+        <Link href="/launchpad"
+          className={`inline-flex items-center gap-2 text-sm font-bold px-7 py-3 rounded-xl active:scale-95 transition-all ${dark ? 'bg-white text-black hover:bg-white/90' : 'bg-black text-white hover:bg-black/80'}`}>
           Explore Teams
         </Link>
       </div>

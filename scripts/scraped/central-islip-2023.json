@@ -1,0 +1,1071 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 7,
+    "gameId": "6402",
+    "box": {
+      "gameId": "6402",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 7, Central Islip 6: Brentwood's defense helped Joel Palomino's 10-yard touchdown pass to NeSean Hunt in the first quarter stand up. Chris Ayala had 10 tackles - three for a loss - and a fumble recovery, Raymond Penalvert had six tackles and a fumble recorvery and Gianny Ovales had a pair of sacks for Brentwood (1-0). Elijah Wellington caught a 59-yard touchdown pass from Ethan Suchit for CI (0-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "att": 12,
+            "yds": 70,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Diego Capellan",
+            "att": 8,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Joel Palomino",
+            "att": 7,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Eliezer Ordonez",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Joel Palomino",
+            "att": 4,
+            "comp": 3,
+            "yds": 24,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "NeSean Hunt",
+            "rec": 2,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Gio Otero",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Josh Almendarez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Gianny Ovales",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Raymond Penalvert",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 35,
+    "gameId": "6418",
+    "box": {
+      "gameId": "6418",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "7",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 35, Central Islip 0: Javon Barnwell ran nine times for 168 yards and a touchdown and Nick Pepitone threw for 99 yards and three touchdowns, including one to Barnwell, for Connetquot (1-1). Pepitone also ran five times for 78 yards and a score. Mike Galante had four receptions for 80 yards and a touchdown. The Connetquot defense forced three turnovers and made three sacks. Lucas Weaver had a team-high 14 tackles and forced a fumble, and Ryan Shannon had 10 tackles and a sack. Victor Truglio had seven tackles, a sack and an interception. Mike Catera went 5-for-5 on his PAT kicks.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Javon  Barnwell",
+            "att": 9,
+            "yds": 168,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 5,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Buttino",
+            "att": 7,
+            "yds": 50,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 12,
+            "comp": 6,
+            "yds": 99,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Galante",
+            "rec": 4,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aydan DeLiso",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon  Barnwell",
+            "rec": 1,
+            "yds": 1,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Catera",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Victor Truglio",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ryan Shannon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Joe Maniaci",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Reid Harvey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 34,
+    "gameId": "6457",
+    "box": {
+      "gameId": "6457",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "13",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 34, Central Islip 0: Brody Morgan rushed for an 84-yard touchdown on the first play from scrimmage for Ward Melville (2-1) against visiting Central Islip. Dan Brausch carried four times for 90 yards, including a 65-yard touchdown and Ethan Burgos scored on a 36-yard run. Norman Bergamaschi and Mike Cartisano each added a rushing touchdown. Tony Gorsky and Jake Ventimiglia each had five tackles in Ward Melville's first shutout of the season. Central Islip is 0-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "att": 4,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "att": 2,
+            "yds": 89,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 4,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "att": 7,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Marzovilla",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Conor Prussen",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Drew Buscaglia",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "att": 1,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tyler Blasco",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Carstisano",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jaylen Thomas",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Norman Bergamaschi",
+            "att": 2,
+            "yds": 2,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Joe Massaro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2023",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 21,
+    "gameId": "6461",
+    "box": {
+      "gameId": "6461",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "20",
+          "q3": "15",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Central Islip 35, Patchogue-Medford 21: Amonte Tucker rushed for 102 yards and two touchdowns on 14 carries and Jimmy Gaston Jr. rushed for 108 yards and one touchdown on 13 carries to lead Central Islip (1-3) over Patchogue-Medford (0-4) in Suffolk I football on Sunday. Raymond Jones returned an interception 85 yards for a touchdown and had eight tackles and two passes broken up. Jaiden James had 12 tackles.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 24,
+    "gameId": "6490",
+    "box": {
+      "gameId": "6490",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "10",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 24, Central Islip 19: Maurice Scott had 202 passing yards, two touchdowns and 77 rushing yards to lead visiting Riverhead (2-3) in Suffolk I. Aidan Daniels scored a nine-yard touchdown and Kevin Qualey caught two second quarter touchdowns. Michael Gabriel had 76 rushing yards and an interception with under three minutes left in the game. Jackson Suter kicked a 27 yard field goal and made all three of his extra points. Jimmy Gaston Jr. rushed for two touchdowns for Central Islip (1-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Maurice Scott",
+            "att": 11,
+            "yds": 77,
+            "tds": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Michael Gabriel",
+            "att": 11,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Aidan Daniels",
+            "att": 10,
+            "yds": 32,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Maurice Scott",
+            "att": 20,
+            "comp": 12,
+            "yds": 202,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kevin Qualey",
+            "rec": 3,
+            "yds": 71,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Braylin Grigg",
+            "rec": 3,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Dan Healy",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Mason McLean",
+            "rec": 3,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "John Lennon",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Riverhead",
+            "player": "Jackson Suter",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Riverhead",
+            "player": "Michael Gabriel",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 31,
+    "gameId": "6525",
+    "box": {
+      "gameId": "6525",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "14",
+          "q2": "3",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 31, Central Islip 0: Nick Rose rushed for 112 yards and two touchdowns and made 10 tackles to lead Lindenhurst (3-3) in Suffolk I. Martin Pusey scored on a 12-yard fumble recovery, Matt Durnin had an interception and Mike Seeger recovered a fumble as Lindenhurst forced five turnovers. Central Islip is 1-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 13,
+            "yds": 104,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 6,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 6,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 3,
+            "comp": 1,
+            "yds": 11,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Connor Gordon",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 34,
+    "gameId": "6555",
+    "box": {
+      "gameId": "6555",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "14",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 34, Central Islip 14: Mikey Reilly had three receptions for 110 Yards and three touchdowns for Sachem East (4-3) against Central Islip (1-6) in Suffolk I. He also snagged two interceptions. Gianni Spinelli scored first on a 76-yard run. Joe Christie took a kick return 72 yards for a touchdown. AJ Vurchio passed for 158 yards and three touchdowns. Ryan Lane had 15 tackles (11 solo) and a sack. Logan Shomaker had nine tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem East",
+            "player": "Gianni Spinelli",
+            "att": 8,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Joe  Christie",
+            "att": 1,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Frankie  Rom",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Mikey Reilly",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 8,
+            "comp": 4,
+            "yds": 158,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem East",
+            "player": "Mikey Reilly",
+            "rec": 3,
+            "yds": 110,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Joe  Christie",
+            "rec": 1,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gianni Spinelli",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Jaydon Amallobieta",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Logan  Shomaker",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Max  Bennett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Ryan  Lane",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Nicky DiSipio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Mikey Reilly",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gavin  Burns",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/27/2023",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 29,
+    "gameId": "6558",
+    "box": {
+      "gameId": "6558",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "9",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 29, Central Islip 20: Scott Arnett threw for 112 yards and two touchdowns and ran for 40 yards and a touchdown to lead visiting Bay Shore (4-4) in Suffolk I. Jayden Jean had 13 carries for 135 yards and a touchdown and added eight tackles and two tackles for loss. Jordan Tyler had a receiving touchdown and 11 tackles and James Sobotka had 58 receiving yards for a touchdown and seven tackles. Assanti Hall had 33 rushing yards, eight tackles, a tackle for loss and a pass breakup. Ethan Suchit threw a touchdown to Steven Frias and Jimmy Gaston Jr. and Amante Tucker each had a touchdown run for Central Islip (1-7).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

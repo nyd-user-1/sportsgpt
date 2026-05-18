@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { cn, formatSeason } from '@/lib/utils'
-import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { CURRENT_SEASON } from '@/lib/app-config'
 import Image from 'next/image'
 
@@ -23,7 +24,7 @@ export type GameRow = {
   away_div: string
 }
 
-const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2].map(String)
+const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2, CURRENT_SEASON - 3, CURRENT_SEASON - 4].map(String)
 
 // Map "Division I" → "I", etc.
 const SEARCH_DIV_MAP: Record<string, string> = {
@@ -33,7 +34,7 @@ const SEARCH_DIV_MAP: Record<string, string> = {
 function fmtDate(raw: string | null) {
   if (!raw) return '—'
   const d = new Date(raw + 'T12:00:00')
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
 function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?: number }) {
@@ -50,8 +51,20 @@ function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?:
   )
 }
 
+const slideVariants = {
+  enter:  (dir: number) => ({ x: dir >= 0 ? '100%' : '-100%' }),
+  center: { x: 0 },
+  exit:   (dir: number) => ({ x: dir >= 0 ? '-100%' : '100%' }),
+}
+
 export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  function handleSeason(i: number) {
+    setDirection(i > seasonIdx ? 1 : -1)
+    setSeasonIdx(i)
+  }
   const router        = useRouter()
   const pathname      = usePathname()
   const searchParams  = useSearchParams()
@@ -59,10 +72,14 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null
   const activeSeason  = Number(SEASONS[seasonIdx])
 
-  // Extract selected team slug from URL: /launchpad/[team-slug] (not /launchpad/game/[id])
   const parts = pathname.split('/').filter(Boolean)
-  const selectedTeam = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game')
+  const teamFromPath = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game')
     ? parts[1]
+    : null
+  const teamFromParam = searchParams.get('team')
+  const selectedTeam = teamFromPath ?? teamFromParam ?? null
+  const selectedGameId = (parts.length === 3 && parts[0] === 'launchpad' && parts[1] === 'game')
+    ? Number(parts[2])
     : null
 
   const filtered = games.filter(g => {
@@ -81,9 +98,9 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   return (
     <div>
       {/* Season tabs */}
-      <div className="sticky top-0 z-10 bg-[var(--bg)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
+      <div className="sticky top-0 z-10 bg-[var(--surface)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
         {SEASONS.map((s, i) => (
-          <button key={s} onClick={() => setSeasonIdx(i)}
+          <button key={s} onClick={() => handleSeason(i)}
             className={cn(
               'px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap',
               seasonIdx === i
@@ -95,73 +112,80 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
         ))}
       </div>
 
+      <div className="overflow-hidden">
+        <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <motion.div
+            key={activeSeason}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
+          >
       {filtered.length === 0 ? (
         <p className="text-sm text-[var(--muted)] py-8 text-center">
           No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
         </p>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pb-6">
+        <div className="flex gap-4 pb-6 overflow-x-auto no-scrollbar">
           {filtered.map(g => {
             const homeWon = g.home_score != null && g.away_score != null && g.home_score > g.away_score
             const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
             const scored  = g.home_score != null && g.away_score != null
+            const homeSchool = g.home_team_slug.replace(/-varsity-football$/, '')
+            const awaySchool = g.away_team_slug.replace(/-varsity-football$/, '')
+            const homePhoto  = TEAM_PHOTOS[homeSchool]?.[0]
+            const awayPhoto  = TEAM_PHOTOS[awaySchool]?.[0]
             return (
               <div key={g.id}
-                onClick={() => router.push(`/launchpad/game/${g.id}`, { scroll: false })}
-                className="rounded-2xl bg-[var(--surface)] shadow-sm p-5 flex flex-col justify-between min-h-[280px] hover:shadow-md transition-all cursor-pointer">
+                onClick={() => router.push(`/launchpad/game/${g.id}${selectedTeam ? `?team=${selectedTeam}` : ''}`, { scroll: false })}
+                className={cn("group rounded-2xl overflow-hidden relative min-h-[292px] w-[400px] shrink-0 flex flex-col justify-between cursor-pointer transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.35)]", selectedGameId === g.id ? "shadow-[0_4px_24px_rgba(0,0,0,0.45)]" : "shadow-sm")}>
 
-                {/* Date + game# */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] text-[var(--muted)]">{fmtDate(g.game_date)}</span>
-                  {g.game_number != null && (
-                    <span className="text-[11px] text-[var(--muted)]">Game {g.game_number}</span>
-                  )}
+                {/* Split photo background */}
+                <div className="absolute inset-0 flex">
+                  <div className="relative flex-1">
+                    {homePhoto
+                      ? <Image src={homePhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                      : <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />}
+                  </div>
+                  <div className="relative flex-1">
+                    {awayPhoto
+                      ? <Image src={awayPhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                      : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
+                  </div>
                 </div>
 
-                {/* Score — huge, centered */}
-                <div className="flex items-center justify-center gap-4">
-                  <span className={cn('text-5xl font-black tabular-nums leading-none', !homeWon && scored ? 'opacity-25' : 'text-[var(--txt)]')}>
-                    {g.home_score ?? '—'}
-                  </span>
-                  <span className="text-3xl font-light text-[var(--muted)]">–</span>
-                  <span className={cn('text-5xl font-black tabular-nums leading-none', !awayWon && scored ? 'opacity-25' : 'text-[var(--txt)]')}>
-                    {g.away_score ?? '—'}
-                  </span>
+                {/* Gradient overlays */}
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
+
+                {/* Week badge + date */}
+                <div className="relative z-10 flex items-center justify-between px-3 pt-3">
+                  {g.game_number != null
+                    ? <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
+                    : <span />}
+                  <span className="text-[11px] text-white/60">{fmtDate(g.game_date)}</span>
                 </div>
+
+                <div />
 
                 {/* Teams row */}
-                <div className="flex items-center justify-between gap-2">
-                  {/* Home */}
-                  <div className="flex items-center gap-2.5 min-w-0"
+                <div className="relative z-10 flex items-center justify-between gap-2 px-3 pb-3">
+                  <div className="flex items-center gap-2 min-w-0"
                     onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={40} />
+                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
                     <div className="min-w-0">
-                      <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Home</p>
-                      <p className="text-sm font-semibold text-[var(--txt)] truncate leading-snug">
-                        {g.home_name}
-                        {scored && (
-                          <span className={cn('ml-1 font-bold text-xs', homeWon ? 'text-green-600' : 'text-red-500')}>
-                            {homeWon ? 'W' : 'L'}
-                          </span>
-                        )}
-                      </p>
+                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mb-0.5">Home</p>
+                      <p className="text-xs font-semibold text-white truncate leading-snug">{g.home_name}</p>
                     </div>
                   </div>
-
-                  {/* Away — logo on right */}
-                  <div className="flex items-center gap-2.5 min-w-0 flex-row-reverse"
+                  <div className="flex items-center gap-2 min-w-0 flex-row-reverse"
                     onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={40} />
+                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
                     <div className="min-w-0 text-right">
-                      <p className="text-[10px] text-[var(--muted)] uppercase tracking-wide leading-none mb-0.5">Away</p>
-                      <p className="text-sm font-semibold text-[var(--txt)] truncate leading-snug">
-                        {scored && (
-                          <span className={cn('mr-1 font-bold text-xs', awayWon ? 'text-green-600' : 'text-red-500')}>
-                            {awayWon ? 'W' : 'L'}
-                          </span>
-                        )}
-                        {g.away_name}
-                      </p>
+                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mb-0.5">Away</p>
+                      <p className="text-xs font-semibold text-white truncate leading-snug">{g.away_name}</p>
                     </div>
                   </div>
                 </div>
@@ -171,6 +195,9 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
           })}
         </div>
       )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }

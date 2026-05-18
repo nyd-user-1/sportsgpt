@@ -1,0 +1,2212 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 20,
+    "gameId": "7047",
+    "box": {
+      "gameId": "7047",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "3",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Islip",
+          "q1": "13",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 34, Kings Park 20: Jake DeGenarro returned a punt for a 62-yard touchdown and a kickoff for a 93-yard touchdown to lead Islip in its Suffolk III opener. Brady Nash went 12-for-16 passing with 190 yards and and rushed six times for 60 yards and a touchdown. Dylan Smith had four catches for 110 yards and added three sacks on defense. Cayden Tierney and Robbie Rais each added two sacks. Christian Hall returned blocked field goal for a 55-yard touchdown and rushed seven times for 75 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "att": 18,
+            "yds": 117,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 12,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony LoBasso",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 8,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 11,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Brandon Shapiro",
+            "att": 28,
+            "comp": 15,
+            "yds": 175,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 19,
+            "comp": 13,
+            "yds": 190,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Frankie Buffolino",
+            "rec": 4,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick  Paliotta",
+            "rec": 5,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "rec": 2,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kevin Vasquez",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 6,
+            "yds": 123,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matt Trovato",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Tom Bailes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Parker Iglio",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Robbie  Rais",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Caden Tierney",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Josiah Patterson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2024",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 40,
+    "gameId": "7233",
+    "box": {
+      "gameId": "7233",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sayville",
+          "q1": "6",
+          "q2": "7",
+          "q3": "20",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 40, Islip 6: Kyle Messina had 28 carries for 204 yards and four touchdowns and had an interception to lead Sayville (2-0) in Suffolk III. Thomas McCann caught eight passes for 119 yards and totaled seven tackles, including four solo tackles. Mikey Sands had two sacks and eight tackles, including six solo tackles and two for a loss. Alex Labella had two sacks and six tackles, including four solo tackles for a loss. Brady Nash ran for a TD for Islip (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Najee Simpson",
+            "att": 2,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 9,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 8,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "att": 28,
+            "yds": 204,
+            "tds": 4
+          },
+          {
+            "team": "Sayville",
+            "player": "leo  mongiello",
+            "att": 3,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tristan Vitale",
+            "att": 1,
+            "yds": 16,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 19,
+            "comp": 11,
+            "yds": 205,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 19,
+            "comp": 12,
+            "yds": 186,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 6,
+            "yds": 158,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matt Trovato",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tomas McCann",
+            "rec": 8,
+            "yds": 119,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dylan Kent",
+            "rec": 1,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "michael carmody",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Nicholas  Watson",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Alex Labella",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Keith Kolar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "John Clampett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jack  Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "kyle messina",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 35,
+    "gameId": "7331",
+    "box": {
+      "gameId": "7331",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "13",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "7",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 40, Westhampton 35: Brady Nash completed 18 of 30 passes for 390 yards and two touchdowns to lead visiting Islip (2-1) in Suffolk III. According to coach Jamie Lynch, Nash broke his own single-game school record for passing yards. He added 12 rushes for 145 yards and three touchdowns. Jack Rao had four catches for 150 yards and a touchdown and Dylan Smith had eight catches for 114 yards and a TD. Christian Hall, Josiah Patterson and Robbie Rais each had six tackles and a sack. Finn Drake threw five touchdown passes and Drew Calloway caught TD passes of 64, 60 and 5 yards for Westhampton (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 12,
+            "yds": 145,
+            "tds": 3
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 8,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "att": 15,
+            "yds": 59,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 30,
+            "comp": 18,
+            "yds": 390,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Finn Drake",
+            "att": 23,
+            "comp": 17,
+            "yds": 339,
+            "tds": 5,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 4,
+            "yds": 150,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 8,
+            "yds": 114,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 2,
+            "yds": 70,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matt Trovato",
+            "rec": 2,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Drew Calloway",
+            "rec": 7,
+            "yds": 136,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "rec": 3,
+            "yds": 59,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Josiah Patterson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Robbie  Rais",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 20,
+    "gameId": "7045",
+    "box": {
+      "gameId": "7045",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "0",
+          "q2": "13",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 28, East Hampton/Bridgehampton/Pierson 20: Brady Nash had three fourth-quarter touchdown runs as host Islip (3-1) scored 21 unanswered points in a Suffolk III win. Nash ran for 102 yards and three touchdowns on 13 carries and completed 9 of 13 passes for 166 yards and a touchdown. Louie Tuorto had 14 tackles and Jake DeGennaro had eight. Caden Tierney had five tackles and a sack to seal the win. Theo Ball threw two touchdown passes, one to Charlie Stern and one to James Corwin, and Alex Davis had a 14-yard touchdown run for East Hampton/Bridgehampton/Pierson (2-2). Davis had 20 carries for 97 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Alex Davis",
+            "att": 20,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 13,
+            "yds": 102,
+            "tds": 3
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Theo Ball",
+            "att": 18,
+            "comp": 9,
+            "yds": 120,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 13,
+            "comp": 9,
+            "yds": 166,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 6,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 1,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Hampton / Bridgehampton / Pierson",
+            "player": "Manny Morales",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Caden Tierney",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 17,
+    "gameId": "7044",
+    "box": {
+      "gameId": "7044",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "3",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "13",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Louis Tuorto's 35-yard interception return off a Dylan Smith deflection gave Islip a 20-10 lead with seven minutes to go in the third quarter. Cal Zusi led the Islip defense with 12 tackles and an interception. Brady Nash rushed 19 times for 112 yards and two touchdowns and was 17 of 27 passing for 224 yards. Jake DeGennaro had seven catches for 73 yards and Dylan Smith had four catches for 101 yards and rushed twice for 62 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Peter Castaldo",
+            "att": 30,
+            "yds": 176,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 7,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "NICK SALADINO",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 19,
+            "yds": 112,
+            "tds": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 2,
+            "yds": 62,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "NICK SALADINO",
+            "att": 14,
+            "comp": 4,
+            "yds": 41,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 27,
+            "comp": 17,
+            "yds": 224,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "DOUG ANNICELLI",
+            "rec": 2,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "LEE BRETT",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 4,
+            "yds": 101,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 7,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matt Trovato",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "GAVIN DANDREA",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "DOUG ANNICELLI",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Callahan Zusi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Louis Tuorto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Caden Tierney",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 14,
+    "gameId": "7215",
+    "box": {
+      "gameId": "7215",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 49, Rocky Point 14: Dylan Smith had nine receptions for 140 yards and three touchdowns as Brady Nash completed 13 of 16 passes for 244 yards and four touchdowns and rushed for 94 yards on nine carries to lead visiting Islip (5-1) in Suffolk III. Jake DeGennaro added 65 yards on six carries, including a 17-yard touchdown, a 65-yard touchdown reception and an interception. Najee Simpson had eight tackles, including three for a loss. Thomas Doran had two rushing touchdowns for Rocky Point (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 9,
+            "yds": 94,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Najee Simpson",
+            "att": 2,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "att": 6,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "att": 2,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Rodriguez Nikko",
+            "att": 3,
+            "yds": 28,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Thomas Doran",
+            "att": 2,
+            "yds": 100,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brogan Casper",
+            "att": 7,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "att": 4,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jack Negus",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 16,
+            "comp": 13,
+            "yds": 244,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "John Nadaeu",
+            "att": 5,
+            "comp": 1,
+            "yds": 35,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 9,
+            "yds": 140,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Grayson Marmol",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Rocky Point",
+            "player": "JJ Perez",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/25/2024",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 56,
+    "gameId": "7046",
+    "box": {
+      "gameId": "7046",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 56, Islip 20: Joseph Filardi threw for 323 yards and five touchdown passes on 19 passes and Jesse Brooks caught six passes for 116 yards and three touchdowns to lead visitor Half Hollow Hills West (6-1) in Suffolk III. Anthony Raio caught 7 passes for 126 yards and 2 touchdowns and had an interception and a pass on defense. Christian Alfaro rushed for 2 touchdowns on 6 carries. Jayden Smith ran for one touchdown and Jerrel Jenkins had an interception. Kade Diaz had eight tackles and Mason Reisch had three pass deflections.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 8,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "att": 13,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "att": 1,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "att": 5,
+            "yds": 31,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Baggott",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 11,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 3,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 31,
+            "comp": 19,
+            "yds": 345,
+            "tds": 5,
+            "int": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 33,
+            "comp": 18,
+            "yds": 220,
+            "tds": 2,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 8,
+            "yds": 138,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 7,
+            "yds": 126,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 4,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 7,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 7,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 2,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 2,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan  Levy",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          },
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 6,
+    "gameId": "6805",
+    "box": {
+      "gameId": "6805",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "6",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 34, Amityville 6: Brady Nash completed 12 of 16 passes for 201 yards and five touchdowns to lead Islip to a road win over Amityville in Suffolk III. Dylan Smith had 102 yards and two scores on eight receptions, and Michael Vitale added two interceptions and a 6-yard touchdown catch. Jack Rao added a 57-yard TD reception to seal the victory for Islip (6-2). Jacob Billinger rushed for a 27-yard touchdown for Amityville (1-7), and Matthew Victor blocked an extra-point attempt.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 5,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 6,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 16,
+            "comp": 12,
+            "yds": 201,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 8,
+            "yds": 101,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 1,
+            "yds": 17,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "rec": 1,
+            "yds": 6,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/08/2024",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 22,
+    "gameId": "7577",
+    "box": {
+      "gameId": "7577",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "7",
+          "q3": "15",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 29, Hauppauge 22: Brady Nash's 12-yard touchdown run with 58 seconds left broke a 22-all tie and proved to be the winning score in No. 3 Islip's win over No. 6 Hauppauge in the Suffolk Division III quarterfinals. Dylan Smith intercepted a pass on Hauppauge's final drive to seal the win. Nash ran for 135 yards and two touchdowns on 14 carries and completed 19 of 25 passes for 165 yards and a touchdown. Smith had six catches for 70 yards and a touchdown and four rushes for 50 yards. Jack Rao had seven catches for 60 yards and a touchdown. Josiah Patterson had three sacks. Islip (7-2) advances to the semifinals against a to-be-determined opponent next weekend. Gershon Diaz had two touchdown runs and Nick Lachapelle had a 23-yard touchdown run for Hauppauge, which finished 4-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Gershon Diaz",
+            "att": 18,
+            "yds": 106,
+            "tds": 2
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 12,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Wally Faiz",
+            "att": 5,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 14,
+            "yds": 135,
+            "tds": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 4,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "Nick  LaChapelle",
+            "att": 17,
+            "comp": 8,
+            "yds": 81,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 25,
+            "comp": 19,
+            "yds": 165,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Christian Mooney",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Alex Posillico",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Roman  Dixon",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Liam  O'Connor",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 6,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 7,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Hauppauge",
+            "player": "Joseph  Pistritto",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Josiah Patterson",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/16/2024",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 55,
+    "gameId": "7611",
+    "box": {
+      "gameId": "7611",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "13",
+          "q2": "7",
+          "q3": "14",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "No. 2 Hills West defeated No. 3 Islip, 55-27, in a Suffolk III semifinal.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 27,
+            "yds": 93,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "att": 3,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Christian Hall",
+            "att": 6,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 14,
+            "yds": 355,
+            "tds": 4
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Brady Nash",
+            "att": 45,
+            "comp": 27,
+            "yds": 357,
+            "tds": 4,
+            "int": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 19,
+            "comp": 11,
+            "yds": 200,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jake DeGennaro",
+            "rec": 8,
+            "yds": 135,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Dylan Smith",
+            "rec": 9,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Owen MacManus",
+            "rec": 6,
+            "yds": 61,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jack Rao",
+            "rec": 2,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Morales",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mason Reisch",
+            "rec": 1,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 2,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jayden Smith",
+            "rec": 3,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Christian Alfaro",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luke Taff",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Islip",
+            "player": "Carver Mason",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan  Levy",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jerrel Jenkins",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Kade Diaz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

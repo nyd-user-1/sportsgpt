@@ -1,0 +1,1778 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/01/2023",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 35,
+    "gameId": "6381",
+    "box": {
+      "gameId": "6381",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "14",
+          "q2": "22",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue defeats Smithtown West in a Suffolk III opener.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 11,
+            "yds": 69,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 4,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Isiaha  Woodhall",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Josh Hoffman",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 14,
+            "yds": 128,
+            "tds": 5
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 19,
+            "yds": 118,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 39,
+            "comp": 27,
+            "yds": 370,
+            "tds": 4,
+            "int": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 9,
+            "comp": 3,
+            "yds": 57,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 16,
+            "yds": 263,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Max Nicholas",
+            "rec": 1,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Ethan Alvarado",
+            "rec": 5,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick  Briffa",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George  Siolos",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "James Martino",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Michael Casccione",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Nowlan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 42,
+    "gameId": "6397",
+    "box": {
+      "gameId": "6397",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "0",
+          "q2": "21",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "10",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 42, Comsewogue 17: Will Gambino rushed for 100 yards and three touchdowns and threw for 150 yards and two touchdowns to lead Westhampton (2-0) in Suffolk III. Gianni Amodemo made 11 tackles and Riley Miller made six tackles. Kaeden West threw two touchdowns for Comsewogue (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 10,
+            "yds": 100,
+            "tds": 3
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "att": 9,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 16,
+            "yds": 101,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 7,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 13,
+            "comp": 18,
+            "yds": 150,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 21,
+            "comp": 9,
+            "yds": 129,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "rec": 2,
+            "yds": 59,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Heath Sumwalt",
+            "rec": 5,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Jordyn Brown",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 2,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 4,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Ian Knight",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Jordyn Brown",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 15,
+    "gameId": "6439",
+    "box": {
+      "gameId": "6439",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "7",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 49, Hauppauge 15: Shane Grant had 25 carries for 206 yards and four touchdowns to lead Comsewogue in Suffolk III. Kaeden West had two rushing touchdowns, a 17-yard run and a 19-yard run, and Tyler Hrowoski had an 18-yard rushing touchdown. Kevin Schnupp had seven tackles and one pass defended and Adam Wacholder had six tackles and two sacks. Gavin D'Andrea made all seven of his PAT attempts for Comsewogue (2-1). John Margolies threw two touchdowns and a successful two-point conversion for Hauppauge (3-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 25,
+            "yds": 206,
+            "tds": 4
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 8,
+            "yds": 79,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Peter Castaldo",
+            "att": 9,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "att": 4,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 13,
+            "yds": 11,
+            "tds": 1
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Gershon  Diaz",
+            "att": 7,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 7,
+            "comp": 5,
+            "yds": 72,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 13,
+            "comp": 6,
+            "yds": 88,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 4,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Cole  Wood",
+            "rec": 5,
+            "yds": 83,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Owen  Dixon",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Devin Order",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Strohm",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 18,
+    "gameId": "6469",
+    "box": {
+      "gameId": "6469",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "8",
+          "q2": "18",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "12",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 47, Rocky Point 18: Shane Grant carried 21 times for 215 yards and three touchdowns and Kaeden West rushed for 220 yards and three touchdowns on 15 carries to lead Comsewogue in Suffolk III. Doug Annacelli had seven tackles and an interception and Lucas Shannon had eight tackles, a sack and an interception for Comsewogue (3-1). Ryan Meyers rushed for a touchdown and caught a 48-yard touchdown pass from Jeremy Graham for Rocky Point (0-5). Graham also threw a 16-yard touchdown pass to Christian Vlacich.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 15,
+            "yds": 219,
+            "tds": 3
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 21,
+            "yds": 215,
+            "tds": 3
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 17,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 8,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 7,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 3,
+            "comp": 1,
+            "yds": 5,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 13,
+            "comp": 6,
+            "yds": 208,
+            "tds": 2,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "rec": 2,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominic Lamacchia",
+            "rec": 1,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "rec": 2,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlacich",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brennan Protosow",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "East Hampton / Bridgehampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 0,
+    "gameId": "6506",
+    "box": {
+      "gameId": "6506",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 14, East Hampton 0: Kaeden West rushed for a touchdown and threw another to Tyler Strohm to lead Comsewogue (4-1) in Suffolk III. Shane Grant rushed for 140 yards on 27 carries and Matt Nowlan had eight tackles and a sack. Comsewogue held East Hampton (2-4) to 59 total yards of offense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 27,
+            "yds": 140,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 15,
+            "yds": 69,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 12,
+            "comp": 5,
+            "yds": 50,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "John Then",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Strohm",
+            "rec": 1,
+            "yds": 6,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Matt Nowlan",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/13/2023",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 29,
+    "gameId": "6514",
+    "box": {
+      "gameId": "6514",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 29, Comsewogue 7: Harborfields 3-2 played a complete game against Comsewogue 4-1. Jack Weiss went 14-for-22 with 230 yards and a touchdown to lead host Harborfields (3-2) in Suffolk III. Michael Ferranti had six receptions for 120 yards, made four tackles and caught an interception. Nico Markowski had15 carries for 85 yards and a touchdown. Markowski also made 10 tackles. The Harborfields defense held Comsewogue to less then 100 yards rushing.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Shane Grant",
+            "att": 12,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 6,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "att": 15,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Andrew White",
+            "att": 8,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "att": 5,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 7,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "att": 2,
+            "yds": 24,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 9,
+            "comp": 4,
+            "yds": 46,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Weiss",
+            "att": 22,
+            "comp": 14,
+            "yds": 230,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Brayden Arias",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Doug Annacelli",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "rec": 6,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "rec": 6,
+            "yds": 120,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "rec": 3,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jack  Poller",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jake Coronato",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nicholas Markowski",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charles Searafin",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Appolon",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vincent Bolognino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/20/2023",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "6545",
+    "box": {
+      "gameId": "6545",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 42, Comsewogue 7: Jake Tripptree completed 9 of 13 passes for 211 yards and three touchdowns in the first half to lead visiting Sayville (7-0) in Suffolk III. Kyle Messina carried nine times for 47 yards and two touchdowns.  Donovan Bartolotta caught two passes for 68 yards and touchdown, Dylan Kent caught a 62-yard score and Mikey Sands added a 1-yard touchdown reception. Noah Jabour caught a 52-yard TD pass yards from Patrick Coan, who completed 6 of 8 passes for 115 yards and a touchdown in the second half. Kaeden West rushed for a 71-yard touchdown for Comsewogue (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "att": 9,
+            "yds": 47,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Leo Mongiello",
+            "att": 5,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 6,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael  McGuinnes",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 7,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Peter Castaldo",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "att": 10,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake Tripptree",
+            "att": 14,
+            "comp": 9,
+            "yds": 211,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 8,
+            "comp": 6,
+            "yds": 115,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 12,
+            "comp": 6,
+            "yds": 74,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Noah Jabour",
+            "rec": 4,
+            "yds": 83,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Donovan Bartolotta",
+            "rec": 2,
+            "yds": 68,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "dylan kent",
+            "rec": 2,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke Hansen",
+            "rec": 1,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Leo Mongiello",
+            "rec": 1,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle Messina",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "rec": 2,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brayden Arias",
+            "rec": 2,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Nick Saladino",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Nicky  Watson",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Stash Chorowski",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2023",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "6572",
+    "box": {
+      "gameId": "6572",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "14",
+          "q2": "21",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 42, Amityville 7: Tyler Hrostowski had 13 carries for 105 yards and four touchdowns to lead visiting Comsewogue (5-3) in Suffolk III. Adam Wachholder had a 28-yard touchdown catch, seven tackles and a sack. Kaeden West had a 20-yard touchdown run. Nick Saladino threw a touchdown pass and Peter Castaldo had eight tackles and two tackles for loss. DaJon Clinton had a 2-yard touchdown run for Amityville (0-8).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Tyler Hrowoski",
+            "att": 13,
+            "yds": 104,
+            "tds": 4
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 2,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Peter Castaldo",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Nick Saladino",
+            "att": 2,
+            "comp": 1,
+            "yds": 28,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gavin D'Andrea",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Adam Wacholder",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Dan Tomasso",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "6727",
+    "box": {
+      "gameId": "6727",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "21",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 42, Comsewogue 7: Nolan Michalowski had 11 carries for 70 yards and two touchdowns and caught four passes for 100 yards and two scores to lead host No. 3 Westhampton over No. 6 Comsewogue in the Suffolk III quarterfinals. Will Gambino completed 13 of 22 passes for 224 yards two TDs. Brody Schaffer rushed 11 times for 113 yards and a 71-yard touchdown and Heath Sumwalt caught six passes for 71 yards. Aidan McDermott hade five tackles, a sack and an interception and Sumwalt added four tackles and an interception. Nick Saladino rushed for a 7-yard touchdown for Comsewogue, which finished 5-4. Westhampton (6-3) will visit No. 2 East Islip in the semifinals on Friday.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Brody  Schaffer",
+            "att": 11,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "att": 12,
+            "yds": 62,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 23,
+            "comp": 14,
+            "yds": 225,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Nolan Michalowski",
+            "rec": 4,
+            "yds": 97,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Heath Sumwalt",
+            "rec": 6,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 2,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Mike  Lorusso",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,2319 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/13/2025",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 54,
+    "oppScore": 7,
+    "gameId": "7727",
+    "box": {
+      "gameId": "7727",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "30",
+          "q2": "17",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "54"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 54, Port Jefferson 7: Josh Franchak led visiting Bayport-Blue Point with 180 yards rushing and four TDs on six carries in Suffolk IV. Colin Clark went four for five in passing with 120 yards and two TDs. Colin Most had three receptions for 51 yards and a TD.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 6,
+            "yds": 180,
+            "tds": 4
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Rodney Magee",
+            "att": 4,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Owen Whiffen",
+            "att": 7,
+            "yds": 89,
+            "tds": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Keegan Henry",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Sean Tardiff",
+            "att": 4,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 4,
+            "comp": 5,
+            "yds": 120,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Chris Diot",
+            "att": 13,
+            "comp": 7,
+            "yds": 51,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Corey  Juedy",
+            "att": 4,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Patrick Ahern",
+            "rec": 1,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Keegan Henry",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kemp Jarrett",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Owen Whiffen",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luca Caltagirone",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 1,
+            "pat": 6,
+            "points": 9
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Tomas Qepuri",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Port Jefferson",
+            "player": "Samuel Fabian",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/20/2025",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 0,
+    "gameId": "8103",
+    "box": {
+      "gameId": "8103",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "14",
+          "q2": "14",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 48, Shoreham-Wading River 0: Josh Franchak and Colin Reyer ran for 190 and 152 yards, respectively, to lead the host Bayport-Blue Point (2-0) in Suffolk IV. Bayport-Blue Point rushed for 401 yards total. Tommy Steyert had three touchbacks on kickoffs.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 8,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "att": 10,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Lucas Diamond",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 17,
+            "yds": 190,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 17,
+            "yds": 152,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Noah Gregorek",
+            "att": 22,
+            "comp": 12,
+            "yds": 57,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Patrick Ahern",
+            "att": 4,
+            "comp": 2,
+            "yds": 25,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Gavin Cleary",
+            "rec": 3,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Anthony Mullen",
+            "rec": 4,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "George Greene",
+            "rec": 3,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Shane Hall",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Rodney Magee",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Hawkins Jameson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/26/2025",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 70,
+    "oppScore": 37,
+    "gameId": "7684",
+    "box": {
+      "gameId": "7684",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "12",
+          "q2": "6",
+          "q3": "13",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "21",
+          "q2": "14",
+          "q3": "14",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "70"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 70, Kings Park 37: Colin Clark took 15 carries for 300 yards and five touchdowns and completed 3 of 4 passes for 98 yards and a TD to lead host Bayport-Blue Point (3-0) in Suffolk IV. Tommy Steyert made a school-record 10 PATs, according to coach Mike Zafonte. Josh Franchak ran for 52 yards and a TD and caught a 47-yard TD pass. Colin Reyer ran for 103 yards and a touchdown and Aidan Richman had a 26-yard pick-6. Matt Bachmore added a 40-yard TD run.\n\nAidan Barbosa had 17 carries for 278 yards and two TDs, plus seven tackles on defense for Kings Park (1-2). Brandon Shapiro was 16 for 31 passing for 195 yards with four TDs and one interception. Matt Corrado had eight receptions for 128 yards and two touchdowns, as well as a forced fumble and recovery on defense. Zach Lampert led the defense with eight tackles and had six receptions for 51 yards and a score.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "att": 17,
+            "yds": 278,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon  Shapiro",
+            "att": 10,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Joey Verme",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Zach Lampert",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 15,
+            "yds": 300,
+            "tds": 5
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 11,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 5,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Matt Bachmore",
+            "att": 2,
+            "yds": 51,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Brandon  Shapiro",
+            "att": 31,
+            "comp": 16,
+            "yds": 195,
+            "tds": 4,
+            "int": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 4,
+            "comp": 3,
+            "yds": 98,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Matt Corrado",
+            "rec": 8,
+            "yds": 128,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Zach Lampert",
+            "rec": 6,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Clark",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aidan Barbosa",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "rec": 1,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Angelo Urso",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 10,
+            "points": 10
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Kevin Flynn",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Matt Corrado",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/03/2025",
+    "opponent": "Hampton Bays",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 0,
+    "gameId": "7981",
+    "box": {
+      "gameId": "7981",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "28",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 49, Hampton Bays 0: Colin Clark threw for 122 yards and two touchdowns and added 75 rushing yards and a touchdowns on 10 carries to lead Bayport-Blue Point (4-0) in Suffolk IV. Josh Franchak rushed for 55 yards and two touchdowns on three carries and caught a 30-yard TD pass. Brayden Waldbauer caught four passes for 55 yards and a touchdown and Colin Reyer returned an interception 60 yards for a TD. Hampton Bays is 0-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 10,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 3,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 4,
+            "yds": 45,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 9,
+            "comp": 7,
+            "yds": 122,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 4,
+            "yds": 68,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Space",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/11/2025",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 45,
+    "oppScore": 9,
+    "gameId": "8533",
+    "box": {
+      "gameId": "8533",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "10",
+          "q2": "14",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "45"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "6",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Colin Clark had 16 carries for 145 yards and five touchdowns and completed 6 of 8 passes for 167 yards to lead visiting Bayport-Blue Point to a 45-9 win over Center Moriches in Suffolk Division IV football Saturday night. Josh Franchak had five carries for 48 yards and a score and caught one pass for 55 yards. Colin Reyer added 71 yards on nine carries. Brayden Waldbauer caught four passes for 72 yards and Aiden Richman had two catches for 40 yards. Tommy Steyert made all six of his PATs and made a 25-yard field goal for Bayport-Blue Point (5-0).\nCaleb Delgado ran for a 70-yard touchdown and Nolan Tenety made a 25-yard field goal for Center Moriches (1-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 16,
+            "yds": 145,
+            "tds": 5
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 9,
+            "yds": 71,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 5,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Caleb Delgado",
+            "att": 5,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Dennis Hayes",
+            "att": 10,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Rich Roberts",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 8,
+            "comp": 6,
+            "yds": 165,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Rich Roberts",
+            "att": 16,
+            "comp": 10,
+            "yds": 16,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 4,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "rec": 1,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Caleb Delgado",
+            "rec": 7,
+            "yds": 66,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Christian Versacci",
+            "rec": 2,
+            "yds": 49,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Peter Nizza",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 1,
+            "pat": 7,
+            "points": 10
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nolan Tenety",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Joe  Martuscello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/17/2025",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 27,
+    "gameId": "7668",
+    "box": {
+      "gameId": "7668",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 27, Bayport-Blue Point 6\nAidan Winter ran for a school record 345 yards and four touchdowns on 26 carries to lead Babylon (6-0) in Suffolk IV. Winter broke his own school record for most rushing yards in a game. He had 323 yards in a game against Centr Moriches in 2023. The loss ended Bayport-Blue Point's 37-game winning streak against Suffolk opponents. BBP also had its 33-game regular season winning streak ended. The Phantoms are 5-1. Winter became Babylon's all-time scoring leader. He now has school records for touchdowns scored (65) and points scored (394). Winter passed Trevon Rodney (63 and 382) who played for Babylon from 1999-2002.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 26,
+            "yds": 345,
+            "tds": 4
+          },
+          {
+            "team": "Babylon",
+            "player": "Connor Cavaliere",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai  Jankow",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Jaden Milner",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 19,
+            "yds": 88,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 11,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 7,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Kai  Jankow",
+            "att": 6,
+            "comp": 4,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 9,
+            "comp": 2,
+            "yds": 40,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Jaden Milner",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 2,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "JJ Reid",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Zack Vasquez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Aiden Richman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/24/2025",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 16,
+    "gameId": "7686",
+    "box": {
+      "gameId": "7686",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "6",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 16, Bayport-Blue Point 13: Alexander Bottomley kicked the winning 22-yard field goal as time expired in visiting Mt. Sinai's Suffolk IV win. Max Sorrentino ran for the tying 1-yard TD with 1:50 left in the third quarter. Sorrentino completed 13 of 15 passes for 225 yards, including a 70-yard TD pass to Nicholas Vaccaro. Dontae Spadaro ran for 48 yards, caught three passes for 80 yards and blocked a PAT. Ethan Arita had two sacks for Mt. Sinai (5-2). \nColin Reyer had 34 carries for 209 yards and a touchdown for Bayport-Blue Point (5-2). Colin Clark completed three passes for 80 yards, including a 22-yard TD pass to Colin Most.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 10,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 2,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent Graziano",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 34,
+            "yds": 209,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 15,
+            "comp": 13,
+            "yds": 225,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 6,
+            "comp": 3,
+            "yds": 80,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "rec": 3,
+            "yds": 80,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Vaccaro",
+            "rec": 2,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Daniel Paolella",
+            "rec": 5,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Alex Campanelli",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jackson Rannazzisi",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ethan  Arita",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "rec": 1,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "rec": 2,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Space",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "alex Bottomley",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Ethan  Arita",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Thomas Massaro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/31/2025",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 7,
+    "gameId": "7808",
+    "box": {
+      "gameId": "7808",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 27, Glenn 7: Colin Clark ran 22 times for 156 yards and a touchdown to lead Bayport-Blue Point (6-2) in Suffolk IV. Colin Most recovered two fumbles and Patrick Ahern had three tackles-for-loss. With the win, BBP now has control of its own playoff destiny heading into the final week of the Suffolk IV regular season. Mile Kilgannon had a strip-sack and Joe LaMay recovered the fumble for Glenn (5-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Keith King",
+            "att": 9,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "att": 15,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 22,
+            "yds": 156,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 12,
+            "yds": 114,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Nicholas Vatalaro",
+            "att": 2,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 7,
+            "yds": 45,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Joe Competiello",
+            "att": 18,
+            "comp": 9,
+            "yds": 111,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 5,
+            "comp": 3,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Michael Kilgannon",
+            "rec": 4,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "CJ Mascia",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "GJ Cook",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jayce Boyle-Summers",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Patrick Ahern",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 2,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Michael Kilgannon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Hawkins Jameson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/07/2025",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 28,
+    "gameId": "8535",
+    "box": {
+      "gameId": "8535",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "28",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "6",
+          "q2": "0",
+          "q3": "8",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 56, Miller Place 28: Colin Clark had four rushing touchdowns to lead Bayport-Blue Point (7-2) in Suffolk IV. Bayport-Blue Point ran for a total of 459 rushing yards. Shane Kiernan passed for 300 yards and four touchdowns for Miller Place.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 20,
+            "yds": 167,
+            "tds": 4
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 13,
+            "yds": 138,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 6,
+            "yds": 127,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Nicholas Vatalaro",
+            "att": 2,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Camryn Hardy",
+            "att": 9,
+            "yds": 73,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 4,
+            "comp": 3,
+            "yds": 46,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 34,
+            "comp": 22,
+            "yds": 300,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "AJ Rudolph",
+            "rec": 5,
+            "yds": 107,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Brendan Cannon",
+            "rec": 5,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Camryn Hardy",
+            "rec": 3,
+            "yds": 49,
+            "tds": 2,
+            "pat": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Cameron Meadows",
+            "rec": 4,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jack Abbott",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Drew Meyer",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 0,
+            "pat": 8,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/14/2025",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 7,
+    "gameId": "8713",
+    "box": {
+      "gameId": "8713",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "3",
+          "q2": "3",
+          "q3": "3",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 23, Mt. Sinai 7: Collin Reyer had 22 carries for 100 yards and two touchdowns to lead visiting No. 3 Bayport-Blue Point over No. 2 Mt. Sinai in the Suffolk Division IV semifinals. Tommy Steyert made three field goals and two PATs and kicked four touchbacks. Colin Clark had 27 carries for 159 yards and added 48 passing yards. Brayden Waldbauer caught three passes for 28 yards. Bayport-Blue Point (8-2) will face No. 1 Babylon in the final at 4 p.m. on Friday at Stony Brook University.\nDontae Spadaro ran for a 5-yard TD on the game's opening drive for Mt. Sinai, which finished 7-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 27,
+            "yds": 159,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 22,
+            "yds": 100,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dontae Spadaro",
+            "att": 8,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 4,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Vaccaro",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 7,
+            "comp": 5,
+            "yds": 48,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Max Sorrentino",
+            "att": 14,
+            "comp": 8,
+            "yds": 98,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Daniel Paolella",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Vaccaro",
+            "rec": 2,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Ethan  Arita",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Hunter Pancir",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Vincent Graziano",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 3,
+            "pat": 2,
+            "points": 11
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "alex Bottomley",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Brandon Steele",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/21/2025",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 14,
+    "gameId": "8745",
+    "box": {
+      "gameId": "8745",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "9",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Babylon",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 23, Babylon 14: The Phantoms (9-2) win their fourth straight Suffolk County IV Championship.\nBabylon finished the season at 10-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 25,
+            "yds": 125,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 20,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 17,
+            "yds": 111,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai  Jankow",
+            "att": 15,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Jaden Milner",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 3,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai  Jankow",
+            "att": 4,
+            "comp": 2,
+            "yds": 84,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "att": 2,
+            "comp": 2,
+            "yds": 16,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Aidan Winter",
+            "rec": 1,
+            "yds": 74,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Jaden Milner",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Kai  Jankow",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Ryan Space",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/29/2025",
+    "opponent": "Seaford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 19,
+    "gameId": "8756",
+    "box": {
+      "gameId": "8756",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Seaford",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Seaford",
+            "player": "Brian Falk",
+            "att": 21,
+            "yds": 190,
+            "tds": 1
+          },
+          {
+            "team": "Seaford",
+            "player": "Michael Calvacca",
+            "att": 1,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 25,
+            "yds": 95,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "att": 6,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Reyer",
+            "att": 19,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Nicholas Vatalaro",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Seaford",
+            "player": "Michael Spinella",
+            "att": 10,
+            "comp": 6,
+            "yds": 85,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Clark",
+            "att": 19,
+            "comp": 10,
+            "yds": 118,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Seaford",
+            "player": "Brian Falk",
+            "rec": 3,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Seaford",
+            "player": "Brian Hennessy",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Seaford",
+            "player": "Mark Villeck",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Seaford",
+            "player": "Peter Barone",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Colin Most",
+            "rec": 6,
+            "yds": 85,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Josh Franchak",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Patrick Ahern",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brayden Waldbauer",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Seaford",
+            "player": "Joseph Lynch",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Tommy Steyert",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

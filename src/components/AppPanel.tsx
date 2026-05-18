@@ -18,7 +18,7 @@ export function AppPanel({
   open: boolean
   mobileOpen?: boolean
   onClose: () => void
-  title: string
+  title: React.ReactNode
   footer?: React.ReactNode
   children: React.ReactNode
   defaultExpanded?: boolean

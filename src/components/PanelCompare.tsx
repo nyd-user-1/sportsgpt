@@ -25,6 +25,7 @@ export type CompareRusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   position?: string | null; season: number
   rush_attempts: number | null; rush_yards: number | null; rush_tds: number | null
+  games_played: number | null; yards_per_game: number | null
 }
 export type CompareReceiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
@@ -58,87 +59,76 @@ function winFor(mine: number | null, theirs: number | null, higherBetter = true)
   return (higherBetter ? m > t : m < t) ? 'win' : 'lose'
 }
 
-// ── PlayerCard ────────────────────────────────────────────────────────────────
+// ── PlayerInfoBar (fixed) + PlayerPhoto (scrolls) ────────────────────────────
 
-function PlayerCard({
-  player, slot, onClear,
-}: {
-  player: AnyPlayer | null
-  slot: '1' | '2'
-  onClear: () => void
-}) {
+function PlayerInfoBar({ player, slot, onClear }: { player: AnyPlayer | null; slot: '1' | '2'; onClear: () => void }) {
+  const logo = player ? SCHOOL_LOGOS[player.school_slug] : undefined
+  const nameWithPosition = player
+    ? (player.position ? `${player.player_name}, ${player.position}` : player.player_name)
+    : null
+
+  return (
+    <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2.5 px-3 py-2.5 bg-[var(--surface)]">
+      {player && logo ? (
+        <Link href={`/team/${player.school_slug}-varsity-football`} className="shrink-0">
+          <Image src={logo} alt={player.school_name} width={38} height={38}
+            className="rounded-full object-contain bg-white border border-[var(--border)] hover:opacity-80 transition-opacity" unoptimized />
+        </Link>
+      ) : (
+        <div className="shrink-0 w-[38px] h-[38px] rounded-full bg-[var(--inp-bg)] flex items-center justify-center">
+          <span className="text-xs font-bold text-[var(--muted)]">{slot}</span>
+        </div>
+      )}
+      <div className="flex-1 min-w-0">
+        {player ? (
+          <>
+            <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{nameWithPosition}</p>
+            <p className="text-xs text-[var(--muted)] mt-0.5">{player.school_name} · {formatSeason(player.season)}</p>
+          </>
+        ) : (
+          <span className="text-xs text-[var(--muted)]">Select from table</span>
+        )}
+      </div>
+      {player && (
+        <button onClick={onClear}
+          className="shrink-0 p-0.5 self-start rounded text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+          aria-label={`Remove player ${slot}`}>
+          <X className="h-3.5 w-3.5" />
+        </button>
+      )}
+    </div>
+  )
+}
+
+function PlayerPhoto({ player, slot }: { player: AnyPlayer | null; slot: '1' | '2' }) {
   const photo     = player ? PLAYER_PHOTOS[player.player_slug] : undefined
   const teamPhoto = player ? TEAM_PHOTOS[player.school_slug]?.[0] : undefined
   const logo      = player ? SCHOOL_LOGOS[player.school_slug] : undefined
   const heroSrc   = photo || teamPhoto
+  const label     = `Player ${slot}`
 
-  const label = `Player ${slot}`
-
-  if (!player) {
-    return (
-      <div className="shrink-0 border-b border-[var(--border)]">
-        <div className="hidden sm:flex relative mx-3 mt-3 h-[225px] rounded-xl bg-[var(--inp-bg)] items-center justify-center">
-          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold text-white" style={{ background: ACCENT_COLOR }}>
-            {label}
-          </span>
-          <span className="text-5xl font-black text-[var(--border)]">{slot}</span>
-        </div>
-        <div className="px-3 py-3 flex items-center gap-2">
-          <span className="sm:hidden px-2 py-0.5 rounded-full text-[11px] font-bold text-white" style={{ background: ACCENT_COLOR }}>{label}</span>
-          <span className="text-xs text-[var(--muted)]">Select from table</span>
-        </div>
-      </div>
-    )
-  }
-
-  const nameWithPosition = player.position
-    ? `${player.player_name}, ${player.position}`
-    : player.player_name
-
+  // Hidden on mobile — the bottom-sheet doesn't have room for a hero photo,
+  // and the PlayerInfoBar below already shows the school logo + name.
   return (
-    <div className="shrink-0 border-b border-[var(--border)]">
-      {/* Hero photo with Player N pill overlay — desktop only on mobile we lead with the name+logo row */}
-      <div className="hidden sm:block relative mx-3 mt-3 h-[225px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
-        {heroSrc ? (
-          <Image src={heroSrc} alt={player.player_name} fill className="object-cover" unoptimized />
+    <div className="hidden sm:block relative mx-3 mt-3 mb-1 h-[225px] sm:h-[280px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
+      {player ? (
+        heroSrc ? (
+          <Image src={heroSrc} alt={player.player_name} fill className="object-cover object-top" unoptimized />
         ) : (
-          <div
-            className="h-full flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}
-          >
+          <div className="h-full flex items-center justify-center"
+            style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
             {logo && <Image src={logo} alt="" width={64} height={64} className="object-contain opacity-50" unoptimized />}
           </div>
-        )}
-        {/* Player N badge — top-left overlay */}
-        <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-[11px] font-bold text-white shadow-sm"
-          style={{ background: ACCENT_COLOR }}>
-          {label}
-        </span>
-      </div>
-
-      {/* Logo + (name + school/season stacked) + × */}
-      <div className="flex items-center gap-2.5 px-3 pt-2.5 pb-3">
-        {logo && (
-          <Link href={`/team/${player.school_slug}-varsity-football`} className="shrink-0">
-            <Image src={logo} alt={player.school_name} width={38} height={38}
-              className="rounded-full object-contain bg-white border border-[var(--border)] hover:opacity-80 transition-opacity" unoptimized />
-          </Link>
-        )}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5 min-w-0">
-            <span className="sm:hidden shrink-0 px-1.5 py-0.5 rounded-full text-[9px] font-bold text-white leading-none" style={{ background: ACCENT_COLOR }}>{slot}</span>
-            <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{nameWithPosition}</p>
-          </div>
-          <p className="text-xs text-[var(--muted)] mt-0.5">{player.school_name} · {formatSeason(player.season)}</p>
+        )
+      ) : (
+        <div className="h-full flex items-center justify-center">
+          <span className="text-5xl font-black text-[var(--border)]">{slot}</span>
         </div>
-        <button
-          onClick={onClear}
-          className="shrink-0 p-0.5 self-start rounded text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-          aria-label={`Remove player ${slot}`}
-        >
-          <X className="h-3.5 w-3.5" />
-        </button>
-      </div>
+      )}
+      <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-[11px] font-bold text-white shadow-sm"
+        style={{ background: slot === '1' ? ACCENT_COLOR : P2_BADGE_COLOR }}>
+        {label}
+      </span>
     </div>
   )
 }
@@ -231,8 +221,16 @@ function RushingStatBlock({ player, opponent }: { player: AnyPlayer | null; oppo
   if (!player) return <EmptyBlock />
   const p = player as CompareRusher
   const o = opponent as CompareRusher | null
-  const pYpc = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
-  const oYpc = o?.rush_attempts ? ((o.rush_yards ?? 0) / o.rush_attempts) : null
+  const pYpc    = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
+  const oYpc    = o?.rush_attempts ? ((o.rush_yards ?? 0) / o.rush_attempts) : null
+  const pTdPct  = p.rush_attempts ? ((p.rush_tds ?? 0) / p.rush_attempts) * 100 : null
+  const oTdPct  = o?.rush_attempts ? (((o.rush_tds ?? 0) / o.rush_attempts) * 100) : null
+  const pYpg    = p.yards_per_game != null ? Number(p.yards_per_game) : null
+  const oYpg    = o?.yards_per_game != null ? Number(o.yards_per_game) : null
+  const pTdsG   = p.games_played ? (p.rush_tds ?? 0) / p.games_played : null
+  const oTdsG   = o?.games_played ? ((o.rush_tds ?? 0) / o.games_played) : null
+  const pRExp   = (pYpc != null && p.rush_attempts) ? (pYpc * ((p.rush_tds ?? 0) / p.rush_attempts)) * 100 : null
+  const oRExp   = (oYpc != null && o?.rush_attempts) ? (oYpc * ((o.rush_tds ?? 0) / o.rush_attempts)) * 100 : null
   return (
     <div className="pt-2">
       <AccordionStatTable title="Rushing">
@@ -240,6 +238,14 @@ function RushingStatBlock({ player, opponent }: { player: AnyPlayer | null; oppo
         <StatRow label="ATT" value={fmt(p.rush_attempts)} win={winFor(p.rush_attempts, o?.rush_attempts ?? null)} />
         <StatRow label="YPC" value={pYpc != null ? pYpc.toFixed(1) : '—'} win={winFor(pYpc, oYpc)} />
         <StatRow label="TDs" value={fmt(p.rush_tds)}      win={winFor(p.rush_tds, o?.rush_tds ?? null)} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Per Game">
+        <StatRow label="YPG"   value={pYpg != null ? pYpg.toFixed(1) : '—'}     win={winFor(pYpg, oYpg)} />
+        <StatRow label="TDs/G" value={pTdsG != null ? pTdsG.toFixed(1) : '—'}   win={winFor(pTdsG, oTdsG)} />
+      </AccordionStatTable>
+      <AccordionStatTable title="Efficiency">
+        <StatRow label="TD%"   value={pTdPct != null ? pTdPct.toFixed(1) + '%' : '—'} win={winFor(pTdPct, oTdPct)} />
+        <StatRow label="R-EXP" value={pRExp != null ? pRExp.toFixed(1) : '—'}           win={winFor(pRExp, oRExp)} />
       </AccordionStatTable>
     </div>
   )
@@ -268,62 +274,114 @@ function ReceivingStatBlock({ player, opponent }: { player: AnyPlayer | null; op
 const P1_COLOR = WIN_TEXT     // green for player 1 leads
 const P2_COLOR = '#f97316'    // orange for player 2 leads
 
-function DiffCell({ label, delta, format }: { label: string; delta: number | null; format: (n: number) => string }) {
-  if (delta == null) return (
-    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 px-1">
+const P2_BADGE_COLOR = '#dc2626'  // red for player 2 badge
+
+function DiffCell({ label, delta }: { label: string; delta: number | null }) {
+  const p1Wins = delta != null && delta > 0
+  const p2Wins = delta != null && delta < 0
+
+  return (
+    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-1.5 py-3 px-1">
       <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold truncate">{label}</span>
-      <span className="text-xs sm:text-sm tabular-nums text-[var(--muted)]">—</span>
+      {p1Wins ? (
+        <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-white whitespace-nowrap border-2"
+          style={{ color: ACCENT_COLOR, borderColor: ACCENT_COLOR }}>
+          <span className="sm:hidden">P1</span><span className="hidden sm:inline">Player 1</span>
+        </span>
+      ) : p2Wins ? (
+        <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-white whitespace-nowrap border-2"
+          style={{ color: P2_BADGE_COLOR, borderColor: P2_BADGE_COLOR }}>
+          <span className="sm:hidden">P2</span><span className="hidden sm:inline">Player 2</span>
+        </span>
+      ) : (
+        <span className="text-xs text-[var(--muted)]">—</span>
+      )}
     </div>
   )
-  const color = delta > 0 ? P1_COLOR : delta < 0 ? P2_COLOR : undefined
+}
+
+type DiffItem = { label: string; delta: number | null; format: (n: number) => string }
+
+function buildDiffs(playerA: AnyPlayer, playerB: AnyPlayer, statTab: StatTab): DiffItem[] {
+  const fmtInt = (n: number) => (n > 0 ? '+' : '') + Math.round(n)
+  const fmtDp1 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1)
+  const fmtDp2 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(2)
+  const fmtPp  = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1) + 'pp'
+  const d = <T extends number | null>(a: T, b: T) => (a != null && b != null ? (a as number) - (b as number) : null)
+
+  if (statTab === 'Passing') {
+    const a = playerA as ComparePasser, b = playerB as ComparePasser
+    return [
+      { label: 'YDS',    delta: d(a.pass_yards,   b.pass_yards),   format: fmtInt },
+      { label: 'ATT',    delta: d(a.attempts,      b.attempts),     format: fmtInt },
+      { label: 'COMP',   delta: d(a.completions,   b.completions),  format: fmtInt },
+      { label: 'PCT',    delta: d(a.comp_pct,      b.comp_pct),     format: fmtPp  },
+      { label: 'TD',     delta: d(a.pass_tds,      b.pass_tds),     format: fmtInt },
+      { label: 'TD:INT', delta: d(a.td_int_ratio,  b.td_int_ratio), format: fmtDp1 },
+    ]
+  }
+  if (statTab === 'Rushing') {
+    const a = playerA as CompareRusher, b = playerB as CompareRusher
+    const aYpc   = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : null
+    const bYpc   = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : null
+    const aTdPct = a.rush_attempts ? ((a.rush_tds ?? 0) / a.rush_attempts) * 100 : null
+    const bTdPct = b.rush_attempts ? ((b.rush_tds ?? 0) / b.rush_attempts) * 100 : null
+    const aYpg   = a.yards_per_game != null ? Number(a.yards_per_game) : null
+    const bYpg   = b.yards_per_game != null ? Number(b.yards_per_game) : null
+    const aRExp  = (aYpc != null && a.rush_attempts) ? (aYpc * ((a.rush_tds ?? 0) / a.rush_attempts)) * 100 : null
+    const bRExp  = (bYpc != null && b.rush_attempts) ? (bYpc * ((b.rush_tds ?? 0) / b.rush_attempts)) * 100 : null
+    return [
+      { label: 'YDS',   delta: d(a.rush_yards,    b.rush_yards),    format: fmtInt },
+      { label: 'ATT',   delta: d(a.rush_attempts,  b.rush_attempts), format: fmtInt },
+      { label: 'YPC',   delta: aYpc != null && bYpc != null ? aYpc - bYpc : null,         format: fmtDp1 },
+      { label: 'TDs',   delta: d(a.rush_tds,       b.rush_tds),      format: fmtInt },
+      { label: 'YPG',   delta: aYpg != null && bYpg != null ? aYpg - bYpg : null,         format: fmtDp1 },
+      { label: 'R-EXP', delta: aRExp != null && bRExp != null ? aRExp - bRExp : null,     format: fmtDp1 },
+    ]
+  }
+  const a = playerA as CompareReceiver, b = playerB as CompareReceiver
+  const aYpr = a.receptions ? (a.recv_yards ?? 0) / a.receptions : null
+  const bYpr = b.receptions ? (b.recv_yards ?? 0) / b.receptions : null
+  return [
+    { label: 'YDS', delta: d(a.recv_yards,  b.recv_yards),  format: fmtInt },
+    { label: 'REC', delta: d(a.receptions,  b.receptions),  format: fmtInt },
+    { label: 'YPR', delta: aYpr != null && bYpr != null ? aYpr - bYpr : null, format: fmtDp1 },
+    { label: 'TDs', delta: d(a.recv_tds,    b.recv_tds),    format: fmtInt },
+  ]
+}
+
+function WinnerCell({ p1Wins, p2Wins }: { p1Wins: number; p2Wins: number }) {
+  const tie = p1Wins === p2Wins
+
   return (
-    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-0.5 py-3 px-1">
-      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold truncate">{label}</span>
-      <span className="text-xs sm:text-sm tabular-nums font-semibold" style={color ? { color } : { color: 'var(--muted)' }}>
-        {delta === 0 ? '—' : format(delta)}
-      </span>
+    <div className="flex-1 min-w-0 flex flex-col items-center justify-center gap-1.5 py-3 px-1">
+      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold">Winner</span>
+      {tie ? (
+        <span className="text-xs text-[var(--muted)]">—</span>
+      ) : p1Wins > p2Wins ? (
+        <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold text-white whitespace-nowrap"
+          style={{ background: ACCENT_COLOR }}>
+          <span className="sm:hidden">P1</span><span className="hidden sm:inline">Player 1</span>
+        </span>
+      ) : (
+        <span className="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold text-white whitespace-nowrap"
+          style={{ background: P2_BADGE_COLOR }}>
+          <span className="sm:hidden">P2</span><span className="hidden sm:inline">Player 2</span>
+        </span>
+      )}
     </div>
   )
 }
 
 function DiffStrip({ playerA, playerB, statTab }: { playerA: AnyPlayer; playerB: AnyPlayer; statTab: StatTab }) {
-  const fmtInt = (n: number) => (n > 0 ? '+' : '') + Math.round(n)
-  const fmtDp1 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1)
-  const fmtDp2 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(2)
-  const fmtPp  = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1) + 'pp'
+  const diffs  = buildDiffs(playerA, playerB, statTab)
+  const p1Wins = diffs.filter(d => d.delta != null && d.delta > 0).length
+  const p2Wins = diffs.filter(d => d.delta != null && d.delta < 0).length
 
-  if (statTab === 'Passing') {
-    const a = playerA as ComparePasser, b = playerB as ComparePasser
-    return (
-      <div className="flex items-stretch border-t border-[var(--border)] divide-x divide-[var(--border)]">
-        <DiffCell label="ΔYDS"   delta={a.pass_yards != null && b.pass_yards != null ? a.pass_yards - b.pass_yards : null} format={fmtInt} />
-        <DiffCell label="ΔTD"    delta={a.pass_tds   != null && b.pass_tds   != null ? a.pass_tds   - b.pass_tds   : null} format={fmtInt} />
-        <DiffCell label="ΔCOMP%" delta={a.comp_pct   != null && b.comp_pct   != null ? a.comp_pct   - b.comp_pct   : null} format={fmtPp}  />
-        <DiffCell label="ΔYPA"   delta={a.ypa        != null && b.ypa        != null ? a.ypa        - b.ypa        : null} format={fmtDp1} />
-        <DiffCell label="ΔCMD"   delta={a.cmd_score  != null && b.cmd_score  != null ? a.cmd_score  - b.cmd_score  : null} format={fmtDp2} />
-      </div>
-    )
-  }
-  if (statTab === 'Rushing') {
-    const a = playerA as CompareRusher, b = playerB as CompareRusher
-    const aYpc = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : null
-    const bYpc = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : null
-    return (
-      <div className="flex items-stretch border-t border-[var(--border)] divide-x divide-[var(--border)]">
-        <DiffCell label="ΔYDS" delta={a.rush_yards != null && b.rush_yards != null ? a.rush_yards - b.rush_yards : null} format={fmtInt} />
-        <DiffCell label="ΔTD"  delta={a.rush_tds  != null && b.rush_tds  != null ? a.rush_tds  - b.rush_tds  : null} format={fmtInt} />
-        <DiffCell label="ΔYPC" delta={aYpc != null && bYpc != null ? aYpc - bYpc : null} format={fmtDp1} />
-      </div>
-    )
-  }
-  const a = playerA as CompareReceiver, b = playerB as CompareReceiver
-  const aYpr = a.receptions ? (a.recv_yards ?? 0) / a.receptions : null
-  const bYpr = b.receptions ? (b.recv_yards ?? 0) / b.receptions : null
   return (
-    <div className="flex items-stretch border-t border-[var(--border)] divide-x divide-[var(--border)]">
-      <DiffCell label="ΔYDS" delta={a.recv_yards != null && b.recv_yards != null ? a.recv_yards - b.recv_yards : null} format={fmtInt} />
-      <DiffCell label="ΔTD"  delta={a.recv_tds  != null && b.recv_tds  != null ? a.recv_tds  - b.recv_tds  : null} format={fmtInt} />
-      <DiffCell label="ΔYPR" delta={aYpr != null && bYpr != null ? aYpr - bYpr : null} format={fmtDp1} />
+    <div className="flex items-stretch divide-x divide-[var(--border)]">
+      {diffs.map(item => <DiffCell key={item.label} label={item.label} delta={item.delta} />)}
+      <WinnerCell p1Wins={p1Wins} p2Wins={p2Wins} />
     </div>
   )
 }
@@ -331,7 +389,7 @@ function DiffStrip({ playerA, playerB, statTab }: { playerA: AnyPlayer; playerB:
 // ── Panel title ───────────────────────────────────────────────────────────────
 
 function panelTitle(a: AnyPlayer | null, b: AnyPlayer | null): string {
-  if (a && b) return `${a.player_name.split(' ').pop()} vs ${b.player_name.split(' ').pop()}`
+  if (a && b) return `${a.player_name.split(' ').pop()} vs. ${b.player_name.split(' ').pop()}`
   if (a) return a.player_name
   if (b) return b.player_name
   return 'Compare Players'
@@ -386,8 +444,9 @@ export function PanelCompare({
       <div className="h-full flex">
         {/* Column 1 */}
         <div className="flex flex-col flex-1 min-w-0 border-r border-[var(--border)]">
-          <PlayerCard player={playerA} slot="1" onClear={clearA} />
           <div className="flex-1 overflow-y-auto no-scrollbar">
+            <PlayerPhoto player={playerA} slot="1" />
+            <PlayerInfoBar player={playerA} slot="1" onClear={clearA} />
             {statTab === 'Passing'   && <PassingStatBlock   player={playerA} opponent={playerB} />}
             {statTab === 'Rushing'   && <RushingStatBlock   player={playerA} opponent={playerB} />}
             {statTab === 'Receiving' && <ReceivingStatBlock player={playerA} opponent={playerB} />}
@@ -395,8 +454,9 @@ export function PanelCompare({
         </div>
         {/* Column 2 */}
         <div className="flex flex-col flex-1 min-w-0">
-          <PlayerCard player={playerB} slot="2" onClear={clearB} />
           <div className="flex-1 overflow-y-auto no-scrollbar">
+            <PlayerPhoto player={playerB} slot="2" />
+            <PlayerInfoBar player={playerB} slot="2" onClear={clearB} />
             {statTab === 'Passing'   && <PassingStatBlock   player={playerB} opponent={playerA} />}
             {statTab === 'Rushing'   && <RushingStatBlock   player={playerB} opponent={playerA} />}
             {statTab === 'Receiving' && <ReceivingStatBlock player={playerB} opponent={playerA} />}

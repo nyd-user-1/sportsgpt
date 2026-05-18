@@ -1,11 +1,13 @@
 'use client'
 
 import React, { useState, useRef, useEffect, useMemo } from 'react'
+import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Plus, Check, ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
 import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
+import { PanelPlayer, type AnyPlayerRow } from '@/components/PanelPlayer'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { AppLayout } from '@/components/AppLayout'
 import { cn, formatSeason } from '@/lib/utils'
@@ -92,7 +94,7 @@ function SeasonFilterMenu({ selected, onChange }: { selected: number | null; onC
 
 type SortDir = 'asc' | 'desc'
 type PassCol = 'player_name' | 'school_name' | 'season' | 'pass_yards' | 'attempts' | 'completions' | 'comp_pct' | 'pass_tds' | 'interceptions' | 'ypa' | 'ypc' | 'td_rate' | 'int_rate' | 'td_int_ratio' | 'yva' | 'cmd_score' | 'gbi_score' | 'ies_score'
-type RushCol = 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds'
+type RushCol = 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds' | 'ypg' | 'td_pct' | 'tds_per_g' | 'r_exp'
 type RecvCol = 'player_name' | 'school_name' | 'season' | 'recv_yards' | 'receptions' | 'ypr' | 'recv_tds'
 
 type Passer = {
@@ -107,7 +109,8 @@ type Passer = {
 type Rusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   rush_attempts: number | null; rush_yards: number | null
-  rush_tds: number | null; season: number
+  rush_tds: number | null; games_played: number | null; yards_per_game: number | null
+  season: number
 }
 type Receiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
@@ -121,20 +124,40 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
   right?: boolean; className?: string; style?: React.CSSProperties; glossaryId?: string
 }) {
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
+  const [show, setShow] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [triggerRect, setTriggerRect] = useState<DOMRect | null>(null)
+
+  function enter() {
+    if (leaveTimer.current) clearTimeout(leaveTimer.current)
+    if (triggerRef.current) setTriggerRect(triggerRef.current.getBoundingClientRect())
+    setShow(true)
+  }
+
+  function leave() {
+    leaveTimer.current = setTimeout(() => setShow(false), 80)
+  }
+
+  useEffect(() => () => { if (leaveTimer.current) clearTimeout(leaveTimer.current) }, [])
+
   return (
     <th
       style={style}
       className={cn(
-        'px-3 py-3 bg-gray-100 border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none',
+        'px-3 py-3 bg-[var(--inp-bg)] border-b border-[var(--border)] whitespace-nowrap cursor-pointer select-none',
         right ? 'text-right' : 'text-left',
         className
       )}
     >
-      <div className={cn('relative inline-block group/th', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
+      <div className={cn('relative inline-block', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
         <button
+          ref={triggerRef}
           onClick={onClick}
+          onMouseEnter={term ? enter : undefined}
+          onMouseLeave={term ? leave : undefined}
           className={cn(
-            'inline-flex items-center gap-1 rounded-md px-1 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5',
+            'inline-flex items-center gap-1 rounded-md px-1 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-[var(--inp-bg)]',
             active ? 'text-[var(--txt)]' : 'text-[var(--muted)]'
           )}>
           {label}
@@ -142,22 +165,31 @@ function Th({ label, active, dir, onClick, right, className, style, glossaryId }
             ? (dir === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />)
             : <ChevronUp className="h-3 w-3 opacity-0" />}
         </button>
-        {term && (
-          <div className={cn(
-            'pointer-events-none group-hover/th:pointer-events-auto absolute bottom-full z-50 mb-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
-            right ? 'right-0' : 'left-0'
-          )}>
+        {term && show && triggerRect && createPortal(
+          <div
+            onMouseEnter={() => { if (leaveTimer.current) clearTimeout(leaveTimer.current) }}
+            onMouseLeave={leave}
+            style={{
+              position: 'fixed',
+              top: triggerRect.top - 8,
+              left: right ? triggerRect.right - 256 : triggerRect.left,
+              transform: 'translateY(-100%)',
+              zIndex: 9999,
+            }}
+            className="w-64 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden"
+          >
             <div className="px-3.5 py-3">
               <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--txt)] mb-1.5">{term.name}</p>
               <p className="text-[12px] text-[var(--muted)] leading-relaxed font-normal">{term.definition}</p>
             </div>
             <Link href={`/glossary#${glossaryId}`} onClick={e => e.stopPropagation()}
-              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--border)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--inp-bg)] transition-colors"
+              className="flex items-center justify-between gap-2 border-t border-[var(--border)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--inp-bg)] transition-colors"
               style={{ color: ACCENT_COLOR }}>
               <span className="inline-flex items-center gap-1.5"><Info className="h-3 w-3" />Learn more</span>
               <ArrowUpRight className="h-3 w-3" />
             </Link>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
     </th>
@@ -181,6 +213,15 @@ export default function LeaderboardTable({
   )
   const [season, setSeason]   = useState<number | null>(null)
   const [versusMode, setVersusMode] = useState(false)
+  const [selectedPlayer, setSelectedPlayer] = useState<AnyPlayerRow | null>(null)
+
+  function handleRowClick(p: Passer | Rusher | Receiver) {
+    if (versusMode) return
+    const key = `${p.player_slug}__${p.season}`
+    const curKey = selectedPlayer ? `${selectedPlayer.player_slug}__${selectedPlayer.season}` : null
+    setSelectedPlayer(curKey === key ? null : p as AnyPlayerRow)
+  }
+
 
   function toggleVersus() {
     if (versusMode) {
@@ -188,12 +229,15 @@ export default function LeaderboardTable({
       params.delete('a')
       params.delete('b')
       router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
+    } else {
+      setSelectedPlayer(null)
     }
     setVersusMode(v => !v)
   }
 
   function handleTabChange(tab: StatTab) {
     setStatTab(tab)
+    setSelectedPlayer(null)
     const params = new URLSearchParams(searchParams.toString())
     params.set('tab', tab)
     params.delete('a')
@@ -263,6 +307,18 @@ export default function LeaderboardTable({
     if (rushCol === 'ypc') {
       av = a.rush_attempts ? (a.rush_yards ?? 0) / a.rush_attempts : 0
       bv = b.rush_attempts ? (b.rush_yards ?? 0) / b.rush_attempts : 0
+    } else if (rushCol === 'ypg') {
+      av = a.yards_per_game != null ? Number(a.yards_per_game) : 0
+      bv = b.yards_per_game != null ? Number(b.yards_per_game) : 0
+    } else if (rushCol === 'td_pct') {
+      av = a.rush_attempts ? (a.rush_tds ?? 0) / a.rush_attempts * 100 : 0
+      bv = b.rush_attempts ? (b.rush_tds ?? 0) / b.rush_attempts * 100 : 0
+    } else if (rushCol === 'tds_per_g') {
+      av = a.games_played ? (a.rush_tds ?? 0) / a.games_played : 0
+      bv = b.games_played ? (b.rush_tds ?? 0) / b.games_played : 0
+    } else if (rushCol === 'r_exp') {
+      av = a.rush_attempts ? ((a.rush_yards ?? 0) / a.rush_attempts) * ((a.rush_tds ?? 0) / a.rush_attempts) * 100 : 0
+      bv = b.rush_attempts ? ((b.rush_yards ?? 0) / b.rush_attempts) * ((b.rush_tds ?? 0) / b.rush_attempts) * 100 : 0
     } else {
       av = (a[rushCol as keyof Rusher] ?? '') as number | string
       bv = (b[rushCol as keyof Rusher] ?? '') as number | string
@@ -284,11 +340,28 @@ export default function LeaderboardTable({
     return recvDir === 'asc' ? (av as number) - (bv as number) : (bv as number) - (av as number)
   }), [filteredReceivers, recvCol, recvDir])
 
+  useEffect(() => {
+    if (versusMode) return
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return
+      if (!selectedPlayer) return
+      e.preventDefault()
+      const list = statTab === 'Passing' ? sortedPassers : statTab === 'Rushing' ? sortedRushers : sortedReceivers
+      const curKey = `${selectedPlayer.player_slug}__${selectedPlayer.season}`
+      const idx = list.findIndex(p => `${p.player_slug}__${p.season}` === curKey)
+      if (idx === -1) return
+      const next = e.key === 'ArrowDown' ? Math.min(idx + 1, list.length - 1) : Math.max(idx - 1, 0)
+      if (next !== idx) setSelectedPlayer(list[next] as AnyPlayerRow)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [versusMode, selectedPlayer, statTab, sortedPassers, sortedRushers, sortedReceivers])
+
   function PTh({ col, label, right, className, style }: { col: PassCol; label: string; right?: boolean; className?: string; style?: React.CSSProperties }) {
     return <Th label={label} active={passCol === col} dir={passDir} onClick={() => handlePassSort(col)} right={right} className={className} style={style} glossaryId={PASS_COL_GLOSSARY[col]} />
   }
-  function RTh({ col, label, right, className }: { col: RushCol; label: string; right?: boolean; className?: string }) {
-    return <Th label={label} active={rushCol === col} dir={rushDir} onClick={() => handleRushSort(col)} right={right} className={className} />
+  function RTh({ col, label, right, className, style }: { col: RushCol; label: string; right?: boolean; className?: string; style?: React.CSSProperties }) {
+    return <Th label={label} active={rushCol === col} dir={rushDir} onClick={() => handleRushSort(col)} right={right} className={className} style={style} />
   }
   function VTh({ col, label, right, className }: { col: RecvCol; label: string; right?: boolean; className?: string }) {
     return <Th label={label} active={recvCol === col} dir={recvDir} onClick={() => handleRecvSort(col)} right={right} className={className} />
@@ -333,15 +406,15 @@ export default function LeaderboardTable({
                 <thead className="sticky top-0 z-20">
                   {/* Group header row */}
                   <tr>
-                    <th colSpan={3} className="bg-gray-100 border-b border-[var(--border)]" />
-                    <th colSpan={6} className="px-3 py-1 bg-gray-100 border-b border-[var(--border)] text-left">
+                    <th colSpan={3} className="bg-[var(--inp-bg)] border-b border-[var(--border)]" />
+                    <th colSpan={6} className="px-3 py-1 bg-[var(--inp-bg)] border-b border-[var(--border)] text-left">
                       <span className="text-[9px] font-semibold uppercase tracking-widest text-[var(--muted)]">Standard</span>
                     </th>
-                    <th colSpan={6} className="px-3 py-1 bg-gray-50 border-b border-l border-[var(--border)] text-left">
+                    <th colSpan={6} className="px-3 py-1 bg-[var(--section-bg)] border-b border-l border-[var(--border)] text-left">
                       <span className="text-[9px] font-semibold uppercase tracking-widest text-[var(--muted)]">Foundational QB</span>
                     </th>
-                    <th colSpan={3} className="px-3 py-1 border-b border-l border-[var(--border)] text-left" style={{ background: '#f0f4ff' }}>
-                      <span className="text-[9px] font-semibold uppercase tracking-widest" style={{ color: ACCENT_COLOR }}>Advanced QB</span>
+                    <th colSpan={3} className="px-3 py-1 border-b border-l border-[var(--border)] text-left" style={{ background: 'var(--advanced-bg)' }}>
+                      <span className="text-[9px] font-semibold uppercase tracking-widest" style={{ color: 'var(--advanced-text)' }}>Advanced QB</span>
                     </th>
                   </tr>
                   {/* Column header row */}
@@ -355,15 +428,15 @@ export default function LeaderboardTable({
                     <PTh col="comp_pct"      label="COMP%"   right className="w-[65px]" />
                     <PTh col="pass_tds"      label="TD"      right className="w-[50px]" />
                     <PTh col="interceptions" label="INT"     right className="w-[50px]" />
-                    <PTh col="ypa"           label="YPA"     right className="w-[55px] border-l border-[var(--border)] bg-gray-50" />
-                    <PTh col="ypc"           label="YPC"     right className="w-[55px] bg-gray-50" />
-                    <PTh col="td_rate"       label="TD%"     right className="w-[60px] bg-gray-50" />
-                    <PTh col="int_rate"      label="INT%"    right className="w-[60px] bg-gray-50" />
-                    <PTh col="td_int_ratio"  label="TD:INT"  right className="w-[65px] bg-gray-50" />
-                    <PTh col="yva"           label="YVA"     right className="w-[70px] bg-gray-50" />
-                    <PTh col="cmd_score"     label="CMD"     right className="w-[60px] border-l border-[var(--border)]" style={{ background: '#f0f4ff' }} />
-                    <PTh col="gbi_score"     label="GBI"     right className="w-[60px]" style={{ background: '#f0f4ff' }} />
-                    <PTh col="ies_score"     label="IES"     right className="w-[60px]" style={{ background: '#f0f4ff' }} />
+                    <PTh col="ypa"           label="YPA"     right className="w-[55px] border-l border-[var(--border)] bg-[var(--section-bg)]" />
+                    <PTh col="ypc"           label="YPC"     right className="w-[55px] bg-[var(--section-bg)]" />
+                    <PTh col="td_rate"       label="TD%"     right className="w-[60px] bg-[var(--section-bg)]" />
+                    <PTh col="int_rate"      label="INT%"    right className="w-[60px] bg-[var(--section-bg)]" />
+                    <PTh col="td_int_ratio"  label="TD:INT"  right className="w-[65px] bg-[var(--section-bg)]" />
+                    <PTh col="yva"           label="YVA"     right className="w-[70px] bg-[var(--section-bg)]" />
+                    <PTh col="cmd_score"     label="CMD"     right className="w-[60px] border-l border-[var(--border)]" style={{ background: 'var(--advanced-bg)' }} />
+                    <PTh col="gbi_score"     label="GBI"     right className="w-[60px]" style={{ background: 'var(--advanced-bg)' }} />
+                    <PTh col="ies_score"     label="IES"     right className="w-[60px]" style={{ background: 'var(--advanced-bg)' }} />
                   </tr>
                 </thead>
                 <tbody>
@@ -374,20 +447,20 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                    <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                    <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
                       <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                           <button
                             onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
                             className={cn(
-                              'shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                              'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
                               !versusMode && 'hidden',
                               compareActive
                                 ? '!opacity-100 text-white border-transparent'
-                                : 'opacity-0 group-hover/row:opacity-100 bg-white border-[var(--border)]'
+                                : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
                             )}
-                            style={compareActive ? { background: ACCENT_COLOR } : { color: ACCENT_COLOR, borderColor: ACCENT_COLOR }}
+                            style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                             aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
                           >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                         </div>
@@ -407,15 +480,15 @@ export default function LeaderboardTable({
                       <td className={cn(tdR, 'w-[65px]')}>{p.comp_pct != null ? Number(p.comp_pct).toFixed(1) + '%' : '—'}</td>
                       <td className={cn(tdR, 'w-[50px]')}>{p.pass_tds ?? '—'}</td>
                       <td className={cn(tdR, 'w-[50px]')}>{p.interceptions ?? '—'}</td>
-                      <td className={cn(tdR, 'w-[55px] border-l border-[var(--border)] bg-gray-50/60')}>{p.ypa != null ? Number(p.ypa).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[55px] bg-gray-50/60')}>{p.ypc != null ? Number(p.ypc).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{p.td_rate != null ? Number(p.td_rate).toFixed(1) + '%' : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px] bg-gray-50/60')}>{p.int_rate != null ? Number(p.int_rate).toFixed(1) + '%' : '—'}</td>
-                      <td className={cn(tdR, 'w-[65px] bg-gray-50/60')}>{p.td_int_ratio != null ? Number(p.td_int_ratio).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[70px] bg-gray-50/60')}>{p.yva != null ? (Number(p.yva) > 0 ? '+' : '') + Number(p.yva).toFixed(0) : '—'}</td>
+                      <td className={cn(tdR, 'w-[55px] border-l border-[var(--border)] bg-[var(--section-bg)]/60')}>{p.ypa != null ? Number(p.ypa).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[55px] bg-[var(--section-bg)]/60')}>{p.ypc != null ? Number(p.ypc).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{p.td_rate != null ? Number(p.td_rate).toFixed(1) + '%' : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{p.int_rate != null ? Number(p.int_rate).toFixed(1) + '%' : '—'}</td>
+                      <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{p.td_int_ratio != null ? Number(p.td_int_ratio).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[70px] bg-[var(--section-bg)]/60')}>{p.yva != null ? (Number(p.yva) > 0 ? '+' : '') + Number(p.yva).toFixed(0) : '—'}</td>
                       <td className={cn(tdR, 'w-[60px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{p.cmd_score != null ? Number(p.cmd_score).toFixed(2) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px]')} style={{ background: '#f0f4ff' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
                     </tr>
                   )
                   })}
@@ -426,53 +499,60 @@ export default function LeaderboardTable({
               </table>
             )}
 
-            {/* Rushing: Player, Team, Season, YDS, ATT, YPC, TDs */}
+            {/* Rushing: Player, Team, Season, YDS, ATT, YPC, TDs, YPG, TD%, TDs/G */}
             {statTab === 'Rushing' && (
-              <table className="text-sm w-full table-fixed border-separate" style={{ borderSpacing: 0 }}>
-                <colgroup>
-                  <col style={{ width: '25%' }} />
-                  <col style={{ width: '23%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '10%' }} />
-                  <col style={{ width: '12%' }} />
-                </colgroup>
+              <table className="text-sm w-full border-separate" style={{ borderSpacing: 0 }}>
                 <thead className="sticky top-0 z-20">
                   <tr>
-                    <RTh col="player_name"   label="Player" className={playerCls} />
-                    <RTh col="school_name"   label="Team" />
-                    <RTh col="season"        label="Season" />
-                    <RTh col="rush_yards"    label="YDS"  right />
-                    <RTh col="rush_attempts" label="ATT"  right />
-                    <RTh col="ypc"           label="YPC"  right />
-                    <RTh col="rush_tds"      label="TDs"  right />
+                    <RTh col="player_name"   label="Player"  className={playerCls} />
+                    <RTh col="school_name"   label="Team"    className="min-w-[150px]" />
+                    <RTh col="season"        label="Season"  className="w-[70px]" />
+                    <RTh col="rush_yards"    label="YDS"     right className="w-[65px]" />
+                    <RTh col="rush_attempts" label="ATT"     right className="w-[55px]" />
+                    <RTh col="ypc"           label="YPC"     right className="w-[55px]" />
+                    <RTh col="rush_tds"      label="TDs"     right className="w-[55px]" />
+                    <RTh col="ypg"           label="YPG"     right className="w-[65px] border-l border-[var(--border)] bg-[var(--section-bg)]" />
+                    <RTh col="td_pct"        label="TD%"     right className="w-[60px] bg-[var(--section-bg)]" />
+                    <RTh col="tds_per_g"     label="TDs/G"   right className="w-[65px] bg-[var(--section-bg)]" />
+                    <RTh col="r_exp"         label="R-EXP"   right className="w-[70px] border-l border-[var(--border)]" style={{ background: 'var(--advanced-bg)' }} />
                   </tr>
                 </thead>
                 <tbody>
                   {sortedRushers.map((p, i) => {
                     const ypc = (p.rush_attempts && p.rush_yards != null && p.rush_attempts > 0)
                       ? (p.rush_yards / p.rush_attempts).toFixed(1) : '—'
+                    const tdPct = (p.rush_attempts && p.rush_tds != null && p.rush_attempts > 0)
+                      ? ((p.rush_tds / p.rush_attempts) * 100).toFixed(1) + '%' : '—'
+                    const tdsPerG = (p.games_played && p.rush_tds != null && p.games_played > 0)
+                      ? (p.rush_tds / p.games_played).toFixed(1) : '—'
+                    const ypg = p.yards_per_game != null ? Number(p.yards_per_game).toFixed(1) : '—'
+                    const rExp = (p.rush_attempts && p.rush_yards != null && p.rush_tds != null && p.rush_attempts > 0)
+                      ? (((p.rush_yards / p.rush_attempts) * (p.rush_tds / p.rush_attempts)) * 100).toFixed(1) : '—'
                     const rowKey = `${p.player_slug}__${p.season}`
                     const isA = compareAKey === rowKey
                     const isB = compareBKey === rowKey
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
-                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
-                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
                               onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
-                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
-                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
-                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              className={cn(
+                                'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                                !versusMode && 'hidden',
+                                compareActive
+                                  ? '!opacity-100 text-white border-transparent'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
+                              )}
+                              style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
-                            >{compareLabel}</button>
+                            >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>
+                        <td className={cn(td, 'text-[var(--muted)] min-w-[150px]')}>
                           <div className="flex items-center gap-2 min-w-0">
                             {SCHOOL_LOGOS[p.school_slug] && (
                               <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={20} height={20} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
@@ -480,16 +560,20 @@ export default function LeaderboardTable({
                             <span className="truncate">{p.school_name}</span>
                           </div>
                         </td>
-                        <td className={cn(td, 'text-[var(--muted)]')}>{formatSeason(p.season)}</td>
-                        <td className={tdR + ' font-bold'} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
-                        <td className={tdR}>{p.rush_attempts ?? '—'}</td>
-                        <td className={tdR}>{ypc}</td>
-                        <td className={tdR}>{p.rush_tds ?? '—'}</td>
+                        <td className={cn(td, 'text-[var(--muted)] w-[70px]')}>{formatSeason(p.season)}</td>
+                        <td className={cn(tdR, 'font-bold w-[65px]')} style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{p.rush_attempts ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{ypc}</td>
+                        <td className={cn(tdR, 'w-[55px]')}>{p.rush_tds ?? '—'}</td>
+                        <td className={cn(tdR, 'w-[65px] border-l border-[var(--border)] bg-[var(--section-bg)]/60')}>{ypg}</td>
+                        <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{tdPct}</td>
+                        <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{tdsPerG}</td>
+                        <td className={cn(tdR, 'w-[70px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{rExp}</td>
                       </tr>
                     )
                   })}
                   {sortedRushers.length === 0 && (
-                    <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
+                    <tr><td colSpan={11} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No rushing data{season ? ` for ${formatSeason(season)}` : ''}</td></tr>
                   )}
                 </tbody>
               </table>
@@ -528,17 +612,22 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : 'hover:bg-[var(--inp-bg)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
                         <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
-                            <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
+                            <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
                               onClick={e => { e.preventDefault(); e.stopPropagation(); handleAssign(rowKey) }}
-                              className={cn('opacity-0 group-hover/row:opacity-100 shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center border transition-all',
-                                compareActive ? '!opacity-100 text-white border-transparent' : 'text-[var(--muted)] border-[var(--border)] bg-[var(--surface)] hover:border-[var(--txt)]')}
-                              style={compareActive ? { background: ACCENT_COLOR } : undefined}
+                              className={cn(
+                                'shrink-0 min-w-[72px] text-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all',
+                                !versusMode && 'hidden',
+                                compareActive
+                                  ? '!opacity-100 text-white border-transparent'
+                                  : 'opacity-0 group-hover/row:opacity-100 bg-[var(--surface)] border-[var(--border)]'
+                              )}
+                              style={compareActive ? { background: isB ? '#dc2626' : ACCENT_COLOR } : { color: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR, borderColor: (compareAKey && !isA) ? '#dc2626' : ACCENT_COLOR }}
                               aria-label={isA ? 'Remove 1' : isB ? 'Remove 2' : `Compare as ${compareLabel}`}
-                            >{compareLabel}</button>
+                            >{isA ? 'Player 1' : isB ? 'Player 2' : (compareAKey ? 'Player 2' : 'Player 1')}</button>
                           </div>
                         </td>
                         <td className={cn(td, 'text-[var(--muted)]')}>
@@ -567,6 +656,11 @@ export default function LeaderboardTable({
           </div>
         </div>
       </div>
+      <PanelPlayer
+        player={selectedPlayer}
+        statTab={statTab}
+        onClose={() => setSelectedPlayer(null)}
+      />
     </AppLayout>
   )
 }

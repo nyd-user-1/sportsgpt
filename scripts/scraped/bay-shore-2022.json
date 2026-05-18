@@ -1,0 +1,898 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 7,
+    "gameId": "5631",
+    "box": {
+      "gameId": "5631",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 7, Bay Shore 6: Chris Ayala scored an eight-yard touchdown run to cap a seven-play drive with 4:07 left in the 3rd quarter for Brentwood in Suffolk I. Josh Almanderez kicked the go-ahead extra point. Daniel Ventura rushed for 133 yards on 23 carries. Jayson Pickens and Chris Pierre-Louis each had six tackles. Ne'Sean Hunt had two sacks and Emil Abreu and Elmer Cruz each added one sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 10,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 23,
+            "yds": 133,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Joel  Palomino",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bay Shore",
+            "player": "Scotty Arnett",
+            "att": 10,
+            "comp": 7,
+            "yds": 43,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Joel  Palomino",
+            "att": 5,
+            "comp": 2,
+            "yds": 16,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Chris Pierre-Louis",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Almendarez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Ne'Sean Hunt",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Emil Abreu",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Elmer Cruz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Commack",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5651",
+    "box": {
+      "gameId": "5651",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "14",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 35, Bay Shore 7: Jake McKay, Dean Diaz, and Jeremy Weiss each had two touchdowns in Suffolk I. McKay ran for 135 yards and touchdowns of 2 and 3 yards. Weiss completed 7-of-11 passes for 120 yards and a 30-yard passing touchdown to Diaz. Weiss ran for a 26-yard touchdown and Diaz ran for a 27-yard touchdown. Weiss' rushing touchdown in the third quarter game Commack a 34-0 lead. Joon Choi made 12 tackles, including three for a loss and a sack, for Commack (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 12,
+            "yds": 59,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 9,
+            "yds": 29,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bay Shore",
+            "player": "Scotty Arnett",
+            "att": 23,
+            "comp": 13,
+            "yds": 139,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bay Shore",
+            "player": "James  Sobotka",
+            "rec": 1,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 20,
+    "gameId": "5673",
+    "box": {
+      "gameId": "5673",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 20, Bay Shore 0: After a scoreless first half, John Booker opened up the scoring with a 70-yard kickoff return touchdown. Booker had 139 all purpose yards. Amari Funn rushed for 174 yards and scored two rushing touchdowns. Andrew MacGray had a sack and a forced fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 11,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 6,
+            "yds": 43,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bay Shore",
+            "player": "Scotty Arnett",
+            "att": 18,
+            "comp": 7,
+            "yds": 81,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 35,
+    "gameId": "5688",
+    "box": {
+      "gameId": "5688",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "6",
+          "q2": "15",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 35, Bay Shore 13: Gino LaRotonda had touchdown runs of four, two and 42 yards to lead Sachem East (2-2) in Suffolk I. LaRotonda scored the second of his three touchdowns and Jack Pickersgill returned an interception for a touchdown on back to back possessions to put Sachem East ahead for good in their victory over Bay Shore in Suffolk I.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 30,
+            "yds": 131,
+            "tds": 2
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 11,
+            "yds": 102,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Jack Pickersgill",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Azariah De La Cruz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Jaiden Rodriguez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5711",
+    "box": {
+      "gameId": "5711",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 35, Bay Shore 7: Tyler Hall rushed 77 yards on 12 carries and two touchdowns in Suffolk I. Anthony Vino was 11-for-15 passing for 183 yards including two touchdowns and an interception and rushed 43 yards on 10 carries and a touchdown. Vino connected with Andrew Eaton for two touchdowns in the second half. Christopher Lombardo made seven tackles for Sachem North (3-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 13,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 8,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "att": 12,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 10,
+            "yds": 43,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 15,
+            "comp": 11,
+            "yds": 183,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Andrew Eaton",
+            "rec": 5,
+            "yds": 69,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "James Reid",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 21,
+    "gameId": "5558",
+    "box": {
+      "gameId": "5558",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "6",
+          "q3": "20",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "7",
+          "q2": "8",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 39, Central Islip 21: Assanti Hall rushed for 236 yards and four touchdowns on 25 carries to lead Bay Shore (1-5) in Suffolk I. Hall scored four consecutive touchdowns for Bay Shore, three of them coming in the third quarter Jamir Andrieux rushed for 81 yards and a touchdown on 11 carries. Josiah Burgess scored a 13-yard touchdown. Jordan Tyler had eight tackles on defense. Chris Reddy and Muhammad Nasir each had a sack as Bay Shore broke a 13-game losing streak.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 25,
+            "yds": 236,
+            "tds": 4
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 11,
+            "yds": 81,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 32,
+    "gameId": "5755",
+    "box": {
+      "gameId": "5755",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "0",
+          "q3": "12",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 32, Bay Shore 13: Jayden Isselbacher completed 5 of 8 passes for 126 yards and two touchdowns, rushed for 76 yards, including a 4-yard score, and had an interception for Patchogue-Medford (3-4) in Suffolk I. Nick Elliott had two receptions for 50 yards, including a 22-yard touchdown to give Patchogue-Medford a 7-0 lead in the first quarter, and had eight tackles. Alex Hofmann added nine tackles and Patchogue-Medford rushed for 254 yards as a team.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 10,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "att": 7,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "att": 3,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 6,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 8,
+            "comp": 5,
+            "yds": 126,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "nick elliott",
+            "rec": 3,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Whitman",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 30,
+    "gameId": "5775",
+    "box": {
+      "gameId": "5775",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "20",
+          "q2": "0",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 30, Bay Shore 0: Nick Fazio threw two touchdowns of 73 and 36 yards to lead Whitman ( 5-3) in Suffolk I. Jacob Somer blocked a punt that Cameron Carlson ran in for four yards for a touchdown to put Whitman up 13-0 in the first quarter. Carlson hit the quarterback on the next drive and deflected the ball to Luis Navarro, who caught the interception and ran back 28 yards for a touchdown. Jason Burke caught a 36-yard touchdown and Mike Mannino hit a 40-yard field goal and went 2-for-2 on extra points, and had two punts inside the 10 yard line.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 5,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 12,
+            "yds": 46,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Nick Fazio",
+            "att": 5,
+            "comp": 2,
+            "yds": 109,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 2,
+            "yds": 109,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

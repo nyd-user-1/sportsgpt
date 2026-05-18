@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { flushSync } from 'react-dom'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight } from 'lucide-react'
+import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
@@ -21,8 +22,43 @@ type ChartNavDetail = {
 export function AppLayout({ children, mobileHeader, hideHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
+  const [dark, setDark] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme')
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isDark = saved ? saved === 'dark' : prefersDark
+    setDark(isDark)
+    document.documentElement.classList.toggle('dark', isDark)
+  }, [])
+
+  function toggleTheme(e: React.MouseEvent) {
+    const x = e.clientX
+    const y = e.clientY
+    const next = !dark
+
+    const apply = () => {
+      setDark(next)
+      document.documentElement.classList.toggle('dark', next)
+      localStorage.setItem('theme', next ? 'dark' : 'light')
+    }
+
+    if (!document.startViewTransition) { apply(); return }
+
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    )
+    const transition = document.startViewTransition(() => { flushSync(apply) })
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`] },
+        { duration: 600, easing: 'cubic-bezier(.76,.32,.29,.99)', pseudoElement: '::view-transition-new(root)' }
+      )
+    })
+  }
 
   useEffect(() => {
     const handle = (e: Event) => setChartNav((e as CustomEvent<ChartNavDetail>).detail)
@@ -174,6 +210,14 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           )}
 
           <div className="flex-1" />
+
+          <button
+            onClick={e => toggleTheme(e)}
+            aria-label="Toggle dark mode"
+            className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors mr-2"
+          >
+            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
 
           {pathname === '/chat' && (
             <div className="hidden sm:flex items-center gap-2">

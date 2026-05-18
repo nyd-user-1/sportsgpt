@@ -33,8 +33,9 @@ Never use `--inp-bg` (semi-transparent) on sticky cells — it stacks with the r
 |-----|-------|
 | `DATABASE_URL` | Neon — Production + Preview only. Not pulled by `vercel env pull`. Add manually after pull. |
 | `BLOB_READ_WRITE_TOKEN` | `vercel_blob_rw_TmdoLbLsg0VD3LAa_...` — All Environments |
+| `ANTHROPIC_API_KEY_SPORTSGPT2` | Claude API key for AI highlight rewriter. Must be set in Vercel + `.env.local`. |
 
-After `vercel env pull`, manually append both to `.env.local`.
+After `vercel env pull`, manually append all three to `.env.local`.
 
 ---
 
@@ -89,8 +90,8 @@ Display via `formatSeason()` in `src/lib/utils.ts`.
 - GSMHS → `greenport-southold-mattituck-varsity-football`
 - Mount Sinai → `mt-sinai-varsity-football`
 - East Hampton/Pierson → `east-hampton-bridgehampton-pierson-varsity-football`
-- Patchogue-Medford / Pat-Med → `patchogue-medford-varsity-football`
-- Shoreham-Wading River / SWR → `shoreham-wading-river-varsity-football`
+- Patchogue-Medford / Pat-Med → `patchogue-medford-varsity-football` in teams table, but **`pat-med-varsity-football` in games table**
+- Shoreham-Wading River / SWR → `shoreham-wading-river-varsity-football` in teams table, but **`swr-varsity-football` in games table**
 
 **Nassau County schools NOT in DB:** Farmingdale, Plainedge, Garden City, Massapequa, North Shore — skip those games.
 
@@ -155,8 +156,33 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/division/[slug]` | `Shell.tsx` | Standings (2 rows default, header click expands) + circular season carousel arrows |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
 
+### Game Detail (`/game/[id]`)
+- `page.tsx` — fetches game + box score + prev/next game IDs + player slug map
+- `GameShell.tsx` — split-screen hero (400px), Week badge top-left, score box, nav chevrons, stat profiles
+- `?ref={team-slug}` param — keeps chevron navigation anchored to the referring team's schedule
+- Score links in team game log (`/team/[slug]`) append `?ref={team.slug}` to game URLs
+
+**GameShell layout (top → bottom):**
+1. Hero (400px split-screen, `object-cover object-top`, Week N badge top-left)
+2. ScoreTable — home on top, away on bottom; team logo + name link + (H)/(A) + W/L indicator; header row = "Week N · Month D, YYYY"
+3. Game Highlights (`mt-10` gap above) — AI-rewritten text via client-side deferred fetch
+4. StatTable — merged both teams, school logo per player, player name links to `/player/[slug]`, collapsible (2 rows default)
+5. InfoTable — score (quarter breakdown) + per-stat-type profiles, collapsible
+
+**AI Highlight Rewriter:**
+- API route: `src/app/api/game/[id]/highlights/route.ts`
+- Fetches raw `highlights` from `game_box_scores`, rewrites via `claude-haiku-4-5`
+- Permanently cached per game ID: `unstable_cache(['highlight'], { revalidate: false })`
+- Client-side: `useEffect` waits 2s after page load, then fetches. Skeleton shimmer while loading.
+- Inline markdown renderer: `renderHighlights()` converts `**bold**` and paragraph breaks (no external lib)
+- System prompt: high school beat reporter voice, 2–3 paragraphs, final score in bold, no `#` headings
+
 ### Launchpad (`/launchpad`)
 Parallel routes (`@detail` slot): standings left, team photo or game split-screen right.
+
+**Standings table:** Team, W, L, PCT, Conf, PF, PA, DIFF. Selected row = blue-50 + inset left accent.
+
+**ProviderSection cards:** Horizontal scroll, `w-[400px]`, split-screen photos, black Week badge, long date. `?team={slug}` param preserves team filter when navigating from team context to a game card.
 
 ---
 
@@ -201,6 +227,42 @@ Parallel routes (`@detail` slot): standings left, team photo or game split-scree
 
 ---
 
+## Core UX Design Pattern: Stay-on-Page Secondary Views
+
+**The central design principle of this app:** the user should never be forced to navigate away from their current view just to see detail on a related entity. Two mechanisms implement this:
+
+### AppPanel (client-side)
+`AppPanel` renders via `createPortal` into `#app-panel-root` (a flex sibling of the main content div inside `AppLayout`). It slides in from the right at 423px (1/3) or 50vw (1/2). It has a title bar, close (×), and expand/collapse button.
+
+**Concrete implementations:**
+- `PanelPlayer` — player profile card with photo, stats, "View full profile →" link. Used on `/leaderboard` (row click) and `/game/[id]` (player name in Players panel).
+- `PanelChart` — previously simple preview; now empty (charts use parallel route instead).
+- `PanelChat` — AI chat panel, context-aware.
+- `PanelImage` — team photo gallery for the two teams in a game.
+- `AppPanel` directly — e.g., the "Players" box score panel on `/game/[id]`.
+
+**Rule:** Any clickable entity (player name, team name, chart card, game card) that would otherwise navigate away should instead open an AppPanel showing the detail. Hard navigation is the fallback, not the default.
+
+### Parallel Routes + AppPanel (server-side detail)
+When the secondary page needs **server-rendered data** (DB queries, the full page component tree), use a parallel route `@panel` slot wired through a client `PanelWrapper` into `AppPanel`.
+
+Pattern (as implemented on `/charts`):
+```
+src/app/charts/
+  layout.tsx              ← AppLayout + <ChartsPanelWrapper panel={panel} />
+  page.tsx / default.tsx  ← the grid; navigates to /charts/[slug] on click
+  ChartsPanelWrapper.tsx  ← 'use client'; reads URL slug, opens/closes AppPanel
+  @panel/
+    default.tsx           ← returns null (panel closed)
+    [slug]/page.tsx       ← full server-rendered chart content (panelMode=true)
+```
+
+Clicking a card navigates to `/charts/season-records`. The `@panel` slot renders the full chart server-side; the grid (`default.tsx`) stays visible. `ChartsPanelWrapper` (client) detects the URL slug and opens/closes `AppPanel`. Close button navigates back to `/charts`.
+
+**Use this pattern whenever:** the secondary view requires its own DB queries or the full page component (chart detail, player profile full page, team detail full page). Use plain `AppPanel` + client fetch when the data is lightweight or already available.
+
+---
+
 ## Division Page (`/division/[slug]/Shell.tsx`)
 
 - Season carousel: `← →` arrows, circular (wraps from 2024→2021→2024)
@@ -242,12 +304,83 @@ Used in: Top Players + Division Standings carousels on `/team/[slug]`.
 |--------|---------|
 | `scripts/ingest-extended.mjs` | Full DB ingest: schema, schools, standings, player stats, games |
 | `scripts/ingest-blob-photos.mjs` | Upload to Blob `gallery/` prefix (now legacy — `/public` is empty) |
+| `scripts/scrape-boxscores.mjs` | **Generalized Newsday box score scraper.** Args: `<newsday-slug> <db-season>` |
+| `scripts/ingest-boxscores.mjs` | **Generalized box score ingest.** Args: `<json-file> <db-team-slug> <season>` |
 
 Run with: `node --env-file=.env.local scripts/<name>.mjs`
 
 ---
 
+## Box Score Scraping Pipeline
+
+### Newsday URL pattern by season
+- **2025-26** (DB `season=2025`): no suffix
+- **2024-25** (DB `season=2024`): append `/2025`
+- **2023-24** (DB `season=2023`): append `/2024`
+- **2022-23** (DB `season=2022`): append `/2023`
+- **2021-22** (DB `season=2021`): append `/2022`
+
+Formula: suffix = `/${DB_season + 1}`. Already handled automatically by `scrape-boxscores.mjs`.
+
+### Full run for a single team + season
+```bash
+node scripts/scrape-boxscores.mjs longwood 2025
+# → writes scripts/scraped/longwood-2025.json
+
+node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood-2025.json longwood-varsity-football 2025
+```
+
+### Box score coverage (as of 2026-05-18)
+| Season | Coverage |
+|--------|----------|
+| 2025-26 | 224/224 ✅ Complete |
+| 2024-25 | 238/240 ✅ Complete |
+| 2023-24 | 234/237 ✅ Complete |
+| 2022-23 | ⏳ Scrape ran overnight — ingest pending next session |
+| 2021-22 | ⏳ Not started |
+
+### **NEXT SESSION — resume here:**
+1. Check `ls scripts/scraped/*-2022.json` — see which teams scraped overnight
+2. Re-scrape any missing: `node scripts/scrape-boxscores.mjs <slug> 2022`
+3. Ingest 2022-23 (all teams, use `pat-med` and `swr` slug overrides — see slug table above)
+4. Scrape + ingest 2021-22 (season=2021, suffix=/2022)
+5. Build Newsday player scraper (see below)
+
+### Newsday player scraper — NEXT AFTER BOX SCORES
+The same team page URLs have a **ROSTER** table below TEAM RESULTS. Each player links to:
+`https://scores.newsday.com/sports/highschool/player/football/{newsday_player_id}/{end_year}`
+
+e.g. Jake Simmons (East Islip) 2025-26: `/24993/2026`; 2024-25: `/23568/2025`
+
+**What we'd gain:** jersey numbers (not in DB at all), current active rosters, season totals.
+Note: player IDs are season-specific — not stable cross-season identifiers.
+
+**Scrape approach:**
+1. Parse `ROSTER` table on team page → player name + newsday_id (from href) + jersey number
+2. Optionally fetch each player page for season totals
+3. Store jersey numbers in `players` table or a new `player_rosters` table
+
+---
+
+## Sidebar Structure (`src/components/Sidebar.tsx`)
+
+Order (top → bottom):
+1. Launchpad (NAV_TOP[0])
+2. Search button (opens CommandPalette)
+3. Chat → Charts → Players → Teams (NAV_TOP.slice(1))
+4. Divider
+5. Gallery → Leaderboard (NAV_BOTTOM)
+6. More... accordion (NAV_MORE: Maps, Schools, Divisions, Section XI)
+7. Footer: Glossary, Admin, Log In
+
+---
+
 ## App Config (`src/lib/app-config.ts`)
 
-All brand, nav, routing strings here. Nav order:
-Chat → Charts → Maps → Teams → Schools → Players → Leaderboard → Divisions → Section XI → Launchpad → Gallery
+All brand, nav, routing strings here.
+
+```
+SIDEBAR_NAV_TOP:    [Launchpad, Chat, Charts, Players, Teams]
+SIDEBAR_NAV_BOTTOM: [Gallery, Leaderboard]
+SIDEBAR_NAV_MORE:   [Maps, Schools, Divisions, Section XI]   ← new export
+```

@@ -2,16 +2,19 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Download, Info, ArrowUpRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
+import { SCHOOL_COLORS } from '@/lib/school-colors'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import { InfoTable } from '@/components/InfoTable'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
+import { CardLandscapeMini, WLBadge } from '@/components/CardLandscapeMini'
 
 const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
 
@@ -96,8 +99,22 @@ function fmtGameDate(raw: string | null) {
   return `${d.getMonth() + 1}/${d.getDate()}`
 }
 
+function MaybeLayout({ panelMode, mobileHeader, children }: {
+  panelMode: boolean; mobileHeader: React.ReactNode; children: React.ReactNode
+}) {
+  if (panelMode) return <>{children}</>
+  return (
+    <AppLayout mobileHeader={mobileHeader}>
+      <div className="flex-1 overflow-y-auto no-scrollbar">
+        {children}
+      </div>
+    </AppLayout>
+  )
+}
+
 export function TeamShell({
   team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, gameRows,
+  panelMode = false,
 }: {
   team: Record<string, unknown>
   prevSlug: string
@@ -106,6 +123,7 @@ export function TeamShell({
   divTeams: Record<string, unknown>[]
   playerRows: Record<string, unknown>[]
   gameRows: GameRow[]
+  panelMode?: boolean
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(true)
@@ -114,17 +132,9 @@ export function TeamShell({
   const [chatOpen,   setChatOpen]       = useState(false)
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
-  const [downloadOpen, setDownloadOpen] = useState(false)
-  const downloadRef = useRef<HTMLDivElement>(null)
+  const [slideIdx, setSlideIdx]         = useState(0)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (!downloadRef.current?.contains(e.target as Node)) setDownloadOpen(false)
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
 
   const gameSeasons = useMemo(() =>
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
@@ -136,7 +146,22 @@ export function TeamShell({
   const section  = team.section as string
   const level    = team.level as string | undefined
   const gender   = team.gender as string | undefined
-  const schoolSlug = team.school_slug as string
+  const schoolSlug  = team.school_slug as string
+  const heroPhotos  = TEAM_PHOTOS[schoolSlug] ?? []
+
+  // Placeholder is always slide 0 — makes it easy to spot teams needing more photos
+  type HeroSlide = { kind: 'photo'; url: string } | { kind: 'placeholder' }
+  const heroSlides: HeroSlide[] = [
+    { kind: 'placeholder' },
+    ...heroPhotos.map(url => ({ kind: 'photo' as const, url })),
+  ]
+
+  useEffect(() => {
+    if (heroSlides.length < 2) return
+    const t = setInterval(() => setSlideIdx(i => (i + 1) % heroSlides.length), 4000)
+    return () => clearInterval(t)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [heroSlides.length])
 
   // Build season history rows
   const historyRows = seasonRows.map(s => {
@@ -224,20 +249,16 @@ export function TeamShell({
 
   return (
     <>
-      <AppLayout mobileHeader={mobileHeader}>
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
+      <MaybeLayout panelMode={panelMode} mobileHeader={mobileHeader}>
+        <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
-                  {heroLogo && (
-                    <Image src={heroLogo} alt="" width={36} height={36} className="shrink-0 h-9 w-9 object-contain" unoptimized />
-                  )}
                   <h1 className="text-2xl font-bold text-[var(--txt)]">{teamName}</h1>
                 </div>
-                <div className="flex items-center gap-1.5 pl-[48px] text-xs text-[var(--muted)]">
+                <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]">
                   <Link href="/section/xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
                   <span>/</span>
                   <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {division}</Link>
@@ -248,7 +269,7 @@ export function TeamShell({
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
                   <div className="relative group">
-                    <Link href={`/team/${prevSlug}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
+                    <Link href={panelMode ? `/maps/${prevSlug}` : `/team/${prevSlug}`} scroll={!panelMode} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
                     <span className={tip}>Prev</span>
                   </div>
                   <div className="relative group">
@@ -264,70 +285,83 @@ export function TeamShell({
                     <span className={tip}>Ask SportsGPT</span>
                   </div>
                   <div className="relative group">
-                    <Link href={`/team/${nextSlug}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
+                    <Link href={panelMode ? `/maps/${nextSlug}` : `/team/${nextSlug}`} scroll={!panelMode} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
                     <span className={tip}>Next</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Hero — team photo or gradient fallback (hidden on mobile) */}
-            {(() => {
-              const photo = TEAM_PHOTOS[schoolSlug]?.[0]
-              const logo  = SCHOOL_LOGOS[schoolSlug]
-              return photo ? (
-                <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
-                  <Image src={photo} alt={teamName} fill className="object-cover" unoptimized />
-                </div>
-              ) : (
-                <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
-                  style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
-                  {logo ? (
-                    <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
-                  ) : (
-                    <Map className="h-12 w-12 text-[var(--muted)]" />
-                  )}
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
+            {/* Hero slider */}
+            {heroSlides.length > 0 ? (
+              <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 400 }}>
+                {heroSlides.map((slide, i) => (
+                  <div key={i}
+                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                    style={{ opacity: i === slideIdx ? 1 : 0 }}>
+                    {slide.kind === 'placeholder' ? (
+                      <div className="absolute inset-0 flex items-center justify-center"
+                        style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? ACCENT_COLOR }}>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        {SCHOOL_LOGOS[schoolSlug] && (
+                          <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={96} height={96}
+                            className="object-contain relative z-10"
+                            style={{ filter: 'drop-shadow(0 0 14px rgba(255,255,255,0.45))' }}
+                            unoptimized />
+                        )}
+                      </div>
+                    ) : (
+                      <>
+                        <Image src={slide.url} alt="" fill className="object-cover object-top" unoptimized />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                      </>
+                    )}
                   </div>
+                ))}
+                <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
+                  <p className="text-base font-bold text-white leading-snug">{teamName.replace(/\s*Varsity\s+Football\s*/i, '').trim()}</p>
+                  <p className="text-sm text-white/60 mt-0.5">Section XI · Division {division}</p>
                 </div>
-              )
-            })()}
+                {heroSlides.length > 1 && (
+                  <>
+                    <button onClick={() => setSlideIdx(i => (i - 1 + heroSlides.length) % heroSlides.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button onClick={() => setSlideIdx(i => (i + 1) % heroSlides.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                      {heroSlides.map((_, i) => (
+                        <button key={i} onClick={() => setSlideIdx(i)}
+                          className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
+                          style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+                style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
+                {SCHOOL_LOGOS[schoolSlug] ? (
+                  <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={64} height={64} className="object-contain" unoptimized />
+                ) : (
+                  <Map className="h-12 w-12 text-[var(--muted)]" />
+                )}
+                <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
+              </div>
+            )}
 
             {/* Profiles */}
             <div className="mb-8">
-              <div className="rounded-xl border border-[var(--border)] shadow-sm">
-
-                {/* Toolbar: title + chevrons left, PDF icon right */}
-                <div onClick={() => setInfoExpanded(v => !v)}
-                  className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] rounded-t-xl cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm font-semibold text-[var(--txt)]">{activeProfile.h2}</span>
-                    <button onClick={e => { e.stopPropagation(); setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button onClick={e => { e.stopPropagation(); setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }} className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                  <div ref={downloadRef} className="relative" onClick={e => e.stopPropagation()}>
-                    <button onClick={() => setDownloadOpen(v => !v)}
-                      className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Download">
-                      <Download className="h-4 w-4" />
-                    </button>
-                    {downloadOpen && (
-                      <div className="absolute right-0 top-full mt-1 z-50 min-w-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden">
-                        {['CSV', 'DOC', 'MD', 'PDF'].map((fmt, i) => (
-                          <button key={fmt} onClick={() => setDownloadOpen(false)}
-                            className={cn('w-full px-3 py-2 text-left text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors',
-                              i > 0 && 'border-t border-[var(--border)]')}>
-                            {fmt}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
+              <InfoTable
+                title={activeProfile.h2}
+                onToggle={() => setInfoExpanded(v => !v)}
+                onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }}
+                onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }}
+              >
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
@@ -443,7 +477,11 @@ export function TeamShell({
                                         <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                       </div>
                                     </td>
-                                    <td className={cn(td, 'text-right font-medium text-[var(--txt)] whitespace-nowrap')}>{scoreStr}</td>
+                                    <td className={cn(td, 'text-right font-medium whitespace-nowrap')}>
+                                      {g.id ? (
+                                        <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{scoreStr}</Link>
+                                      ) : scoreStr}
+                                    </td>
                                     <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right')}>
                                       <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
@@ -463,8 +501,57 @@ export function TeamShell({
                     </>
                   )
                 })()}
-              </div>
+              </InfoTable>
             </div>
+
+            {/* Games carousel — synced to active InfoTable season */}
+            {(() => {
+              const carouselSeason = activeProfile.kind === 'games'
+                ? (activeProfile as { season: number }).season
+                : gameSeasons[0]
+              if (carouselSeason == null) return null
+              const carouselGames = gameRows.filter(g => g.season === carouselSeason)
+              if (carouselGames.length === 0) return null
+              return (
+                <div className="mb-8">
+                  <div className="mb-4">
+                    <h2 className="text-lg font-semibold text-[var(--txt)]">Games · {fmtSeason(carouselSeason)}</h2>
+                  </div>
+                  <div className="overflow-x-auto no-scrollbar">
+                    <div className="flex gap-3 pb-1">
+                      {carouselGames.map(g => {
+                        const isHome    = g.home_team_slug === team.slug
+                        const opSlug    = isHome ? g.away_team_slug  : g.home_team_slug
+                        const opName    = isHome ? g.away_team_name  : g.home_team_name
+                        const myScore   = isHome ? g.home_score      : g.away_score
+                        const opScore   = isHome ? g.away_score      : g.home_score
+                        const result    = myScore == null || opScore == null ? null
+                          : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
+                        const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+                        const opLogo    = SCHOOL_LOGOS[opSchoolSlug]
+                        const opDisplay = (opName ?? opSlug)
+                          .replace(/\s+Varsity\s+Football$/i, '')
+                          .replace(/-varsity-football$/, '')
+                          .replace(/-/g, ' ')
+                          .replace(/\b\w/g, c => c.toUpperCase())
+                        return (
+                          <CardLandscapeMini
+                            key={g.id}
+                            href={`/game/${g.id}?ref=${team.slug}`}
+                            title={isHome ? opDisplay : `at ${opDisplay}`}
+                            titlePadRight
+                            badge={result ? <WLBadge result={result as 'W' | 'L' | 'T'} /> : undefined}
+                            image={opLogo ? <Image src={opLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                            row2={{ text: fmtGameDate(g.game_date) ?? '—' }}
+                            stat={{ value: myScore != null && opScore != null ? `${myScore}–${opScore}` : '—' }}
+                          />
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )
+            })()}
 
             {/* Top Players carousel */}
             {playerRows.length > 0 && (
@@ -478,30 +565,20 @@ export function TeamShell({
                       const stat = topStat(p)
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug as string]
                       const fallbackLogo = SCHOOL_LOGOS[schoolSlug]
+                      const img = playerPhoto
+                        ? <Image src={playerPhoto} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                        : fallbackLogo
+                        ? <Image src={fallbackLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                        : undefined
                       return (
-                        <Link key={`${p.player_slug}-${p.stat_type}-${i}`}
+                        <CardLandscapeMini
+                          key={`${p.player_slug}-${p.stat_type}-${i}`}
                           href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          {playerPhoto ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
-                              <Image src={playerPhoto} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                            </div>
-                          ) : fallbackLogo ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                              <Image src={fallbackLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                            </div>
-                          ) : null}
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name as string}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string)}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
-                              <span className="text-xs text-[var(--muted)]">{stat.label}</span>
-                            </div>
-                          </div>
-                        </Link>
+                          image={img}
+                          title={p.player_name as string}
+                          row2={{ text: p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string) }}
+                          stat={{ value: stat.value, label: stat.label }}
+                        />
                       )
                     })}
                   </div>
@@ -520,29 +597,15 @@ export function TeamShell({
                     const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
                     const tLogo = SCHOOL_LOGOS[tSchoolSlug]
                     return (
-                      <Link key={t.slug as string} href={`/team/${t.slug}`}
-                        className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                        {/* Logo */}
-                        <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                          {tLogo ? (
-                            <Image src={tLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                          ) : (
-                            <div className="w-full h-full" />
-                          )}
-                        </div>
-                        {/* Text */}
-                        <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                          <div>
-                            <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}</p>
-                            <p className="text-xs font-bold mt-0.5 truncate" style={{ color: ACCENT_COLOR }}>
-                              {fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null)}
-                            </p>
-                          </div>
-                          <span className="text-xs text-[var(--muted)]">
-                            {fmtPct(t.overall_wins as number | null, t.overall_losses as number | null)}
-                          </span>
-                        </div>
-                      </Link>
+                      <CardLandscapeMini
+                        key={t.slug as string}
+                        href={`/team/${t.slug}`}
+                        image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                        title={(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}
+                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                        statFirst
+                        row2={{ text: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                      />
                     )
                   })}
                 </div>
@@ -550,8 +613,7 @@ export function TeamShell({
             </div>
 
           </div>
-        </div>
-      </AppLayout>
+      </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />

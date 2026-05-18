@@ -1,0 +1,1831 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/14/2024",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 0,
+    "gameId": "6792",
+    "box": {
+      "gameId": "6792",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "6",
+          "q2": "21",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 39, North Babylon 0: Daniel White ran 17 times for 218 yards and four touchdowns to lead Half Hollow Hills East in its Suffolk II opener. On the last play of the first half, Logan Soler strip-sacked the quarterback and scooped the ball up before returning it for a touchdown. On his first career pass attempt, James Bruno threw a 46-yard touchdown pass to Max Drehwing.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 17,
+            "yds": 218,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 11,
+            "yds": 72,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Peter  Banculli",
+            "att": 5,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jordan Konig",
+            "att": 6,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Logan Baptist",
+            "att": 7,
+            "comp": 4,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tristan Wojt",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "rec": 2,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/21/2024",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 0,
+    "gameId": "6993",
+    "box": {
+      "gameId": "6993",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "12",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 26, West Babylon 0: Tyler Sanders caught five passes for 198 yards and three touchdowns and had two interceptions and three tackles to lead Half Hollow Hills East (2-0) in Suffolk II. Daniel White ran for 151 yards and a touchdown and added 74 receiving yards. Akio Johnson had 15 tackles, Gianluca D'Amico had 10 tackles and Noah Chlap had nine tackles. West Babylon is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "att": 10,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 8,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "att": 8,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 16,
+            "yds": 151,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "att": 3,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 23,
+            "comp": 11,
+            "yds": 101,
+            "tds": 0,
+            "int": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 13,
+            "comp": 10,
+            "yds": 300,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "James Bruno",
+            "att": 3,
+            "comp": 2,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Alex  Allen",
+            "rec": 4,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Joe Dispigno",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Anthony Gerbasio",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Xavier Estevez",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler Sanders",
+            "rec": 5,
+            "yds": 198,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "rec": 2,
+            "yds": 75,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "rec": 3,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Armando Luperon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Vladimir Doricent",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Anthony Gerbasio",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "AKio Johnson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler Sanders",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Rhys  Quintyne",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/27/2024",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 60,
+    "oppScore": 0,
+    "gameId": "6992",
+    "box": {
+      "gameId": "6992",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "20",
+          "q2": "20",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "60"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 60, Deer Park 0: Daniel White had 201 yards, three rushing touchdowns and a 98-yard kickoff return touchdown to lead Half Hollow Hills East (3-0) in Suffolk II. Nick Sevilla threw four touchdown passes, two of which went to Lucas Martin, who had 100 yards receiving and another 20 rushing. Logan Soler had 80 yards and a touchdown receiving, while Max Drehwing added 60 receiving yards and another touchdown. Jaiden Bryant had 12 tackles and two sacks on defense while rushing for 65 yards rushing and a touchdown on offense. The Hills East defense pitched its third consecutive shutout to begin the season.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 15,
+            "yds": 140,
+            "tds": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 2,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "rec": 5,
+            "yds": 100,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Drehwing",
+            "rec": 4,
+            "yds": 95,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Logan Soler",
+            "rec": 3,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler Sanders",
+            "rec": 4,
+            "yds": 76,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "AKio Johnson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/05/2024",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 33,
+    "gameId": "6923",
+    "box": {
+      "gameId": "6923",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 33, Half Hollow Hills East 14: Thomas Costarelli completed 6 of 12 pass attempts for 162 yards, a touchdown and an interception, adding 128 rushing yards on 20 attempts with a score on the ground for East Islip in Suffolk II. Ryan Parker toted the ball 15 times for 65 yards and two touchdowns. Parker added 82 yards on three receptions. Jake Simmons had two sacks, and Niko Myers had one. Myers also caught a 19-yard touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 14,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 20,
+            "yds": 128,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 15,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Jack Kalinowski",
+            "att": 1,
+            "yds": 29,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 12,
+            "comp": 6,
+            "yds": 162,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 3,
+            "yds": 82,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Alex Ciampi",
+            "rec": 2,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "rec": 1,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 2,
+            "pat": 3,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Jake Simmons",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Niko  Myers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/10/2024",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 0,
+    "gameId": "7161",
+    "box": {
+      "gameId": "7161",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 27, Northport 0: Daniel White ran for 204 yards and three touchdowns and added 40 receiving yards to lead visitor Half Hollow Hills East (4-1) in Suffolk II. Najee Sexil had 12 tackles and a forced fumble and Sebastian Damis had 7 tackles and 2 sacks. Noah Chlapp ran for 50 yards and had 10 tackles, four pass breakups and a forced fumble and Jayden Bryant had 10 tackles and two fumble recoveries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 18,
+            "yds": 204,
+            "tds": 3
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 6,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon  Blissett",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 10,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 10,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 8,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 19,
+            "comp": 10,
+            "yds": 136,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler Sanders",
+            "rec": 7,
+            "yds": 100,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "rec": 3,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Drehwing",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 4,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Danny  Miller",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Robbie  Kapovic",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Sebastian  Damis",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Najeh  Sexil",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Gio  Valenti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ben  Pipolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/18/2024",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 0,
+    "gameId": "6991",
+    "box": {
+      "gameId": "6991",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 21, Bellport 0: Daniel White rushed for 242 yards and two touchdowns to lead Half Hollow Hills East (5-1) in Suffolk II. Jayden Bryant rushed for 17 yards and a touchdown while Marco D'Agnese made all three of his extra points to round out the scoring. Bryant made eight tackles and recovered a fumble on defense. Najeh Sexil also racked up eight tackles while forcing a fumble on a sack. Noah Chlap led the defense with 10 tackles. Logan Soler and Jacob Gianatassio each contributed three tackles and a sack to help complete Hills East's fifth shutout of the year.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 17,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 7,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaheim Talford",
+            "att": 6,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "att": 4,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 22,
+            "yds": 242,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "att": 16,
+            "comp": 6,
+            "yds": 56,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nazir Turner",
+            "rec": 0,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Ryder Bedell",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Elie Malcom",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/26/2024",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 17,
+    "gameId": "6994",
+    "box": {
+      "gameId": "6994",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "2",
+          "q2": "8",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "21",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 42, West Islip 17: Daniel White rushed for 180 yards and three touchdowns on 16 carries to lead host Half Hollow Hills East (6-1). Lucas Martin had 100 receiving yards and a TD. Tyler Sanders caught a 49-yard TD pass and had  tackles and an interception. Jaiden Bryant rushed for 56 yards and a score and had nine tackles and a fumble recovery. Jacob Giannattasio had eight tackles and a sack and Akio Johnson added seven tackles and a sack. TJ Sonnenberg threw a TD pass and ran for a score for West Islip (1-6).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 16,
+            "yds": 180,
+            "tds": 3
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/02/2024",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 14,
+    "gameId": "7034",
+    "box": {
+      "gameId": "7034",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hills East defeated Huntington in a Suffolk II regular-season finale.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 24,
+            "yds": 127,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Yasir Jones",
+            "att": 15,
+            "yds": 68,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 12,
+            "yds": 52,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Jacob Guzik",
+            "att": 21,
+            "comp": 16,
+            "yds": 181,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/09/2024",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 21,
+    "gameId": "7581",
+    "box": {
+      "gameId": "7581",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "19",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 33, Huntington 21: Daniel White rumbled for 299 yards and four touchdowns on 19 carries with three tackles as No. 2 Half Hollow Hills East advanced past No. 7 Huntington in the qualifying round of the Suffolk II playoffs. Akio Johnson had eight tackles and a sack, and Jaiden Bryant had four tackles, a forced fumble and a fumble recovery. Najeh Sexil and Sebastian Damis had seven tackles and a sack apiece. Keith McDowell had five tackles, and Lucas Martin caught a 20-yard touchdown pass from Nick Sevilla. Martin also had three tackles. Jordan Thorbourne ran for a 5-yard TD and caught a 70-yard touchdown from Jacob Guzik as Huntington finishes with a 5-4 record. Hills East (8-1) will host No. 3 Smithtown West in the semifinal round at 1 p.m. on Saturday, Nov. 16.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 0,
+            "yds": 299,
+            "tds": 4
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "rec": 0,
+            "yds": 100,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/16/2024",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 0,
+    "gameId": "7613",
+    "box": {
+      "gameId": "7613",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "19",
+          "q2": "22",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Second-seeded Half Hollow Hills East (9-1) beat No. 3 Smithtown West (8-2) in the Suffolk II semifinals behind five touchdown passes by Nick Sevilla. Daniel White rushed for two TDs. Jayden Bryan had 12 tackles, Logan Solar had two sacks and one forced fumble and Najeh Sexil had five tackles, two forced fumbles, one fumble recovery and one sack in the victory. Hills East will play No. 1 East Islip in the championship game at 4 p.m. Friday at Stony Brook.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Michael Cascione",
+            "att": 7,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 9,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick  Devito",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jax Cascione",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 22,
+            "yds": 152,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tony Keahey",
+            "att": 12,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jayden Bryan",
+            "att": 4,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Niko Job",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Nick  Devito",
+            "att": 14,
+            "comp": 7,
+            "yds": 70,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 8,
+            "comp": 7,
+            "yds": 154,
+            "tds": 5,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 3,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jake Rearick",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Colton  Ford",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Vincent  Lepore",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Marco D'Agnese",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Logan Soler",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Najeh  Sexil",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Reinaldo Peters",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/22/2024",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 14,
+    "gameId": "7624",
+    "box": {
+      "gameId": "7624",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "East Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 41, East Islip 14\nDaniel White rushed for 273 yards and four touchdowns on 24 carries to lead Hills East to its first ever Suffolk football title. Noah Chlap returned an interception 100 yards for a touchdown for the RedHawks (10-1). It is the longest play of any kind in Suffolk football finals history. East Islip finished the season at 10-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 24,
+            "yds": 273,
+            "tds": 4
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 13,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 7,
+            "comp": 4,
+            "yds": 113,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Thomas Costarelli",
+            "att": 32,
+            "comp": 17,
+            "yds": 172,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Ryan  Parker",
+            "rec": 7,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Robbie  Kapovic",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "East Islip",
+            "player": "Anthony Mariani",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah Chlap",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/29/2024",
+    "opponent": "Carey",
+    "isAway": true,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 37,
+    "gameId": "7632",
+    "box": {
+      "gameId": "7632",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "8",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Carey",
+          "q1": "8",
+          "q2": "14",
+          "q3": "0",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Carey 37, Half Hollow Hills East 36\nCarey rallied from a 14 point deficit in the fourth quarter capped by a two-point conversion run by Christian Todaro as the Seahawks defeated Hal Hollow Hills East in the Long Island Class II championship. Todaro rushed for 90 yards and a touchdown on 14 carries. He also had three receptions for 106 yards and two scores. Todaro scored two two-point conversions. Carey won its first LIC since 2014 and third overall. The Seahawks finished the season a perfect 12-0. Hills East finished 10-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 26,
+            "yds": 244,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Noah Chlap",
+            "att": 1,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Carey",
+            "player": "Christian Todaro",
+            "att": 14,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Carey",
+            "player": "Justin DePietro",
+            "att": 22,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "Carey",
+            "player": "Chris Obertis",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nick Sevilla",
+            "att": 20,
+            "comp": 12,
+            "yds": 152,
+            "tds": 4,
+            "int": 2
+          },
+          {
+            "team": "Carey",
+            "player": "Chris Obertis",
+            "att": 18,
+            "comp": 14,
+            "yds": 244,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas  Martin",
+            "rec": 6,
+            "yds": 83,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler Sanders",
+            "rec": 2,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Gianluca Damico",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Drehwing",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Carey",
+            "player": "Christian Todaro",
+            "rec": 3,
+            "yds": 106,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Carey",
+            "player": "Michael Verdarosa",
+            "rec": 6,
+            "yds": 64,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Carey",
+            "player": "Billy Koutsoumbaris",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Carey",
+            "player": "James McGrath",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Carey",
+            "player": "Theodoros Andrikopoulos",
+            "rec": 1,
+            "yds": 4,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Robbie  Kapovic",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Carey",
+            "player": "Joshua Palomino",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

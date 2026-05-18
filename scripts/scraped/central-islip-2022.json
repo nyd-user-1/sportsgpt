@@ -1,0 +1,277 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Riverhead",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 43,
+    "gameId": "5553",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5553"
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 35,
+    "gameId": "5554",
+    "box": {
+      "gameId": "5554",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 35, Central Islip 14: Joe Kelly had seven carries for 76 yards and three touchdowns to lead Patchogue-Medford (1-1) in Suffolk I. Kieran Hughes completed 6 of 16 passes for 85 yards and two touchdowns and CJ Forgione had four catches for 47 yards and a touchdown. John Coutard added 18 carries for 169 yards. Beyrim Ayari recorded seven tackles, a sack, a blocked punt and a fumble recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 18,
+            "yds": 169,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 7,
+            "yds": 76,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 16,
+            "comp": 6,
+            "yds": 85,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 4,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 2,
+            "yds": 17,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Beyrim Ayari",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 7,
+    "gameId": "5555",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5555"
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 29,
+    "gameId": "5556",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5556"
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "5557",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5557"
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 39,
+    "gameId": "5558",
+    "box": {
+      "gameId": "5558",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "7",
+          "q2": "6",
+          "q3": "20",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "7",
+          "q2": "8",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bay Shore 39, Central Islip 21: Assanti Hall rushed for 236 yards and four touchdowns on 25 carries to lead Bay Shore (1-5) in Suffolk I. Hall scored four consecutive touchdowns for Bay Shore, three of them coming in the third quarter Jamir Andrieux rushed for 81 yards and a touchdown on 11 carries. Josiah Burgess scored a 13-yard touchdown. Jordan Tyler had eight tackles on defense. Chris Reddy and Muhammad Nasir each had a sack as Bay Shore broke a 13-game losing streak.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 25,
+            "yds": 236,
+            "tds": 4
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 11,
+            "yds": 81,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Commack",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 37,
+    "gameId": "5559",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5559"
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 50,
+    "gameId": "5560",
+    "error": "HTTP 504 — https://scores.newsday.com/sports/highschool/game/football/5560"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

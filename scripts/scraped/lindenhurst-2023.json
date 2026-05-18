@@ -1,0 +1,1772 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/08/2023",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 28,
+    "gameId": "6388",
+    "box": {
+      "gameId": "6388",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "3",
+          "q2": "3",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Longwood",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 28, Lindenhurst 18: Jordan Gibbs racked up 200 total yards and rushed for an 81-yard touchdown and caught a 77-yard touchdown pass from Caleib Corbett to lead Longwood in a Suffolk I opener. Prince Mack returned a kickoff 94 yards for a touchdown and Nnamdi Nwanywanwu rushed for a 23-yard touchdown to give Longwood an 11-point lead in the first quarter. Dylan Cafaro recorded two sacks. Christian Capogna rushed for two touchdowns and Ben Chodon made two field goals for Lindenhurst.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 18,
+            "yds": 157,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 14,
+            "yds": 107,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 7,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 7,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Jordan Gibbs",
+            "att": 5,
+            "yds": 102,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 10,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Vincent Rosario",
+            "att": 2,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Prince Mack",
+            "att": 5,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Daniel Blank",
+            "att": 4,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 12,
+            "comp": 8,
+            "yds": 122,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 4,
+            "comp": 1,
+            "yds": 76,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 4,
+            "yds": 75,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Shea Alzaraki",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter DeRonde",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Jordan Gibbs",
+            "rec": 1,
+            "yds": 76,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Longwood",
+            "player": "Daniel Blank",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Dylan  Cafaro",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Malik Holder",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Makai Bell",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mike Warren",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/13/2023",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 33,
+    "gameId": "6414",
+    "box": {
+      "gameId": "6414",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "12",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "6",
+          "q2": "7",
+          "q3": "7",
+          "q4": "20",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 40, Sachem East 33: Christian Capogna passed to Matt Durnin for the go-ahead score, a 35-yard touchdown with 50 seconds left for Lindenhurst (1-1). The win was the 100th for Lindenhurst coach Nick Lombardo. His 15 year career record is 100-40. Capogna was 12-for-18 passing for 206 yards and two touchdowns. Capogna also rushed for 155 yards and three scores. Durnin had two touchdown receptions, an interception, and deflected three passes. A.J. Vurchio passed for 300 yards and four touchdowns for Sachem East (1-1). Mike Reilly had 219 receiving yards and three touchdowns for Sachem East.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 6,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Justin  Westerlind",
+            "att": 8,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Joe  Christie",
+            "att": 2,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Mikey Reilly",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 20,
+            "yds": 155,
+            "tds": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 12,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 8,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "AJ Vurchio",
+            "att": 12,
+            "comp": 28,
+            "yds": 300,
+            "tds": 4,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 18,
+            "comp": 12,
+            "yds": 206,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem East",
+            "player": "Mikey Reilly",
+            "rec": 6,
+            "yds": 219,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gianni Spinelli",
+            "rec": 4,
+            "yds": 62,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Joe  Christie",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Justin  Westerlind",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 6,
+            "yds": 143,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Shea Alzaraki",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "AJ Natonio",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Jack Deutsch",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Nicky DiSipio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/22/2023",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 7,
+    "gameId": "6446",
+    "box": {
+      "gameId": "6446",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 14, Connetquot 7: Christian Capogna connected with Matt Durnin, who made a one-handed catch for the go-ahead 4-yard touchdown with eight seconds left for Lindenhurst in Suffolk I. Durnin finished with eight receptions for 116 yards and a touchdown. Capogna completed 10 of 12 passes for 144 yards and a touchdown and had 18 carries for 101 yards and a touchdown. Ivan Oriekhov had five tackles and three sacks and Nick Rose had eight tackles and a sack for Lindenhurst (2-1). Nick Pepitone had a 1-yard rushing touchdown and Lucas Weaver had 19 tackles and a sack for Connetquot (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 18,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 7,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 6,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 5,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 5,
+            "yds": 10,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 16,
+            "comp": 12,
+            "yds": 144,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 25,
+            "comp": 15,
+            "yds": 173,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 8,
+            "yds": 116,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny  Aquino",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aydan DeLiso",
+            "rec": 5,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Matt Kutchma",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Javon  Barnwell",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Dennis  Milano",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Galante",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Catera",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ivan Oriekhov",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter DeRonde",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/29/2023",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 41,
+    "gameId": "6465",
+    "box": {
+      "gameId": "6465",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "14",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 41, Lindenhurst 21: Jaden Montalvo had 10 carries for 161 yards and a touchdown to lead Floyd in Suffolk I. AJ Cannet threw for 115 yards and two touchdowns and Gio Alvarez caught two passes for 95 yards and two touchdowns. Jack Molini had a touchdown pass and Jason Pratt had 12 carries for 132 yards and a touchdown. Aaron Fisher had nine tackles, four for loss, and a sack for Floyd (4-0). Christian Capogna had a passing and a rushing touchdown, Christian Aquino had a touchdown catch and Maddox Collier-Little had a rush touchdown for Lindenhurst (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 10,
+            "yds": 161,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 12,
+            "yds": 132,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 6,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 12,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Maddox Collier-Little",
+            "att": 2,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 6,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "AJ Cannet",
+            "att": 7,
+            "comp": 3,
+            "yds": 115,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jack Molini",
+            "att": 4,
+            "comp": 2,
+            "yds": 24,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 14,
+            "comp": 10,
+            "yds": 140,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "rec": 2,
+            "yds": 95,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terrell Collum",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justice Darling",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Tyri Hubbard",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 3,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 4,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny  Aquino",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Bonner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/06/2023",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 15,
+    "gameId": "6488",
+    "box": {
+      "gameId": "6488",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "15",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "14",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 15, Lindenhurst 14: Ethan Burgos rushed for a 5-yard touchdown and completed the go-ahead two-point pass to Brody Morgan in the second quarter for visiting Ward Melville in Suffolk I. Earlier in the second quarter, Morgan caught a 13-yard touchdown pass from Burgos as Ward Melville (4-1) erased a 14-0 first-quarter deficit. Matthew Durnin caught a 13-yard touchdown pass from Christian Capogna and Gio Tarte rushed for a 3-yard score for Lindenhurst (2-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 13,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 13,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan  Brausch",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 12,
+            "yds": 82,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 5,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 3,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 11,
+            "comp": 5,
+            "yds": 117,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 18,
+            "comp": 12,
+            "yds": 206,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 3,
+            "yds": 83,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "rec": 6,
+            "yds": 75,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Shea Alzaraki",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Connor Gordon",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Pat  Vasquez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "CJ Ward",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jake  Ventimiglia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Tony Gorsky",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Luke Jordan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Ivan Oriekhov",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Hunter DeRonde",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 0,
+    "gameId": "6525",
+    "box": {
+      "gameId": "6525",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "14",
+          "q2": "3",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 31, Central Islip 0: Nick Rose rushed for 112 yards and two touchdowns and made 10 tackles to lead Lindenhurst (3-3) in Suffolk I. Martin Pusey scored on a 12-yard fumble recovery, Matt Durnin had an interception and Mike Seeger recovered a fumble as Lindenhurst forced five turnovers. Central Islip is 1-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 13,
+            "yds": 104,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 6,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Olbin  Perez",
+            "att": 6,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 3,
+            "comp": 1,
+            "yds": 11,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Connor Gordon",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/20/2023",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 17,
+    "gameId": "6541",
+    "box": {
+      "gameId": "6541",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 17, Lindenhurst 7: Andrew Eaton threw for 83 yards and a touchdown, and rushed for a 18 yards and a touchdown to lead Sachem North (5-2) in Suffolk I. Zach DeMilt kicked a 37-yard field goal and two extra points, and Shane Reilly had 83 receiving yards, a touchdown, an interception and a fumble recovery. Jack Pitman, Thomas Volpe, David Santiago and Nasir Altes each had five tackles. Martin Pusey scored for Lindenhurst (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 16,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 11,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Singleton",
+            "att": 22,
+            "yds": 67,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Andrew Eaton",
+            "att": 8,
+            "yds": 18,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian  Campay",
+            "att": 9,
+            "comp": 3,
+            "yds": 55,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Reece Wrightington",
+            "att": 2,
+            "comp": 1,
+            "yds": 26,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Andrew Eaton",
+            "att": 6,
+            "comp": 3,
+            "yds": 83,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Matt Durnin",
+            "rec": 2,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Martin Pusey",
+            "rec": 1,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Shea Alzaraki",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "rec": 3,
+            "yds": 83,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Ben Chodon",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2023",
+    "opponent": "Riverhead",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 0,
+    "gameId": "6575",
+    "box": {
+      "gameId": "6575",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "13",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 41, Riverhead 0: Christian Capogna threw four touchdown passes and ran for a 15-yard touchdown to lead visiting Lindenhurst (4-4) in Suffolk I. Johnny Aquino caught three touchdown passes. Matthew Durnin caught a 27-yard touchdown pass. Olbin Perez had a 9-yard touchdown run. Riverhead fell to 2-6.",
+      "stats": {
+        "rushing": [],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Maurice Scott",
+            "att": 13,
+            "comp": 7,
+            "yds": 63,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "Kevin Johnson",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "John Lennon",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Riverhead",
+            "player": "Josiah Rodney",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 14,
+    "gameId": "6722",
+    "box": {
+      "gameId": "6722",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 14, Lindenhurst 10: Ethan Burgos had 14 carries for 92 yards and the winning 16-yard touchdown with 10 minutes remaining in host No. 3 Ward Melville's 14-10 win over No. 6 Lindenhurst in the Suffolk I quarterfinals. Burgos also threw a 13-yard TD to Sebastian Jolley in the first quarter. Brody Morgan caught five passes for 74 yards and Griffin Kramer rushed for 60 yards on 12 carries. \nChristian Aquino caught a 27-yard touchdown pass from Christian Capogna in the first quarter and Ben Chodon kicked a 22-yard field goal in the second quarter to give Lindenhurst a 10-7 halftime lead. \nWard Melville (7-2) will visit No. 2 Sachem North in the semifinals on Friday. Lindenhurst finished 4-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 14,
+            "yds": 92,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 12,
+            "yds": 60,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 10,
+            "comp": 18,
+            "yds": 86,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "rec": 5,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Marzovilla",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Sebastian Jolley",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 3,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody  Morgan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -2,15 +2,16 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, Download } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import { InfoTable } from '@/components/InfoTable'
 import Image from 'next/image'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
-import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS, DIVISION_LOGOS } from '@/lib/team-images'
 
 type DivisionSummary = {
   division: string
@@ -108,22 +109,13 @@ export function SectionShell({
   const [divCardIdx,         setDivCardIdx]         = useState(0)
   const [standingsExpanded,  setStandingsExpanded]  = useState(true)
   const [seasonIdx,          setSeasonIdx]          = useState(0)
-  const [downloadOpen,       setDownloadOpen]       = useState(false)
-  const downloadRef = useRef<HTMLDivElement>(null)
   const scheduleRef = useRef<HTMLDivElement>(null)
   const leaderRef   = useRef<HTMLDivElement>(null)
+  const divRef      = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const t = setInterval(() => setDivCardIdx(i => (i + 1) % DIV_ORDER.length), 4000)
     return () => clearInterval(t)
-  }, [])
-
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (!downloadRef.current?.contains(e.target as Node)) setDownloadOpen(false)
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
   const btn      = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
@@ -226,47 +218,14 @@ export function SectionShell({
               </div>
             </div>
 
-            {/* All teams standings — InfoTableDivision pattern */}
+            {/* All teams standings */}
             <div className="mb-8">
-              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-
-                {/* Toolbar */}
-                <div onClick={() => setStandingsExpanded(v => !v)}
-                  className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-                  <div className="flex items-center gap-1">
-                    <span className="text-sm font-semibold text-[var(--txt)]">{formatSeason(selectedSeason)} Standings</span>
-                    {availableSeasons.length > 1 && (
-                      <>
-                        <button onClick={e => { e.stopPropagation(); setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length) }}
-                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Previous">
-                          <ChevronLeft className="h-4 w-4" />
-                        </button>
-                        <button onClick={e => { e.stopPropagation(); setSeasonIdx(i => (i + 1) % availableSeasons.length) }}
-                          className="p-1 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Next">
-                          <ChevronRight className="h-4 w-4" />
-                        </button>
-                      </>
-                    )}
-                  </div>
-                  <div ref={downloadRef} className="relative" onClick={e => e.stopPropagation()}>
-                    <button onClick={() => setDownloadOpen(v => !v)}
-                      className="p-1.5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Download">
-                      <Download className="h-4 w-4" />
-                    </button>
-                    {downloadOpen && (
-                      <div className="absolute right-0 top-full mt-1 z-50 min-w-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden">
-                        {['CSV', 'DOC', 'MD', 'PDF'].map((fmt, i) => (
-                          <button key={fmt} onClick={() => setDownloadOpen(false)}
-                            className={cn('w-full px-3 py-2 text-left text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors',
-                              i > 0 && 'border-t border-[var(--border)]')}>
-                            {fmt}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-
+              <InfoTable
+                title={`${formatSeason(selectedSeason)} Standings`}
+                onToggle={() => setStandingsExpanded(v => !v)}
+                onPrev={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length) : undefined}
+                onNext={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i + 1) % availableSeasons.length) : undefined}
+              >
                 {/* Division tabs */}
                 <div className="flex border-b border-[var(--border)] bg-[var(--surface)]" onClick={e => e.stopPropagation()}>
                   {DIV_ORDER.map(div => (
@@ -322,7 +281,7 @@ export function SectionShell({
                     )}
                   </tbody>
                 </table>
-              </div>
+              </InfoTable>
             </div>
 
             {/* Schedule carousel */}
@@ -402,6 +361,46 @@ export function SectionShell({
                               <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'} YDS</span>
                               <span className="text-xs text-[var(--muted)]">{p.pass_tds ?? '—'} TD</span>
                             </div>
+                          </div>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Divisions carousel */}
+            {divisionSummary.length > 0 && (
+              <div className="mb-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Divisions</h2>
+                  <div className="flex items-center gap-2">
+                    <button onClick={() => divRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
+                    <button onClick={() => divRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
+                  </div>
+                </div>
+                <div ref={divRef} className="overflow-x-auto no-scrollbar">
+                  <div className="flex gap-3 pb-1">
+                    {divisionSummary.map(d => {
+                      const divNum = { I: 1, II: 2, III: 3, IV: 4 }[d.division as 'I'|'II'|'III'|'IV']
+                      const logo = divNum ? DIVISION_LOGOS[divNum] : undefined
+                      return (
+                        <Link key={d.division} href={`/division/${DIV_SLUGS[d.division]}`}
+                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
+                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
+                            {logo && <Image src={logo} alt="" width={48} height={48} className="object-contain" unoptimized />}
+                          </div>
+                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
+                            <div>
+                              <p className="text-sm font-bold text-[var(--txt)] leading-snug">Division {d.division}</p>
+                              <p className="text-xs text-[var(--muted)] mt-0.5">{d.team_count} teams</p>
+                            </div>
+                            {d.avg_win_pct != null && (
+                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>
+                                {fmtPctFromFloat(d.avg_win_pct)} avg win%
+                              </span>
+                            )}
                           </div>
                         </Link>
                       )

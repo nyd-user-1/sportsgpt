@@ -1,0 +1,1813 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2023",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 33,
+    "gameId": "6408",
+    "box": {
+      "gameId": "6408",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Northport",
+          "q1": "6",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 23,
+            "yds": 258,
+            "tds": 5
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 8,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "att": 5,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Isiah Gutierrez",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 13,
+            "yds": 102,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 12,
+            "yds": 91,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 5,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Derek Vassallo",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 4,
+            "comp": 3,
+            "yds": 65,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 9,
+            "comp": 3,
+            "yds": 48,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Malyk Montenegro",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 2,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jacob Serigano",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Max Brewer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/14/2023",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "6424",
+    "box": {
+      "gameId": "6424",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Smithtown East 7: Giancarlo Valenti rushed for 221 yards and a touchdown on 18 carries and Christian Campoli caught three passes for 112 yards and two touchdowns to lead Northport (1-1) in Suffolk II. Jake Fields rushed for a one-yard touchdown for Smithtown East (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Lucas Santangelo",
+            "att": 18,
+            "yds": 120,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 10,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 18,
+            "yds": 221,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 8,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 8,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 10,
+            "comp": 19,
+            "yds": 86,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 8,
+            "comp": 4,
+            "yds": 122,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Andrew Carbonara",
+            "rec": 4,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Tedeschi",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Joey Fallon",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Bryan Devlin",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 3,
+            "yds": 112,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Max Brewer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2023",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 23,
+    "gameId": "6456",
+    "box": {
+      "gameId": "6456",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "14",
+          "q3": "9",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Northport",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 23, Northport 6: Rocco Carpinello ran for 86 yards on nine carries and had two touchdowns and a two-point conversion run for West Islip (3-0) in Suffolk II. Chris Pirapato rushed for 56 yards on 11 carries and added a 48-yard touchdown reception. Piropato led the Lions defense with 10 tackles and a sack. Jack Harvel had nine tackles and two sacks. Shaun Boyle had six tackles and an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 9,
+            "yds": 86,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 11,
+            "yds": 56,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jovan Brewster",
+            "att": 3,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Mickey Failkner",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack Harvel",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Bobby Richardson",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 17,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 11,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Enrique Hernandez",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jesse Castillo",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Bobby Richardson",
+            "att": 1,
+            "comp": 1,
+            "yds": 48,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 9,
+            "comp": 4,
+            "yds": 44,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "rec": 1,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Jack Harvel",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Mickey Failkner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Jordan Fileti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Cameron  Foley",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2023",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 36,
+    "gameId": "6481",
+    "box": {
+      "gameId": "6481",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "15",
+          "q2": "15",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 36, Northport 0: Elijah Outlaw threw for 147 yards and two touchdowns and ran for 58 yards and three touchdowns to lead West Babylon (4-0) in Suffolk II. Luke Barerra made four receptions for 37 yards and a touchdown. Tristan Trellis had a 41-yard touchdown reception. Thomas Raccomandato added two catches for 61 yards and tackled the ball carrier in the end zone for a safety. West Babylon got its third shutout of the season. Anthony Borawski made five tackles and recovered a fumble. Carmine Apuzzo blocked a punt and recovered it. Nicholas Serrano made five tackles and had a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 3,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 7,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 9,
+            "yds": 58,
+            "tds": 3
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nicholas Serrano",
+            "att": 9,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jahavi Reyes",
+            "att": 5,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Noah Bilello",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "att": 4,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Justin Baldwin",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "William Estevez",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 1,
+            "comp": 8,
+            "yds": 11,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 14,
+            "comp": 8,
+            "yds": 147,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "rec": 2,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Tristan Trellis",
+            "rec": 2,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Luke Barrera",
+            "rec": 4,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nicholas Serrano",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Liam Henshaw",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tommy O'Brien",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nicholas Serrano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Anthony Borawski",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sha'Brece Fuller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2023",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 13,
+    "gameId": "6497",
+    "box": {
+      "gameId": "6497",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "9",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 30, Huntington 13: Michael Campoli rushed for 180 yards and two touchdowns on 21 carries to lead Northport (2-3) in Suffolk II. Giancarlo Valenti added 123 rushing yards and a touchdown, and Luke Loicacono had a 91-yard kickoff return. Ben Pipolo made six tackles, a sack and forced a safety. David Dorilus Dax rushed for 158 yards and a touchdown on 12 carries for Huntington (0-5).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 21,
+            "yds": 180,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 20,
+            "yds": 123,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 10,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher  Levine",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 2,
+            "comp": 1,
+            "yds": 26,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Gio Valenti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2023",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 15,
+    "gameId": "6517",
+    "box": {
+      "gameId": "6517",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "9",
+          "q3": "0",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 19, Bellport 15: Christian Campoli returned a kickoff 80 yards for a touchdown with just over two minutes left in the fourth quarter to lead Northport (3-3) in Suffolk II. Matt Lugo made 13 tackles and Reid Johansen had 10 tackles. Luke Campbell blocked a punt for a safety late in the second quarter. Caleb White had a rushing touchdown for Bellport (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 14,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 6,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 10,
+            "yds": 29,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Caleb White",
+            "att": 15,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 18,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 9,
+            "comp": 3,
+            "yds": 66,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Caleb White",
+            "att": 21,
+            "comp": 6,
+            "yds": 47,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "rec": 2,
+            "yds": 63,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Marcine Allen-Boutwell",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jovahn Salomon",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Braydon Cipp",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          },
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Cameron  Foley",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2023",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 7,
+    "gameId": "6556",
+    "box": {
+      "gameId": "6556",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Northport",
+          "q1": "27",
+          "q2": "6",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 47, Copiague 7: Michael Campoli scored twice and his brother Christian added a 60-yard rushing touchdown to lead Northport (4-3) in Suffolk II. Giancarlo Valenti rushed for three touchdowns and Greyson Cabrera snagged two interceptions. Max Brewer and Reid Johansen each made nine tackles. Christian Annibourne scored a rushing touchdown for Copiague (0-7).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 3,
+            "yds": 108,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 2,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 6,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 4,
+            "yds": 43,
+            "tds": 3
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "att": 1,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Asher Levine",
+            "att": 4,
+            "yds": 12,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Sean Frey",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Kai Chin",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 2,
+            "comp": 1,
+            "yds": 54,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Luke Campbell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Connor Henigman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2023",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 63,
+    "gameId": "6579",
+    "box": {
+      "gameId": "6579",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "8",
+          "q2": "20",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "21",
+          "q2": "14",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "63"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 63, Northport 41: Jordan Heyman threw for 475 yards and eight touchdowns to lead host Half Hollow Hills East (7-1) in Suffolk II. Lucas Martin had 170 yards receiving, three receiving touchdowns and an 80-yard kick return touchdown. Daniel White had 150 yards receiving and a touchdown. Tyler Sanders had 165 receiving yards and three touchdowns and caught an interception. Max Futter had 109 receiving yards, a touchdown, a forced fumble and fumble recovery. Noah Chlapp made 13 tackles, had a sack and an interception. Anthony Sofia made eight tackles. Michael Campoli scored three rushing touchdowns and caught two touchdowns for Northport (4-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 18,
+            "yds": 181,
+            "tds": 3
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 14,
+            "yds": 111,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Luke Loiacono",
+            "att": 5,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 0,
+            "yds": 150,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jordan Heyman",
+            "att": 0,
+            "yds": 20,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 15,
+            "comp": 8,
+            "yds": 242,
+            "tds": 2,
+            "int": 2
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jordan Heyman",
+            "att": 0,
+            "comp": 0,
+            "yds": 450,
+            "tds": 8,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "rec": 2,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "rec": 3,
+            "yds": 70,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 1,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "rec": 2,
+            "yds": 44,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Lucas Martin",
+            "rec": 0,
+            "yds": 170,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler sanders",
+            "rec": 0,
+            "yds": 165,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Futter",
+            "rec": 0,
+            "yds": 109,
+            "tds": 1,
+            "pat": 2
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "rec": 0,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Zach Loh",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Max  Futter",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Gio Valenti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "noah chlap",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Tyler sanders",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/03/2023",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 23,
+    "gameId": "6724",
+    "box": {
+      "gameId": "6724",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "13",
+          "q2": "10",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 23, Northport 21: Nicholas Serrano rushed for 148 yards and a touchdown on 25 carries and made 10 tackles to lead No. 4 West Babylon (7-2) over No. 5 Northport (4-5) in the Suffolk II quarterfinals at West Babylon Junior High School. Elijah Outlaw ran for 63 yards and a touchdown and threw a 37-yard touchdown to Deshawn Montford. Thomas Raccomandato and Anthony Borawski each made eight tackles, and Luke Barrera had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 13,
+            "yds": 184,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 10,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Campoli",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nicholas Serrano",
+            "att": 25,
+            "yds": 148,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 12,
+            "yds": 63,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Simon Blissett",
+            "att": 15,
+            "comp": 5,
+            "yds": 102,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 8,
+            "comp": 3,
+            "yds": 70,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "rec": 3,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Lugo",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Deshawn Montford",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Vinny Soletti",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Henshaw",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Gio Valenti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tommy O'Brien",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Greyson Cabrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Luke Barrera",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]
