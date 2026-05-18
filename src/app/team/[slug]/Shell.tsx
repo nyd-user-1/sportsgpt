@@ -301,10 +301,13 @@ export function TeamShell({
                     {slide.kind === 'placeholder' ? (
                       <div className="absolute inset-0 flex items-center justify-center"
                         style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? ACCENT_COLOR }}>
-                        {SCHOOL_LOGOS[schoolSlug] && (
-                          <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={96} height={96} className="object-contain opacity-70" unoptimized />
-                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        {SCHOOL_LOGOS[schoolSlug] && (
+                          <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={96} height={96}
+                            className="object-contain relative z-10"
+                            style={{ filter: 'drop-shadow(0 0 14px rgba(255,255,255,0.45))' }}
+                            unoptimized />
+                        )}
                       </div>
                     ) : (
                       <>
