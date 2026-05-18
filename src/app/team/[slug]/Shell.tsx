@@ -252,7 +252,7 @@ export function TeamShell({
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
                   <div className="relative group">
-                    <Link href={`/team/${prevSlug}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
+                    <Link href={panelMode ? `/maps/${prevSlug}` : `/team/${prevSlug}`} scroll={!panelMode} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
                     <span className={tip}>Prev</span>
                   </div>
                   <div className="relative group">
@@ -268,7 +268,7 @@ export function TeamShell({
                     <span className={tip}>Ask SportsGPT</span>
                   </div>
                   <div className="relative group">
-                    <Link href={`/team/${nextSlug}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
+                    <Link href={panelMode ? `/maps/${nextSlug}` : `/team/${nextSlug}`} scroll={!panelMode} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
                     <span className={tip}>Next</span>
                   </div>
                 </div>
