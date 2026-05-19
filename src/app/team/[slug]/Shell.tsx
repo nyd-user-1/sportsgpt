@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useRef, useMemo, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
@@ -147,9 +146,8 @@ export function TeamShell({
   const section  = team.section as string
   const level    = team.level as string | undefined
   const gender   = team.gender as string | undefined
-  const schoolSlug   = team.school_slug as string
-  const heroPhotos   = TEAM_PHOTOS[schoolSlug] ?? []
-  const primaryColor = SCHOOL_COLORS[schoolSlug]?.primary ?? ACCENT_COLOR
+  const schoolSlug  = team.school_slug as string
+  const heroPhotos  = TEAM_PHOTOS[schoolSlug] ?? []
 
   // Placeholder is always slide 0 — makes it easy to spot teams needing more photos
   type HeroSlide = { kind: 'photo'; url: string } | { kind: 'placeholder' }
@@ -252,22 +250,7 @@ export function TeamShell({
   return (
     <>
       <MaybeLayout panelMode={panelMode} mobileHeader={mobileHeader}>
-        <motion.div
-          className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8 relative isolate"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, ease: [0.25, 0.4, 0.25, 1] }}
-        >
-          {/* Team-color ambient gradient */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -inset-x-20 -top-20 h-[700px]"
-            style={{
-              background: `radial-gradient(ellipse 110% 55% at 50% 0%, ${primaryColor}28 0%, transparent 72%)`,
-              filter: 'blur(56px)',
-              zIndex: -1,
-            }}
-          />
+        <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
@@ -629,7 +612,7 @@ export function TeamShell({
               </div>
             </div>
 
-        </motion.div>
+          </div>
       </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
