@@ -7,7 +7,9 @@ import { ChevronDown, User, MoreHorizontal, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
   SIDEBAR_NAV_TOP, SIDEBAR_NAV_BOTTOM, SIDEBAR_NAV_MORE, SIDEBAR_FOOTER_LABEL, SIDEBAR_DATA_ITEMS,
+  APP_NAME,
 } from '@/lib/app-config'
+import { AppLogo } from '@/components/AppLogo'
 
 interface SidebarProps {
   activeLabel?: string
@@ -27,8 +29,16 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
   return (
     <aside className="flex h-full flex-col bg-[var(--surface)] overflow-hidden">
 
+      {/* Brand */}
+      <div className="px-4 pt-4 pb-2">
+        <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--inp-bg)]">
+          <AppLogo className="h-5 w-5 shrink-0" />
+          <span className="text-[15px] font-bold text-[var(--txt)]">{APP_NAME}</span>
+        </div>
+      </div>
+
       {/* Nav */}
-      <nav className="flex-1 overflow-y-auto no-scrollbar px-3 pt-3 space-y-0.5">
+      <nav className="flex-1 overflow-y-auto no-scrollbar px-3 pt-1 space-y-0.5">
 
         {/* 1. Launchpad */}
         {SIDEBAR_NAV_TOP.slice(0, 1).map(({ label, icon: Icon, href }) => (
