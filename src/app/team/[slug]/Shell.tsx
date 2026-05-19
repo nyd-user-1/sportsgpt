@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { SCHOOL_COLORS } from '@/lib/school-colors'
+import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -253,6 +254,7 @@ export function TeamShell({
         <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
+            <RevealFx delay={0} translateY={4}>
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
@@ -291,8 +293,10 @@ export function TeamShell({
                 </div>
               </div>
             </div>
+            </RevealFx>
 
             {/* Hero slider */}
+            <RevealFx delay={0.15} translateY={16}>
             {heroSlides.length > 0 ? (
               <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 400 }}>
                 {heroSlides.map((slide, i) => (
@@ -353,8 +357,10 @@ export function TeamShell({
                 <p className="text-sm font-semibold text-[var(--txt2)]">{teamName} · Section XI Division {division}</p>
               </div>
             )}
+            </RevealFx>
 
             {/* Profiles */}
+            <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
               <InfoTable
                 title={activeProfile.h2}
@@ -553,7 +559,10 @@ export function TeamShell({
               )
             })()}
 
+            </RevealFx>
+
             {/* Top Players carousel */}
+            <RevealFx delay={0.42} translateY={8}>
             {playerRows.length > 0 && (
               <div className="mb-8">
                 <div className="mb-4">
@@ -586,7 +595,10 @@ export function TeamShell({
               </div>
             )}
 
+            </RevealFx>
+
             {/* Division Standings carousel */}
+            <RevealFx delay={0.52} translateY={8}>
             <div className="mb-8">
               <div className="mb-4">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">Division {division} Standings</h2>
@@ -611,8 +623,9 @@ export function TeamShell({
                 </div>
               </div>
             </div>
+            </RevealFx>
 
-          </div>
+        </div>
       </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
