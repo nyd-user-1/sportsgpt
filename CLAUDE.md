@@ -6,6 +6,7 @@
 
 **Purpose:** NY high school sports intelligence — Section XI football (Nassau/Suffolk, Long Island).
 **Stack:** Next.js 16 (App Router, Turbopack), Neon Postgres, Tailwind v4, Vercel Blob, lucide-react, recharts, framer-motion.
+**School colors:** `src/lib/school-colors.ts` — `SCHOOL_COLORS: Record<string, { primary, secondary, label }>` for all 52 Section XI schools. Colors derived from actual logo images.
 **Repo:** https://github.com/nyd-user-1/sportsgpt
 **Accent color:** `#033882`
 
@@ -150,11 +151,13 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 
 | Route | File | Notes |
 |-------|------|-------|
-| `/team/[slug]` | `Shell.tsx` | Hero photo (Blob), Profiles carousel (History + per-season game logs), Division Standings carousel |
-| `/player/[slug]` | `Shell.tsx` | Career stats by type; hero: headshot → school logo fallback |
+| `/team/[slug]` | `Shell.tsx` | Hero photo SLIDER (auto-advance 4s, color placeholder slide 0, arrows), RevealFx stagger animation, Profiles carousel, Division Standings |
+| `/player/[slug]` | `Shell.tsx` | Career stats by type; breadcrumbs: Division → Team → Player; hero: headshot → school logo fallback |
 | `/school/[slug]` | — | Enrollment, academics |
-| `/division/[slug]` | `Shell.tsx` | Standings (2 rows default, header click expands) + circular season carousel arrows |
+| `/division/[slug]` | `Shell.tsx` | Hero photo slider (auto-advance, arrows), Standings + season carousel |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
+| `/maps` | `page.tsx` + parallel route | Suffolk district choropleth colored by school identity; click → team detail in AppPanel |
+| `/colors` | `page.tsx` | Dev review page: all 52 school logos + color swatches, ✓/✗ confirmation (localStorage) |
 
 ### Game Detail (`/game/[id]`)
 - `page.tsx` — fetches game + box score + prev/next game IDs + player slug map
@@ -336,15 +339,12 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 | 2025-26 | 224/224 ✅ Complete |
 | 2024-25 | 238/240 ✅ Complete |
 | 2023-24 | 234/237 ✅ Complete |
-| 2022-23 | ⏳ Scrape ran overnight — ingest pending next session |
-| 2021-22 | ⏳ Not started |
+| 2022-23 | 215/219 ✅ Complete (4 Nassau gaps) |
+| 2021-22 | 197/203 ✅ Complete (6 Nassau/date-mismatch gaps) |
 
 ### **NEXT SESSION — resume here:**
-1. Check `ls scripts/scraped/*-2022.json` — see which teams scraped overnight
-2. Re-scrape any missing: `node scripts/scrape-boxscores.mjs <slug> 2022`
-3. Ingest 2022-23 (all teams, use `pat-med` and `swr` slug overrides — see slug table above)
-4. Scrape + ingest 2021-22 (season=2021, suffix=/2022)
-5. Build Newsday player scraper (see below)
+1. Build Newsday player scraper (see below)
+2. Update `/player/[slug]` detail page layout
 
 ### Newsday player scraper — NEXT AFTER BOX SCORES
 The same team page URLs have a **ROSTER** table below TEAM RESULTS. Each player links to:
@@ -365,13 +365,64 @@ Note: player IDs are season-specific — not stable cross-season identifiers.
 ## Sidebar Structure (`src/components/Sidebar.tsx`)
 
 Order (top → bottom):
-1. Launchpad (NAV_TOP[0])
-2. Search button (opens CommandPalette)
-3. Chat → Charts → Players → Teams (NAV_TOP.slice(1))
-4. Divider
-5. Gallery → Leaderboard (NAV_BOTTOM)
-6. More... accordion (NAV_MORE: Maps, Schools, Divisions, Section XI)
-7. Footer: Glossary, Admin, Log In
+1. **SportsGPT brand block** — Trophy icon + APP_NAME, `border border-[var(--border)]`, hover state. Styled like Log In button.
+2. Launchpad (NAV_TOP[0])
+3. Search button (opens CommandPalette)
+4. Chat → Charts → Players → Teams (NAV_TOP.slice(1))
+5. Divider
+6. Gallery → Leaderboard (NAV_BOTTOM)
+7. More... accordion (NAV_MORE: Maps, Schools, Divisions, Section XI)
+8. Footer: Glossary, Admin, Log In
+
+**AppLayout header:** Trophy, APP_NAME, and "|" separator removed. Only page title (bold) remains.
+
+---
+
+## Maps Page (`/maps`)
+
+`src/components/SuffolkDistrictMap.tsx` — Google Maps Data layer with Suffolk County school district GeoJSON (from Blob).
+
+- GeoJSON: `https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/geojson/suffolk-schools.geojson`
+- `DISTRICT_SCHOOLS` constant: maps `POPULAR_NA` field → school slug array. Includes 15+ feeder districts (Amagansett, Montauk, Oysterponds, Shelter Island, Southold, Mattituck-Cutchogue, Bridgehampton, Sag Harbor, Wainscott, Sagaponack, Springs, East Quogue, Quogue, Remsenburg-Speonk, East Moriches, Tuckahoe Comn, etc.).
+- Fill color: `SCHOOL_COLORS[slug].primary` from `src/lib/school-colors.ts`
+- Hover: cursor-following tooltip with school logo, division, all-time W-L
+- Click: `router.push('/maps/[team-slug]', { scroll: false })` → opens AppPanel parallel route
+
+**Maps parallel route** (`/maps/[team-slug]`):
+```
+src/app/maps/
+  layout.tsx          ← AppLayout + MapsPanelWrapper
+  page.tsx            ← SuffolkDistrictMap (no AppLayout)
+  default.tsx         ← re-exports page.tsx
+  MapsPanelWrapper.tsx ← 'use client'; reads slug from pathname, opens AppPanel
+  @panel/
+    default.tsx       ← returns null
+    [slug]/page.tsx   ← same DB queries as /team/[slug], renders TeamShell panelMode
+```
+Nav arrows (‹ ›) in panelMode push to `/maps/[next-slug]` — panel updates in place, map stays live.
+
+---
+
+## Team Shell (`/team/[slug]/Shell.tsx`)
+
+### panelMode
+`TeamShell` accepts `panelMode?: boolean`. When true: skips `AppLayout` (via `MaybeLayout` helper), used by `/maps/@panel/[slug]/page.tsx`. Nav arrows push to `/maps/[slug]` instead of `/team/[slug]`.
+
+### Hero Slider
+- `heroSlides`: always starts with a color placeholder (slide 0: `SCHOOL_COLORS[slug].primary` bg + school logo centered + drop shadow)
+- Followed by all `TEAM_PHOTOS[schoolSlug]` entries
+- Auto-advances every 4s; cross-fade 700ms; ‹ › arrow buttons; dot indicators
+- Teams with no photos: placeholder only (no arrows)
+
+### RevealFx Animation (`src/components/RevealFx.tsx`)
+Replicates once-ui's mask+blur reveal. Applied to each Shell section with staggered delays:
+- Header: `delay=0, translateY=4, className="pt-8 -mt-8"` (extra padding so tooltips stay within mask)
+- Hero slider: `delay=0.15, translateY=16`
+- Profiles/stats: `delay=0.3, translateY=8`
+- Top Players: `delay=0.42, translateY=8`
+- Division Standings: `delay=0.52, translateY=8`
+
+CSS technique: `mask-image: linear-gradient(to right, black 0%, black 25%, transparent 50%)` + `mask-size: 400%` sweeps from hidden (mask-position: 100%) to revealed (0%). Combined with `filter: blur(10px)→none` and `translateY`. Filter set to `none` only after `mask-position` transition ends (avoids breaking sticky table headers prematurely).
 
 ---
 
