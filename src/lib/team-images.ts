@@ -81,7 +81,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
   'bayport-blue-point':                [`${BLOB_T}/bayport-blue-point.jpg`],
   'bellport':                          [`${BLOB_T}/bellport.avif`],
   'brentwood':                         [`${BLOB_T}/brentwood.jpg`],
-  'centereach':                        [`${BLOB_T}/centereach.avif`],
+  'centereach':                        [`${BLOB_T}/centereach-team.avif`, `${BLOB_T}/centereach-team-1.avif`, `${BLOB_T}/centereach-team-2.avif`, `${BLOB_T}/centereach.avif`],
   'central-islip':                     [`${BLOB_T}/central-islip.jpg`],
   'comsewogue':                        [`${BLOB_T}/comsewogue.avif`],
   'connetquot':                        [`${BLOB_T}/connetquot.jpeg`],
@@ -131,6 +131,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
 
 // Player headshots keyed by player slug
 export const PLAYER_PHOTOS: Record<string, string> = {
+  'justin-robbert':    `${BLOB_P}/justin-robbert-centereach.avif`,
   'jordan-konig':      `${BLOB_P}/jordan-konig.avif`,
   'jacob-guzik':       `${BLOB_P}/jacob-guzik.avif`,
   'enrique-hernandez': `${BLOB_P}/enrique-hernandez.avif`,
