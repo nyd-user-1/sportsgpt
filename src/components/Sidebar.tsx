@@ -30,10 +30,10 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
     <aside className="flex h-full flex-col bg-[var(--surface)] overflow-hidden">
 
       {/* Brand */}
-      <div className="px-4 pt-4 pb-2">
-        <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[var(--inp-bg)]">
-          <AppLogo className="h-5 w-5 shrink-0" />
-          <span className="text-[15px] font-bold text-[var(--txt)]">{APP_NAME}</span>
+      <div className="p-3 pb-1">
+        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5">
+          <AppLogo className="h-[18px] w-[18px] shrink-0" />
+          <span className="text-[15px] font-medium text-[var(--txt)]">{APP_NAME}</span>
         </div>
       </div>
 
