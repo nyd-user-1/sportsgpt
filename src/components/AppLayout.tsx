@@ -199,7 +199,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
             aria-label="Toggle dark mode"
             className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors mr-2"
           >
-            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {dark ? <Sun className="h-4 w-4 fill-amber-400 text-amber-400" /> : <Moon className="h-4 w-4" />}
           </button>
 
           {pathname === '/chat' && (

@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows, gameRows] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT s.*,
@@ -81,6 +81,12 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       LEFT JOIN teams at2 ON at2.slug = g.away_team_slug
       WHERE g.home_team_slug = ${slug} OR g.away_team_slug = ${slug}
       ORDER BY g.season DESC, g.game_date ASC`,
+    sql`
+      SELECT player_name, player_slug, jersey_number, class
+      FROM player_rosters
+      WHERE school_slug = ${team.school_slug} AND season = 2025
+        AND jersey_number IS NOT NULL
+      ORDER BY jersey_number ASC, player_name ASC`,
   ])
 
   // Prev/next by name order
@@ -98,6 +104,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       seasonRows={seasonRows as Record<string, unknown>[]}
       divTeams={divTeams as Record<string, unknown>[]}
       playerRows={playerRows as Record<string, unknown>[]}
+      rosterRows={rosterRows as Record<string, unknown>[]}
       gameRows={gameRows.map(r => ({
         id:             Number(r.id),
         game_date:      r.game_date ? new Date(r.game_date as unknown as string).toISOString().slice(0, 10) : null,

@@ -19,7 +19,7 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
     ? { name: schoolRows[0].name as string, division: schoolRows[0].division as string }
     : null
 
-  const [stats, allPlayerRows, divTeams, divPlayers] = await Promise.all([
+  const [stats, allPlayerRows, divTeams, divPlayers, gameLogSeasonStats, gameLog, teamSeasonStats] = await Promise.all([
     sql`
       SELECT * FROM player_season_stats
       WHERE player_slug = ${slug}
@@ -56,7 +56,58 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
           LIMIT 20
         `
       : Promise.resolve([]),
+    sql`
+      SELECT entry->>'stat_type' as stat_type, g.season,
+        SUM((entry->>'yds')::int)     as yds,
+        SUM((entry->>'att')::int)     as att,
+        SUM((entry->>'tds')::int)     as tds,
+        SUM((entry->>'comp')::int)    as comp,
+        SUM((entry->>'int')::int)     as pass_int,
+        SUM((entry->>'rec')::int)     as rec,
+        SUM((entry->>'pat')::int)     as pat,
+        SUM((entry->>'fg')::int)      as fg,
+        SUM((entry->>'points')::int)  as points
+      FROM games g
+      JOIN game_box_scores gbs ON gbs.game_id = g.id,
+      LATERAL jsonb_array_elements(gbs.player_stats) as entry
+      WHERE entry->>'player' = ${player.name as string}
+      GROUP BY entry->>'stat_type', g.season
+      ORDER BY g.season DESC
+    `,
+    sql`
+      SELECT
+        g.id as game_id, g.game_date, g.season, g.game_number,
+        g.home_team_slug, g.away_team_slug, g.home_score, g.away_score,
+        ht.name as home_team_name, at2.name as away_team_name,
+        entry->>'stat_type' as stat_type,
+        (entry->>'yds')::int    as yds,
+        (entry->>'att')::int    as att,
+        (entry->>'tds')::int    as tds,
+        (entry->>'comp')::int   as comp,
+        (entry->>'int')::int    as pass_int,
+        (entry->>'rec')::int    as rec,
+        (entry->>'pat')::int    as pat,
+        (entry->>'fg')::int     as fg,
+        (entry->>'points')::int as points,
+        (entry->>'sacks')::numeric as sacks,
+        (entry->>'fumbles')::int   as fumbles
+      FROM games g
+      JOIN game_box_scores gbs ON gbs.game_id = g.id
+      LEFT JOIN teams ht  ON ht.slug  = g.home_team_slug
+      LEFT JOIN teams at2 ON at2.slug = g.away_team_slug,
+      LATERAL jsonb_array_elements(gbs.player_stats) as entry
+      WHERE entry->>'player' = ${player.name as string}
+      ORDER BY g.game_date ASC
+    `,
+    player.school_slug
+      ? sql`SELECT season, overall_wins, overall_losses FROM team_season_stats WHERE team_slug = ${`${player.school_slug}-varsity-football`} ORDER BY season DESC`
+      : Promise.resolve([]),
   ])
+
+  const teamRecords: Record<number, string> = Object.fromEntries(
+    (teamSeasonStats as { season: number; overall_wins: number; overall_losses: number }[])
+      .map(r => [r.season, `${r.overall_wins ?? 0}–${r.overall_losses ?? 0}`])
+  )
 
   const allPlayers = allPlayerRows as { player_slug: string; player_name: string }[]
   const idx = allPlayers.findIndex(p => p.player_slug === slug)
@@ -74,6 +125,7 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
         team_slug:   player.team_slug as string | null,
         position:    player.position as string | null,
       }}
+      teamRecords={teamRecords}
       stats={stats.map(r => ({
         id:           Number(r.id),
         player_slug:  r.player_slug as string,
@@ -119,6 +171,43 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
         name:           r.name as string,
         overall_wins:   r.overall_wins != null ? Number(r.overall_wins) : null,
         overall_losses: r.overall_losses != null ? Number(r.overall_losses) : null,
+      }))}
+      gameLogSeasonStats={gameLogSeasonStats.map(r => ({
+        stat_type: r.stat_type as string,
+        season:    Number(r.season),
+        yds:       r.yds != null ? Number(r.yds) : null,
+        att:       r.att != null ? Number(r.att) : null,
+        tds:       r.tds != null ? Number(r.tds) : null,
+        comp:      r.comp != null ? Number(r.comp) : null,
+        pass_int:  r.pass_int != null ? Number(r.pass_int) : null,
+        rec:       r.rec != null ? Number(r.rec) : null,
+        pat:       r.pat != null ? Number(r.pat) : null,
+        fg:        r.fg != null ? Number(r.fg) : null,
+        points:    r.points != null ? Number(r.points) : null,
+      }))}
+      gameLog={gameLog.map(r => ({
+        game_id:        Number(r.game_id),
+        game_date:      r.game_date ? new Date(r.game_date as unknown as string).toISOString().slice(0, 10) : null,
+        season:         Number(r.season),
+        game_number:    r.game_number != null ? Number(r.game_number) : null,
+        home_team_slug: r.home_team_slug as string,
+        away_team_slug: r.away_team_slug as string,
+        home_score:     r.home_score != null ? Number(r.home_score) : null,
+        away_score:     r.away_score != null ? Number(r.away_score) : null,
+        home_team_name: r.home_team_name as string | null,
+        away_team_name: r.away_team_name as string | null,
+        stat_type:      r.stat_type as string,
+        yds:            r.yds != null ? Number(r.yds) : null,
+        att:            r.att != null ? Number(r.att) : null,
+        tds:            r.tds != null ? Number(r.tds) : null,
+        comp:           r.comp != null ? Number(r.comp) : null,
+        pass_int:       r.pass_int != null ? Number(r.pass_int) : null,
+        rec:            r.rec != null ? Number(r.rec) : null,
+        pat:            r.pat != null ? Number(r.pat) : null,
+        fg:             r.fg != null ? Number(r.fg) : null,
+        points:         r.points != null ? Number(r.points) : null,
+        sacks:          r.sacks != null ? Number(r.sacks) : null,
+        fumbles:        r.fumbles != null ? Number(r.fumbles) : null,
       }))}
       divPlayers={divPlayers.map(r => ({
         player_slug: r.player_slug as string,

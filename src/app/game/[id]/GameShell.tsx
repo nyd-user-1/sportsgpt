@@ -5,8 +5,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChartSpline, ChevronLeft, ChevronRight, FileUser, Image as ImageIcon, MessageCircle } from 'lucide-react'
+import { ArrowRight, ChartSpline, ChevronLeft, ChevronRight, FileUser, Image as ImageIcon, MessageCircle } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
+import { RevealFx } from '@/components/RevealFx'
 import { AppPanel } from '@/components/AppPanel'
 import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
@@ -147,7 +148,7 @@ function ScoreTable({ rows, homeSlug, gameNumber, gameDate, onToggle }: {
             <th className="px-2 py-3 w-9 text-right">
               {onToggle && (
                 <button onClick={onToggle} className="inline-flex items-center justify-center p-1 rounded-md text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="View player stats">
-                  <ChevronRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </button>
               )}
             </th>
@@ -377,7 +378,6 @@ export function GameShell({
     const rawHighlights = box?.highlights as string | null
     if (!rawHighlights) return
 
-    // Serve from sessionStorage on repeat visits
     const cacheKey = `hl-${gameIdNum}`
     try {
       const cached = sessionStorage.getItem(cacheKey)
@@ -391,42 +391,19 @@ export function GameShell({
 
     setLoadingHighlights(true)
 
-    let buffer = ''
-    let titleDone = false
-    let titleEndIdx = 0
-
     fetch(`/api/game/${gameIdNum}/highlights`)
       .then(async res => {
-        if (!res.body) return
-        const reader = res.body.getReader()
-        const decoder = new TextDecoder()
-
-        while (true) {
-          const { done, value } = await reader.read()
-          if (done) break
-          buffer += decoder.decode(value, { stream: true })
-
-          if (!titleDone) {
-            const nl = buffer.indexOf('\n')
-            if (nl !== -1) {
-              setAiTitle(buffer.slice(0, nl).trim())
-              titleDone = true
-              titleEndIdx = nl + 1
-              setLoadingHighlights(false)
-            }
-          }
-          if (titleDone) {
-            setAiHighlights(buffer.slice(titleEndIdx).trimStart())
-          }
+        const text = await res.text()
+        const nl = text.indexOf('\n')
+        if (nl !== -1) {
+          const title = text.slice(0, nl).trim()
+          const body  = text.slice(nl + 1).trimStart()
+          setAiTitle(title)
+          setAiHighlights(body)
+          try { sessionStorage.setItem(cacheKey, JSON.stringify({ title, text: body })) } catch {}
+        } else {
+          setAiHighlights(text.trim())
         }
-
-        // Cache for this session
-        try {
-          sessionStorage.setItem(cacheKey, JSON.stringify({
-            title: buffer.slice(0, titleEndIdx - 1).trim(),
-            text: buffer.slice(titleEndIdx).trimStart(),
-          }))
-        } catch {}
       })
       .catch(() => {})
       .finally(() => setLoadingHighlights(false))
@@ -434,9 +411,9 @@ export function GameShell({
   const [view, setView] = useState<'score' | 'stats'>('score')
   const [slideDir, setSlideDir] = useState(1) // 1 = forward (score→stats), -1 = back (stats→score)
   const slideVariants = {
-    enter: (d: number) => ({ x: `${d * 100}%` }),
+    enter: (d: number) => ({ x: `${d * -100}%` }),
     center: { x: 0 },
-    exit: (d: number) => ({ x: `${d * -100}%` }),
+    exit: (d: number) => ({ x: `${d * 100}%` }),
   }
   const [photoOpen,  setPhotoOpen]    = useState(false)
   const [chartsOpen, setChartsOpen]   = useState(false)
@@ -486,6 +463,7 @@ export function GameShell({
           <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header */}
+            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
@@ -530,8 +508,10 @@ export function GameShell({
                 </div>
               </div>
             </div>
+            </RevealFx>
 
             {/* Hero */}
+            <RevealFx delay={0.15} translateY={16}>
             <GameHero
               homeSlug={homeSlug} awaySlug={awaySlug}
               homeName={homeName} awayName={awayName}
@@ -541,8 +521,10 @@ export function GameShell({
               division={division} awayDivision={awayDivision}
               gameDate={game.game_date as string | Date | null}
             />
+            </RevealFx>
 
             {/* Box Score / Stats toggle */}
+            <RevealFx delay={0.3} translateY={8}>
             {(quarterRows.length > 0 || (PROFILES.length > 0 && active)) && (
               <div className="mb-8 relative" style={{ overflowX: 'clip' }}>
                 <AnimatePresence mode="popLayout" initial={false} custom={slideDir}>
@@ -591,17 +573,17 @@ export function GameShell({
                 </AnimatePresence>
               </div>
             )}
+            </RevealFx>
 
             {/* Highlights */}
+            <RevealFx delay={0.42} translateY={8}>
             {highlights && (
               <div className="mb-6">
                 {loadingHighlights ? (
                   <div className="animate-pulse mb-3 h-6 bg-[var(--inp-bg)] rounded w-2/3" />
                 ) : (
                   <>
-                    <h2 className="text-lg font-semibold text-[var(--txt)] mb-1">
-                      {aiTitle ?? 'Game Highlights'}
-                    </h2>
+                    <h2 className="text-lg font-semibold text-[var(--txt)] mb-1">{aiTitle ?? 'Game Highlights'}</h2>
                     <p className="text-xs text-[var(--muted)] mb-3">By NYSgpt</p>
                   </>
                 )}
@@ -617,10 +599,11 @@ export function GameShell({
                 ) : aiHighlights ? (
                   <div className="space-y-3">{renderHighlights(aiHighlights, playerSlugs, gameIdNum)}</div>
                 ) : (
-                  <p className="text-sm text-[var(--txt2)] leading-relaxed">{highlights}</p>
+                  <p className="text-sm text-[var(--txt)] leading-relaxed">{highlights}</p>
                 )}
               </div>
             )}
+            </RevealFx>
 
           </div>
         </div>

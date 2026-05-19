@@ -114,7 +114,7 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 }
 
 export function TeamShell({
-  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, gameRows,
+  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows,
   panelMode = false,
 }: {
   team: Record<string, unknown>
@@ -123,6 +123,7 @@ export function TeamShell({
   seasonRows: Record<string, unknown>[]
   divTeams: Record<string, unknown>[]
   playerRows: Record<string, unknown>[]
+  rosterRows?: Record<string, unknown>[]
   gameRows: GameRow[]
   panelMode?: boolean
 }) {
@@ -597,8 +598,43 @@ export function TeamShell({
 
             </RevealFx>
 
-            {/* Division Standings carousel */}
+            {/* 2025-26 Roster */}
+            {rosterRows.length > 0 && (
             <RevealFx delay={0.52} translateY={8}>
+            <div className="mb-8">
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold text-[var(--txt)]">2025‑26 Roster</h2>
+              </div>
+              <div className="rounded-xl border border-[var(--border)] overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr>
+                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)] w-10">#</th>
+                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">Name</th>
+                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">Class</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rosterRows.map((r, i) => (
+                      <tr key={i} className="group/row border-b border-[var(--border)] last:border-0 hover:bg-[var(--inp-bg)]">
+                        <td className="px-3 py-2 text-[var(--muted)] tabular-nums">{r.jersey_number != null ? String(r.jersey_number) : '—'}</td>
+                        <td className="px-3 py-2 text-[var(--txt)] font-medium">
+                          {r.player_slug
+                            ? <Link href={`/player/${r.player_slug}`} className="hover:underline">{r.player_name as string}</Link>
+                            : r.player_name as string}
+                        </td>
+                        <td className="px-3 py-2 text-[var(--muted)]">{r.class as string ?? '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            </RevealFx>
+            )}
+
+            {/* Division Standings carousel */}
+            <RevealFx delay={0.62} translateY={8}>
             <div className="mb-8">
               <div className="mb-4">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">Division {division} Standings</h2>
