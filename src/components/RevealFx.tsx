@@ -22,9 +22,9 @@ export function RevealFx({
     return () => clearTimeout(t)
   }, [delay])
 
-  // Once transition ends, swap blur(0) → none so sticky children work again
-  function handleTransitionEnd() {
-    if (on) setDone(true)
+  // Only remove filter after the mask transition finishes (not transform/filter)
+  function handleTransitionEnd(e: React.TransitionEvent) {
+    if (on && e.propertyName === 'mask-position') setDone(true)
   }
 
   return (
