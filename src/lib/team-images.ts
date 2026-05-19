@@ -95,7 +95,7 @@ export const TEAM_PHOTOS: Record<string, string[]> = {
   'floyd':                             [`${BLOB_T}/wf.webp`, `${BLOB_T}/floyd-team-1.jpg`, `${BLOB_T}/floyd-team-2.jpg`, `${BLOB_T}/floyd-team-3.jpg`],
   'longwood':                          [`${BLOB_T}/longwood.jpg`],
   'ward-melville':                     [`${BLOB_T}/ward-melville.jpg`],
-  'center-moriches':                   [`${BLOB_T}/cm%201.jpg`,    `${BLOB_T}/cm2%201.png`, `${BLOB_T}/cm2.jpg`,  `${BLOB_T}/cm3.jpg`,  `${BLOB_T}/cm4.jpg`,  `${BLOB_T}/cm5.jpg`],
+  'center-moriches':                   [`${BLOB_T}/cm-team-1.jpg`, `${BLOB_T}/cm-team-2.avif`, `${BLOB_T}/cm-team-3.avif`, `${BLOB_T}/cm-team-4.avif`, `${BLOB_T}/cm%201.jpg`, `${BLOB_T}/cm2%201.png`, `${BLOB_T}/cm2.jpg`, `${BLOB_T}/cm3.jpg`, `${BLOB_T}/cm4.jpg`, `${BLOB_T}/cm5.jpg`],
   'commack':                           [`${BLOB_T}/cmk%204.jpg`,   `${BLOB_T}/cmk2%201.png`,`${BLOB_T}/cmk2.jpg`, `${BLOB_T}/cmk3.jpg`],
   'east-hampton-bridgehampton-pierson':[`${BLOB_T}/eh%201.jpg`,    `${BLOB_T}/eh%202.jpg`,  `${BLOB_T}/eh%204.jpg`,`${BLOB_T}/eh6.jpg`,  `${BLOB_T}/eh7.jpg`],
   'eastport-south-manor':              [`${BLOB_T}/ep1.jpg`,        `${BLOB_T}/ep2.jpg`,     `${BLOB_T}/ep3.jpg`],
