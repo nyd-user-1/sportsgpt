@@ -254,7 +254,7 @@ export function TeamShell({
         <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
             {/* Header — hidden on mobile (team info moved to AppLayout header) */}
-            <RevealFx delay={0} translateY={4}>
+            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
             <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
               <div className="flex flex-col gap-1">
                 <div className="flex items-center gap-3">
@@ -270,11 +270,26 @@ export function TeamShell({
               </div>
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
-                  <Link href={panelMode ? `/maps/${prevSlug}` : `/team/${prevSlug}`} scroll={!panelMode} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
-                  <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
-                  <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
-                  <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
-                  <Link href={panelMode ? `/maps/${nextSlug}` : `/team/${nextSlug}`} scroll={!panelMode} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
+                  <div className="relative group">
+                    <Link href={panelMode ? `/maps/${prevSlug}` : `/team/${prevSlug}`} scroll={!panelMode} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
+                    <span className={tip}>Prev</span>
+                  </div>
+                  <div className="relative group">
+                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
+                    <span className={tip}>Charts</span>
+                  </div>
+                  <div className="relative group">
+                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
+                    <span className={tip}>Map</span>
+                  </div>
+                  <div className="relative group">
+                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
+                    <span className={tip}>Ask SportsGPT</span>
+                  </div>
+                  <div className="relative group">
+                    <Link href={panelMode ? `/maps/${nextSlug}` : `/team/${nextSlug}`} scroll={!panelMode} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
+                    <span className={tip}>Next</span>
+                  </div>
                 </div>
               </div>
             </div>
