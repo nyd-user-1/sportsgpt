@@ -1,14 +1,16 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChevronDown, ChartSpline, Map, MessageCircle, User } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, User } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { PLAYER_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
+import { PLAYER_PHOTOS, SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import { InfoTable } from '@/components/InfoTable'
+import { CardLandscapeMini } from '@/components/CardLandscapeMini'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
 
@@ -345,26 +347,14 @@ export function PlayerShell({
 
   const defaultIdx = STAT_TYPES.indexOf(defaultStatType(label))
   const [statTypeIdx, setStatTypeIdx] = useState(defaultIdx >= 0 ? defaultIdx : 0)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const playersRef  = useRef<HTMLDivElement>(null)
-  const divRef      = useRef<HTMLDivElement>(null)
+  const [statsExpanded, setStatsExpanded] = useState(true)
 
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
 
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (!dropdownRef.current?.contains(e.target as Node)) setDropdownOpen(false)
-    }
-    document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [])
-
-  const selectedType = STAT_TYPES[statTypeIdx]
-  const tableRows = stats.filter(s => s.stat_type === selectedType)
-
+  const selectedType   = STAT_TYPES[statTypeIdx]
+  const tableRows      = stats.filter(s => s.stat_type === selectedType)
   const availableTypes = STAT_TYPES.filter(t => stats.some(s => s.stat_type === t))
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
@@ -372,19 +362,38 @@ export function PlayerShell({
   const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
 
   const schoolSlug = player.school_slug
+  const heroPhoto  = PLAYER_PHOTOS[player.slug] ?? (schoolSlug ? TEAM_PHOTOS[schoolSlug]?.[0] : null) ?? null
+  const logo       = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
+
+  const mobileHeader = (
+    <div className="flex items-center gap-2 w-full">
+      {logo ? (
+        <Image src={logo} alt="" width={36} height={36}
+          className="shrink-0 h-9 w-9 rounded-full bg-white p-0.5 object-contain ring-1 ring-[var(--border)]" unoptimized />
+      ) : null}
+      <div className="flex-1 min-w-0">
+        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{player.name}</p>
+        <p className="text-[11px] text-[var(--muted)] leading-tight truncate">
+          {school?.name ?? ''}
+          {player.position ? ` · ${player.position}` : ''}
+        </p>
+      </div>
+    </div>
+  )
 
   return (
     <>
-      <AppLayout>
+      <AppLayout mobileHeader={mobileHeader}>
         <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 py-8">
+          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
 
-            {/* Header */}
-            <div className="mb-8 flex items-start justify-between gap-2">
+            {/* Header — hidden on mobile */}
+            <div className="hidden sm:flex mb-8 items-start justify-between gap-2">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  {schoolSlug && SCHOOL_LOGOS[schoolSlug] && (
-                    <Image src={SCHOOL_LOGOS[schoolSlug]} alt="" width={28} height={28} className="shrink-0 h-7 w-7 object-contain" unoptimized />
+                  {logo && (
+                    <Image src={logo} alt="" width={28} height={28}
+                      className="shrink-0 h-7 w-7 object-contain" unoptimized />
                   )}
                   <h1 className="text-2xl font-bold text-[var(--txt)]">{player.name}</h1>
                   {player.position && (
@@ -393,16 +402,13 @@ export function PlayerShell({
                   )}
                 </div>
                 {school && (
-                  <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]" style={{ paddingLeft: schoolSlug && SCHOOL_LOGOS[schoolSlug] ? '36px' : '0' }}>
-                    <Link href="/section/section-xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
-                    <span>/</span>
+                  <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]"
+                    style={{ paddingLeft: logo ? '36px' : '0' }}>
                     <Link href={`/division/division-${school.division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {school.division}</Link>
                     <span>/</span>
-                    {schoolSlug ? (
-                      <Link href={`/school/${schoolSlug}`} className="hover:text-[var(--txt)] transition-colors">{school.name}</Link>
-                    ) : (
-                      <span>{school.name}</span>
-                    )}
+                    <Link href={`/team/${schoolSlug}-varsity-football`} className="hover:text-[var(--txt)] transition-colors">{school.name}</Link>
+                    <span>/</span>
+                    <span className="font-medium" style={{ color: ACCENT_COLOR }}>{player.name}</span>
                   </div>
                 )}
               </div>
@@ -432,32 +438,48 @@ export function PlayerShell({
               </div>
             </div>
 
-            {/* Hero stat card */}
-            {yards > 0 && (
-              <div className="mb-8 rounded-2xl overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR} 0%, #0a52c7 100%)` }}>
-                <div className="px-6 py-5 flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-white/70 mb-1">Best Season · {formatSeason(bestSeason)}</p>
-                    <p className="text-4xl font-black text-white">{yards.toLocaleString()}</p>
-                    <p className="text-sm text-white/80 mt-1">{label}</p>
-                  </div>
-                  {(() => {
-                    const photo = PLAYER_PHOTOS[player.slug]
-                    const logo  = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
-                    return photo ? (
-                      <div className="shrink-0 h-20 w-20 rounded-full overflow-hidden border-2 border-white/30 relative">
-                        <Image src={photo} alt={player.name} fill className="object-cover object-top" unoptimized />
-                      </div>
-                    ) : logo ? (
-                      <div className="shrink-0 h-16 w-16 rounded-full bg-white/10 flex items-center justify-center p-1.5">
-                        <Image src={logo} alt="" width={52} height={52} className="object-contain" unoptimized />
-                      </div>
-                    ) : (
-                      <User className="shrink-0 h-16 w-16 text-white/20" />
-                    )
-                  })()}
+            {/* Hero — player photo → team photo → gradient fallback (hidden on mobile) */}
+            {heroPhoto ? (
+              <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
+                <Image src={heroPhoto} alt={player.name} fill className="object-cover object-top" unoptimized />
+              </div>
+            ) : (
+              <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+                style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
+                {logo ? (
+                  <Image src={logo} alt="" width={64} height={64} className="object-contain" unoptimized />
+                ) : (
+                  <User className="h-12 w-12 text-[var(--muted)]" />
+                )}
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-[var(--txt2)]">
+                    {player.name}{player.position ? ` · ${player.position}` : ''}
+                  </p>
                 </div>
+              </div>
+            )}
+
+            {/* Career Stats in InfoTable with stat-type carousel */}
+            {stats.length > 0 && (
+              <div className="mb-8">
+                <InfoTable
+                  title={selectedType}
+                  onToggle={() => setStatsExpanded(v => !v)}
+                  onPrev={availableTypes.length > 1 ? () => {
+                    const cur = availableTypes.indexOf(selectedType)
+                    const prev = availableTypes[(cur - 1 + availableTypes.length) % availableTypes.length]
+                    setStatTypeIdx(STAT_TYPES.indexOf(prev))
+                    setStatsExpanded(true)
+                  } : undefined}
+                  onNext={availableTypes.length > 1 ? () => {
+                    const cur = availableTypes.indexOf(selectedType)
+                    const next = availableTypes[(cur + 1) % availableTypes.length]
+                    setStatTypeIdx(STAT_TYPES.indexOf(next))
+                    setStatsExpanded(true)
+                  } : undefined}
+                >
+                  <StatTable type={selectedType} rows={statsExpanded ? tableRows : tableRows.slice(0, 2)} />
+                </InfoTable>
               </div>
             )}
 
@@ -481,43 +503,6 @@ export function PlayerShell({
               )
             })()}
 
-            {/* Career Stats — unified table with dropdown toggle */}
-            {stats.length > 0 && (
-              <div className="mb-8">
-                <div className="rounded-xl border border-[var(--border)] shadow-sm overflow-hidden">
-                  {/* Toolbar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)]">
-                    <span className="text-sm font-semibold text-[var(--txt)]">Career Stats</span>
-                    {/* Stat type dropdown */}
-                    <div ref={dropdownRef} className="relative">
-                      <button
-                        onClick={() => setDropdownOpen(v => !v)}
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--bg)] px-3 py-1.5 text-xs font-semibold text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
-                        {selectedType}
-                        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-150', dropdownOpen && 'rotate-180')} />
-                      </button>
-                      {dropdownOpen && (
-                        <div className="absolute right-0 top-full mt-1 z-50 min-w-[140px] rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden">
-                          {availableTypes.map((t, i) => (
-                            <button key={t}
-                              onClick={() => { setStatTypeIdx(STAT_TYPES.indexOf(t)); setDropdownOpen(false) }}
-                              className={cn(
-                                'w-full px-3 py-2 text-left text-sm transition-colors hover:bg-[var(--inp-bg)]',
-                                i > 0 && 'border-t border-[var(--border)]',
-                                t === selectedType ? 'font-semibold text-[var(--txt)]' : 'text-[var(--muted)]'
-                              )}>
-                              {t}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <StatTable type={selectedType} rows={tableRows} />
-                </div>
-              </div>
-            )}
-
             {/* Top Players carousel */}
             {divPlayers.length > 0 && (
               <div className="mb-8">
@@ -525,38 +510,26 @@ export function PlayerShell({
                   <h2 className="text-lg font-semibold text-[var(--txt)]">Top Players</h2>
                   {school && <p className="text-xs text-[var(--muted)] mt-0.5">Division {school.division} · 2024-25</p>}
                 </div>
-                <div ref={playersRef} className="overflow-x-auto no-scrollbar">
+                <div className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
                     {divPlayers.map((p, i) => {
-                      const stat = topStat(p)
+                      const stat        = topStat(p)
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug]
                       const fallbackLogo = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
+                      const img = playerPhoto
+                        ? <Image src={playerPhoto} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                        : fallbackLogo
+                        ? <Image src={fallbackLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                        : undefined
                       return (
-                        <Link key={`${p.player_slug}-${i}`}
+                        <CardLandscapeMini
+                          key={`${p.player_slug}-${i}`}
                           href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          {playerPhoto ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden">
-                              <Image src={playerPhoto} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                            </div>
-                          ) : fallbackLogo ? (
-                            <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                              <Image src={fallbackLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                            </div>
-                          ) : null}
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">
-                                {p.position ? `${p.position}, ${p.stat_type}` : p.stat_type}
-                              </p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{stat.value}</span>
-                              <span className="text-xs text-[var(--muted)]">{stat.label}</span>
-                            </div>
-                          </div>
-                        </Link>
+                          image={img}
+                          title={p.player_name}
+                          row2={{ text: p.position ? `${p.position}, ${p.stat_type}` : p.stat_type }}
+                          stat={{ value: stat.value, label: stat.label }}
+                        />
                       )
                     })}
                   </div>
@@ -571,38 +544,54 @@ export function PlayerShell({
                   <h2 className="text-lg font-semibold text-[var(--txt)]">Division {school.division} Standings</h2>
                   <p className="text-xs text-[var(--muted)] mt-0.5">2024-25</p>
                 </div>
-                <div ref={divRef} className="overflow-x-auto no-scrollbar">
+                <div className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
                     {divTeams.map(t => {
                       const tSchoolSlug = t.slug.replace(/-varsity-football$/, '')
                       const tLogo = SCHOOL_LOGOS[tSchoolSlug]
                       return (
-                        <Link key={t.slug} href={`/team/${t.slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                            {tLogo ? (
-                              <Image src={tLogo} alt="" width={60} height={60} className="w-full h-full object-contain p-1" unoptimized />
-                            ) : (
-                              <div className="w-full h-full" />
-                            )}
-                          </div>
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">
-                                {t.name.replace(/\s+Varsity\s+Football$/i, '')}
-                              </p>
-                              <p className="text-xs font-bold mt-0.5 truncate" style={{ color: ACCENT_COLOR }}>
-                                {fmtRecord(t.overall_wins, t.overall_losses)}
-                              </p>
-                            </div>
-                            <span className="text-xs text-[var(--muted)]">
-                              {fmtWinPct(t.overall_wins, t.overall_losses)}
-                            </span>
-                          </div>
-                        </Link>
+                        <CardLandscapeMini
+                          key={t.slug}
+                          href={`/team/${t.slug}`}
+                          image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                          title={t.name.replace(/\s+Varsity\s+Football$/i, '')}
+                          stat={{ value: fmtRecord(t.overall_wins, t.overall_losses) }}
+                          statFirst
+                          row2={{ text: fmtWinPct(t.overall_wins, t.overall_losses) }}
+                        />
                       )
                     })}
                   </div>
+                </div>
+              </div>
+            )}
+
+            {/* Best Season card */}
+            {yards > 0 && (
+              <div className="mb-8 rounded-2xl overflow-hidden"
+                style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR} 0%, #0a52c7 100%)` }}>
+                <div className="px-6 py-5 flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-white/70 mb-1">
+                      Best Season · {formatSeason(bestSeason)}
+                    </p>
+                    <p className="text-4xl font-black text-white">{yards.toLocaleString()}</p>
+                    <p className="text-sm text-white/80 mt-1">{label}</p>
+                  </div>
+                  {(() => {
+                    const photo = PLAYER_PHOTOS[player.slug]
+                    return photo ? (
+                      <div className="shrink-0 h-20 w-20 rounded-full overflow-hidden border-2 border-white/30 relative">
+                        <Image src={photo} alt={player.name} fill className="object-cover object-top" unoptimized />
+                      </div>
+                    ) : logo ? (
+                      <div className="shrink-0 h-16 w-16 rounded-full bg-white/10 flex items-center justify-center p-1.5">
+                        <Image src={logo} alt="" width={52} height={52} className="object-contain" unoptimized />
+                      </div>
+                    ) : (
+                      <User className="shrink-0 h-16 w-16 text-white/20" />
+                    )
+                  })()}
                 </div>
               </div>
             )}
