@@ -188,12 +188,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
 
           {title && (
             <div className="ml-4 flex items-center gap-2 text-[var(--txt)]">
-              <Link href="/" className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-xl font-bold hover:bg-[var(--inp-bg)] transition-colors">
-                <AppLogo className="h-5 w-5 shrink-0" />
-                {APP_NAME}
-              </Link>
-              <span className="text-[var(--muted)] text-xl select-none">|</span>
-              <span className="text-xl font-medium">{chartNav?.pageTitle ?? title}</span>
+              <span className="text-xl font-bold">{chartNav?.pageTitle ?? title}</span>
             </div>
           )}
 
