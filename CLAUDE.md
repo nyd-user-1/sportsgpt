@@ -260,15 +260,24 @@ When the secondary page needs **server-rendered data** (DB queries, the full pag
 Pattern (as implemented on `/charts`):
 ```
 src/app/charts/
-  layout.tsx              ← AppLayout + <ChartsPanelWrapper panel={panel} />
-  page.tsx / default.tsx  ← the grid; navigates to /charts/[slug] on click
-  ChartsPanelWrapper.tsx  ← 'use client'; reads URL slug, opens/closes AppPanel
-  @panel/
-    default.tsx           ← returns null (panel closed)
-    [slug]/page.tsx       ← full server-rendered chart content (panelMode=true)
+  layout.tsx                ← AppLayout + 3 slot wrappers (panel, player, team)
+  page.tsx                  ← server component; 28 parallel SQL queries for chart card photos
+  ChartsGrid.tsx            ← 'use client'; A-Z sorted responsive grid (minmax 220px), keyboard nav
+  ChartsPanelWrapper.tsx    ← chart panel; prev/next cycle through CHART_SLUGS_AZ
+  ChartsPlayerWrapper.tsx   ← player panel; prev/next from sessionStorage chart-players-{slug}
+  ChartsTeamWrapper.tsx     ← team panel; prev/next from sessionStorage chart-teams-{slug}
+  @panel/[slug]/
+    default.tsx             ← re-exports page (keeps chart visible at deeper URLs)
+    page.tsx                ← 28 chart cases; SportsBarChartInteractive or SportsAreaGradient
+  @player/[slug]/[playerSlug]/page.tsx  ← PlayerPanelContent from PanelPlayer
+  @team/[slug]/team/[teamSlug]/page.tsx ← TeamPanelContent from PanelTeam
 ```
 
-Clicking a card navigates to `/charts/season-records`. The `@panel` slot renders the full chart server-side; the grid (`default.tsx`) stays visible. `ChartsPanelWrapper` (client) detects the URL slug and opens/closes `AppPanel`. Close button navigates back to `/charts`.
+**Charts grid:** 28 charts sorted A-Z, `repeat(auto-fill, minmax(220px, 1fr))`, gap-5. Each card shows photo of the #1 leader (top 3 from DB, cycling by card index). Keyboard ←→↑↓ navigates by grid position. Active card: `outline-2 outline-[#033882] outline-offset-2` + 3s hover-state lock. Title below card, turns `sky-500` on hover.
+
+**Three-panel layout:** chart (1/2 or 1/3) + player (1/3) + team (1/3) render as flex siblings in `#app-panel-root`. Chart collapses to 1/3 when player or team panel opens. Clicking a player row navigates to `/charts/[chartSlug]/[playerSlug]`; team row to `/charts/[chartSlug]/team/[teamSlug]`.
+
+**Panel components:** `PanelPlayer` → `PlayerPanelContent` (photo + info bar + stat accordions). `PanelTeam` → `TeamPanelContent` (photo + info bar + Season Records + Top Players + footer link). Both follow the same compact card pattern.
 
 **Use this pattern whenever:** the secondary view requires its own DB queries or the full page component (chart detail, player profile full page, team detail full page). Use plain `AppPanel` + client fetch when the data is lightweight or already available.
 
@@ -351,8 +360,54 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 | 2021-22 | 197/203 ✅ Complete (6 Nassau/date-mismatch gaps) |
 
 ### **NEXT SESSION — resume here:**
-1. Build Newsday player scraper (see below)
-2. Update `/player/[slug]` detail page layout
+1. Naming conventions audit (see below)
+2. Component extraction (see below)
+3. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
+4. Build Newsday player scraper (see below)
+
+### Naming conventions audit — NEXT
+The codebase has grown organically and needs a naming pass before it gets harder to navigate.
+
+**Known inconsistencies to resolve:**
+- Panel components: `PanelPlayer`, `PanelTeam` exist — but the parallel route pages that use them are in `@player` and `@team` slots. Naming should be consistent: if the component is `PanelTeam`, the slot wrapper should be `TeamPanelWrapper` (not `ChartsTeamWrapper`), etc.
+- Chart wrapper files: `ChartsPanelWrapper`, `ChartsPlayerWrapper`, `ChartsTeamWrapper` — the "Charts" prefix couples these to the charts route. If we add panels to other routes (maps already has one), the naming breaks down.
+- Shell vs Page: `/team/[slug]/Shell.tsx`, `/player/[slug]/Shell.tsx`, `/division/[slug]/Shell.tsx` — consistent, good. Keep this pattern.
+- `InfoTable`, `InfoTableStandings` etc. — partially extracted, but not complete.
+
+**Rule going forward:** `Panel{Entity}` for panel components, `{Entity}PanelContent` for the exported body, `{Route}{Entity}Wrapper` for client wrappers.
+
+---
+
+### Component extraction — NEXT
+Several components are defined inline inside page/shell files and should be extracted to `src/components/` for reuse.
+
+**Priority extractions:**
+- `AccordionStatTable` + `StatRow` — defined in `PanelPlayer.tsx`, duplicated in `PanelTeam.tsx`. Extract to `src/components/AccordionStatTable.tsx`.
+- `HeroSlider` — defined inside `Shell.tsx` for teams and divisions. Extract to `src/components/HeroSlider.tsx`.
+- `BreadcrumbNav` — appears in player Shell. Extract.
+- `DownloadMenu` — appears in leaderboard. Extract.
+- `InfoTable`, `InfoTableStandings`, `InfoTableProfile` — partially done, finish extraction.
+
+---
+
+### Explode game_box_scores.player_stats JSONB — NEXT
+`game_box_scores.player_stats` is a raw JSONB blob scraped from Newsday. It is currently only used as a fallback in the Game Log side panel (`PanelPlayers`). It is **not** used for any stat rendering — `player_game_stats` (the proper relational table) handles all game stat tabs.
+
+**The goal:** parse `player_stats` JSONB for all ingested games and insert the records into `player_game_stats`, matching players by name to their slug via the `players` table. This would:
+- Fill gaps in `player_game_stats` for games where the structured ingest missed players
+- Give every scraped player a `player_slug` so logos and profile links work everywhere
+- Allow deprecating the JSONB fallback entirely
+
+**Approach:**
+1. Write a script `scripts/explode-player-stats.mjs` that:
+   - Reads all `game_box_scores` rows where `player_stats IS NOT NULL`
+   - For each player entry in the JSONB, fuzzy-matches the player name to `players.slug`
+   - Inserts into `player_game_stats` (skip if already exists for that game_id + player_slug + stat_type)
+2. Run once, verify coverage, then schedule as part of the ingest pipeline
+
+**Risk:** name matching is imperfect — player names in the JSONB may not exactly match `players.player_name`. Use normalized comparison (lowercase, strip punctuation) and flag unmatched rows for manual review.
+
+---
 
 ### Newsday player scraper — NEXT AFTER BOX SCORES
 The same team page URLs have a **ROSTER** table below TEAM RESULTS. Each player links to:
