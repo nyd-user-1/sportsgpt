@@ -225,7 +225,10 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
         </thead>
         <tbody className="divide-y divide-[var(--border)]">
           {visible.map((p, i) => {
-            const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null) ?? schoolSlugs[cleanName(p.team_name)] ?? ''
+            const normTeam2 = cleanName(p.team_name).toLowerCase()
+            const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null)
+              ?? Object.entries(schoolSlugs).find(([k]) => normTeam2.includes(k.toLowerCase()) || k.toLowerCase().includes(normTeam2))?.[1]
+              ?? ''
             const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
             const playerSlug = playerSlugs[p.player.toLowerCase()]
             return (
@@ -284,7 +287,10 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
             </div>
             <div className="divide-y divide-[var(--border)]">
               {group.map((p, i) => {
-                const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null) ?? schoolSlugs[cleanName(p.team_name)] ?? ''
+                const normTeam = cleanName(p.team_name).toLowerCase()
+                const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null)
+                  ?? Object.entries(schoolSlugs).find(([k]) => normTeam.includes(k.toLowerCase()) || k.toLowerCase().includes(normTeam))?.[1]
+                  ?? ''
                 const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
                 const playerSlug = playerSlugs[p.player.toLowerCase()]
                 return (

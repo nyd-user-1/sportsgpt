@@ -68,9 +68,9 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
         CASE stat_type
           WHEN 'Passing'   THEN COALESCE(pass_yards, 0)
           WHEN 'Rushing'   THEN COALESCE(rush_yards, 0)
-          ELSE                  COALESCE(recv_yards, 0)
-        END DESC
-      LIMIT 8`,
+          WHEN 'Receiving' THEN COALESCE(recv_yards, 0)
+          ELSE 0
+        END DESC`,
     sql`
       SELECT g.id, g.game_date, g.season,
         g.home_team_slug, g.away_team_slug,

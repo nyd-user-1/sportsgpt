@@ -176,7 +176,19 @@ export const CHART_CONFIGS: ChartConfig[] = [
     color: '#033882', chartType: 'bar', kpiLabel: 'pass yds in one game',
   },
 
+  // ── Streaks & Team Aggregates ─────────────────────────────────────────────
+  { slug: 'winning-streaks',    title: 'Winning Streaks',       description: 'Longest all-time winning streaks by team',                   color: '#033882', chartType: 'bar', kpiLabel: 'game streak' },
+  { slug: 'losing-streaks',     title: 'Losing Streaks',        description: 'Longest all-time losing streaks by team',                    color: '#ef4444', chartType: 'bar', kpiLabel: 'game streak' },
+  { slug: 'points-by-quarter',  title: 'Points by Quarter',     description: 'Team Q4 scoring leaders · per season',                      color: '#033882', chartType: 'bar', kpiLabel: 'Q4 pts' },
+  { slug: 'rushing-yards-team', title: 'Rushing Yards by Team', description: 'Total team rushing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'rush yds' },
+  { slug: 'passing-yards-team', title: 'Passing Yards by Team', description: 'Total team passing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'pass yds' },
+  { slug: 'turnovers',          title: 'Turnovers',             description: 'Defensive takeaways (INT + fumble recoveries) · per season', color: '#033882', chartType: 'bar', kpiLabel: 'takeaways' },
+
 ]
+
+export const CHART_SLUGS_AZ: string[] = [...CHART_CONFIGS]
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .map(c => c.slug)
 
 export function getChartConfig(slug: string): ChartConfig | undefined {
   return CHART_CONFIGS.find((c) => c.slug === slug)

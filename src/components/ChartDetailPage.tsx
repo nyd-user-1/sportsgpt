@@ -58,6 +58,7 @@ interface Props {
   rowLinks?: Record<string, string>
   rowPlayerSlugs?: Record<string, string>
   seasonRows?: Record<string, StdRow[]>
+  nameLabel?: string
   valueLabel?: string
   showRank?: boolean
   panelMode?: boolean
@@ -73,6 +74,7 @@ export function ChartDetailPage({
   rowLinks,
   rowPlayerSlugs,
   seasonRows,
+  nameLabel,
   valueLabel,
   showRank,
   panelMode,
@@ -278,26 +280,22 @@ export function ChartDetailPage({
           </div>
         )}
 
-        {/* ── Charts button + season buttons ── */}
-        <div className="shrink-0 flex items-center gap-1.5 px-5 py-3 border-b border-[var(--border)]">
-          <ChartsDrawer />
-          {seasonFilters && seasonFilters.length > 0 && (
-            <>
-              <div className="h-4 w-px bg-[var(--border)] mx-0.5" />
-              {[...seasonFilters].reverse().map(yr => (
-                <button key={yr} onClick={() => emitSeason(yr)}
-                  className={cn(
-                    'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors',
-                    activeSeason === yr
-                      ? 'text-[var(--txt)] border border-[var(--border)] bg-[var(--surface)] shadow-sm'
-                      : 'text-[var(--muted)] hover:text-[var(--txt)]',
-                  )}>
-                  {formatSeason(yr)}
-                </button>
-              ))}
-            </>
-          )}
-        </div>
+        {/* ── Season toggle ── */}
+        {seasonFilters && seasonFilters.length > 0 && (() => {
+          const cycle = [...seasonFilters].reverse() // ['all','2025','2024',...]
+          const idx   = cycle.indexOf(activeSeason)
+          const next  = cycle[(idx + 1) % cycle.length]
+          return (
+            <div className="shrink-0 flex items-center px-5 py-3 border-b border-[var(--border)]">
+              <button
+                onClick={() => emitSeason(next)}
+                className="w-[88px] px-3 py-1.5 rounded-lg text-sm font-semibold border border-[var(--border)] bg-[var(--inp-bg)] text-[var(--txt)] hover:bg-[var(--row-hover)] transition-colors text-center"
+              >
+                {activeSeason === 'all' ? 'All' : formatSeason(activeSeason)}
+              </button>
+            </div>
+          )
+        })()}
 
         {/* ── Table ── */}
         <div className="flex-1 overflow-y-auto no-scrollbar">
@@ -351,7 +349,7 @@ export function ChartDetailPage({
               colParts.push('1fr')
               if (hasWinPct) colParts.push('80px')
               colParts.push('100px')
-              colParts.push('80px')
+              colParts.push('48px')
               const colTemplate = colParts.join(' ')
               return (
               <div className="divide-y divide-[var(--border)]">
@@ -361,10 +359,10 @@ export function ChartDetailPage({
                 >
                   {hasSubRows && <span />}
                   {showRank && <span>#</span>}
-                  <span>Name</span>
+                  <span>{nameLabel ?? 'Name'}</span>
                   {hasWinPct && <span className="text-right">3yr Win %</span>}
                   <span className="text-right">{valueLabel ?? 'Value'}</span>
-                  <span className="text-right">Share</span>
+                  <span />
                 </div>
                 {sorted.map((row, idx) => {
                   const pct = total > 0 ? (row.value / total) * 100 : 0
@@ -435,11 +433,10 @@ export function ChartDetailPage({
                           style={isOpen ? { color: config.color } : undefined}>
                           {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
                         </span>
-                        <div className="flex items-center gap-1.5 justify-end">
-                          <div className="w-12 h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
+                        <div className="flex items-center justify-end">
+                          <div className="w-full h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
                             <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
                           </div>
-                          <span className="text-xs text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums w-7 text-right transition-colors">{pct.toFixed(0)}%</span>
                         </div>
                       </div>
                       {isOpen && rowSubRows?.map(sr => (

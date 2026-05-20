@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight, ArrowLeft, ArrowRight, Users } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
+import { AppPanel } from '@/components/AppPanel'
 import { InfoTable } from '@/components/InfoTable'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
@@ -69,9 +70,21 @@ function fmtPct(w: number | null, l: number | null): string {
 function topStat(row: Record<string, unknown>): { label: string; value: string } {
   const stat = row.stat_type as string
   const fmt = (n: unknown) => Number(n ?? 0).toLocaleString()
-  if (stat === 'Passing') return { label: 'Pass Yds', value: fmt(row.pass_yards) }
-  if (stat === 'Rushing') return { label: 'Rush Yds', value: fmt(row.rush_yards) }
-  return { label: 'Recv Yds', value: fmt(row.recv_yards) }
+  if (stat === 'Passing')     return { label: 'Pass Yds',  value: fmt(row.pass_yards) }
+  if (stat === 'Rushing')     return { label: 'Rush Yds',  value: fmt(row.rush_yards) }
+  if (stat === 'Receiving')   return { label: 'Recv Yds',  value: fmt(row.recv_yards) }
+  if (stat === 'Scoring')     return { label: 'Points',    value: fmt(row.points) }
+  if (stat === 'Touchdowns')  return { label: 'TDs',       value: fmt(row.total_tds) }
+  if (stat === 'Total Yards') return { label: 'Total Yds', value: fmt(row.total_yards) }
+  return { label: 'Yds', value: fmt(row.total_yards) }
+}
+
+function statLabel(stat_type: string): string {
+  const map: Record<string, string> = {
+    'Passing': 'Passing Yards', 'Rushing': 'Rushing Yards', 'Receiving': 'Receiving Yards',
+    'Scoring': 'Points', 'Touchdowns': 'Touchdowns', 'Total Yards': 'Total Yards',
+  }
+  return map[stat_type] ?? stat_type
 }
 
 function fmtRecord(w: number | null, l: number | null, ties?: number | null): string {
@@ -132,9 +145,11 @@ export function TeamShell({
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
   const [infoExpanded, setInfoExpanded] = useState(false)
-  const [chartsOpen, setChartsOpen]     = useState(false)
-  const [mapsOpen,   setMapsOpen]       = useState(false)
-  const [chatOpen,   setChatOpen]       = useState(false)
+  const [chartsOpen,  setChartsOpen]    = useState(false)
+  const [mapsOpen,    setMapsOpen]      = useState(false)
+  const [chatOpen,    setChatOpen]      = useState(false)
+  const [playersOpen,   setPlayersOpen]  = useState(false)
+  const [playerSearch,  setPlayerSearch] = useState('')
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
   const [carouselDir, setCarouselDir]   = useState(1)
@@ -312,6 +327,10 @@ export function TeamShell({
                     <span className={tip}>Map</span>
                   </div>
                   <div className="relative group">
+                    <button onClick={() => setPlayersOpen(v => !v)} className={`${btn} ${playersOpen ? active : ''}`}><Users className="h-4 w-4" /></button>
+                    <span className={tip}>Players</span>
+                  </div>
+                  <div className="relative group">
                     <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
                     <span className={tip}>Ask SportsGPT</span>
                   </div>
@@ -327,7 +346,7 @@ export function TeamShell({
             {/* Hero slider */}
             <RevealFx delay={0.15} translateY={16}>
             {heroSlides.length > 0 ? (
-              <div className="hidden sm:block mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 400 }}>
+              <div className="block mb-8 relative rounded-2xl overflow-hidden w-full h-[400px]">
                 {heroSlides.map((slide, i) => (
                   <div key={i}
                     className="absolute inset-0 transition-opacity duration-700 ease-in-out"
@@ -376,7 +395,7 @@ export function TeamShell({
                 )}
               </div>
             ) : (
-              <div className="hidden sm:flex mb-8 h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
+              <div className="flex mb-8 h-[220px] sm:h-[400px] w-full rounded-2xl border border-[var(--border)] overflow-hidden flex-col items-center justify-center gap-3"
                 style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}44 100%)` }}>
                 {SCHOOL_LOGOS[schoolSlug] ? (
                   <Image src={SCHOOL_LOGOS[schoolSlug]!} alt="" width={64} height={64} className="object-contain" unoptimized />
@@ -391,7 +410,7 @@ export function TeamShell({
             {/* Profiles */}
             <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between pt-3 mb-4">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">Program</h2>
                 <div className="flex items-center gap-1">
                   <button onClick={() => { setCarouselDir(-1); setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(false) }}
@@ -408,18 +427,14 @@ export function TeamShell({
                 title={activeProfile.h2}
                 onToggle={() => setInfoExpanded(v => !v)}
               >
-                <AnimatePresence initial={false} custom={carouselDir} mode="wait">
-                <motion.div key={profileIdx} custom={carouselDir} variants={slideVariants}
-                  initial="enter" animate="center" exit="exit"
-                  transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}>
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
                   historyRows.length === 0 ? (
                     <div className="px-4 py-3 text-sm text-[var(--muted)]">No season data available.</div>
                   ) : (
-                    <div className="overflow-x-auto no-scrollbar">
-                    <table className="w-full text-sm table-fixed">
+                    <div className="overflow-x-auto">
+                    <table className="min-w-[520px] w-full text-sm">
                       <thead>
                         <tr>
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
@@ -538,9 +553,20 @@ export function TeamShell({
                     </>
                   )
                 })()}
-                </motion.div>
-                </AnimatePresence>
               </InfoTable>
+
+            </div>
+
+            {/* Search */}
+            <div className="sticky top-5 z-10 mb-8 bg-[var(--surface)] pb-4">
+              <h2 className="text-lg font-semibold text-[var(--txt)] mb-3">Search</h2>
+              <input
+                type="text"
+                value={playerSearch}
+                onChange={e => setPlayerSearch(e.target.value)}
+                placeholder="Search players, games…"
+                className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-sm text-[var(--txt)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--muted)] transition-colors"
+              />
             </div>
 
             {/* Games carousel — synced to active InfoTable season */}
@@ -549,9 +575,16 @@ export function TeamShell({
               const carouselSeason = isAllSeasons
                 ? null
                 : (activeProfile as { season: number }).season
-              const carouselGames = carouselSeason != null
+              let carouselGames = carouselSeason != null
                 ? gameRows.filter(g => g.season === carouselSeason)
                 : gameRows
+              if (playerSearch) {
+                const q = playerSearch.toLowerCase()
+                carouselGames = carouselGames.filter(g => {
+                  const opName = (g.home_team_slug === team.slug ? g.away_team_name : g.home_team_name) ?? ''
+                  return opName.toLowerCase().includes(q)
+                })
+              }
               if (carouselGames.length === 0) return null
               return (
                 <div className="mb-8">
@@ -560,12 +593,7 @@ export function TeamShell({
                       {isAllSeasons ? 'Games' : fmtSeason(carouselSeason!)}
                     </h2>
                   </div>
-                  <div className="overflow-hidden">
-                  <AnimatePresence initial={false} custom={carouselDir} mode="popLayout">
-                  <motion.div key={carouselSeason ?? 'all'} custom={carouselDir} variants={slideVariants}
-                    initial="enter" animate="center" exit="exit"
-                    transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="overflow-x-auto no-scrollbar">
+                  <div className="overflow-x-auto no-scrollbar">
                     <div className="flex gap-3 pb-1">
                       {carouselGames.map(g => {
                         const isHome    = g.home_team_slug === team.slug
@@ -594,8 +622,6 @@ export function TeamShell({
                         )
                       })}
                     </div>
-                  </motion.div>
-                  </AnimatePresence>
                   </div>
                 </div>
               )
@@ -623,6 +649,11 @@ export function TeamShell({
                   .sort((a, b) => a.player_name.localeCompare(b.player_name))
               }
 
+              if (playerSearch) {
+                const q = playerSearch.toLowerCase()
+                players = players.filter(p => p.player_name.toLowerCase().includes(q))
+              }
+
               if (players.length === 0) return null
               return (
                 <div className="mb-8">
@@ -631,12 +662,7 @@ export function TeamShell({
                       {isAllSeasons ? 'Players' : fmtSeason(carouselSeason!)}
                     </h2>
                   </div>
-                  <div className="overflow-hidden">
-                  <AnimatePresence initial={false} custom={carouselDir} mode="popLayout">
-                  <motion.div key={`players-${carouselSeason ?? 'all'}`} custom={carouselDir} variants={slideVariants}
-                    initial="enter" animate="center" exit="exit"
-                    transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="overflow-x-auto no-scrollbar">
+                  <div className="overflow-x-auto no-scrollbar">
                     <div className="flex gap-3 pb-1">
                       {players.map(p => {
                         const photo = PLAYER_PHOTOS[p.player_slug]
@@ -657,8 +683,6 @@ export function TeamShell({
                         )
                       })}
                     </div>
-                  </motion.div>
-                  </AnimatePresence>
                   </div>
                 </div>
               )
@@ -666,16 +690,22 @@ export function TeamShell({
 
             </RevealFx>
 
-            {/* Top Players carousel */}
+            {/* Leader carousels — one per stat type */}
             <RevealFx delay={0.42} translateY={8}>
-            {playerRows.length > 0 && (
+            {(() => {
+              const q = playerSearch.toLowerCase()
+              const leaderRows = playerSearch
+                ? playerRows.filter(p => (p.player_name as string).toLowerCase().includes(q))
+                : playerRows
+              if (leaderRows.length === 0) return null
+              return (
               <div className="mb-8">
                 <div className="mb-4">
                   <h2 className="text-lg font-semibold text-[var(--txt)]">Leaders</h2>
                 </div>
-                <div ref={playersRef} className="overflow-x-auto no-scrollbar">
+                <div className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
-                    {playerRows.map((p, i) => {
+                    {leaderRows.map((p, i) => {
                       const stat = topStat(p)
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug as string]
                       const fallbackLogo = SCHOOL_LOGOS[schoolSlug]
@@ -690,7 +720,7 @@ export function TeamShell({
                           href={`/player/${p.player_slug}`}
                           image={img}
                           title={p.player_name as string}
-                          row2={{ text: p.stat_type === 'Passing' ? 'Passing Yards' : p.stat_type === 'Rushing' ? 'Rushing Yards' : 'Receiving Yards' }}
+                          row2={{ text: statLabel(p.stat_type as string) }}
                           stat={{ value: stat.value }}
                         />
                       )
@@ -698,17 +728,27 @@ export function TeamShell({
                   </div>
                 </div>
               </div>
-            )}
+              )
+            })()}
+
+
 
             {/* Division Standings carousel */}
             <RevealFx delay={0.52} translateY={8}>
-            <div className="mb-8">
-              <div className="mb-4">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">Standings</h2>
-              </div>
-              <div ref={divRef} className="overflow-x-auto no-scrollbar">
-                <div className="flex gap-3 pb-1">
-                  {divTeams.map((t, i) => {
+            {(() => {
+              const q = playerSearch.toLowerCase()
+              const standingRows = playerSearch
+                ? divTeams.filter(t => (t.name as string).toLowerCase().includes(q))
+                : divTeams
+              if (standingRows.length === 0) return null
+              return (
+              <div className="mb-8">
+                <div className="mb-4">
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Standings</h2>
+                </div>
+                <div ref={divRef} className="overflow-x-auto no-scrollbar">
+                  <div className="flex gap-3 pb-1">
+                  {standingRows.map((t, i) => {
                     const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
                     const tLogo = SCHOOL_LOGOS[tSchoolSlug]
                     return (
@@ -727,44 +767,11 @@ export function TeamShell({
                 </div>
               </div>
             </div>
+              )
+            })()}
             </RevealFx>
 
             </RevealFx>
-
-            {/* 2025-26 Roster */}
-            {rosterRows.length > 0 && (
-            <RevealFx delay={0.62} translateY={8}>
-            <div className="mb-8">
-              <div className="mb-4">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">2025‑26 Roster</h2>
-              </div>
-              <div className="rounded-xl border border-[var(--border)] overflow-hidden">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr>
-                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)] w-10">#</th>
-                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">Name</th>
-                      <th className="px-3 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">Class</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {rosterRows.map((r, i) => (
-                      <tr key={i} className="group/row border-b border-[var(--border)] last:border-0 hover:bg-[var(--inp-bg)]">
-                        <td className="px-3 py-2 text-[var(--muted)] tabular-nums">{r.jersey_number != null ? String(r.jersey_number) : '—'}</td>
-                        <td className="px-3 py-2 text-[var(--txt)] font-medium">
-                          {r.player_slug
-                            ? <Link href={`/player/${r.player_slug}`} className="hover:underline">{r.player_name as string}</Link>
-                            : r.player_name as string}
-                        </td>
-                        <td className="px-3 py-2 text-[var(--muted)]">{r.class as string ?? '—'}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            </RevealFx>
-            )}
 
         </div>
       </MaybeLayout>
@@ -772,6 +779,49 @@ export function TeamShell({
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={teamName} />
+      <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players">
+        {(() => {
+          const teamLogo = SCHOOL_LOGOS[schoolSlug]
+          const seasons = [...new Set((rosterRows as Record<string, unknown>[]).map(r => Number(r.season)))].sort((a, b) => b - a)
+          if (seasons.length === 0) return <div className="flex items-center justify-center h-32 text-sm text-[var(--muted)]">No roster data</div>
+          return (
+            <div className="pb-4">
+              {seasons.map(season => {
+                const players = (rosterRows as Record<string, unknown>[]).filter(r => Number(r.season) === season)
+                if (players.length === 0) return null
+                return (
+                  <div key={season}>
+                    <div className="px-4 pt-5 pb-1.5">
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">{fmtSeason(season)}</span>
+                    </div>
+                    <div className="divide-y divide-[var(--border)]">
+                      {players.map((p, i) => {
+                        const photo = PLAYER_PHOTOS[p.player_slug as string]
+                        const img = photo ?? (teamLogo ?? null)
+                        const slug = p.player_slug as string
+                        return (
+                          <Link key={i} href={`/player/${slug}`}
+                            className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--inp-bg)] transition-colors">
+                            {img
+                              ? <Image src={img} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
+                              : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
+                            <div className="flex-1 min-w-0">
+                              <span className="text-sm font-semibold truncate block hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name as string}</span>
+                              <p className="text-xs text-[var(--muted)] truncate">
+                                {[p.jersey_number != null ? `#${p.jersey_number}` : null, p.position ?? null, p.class ?? null].filter(Boolean).join(' · ')}
+                              </p>
+                            </div>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )
+        })()}
+      </AppPanel>
     </>
   )
 }

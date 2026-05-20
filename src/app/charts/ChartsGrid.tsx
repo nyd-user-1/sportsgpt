@@ -1,97 +1,96 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
-import { CHART_CONFIGS } from '@/lib/chart-configs'
-import { SCHOOL_LOGOS } from '@/lib/team-images'
-import { SCHOOL_COLORS } from '@/lib/school-colors'
+import { CHART_CONFIGS, CHART_SLUGS_AZ } from '@/lib/chart-configs'
+import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 
-const ROWS: { label: string; charts: string[] }[] = [
-  {
-    label: 'By Team & Season',
-    charts: [
-      'season-records', 'wins-by-school', 'point-differential-leaders',
-      'home-away-record', 'pf-pa', 'win-loss-division', 'strength-of-schedule',
-    ],
-  },
-  {
-    label: 'By Player & Position',
-    charts: [
-      'passing-yards-leaders', 'passing-tds-leaders', 'rushing-yards-leaders', 'rushing-tds-leaders',
-      'receiving-yards-leaders', 'receiving-tds-leaders', 'total-tds-leaders', 'total-yards-leaders',
-      'total-points-leaders',
-    ],
-  },
-  {
-    label: 'Game Records & Scoring',
-    charts: [
-      'scoring-offense', 'scoring-defense', 'top-scoring-games', 'biggest-blowouts',
-      'single-game-rushing', 'single-game-passing',
-    ],
-  },
-]
+const CATEGORY: Record<string, string> = {
+  'season-records': 'Team & Season', 'wins-by-school': 'Team & Season',
+  'point-differential-leaders': 'Team & Season', 'home-away-record': 'Team & Season',
+  'pf-pa': 'Team & Season', 'win-loss-division': 'Team & Season', 'strength-of-schedule': 'Team & Season',
+  'passing-yards-leaders': 'Player & Position', 'passing-tds-leaders': 'Player & Position',
+  'rushing-yards-leaders': 'Player & Position', 'rushing-tds-leaders': 'Player & Position',
+  'receiving-yards-leaders': 'Player & Position', 'receiving-tds-leaders': 'Player & Position',
+  'total-tds-leaders': 'Player & Position', 'total-yards-leaders': 'Player & Position',
+  'total-points-leaders': 'Player & Position',
+  'scoring-offense': 'Game Records', 'scoring-defense': 'Game Records',
+  'top-scoring-games': 'Game Records', 'biggest-blowouts': 'Game Records',
+  'single-game-rushing': 'Game Records', 'single-game-passing': 'Game Records',
+  'winning-streaks': 'Game Records', 'losing-streaks': 'Game Records',
+  'points-by-quarter': 'Game Records',
+  'rushing-yards-team': 'Team & Season', 'passing-yards-team': 'Team & Season',
+  'turnovers': 'Team & Season',
+}
 
-export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, string> }) {
+const CHARTS = CHART_SLUGS_AZ.map(slug => ({ slug, category: CATEGORY[slug] ?? '' }))
+
+export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, string[]> }) {
   const router     = useRouter()
   const pathname   = usePathname()
   const match      = pathname.match(/^\/charts\/([^/]+)/)
   const activeSlug = match ? match[1] : null
 
+  const [showActiveHover, setShowActiveHover] = useState(true)
+  useEffect(() => {
+    setShowActiveHover(true)
+    const t = setTimeout(() => setShowActiveHover(false), 3000)
+    return () => clearTimeout(t)
+  }, [activeSlug])
+
   return (
     <div className="flex-1 overflow-y-auto no-scrollbar">
-      <div className="p-4 space-y-8">
-        {ROWS.map(row => (
-          <section key={row.label}>
-            <h2 className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-widest mb-3 px-1">
-              {row.label}
-            </h2>
-            <div className="grid grid-cols-4 gap-3">
-              {row.charts.map(slug => {
-                const config     = CHART_CONFIGS.find(c => c.slug === slug)
-                if (!config) return null
-                const isActive   = slug === activeSlug
-                const schoolSlug = chartSchools[slug] ?? 'floyd'
-                const bgColor    = SCHOOL_COLORS[schoolSlug]?.primary ?? '#033882'
-                const logoUrl    = SCHOOL_LOGOS[schoolSlug] ?? null
+      <div className="p-4">
+        <div data-charts-grid className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}>
+          {CHARTS.map(({ slug, category }, idx) => {
+            const config      = CHART_CONFIGS.find(c => c.slug === slug)
+            if (!config) return null
+            const isActive    = slug === activeSlug
+            // Cycle through the top 3 schools, preferring those with photos
+            const candidates  = chartSchools[slug] ?? ['floyd']
+            const withPhotos  = candidates.filter(s => (TEAM_PHOTOS[s]?.length ?? 0) > 0)
+            const pool        = withPhotos.length > 0 ? withPhotos : candidates
+            const schoolSlug  = pool[idx % pool.length]
+            const schoolPhotos = TEAM_PHOTOS[schoolSlug] ?? []
+            const photo       = schoolPhotos[idx % Math.max(1, schoolPhotos.length)] ?? null
+            const logoUrl     = SCHOOL_LOGOS[schoolSlug] ?? null
 
-                return (
-                  <button
-                    key={slug}
-                    onClick={() => router.push(`/charts/${slug}`, { scroll: false })}
-                    className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
-                      isActive
-                        ? 'border-[#033882] shadow-md ring-1 ring-[#033882]/20'
-                        : 'border-[var(--border)] hover:border-[#033882]/40 hover:shadow-md'
-                    }`}
-                  >
-                    <div
-                      className="relative h-[180px] flex items-center justify-center"
-                      style={{ background: bgColor }}
-                    >
-                      {logoUrl && (
-                        <Image
-                          src={logoUrl}
-                          alt=""
-                          width={72}
-                          height={72}
-                          className="object-contain relative z-10"
-                          style={{ filter: 'drop-shadow(0 0 18px rgba(255,255,255,0.55))' }}
-                          unoptimized
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 px-3 pb-3">
-                        <p className="text-[13px] font-bold text-white leading-snug drop-shadow">
-                          {config.title}
-                        </p>
+            return (
+              <div key={slug} className="group/card flex flex-col gap-1.5">
+                <button
+                  onClick={() => router.push(`/charts/${slug}`, { scroll: false })}
+                  className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
+                    isActive
+                      ? 'border-[#033882] shadow-md ring-2 ring-[#033882]/30 shadow-[inset_0_0_16px_rgba(3,56,130,0.18)]'
+                      : 'border-[var(--border)] hover:border-[#033882]/40 hover:shadow-md'
+                  }`}
+                >
+                  <div className="relative h-[180px] bg-[var(--bg2)]">
+                    {photo && (
+                      <Image
+                        src={photo}
+                        alt={config.title}
+                        fill
+                        className={`object-cover object-top transition duration-300 ${isActive && showActiveHover ? 'scale-105 brightness-110' : 'brightness-90 group-hover:brightness-110 group-hover:scale-105'}`}
+                        sizes="(max-width: 1400px) 25vw, 340px"
+                        unoptimized
+                      />
+                    )}
+                    {logoUrl && (
+                      <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center shadow z-10">
+                        <Image src={logoUrl} alt="" width={22} height={22} className="object-contain" unoptimized />
                       </div>
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-          </section>
-        ))}
+                    )}
+                  </div>
+                </button>
+                <p className={`text-[13px] font-semibold leading-snug px-0.5 transition-colors group-hover/card:text-sky-500 ${isActive ? 'text-[#033882]' : 'text-[var(--txt)]'}`}>
+                  {config.title}
+                </p>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

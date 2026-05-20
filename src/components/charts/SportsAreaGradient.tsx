@@ -30,7 +30,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
         {item.logoUrl && (
           <img src={item.logoUrl} alt="" width={20} height={20} style={{ objectFit: 'contain', flexShrink: 0 }} />
         )}
-        <span style={{ fontWeight: 700, color: '#111' }}>{item.name}</span>
+        <span style={{ fontWeight: 700, color: 'var(--txt)' }}>{item.name}</span>
       </div>
       <p style={{ color: ACCENT }}><span style={{ fontWeight: 600 }}>{item.points}</span> pts</p>
       <p style={{ color: MEDIAN_COLOR }}>Median: {item.median}</p>

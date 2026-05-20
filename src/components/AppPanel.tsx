@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
-import { X, Columns2, Columns3, ArrowUpRight } from 'lucide-react'
+import { X, Columns2, Columns3, ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function AppPanel({
@@ -15,6 +15,8 @@ export function AppPanel({
   defaultExpanded,
   bodyClass,
   detailHref,
+  prevHref,
+  nextHref,
 }: {
   open: boolean
   onClose: () => void
@@ -24,6 +26,8 @@ export function AppPanel({
   defaultExpanded?: boolean
   bodyClass?: string
   detailHref?: string
+  prevHref?: string
+  nextHref?: string
 }) {
   const [root, setRoot] = useState<Element | null>(null)
   const [expanded, setExpanded] = useState(defaultExpanded ?? false)
@@ -42,15 +46,28 @@ export function AppPanel({
 
           {/* Header */}
           <div className="flex items-center gap-2 border-b border-[var(--border)] px-5 py-4 shrink-0">
-            <span className="flex-1 text-base font-semibold text-[var(--txt)] truncate">{title}</span>
-            {/* Detail page link */}
-            {detailHref && (
-              <Link
-                href={detailHref}
-                className="shrink-0 p-1.5 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-                aria-label="Open detail page"
-              >
-                <ArrowUpRight className="h-4 w-4" />
+            <div className="flex-1 flex items-center gap-1 min-w-0">
+              <span className="text-base font-semibold text-[var(--txt)] truncate">{title}</span>
+              {detailHref && (
+                <Link
+                  href={detailHref}
+                  className="group/arrow shrink-0 p-0.5 rounded text-[var(--muted)] hover:text-[var(--txt)] transition-colors relative w-4 h-4"
+                  aria-label="Open detail page"
+                >
+                  <ArrowUpRight className="h-4 w-4 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
+                  <ArrowRight   className="h-4 w-4 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
+                </Link>
+              )}
+            </div>
+            {/* Prev / Next navigation */}
+            {prevHref && (
+              <Link href={prevHref} scroll={false} className="shrink-0 p-1.5 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors" aria-label="Previous">
+                <ArrowLeft className="h-4 w-4" />
+              </Link>
+            )}
+            {nextHref && (
+              <Link href={nextHref} scroll={false} className="shrink-0 p-1.5 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors" aria-label="Next">
+                <ArrowRight className="h-4 w-4" />
               </Link>
             )}
             {/* ButtonPanelHalf / ButtonPanelThird */}

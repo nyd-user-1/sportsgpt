@@ -3,10 +3,11 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid } from 'lucide-react'
+import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid, BarChart2 } from 'lucide-react'
 import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
+import { CHART_CONFIGS } from '@/lib/chart-configs'
 
-type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: 'player' | 'team' | 'school' }
+type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: 'player' | 'team' | 'school' | 'chart' }
 const RECENTS_KEY = 'sportsgpt-recents'
 const MAX_RECENTS = 5
 
@@ -27,6 +28,7 @@ const QUICK_NAV = [
   { key: 'nav-div2',       displayName: 'Division II', subtitle: 'Standings & top performers',      href: '/division/division-ii',   Icon: LayoutGrid },
   { key: 'nav-div3',       displayName: 'Division III',subtitle: 'Standings & top performers',      href: '/division/division-iii',  Icon: LayoutGrid },
   { key: 'nav-div4',       displayName: 'Division IV', subtitle: 'Standings & top performers',      href: '/division/division-iv',   Icon: LayoutGrid },
+  { key: 'nav-charts',    displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',                 Icon: BarChart2  },
 ]
 
 type PlayerRow  = { slug: string; name: string; position: string | null; school_slug: string; team_name: string | null }
@@ -36,7 +38,7 @@ type SearchData = { players: PlayerRow[]; teams: TeamRow[]; schools: SchoolRow[]
 
 type Result = {
   key: string
-  type: 'player' | 'team' | 'school'
+  type: 'player' | 'team' | 'school' | 'chart'
   name: string
   displayName: string
   subtitle?: string
@@ -62,9 +64,9 @@ const DIVISIONS = [
   { label: 'Division IV',  slug: 'division-iv',  num: 4 },
 ]
 
-function buildResults(data: SearchData, query: string): { divisions: Result[]; teams: Result[]; players: Result[]; schools: Result[] } {
+function buildResults(data: SearchData, query: string): { divisions: Result[]; charts: Result[]; teams: Result[]; players: Result[]; schools: Result[] } {
   const q = query.trim()
-  if (!q) return { divisions: [], teams: [], players: [], schools: [] }
+  if (!q) return { divisions: [], charts: [], teams: [], players: [], schools: [] }
 
   const divisions: Result[] = []
   for (const d of DIVISIONS) {
@@ -73,6 +75,15 @@ function buildResults(data: SearchData, query: string): { divisions: Result[]; t
       divisions.push({ key: `div-${d.slug}`, type: 'team', name: d.label, displayName: d.label, subtitle: 'Section XI', href: `/division/${d.slug}`, logoUrl: DIVISION_LOGOS[d.num], score: s })
     }
   }
+
+  const charts: Result[] = []
+  for (const c of CHART_CONFIGS) {
+    const s = matchScore(q, c.title)
+    if (s < Infinity) {
+      charts.push({ key: `chart-${c.slug}`, type: 'chart', name: c.title, displayName: c.title, subtitle: 'Chart', href: `/charts/${c.slug}`, score: s })
+    }
+  }
+  charts.sort((a, b) => a.score - b.score)
 
   const teams: Result[] = []
   for (const t of data.teams) {
@@ -108,7 +119,7 @@ function buildResults(data: SearchData, query: string): { divisions: Result[]; t
   }
   schools.sort((a, b) => a.score - b.score)
 
-  return { divisions, teams, players, schools }
+  return { divisions, charts, teams, players, schools }
 }
 
 function ResultItem({ r, active, onHover, onClick }: { r: Result; active: boolean; onHover: () => void; onClick: () => void }) {
@@ -124,6 +135,8 @@ function ResultItem({ r, active, onHover, onClick }: { r: Result; active: boolea
           <Image src={logo} alt="" width={28} height={28} className="object-contain" unoptimized />
         ) : r.type === 'player' ? (
           <Users className="h-4 w-4 text-[var(--muted)]" />
+        ) : r.type === 'chart' ? (
+          <BarChart2 className="h-4 w-4 text-[var(--muted)]" />
         ) : r.type === 'team' ? (
           <Building2 className="h-4 w-4 text-[var(--muted)]" />
         ) : (
@@ -208,11 +221,12 @@ function Palette() {
     router.replace(`${pathname}?${p}`, { scroll: false })
   }
 
-  const { divisions, teams, players, schools } = data ? buildResults(data, query) : { divisions: [], teams: [], players: [], schools: [] }
+  const { divisions, charts, teams, players, schools } = data ? buildResults(data, query) : { divisions: [], charts: [], teams: [], players: [], schools: [] }
 
   // Flat list for keyboard nav — search results when typing, recents+quicknav when empty
   const allResults: Result[] = [
     ...(divisions.length ? divisions.slice(0, 4) : []),
+    ...(charts.length    ? charts.slice(0, 5)    : []),
     ...(teams.length     ? teams.slice(0, 5)     : []),
     ...(players.length   ? players.slice(0, 8)   : []),
     ...(schools.length   ? schools.slice(0, 4)   : []),
@@ -358,6 +372,18 @@ function Palette() {
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
                   onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+              ))}
+            </>
+          )}
+
+          {charts.length > 0 && (
+            <>
+              <SectionHeader label="Charts" />
+              {charts.slice(0, 5).map(r => (
+                <ResultItem key={r.key} r={r}
+                  active={idxMap[r.key] === activeIdx}
+                  onHover={() => setActiveIdx(idxMap[r.key])}
+                  onClick={() => { router.push(r.href) }} />
               ))}
             </>
           )}

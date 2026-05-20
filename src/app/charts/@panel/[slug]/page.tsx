@@ -82,6 +82,69 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
   const ALL_SEASONS    = AVAILABLE_SEASONS.map(String)
   const LAST3_SEASONS  = ALL_SEASONS.slice(-3)
   const SEASONS_WITH_2020 = [2020, ...AVAILABLE_SEASONS]
+
+  const NAME_LABELS: Record<string, string> = {
+    'season-records':             'Team',
+    'wins-by-school':             'Team',
+    'point-differential-leaders': 'Team',
+    'home-away-record':           'Team',
+    'pf-pa':                      'Team',
+    'win-loss-division':          'Team',
+    'strength-of-schedule':       'Team',
+    'scoring-offense':            'Team',
+    'scoring-defense':            'Team',
+    'top-scoring-games':          'Game',
+    'biggest-blowouts':           'Game',
+    'passing-yards-leaders':      'Player',
+    'passing-tds-leaders':        'Player',
+    'rushing-yards-leaders':      'Player',
+    'rushing-tds-leaders':        'Player',
+    'receiving-yards-leaders':    'Player',
+    'receiving-tds-leaders':      'Player',
+    'total-tds-leaders':          'Player',
+    'total-yards-leaders':        'Player',
+    'total-points-leaders':       'Player',
+    'single-game-rushing':        'Player',
+    'single-game-passing':        'Player',
+    'winning-streaks':            'Team',
+    'losing-streaks':             'Team',
+    'points-by-quarter':          'Team',
+    'rushing-yards-team':         'Team',
+    'passing-yards-team':         'Team',
+    'turnovers':                  'Team',
+  }
+
+  const VALUE_LABELS: Record<string, string> = {
+    'season-records':             'Wins',
+    'wins-by-school':             '3YR Wins',
+    'point-differential-leaders': 'Diff',
+    'home-away-record':           'Wins',
+    'pf-pa':                      'PF',
+    'win-loss-division':          'Win %',
+    'strength-of-schedule':       'SoS %',
+    'scoring-offense':            'Avg PF',
+    'scoring-defense':            'Avg PA',
+    'top-scoring-games':          'Total Pts',
+    'biggest-blowouts':           'Margin',
+    'passing-yards-leaders':      'Pass Yds',
+    'passing-tds-leaders':        'Pass TDs',
+    'rushing-yards-leaders':      'Rush Yds',
+    'rushing-tds-leaders':        'Rush TDs',
+    'receiving-yards-leaders':    'Rec Yds',
+    'receiving-tds-leaders':      'Rec TDs',
+    'total-tds-leaders':          'Total TDs',
+    'total-yards-leaders':        'Total Yds',
+    'total-points-leaders':       'Points',
+    'single-game-rushing':        'Rush Yds',
+    'single-game-passing':        'Pass Yds',
+    'winning-streaks':            'Win Streak',
+    'losing-streaks':             'Loss Streak',
+    'points-by-quarter':          'Q4 Pts',
+    'rushing-yards-team':         'Rush Yds',
+    'passing-yards-team':         'Pass Yds',
+    'turnovers':                  'Takeaways',
+  }
+
   const SEASON_FILTER_MAP: Record<string, string[]> = {
     'season-records':             [...ALL_SEASONS, 'all'],
     'wins-by-school':             LAST3_SEASONS, // overridden in case block
@@ -105,6 +168,10 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     'biggest-blowouts':           LAST3_SEASONS,
     'single-game-rushing':        LAST3_SEASONS,
     'single-game-passing':        LAST3_SEASONS,
+    'points-by-quarter':          [...ALL_SEASONS, 'all'],
+    'rushing-yards-team':         [...ALL_SEASONS, 'all'],
+    'passing-yards-team':         [...ALL_SEASONS, 'all'],
+    'turnovers':                  [...ALL_SEASONS, 'all'],
   }
   seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
@@ -283,6 +350,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       })
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = (
         <SportsBarChartInteractive
           seasons={seasonBars}
@@ -311,7 +379,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Pass Yards" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Pass Yards" />
       break
     }
 
@@ -332,7 +400,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Pass TDs" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Pass TDs" />
       break
     }
 
@@ -353,7 +421,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Rush Yards" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Rush Yards" />
       break
     }
 
@@ -374,7 +442,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Rush TDs" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Rush TDs" />
       break
     }
 
@@ -395,7 +463,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Recv Yards" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Recv Yards" />
       break
     }
 
@@ -416,7 +484,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Recv TDs" />
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Recv TDs" />
       break
     }
 
@@ -436,6 +504,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
           WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
+          COALESCE(r.player_slug, v.player_slug) AS player_slug,
           COALESCE(r.player_name, v.player_name) AS name,
           COALESCE(r.school_slug, v.school_slug) AS school_slug,
           COALESCE(r.season, v.season) AS season,
@@ -454,7 +523,8 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Total TDs" />
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Total TDs" />
       break
     }
 
@@ -480,6 +550,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
           WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
+          COALESCE(pa.player_slug, ru.player_slug, re.player_slug) AS player_slug,
           COALESCE(pa.player_name, ru.player_name, re.player_name) AS name,
           COALESCE(pa.school_slug, ru.school_slug, re.school_slug) AS school_slug,
           COALESCE(pa.season, ru.season, re.season) AS season,
@@ -501,7 +572,8 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Total Yards" />
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
+      chartChild = <SportsAreaGradient seasons={seasonBarsArr} valueLabel="Total Yards" />
       break
     }
 
@@ -528,6 +600,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
           WHERE stat_type = 'Passing' AND season = ANY(${AVAILABLE_SEASONS})
         )
         SELECT
+          COALESCE(t.player_slug, r.player_slug, p.player_slug) AS player_slug,
           COALESCE(t.player_name, r.player_name, p.player_name) AS name,
           COALESCE(t.school_slug, r.school_slug, p.school_slug) AS school_slug,
           COALESCE(t.season, r.season, p.season) AS season,
@@ -548,6 +621,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       )
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       chartChild = (
         <SportsAreaGradient
           seasons={seasonBars}
@@ -601,6 +675,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       ]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsHomeAwayBar seasons={homeAwaySeasons} />
       break
     }
@@ -646,6 +721,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       ]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsPFPAScatter seasons={pfpaSeasons} />
       break
     }
@@ -671,6 +747,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       ]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows.length
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsWinLossBar seasons={winLossSeasons} />
       break
     }
@@ -708,6 +785,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="SoS %" showAvgLine />
       break
     }
@@ -737,6 +815,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Avg Pts/Game" />
       break
     }
@@ -783,6 +862,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
       void BOX_SEASONS
+      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={defenseSeasonBars} color="#10b981" valueLabel="Avg Pts Allowed" />
       break
     }
@@ -919,6 +999,164 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       break
     }
 
+    // ── winning-streaks ───────────────────────────────────────────────────────
+    case 'winning-streaks': {
+      const rows = await sql`
+        WITH team_games AS (
+          SELECT home_team_slug AS team_slug, game_date,
+            CASE WHEN home_score > away_score THEN 1 ELSE 0 END AS win
+          FROM games WHERE home_score IS NOT NULL AND away_score IS NOT NULL
+          UNION ALL
+          SELECT away_team_slug, game_date,
+            CASE WHEN away_score > home_score THEN 1 ELSE 0 END AS win
+          FROM games WHERE home_score IS NOT NULL AND away_score IS NOT NULL
+        ),
+        numbered AS (
+          SELECT team_slug, game_date, win,
+            ROW_NUMBER() OVER (PARTITION BY team_slug ORDER BY game_date) -
+            ROW_NUMBER() OVER (PARTITION BY team_slug, win ORDER BY game_date) AS grp
+          FROM team_games
+        ),
+        streaks AS (SELECT team_slug, win, COUNT(*) AS streak_len FROM numbered GROUP BY team_slug, win, grp),
+        best AS (SELECT team_slug, MAX(streak_len) AS value FROM streaks WHERE win = 1 GROUP BY team_slug)
+        SELECT t.name, t.school_slug, b.value::int AS value
+        FROM best b JOIN teams t ON t.slug = b.team_slug WHERE t.level = 'Varsity' ORDER BY b.value DESC`
+
+      tableRows = (rows as { name: string; school_slug: string; value: number }[]).map(r => ({
+        name: String(r.name),
+        value: Number(r.value),
+        logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '',
+      }))
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChart data={tableRows.slice(0, 20)} color={config.color} valueLabel="Win Streak" />
+      break
+    }
+
+    // ── losing-streaks ────────────────────────────────────────────────────────
+    case 'losing-streaks': {
+      const rows = await sql`
+        WITH team_games AS (
+          SELECT home_team_slug AS team_slug, game_date,
+            CASE WHEN home_score > away_score THEN 1 ELSE 0 END AS win
+          FROM games WHERE home_score IS NOT NULL AND away_score IS NOT NULL
+          UNION ALL
+          SELECT away_team_slug, game_date,
+            CASE WHEN away_score > home_score THEN 1 ELSE 0 END AS win
+          FROM games WHERE home_score IS NOT NULL AND away_score IS NOT NULL
+        ),
+        numbered AS (
+          SELECT team_slug, game_date, win,
+            ROW_NUMBER() OVER (PARTITION BY team_slug ORDER BY game_date) -
+            ROW_NUMBER() OVER (PARTITION BY team_slug, win ORDER BY game_date) AS grp
+          FROM team_games
+        ),
+        streaks AS (SELECT team_slug, win, COUNT(*) AS streak_len FROM numbered GROUP BY team_slug, win, grp),
+        best AS (SELECT team_slug, MAX(streak_len) AS value FROM streaks WHERE win = 0 GROUP BY team_slug)
+        SELECT t.name, t.school_slug, b.value::int AS value
+        FROM best b JOIN teams t ON t.slug = b.team_slug WHERE t.level = 'Varsity' ORDER BY b.value DESC`
+
+      tableRows = (rows as { name: string; school_slug: string; value: number }[]).map(r => ({
+        name: String(r.name),
+        value: Number(r.value),
+        logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '',
+      }))
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChart data={tableRows.slice(0, 20)} color={config.color} valueLabel="Loss Streak" />
+      break
+    }
+
+    // ── points-by-quarter ─────────────────────────────────────────────────────
+    case 'points-by-quarter': {
+      const rows = await sql`
+        SELECT t.name, t.school_slug, g.season::text AS season,
+          SUM((elem->>'q4')::int) AS value
+        FROM game_box_scores b
+        CROSS JOIN LATERAL jsonb_array_elements(b.quarter_scores) AS elem
+        JOIN games g ON g.id = b.game_id
+        JOIN teams t ON t.slug = (elem->>'team_slug')
+        WHERE (elem->>'q4') IS NOT NULL AND t.level = 'Varsity'
+        GROUP BY t.name, t.school_slug, g.season
+        ORDER BY g.season, value DESC`
+
+      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
+      seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
+      seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Q4 Pts" />
+      break
+    }
+
+    // ── rushing-yards-team ────────────────────────────────────────────────────
+    case 'rushing-yards-team': {
+      const rows = await sql`
+        SELECT ps.school_name AS name, ps.school_slug, ps.season::text AS season,
+          SUM(ps.rush_yards) AS value
+        FROM player_season_stats ps
+        JOIN teams t ON t.school_slug = ps.school_slug AND t.level = 'Varsity'
+        WHERE ps.stat_type = 'Rushing' AND ps.rush_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
+        GROUP BY ps.school_name, ps.school_slug, ps.season
+        ORDER BY ps.season, value DESC`
+
+      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
+      seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
+      seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Rush Yds" />
+      break
+    }
+
+    // ── passing-yards-team ────────────────────────────────────────────────────
+    case 'passing-yards-team': {
+      const rows = await sql`
+        SELECT ps.school_name AS name, ps.school_slug, ps.season::text AS season,
+          SUM(ps.pass_yards) AS value
+        FROM player_season_stats ps
+        JOIN teams t ON t.school_slug = ps.school_slug AND t.level = 'Varsity'
+        WHERE ps.stat_type = 'Passing' AND ps.pass_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
+        GROUP BY ps.school_name, ps.school_slug, ps.season
+        ORDER BY ps.season, value DESC`
+
+      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
+      seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
+      seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Pass Yds" />
+      break
+    }
+
+    // ── turnovers ─────────────────────────────────────────────────────────────
+    case 'turnovers': {
+      const rows = await sql`
+        SELECT t.name, pgs.school_slug, pgs.season::text AS season,
+          SUM(COALESCE(pgs.def_int,0) + COALESCE(pgs.def_fumbles,0)) AS value
+        FROM player_game_stats pgs
+        JOIN teams t ON t.school_slug = pgs.school_slug AND t.level = 'Varsity'
+        WHERE pgs.season = ANY(${AVAILABLE_SEASONS})
+        GROUP BY t.name, pgs.school_slug, pgs.season
+        ORDER BY pgs.season, value DESC`
+
+      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
+      seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
+      seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
+      tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Takeaways" />
+      break
+    }
+
     default:
       notFound()
   }
@@ -936,8 +1174,9 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       rowPlayerSlugs={rowPlayerSlugs}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
-      valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : undefined}
-      showRank={slug === 'wins-by-school' || slug === 'season-records'}
+      nameLabel={NAME_LABELS[slug]}
+      valueLabel={VALUE_LABELS[slug]}
+      showRank
       panelMode
     >
       {chartChild}
