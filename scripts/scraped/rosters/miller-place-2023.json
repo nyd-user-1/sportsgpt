@@ -1,0 +1,132 @@
+{
+  "slug": "miller-place",
+  "season": 2023,
+  "players": [
+    {
+      "name": "DJ  Williamson",
+      "newsday_player_id": 21510,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Kevin Washington",
+      "newsday_player_id": 22288,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Lee Walcott",
+      "newsday_player_id": 22521,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Jackson Thompson",
+      "newsday_player_id": 21512,
+      "class": null,
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "AJ Ruldolph",
+      "newsday_player_id": 22513,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Tristan Rodriguez",
+      "newsday_player_id": 22718,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Matthew Perry",
+      "newsday_player_id": 22449,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Braedon Murphy",
+      "newsday_player_id": 21513,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "Ethan Monaco",
+      "newsday_player_id": 22286,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Jayden Meadows",
+      "newsday_player_id": 21509,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Logan  LaMountain",
+      "newsday_player_id": 22287,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Dane LaGrasta",
+      "newsday_player_id": 21610,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Shane Kiernan",
+      "newsday_player_id": 21511,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Cameron Golding",
+      "newsday_player_id": 22523,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Connor Glozek",
+      "newsday_player_id": 22522,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Michael Giugliano",
+      "newsday_player_id": 21508,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Russell Dada",
+      "newsday_player_id": 22524,
+      "class": null,
+      "position": null,
+      "jersey_number": 71
+    },
+    {
+      "name": "Spencer Bruno",
+      "newsday_player_id": 22520,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "deer-park",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Huntley  Swaby",
+      "newsday_player_id": 22509,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Aaron  Smith",
+      "newsday_player_id": 22296,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Damien  Scott",
+      "newsday_player_id": 22298,
+      "class": null,
+      "position": null,
+      "jersey_number": 82
+    },
+    {
+      "name": "Alex Moore-Brooks",
+      "newsday_player_id": 22511,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Juan Mayoral-Gonzalez",
+      "newsday_player_id": 22299,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Hunter Lovinsky",
+      "newsday_player_id": 21710,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Hayden Lovinsky",
+      "newsday_player_id": 21711,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Roony  Elmon",
+      "newsday_player_id": 22768,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Maismy Desir",
+      "newsday_player_id": 22510,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Devin Cherry",
+      "newsday_player_id": 21712,
+      "class": null,
+      "position": null,
+      "jersey_number": 62
+    },
+    {
+      "name": "Malachi  Baker",
+      "newsday_player_id": 22840,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Anthony  Almanazar",
+      "newsday_player_id": 22297,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

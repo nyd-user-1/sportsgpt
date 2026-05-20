@@ -1,0 +1,69 @@
+{
+  "slug": "sachem-north",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Chris Lombardo",
+      "newsday_entry_id": 19136,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Dalton Lawrence",
+      "newsday_entry_id": 19133,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Chris  Kelly",
+      "newsday_entry_id": 19129,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Tyler  Hall",
+      "newsday_entry_id": 19130,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Nick  Giorgi",
+      "newsday_entry_id": 19135,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Chris Escalante",
+      "newsday_entry_id": 19134,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jalen Duvall",
+      "newsday_entry_id": 19291,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Tyler Davide",
+      "newsday_entry_id": 19131,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Shane Borsari",
+      "newsday_entry_id": 19132,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

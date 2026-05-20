@@ -1,0 +1,118 @@
+{
+  "slug": "sachem-north",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Thomas Volpe",
+      "newsday_player_id": 22835,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Anthony Vino",
+      "newsday_player_id": 22025,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Brayden  Tappin",
+      "newsday_player_id": 22028,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Lucas Singleton",
+      "newsday_player_id": 22729,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "David Santiago",
+      "newsday_player_id": 22851,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Shane Reilly",
+      "newsday_player_id": 22026,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Logan  Reilly",
+      "newsday_player_id": 22027,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Jack Pitman",
+      "newsday_player_id": 22031,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Cole Munster",
+      "newsday_player_id": 22850,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Christopher Lombardo",
+      "newsday_player_id": 22030,
+      "class": null,
+      "position": null,
+      "jersey_number": 48
+    },
+    {
+      "name": "Kristian Hagelstein",
+      "newsday_player_id": 22852,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Nate Gsell",
+      "newsday_player_id": 22853,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Andrew Eaton",
+      "newsday_player_id": 22728,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Zach DeMilt",
+      "newsday_player_id": 22032,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Jayden Berrios",
+      "newsday_player_id": 22029,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Nasir Altes",
+      "newsday_player_id": 22834,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

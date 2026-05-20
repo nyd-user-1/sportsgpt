@@ -1,0 +1,933 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "East Hampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 50,
+    "gameId": "6020",
+    "box": {
+      "gameId": "6020",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Pierson",
+          "q1": "22",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton 50, Wyandanch 8: Finn Byrnes rushed for 148 yards and two touchdowns on 15 carries for East Hampton in Suffolk III. Danny Lester opened the scoring with a 1-yard fumble recovery returned for a touchdown. Mikhail Feaster added two rushing touchdowns and Aryan Chugh went 6-for-6 on PAT attempts.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 56,
+    "gameId": "5583",
+    "box": {
+      "gameId": "5583",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 56, Wyandanch 6:  Zachary Vasconcellos ran for two touchdowns (8, 3 yards) in Suffolk III. Joseph Filardi was 10-of-13  passing for 147 yards and two touchdowns. Jalyn Jacques rushed for 55 yards and one touchdown and caught one touchdown for Half Hollow Hills West (2-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jahiem Mason",
+            "att": 9,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "att": 8,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 3,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "att": 4,
+            "yds": 34,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Pipia",
+            "att": 2,
+            "yds": 7,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 13,
+            "comp": 10,
+            "yds": 147,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Bonocore",
+            "rec": 3,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "rec": 1,
+            "yds": 9,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin  Stummer",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Adil Osmani",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Elijah Kongolo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mitch Diamond",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 49,
+    "gameId": "5665",
+    "box": {
+      "gameId": "5665",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 49, Wyandanch 6: Colton Feinberg ran for touchdowns of 1 and 10-yards in Suffolk III. His 10-yard run in  the second quarter gave Rocky Point a 34-0 lead. Joey Cecere ran for 90 yards and a 20-yard touchdown on six carries. Jeremy Graham rushed for 90 yards on three carries and A.J. Aschettino ran for 56-yards and a 2-yard touchdown on three carries for Rocky Point (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 6,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 3,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 5,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 1,
+            "yds": 47,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominick Viggiano",
+            "att": 2,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Landon Orlando",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 3,
+            "yds": 15,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Zach Gennaro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cooper Peterson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 49,
+    "gameId": "5695",
+    "box": {
+      "gameId": "5695",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "27",
+          "q2": "22",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 49, Wyandanch 6: Shane Longin threw two touchdown passes in Suffolk III. His 37-yarder to Sean Tucker opened the scoring in the first quarter. His second touchdown pass, a 7-yarder to Peter Johnston, followed by a two-point conversion pass to Charlie Serafin, gave Harborfields a 35-0 lead. Declan McCarthy returned an interception 55-yards for a touchdown. Harborfields (3-1) allowed 11 yards rushing.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Jacob  Levy",
+            "att": 13,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jacob  Levy",
+            "att": 13,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jacob  Levy",
+            "att": 13,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jacob  Levy",
+            "att": 13,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nico Markowski",
+            "att": 5,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "att": 2,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Quinn Cave",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Quinn Cave",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Quinn Cave",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Quinn Cave",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vinny Bolognino",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew Henry",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane Longin",
+            "att": 4,
+            "comp": 3,
+            "yds": 61,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Sean  Tucker",
+            "rec": 1,
+            "yds": 37,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vinny Bolognino",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Peter Johnston",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Matthew Henry",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew Henry",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew Henry",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Matthew Henry",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 61,
+    "gameId": "5707",
+    "box": {
+      "gameId": "5707",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "26",
+          "q2": "28",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "61"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport-South Manor 61, Wyandanch 0: Pat Murphy had 90 yards and a touchdown on eight carries to lead Eastport- South Manor (1-4) in Suffolk III. Ashton Lides finished with 70 yards and two touchdowns on six carries. Dan Odell had two five-yard rushing touchdowns. Anthony D'Anna had a 10-yard fumble return for a touchdown and Payton Timoney had a 10-yard interception return touchdown.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Amityville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 43,
+    "gameId": "5737",
+    "box": {
+      "gameId": "5737",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "22",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 43, Wyandanch 0: Triston Trellis threw for 170 yards on 5-of-9 passes for two touchdowns for Amityville (3-3) in Division III. Trellis also returned a punt return for a 70-yard touchdown and had a 30-yard interception return touchdown. Jermaine Jackson had 10 carries and 112 yards for one touchdown. Tyler Hinton had 90 yards, one receiving touchdown and a two-point conversion reception. On the defensive end, Jackson had 10 tackles.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 2,
+    "gameId": "5604",
+    "box": {
+      "gameId": "5604",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "2",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "2"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 56,
+    "gameId": "5777",
+    "box": {
+      "gameId": "5777",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "14",
+          "q2": "30",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 56, Wyandanch 0: Vincent Aprigliano and Daimler Valerio each rushed for two touchdowns to lead Comsewogue (1-7) in Suffolk III. Ibrahim Moshin and Johnny Russo also added rushing touchdowns. Tyler Strome added to the offensive scoring by throwing a 16-yard touchdown pass to Shane Grant. Adam Wacholder returned an interception 28 yards to add to the Comsewogue lead. The defense also recorded a safety when they forced Wyandanch quarterback Emani Rivera to run out of the back of the endzone.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "DAIMLER VALERIO",
+            "att": 12,
+            "yds": 92,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "VINCENT APRIGLIANO",
+            "att": 10,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "JOHNNY RUSSO",
+            "att": 7,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "IBRAHIM MOSHIN",
+            "att": 5,
+            "yds": 45,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "TYLER STROHM",
+            "att": 12,
+            "comp": 7,
+            "yds": 110,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "SHANE GRANT",
+            "rec": 3,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "KEVIN SCHNUPP",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "CHRIS BEVERLY",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "GAVIN DANDREA",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "ADAM  WACHOLDER",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "slug": "east-islip",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Carson Tessitore",
+      "newsday_entry_id": 19393,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Kevin Smith",
+      "newsday_entry_id": 18090,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Dave Reynolds",
+      "newsday_entry_id": 18086,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Cooper  Parkinson",
+      "newsday_entry_id": 19117,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Matt McIntee",
+      "newsday_entry_id": 19115,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Leo  Lopez",
+      "newsday_entry_id": 17821,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Aiden Lenox",
+      "newsday_entry_id": 19116,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Gavin  Herzog",
+      "newsday_entry_id": 18088,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Jason Fiorello",
+      "newsday_entry_id": 18087,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Andrew Cooper",
+      "newsday_entry_id": 17830,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Derek  Burrell",
+      "newsday_entry_id": 17822,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Ryan Bayer",
+      "newsday_entry_id": 19394,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Ryan Bauco",
+      "newsday_entry_id": 18089,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Matt Baldino",
+      "newsday_entry_id": 18096,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    }
+  ]
+}

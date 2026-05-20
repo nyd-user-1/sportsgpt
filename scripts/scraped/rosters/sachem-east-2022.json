@@ -1,0 +1,300 @@
+{
+  "slug": "sachem-east",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Justin Westerlind",
+      "newsday_player_id": 20822,
+      "class": null,
+      "position": null,
+      "jersey_number": 31
+    },
+    {
+      "name": "AJ Vurchio",
+      "newsday_player_id": 20730,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Michael Vurchio",
+      "newsday_player_id": 20826,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Jack Ventura",
+      "newsday_player_id": 20842,
+      "class": null,
+      "position": null,
+      "jersey_number": 71
+    },
+    {
+      "name": "Jonathan Valdez",
+      "newsday_player_id": 20843,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "David Tejada",
+      "newsday_player_id": 20841,
+      "class": null,
+      "position": null,
+      "jersey_number": 69
+    },
+    {
+      "name": "Drew Studioso",
+      "newsday_player_id": 20820,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Ben Spooner",
+      "newsday_player_id": 20836,
+      "class": null,
+      "position": null,
+      "jersey_number": 61
+    },
+    {
+      "name": "Jerimiah Slaven",
+      "newsday_player_id": 20844,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Joe Salajka",
+      "newsday_player_id": 20831,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Frankie Rom",
+      "newsday_player_id": 20821,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Jaiden Rodriguez",
+      "newsday_player_id": 20734,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Mikey Reilly",
+      "newsday_player_id": 20815,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Jack Pickersgill",
+      "newsday_player_id": 20732,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Connor O'Hehir",
+      "newsday_player_id": 20832,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Jacob Newman",
+      "newsday_player_id": 20847,
+      "class": null,
+      "position": null,
+      "jersey_number": 76
+    },
+    {
+      "name": "Liam Neimeth",
+      "newsday_player_id": 20825,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "John Murphy",
+      "newsday_player_id": 20850,
+      "class": null,
+      "position": null,
+      "jersey_number": 79
+    },
+    {
+      "name": "James Monteverde",
+      "newsday_player_id": 20830,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Chance Miller",
+      "newsday_player_id": 20827,
+      "class": null,
+      "position": null,
+      "jersey_number": 41
+    },
+    {
+      "name": "Andrew Mileto",
+      "newsday_player_id": 20814,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Gino LaRotonda",
+      "newsday_player_id": 20731,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Dylan Lalonde",
+      "newsday_player_id": 20824,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Austin Kling",
+      "newsday_player_id": 20828,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Dahkari Jordan",
+      "newsday_player_id": 20849,
+      "class": null,
+      "position": null,
+      "jersey_number": 78
+    },
+    {
+      "name": "Dakari Jordan",
+      "newsday_player_id": 20735,
+      "class": null,
+      "position": null,
+      "jersey_number": 78
+    },
+    {
+      "name": "Jason Johnson",
+      "newsday_player_id": 20816,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Momin Hussein",
+      "newsday_player_id": 20823,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "James Hogan",
+      "newsday_player_id": 20819,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Alex Hightower",
+      "newsday_player_id": 20846,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Tyler Guliano",
+      "newsday_player_id": 20833,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Allan Gomez",
+      "newsday_player_id": 20848,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Logan Edler",
+      "newsday_player_id": 20834,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Cody Dureau",
+      "newsday_player_id": 20835,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    },
+    {
+      "name": "Nick DiSipio",
+      "newsday_player_id": 20829,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Azariah De La Cruz",
+      "newsday_player_id": 20733,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Sal Corallo",
+      "newsday_player_id": 20840,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Jamie Capizzi",
+      "newsday_player_id": 20817,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Trevelyn Byrams",
+      "newsday_player_id": 20838,
+      "class": null,
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "Michael Brownworth",
+      "newsday_player_id": 20837,
+      "class": null,
+      "position": null,
+      "jersey_number": 62
+    },
+    {
+      "name": "Derrick Bisaccio",
+      "newsday_player_id": 20818,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Ethan Angeri",
+      "newsday_player_id": 20839,
+      "class": null,
+      "position": null,
+      "jersey_number": 67
+    }
+  ]
+}

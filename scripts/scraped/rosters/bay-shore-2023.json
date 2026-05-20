@@ -1,0 +1,48 @@
+{
+  "slug": "bay-shore",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Jordan Tyler",
+      "newsday_player_id": 22113,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "James Sobotka",
+      "newsday_player_id": 22554,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jayden Jean",
+      "newsday_player_id": 22112,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Assanti Hall",
+      "newsday_player_id": 22111,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Eriq Graham St. Louis",
+      "newsday_player_id": 22114,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Scott Arnett",
+      "newsday_player_id": 22555,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

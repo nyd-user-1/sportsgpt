@@ -7,17 +7,21 @@ import { getChartConfig } from '@/lib/chart-configs'
 export function ChartsPanelWrapper({ panel }: { panel: React.ReactNode }) {
   const pathname = usePathname()
   const router   = useRouter()
-  const match    = pathname.match(/^\/charts\/(.+)$/)
-  const slug     = match ? match[1] : null
-  const config   = slug ? getChartConfig(slug) : null
+
+  // Match /charts/[slug] or /charts/[slug]/[playerSlug]
+  const match       = pathname.match(/^\/charts\/([^/]+)(?:\/(.+))?$/)
+  const chartSlug   = match ? match[1] : null
+  const hasSecondary = !!(match?.[2])  // player or team open → collapse chart to 1/3
+  const config      = chartSlug ? getChartConfig(chartSlug) : null
 
   return (
     <AppPanel
-      open={!!slug}
+      open={!!chartSlug}
       onClose={() => router.push('/charts', { scroll: false })}
       title={config?.title ?? ''}
-      defaultExpanded
+      defaultExpanded={!hasSecondary}
       bodyClass="flex flex-col"
+      detailHref={chartSlug ? `/chart/${chartSlug}` : undefined}
     >
       {panel}
     </AppPanel>

@@ -1,0 +1,41 @@
+{
+  "slug": "riverhead",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Braeden Messina",
+      "newsday_player_id": 26120,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Brian Langhorn",
+      "newsday_player_id": 26122,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Kavion Hobbs",
+      "newsday_player_id": 25212,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "William Healy",
+      "newsday_player_id": 26205,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Braylen Blom",
+      "newsday_player_id": 26121,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    }
+  ]
+}

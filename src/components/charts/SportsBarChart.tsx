@@ -31,8 +31,8 @@ function CustomTooltip({
   if (!item) return null
   return (
     <div style={{
-      background: '#fff',
-      border: '1px solid #e5e7eb',
+      background: 'var(--surface)',
+      border: '1px solid var(--border)',
       borderRadius: '8px',
       padding: '8px 12px',
       fontSize: '12px',
@@ -49,7 +49,7 @@ function CustomTooltip({
           display: 'inline-block', width: '10px', height: '10px',
           borderRadius: '2px', backgroundColor: entry.color ?? '#033882', flexShrink: 0,
         }} />
-        <span style={{ color: '#6b7280' }}>{valueLabel}</span>
+        <span style={{ color: 'var(--muted)' }}>{valueLabel}</span>
         <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px' }}>
           {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
         </span>

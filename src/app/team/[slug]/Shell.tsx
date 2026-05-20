@@ -2,12 +2,13 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { SCHOOL_COLORS } from '@/lib/school-colors'
 import { RevealFx } from '@/components/RevealFx'
+import { AnimatePresence, motion } from 'framer-motion'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -26,8 +27,8 @@ function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort }: {
   const active = sortCol === col
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
   return (
-    <th className={cn('px-2 py-3 border-b border-[var(--border)] bg-[var(--surface)]', right ? 'text-right' : 'text-left')}>
-      <div className={cn('relative inline-block group/th', right && 'text-right')} style={{ textAlign: right ? 'right' : 'left' }}>
+    <th className={cn('px-2 py-3 border-b border-[var(--border)] bg-[var(--surface)]', right ? 'text-center' : 'text-left')}>
+      <div className={cn('relative group/th', right ? 'w-full flex justify-center' : 'inline-block')}>
         <button onClick={() => onSort(col)}
           className={cn('inline-flex items-center gap-1 rounded-md px-0 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5 whitespace-nowrap',
             active ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
@@ -67,9 +68,10 @@ function fmtPct(w: number | null, l: number | null): string {
 
 function topStat(row: Record<string, unknown>): { label: string; value: string } {
   const stat = row.stat_type as string
-  if (stat === 'Passing') return { label: 'Pass Yds', value: String(row.pass_yards ?? 0) }
-  if (stat === 'Rushing') return { label: 'Rush Yds', value: String(row.rush_yards ?? 0) }
-  return { label: 'Recv Yds', value: String(row.recv_yards ?? 0) }
+  const fmt = (n: unknown) => Number(n ?? 0).toLocaleString()
+  if (stat === 'Passing') return { label: 'Pass Yds', value: fmt(row.pass_yards) }
+  if (stat === 'Rushing') return { label: 'Rush Yds', value: fmt(row.rush_yards) }
+  return { label: 'Recv Yds', value: fmt(row.recv_yards) }
 }
 
 function fmtRecord(w: number | null, l: number | null, ties?: number | null): string {
@@ -114,7 +116,7 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 }
 
 export function TeamShell({
-  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows,
+  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows, allSeasonStats = [],
   panelMode = false,
 }: {
   team: Record<string, unknown>
@@ -125,15 +127,17 @@ export function TeamShell({
   playerRows: Record<string, unknown>[]
   rosterRows?: Record<string, unknown>[]
   gameRows: GameRow[]
+  allSeasonStats?: { team_slug: string; season: number; overall_wins: number; overall_losses: number }[]
   panelMode?: boolean
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
-  const [infoExpanded, setInfoExpanded] = useState(true)
+  const [infoExpanded, setInfoExpanded] = useState(false)
   const [chartsOpen, setChartsOpen]     = useState(false)
   const [mapsOpen,   setMapsOpen]       = useState(false)
   const [chatOpen,   setChatOpen]       = useState(false)
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
+  const [carouselDir, setCarouselDir]   = useState(1)
   const [slideIdx, setSlideIdx]         = useState(0)
   const playersRef  = useRef<HTMLDivElement>(null)
   const divRef      = useRef<HTMLDivElement>(null)
@@ -142,6 +146,25 @@ export function TeamShell({
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
     [gameRows]
   )
+
+  // PCT-based rank per season: { season -> { team_slug -> { rank, pct } } }
+  const oppStatMap = useMemo(() => {
+    const map: Record<number, Record<string, { rank: number; pct: number }>> = {}
+    const seasons = [...new Set(allSeasonStats.map(r => r.season))]
+    for (const season of seasons) {
+      const rows = allSeasonStats
+        .filter(r => r.season === season)
+        .map(r => {
+          const gp = (r.overall_wins ?? 0) + (r.overall_losses ?? 0)
+          const pct = gp > 0 ? r.overall_wins / gp : 0
+          return { team_slug: r.team_slug, pct, wins: r.overall_wins ?? 0 }
+        })
+        .sort((a, b) => b.pct - a.pct || b.wins - a.wins)
+      map[season] = {}
+      rows.forEach((r, i) => { map[season][r.team_slug] = { rank: i + 1, pct: r.pct } })
+    }
+    return map
+  }, [allSeasonStats])
 
   const teamName = team.name as string
   const division = team.division as string
@@ -235,6 +258,11 @@ export function TeamShell({
   const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
   const roundBtn = 'inline-flex items-center justify-center h-8 w-8 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
   const td = 'px-2 py-2.5 border-b border-[var(--border)] text-sm'
+  const slideVariants = {
+    enter:  (dir: number) => ({ x: dir >= 0 ? '100%' : '-100%', opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit:   (dir: number) => ({ x: dir >= 0 ? '-100%' : '100%', opacity: 0 }),
+  }
 
   const heroLogo  = SCHOOL_LOGOS[schoolSlug]
   const mobileHeader = (
@@ -363,12 +391,27 @@ export function TeamShell({
             {/* Profiles */}
             <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold text-[var(--txt)]">Program</h2>
+                <div className="flex items-center gap-1">
+                  <button onClick={() => { setCarouselDir(-1); setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(false) }}
+                    className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
+                    <ArrowLeft className="h-4 w-4" />
+                  </button>
+                  <button onClick={() => { setCarouselDir(1); setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(false) }}
+                    className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
               <InfoTable
                 title={activeProfile.h2}
                 onToggle={() => setInfoExpanded(v => !v)}
-                onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(true) }}
-                onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(true) }}
               >
+                <AnimatePresence initial={false} custom={carouselDir} mode="wait">
+                <motion.div key={profileIdx} custom={carouselDir} variants={slideVariants}
+                  initial="enter" animate="center" exit="exit"
+                  transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}>
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
@@ -382,48 +425,31 @@ export function TeamShell({
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
                           <SortTh col="overall" label="Overall" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
                           <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" />
-                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf"     right />
-                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa"     right />
-                          <SortTh col="avgPf"   label="Avg PF"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pf" right />
-                          <SortTh col="avgPa"   label="Avg PA"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="avg-pa" right />
-                          <SortTh col="defGrade" label="Def"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="defense-grade" right />
-                          <SortTh col="sos"     label="SoS"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos"    right />
-                          <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff"   right />
-                          <SortTh col="winPct"  label="PCT"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pct"    right />
+                          <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff" />
+                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf" />
+                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa" />
+                          <SortTh col="sos"     label="SoS"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos" />
                         </tr>
                       </thead>
                       <tbody>
-                        {(infoExpanded ? sortedHistoryRows : sortedHistoryRows.slice(0, 2)).map(row => (
-                          <tr key={row.season} className="border-t border-[var(--border)]">
+                        {(infoExpanded ? sortedHistoryRows : sortedHistoryRows.slice(0, 2)).map(row => {
+                          const seasonProfileIdx = PROFILES.findIndex(p => p.kind === 'games' && (p as { season: number }).season === row.seasonKey)
+                          return (
+                          <tr key={row.season} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors"
+                            onClick={() => { if (seasonProfileIdx !== -1) { setProfileIdx(seasonProfileIdx); setInfoExpanded(true) } }}>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.season}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.overall}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
-                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.pf ?? '—'}</td>
-                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.pa ?? '—'}</td>
-                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPf != null ? row.avgPf.toFixed(1) : '—'}</td>
-                            <td className={cn(td, 'text-right text-[var(--muted)]')}>{row.avgPa != null ? row.avgPa.toFixed(1) : '—'}</td>
-                            <td className={cn(td, 'text-right')}>
-                              {row.defGrade ? (
-                                <span className={cn('text-xs font-semibold',
-                                  row.defGrade === 'Elite'      ? 'text-green-600' :
-                                  row.defGrade === 'Strong'     ? 'text-blue-600'  :
-                                  row.defGrade === 'Average'    ? 'text-amber-600' :
-                                  'text-red-500')}>
-                                  {row.defGrade}
-                                </span>
-                              ) : '—'}
-                            </td>
-                            <td className={cn(td, 'text-right text-[var(--muted)]')}>
-                              {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
-                            </td>
-                            <td className={cn(td, 'text-right font-medium', row.diff == null ? 'text-[var(--muted)]' : row.diff >= 0 ? 'text-green-600' : 'text-red-500')}>
+                            <td className={cn(td, 'font-medium', row.diff == null ? 'text-[var(--muted)]' : row.diff >= 0 ? 'text-green-600' : 'text-red-500')}>
                               {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
                             </td>
-                            <td className={cn(td, 'text-right font-bold')} style={{ color: ACCENT_COLOR }}>
-                              {row._winPct != null ? row._winPct.toFixed(3).replace(/^0/, '') : '—'}
+                            <td className={cn(td, 'text-[var(--muted)]')}>{row.pf ?? '—'}</td>
+                            <td className={cn(td, 'text-[var(--muted)]')}>{row.pa ?? '—'}</td>
+                            <td className={cn(td, 'text-[var(--muted)]')}>
+                              {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
                             </td>
                           </tr>
-                        ))}
+                        )})}
                       </tbody>
                     </table>
                     </div>
@@ -445,11 +471,13 @@ export function TeamShell({
                             <thead>
                               <tr onClick={() => setInfoExpanded(v => !v)}
                                 className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
-                                <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
+                                <th className="w-[13%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
                                 <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
-                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Score</th>
-                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
-                                <th className="w-[20%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
+                                <th className="w-[10%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opp PCT</th>
+                                <th className="w-[10%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">PF</th>
+                                <th className="w-[10%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">PA</th>
+                                <th className="w-[10%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Diff</th>
+                                <th className="w-[14%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Result</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -484,19 +512,21 @@ export function TeamShell({
                                         <Link href={`/team/${opSlug}`} className="hover:underline truncate" style={{ color: ACCENT_COLOR }}>{opDisplay}</Link>
                                       </div>
                                     </td>
+                                    <td className={cn(td, 'text-right tabular-nums text-[var(--muted)]')}>
+                                      {oppStatMap[g.season]?.[opSlug] != null
+                                        ? oppStatMap[g.season][opSlug].pct.toFixed(3).replace(/^0/, '')
+                                        : '—'}
+                                    </td>
+                                    <td className={cn(td, 'text-right tabular-nums text-[var(--muted)]')}>{myScore ?? '—'}</td>
+                                    <td className={cn(td, 'text-right tabular-nums text-[var(--muted)]')}>{opScore ?? '—'}</td>
+                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
                                     <td className={cn(td, 'text-right font-medium whitespace-nowrap')}>
                                       {g.id ? (
-                                        <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{scoreStr}</Link>
+                                        <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline"
+                                          style={{ color: result === 'W' ? '#15803d' : result === 'L' ? '#b91c1c' : 'var(--muted)' }}>
+                                          {scoreStr}
+                                        </Link>
                                       ) : scoreStr}
-                                    </td>
-                                    <td className={cn(td, 'text-right tabular-nums text-xs font-semibold')} style={{ color: diffColor }}>{diffStr}</td>
-                                    <td className={cn(td, 'text-right')}>
-                                      <span className={cn('inline-block px-2 py-0.5 rounded text-xs font-bold',
-                                        result === 'W' ? 'text-green-700 bg-green-50' :
-                                        result === 'L' ? 'text-red-700 bg-red-50' :
-                                        'text-[var(--muted)] bg-[var(--inp-bg)]')}>
-                                        {result}
-                                      </span>
                                     </td>
                                   </tr>
                                 )
@@ -508,23 +538,34 @@ export function TeamShell({
                     </>
                   )
                 })()}
+                </motion.div>
+                </AnimatePresence>
               </InfoTable>
             </div>
 
             {/* Games carousel — synced to active InfoTable season */}
             {(() => {
-              const carouselSeason = activeProfile.kind === 'games'
-                ? (activeProfile as { season: number }).season
-                : gameSeasons[0]
-              if (carouselSeason == null) return null
-              const carouselGames = gameRows.filter(g => g.season === carouselSeason)
+              const isAllSeasons = activeProfile.kind === 'history'
+              const carouselSeason = isAllSeasons
+                ? null
+                : (activeProfile as { season: number }).season
+              const carouselGames = carouselSeason != null
+                ? gameRows.filter(g => g.season === carouselSeason)
+                : gameRows
               if (carouselGames.length === 0) return null
               return (
                 <div className="mb-8">
                   <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-[var(--txt)]">Games · {fmtSeason(carouselSeason)}</h2>
+                    <h2 className="text-lg font-semibold text-[var(--txt)]">
+                      {isAllSeasons ? 'Games' : fmtSeason(carouselSeason!)}
+                    </h2>
                   </div>
-                  <div className="overflow-x-auto no-scrollbar">
+                  <div className="overflow-hidden">
+                  <AnimatePresence initial={false} custom={carouselDir} mode="popLayout">
+                  <motion.div key={carouselSeason ?? 'all'} custom={carouselDir} variants={slideVariants}
+                    initial="enter" animate="center" exit="exit"
+                    transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="overflow-x-auto no-scrollbar">
                     <div className="flex gap-3 pb-1">
                       {carouselGames.map(g => {
                         const isHome    = g.home_team_slug === team.slug
@@ -546,15 +587,78 @@ export function TeamShell({
                             key={g.id}
                             href={`/game/${g.id}?ref=${team.slug}`}
                             title={isHome ? opDisplay : `at ${opDisplay}`}
-                            titlePadRight
-                            badge={result ? <WLBadge result={result as 'W' | 'L' | 'T'} /> : undefined}
                             image={opLogo ? <Image src={opLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
-                            row2={{ text: fmtGameDate(g.game_date) ?? '—' }}
-                            stat={{ value: myScore != null && opScore != null ? `${myScore}–${opScore}` : '—' }}
+                            row2={g.game_number != null ? { text: `Week ${g.game_number}` } : undefined}
+                            stat={{ value: myScore != null && opScore != null ? `${myScore}–${opScore}` : '—', color: result === 'W' ? '#15803d' : result === 'L' ? '#b91c1c' : undefined }}
                           />
                         )
                       })}
                     </div>
+                  </motion.div>
+                  </AnimatePresence>
+                  </div>
+                </div>
+              )
+            })()}
+
+            {/* Players carousel — synced to active InfoTable season */}
+            {(() => {
+              const isAllSeasons = activeProfile.kind === 'history'
+              const carouselSeason = isAllSeasons ? null : (activeProfile as { season: number }).season
+              const teamLogo = SCHOOL_LOGOS[schoolSlug]
+
+              // Build player list: filter by season, deduplicate for all-seasons view
+              let players: { player_name: string; player_slug: string; position: string | null; season: number }[] = []
+              if (carouselSeason != null) {
+                players = (rosterRows as Record<string, unknown>[])
+                  .filter(r => Number(r.season) === carouselSeason)
+                  .map(r => ({ player_name: r.player_name as string, player_slug: r.player_slug as string, position: r.position as string | null, season: Number(r.season) }))
+                  .sort((a, b) => a.player_name.localeCompare(b.player_name))
+              } else {
+                // All players — deduplicate by slug, keep most recent season
+                const seen = new Set<string>()
+                players = (rosterRows as Record<string, unknown>[])
+                  .filter(r => { if (seen.has(r.player_slug as string)) return false; seen.add(r.player_slug as string); return true })
+                  .map(r => ({ player_name: r.player_name as string, player_slug: r.player_slug as string, position: r.position as string | null, season: Number(r.season) }))
+                  .sort((a, b) => a.player_name.localeCompare(b.player_name))
+              }
+
+              if (players.length === 0) return null
+              return (
+                <div className="mb-8">
+                  <div className="mb-4">
+                    <h2 className="text-lg font-semibold text-[var(--txt)]">
+                      {isAllSeasons ? 'Players' : fmtSeason(carouselSeason!)}
+                    </h2>
+                  </div>
+                  <div className="overflow-hidden">
+                  <AnimatePresence initial={false} custom={carouselDir} mode="popLayout">
+                  <motion.div key={`players-${carouselSeason ?? 'all'}`} custom={carouselDir} variants={slideVariants}
+                    initial="enter" animate="center" exit="exit"
+                    transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="overflow-x-auto no-scrollbar">
+                    <div className="flex gap-3 pb-1">
+                      {players.map(p => {
+                        const photo = PLAYER_PHOTOS[p.player_slug]
+                        const img = photo
+                          ? <Image src={photo} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                          : teamLogo
+                          ? <Image src={teamLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                          : undefined
+                        return (
+                          <CardLandscapeMini
+                            key={`${p.player_slug}-${p.season}`}
+                            href={`/player/${p.player_slug}`}
+                            image={img}
+                            title={p.player_name}
+                            row2={p.position ? { text: p.position } : undefined}
+                            stat={{ value: fmtSeason(p.season) }}
+                          />
+                        )
+                      })}
+                    </div>
+                  </motion.div>
+                  </AnimatePresence>
                   </div>
                 </div>
               )
@@ -567,7 +671,7 @@ export function TeamShell({
             {playerRows.length > 0 && (
               <div className="mb-8">
                 <div className="mb-4">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Players</h2>
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Leaders</h2>
                 </div>
                 <div ref={playersRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
@@ -586,8 +690,8 @@ export function TeamShell({
                           href={`/player/${p.player_slug}`}
                           image={img}
                           title={p.player_name as string}
-                          row2={{ text: p.position ? `${p.position}, ${p.stat_type}` : (p.stat_type as string) }}
-                          stat={{ value: stat.value, label: stat.label }}
+                          row2={{ text: p.stat_type === 'Passing' ? 'Passing Yards' : p.stat_type === 'Rushing' ? 'Rushing Yards' : 'Receiving Yards' }}
+                          stat={{ value: stat.value }}
                         />
                       )
                     })}
@@ -596,11 +700,40 @@ export function TeamShell({
               </div>
             )}
 
+            {/* Division Standings carousel */}
+            <RevealFx delay={0.52} translateY={8}>
+            <div className="mb-8">
+              <div className="mb-4">
+                <h2 className="text-lg font-semibold text-[var(--txt)]">Standings</h2>
+              </div>
+              <div ref={divRef} className="overflow-x-auto no-scrollbar">
+                <div className="flex gap-3 pb-1">
+                  {divTeams.map((t, i) => {
+                    const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
+                    const tLogo = SCHOOL_LOGOS[tSchoolSlug]
+                    return (
+                      <CardLandscapeMini
+                        key={t.slug as string}
+                        href={`/team/${t.slug}`}
+                        image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                        title={(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}
+                        badge={<span className="text-[11px] text-[var(--muted)]">#{i + 1}</span>}
+                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                        statFirst
+                        row2={{ text: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                      />
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+            </RevealFx>
+
             </RevealFx>
 
             {/* 2025-26 Roster */}
             {rosterRows.length > 0 && (
-            <RevealFx delay={0.52} translateY={8}>
+            <RevealFx delay={0.62} translateY={8}>
             <div className="mb-8">
               <div className="mb-4">
                 <h2 className="text-lg font-semibold text-[var(--txt)]">2025‑26 Roster</h2>
@@ -632,34 +765,6 @@ export function TeamShell({
             </div>
             </RevealFx>
             )}
-
-            {/* Division Standings carousel */}
-            <RevealFx delay={0.62} translateY={8}>
-            <div className="mb-8">
-              <div className="mb-4">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">Division {division} Standings</h2>
-              </div>
-              <div ref={divRef} className="overflow-x-auto no-scrollbar">
-                <div className="flex gap-3 pb-1">
-                  {divTeams.map(t => {
-                    const tSchoolSlug = (t.slug as string).replace(/-varsity-football$/, '')
-                    const tLogo = SCHOOL_LOGOS[tSchoolSlug]
-                    return (
-                      <CardLandscapeMini
-                        key={t.slug as string}
-                        href={`/team/${t.slug}`}
-                        image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
-                        title={(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}
-                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
-                        statFirst
-                        row2={{ text: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null) }}
-                      />
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-            </RevealFx>
 
         </div>
       </MaybeLayout>

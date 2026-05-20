@@ -1,0 +1,1602 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 14,
+    "gameId": "4981",
+    "box": {
+      "gameId": "4981",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Northport",
+          "q1": "3",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 20,
+            "yds": 98,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 5,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Marc Promutico",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 12,
+            "yds": 40,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 6,
+            "comp": 1,
+            "yds": 46,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 5,
+            "comp": 3,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 14,
+            "comp": 7,
+            "yds": 130,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Tyler Morrell",
+            "rec": 1,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "rec": 3,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "rec": 2,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 3,
+            "yds": 30,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "John Deceglia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dylan McNaughton",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "West Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 7,
+    "gameId": "5252",
+    "box": {
+      "gameId": "5252",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, West Islip 7: Northport scored 21 unanswered points and overcame three turnovers in Suffolk II. Owen Johansen threw for 302 yards and two touchdowns on 10-of-15 passing. His 81-yard touchdown pass to J.J. Ahlstrand in the first quarter tied the score at 7, after an Ahlstrand extra point. Ahlstrand caught four passes for 176 yards and a touchdown.  Johansen found Andrew Miller for a 10-yard touchdown pass in the second quarter that pushed the lead to 14-7 after an extra point. Jackson Campbell rushed for 75 yards and a touchdown on 10 carries. Tim Cleary made 14 tackles for Northport (2-0). West Islip is 1-1.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 10,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 5,
+            "yds": 22,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 17,
+            "comp": 10,
+            "yds": 268,
+            "tds": 2,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 4,
+            "yds": 173,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 3,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Tim Cleary",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 0,
+    "gameId": "5283",
+    "box": {
+      "gameId": "5283",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Huntington 0: Jack Sandrib had two touchdowns and an interception to lead Northport to a shutout win in Suffolk Division II. Dylan McNaughton and Tim Cleary each had 10 tackles and Andrew Miller had six tackles and a fumble recovery for the Tigers (3-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 16,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 13,
+            "yds": 59,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 6,
+            "yds": 41,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 9,
+            "comp": 3,
+            "yds": 69,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Brendan Connolly",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 14,
+    "gameId": "5306",
+    "box": {
+      "gameId": "5306",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Centereach",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 24, Centereach 14: Jack Helrigel had a 34-yard TD catch that broke a 7-7 tie just before halftime to lead Northport in Suffolk Division II. Owen Johansen was 7-of-12 for 175 yards and two touchdowns. JJ Ahlstrand had a 50-yard touchdown reception, kicked a 33-yard field goal, and three extra points. Dylan McNaughton had 11 tackles, including two for a loss for the Tigers (4-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 14,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 8,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 12,
+            "comp": 7,
+            "yds": 171,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 23,
+            "comp": 12,
+            "yds": 146,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 1,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 2,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 4,
+            "yds": 66,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 4,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 20,
+    "gameId": "5271",
+    "box": {
+      "gameId": "5271",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 20, Northport 14: Lindenhurst improves to 4-1 in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 12,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 8,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 9,
+            "yds": 70,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 2,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "att": 5,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 6,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 11,
+            "comp": 16,
+            "yds": 208,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 21,
+            "comp": 9,
+            "yds": 209,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 8,
+            "yds": 170,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jakub Grabowski",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 2,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 2,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 3,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Raio",
+            "rec": 1,
+            "yds": 2,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Danny DeFelice",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 35,
+    "gameId": "5380",
+    "box": {
+      "gameId": "5380",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "13",
+          "q2": "12",
+          "q3": "0",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Dakim Griffin was more than just a running back for the Half Hollow Hills East football team on Saturday.\n\nSure, the 5-9, 180-pound senior ran a lot -- utilizing some scoots, a few jukes, as well as some old-school power -- for a dazzling running display all game. He scored a few times, too, but he also took a shot at play-caller late in the game. \n\nSay what? \"I noticed we could hit a big run to the outside,\" he said.\n\nEven with his team backed up inside its own 1-yard-line, the Thunderbirds coaching staff went to Griffin on a toss right with less than two minutes left against Northport holding a tenuous seven-point lead.\n\nThe Thunderbirds overloaded the right side on the big play, and 6-5, 255-pound right tackle Louca Charalambous made a beautiful block to seal the edge. Griffin picked up a few blocks from his wide receivers, broke an arm tackle, bounced to the outside, and sprinted down the Hills East sideline 99 yards to seal a 35-21 Suffolk Division II victory.\n\nGriffin ended his afternoon with 35 carries for 314 yards and four touchdowns on runs of 1, 71, 34 and 99 yards. \n\nInterestingly, Griffin's final run almost didn't happen. He was nearly tackled in the end zone for a safety on a first-and-10 play from the Thunderbirds' 1. Northport called a timeout with 1:37 remaining, hoping for one more chance for the tie or win. It never came.\n\n\"He's special -- you see it,\" said Charalambous of Griffin. \"If you block perfectly for one play, and get him past the line of scrimmage, he does the rest. No one is tackling him from behind. I've still never seen it.\"\n\nHalf Hollow Hills East (5-2) was aggressive on defense throughout the game. The Thunderbirds forced six turnovers, including four INTs. Still, Northport (4-2) refused to go away quietly. \n\nTigers defensive back Jack Helrigel returned an interception 60 yards for a touchdown to bring Northport within 25-14 on JJ Ahlstrand's extra point with 5:57 left in the third quarter.\n\nAfter a 33-yard field goal by the Thunderbirds' Gianni D'Agnese early in the fourth quarter made it 28-14, Ahlstrand hauled in a 14-yard scoring catch from Owen Johansen. Ahlstrand made the PAT to cut the lead to 28-21 with 3:05 to play.\n\nNorthport recovered the ensuing onside kick, but three plays later Morgan Talifiero picked off a Tigers' pass near the goal line. Griffin and the offense did the rest.\n\n\"Dakim wanted to run to the outside there,\" Hills East coach Alex Marcelin said. \"If that's what he wants, we're going to give it to him.\"",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "att": 5,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 8,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 6,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 8,
+            "yds": 17,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 35,
+            "yds": 314,
+            "tds": 4
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 14,
+    "gameId": "5391",
+    "box": {
+      "gameId": "5391",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 17, Smithtown West 14: JJ Ahlstrand kicked a 23-yard field goal as time expired to lead Northport (5-2) in Suffolk II. Dan Eagers scored on an 8-yard run to tie the score at 14 just before halftime. Dlyan McNaughton had 12 tackles, including two for a loss, and an interception and Ryan McEnroe had an interception and a fumble recovery for Northport. Smithtown West finishes 4-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Owen  Ellick",
+            "att": 10,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 18,
+            "yds": 123,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 16,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "att": 8,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 6,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 20,
+            "comp": 8,
+            "yds": 134,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 5,
+            "comp": 2,
+            "yds": 54,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  LaPrarie",
+            "rec": 6,
+            "yds": 119,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 1,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "John  Lorfice",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dylan McNaughton",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Ryan McEnroe",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/06/2021",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 14,
+    "gameId": "5413",
+    "box": {
+      "gameId": "5413",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Northport",
+          "q1": "6",
+          "q2": "7",
+          "q3": "10",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 23,
+            "yds": 179,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 8,
+            "comp": 7,
+            "yds": 107,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Brendan Connolly",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Dylan McNaughton",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Stelios Politidis",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Pokowicz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/12/2021",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 22,
+    "gameId": "5454",
+    "box": {
+      "gameId": "5454",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 22, Northport 20: QB David Varela led a comeback completing 7-of-10 passes for 64 yards and rushed nine times for 32 yards and a touchdown in No. 1 Lindenhurst's (9-1) win over No. 4 Northport in the Suffolk Division II semifinals. Danny DeFelice was dominant on the defensive line with 15 tackles and two sacks. Jake Trovato added six tackles and a sack. Chris Carson had seven tackles and a sack. Trovato had 111 yards and a touchdown on 22 carries. Lindenhurst will now face the winner of No. 2 Bellport /No. 3 Half Hollow Hills East in the finals on Saturday at Stony Brook University at 7 p.m.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 22,
+            "yds": 111,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "David Varela",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 3,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "David Varela",
+            "att": 7,
+            "comp": 10,
+            "yds": 64,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 2,
+            "comp": 6,
+            "yds": 19,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 5,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Danny DeFelice",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mike Seeger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

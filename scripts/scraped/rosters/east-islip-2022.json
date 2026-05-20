@@ -1,0 +1,90 @@
+{
+  "slug": "east-islip",
+  "season": 2022,
+  "players": [
+    {
+      "name": "KJ Scholl",
+      "newsday_player_id": 20326,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Kenny Rodriguez",
+      "newsday_player_id": 21162,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Sebastain Regis",
+      "newsday_player_id": 20720,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Deandre Perez",
+      "newsday_player_id": 20721,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Ryan Parker",
+      "newsday_player_id": 20323,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Matt Mcintee",
+      "newsday_player_id": 20325,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Drew Kilmurray",
+      "newsday_player_id": 20327,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Dylan Guerrera",
+      "newsday_player_id": 20329,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Thomas  Costarelli",
+      "newsday_player_id": 20324,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Andrew Cooper",
+      "newsday_player_id": 20583,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Matt Baldino",
+      "newsday_player_id": 20328,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Anthony Avitabile",
+      "newsday_player_id": 20584,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    }
+  ]
+}

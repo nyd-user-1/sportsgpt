@@ -1,0 +1,111 @@
+{
+  "slug": "miller-place",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Dj Williamson",
+      "newsday_player_id": 20483,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Joe'll Spagnuolo",
+      "newsday_player_id": 20478,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Kyle  Reynolds",
+      "newsday_player_id": 20706,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Brian Piecora",
+      "newsday_player_id": 21082,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Nick Oliva",
+      "newsday_player_id": 20479,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Braedon Murphy",
+      "newsday_player_id": 21118,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "Jayden Meadows",
+      "newsday_player_id": 20481,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "John Macias",
+      "newsday_player_id": 21081,
+      "class": null,
+      "position": null,
+      "jersey_number": 84
+    },
+    {
+      "name": "Logan LaMountain",
+      "newsday_player_id": 20482,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Shane Kiernan",
+      "newsday_player_id": 21080,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Eddie Haeffer",
+      "newsday_player_id": 21116,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Michael Giugliano",
+      "newsday_player_id": 20477,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Robby Cunningham",
+      "newsday_player_id": 20480,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Joseph Citrangola",
+      "newsday_player_id": 21117,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Spencer Bruno",
+      "newsday_player_id": 20719,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    }
+  ]
+}

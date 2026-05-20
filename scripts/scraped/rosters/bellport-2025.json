@@ -1,0 +1,153 @@
+{
+  "slug": "bellport",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Jerome Willett",
+      "newsday_player_id": 25987,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Nazir Turner",
+      "newsday_player_id": 25767,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Jahiem Talford",
+      "newsday_player_id": 25990,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "AJ St. Fort Collin",
+      "newsday_player_id": 25766,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Jacob Snedeker",
+      "newsday_player_id": 25768,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "Horace Smith",
+      "newsday_player_id": 25765,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Jimmy Salvador",
+      "newsday_player_id": 26008,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Tristan Owen",
+      "newsday_player_id": 26388,
+      "class": null,
+      "position": null,
+      "jersey_number": 38
+    },
+    {
+      "name": "Jay Nichols",
+      "newsday_player_id": 25764,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Elie  Malcom",
+      "newsday_player_id": 25985,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Dave Lopes",
+      "newsday_player_id": 25769,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Aiden Kerr",
+      "newsday_player_id": 25988,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Josiah Johnson",
+      "newsday_player_id": 25770,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Kingston John",
+      "newsday_player_id": 25761,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Anthony Diaz",
+      "newsday_player_id": 25989,
+      "class": null,
+      "position": null,
+      "jersey_number": 99
+    },
+    {
+      "name": "Luciano Cunha",
+      "newsday_player_id": 25986,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Braydon Cipp",
+      "newsday_player_id": 25760,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Matt Chojnacki",
+      "newsday_player_id": 25762,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Cameron Casher",
+      "newsday_player_id": 25763,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Ryder Bedell",
+      "newsday_player_id": 26386,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Orion  Beadle",
+      "newsday_player_id": 26387,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    }
+  ]
+}

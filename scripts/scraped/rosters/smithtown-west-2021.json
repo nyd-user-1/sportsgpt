@@ -1,0 +1,83 @@
+{
+  "slug": "smithtown-west",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Danny  Wieser",
+      "newsday_entry_id": 19307,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Tim  Vanderbrink",
+      "newsday_entry_id": 18591,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Brayden Stahl",
+      "newsday_entry_id": 18593,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Jack  Melore",
+      "newsday_entry_id": 18592,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "John  Lorfice",
+      "newsday_entry_id": 18596,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jack  LaPrarie",
+      "newsday_entry_id": 18595,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Antunes Jason",
+      "newsday_entry_id": 19360,
+      "class": null,
+      "position": null,
+      "jersey_number": 29
+    },
+    {
+      "name": "Aiden  Greene",
+      "newsday_entry_id": 18594,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Owen  Ellick",
+      "newsday_entry_id": 18590,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Sean Carroll",
+      "newsday_entry_id": 19306,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Nick Briffa",
+      "newsday_entry_id": 19359,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    }
+  ]
+}

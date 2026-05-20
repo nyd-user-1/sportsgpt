@@ -1,0 +1,1593 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 41,
+    "gameId": "5615",
+    "box": {
+      "gameId": "5615",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "21",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 41, Patchogue - Medford 12: Terrance Robinson rushed for 170 yards and three touchdowns on 19 carries in Suffolk I. All three touchdowns ( 30, 25, and 13 yards) came in the first half. Anthony Ordonez had 83 yards and a touchdown on seven carries. His 25-yard touchdown in the fourth quarter capped the Longwood scoring. Longwood ran for 337 yards and held Patchogue-Medford to 59 total yards. Tyler Hammel made six tackles, including three for a loss, and had a sack. Josh Jackson had a sack and Cabeib Corbett had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Terrance Robinson",
+            "att": 19,
+            "yds": 170,
+            "tds": 3
+          },
+          {
+            "team": "Longwood",
+            "player": "Anthony Ordonez",
+            "att": 7,
+            "yds": 83,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis Kaleb",
+            "att": 2,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 6,
+            "yds": 29,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Miles Flagg",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 6,
+            "comp": 3,
+            "yds": 38,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 0,
+            "comp": 6,
+            "yds": 57,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Najee Henderson",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 2,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Danny Blank",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Tyler  Hammel",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Josh  Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 14,
+    "gameId": "5554",
+    "box": {
+      "gameId": "5554",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 35, Central Islip 14: Joe Kelly had seven carries for 76 yards and three touchdowns to lead Patchogue-Medford (1-1) in Suffolk I. Kieran Hughes completed 6 of 16 passes for 85 yards and two touchdowns and CJ Forgione had four catches for 47 yards and a touchdown. John Coutard added 18 carries for 169 yards. Beyrim Ayari recorded seven tackles, a sack, a blocked punt and a fumble recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 18,
+            "yds": 169,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 7,
+            "yds": 76,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 16,
+            "comp": 6,
+            "yds": 85,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 4,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 2,
+            "yds": 17,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Beyrim Ayari",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 34,
+    "gameId": "5664",
+    "box": {
+      "gameId": "5664",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "14",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 34, Patchogue-Medford 6: Dylan Harris rushed 17 times for 120 yards and a touchdown in Suffolk I. D. Harris caught a 53-yard touchdown pass from Laduke Harris and added six tackles for Floyd (3-0). Laduke Harris rushed for 26 yards on three carries. Justin Marcia-Joachim caught a 12-yard touchdown pass from Kieran Hughes in the fourth quarter for Patchogue-Medford (1-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 17,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "A.J. Cannet",
+            "att": 3,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 3,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 4,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Wayne Street",
+            "att": 1,
+            "yds": 12,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Terell Collum",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Geo Alvarez",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 13,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 1,
+            "comp": 2,
+            "yds": 53,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "A.J. Cannet",
+            "att": 1,
+            "comp": 1,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 30,
+            "comp": 11,
+            "yds": 93,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "rec": 1,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Terell Collum",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 5,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 3,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 1,
+            "yds": 12,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Connor Taphouse",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 16,
+    "gameId": "5687",
+    "box": {
+      "gameId": "5687",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "8",
+          "q3": "2",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "9",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 29, Brentwood 16: Kieran Hughes threw three of his four touchdown passes as Patchogue-Medford rallied from a 10-point deficit by scoring the game's final 23 points for a Suffolk I road victory. The Raiders (2-2) broke away from a 16-16 tie in the fourth quarter as Hughes threw an 8-yard touchdown pass to C.J. Forgione, his second TD catch, and a 30-yard scoring strike to Jayden Isselbacher. Brentwood (1-3) took a 7-6 lead on Malachi Baker's 18-yard touchdown run and extended it to 16-6 in the second quarter when Chris Ayala returned a fumble 55 yards for a touchdown and Joshua Almendarez made a 29-yard field goal. The Raider comeback started with a 45-yard touchdown pass from Hughes to Justin Marcia-Joachim to make it 16-14 at the half. They evened the score in the third quarter when Anthony Jean-Baptiste made a tackle in the end zone for a safety. Hughes finished with 220 passing yards, Marcia-Joachim had three catches for 115 yards, Jesse Andrade had 10 tackles and Alex Hofmann had a sack, a fumble recovery and three tackles in the backfield for Patchogue-Medford.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 15,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "att": 4,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 5,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "att": 17,
+            "yds": 70,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 5,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 10,
+            "yds": 27,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 35,
+            "comp": 17,
+            "yds": 210,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 7,
+            "comp": 1,
+            "yds": 73,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 6,
+            "yds": 115,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "ALEX Hofmann",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 4,
+            "yds": 37,
+            "tds": 2,
+            "pat": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 2,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "rec": 3,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Emanuel  Rodriguez",
+            "rec": 1,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Almendarez",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Pierre-Louis",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 19,
+    "gameId": "5705",
+    "box": {
+      "gameId": "5705",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Whitman",
+          "q1": "6",
+          "q2": "7",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 19, Patchogue 8: JT Taylor completed 11-of-22 for 168 yards and a touchdown for Whitman (3-2) in Suffolk I. Taylor connected with Jason Burke for three catches and 73 yards and JD Harrison for four catches and 67 yards. Harrison added a rushing touchdown in the first quarter. Ryan Boutin added a rushing touchdown of his own and totaled 78 yards on 12 carries. JT Villella caught Taylor's sole touchdown pass, and he added an interception on defense. Xavier Ali and Luis Navarro had three sacks each and Jacob Somer, Cameron Carlson, Kole Gottesman and Harrison each had 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 9,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 7,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 12,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 10,
+            "yds": 49,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 17,
+            "comp": 10,
+            "yds": 180,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 22,
+            "comp": 11,
+            "yds": 168,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 5,
+            "yds": 95,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 10,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "ALEX Hofmann",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 3,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 4,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 2,
+            "yds": 14,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam Arevalo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "5721",
+    "box": {
+      "gameId": "5721",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 42, Patchogue-Medford 7: Tyler Hall had 10 carries for 102 yards and two touchdowns and added an interception on defense for Sachem North (4-2) in Suffolk I. Anthony Vino was 9-for-17 for 174 yards and two touchdowns. Jayden Berrios had a 52-yard touchdown run and Lucas Singleton added a 47-yard rushing score. Dalton Lawrence and Andrew Eaton each scored a receiving touchdown. Christopher Lombardo had eight tackles and James Reid had five tackles and an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "att": 6,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 18,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 10,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "att": 10,
+            "yds": 102,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 8,
+            "comp": 5,
+            "yds": 85,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 2,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "ALEX Hofmann",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "rec": 4,
+            "yds": 71,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Andrew Eaton",
+            "rec": 2,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "James Reid",
+            "rec": 1,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "James Reid",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 13,
+    "gameId": "5755",
+    "box": {
+      "gameId": "5755",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "0",
+          "q3": "12",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 32, Bay Shore 13: Jayden Isselbacher completed 5 of 8 passes for 126 yards and two touchdowns, rushed for 76 yards, including a 4-yard score, and had an interception for Patchogue-Medford (3-4) in Suffolk I. Nick Elliott had two receptions for 50 yards, including a 22-yard touchdown to give Patchogue-Medford a 7-0 lead in the first quarter, and had eight tackles. Alex Hofmann added nine tackles and Patchogue-Medford rushed for 254 yards as a team.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 10,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "att": 7,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "att": 3,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 6,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "att": 1,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 8,
+            "comp": 5,
+            "yds": 126,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "nick elliott",
+            "rec": 3,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 27,
+    "gameId": "5770",
+    "box": {
+      "gameId": "5770",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "8",
+          "q2": "7",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Patchogue-Medford 28, Ward Melville 27: Nick Elliott had three catches for 53 yards, including a game-winning 34-yard touchdown reception with 1:59 remaining for Patchogue-Medford (4-4) in Suffolk I. Third-string quarterback Jayden Isselbacher threw for 170 yards and two touchdowns and rushed for 67 yards and two touchdowns. C.J. Forgione had six catches for 57 yards and five solo tackles. Alex Hofmann had eight tackles and also recovered a fumble forced by Max Adams and Joe Kelly on Ward Melville's last drive. Justin Marcia-Joachim had three receptions for 52 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 15,
+            "yds": 67,
+            "tds": 2
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 8,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "att": 8,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick Gaffney",
+            "att": 12,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 8,
+            "yds": 49,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "att": 24,
+            "comp": 12,
+            "yds": 170,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 3,
+            "comp": 3,
+            "yds": 22,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 9,
+            "comp": 7,
+            "yds": 136,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 6,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "nick elliott",
+            "rec": 3,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 3,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "ALEX Hofmann",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jesse Andrade",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Beyrim Ayari",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody Morgan",
+            "rec": 2,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/04/2022",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 21,
+    "gameId": "6074",
+    "box": {
+      "gameId": "6074",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 21, Patchogue-Medford 6: Tyler Hall rushed for 74 yards on 19 carries and caught a 21-yard touchdown to help No. 2 Sachem North defeat No. 7 Patchogue-Medford in the first round of the Suffolk I playoffs. Hall also made seven tackles, two interceptions and recovered a fumble. Anthony Vino threw for two touchdowns and 126 yards on 10-of-16 passes. Shane Reilly had four catches for 64 yards and a touchdown, and Lucas Singleton had 58 yards and one touchdown on 11 carries. Sachem North (7-2) will play Nov. 11 at the higher seed, which is to be determined since teams will be re-seeded in the next round.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "att": 19,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Lucas Singleton",
+            "att": 11,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem North",
+            "player": "Anthony Vino",
+            "att": 16,
+            "comp": 10,
+            "yds": 126,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Shane Reilly",
+            "rec": 4,
+            "yds": 64,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "rec": 1,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sachem North",
+            "player": "Tyler Hall",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

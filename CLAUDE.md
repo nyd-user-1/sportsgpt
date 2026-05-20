@@ -54,6 +54,9 @@ Client: `@neondatabase/serverless` — `import { sql } from '@/lib/db'`
 | `team_season_stats` | `team_slug`, `season`, `overall_wins`, `overall_losses`, `overall_ties`, `conference_wins`, `conference_losses`, `conference_ties` |
 | `player_season_stats` | `player_slug`, `school_slug`, `player_name`, `school_name`, `stat_type`, `season`, `pass_yards`, `rush_yards`, `recv_yards`, `total_yards`, `pass_tds`, `rush_tds`, `recv_tds`, `total_tds`, `interceptions`, `completions`, `attempts`, `receptions`, `points`, `games_played` |
 | `games` | `id`, `home_team_slug`, `away_team_slug`, `home_score`, `away_score`, `game_date`, `season`, `game_number`, `is_division_game` |
+| `game_box_scores` | `game_id` (UNIQUE), `newsday_id`, `highlights`, `quarter_scores` (JSONB), `player_stats` (JSONB — raw scrape, avoid for stat rendering) |
+| `player_game_stats` | `game_id`, `season`, `player_slug`, `player_name`, `school_slug`, `team_name`, `stat_type`, `rush_att/yds/tds`, `pass_comp/att/yds/tds/int`, `rec_rec/yds/tds`, `kick_pat/fg/points`, `def_int/sacks/fumbles` |
+| `player_rosters` | `school_slug`, `season`, `player_name`, `player_slug`, `position`, `jersey_number`, `class` |
 
 ### Slug formats
 - Team slug: `{school-slug}-varsity-football`
@@ -152,7 +155,7 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | Route | File | Notes |
 |-------|------|-------|
 | `/team/[slug]` | `Shell.tsx` | Hero photo SLIDER (auto-advance 4s, color placeholder slide 0, arrows), RevealFx stagger animation, Profiles carousel, Division Standings |
-| `/player/[slug]` | `Shell.tsx` | Career stats by type; breadcrumbs: Division → Team → Player; hero: headshot → school logo fallback |
+| `/player/[slug]` | `Shell.tsx` | Season tabs (Total + per-season) with ← → arrow key nav; Total tab = career StatTable with All Seasons rollup; season tab = game log InfoTable (from `games`+`game_box_scores` JSONB matched by player name); breadcrumbs: Team / Position / Player below H1; RevealFx animations |
 | `/school/[slug]` | — | Enrollment, academics |
 | `/division/[slug]` | `Shell.tsx` | Hero photo slider (auto-advance, arrows), Standings + season carousel |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
@@ -160,17 +163,22 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/colors` | `page.tsx` | Dev review page: all 52 school logos + color swatches, ✓/✗ confirmation (localStorage) |
 
 ### Game Detail (`/game/[id]`)
-- `page.tsx` — fetches game + box score + prev/next game IDs + player slug map
-- `GameShell.tsx` — split-screen hero (400px), Week badge top-left, score box, nav chevrons, stat profiles
+- `page.tsx` — fetches game + box score + `player_game_stats` + prev/next game IDs + player slug map
+- `GameShell.tsx` — split-screen hero, RevealFx animations, stat tabs, AI highlights, Game Log panel
 - `?ref={team-slug}` param — keeps chevron navigation anchored to the referring team's schedule
 - Score links in team game log (`/team/[slug]`) append `?ref={team.slug}` to game URLs
 
 **GameShell layout (top → bottom):**
 1. Hero (400px split-screen, `object-cover object-top`, Week N badge top-left)
-2. ScoreTable — home on top, away on bottom; team logo + name link + (H)/(A) + W/L indicator; header row = "Week N · Month D, YYYY"
-3. Game Highlights (`mt-10` gap above) — AI-rewritten text via client-side deferred fetch
-4. StatTable — merged both teams, school logo per player, player name links to `/player/[slug]`, collapsible (2 rows default)
-5. InfoTable — score (quarter breakdown) + per-stat-type profiles, collapsible
+2. Stat tabs: **Box Score | Passing | Rushing | Receiving | Kicking | Defense**
+   - Box Score tab: `ScoreTable` (quarter breakdown, team logos, W/L, final score)
+   - Stat tabs: `GameStatSection` — flat player list sourced from `player_game_stats` table. Each row: school logo (from `school_slug`) + player name linked to `/player/[slug]` (from `player_slug`) + stat columns. No JSONB parsing.
+3. AI Highlights — AI-rewritten text via client-side deferred fetch
+4. Game Log panel (header icon) — `PanelPlayers` from `game_box_scores.player_stats` JSONB (fallback)
+
+**CRITICAL: Always use `player_game_stats` for game stat tabs, NOT `game_box_scores.player_stats` JSONB.**
+- `player_game_stats` has `school_slug` + `player_slug` on every row → logos and links work without any name matching
+- `game_box_scores.player_stats` JSONB is only used for the Game Log side panel (PanelPlayers) as fallback
 
 **AI Highlight Rewriter:**
 - API route: `src/app/api/game/[id]/highlights/route.ts`

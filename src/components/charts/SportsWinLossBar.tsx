@@ -28,7 +28,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: { payl
   const d = payload[0]?.payload
   if (!d) return null
   return (
-    <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, padding: '8px 12px', fontSize: 12 }}>
+    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 12 }}>
       <p style={{ fontWeight: 700, color: '#111', marginBottom: 4 }}>{d.name}</p>
       <span style={{ color: '#033882', fontWeight: 600 }}>{d.wins}W</span>
       {' '}

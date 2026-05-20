@@ -1,0 +1,97 @@
+{
+  "slug": "greenport-southold-mattituck",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Brady Woods",
+      "newsday_player_id": 23663,
+      "class": "12",
+      "position": "OL/DE",
+      "jersey_number": 10
+    },
+    {
+      "name": "Luke Weir",
+      "newsday_player_id": 23659,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 21
+    },
+    {
+      "name": "Chris Palencia",
+      "newsday_player_id": 23660,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 20
+    },
+    {
+      "name": "Christian Palencia",
+      "newsday_player_id": 24157,
+      "class": null,
+      "position": null,
+      "jersey_number": 63
+    },
+    {
+      "name": "Kenny McGunnigle",
+      "newsday_player_id": 23657,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 22
+    },
+    {
+      "name": "Matt McGunnigle",
+      "newsday_player_id": 23661,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 33
+    },
+    {
+      "name": "Ethan Linker",
+      "newsday_player_id": 23664,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Christian Kretchmer",
+      "newsday_player_id": 24155,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Yiannis Gavalas",
+      "newsday_player_id": 23665,
+      "class": null,
+      "position": null,
+      "jersey_number": 85
+    },
+    {
+      "name": "James Felakos",
+      "newsday_player_id": 23666,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 62
+    },
+    {
+      "name": "Alex Felakos",
+      "newsday_player_id": 24156,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Michael DeNicola",
+      "newsday_player_id": 23658,
+      "class": "12",
+      "position": "QB/S",
+      "jersey_number": 3
+    },
+    {
+      "name": "Taiquan Brumsey",
+      "newsday_player_id": 23662,
+      "class": "12",
+      "position": "TE/DE",
+      "jersey_number": 1
+    }
+  ]
+}

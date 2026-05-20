@@ -1,0 +1,97 @@
+{
+  "slug": "harborfields",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Jack Weiss",
+      "newsday_player_id": 23594,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Jack Weiss",
+      "newsday_player_id": 23597,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Anthony  Sangiovanni",
+      "newsday_player_id": 24499,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Chase Ritcey",
+      "newsday_player_id": 23595,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Chase  Ritcey",
+      "newsday_player_id": 23695,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Landon Paulino",
+      "newsday_player_id": 23593,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Ryan  Olson",
+      "newsday_player_id": 24291,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jason Melhado",
+      "newsday_player_id": 24290,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Andrew Hoppe",
+      "newsday_player_id": 23596,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Nick  Gilmor",
+      "newsday_player_id": 23600,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Matthew  Ferranti",
+      "newsday_player_id": 24500,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Tyler D'Amico",
+      "newsday_player_id": 23599,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Colin  Burke",
+      "newsday_player_id": 23598,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    }
+  ]
+}

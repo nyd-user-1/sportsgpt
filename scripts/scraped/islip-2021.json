@@ -1,0 +1,1294 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/03/2021",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 10,
+    "gameId": "4869",
+    "box": {
+      "gameId": "4869",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 13, Comsewogue 10: Jameson Seeger caught a 5-yard touchdown pass from Joey Vitale with 40 seconds to go, capping off a 12 play, 75-yard drive to lead Islip (1-0) in Suffolk III. Vitale threw for 135 yards and two touchdowns on 17 passes. Kaiden Lewis rushed for 60 yards on 11 carries and had two catches for 55 yards. Nate Moran had 10 tackles. George Trimigliozzi recorded seven tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 7,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 3,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 11,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Richie Rindos",
+            "att": 9,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 6,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 9,
+            "comp": 21,
+            "yds": 121,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 17,
+            "comp": 10,
+            "yds": 135,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 3,
+            "yds": 88,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 2,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 4,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Christ Camille",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Jack Fantigrossi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Oliver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 54,
+    "gameId": "4922",
+    "box": {
+      "gameId": "4922",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "13",
+          "q3": "14",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "54"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 54, Islip 14: Leo Lopez made his presence known from the opening kickoff, and didn't slow down from there for East Islip. He returned the opening kick 91 yards for a touchdown and rushed for 121 yards and two touchdowns on 14 carries. Lopez also had two interceptions in the Suffolk III victory. Derek Burrell added 119 yards on eight carries and two touchdowns and David Reynolds added 156 yards on and a score on nine carries. Ryan Bayer had 11 tackles and East Islip rushed for 423 yards as a team. Kevin Smith made field goals of 39 and 23 yards and all four of his PATs.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Dave Reynolds",
+            "att": 8,
+            "yds": 156,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 14,
+            "yds": 121,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 8,
+            "yds": 119,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Baldino",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 4,
+            "comp": 4,
+            "yds": 56,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jason Fiorello",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Gavin  Herzog",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Bauco",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 2,
+            "pat": 5,
+            "points": 11
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Dave Reynolds",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Bauco",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 0,
+    "gameId": "5286",
+    "box": {
+      "gameId": "5286",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "20",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 33, Half Hollow Hills West 0: Joey Vitale ran for 53 yards and two touchdowns and Alex Oliver had a 23-yard interception return for a touchdown to lead Islip (2-1) in Suffolk III. George Trimigliozzi and Nate Moran each had eight tackles.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 54,
+    "oppScore": 14,
+    "gameId": "5309",
+    "box": {
+      "gameId": "5309",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "20",
+          "q2": "20",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "54"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 54, Amityville 14: Vinny Rosselli scored two touchdowns for Islip (3-1) in Suffolk III. Rosselli found the end zone on a two-yard run in the first quarter to start the scoring for the Bucs. He later added a 91-yard interception return for a touchdown to give Islip a 33-0 lead. Jameson Seeger had punt return touchdowns of 56 and 54 yards. Richie Rindos ran for 85 yards and a touchdown on seven carries. Amityville is now 1-4.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 13,
+    "gameId": "5329",
+    "box": {
+      "gameId": "5329",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Islip",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 35, Eastport-South Manor 13: Jameson Seeger had a punt return touchdown and a receiving score for Islip (4-1) in Suffolk III. Seeger scored the game's first points when he returned a punt 47 yards. He scored again on a 25-yard pass from Joey Vitale which put Islip ahead 27-0. Vitale had two passing touchdowns. Vitale connected with Vinny Rosselli on a 35-yard touchdown. Roselli also had an 82 yard kickoff return touchdown in the third quarter. Jack Hodulick and Richie Rindos each recorded eight tackles. Eastport-South Manor is 1-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 5,
+            "yds": 88,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Richie Rindos",
+            "att": 4,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 10,
+            "comp": 7,
+            "yds": 92,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 2,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 2,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 32,
+    "gameId": "5349",
+    "box": {
+      "gameId": "5349",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "14",
+          "q3": "20",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "13",
+          "q3": "7",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 41, Hauppauge 32: Vinny Rosselli carried the ball 20 times for a career-high 260 yards and three touchdowns to lead Islip (5-1) in Suffolk III. Rosselli opened up the scoring in the second half with a 59-yard run to put Islip ahead 20-13. Rosselli found the end zone again in the third quarter with a 60-yard run. Kaiden Lewis rushed for 120 yards and a touchdown. Lewis broke off a 79-yard rushing to score in the third quarter. Joey Vitale threw for 66 yards and a touchdown. Hauppauge is 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 20,
+            "yds": 260,
+            "tds": 3
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 7,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Richie Rindos",
+            "att": 6,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 3,
+            "comp": 3,
+            "yds": 66,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Vincent Barbera",
+            "att": 25,
+            "comp": 20,
+            "yds": 261,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 2,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 1,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 14,
+    "gameId": "5378",
+    "box": {
+      "gameId": "5378",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 14, Islip 7: Jack Smalley found Chad Moccio for a 25-yard touchdown with two minutes remaining in the third quarter to break a tie at 7 for Sayville (7-0).  Mack Murtha had two interceptions and Jayson Filosa had six pass breakups in the win. Kyle Messina ran a 4-yard touchdown in the first quarter to open the scoring for Sayville. Islip falls to 5-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 18,
+            "yds": 118,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "att": 11,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joseph  Byrne",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 16,
+            "comp": 8,
+            "yds": 110,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 2,
+            "comp": 2,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Matt Bonfanti",
+            "rec": 4,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Chad  Moccio",
+            "rec": 1,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kevin Delaney",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Michael Argenziano",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Geffner Brett",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Deer Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 28,
+    "gameId": "5388",
+    "box": {
+      "gameId": "5388",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 28, Islip 21: Hunter Lovinksy rushed for 72 yards and two touchdowns, including the game-winner with 1:15 left in the fourth quarter to lead Deer Park (5-2) in Suffolk III. Lovinsky's game-winning score came on a three-yard run. Lonvinsky scored his first touchdown on a three-yard run in the third quarter to extend the Deer Park lead to 20-7.  Noah Fearon rushed eight times for 42 yards and a touchdown. Fearon opened the scoring for Deer Park with a three-yard touchdown run in the first quarter. Deer Park extended the lead to 13-0 on a 22-yard touchdown run from Mathaias Edmond. Edmond rushed 11 times for 63 yards. John Laird had two sacks and four tackles. Islip is (5-3).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 10,
+    "gameId": "5417",
+    "box": {
+      "gameId": "5417",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "3",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 20, Westhampton 10: Kaiden Lewis had 21 carries for 193 yards and two touchdowns to lead  No. 5 Islip over No. 4 Westhampton in a Suffolk Division III quarterfinal. His 47-yard rushing touchdown with 8:40 remaining extended the lead to 20-10. Joey Vitale completed 10 of 16 passes for 116 yards, and threw a 12-yard touchdown pass to Vinny Roselli in the second quarter to give the Buccaneers a 6-3 advantage entering halftime. Jameson Seeger had five receptions for 75 yards and Zach Miller recorded eight tackles and recovered a fumble in the win. Islip (6-3) advances to the semifinals on Nov. 12 at 7 p.m.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 21,
+            "yds": 193,
+            "tds": 2
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 6,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Robert  Moreland",
+            "att": 22,
+            "yds": 150,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 16,
+            "comp": 10,
+            "yds": 116,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 5,
+            "yds": 75,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 4,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matt Ferraro",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/12/2021",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5456",
+    "box": {
+      "gameId": "5456",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 26,
+            "yds": 193,
+            "tds": 4
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Cea Jr.",
+            "att": 15,
+            "yds": 89,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "att": 8,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 6,
+            "comp": 3,
+            "yds": 58,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 4,
+            "comp": 2,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Matt Bonfanti",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Chad  Moccio",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Michael Argenziano",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joseph  Byrne",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jojo Moosa",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

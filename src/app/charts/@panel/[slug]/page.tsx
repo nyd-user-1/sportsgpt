@@ -109,6 +109,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
   seasonFilters = SEASON_FILTER_MAP[slug]
   let subRows: SubRowMap | undefined = undefined
   let rowLinks: Record<string, string> | undefined = undefined
+  let rowPlayerSlugs: Record<string, string> | undefined = undefined
 
   switch (slug) {
 
@@ -296,13 +297,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── passing-yards-leaders ──────────────────────────────────────────────────
     case 'passing-yards-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.pass_yards AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.pass_yards AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Passing' AND ps.pass_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.pass_yards DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -316,13 +318,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── passing-tds-leaders ────────────────────────────────────────────────────
     case 'passing-tds-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.pass_tds AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.pass_tds AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Passing' AND ps.pass_tds IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.pass_tds DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -336,13 +339,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── rushing-yards-leaders ──────────────────────────────────────────────────
     case 'rushing-yards-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.rush_yards AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.rush_yards AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Rushing' AND ps.rush_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.rush_yards DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -356,13 +360,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── rushing-tds-leaders ────────────────────────────────────────────────────
     case 'rushing-tds-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.rush_tds AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.rush_tds AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Rushing' AND ps.rush_tds IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.rush_tds DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -376,13 +381,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── receiving-yards-leaders ────────────────────────────────────────────────
     case 'receiving-yards-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.recv_yards AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.recv_yards AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Receiving' AND ps.recv_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.recv_yards DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -396,13 +402,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     // ── receiving-tds-leaders ──────────────────────────────────────────────────
     case 'receiving-tds-leaders': {
       const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.recv_tds AS value,
+        SELECT ps.player_slug, ps.player_name AS name, ps.school_slug, ps.season, ps.recv_tds AS value,
           ts.overall_wins, ts.overall_losses
         FROM player_season_stats ps
         LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
         LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
         WHERE ps.stat_type = 'Receiving' AND ps.recv_tds IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
         ORDER BY ps.season, ps.recv_tds DESC`
+      rowPlayerSlugs = Object.fromEntries((rows as {name:string;player_slug:string}[]).map(r => [r.name, r.player_slug]))
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -926,6 +933,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       multiPoints={multiPoints}
       subRows={subRows}
       rowLinks={rowLinks}
+      rowPlayerSlugs={rowPlayerSlugs}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
       valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : undefined}

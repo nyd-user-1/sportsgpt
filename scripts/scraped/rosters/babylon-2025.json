@@ -1,0 +1,167 @@
+{
+  "slug": "babylon",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Aidan Winter",
+      "newsday_player_id": 24965,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Kyle Wieland",
+      "newsday_player_id": 26299,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Zack Vasquez",
+      "newsday_player_id": 26391,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Shane Sonkin",
+      "newsday_player_id": 26300,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Brady Shaw",
+      "newsday_player_id": 26298,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Christian Seidenberg",
+      "newsday_player_id": 26608,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Joe Rubendall",
+      "newsday_player_id": 24967,
+      "class": null,
+      "position": null,
+      "jersey_number": 43
+    },
+    {
+      "name": "JJ Reid",
+      "newsday_player_id": 26392,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Jake Ostertag",
+      "newsday_player_id": 25671,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Christian Molnar",
+      "newsday_player_id": 25672,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Jaden Milner",
+      "newsday_player_id": 25670,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Austin McElroy",
+      "newsday_player_id": 26297,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Nick Longo",
+      "newsday_player_id": 26295,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Sal LaFrancesca",
+      "newsday_player_id": 26296,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Kai  Jankow",
+      "newsday_player_id": 24966,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Garrett Geick",
+      "newsday_player_id": 25673,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Tyler Fiedler",
+      "newsday_player_id": 25675,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Joe DiPalma",
+      "newsday_player_id": 24969,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Corey Dellafranca",
+      "newsday_player_id": 25674,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Alex Costa",
+      "newsday_player_id": 26294,
+      "class": null,
+      "position": null,
+      "jersey_number": 36
+    },
+    {
+      "name": "Connor Cavaliere",
+      "newsday_player_id": 26390,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Logan Bridges",
+      "newsday_player_id": 26301,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Keven Bonilla",
+      "newsday_player_id": 24968,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    }
+  ]
+}

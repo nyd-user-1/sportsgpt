@@ -1,0 +1,34 @@
+{
+  "slug": "bay-shore",
+  "season": 2022,
+  "players": [
+    {
+      "name": "James  Sobotka",
+      "newsday_player_id": 21097,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Assanti Hall",
+      "newsday_player_id": 21075,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Scotty Arnett",
+      "newsday_player_id": 21096,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Jamir Andrieux",
+      "newsday_player_id": 21076,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    }
+  ]
+}

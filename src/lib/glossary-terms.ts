@@ -247,6 +247,15 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     source: 'Derived from PF and PA',
     caveats: 'Available for 2023 and 2024 only. Positive values indicate net scoring advantage.',
   },
+  {
+    id: 'opp-rank',
+    name: 'Opp Rank',
+    category: 'Standard — Team',
+    definition: 'Opponent rank — the opponent\'s standing among all Section XI teams that season, ordered by win percentage. Rank 1 is the highest win-percentage team. Provides a quick read on opponent quality for each game.',
+    formula: 'Rank = position in descending PCT order, where PCT = W / (W + L)',
+    source: 'Derived from team_season_stats',
+    caveats: 'Ties broken by total wins. Nassau County opponents not in the DB are excluded and will show —.',
+  },
 
   // ── Foundational QB ──────────────────────────────────────────────────────
 

@@ -1,0 +1,118 @@
+{
+  "slug": "west-islip",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Michael Spence",
+      "newsday_player_id": 22809,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Jackson Scavo",
+      "newsday_player_id": 22711,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Charlie Salimone",
+      "newsday_player_id": 22712,
+      "class": null,
+      "position": null,
+      "jersey_number": 29
+    },
+    {
+      "name": "Bobby Richardson",
+      "newsday_player_id": 21626,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Chris Piropato",
+      "newsday_player_id": 21621,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Mattew Montesanto",
+      "newsday_player_id": 21622,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Stephen McDermott",
+      "newsday_player_id": 22144,
+      "class": null,
+      "position": null,
+      "jersey_number": 67
+    },
+    {
+      "name": "Jack Librizzi",
+      "newsday_player_id": 22827,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Nils Haugen",
+      "newsday_player_id": 22829,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Jack Harvel",
+      "newsday_player_id": 21623,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Jordan Fileti",
+      "newsday_player_id": 22145,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Mickey Failkner",
+      "newsday_player_id": 21625,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Rocco Carpinello",
+      "newsday_player_id": 21620,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Jovan Brewster",
+      "newsday_player_id": 21624,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Shaun Boyle",
+      "newsday_player_id": 21627,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Luke Alongi",
+      "newsday_player_id": 22828,
+      "class": null,
+      "position": null,
+      "jersey_number": 29
+    }
+  ]
+}

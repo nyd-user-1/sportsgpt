@@ -1,0 +1,251 @@
+{
+  "slug": "brentwood",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Daniel Ventura",
+      "newsday_player_id": 17607,
+      "class": "11",
+      "position": "QB/DB",
+      "jersey_number": 14
+    },
+    {
+      "name": "Omari Valme",
+      "newsday_player_id": 17620,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 50
+    },
+    {
+      "name": "Piero Tissinetti",
+      "newsday_player_id": 17633,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 61
+    },
+    {
+      "name": "Bryan Seepersad",
+      "newsday_player_id": 17604,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 5
+    },
+    {
+      "name": "Kwad Sarkodie",
+      "newsday_player_id": 17610,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 22
+    },
+    {
+      "name": "Oscar Rodriguez",
+      "newsday_player_id": 17602,
+      "class": "12",
+      "position": "RB/DE",
+      "jersey_number": 2
+    },
+    {
+      "name": "Randy Ramnarace",
+      "newsday_player_id": 17632,
+      "class": "12",
+      "position": "QB/WR/DB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Christopher Pierre-Louis",
+      "newsday_player_id": 17631,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 81
+    },
+    {
+      "name": "Jayson Pickens",
+      "newsday_player_id": 18395,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 64
+    },
+    {
+      "name": "John Phelps",
+      "newsday_player_id": 17621,
+      "class": "12",
+      "position": "RB/DL",
+      "jersey_number": 11
+    },
+    {
+      "name": "Ethan Paiz",
+      "newsday_player_id": 17616,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 38
+    },
+    {
+      "name": "Juan Ocasio",
+      "newsday_player_id": 17612,
+      "class": "12",
+      "position": "TE/LB",
+      "jersey_number": 26
+    },
+    {
+      "name": "Nicholas Munoz",
+      "newsday_player_id": 17614,
+      "class": "11",
+      "position": "QB/LB",
+      "jersey_number": 33
+    },
+    {
+      "name": "Noel Melgar",
+      "newsday_player_id": 17629,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "Jayden Lucate",
+      "newsday_player_id": 17606,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Erik Lopez",
+      "newsday_player_id": 17615,
+      "class": "11",
+      "position": "WR/LB",
+      "jersey_number": 35
+    },
+    {
+      "name": "Daniel Lopez",
+      "newsday_player_id": 17623,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 54
+    },
+    {
+      "name": "Chris Linsalata",
+      "newsday_player_id": 17613,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 31
+    },
+    {
+      "name": "Zach Jahn",
+      "newsday_player_id": 17627,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 73
+    },
+    {
+      "name": "Edras Hernandez",
+      "newsday_player_id": 17617,
+      "class": "11",
+      "position": "TE/DE",
+      "jersey_number": 40
+    },
+    {
+      "name": "Julian Gonzalez",
+      "newsday_player_id": 17630,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 76
+    },
+    {
+      "name": "Carlos Francois III",
+      "newsday_player_id": 17608,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 16
+    },
+    {
+      "name": "Adrian Espinal",
+      "newsday_player_id": 17609,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 30
+    },
+    {
+      "name": "Scott Dume",
+      "newsday_player_id": 17618,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 41
+    },
+    {
+      "name": "Herman Davis Jr",
+      "newsday_player_id": 17603,
+      "class": "12",
+      "position": "QB/DE",
+      "jersey_number": 4
+    },
+    {
+      "name": "Elmer Cruz",
+      "newsday_player_id": 17626,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 71
+    },
+    {
+      "name": "Enoryt Copening",
+      "newsday_player_id": 17611,
+      "class": "10",
+      "position": "WR/DB",
+      "jersey_number": 24
+    },
+    {
+      "name": "Antonio Castillo",
+      "newsday_player_id": 17605,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 7
+    },
+    {
+      "name": "Moises Canales",
+      "newsday_player_id": 17625,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 70
+    },
+    {
+      "name": "Jo'Vanny Brown",
+      "newsday_player_id": 16900,
+      "class": "11",
+      "position": "RB/DB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Matthew Blanco",
+      "newsday_player_id": 17628,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 75
+    },
+    {
+      "name": "Nahum Benitez",
+      "newsday_player_id": 17622,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 53
+    },
+    {
+      "name": "Raul Benitez",
+      "newsday_player_id": 17619,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 55
+    },
+    {
+      "name": "Chris Ayala",
+      "newsday_player_id": 18394,
+      "class": "10",
+      "position": "RB/LB",
+      "jersey_number": 36
+    },
+    {
+      "name": "Emil Abreu",
+      "newsday_player_id": 17624,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 66
+    }
+  ]
+}

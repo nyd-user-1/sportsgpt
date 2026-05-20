@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { X, Columns2, Columns3 } from 'lucide-react'
+import Link from 'next/link'
+import { X, Columns2, Columns3, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function AppPanel({
@@ -13,6 +14,7 @@ export function AppPanel({
   children,
   defaultExpanded,
   bodyClass,
+  detailHref,
 }: {
   open: boolean
   onClose: () => void
@@ -21,6 +23,7 @@ export function AppPanel({
   children: React.ReactNode
   defaultExpanded?: boolean
   bodyClass?: string
+  detailHref?: string
 }) {
   const [root, setRoot] = useState<Element | null>(null)
   const [expanded, setExpanded] = useState(defaultExpanded ?? false)
@@ -35,11 +38,21 @@ export function AppPanel({
   return createPortal(
     <div className={`shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${open ? `w-full ${w} sm:ml-[18px]` : 'w-0'}`}>
       {open && (
-        <div className={`relative h-full w-full ${w} rounded-none sm:rounded-2xl bg-[var(--surface)] flex flex-col overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)]`}>
+        <div className={`group/panel relative h-full w-full ${w} rounded-none sm:rounded-2xl bg-[var(--surface)] flex flex-col overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)]`}>
 
           {/* Header */}
           <div className="flex items-center gap-2 border-b border-[var(--border)] px-5 py-4 shrink-0">
             <span className="flex-1 text-base font-semibold text-[var(--txt)] truncate">{title}</span>
+            {/* Detail page link */}
+            {detailHref && (
+              <Link
+                href={detailHref}
+                className="shrink-0 p-1.5 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+                aria-label="Open detail page"
+              >
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            )}
             {/* ButtonPanelHalf / ButtonPanelThird */}
             <button
               onClick={() => setExpanded(v => !v)}

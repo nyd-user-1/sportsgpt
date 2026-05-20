@@ -1,0 +1,153 @@
+{
+  "slug": "east-islip",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Nick Weber",
+      "newsday_player_id": 21330,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Jake Simmons",
+      "newsday_player_id": 21329,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Jaden  Schmidt",
+      "newsday_player_id": 22751,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Sebastian Regis",
+      "newsday_player_id": 22374,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Ryan Parker",
+      "newsday_player_id": 21331,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Niko Meyers",
+      "newsday_player_id": 22502,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Matt Mcintee",
+      "newsday_player_id": 21333,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Anthony Mariani",
+      "newsday_player_id": 22001,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Glendon Kinnear",
+      "newsday_player_id": 22657,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Jack Kalinowski",
+      "newsday_player_id": 22422,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Sam Henderson",
+      "newsday_player_id": 22750,
+      "class": null,
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "Charlie Heffernan",
+      "newsday_player_id": 21336,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Charlie Heffernan",
+      "newsday_player_id": 22375,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Matt Ferraro",
+      "newsday_player_id": 21332,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Vasilious Dimou",
+      "newsday_player_id": 22658,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Thomas Costarelli",
+      "newsday_player_id": 21328,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Andrew Cooper",
+      "newsday_player_id": 21335,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Alex Ciampi",
+      "newsday_player_id": 21334,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Dylan Bayer",
+      "newsday_player_id": 22656,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Billy Bast",
+      "newsday_player_id": 22749,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Matt Baldino",
+      "newsday_player_id": 22373,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    }
+  ]
+}

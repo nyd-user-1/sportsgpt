@@ -1,0 +1,146 @@
+{
+  "slug": "ward-melville",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Jesse Spronck",
+      "newsday_player_id": 25049,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Angelo Sorbera",
+      "newsday_player_id": 25040,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Logan  Schaefer",
+      "newsday_player_id": 26611,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Chris Retzlaff",
+      "newsday_player_id": 25042,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Hudson Philbrick",
+      "newsday_player_id": 25038,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Connor McCrain",
+      "newsday_player_id": 25044,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Manny Lopez",
+      "newsday_player_id": 26591,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Louie  Laap",
+      "newsday_player_id": 25837,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Quinn Kurtz",
+      "newsday_player_id": 25622,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    },
+    {
+      "name": "Joe Karpowicz",
+      "newsday_player_id": 25046,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Ethan Jargo",
+      "newsday_player_id": 25048,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Christian Hubbard",
+      "newsday_player_id": 25952,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Jackson Grande",
+      "newsday_player_id": 25043,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Tony Gorsky",
+      "newsday_player_id": 25041,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Anthony Fardellone",
+      "newsday_player_id": 25621,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "LJ DePaul",
+      "newsday_player_id": 25045,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Liam  Cronin",
+      "newsday_player_id": 26624,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Victor Bergamaschi",
+      "newsday_player_id": 26222,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Joe Benedetto",
+      "newsday_player_id": 25039,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "JJ Alcindor",
+      "newsday_player_id": 25047,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    }
+  ]
+}

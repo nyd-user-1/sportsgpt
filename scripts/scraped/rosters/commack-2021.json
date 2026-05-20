@@ -1,0 +1,111 @@
+{
+  "slug": "commack",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Jeremy Weiss",
+      "newsday_player_id": 19322,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Ryan Wald",
+      "newsday_player_id": 18872,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Vincent  Rotelli",
+      "newsday_player_id": 18160,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Lance  Rhodes",
+      "newsday_player_id": 18156,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Domenic Pirraglia",
+      "newsday_player_id": 18875,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Tristan  McMahon",
+      "newsday_player_id": 18155,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Jake McKay",
+      "newsday_player_id": 18874,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Matt  McGurk",
+      "newsday_player_id": 18154,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jon Martine",
+      "newsday_player_id": 19165,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Anthony Maio",
+      "newsday_player_id": 18157,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Justin Maikowski",
+      "newsday_player_id": 19167,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Chris  Catuosco",
+      "newsday_player_id": 19166,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Ryan  Carlos",
+      "newsday_player_id": 18158,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Ryan Brady",
+      "newsday_player_id": 18873,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Christian  Baldi",
+      "newsday_player_id": 18159,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    }
+  ]
+}

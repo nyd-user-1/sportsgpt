@@ -1,0 +1,2158 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 27,
+    "gameId": "4844",
+    "box": {
+      "gameId": "4844",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 42, North Babylon 27: Jake Trovato rushed for 201 yards and three touchdowns on 16 carries and had 14 tackles to lead Lindenhurst (1-0) in Suffolk II. He opened the scoring with a 75-yard touchdown run in the first quarter. Brendan O'Connor completed 8 of 13 passes for 117 yards and a touchdown and rushed for 48 yards on three carries, including a 26-yard touchdown to give Lindenhurst a 28-7 lead in the third quarter. Chris Carson had four receptions for 70 yards and a touchdown and added 10 tackles, a fumble recovery and an interception. Danny DeFelice had 16 tackles and two sacks in the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 24,
+            "yds": 158,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 5,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 7,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel Griffith",
+            "att": 6,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 16,
+            "yds": 201,
+            "tds": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 6,
+            "comp": 4,
+            "yds": 103,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 13,
+            "comp": 8,
+            "yds": 117,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 3,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 4,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 13,
+    "gameId": "5255",
+    "box": {
+      "gameId": "5255",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "10",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 14,
+            "yds": 120,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 12,
+            "yds": 74,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 6,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 3,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 22,
+            "comp": 11,
+            "yds": 90,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 5,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 3,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jakub Grabowski",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brennan McNeilly",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 14,
+    "gameId": "5269",
+    "box": {
+      "gameId": "5269",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Newfield",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 17, Newfield 14 Igor Rzasa kicked a 26 yard field goal with 1:02 left in the fourth quarter to lift Lindenhurst (3-0)  in Suffolk II. The kick was set up by Jake Trovato's 84-yard run. Trovato finished with 194 yards and a touchdown on 16 carries. Dan DeFelice had eight tackles and a sack for the Bulldogs. Newfield is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 13,
+            "yds": 227,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 7,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 6,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 20,
+            "yds": 125,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 8,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Marra",
+            "att": 3,
+            "yds": 33,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "comp": 11,
+            "yds": 27,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 8,
+            "comp": 4,
+            "yds": 16,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 1,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 47,
+    "gameId": "5270",
+    "box": {
+      "gameId": "5270",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "20",
+          "q3": "20",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 47, Lindenhurst 14: Jack Halpin rushed for 136 yards and three touchdowns on eight carries and Donte Phillips added 127 yards rushing and two scores on 14 carries for Bellport in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 8,
+            "yds": 136,
+            "tds": 3
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 14,
+            "yds": 127,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 1,
+            "yds": 63,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Alex  Fabian",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Chau'zen Davis",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jairel  Melendez",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 11,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 3,
+            "yds": 17,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 10,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Michael Levy",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Mannick",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 6,
+            "comp": 3,
+            "yds": 100,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 5,
+            "comp": 11,
+            "yds": 124,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "comp": 5,
+            "yds": 21,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "rec": 1,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Rahiem  McKenzie",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 4,
+            "yds": 107,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jason  Hunt",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Alex Brigidir",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 14,
+    "gameId": "5271",
+    "box": {
+      "gameId": "5271",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 20, Northport 14: Lindenhurst improves to 4-1 in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 12,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 8,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 9,
+            "yds": 70,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 2,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Dan Eagers",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "att": 5,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 6,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 11,
+            "comp": 16,
+            "yds": 208,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 21,
+            "comp": 9,
+            "yds": 209,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 8,
+            "yds": 170,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jakub Grabowski",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 2,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 2,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 3,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Raio",
+            "rec": 1,
+            "yds": 2,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Danny DeFelice",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 3,
+    "gameId": "5272",
+    "box": {
+      "gameId": "5272",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "3",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "3"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 7, West Islip 3: Brendan O'Connor's 9-yard touchdown pass to Chris Carson in the second quarter was the only touchdown of the game in Suffolk II. Dan DeFelice made nine tackles and had sack. Jake Trovato made eight  tackles, Tom Wrightington made eight tackles and had a sack. Orrik Blaise had an interception and Brennan McNeilley recovered a fumble for Lindenhurst (5-1). West Islip is 3-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 15,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 4,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 5,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 15,
+            "comp": 19,
+            "yds": 108,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 7,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 3,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jakub Grabowski",
+            "rec": 2,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brennan McNeilly",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Centereach",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 21,
+    "gameId": "5273",
+    "box": {
+      "gameId": "5273",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 28, Centereach 21: Jake Trovato rushed for 125 yards and two touchdowns on 18 carries, had a 23-yard reception from Brenden O'Connor to start the scoring for the Bulldogs, and added 12 tackles to lead Lindenhurst (6-1) in Suffolk II. O'Connor completed 11 of 17 passes for 127 yards and two touchdowns and Chris Carson had eight receptions for 73 yards and a touchdown adding eight tackles and two sacks. Orrik Blaise rushed for 74 yards on eight carries. Centereach is now 1-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 18,
+            "yds": 125,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 8,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 22,
+            "comp": 17,
+            "yds": 237,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 17,
+            "comp": 11,
+            "yds": 127,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 6,
+            "yds": 75,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 4,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 3,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 8,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 7,
+    "gameId": "5274",
+    "box": {
+      "gameId": "5274",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "3",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 16, Huntington 7: Jake Trovato had nine tackles, a fumble recovery and ran for a four-yard touchdown, Danny DeFelice had 10 tackles, Chris Carson had nine tackles and Jordan Martin had nine tackles and a sack to lead Lindenhurst (7-1) in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 19,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 8,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 2,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 21,
+            "comp": 8,
+            "yds": 135,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 4,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 13,
+    "gameId": "5410",
+    "box": {
+      "gameId": "5410",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 35, Connetquot 13: Jake Trovato had 191 yards and three touchdowns to lead No. 1 Lindenhurst over No. 8 Connetquot in the Suffolk II quarterfinals. Trovato scored two touchdowns in the third quarter, one on a 46-yard run and the other on an 18-yard run to give the Bulldogs a 21-13 lead. Dom Artale had 74 yards on five carries. Orrik Blaise had 54 yards and a touchdown on the ground. The Bulldogs rushed for 343 yards and scored 28 unanswered points. Joe DeGregorio led the defense with 12 tackles and a sack. Chris Carson had 10 tackles and an interception. Lindenhurst (8-1) will host a semi-final game at 7 p.m. on Friday, November 12th. Connetquot finishes 4-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 25,
+            "yds": 191,
+            "tds": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 5,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 9,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "David Varela",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 11,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 7,
+            "comp": 3,
+            "yds": 51,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 33,
+            "comp": 16,
+            "yds": 210,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jakub Grabowski",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "rec": 10,
+            "yds": 155,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Devin  Shapiro",
+            "rec": 4,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Alan  Rodrigues",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 1,
+            "yds": 7,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Joe DeGregorio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Devin  Shapiro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Stephen Bubier",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/12/2021",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 20,
+    "gameId": "5454",
+    "box": {
+      "gameId": "5454",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 22, Northport 20: QB David Varela led a comeback completing 7-of-10 passes for 64 yards and rushed nine times for 32 yards and a touchdown in No. 1 Lindenhurst's (9-1) win over No. 4 Northport in the Suffolk Division II semifinals. Danny DeFelice was dominant on the defensive line with 15 tackles and two sacks. Jake Trovato added six tackles and a sack. Chris Carson had seven tackles and a sack. Trovato had 111 yards and a touchdown on 22 carries. Lindenhurst will now face the winner of No. 2 Bellport /No. 3 Half Hollow Hills East in the finals on Saturday at Stony Brook University at 7 p.m.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 22,
+            "yds": 111,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "David Varela",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 3,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "David Varela",
+            "att": 7,
+            "comp": 10,
+            "yds": 64,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 2,
+            "comp": 6,
+            "yds": 19,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 5,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Danny DeFelice",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mike Seeger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/20/2021",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 13,
+    "gameId": "5476",
+    "box": {
+      "gameId": "5476",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 13, Lindenhurst 0\nBellport (10-1) defeated Lindenhurst (9-2) in the Suffolk Division II final. Donte Phillips had 23 carries for 86 yards. He also had three interceptions on defense for Bellport. Jack Halpin passed for 95 yards a touchdown. He also rushed for 70 yards and a score. The Clippers won their first Suffolk title since 2010 and their 11th overall.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 23,
+            "yds": 83,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 10,
+            "yds": 70,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 12,
+            "comp": 2,
+            "yds": 95,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

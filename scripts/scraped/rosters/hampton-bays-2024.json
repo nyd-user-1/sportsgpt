@@ -1,0 +1,48 @@
+{
+  "slug": "hampton-bays",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Brayden Talmage",
+      "newsday_player_id": 24468,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Michael Single",
+      "newsday_player_id": 24096,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "CJ Seymore",
+      "newsday_player_id": 24095,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Hunter Halsey",
+      "newsday_player_id": 24097,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Nate Donahue",
+      "newsday_player_id": 24094,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Kade  Arkinson",
+      "newsday_player_id": 24098,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    }
+  ]
+}

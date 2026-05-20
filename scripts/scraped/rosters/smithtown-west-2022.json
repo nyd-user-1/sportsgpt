@@ -1,0 +1,125 @@
+{
+  "slug": "smithtown-west",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Nick Zinz",
+      "newsday_player_id": 20908,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Tim Vanderbrink1",
+      "newsday_player_id": 20319,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Brayden Stahl",
+      "newsday_player_id": 20316,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "George Siolos",
+      "newsday_player_id": 20780,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Martin Shook",
+      "newsday_player_id": 21101,
+      "class": null,
+      "position": null,
+      "jersey_number": 79
+    },
+    {
+      "name": "Dean Schaeffer",
+      "newsday_player_id": 21201,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Dean Schaeffer",
+      "newsday_player_id": 21200,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Phil Renariez",
+      "newsday_player_id": 21102,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Phil Reinerz",
+      "newsday_player_id": 20909,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Dylan Philips",
+      "newsday_player_id": 20781,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Jack  Melore",
+      "newsday_player_id": 20317,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Jacque LaPrarie",
+      "newsday_player_id": 20318,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Brian Hope",
+      "newsday_player_id": 20321,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Will Fitzsimmons",
+      "newsday_player_id": 20911,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Nick Briffa",
+      "newsday_player_id": 20322,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Chris Bassandella",
+      "newsday_player_id": 20910,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Jason Antunes",
+      "newsday_player_id": 20320,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    }
+  ]
+}

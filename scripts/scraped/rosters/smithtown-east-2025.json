@@ -1,0 +1,167 @@
+{
+  "slug": "smithtown-east",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Dylan Zizzo",
+      "newsday_player_id": 25448,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Charlie  Weydid",
+      "newsday_player_id": 25751,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Johnny Wallace",
+      "newsday_player_id": 25991,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Nicolas Stroveglia",
+      "newsday_player_id": 25451,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Nick Siciliano",
+      "newsday_player_id": 25995,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Matt Santangelo",
+      "newsday_player_id": 25752,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "David Sack",
+      "newsday_player_id": 26285,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Jack Reddock",
+      "newsday_player_id": 25996,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Leo Medina",
+      "newsday_player_id": 25754,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Rob Martino",
+      "newsday_player_id": 26286,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Antonio Marrone",
+      "newsday_player_id": 25446,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Jason Lee",
+      "newsday_player_id": 25992,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Jonathan Jean",
+      "newsday_player_id": 25450,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Marco Intintoli",
+      "newsday_player_id": 25994,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "James Huxtable",
+      "newsday_player_id": 25449,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Hunter  Hughes",
+      "newsday_player_id": 25447,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Bradley Filsaime",
+      "newsday_player_id": 25753,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Derek Felix",
+      "newsday_player_id": 26476,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Rayn Farrell",
+      "newsday_player_id": 25748,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Matt  Donohue",
+      "newsday_player_id": 25749,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Henry Craft",
+      "newsday_player_id": 25750,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Dylan Cogliano",
+      "newsday_player_id": 25993,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Chtistian Chery",
+      "newsday_player_id": 26555,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    }
+  ]
+}

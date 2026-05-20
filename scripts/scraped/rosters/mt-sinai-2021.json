@@ -1,0 +1,258 @@
+{
+  "slug": "mt-sinai",
+  "season": 2021,
+  "players": [
+    {
+      "name": "James Williams",
+      "newsday_entry_id": 18427,
+      "class": "12",
+      "position": "K",
+      "jersey_number": 29
+    },
+    {
+      "name": "Michael  Trepeta",
+      "newsday_entry_id": 18410,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 2
+    },
+    {
+      "name": "Gavin  Takacs",
+      "newsday_entry_id": 18443,
+      "class": "12",
+      "position": "TE/LB",
+      "jersey_number": 88
+    },
+    {
+      "name": "Joey Spallina",
+      "newsday_entry_id": 18409,
+      "class": "12",
+      "position": "QB/LB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Jake Spallina",
+      "newsday_entry_id": 18416,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 9
+    },
+    {
+      "name": "Brett Spallina",
+      "newsday_entry_id": 18414,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 6
+    },
+    {
+      "name": "Mark Schreiber",
+      "newsday_entry_id": 18436,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 70
+    },
+    {
+      "name": "Kevin Sanatore",
+      "newsday_entry_id": 18411,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Joseph Sabella",
+      "newsday_entry_id": 18413,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 5
+    },
+    {
+      "name": "Jaden Rotella",
+      "newsday_entry_id": 18420,
+      "class": "11",
+      "position": "QB/DB",
+      "jersey_number": 15
+    },
+    {
+      "name": "Trey Rodriquez",
+      "newsday_entry_id": 18429,
+      "class": "11",
+      "position": "RB/DB",
+      "jersey_number": 33
+    },
+    {
+      "name": "John Pramataris",
+      "newsday_entry_id": 18422,
+      "class": "9",
+      "position": "QB/LB",
+      "jersey_number": 17
+    },
+    {
+      "name": "Michael Plumitallo",
+      "newsday_entry_id": 18438,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 73
+    },
+    {
+      "name": "Verissimo  Pedra",
+      "newsday_entry_id": 18408,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Verissimo Pedra",
+      "newsday_entry_id": 18424,
+      "class": "12",
+      "position": "K",
+      "jersey_number": 21
+    },
+    {
+      "name": "Ryan Narsingh",
+      "newsday_entry_id": 18417,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Tristan Nardi",
+      "newsday_entry_id": 18426,
+      "class": "12",
+      "position": "K",
+      "jersey_number": 23
+    },
+    {
+      "name": "Shea Mullahey",
+      "newsday_entry_id": 18421,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 16
+    },
+    {
+      "name": "Zachary Molomo",
+      "newsday_entry_id": 18434,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 56
+    },
+    {
+      "name": "James Millen",
+      "newsday_entry_id": 18430,
+      "class": "10",
+      "position": "RB/LB",
+      "jersey_number": 44
+    },
+    {
+      "name": "Nathaniel McNally",
+      "newsday_entry_id": 18419,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 14
+    },
+    {
+      "name": "Jake Lumley",
+      "newsday_entry_id": 18412,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 4
+    },
+    {
+      "name": "Aidan Liendo",
+      "newsday_entry_id": 18425,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 22
+    },
+    {
+      "name": "Christos Langis",
+      "newsday_entry_id": 18440,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "Christopher Kit",
+      "newsday_entry_id": 18435,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 66
+    },
+    {
+      "name": "Brian Kaler",
+      "newsday_entry_id": 18441,
+      "class": "11",
+      "position": "TE/LB",
+      "jersey_number": 80
+    },
+    {
+      "name": "Thomas Frycek",
+      "newsday_entry_id": 18428,
+      "class": "11",
+      "position": "RB/DB",
+      "jersey_number": 30
+    },
+    {
+      "name": "Drew Feinstein",
+      "newsday_entry_id": 18442,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 84
+    },
+    {
+      "name": "Daniel Desmond",
+      "newsday_entry_id": 18431,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 50
+    },
+    {
+      "name": "Alexander Day",
+      "newsday_entry_id": 18439,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 74
+    },
+    {
+      "name": "Nicholas Coleman",
+      "newsday_entry_id": 18437,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 72
+    },
+    {
+      "name": "Devin Carros",
+      "newsday_entry_id": 18418,
+      "class": "12",
+      "position": "QB/TE/LB",
+      "jersey_number": 11
+    },
+    {
+      "name": "Nicholas Carretta",
+      "newsday_entry_id": 18423,
+      "class": "10",
+      "position": "RB/LB",
+      "jersey_number": 18
+    },
+    {
+      "name": "James Carretta",
+      "newsday_entry_id": 18415,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 8
+    },
+    {
+      "name": "Nicholas Carillo",
+      "newsday_entry_id": 18432,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 52
+    },
+    {
+      "name": "Alden Barton",
+      "newsday_entry_id": 18433,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 55
+    }
+  ]
+}

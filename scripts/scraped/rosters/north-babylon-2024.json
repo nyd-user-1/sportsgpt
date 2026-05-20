@@ -1,0 +1,104 @@
+{
+  "slug": "north-babylon",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Tristan Wojt",
+      "newsday_player_id": 23231,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Sean Staley",
+      "newsday_player_id": 23229,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Jacob Serigano",
+      "newsday_player_id": 23227,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Jack Rowland",
+      "newsday_player_id": 23225,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Malyk Montenegro",
+      "newsday_player_id": 23220,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Daniel Martinez",
+      "newsday_player_id": 23230,
+      "class": null,
+      "position": null,
+      "jersey_number": 69
+    },
+    {
+      "name": "Marquis Mais",
+      "newsday_player_id": 23232,
+      "class": null,
+      "position": null,
+      "jersey_number": 82
+    },
+    {
+      "name": "Jordan Konig",
+      "newsday_player_id": 23221,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jawara Keahey",
+      "newsday_player_id": 23226,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Mack Jason",
+      "newsday_player_id": 24543,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Alexander Griffith",
+      "newsday_player_id": 23222,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "RJ DeJesus",
+      "newsday_player_id": 23223,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Logan Baptist",
+      "newsday_player_id": 23228,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Peter  Banculli",
+      "newsday_player_id": 23224,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    }
+  ]
+}

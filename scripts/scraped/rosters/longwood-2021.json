@@ -1,0 +1,125 @@
+{
+  "slug": "longwood",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Wallace Wilson",
+      "newsday_entry_id": 19157,
+      "class": null,
+      "position": null,
+      "jersey_number": 99
+    },
+    {
+      "name": "Elijah  Washington",
+      "newsday_entry_id": 19156,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Tyson  Taylor",
+      "newsday_entry_id": 18668,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Terrance Robinson",
+      "newsday_entry_id": 18108,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Aaron Ottenwalder",
+      "newsday_entry_id": 18670,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Nnamdi Nwanyanwu",
+      "newsday_entry_id": 18666,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "Bailey Nowaski",
+      "newsday_entry_id": 19153,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Jayden  Martino",
+      "newsday_entry_id": 19273,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Louis  Kaleb",
+      "newsday_entry_id": 18662,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Josh Jackson",
+      "newsday_entry_id": 19155,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Najee Henderson",
+      "newsday_entry_id": 18667,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Mason  Hauser",
+      "newsday_entry_id": 19154,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Miles Flagg",
+      "newsday_entry_id": 18664,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Eduardo Cuello-Briones",
+      "newsday_entry_id": 18665,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Caleib Corbett",
+      "newsday_entry_id": 18663,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Daniel  Blank",
+      "newsday_entry_id": 19152,
+      "class": null,
+      "position": null,
+      "jersey_number": 90
+    },
+    {
+      "name": "Assil  Arefee",
+      "newsday_entry_id": 18669,
+      "class": null,
+      "position": null,
+      "jersey_number": 48
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "centereach",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Jason Zaita",
+      "newsday_entry_id": 18842,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Jamieson Shea",
+      "newsday_entry_id": 18845,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "LaRawn Robinson",
+      "newsday_entry_id": 18844,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Justin Robbert",
+      "newsday_entry_id": 18843,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Josh Ortiz",
+      "newsday_entry_id": 18850,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Michael Mazza",
+      "newsday_entry_id": 18846,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Matthew Gesa",
+      "newsday_entry_id": 18852,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Markus Figuero",
+      "newsday_entry_id": 18849,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Andrew Ferreira",
+      "newsday_entry_id": 18851,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Riddick Drab",
+      "newsday_entry_id": 18847,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Timothy  Demetres",
+      "newsday_entry_id": 18854,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    },
+    {
+      "name": "Colin Cleary",
+      "newsday_entry_id": 18853,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Xavier Calixte",
+      "newsday_entry_id": 18848,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

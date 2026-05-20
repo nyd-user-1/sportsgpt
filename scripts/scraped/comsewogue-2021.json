@@ -1,0 +1,1762 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/03/2021",
+    "opponent": "Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 13,
+    "gameId": "4869",
+    "box": {
+      "gameId": "4869",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 13, Comsewogue 10: Jameson Seeger caught a 5-yard touchdown pass from Joey Vitale with 40 seconds to go, capping off a 12 play, 75-yard drive to lead Islip (1-0) in Suffolk III. Vitale threw for 135 yards and two touchdowns on 17 passes. Kaiden Lewis rushed for 60 yards on 11 carries and had two catches for 55 yards. Nate Moran had 10 tackles. George Trimigliozzi recorded seven tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 7,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 3,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 11,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Richie Rindos",
+            "att": 9,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 5,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 6,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 9,
+            "comp": 21,
+            "yds": 121,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 17,
+            "comp": 10,
+            "yds": 135,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 3,
+            "yds": 88,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 2,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 4,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Christ Camille",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Jack Fantigrossi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Alex Oliver",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "4947",
+    "box": {
+      "gameId": "4947",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 28, Hauppauge 6: Gio Fragapgne had 15 carries for 125 yards and a touchdown and kicked two extra points for Comsewogue (1-1) in Suffolk III on Friday. Hauppauge is 0-2. Brady Shannon had 12 carries for 55 yards and 2 TDs. He also threw an 11-yard TD pass. Kevin Radmann added five carries for 70 yards and had seven tackles. Comsewogue rushed as a team 35 times for 275 yards. Lucas Shannon (who had an 11-yard TD catch) had six tackles, one pass break-up and an interception. James Kreig added another interception. Cole Blatter was dominant on the offensive line and had five tackles in the win, as Comsewogue led 21-0 in the third quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 16,
+            "yds": 113,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 13,
+            "yds": 54,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 2,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 4,
+            "comp": 5,
+            "yds": 43,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 3,
+    "oppScore": 9,
+    "gameId": "5259",
+    "box": {
+      "gameId": "5259",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "9",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "3"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 9, Comsewogue 3: Jack Smalley found Mack Murtha for a 70-yard touchdown in the third quarter to break a tie at 3 for Sayville (2-0) in Suffolk III. Benny Sands and Danny O'Doherty each had 10 tackles and Charlie Sands added eight tackles and a sack in the win.  Kyle Messina rushed for 88 yards on 11 carries and had two receptions for 46 yards for Sayville.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 12,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Cea Jr.",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 10,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 10,
+            "yds": 24,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 21,
+            "comp": 11,
+            "yds": 183,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 8,
+            "comp": 17,
+            "yds": 126,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "rec": 3,
+            "yds": 76,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 2,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Matt Bonfanti",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kevin Delaney",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Chad  Moccio",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 5,
+            "yds": 91,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Michael Argenziano",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Jhendeli Nunez",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 15,
+    "oppScore": 37,
+    "gameId": "5294",
+    "box": {
+      "gameId": "5294",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "17",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 37, Comsewogue 15: Derek Burrell rushed for 136 and a touchdown on 18 carries and completed 6 for 9 for 96 yards and two touchdowns to lead East Islip (4-0) in Suffolk III. Leo Lopez rushed for 132 yards and two touchdowns on 19 carries and Dave Reynolds ran three times for 37 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 12,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 3,
+            "yds": 16,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 18,
+            "yds": 136,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 19,
+            "yds": 132,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Dave Reynolds",
+            "att": 3,
+            "yds": 37,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 14,
+            "comp": 22,
+            "yds": 170,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 9,
+            "comp": 6,
+            "yds": 96,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 2,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 6,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 3,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Matt Nowlan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Jhendeli Nunez",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Amityville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 13,
+    "gameId": "5335",
+    "box": {
+      "gameId": "5335",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "8",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 21, Amityville 13: Brady Shannon completed 11 of 17 passes for 168 yards and three touchdowns to lead Comsewogue (2-3) in Suffolk III. James Krieg had three receptions for 87 yards and two touchdowns and Matt Walsh had five receptions for 58 yards, including a 19-yard touchdown reception in the win. Aaron Nieves and Jhendeli Nunez each had two sacks for Comsewogue. Amityville falls to 1-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 13,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 17,
+            "comp": 11,
+            "yds": 168,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 3,
+            "yds": 87,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 5,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 9,
+    "oppScore": 35,
+    "gameId": "5345",
+    "box": {
+      "gameId": "5345",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "6",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "14",
+          "q2": "3",
+          "q3": "15",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 35, Comsewogue 9: Will Gambino completed 11 of 18 passes for 250 yards and four touchdowns to lead Westhampton (2-3) in Suffolk III. Owen Spizuoco caught six passes for 132 yards and two scores and Christian Killoran had three receptions for 66 yards and a score. Robert Moreland rushed for 97 yards on 16 carries and Shane O'Brien made three extra points and kicked field goals of 29 and 25 yards. Zach Fuhrman had three sacks for the Hurricanes. Comsewogue fell to 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 11,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 6,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Robert  Moreland",
+            "att": 16,
+            "yds": 97,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 12,
+            "comp": 21,
+            "yds": 116,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Will Gambino",
+            "att": 18,
+            "comp": 11,
+            "yds": 250,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 5,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 4,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "rec": 6,
+            "yds": 132,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Christian Killoran",
+            "rec": 3,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "rec": 2,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5374",
+    "box": {
+      "gameId": "5374",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 11,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 10,
+            "yds": 76,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 4,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 8,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 5,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 9,
+            "comp": 8,
+            "yds": 99,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 9,
+            "comp": 17,
+            "yds": 71,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Jack Bruetsch",
+            "rec": 1,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 4,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Delhotal",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 13,
+    "gameId": "5394",
+    "box": {
+      "gameId": "5394",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "15",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 22, Half Hollow Hills West 13: Daimler Valerio ran for 134 yards on 15 carries in Suffolk III Friday night.  Giovanni Fragapagne ran for 90 yards and two touchdowns on 17 carries. His 1-yard touchdown run in the second quarter gave Comsewogue a 13-0 lead. A two-point conversion run from Kaeden West extended the lead to 15-0. West made six tackles and recovered a fumble. Kevin Radmann made seven tackles and had an interception and Aaron Nieves had three sacks for Consewogue (3-5). Half Hollow Hills West is 3-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 16,
+            "yds": 132,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 19,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 4,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 4,
+            "comp": 8,
+            "yds": 28,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Blaise Cappola",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 30,
+    "gameId": "5415",
+    "box": {
+      "gameId": "5415",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "14",
+          "q3": "3",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 30, Comsewogue 10: Leo Lopez ran for 58 yards and a touchdown on 15 carries and caught two passes for 66 yards and a touchdown to lead No. 2 East Islip over No. 7 Comsewogue in a Suffolk III quarterfinal. Derek Burrell threw two touchdowns and returned an interception for a score for East Islip. Jason Fiorello had an interception, AIden Lenox recovered a fumble and Andrew Cooper had 11 tackles. Comsewogue finishes 3-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 20,
+            "yds": 97,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 9,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 8,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 15,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 10,
+            "comp": 18,
+            "yds": 94,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 9,
+            "comp": 6,
+            "yds": 141,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 5,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "rec": 2,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt McIntee",
+            "rec": 2,
+            "yds": 64,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Gavin  Herzog",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Bauco",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          },
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jason Fiorello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,181 @@
+{
+  "slug": "harborfields",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Andrew  White",
+      "newsday_player_id": 20809,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Sean  Tucker",
+      "newsday_player_id": 20413,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Aidan Terry",
+      "newsday_player_id": 21139,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Charlie Serafin",
+      "newsday_player_id": 20277,
+      "class": "11",
+      "position": "WR / FS",
+      "jersey_number": 26
+    },
+    {
+      "name": "Jack  Poller",
+      "newsday_player_id": 20281,
+      "class": "11",
+      "position": "WR / CB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Declan McCarthy",
+      "newsday_player_id": 20279,
+      "class": "12",
+      "position": "OL / OLB",
+      "jersey_number": 51
+    },
+    {
+      "name": "Nico Markowski",
+      "newsday_player_id": 20276,
+      "class": "11",
+      "position": "RB / LB",
+      "jersey_number": 4
+    },
+    {
+      "name": "Shane Longin",
+      "newsday_player_id": 20273,
+      "class": "12",
+      "position": "QB / SS",
+      "jersey_number": 9
+    },
+    {
+      "name": "Gavin  Lindkvist",
+      "newsday_player_id": 20280,
+      "class": "12",
+      "position": "OL / DL",
+      "jersey_number": 75
+    },
+    {
+      "name": "Jacob  Levy",
+      "newsday_player_id": 20749,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jacob  Levy",
+      "newsday_player_id": 20752,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jacob  Levy",
+      "newsday_player_id": 20755,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jacob  Levy",
+      "newsday_player_id": 20758,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Peter Johnston",
+      "newsday_player_id": 20278,
+      "class": "12",
+      "position": "WR / OLB",
+      "jersey_number": 88
+    },
+    {
+      "name": "Matthew Henry",
+      "newsday_player_id": 20751,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Matthew Henry",
+      "newsday_player_id": 20760,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Matthew Henry",
+      "newsday_player_id": 20754,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Matthew Henry",
+      "newsday_player_id": 20757,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Michael Ferranti",
+      "newsday_player_id": 20275,
+      "class": "11",
+      "position": "RB / SS",
+      "jersey_number": 2
+    },
+    {
+      "name": "Quinn Cave",
+      "newsday_player_id": 20750,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Quinn Cave",
+      "newsday_player_id": 20759,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Quinn Cave",
+      "newsday_player_id": 20756,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Quinn Cave",
+      "newsday_player_id": 20753,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Vinny Bolognino",
+      "newsday_player_id": 20274,
+      "class": "11",
+      "position": "RB / CB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Ethan Appolon",
+      "newsday_player_id": 20414,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    }
+  ]
+}

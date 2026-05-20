@@ -1,0 +1,1449 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 7,
+    "gameId": "5629",
+    "box": {
+      "gameId": "5629",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "2",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 16, Half Hollow Hills East 7: Sal Calderone rushed for 113 yards and two touchdowns. The Lions' defense forced three fumbles and one interception. West Islip's Rocco Carpinello intercepted Hills East's Jordan Heyman with 1:03 left in the fourth quarter. Hills East's Jovanny Brown rushed for 105 yards and the team's only touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 10,
+            "yds": 115,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 6,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Bobby Richardson",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 9,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 8,
+            "comp": 4,
+            "yds": 31,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "rec": 3,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Dante Sgambati",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Anthony DeCristofaro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 7,
+    "gameId": "5650",
+    "box": {
+      "gameId": "5650",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "10",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 24, Connetquot 7:  Rocco Carpinello rushed for 173 yards scoring two touchdowns on 13 carries to lead West Islip (2-0) in Suffolk II. Sal Calderone added 118 yards on 17 carries and made 10 tackles with one quarterback sack on defense. Chris Pirapato chipped in with 90 yards on 11 carries while making eight tackles, forcing and recovering a fumble. West Islip had 456 yards with a balanced rushing attack.  Patrick Keenan had 60 yards on with one touchdown 14 carries. Sean Boyle also had an interception for the Lions defense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 8,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 6,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 13,
+            "yds": 197,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 17,
+            "yds": 118,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 11,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 8,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "att": 4,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 23,
+            "comp": 11,
+            "yds": 285,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Dennis  Milano",
+            "rec": 5,
+            "yds": 202,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 2,
+            "yds": 63,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Brian Marra",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 17,
+    "gameId": "5668",
+    "box": {
+      "gameId": "5668",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "3",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 28, West Babylon 17: Patrick Keenan had 138 yards rushing scoring four touchdowns on 17 carries to lead West Islip (3-0) in Suffolk II. Chris Piropato had 76 yards on five carries. The Lion defense was led by Bobby Richardson and Danny Klein who had eight tackles each. Rocco Carpinello had an interception. Jordan Fileti had a sack. In the first half West Islip trailed 17-7 with their only touchdown coming in the second quarter. They turned it around in the second half  scoring 21 points and holding West Babylon to zero points. After West Babylon scored on a 75-yard pass West Islip scored the next 21 points on three straight touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 17,
+            "yds": 138,
+            "tds": 4
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 5,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "att": 2,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 12,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 12,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 8,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Serrano",
+            "att": 6,
+            "yds": 11,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 5,
+            "comp": 4,
+            "yds": 32,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 21,
+            "comp": 9,
+            "yds": 169,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 3,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Ricky Fasitta",
+            "rec": 1,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sean McGuire",
+            "rec": 4,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Field",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "West Babylon",
+            "player": "Chris Graham",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 17,
+    "oppScore": 22,
+    "gameId": "5681",
+    "box": {
+      "gameId": "5681",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "8",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "West Islip",
+          "q1": "3",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 22, West Islip 17: Bellport linebacker Caleb White recovered a fumble on the Clippers 5 with 2:46 to play to snuff a West Islip drive and preserve the Suffolk II win. Jason Hunt had a 58-yard touchdown reception, an 88-yard kickoff return for a touchdown and three sacks for Bellport (3-1). Justin Miles was 8-for-12 passing for 183 yards and the touchdown to Hunt and Donte Phillips had 110 rushing yards on 21 carries, a touchdown and a two-point conversion.\nWest Islip's Chris Piropato scored on a 5-yard run and by recovering a Lions fumble in the end zone. Patrick Kennan rushed for 71 yards, Sal Calderone rushed for 69 yards and Piropato rushed for 62 yards for West Islip (3-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 19,
+            "yds": 102,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 6,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 18,
+            "yds": 71,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 12,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 12,
+            "yds": 62,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 12,
+            "comp": 8,
+            "yds": 183,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "rec": 4,
+            "yds": 115,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 1,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nick Anderson",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Tyler  Burke",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 13,
+    "gameId": "5714",
+    "box": {
+      "gameId": "5714",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 6,
+            "yds": 126,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 15,
+            "yds": 48,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 15,
+            "yds": 130,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 4,
+            "comp": 7,
+            "yds": 41,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 1,
+            "comp": 1,
+            "yds": 2,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 4,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Trevor Allen",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Bryan Aulino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Mike Seeger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 20,
+    "gameId": "5718",
+    "box": {
+      "gameId": "5718",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "West Islip",
+          "q1": "17",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 31, Huntington 20: Patrick Keenan led a balanced West Islip rushing attack amassing 131 yards on 14 carries  and scored on a 36-yard touchdown run to lead West Islip (4-2) in Suffolk II. Rocco Carpinello scored on runs of 16 and eight yards. Evan Aponte chipped in with an eight yard touchdown run. Frank Romano and Chris Piropato led the Lions' defense with seven tackles and one sack each. West Islip was leading 24-7 after the first half until West Islip started to get going in the second half.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 14,
+            "yds": 131,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 8,
+            "yds": 39,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 9,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "att": 6,
+            "yds": 35,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 4,
+            "comp": 2,
+            "yds": 46,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "rec": 2,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Frank Romano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 20,
+    "gameId": "5751",
+    "box": {
+      "gameId": "5751",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "6",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 20, West Islip 13: Tim Cleary recorded an interception with no time remaining to seal the win for Northport (5-2) in Suffolk II. Christian Raio scored a 5-yard touchdown run to cap a 10-play opening drive and Michael Raio added a 5-yard score with 5:29 remaining to give Northport a seven-point lead. Mike Campoli scored a 60-yard rushing touchdown in the third quarter. Thomas Kraus had 12 tackles for Northport.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 7,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "att": 5,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew DeMarco",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Evan Gaumont",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Mack O'Brien",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Raio",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "att": 8,
+            "comp": 4,
+            "yds": 54,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Nick Valenti",
+            "rec": 3,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Billy Griffiths",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Tim Cleary",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 28,
+    "gameId": "5577",
+    "box": {
+      "gameId": "5577",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "14",
+          "q2": "21",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 47, Smithtown East 28: Patrick Keenan had 117 yards and two touchdowns on four carries and completed 3 of 4 passes for 134 yards and a touchdown to lead West Islip (5-3) in Suffolk II. Rocco Carpinello had a rushing touchdown and an interception and Chris Piropato, Evan Aponte and Jack Harvel each scored rushing touchdowns. Brian Brannigan recovered a fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 4,
+            "yds": 117,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack  Harvel",
+            "att": 10,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "att": 6,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Nick  Klemitas",
+            "att": 7,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 4,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Brian Brannigan",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "att": 5,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Nick Garguilo",
+            "att": 1,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 12,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 5,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 4,
+            "comp": 3,
+            "yds": 134,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 5,
+            "comp": 3,
+            "yds": 140,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 9,
+            "comp": 3,
+            "yds": 15,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 4,
+            "yds": 145,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 9,
+    "gameId": "6114",
+    "box": {
+      "gameId": "6114",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "9",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 9, West Islip 7: Max Futter kicked the game-winning 34-yard field goal with 27.5 seconds left in No. 4 Half Hollow Hills East's win over No. 5 West Islip. Earlier in the fourth quarter, Nigel Clay scored a 1-yard rushing touchdown that cut the West Islip lead to 7-6. Jovanny Brown had 102 yards rushing and 37 yards receiving. Josh Isaacs made 14 tackles, Davion Johnson had 10 tackles and one sack. Hills East (6-3) will play top-seed Bellport Nov. 11, at Bellport in the semifinals.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

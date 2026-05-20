@@ -1,0 +1,90 @@
+{
+  "slug": "islip",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Michael Vitale",
+      "newsday_player_id": 22543,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Matthew Trovato",
+      "newsday_player_id": 22552,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Jack Rao",
+      "newsday_player_id": 22539,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Brady Nash",
+      "newsday_player_id": 22542,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Simpson Najee",
+      "newsday_player_id": 22551,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Carver Mason",
+      "newsday_player_id": 22553,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Owen MacManus",
+      "newsday_player_id": 22546,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Collin Haug",
+      "newsday_player_id": 22547,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Christian Hall",
+      "newsday_player_id": 22540,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Pierre Destra",
+      "newsday_player_id": 22545,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Joseph DeLucca",
+      "newsday_player_id": 22544,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jake DeGennaro",
+      "newsday_player_id": 22541,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    }
+  ]
+}

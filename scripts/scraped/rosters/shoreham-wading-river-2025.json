@@ -1,0 +1,118 @@
+{
+  "slug": "shoreham-wading-river",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Javon Wright",
+      "newsday_player_id": 25064,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Luke Tezcan",
+      "newsday_player_id": 25071,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Anthony Mullen",
+      "newsday_player_id": 25062,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Charlie Licata",
+      "newsday_player_id": 26539,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Kyler Kuck",
+      "newsday_player_id": 25070,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Shane Hall",
+      "newsday_player_id": 25068,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Noah Gregorek",
+      "newsday_player_id": 25067,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "George Greene",
+      "newsday_player_id": 25066,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Ethan Friedlander",
+      "newsday_player_id": 25072,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Tristan Duryee",
+      "newsday_player_id": 25065,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Lucas Diamond",
+      "newsday_player_id": 25063,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Mason Danko",
+      "newsday_player_id": 25151,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Jershawn Coffey",
+      "newsday_player_id": 25924,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "Gavin Cleary",
+      "newsday_player_id": 25069,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Brandyn Bland",
+      "newsday_player_id": 26524,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Collin Abrams",
+      "newsday_player_id": 25925,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    }
+  ]
+}

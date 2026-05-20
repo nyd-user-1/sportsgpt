@@ -1,0 +1,20 @@
+{
+  "slug": "hauppauge",
+  "season": 2021,
+  "players": [
+    {
+      "name": "John Margolies",
+      "newsday_entry_id": 17823,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Vincent Barbera",
+      "newsday_entry_id": 19221,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

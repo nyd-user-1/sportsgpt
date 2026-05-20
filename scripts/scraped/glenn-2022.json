@@ -1,0 +1,1931 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Kings Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 28,
+    "gameId": "6022",
+    "box": {
+      "gameId": "6022",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "6",
+          "q2": "22",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 28, Glenn 8: John Flynn rushed for 159 yards and a touchdown on 16 carries, made two catches for 22 yards and a touchdown, and recovered a fumble on defense in Suffolk IV. Kyle Weeks rushed for 121 yards and a touchdown on 14 carries and completed 3-of-8 passes for 53 yards and a touchdown.  Jack Bruetsch had five tackles and three sacks.  Mark Griffin had two tackles and two sacks. Scott McConville made eight tackles, forced a fumble and rushed for 15 yards on five carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 16,
+            "yds": 159,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 14,
+            "yds": 121,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "att": 1,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 9,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bruetsch",
+            "att": 0,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 0,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Lopez",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 8,
+            "yds": 28,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 8,
+            "comp": 3,
+            "yds": 53,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "comp": 7,
+            "yds": 79,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 4,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 0,
+    "gameId": "5614",
+    "box": {
+      "gameId": "5614",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "15",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 29, Center Moriches 0: Chris Franzese was 17-for-18 with 187 yards passing and two touchdowns, ran for 84 yards and a touchdown on 19 carries, caught two passes for 47 yards and a touchdown and had five tackles to lead Glenn (1-1) in Suffolk IV. Kahran King ran for 50 yards on seven carries and had two catches for 35 yards and a touchdown. Melkin Chavez led Glenn with six tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 19,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 7,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 10,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "att": 7,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "att": 7,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 7,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 18,
+            "comp": 7,
+            "yds": 187,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 5,
+            "comp": 4,
+            "yds": 59,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 4,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "rec": 2,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael Sainte Croix",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Palencia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Tyler Bonventre",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Greenport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 40,
+    "oppScore": 0,
+    "gameId": "5676",
+    "box": {
+      "gameId": "5676",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Glenn",
+          "q1": "26",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 40, Greenport 0: KaRahn King rushed for 77 yards and two touchdowns on eight carries and Aiden Presti added 72 rushing yards on five attempts for Glenn (2-1) in Suffolk IV. Cameron Rossi had nine tackles, including three sacks, and two forced fumbles. Chris Franzese completed 3 of 7 passes for 99 yards and a touchdown and rushed for 45 yards and a touchdown on five carries. Glenn scored all 40 of its points in the first half.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 8,
+            "yds": 77,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "att": 5,
+            "yds": 72,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 5,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 6,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Dan Elling",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 7,
+            "comp": 3,
+            "yds": 99,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 1,
+            "yds": 48,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Dan Elling",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 14,
+    "gameId": "5700",
+    "box": {
+      "gameId": "5700",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Glenn",
+          "q1": "6",
+          "q2": "0",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 34, Babylon 14: Chris Franzese had 19 carries for 297 yards and three touchdowns and added an interception on defense to lead Glenn (3-1) in Suffolk IV. Kahran King had 45 rushing yards, ran in two touchdowns and had a 12 yard reception. Mario Bento led the team with 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 19,
+            "yds": 297,
+            "tds": 3
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 6,
+            "yds": 45,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 6,
+            "comp": 2,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 45,
+    "oppScore": 42,
+    "gameId": "6024",
+    "box": {
+      "gameId": "6024",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "8",
+          "q2": "6",
+          "q3": "8",
+          "q4": "20",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Glenn",
+          "q1": "16",
+          "q2": "8",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "45"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 45, Shoreham-Wading River 42: Chris Franzese rushed 32 times for 223 yards and four touchdowns to lead Glenn (4-1) in Suffolk IV. Franzese also threw 4-for-13 for 93 yards and two touchdowns and one two-point conversion rush. Graig Decembre caught both receiving touchdowns from Franzese, one in the first quarter and the other in the fourth. KaRahn King added 204 yards on 16 rushing attempts, totaling 305 all-purpose yards for Glenn. On the defensive end, Mario Bento had a safety to go along with eight tackles. Franzese added nine tackles, Jack Smith had six tackles and a fumble recovery and Michael Sainte Croix made an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "att": 14,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 9,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 32,
+            "yds": 223,
+            "tds": 4
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 16,
+            "yds": 204,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 35,
+            "comp": 22,
+            "yds": 432,
+            "tds": 5,
+            "int": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 13,
+            "comp": 4,
+            "yds": 93,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "rec": 5,
+            "yds": 121,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "rec": 5,
+            "yds": 112,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 4,
+            "yds": 88,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "rec": 4,
+            "yds": 80,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 3,
+            "yds": 83,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Michael Sainte Croix",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 0,
+    "gameId": "5753",
+    "box": {
+      "gameId": "5753",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "27",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 34, Port Jefferson 0: Graig Decembre had six catches for 105 yards and two touchdowns to lead Glenn (5-1) in Suffolk IV. Jack Smith had two sacks and six tackles. Mario Bento added seven tackles. Chris Franzese threw for 125 yards and two touchdowns and ran for 138 yards. Kahran rushed for 60 yards and two touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 14,
+            "yds": 138,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 7,
+            "yds": 60,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 4,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "att": 6,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 10,
+            "comp": 8,
+            "yds": 125,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 13,
+            "comp": 5,
+            "yds": 61,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 6,
+            "yds": 105,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kevin Golden",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jasai McKay",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Khaleif Anthony",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 42,
+    "gameId": "6025",
+    "box": {
+      "gameId": "6025",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "21",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point finished the regular season 7-0 in Suffolk IV, the first time the Phantoms have come through a regular season perfect since 1990",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 23,
+            "yds": 127,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 0,
+            "yds": 8,
+            "tds": 91
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 23,
+            "yds": 197,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 6,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 18,
+            "comp": 7,
+            "yds": 104,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 10,
+            "comp": 6,
+            "yds": 168,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 5,
+            "yds": 87,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 2,
+            "yds": 108,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Michael Luce",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Riley Spencer",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Spano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "PJ Shanahan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2022",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "6105",
+    "box": {
+      "gameId": "6105",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 28, Babylon 6: Chris Franzese completed 13 of 16 passes for 175 yards and a touchdown and rushed for 60 yards on 11 carries, including a 6-yard touchdown to give Glenn a 21-0 lead as No. 3 Glenn defeated No. 6 Babylon in a Suffolk Division IV quarterfinal. Graig Decembre had seven receptions for 94 yards and Kahran King had 102 all-purpose yards, including a 20-yard touchdown for the game's final score in the third quarter. Mario Bento added 10 tackles and three receptions for 51 yards, including a 14-yard touchdown reception. Babylon finishes 3-5. Glenn (6-2) plays at No. 2 Kings Park in the Division IV semifinals next weekend.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 7,
+            "yds": 77,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 11,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 16,
+            "comp": 13,
+            "yds": 175,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 7,
+            "yds": 94,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 3,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Andrew Knott",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Jack Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/11/2022",
+    "opponent": "Kings Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 21,
+    "gameId": "6123",
+    "box": {
+      "gameId": "6123",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "7",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 11,
+            "yds": 123,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 36,
+            "yds": 163,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 10,
+            "yds": 87,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 4,
+            "comp": 2,
+            "yds": 61,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 5,
+            "comp": 8,
+            "yds": 87,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 1,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 1,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Palencia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/18/2022",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 35,
+    "gameId": "6137",
+    "box": {
+      "gameId": "6137",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 16,
+            "yds": 160,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 5,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 4,
+            "yds": 10,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 12,
+            "comp": 6,
+            "yds": 152,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 2,
+            "yds": 74,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "rec": 3,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

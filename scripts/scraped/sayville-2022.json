@@ -1,0 +1,2296 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 20,
+    "gameId": "5598",
+    "box": {
+      "gameId": "5598",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "20",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "14",
+          "q3": "21",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 48, Hauppauge 20: Jake Tripptree threw for 276 yards and three touchdowns for Sayville in Suffolk III. Anthony Morrione caught five passes for 182 yards and two touchdowns and Kyle Messina added 125 rushing yards and three touchdowns on 15 carries. Anthony Contaldi had 51 receiving yards and one touchdown on three catches. Michael Milo returned an interception 25 yards for a touchdown and Benny Sands led Sayville with seven tackles, including one for a loss. Jojo Provenzano rushed for two touchdowns for Hauppauge.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Jojo Provenzano",
+            "att": 23,
+            "yds": 165,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 15,
+            "yds": 125,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "att": 3,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "att": 9,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "att": 7,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Golio",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "Vincent Barbera",
+            "att": 8,
+            "comp": 17,
+            "yds": 84,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 21,
+            "comp": 13,
+            "yds": 276,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "Matthew Kinsley",
+            "rec": 6,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 5,
+            "yds": 182,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Benjamin Pierce",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 15,
+    "gameId": "5640",
+    "box": {
+      "gameId": "5640",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "7",
+          "q3": "6",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "21",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 42, Deer Park 15: Kyle Messina rushed for 168 yards and two touchdowns in Suffolk III. His 12-yard touchdown in the first quarter broke a scoreless tie. He added a 3-yard touchdown in the second quarter that gave Sayville a 27-7 lead. Jake Triptree completed 7-of-13 passes for 118 yards and two touchdowns. The Sayville defense held Deer Park to 19 yards rushing.  Joey Byrne made 10 tackles, including four solo. Benny Sands made nine tackles, had an interception, and recovered a fumble for Sayville (2-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 23,
+            "yds": 169,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "att": 7,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 7,
+            "yds": 6,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 13,
+            "comp": 7,
+            "yds": 118,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 1,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Noah  Jabour",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "5608",
+    "box": {
+      "gameId": "5608",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 42, Harborfields 7: Kyle Messina had 157 yards and three touchdowns on 12 carries in the first half to lead Sayville ( 3-0) in Suffolk III. Defensive linemen Joey Byrne, Jeremy Brett, Vincent Bonfanti, Tom Golio, and Timari Jackson all combined for 11 sacks and helped shut down Harborfields running game to 21 yards. Dan Holohan added  116 and three touchdowns on 10 carries behind Sayville's offensive line play. Harborfields went scoreless in the second half after scoring one touchdown on Shane Login's nine yard run in the second quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 12,
+            "yds": 157,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 10,
+            "yds": 116,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 21,
+            "comp": 11,
+            "yds": 106,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dom Letteri",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Thomas Golio",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Vincent Bonfanti",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Ethan Cohen",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "5685",
+    "box": {
+      "gameId": "5685",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 42, Comsewogue 7: Kyle Messina rushed for 125 yards and three touchdowns on 14 carries in Suffolk III. His touchdowns came from 3, 1, and 12-yards. His 12-yarder in the second quarter gave Sayville a 27-0 lead. Jake Tripptree completed 11 of 14 passes for 235 yards and three touchdowns (42, 30, and 31-yards).  Anthony Morrione caught six passes for 131 yards and Benny Sands caught touchdown passes of 42 and 30 yards. Joey Byrne had two sacks for Sayville (4-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 14,
+            "yds": 125,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 11,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "VINCENT APRIGLIANO",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "KAEDEN WEST",
+            "att": 11,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "DAIMLER VALERIO",
+            "att": 8,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 14,
+            "comp": 11,
+            "yds": 235,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "KAEDEN WEST",
+            "att": 20,
+            "comp": 9,
+            "yds": 84,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 6,
+            "yds": 131,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 2,
+            "yds": 72,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "KEVIN SCHNUPP",
+            "rec": 6,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "DAIMLER VALERIO",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "JADEN BANWAREE",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Comsewogue",
+            "player": "GAVIN DANDREA",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 20,
+    "gameId": "5702",
+    "box": {
+      "gameId": "5702",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "13",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 41, Islip 20: Kyle  Messina rushed for 194 yards and scored five touchdowns to lead Sayville (5-0) in Suffolk III. Jake Tripptree rushed for 182 yards and passed for 182 yards while adding a touchdown through the air. The Golden Flashes rushed for 402 total yards. Anthony Morrione caught the touchdown. Benjamin Pierce had two interceptions. Joseph Vitale and Kaiden Lewis connected for three touchdowns for Islip.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 27,
+            "yds": 194,
+            "tds": 5
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 11,
+            "yds": 182,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 5,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 17,
+            "comp": 10,
+            "yds": 88,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 28,
+            "comp": 20,
+            "yds": 295,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 9,
+            "yds": 157,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matthew Ferraro",
+            "rec": 7,
+            "yds": 152,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "rec": 6,
+            "yds": 113,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "rec": 6,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benjamin Pierce",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matthew Ferraro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 15,
+    "gameId": "5735",
+    "box": {
+      "gameId": "5735",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "8",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 36, East Islip 15: Jake Triptree was 16-for-26 passing for 268 yards and four touchdowns and also rushed for a touchdown as Sayville won a Suffolk III game. Anthony Marrione caught seven passes for 86 yards including three touchdowns - of 10, 28 and 11 yards - and Kyle Messina rushed 26 times for 145 yards for the Golden Flashes (6-0). Jack Kalinowski had an interception and Andrew Cooper and Drew Kilmurray scored touchdowns for East Islip (3-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 13,
+            "yds": 68,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 26,
+            "yds": 145,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 4,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 26,
+            "comp": 16,
+            "yds": 268,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 7,
+            "yds": 86,
+            "tds": 3,
+            "pat": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 2,
+            "yds": 52,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 6,
+    "gameId": "6048",
+    "box": {
+      "gameId": "6048",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sayville",
+          "q1": "0",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 35, Westhampton 6: Kyle Messina rushed for 227 yards and two touchdowns on 22 carries in Suffolk III. His 14-yard touchdown in the second quarter broke a scoreless tie and his 58-yard score in the third gave Sayville a 27-0 lead. Jack Tripptree completed 11 of 16 passes for 212 yards, three touchdowns, and an interception. He threw 16 and 13 yard touchdown passes to Anthony Morrione and a 20-yard touchdown strike to Dom Letteri. Vincent Bonfanti and  Jeremy Brett both had sacks for Sayville (7-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "att": 6,
+            "yds": 58,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 22,
+            "yds": 227,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 10,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 6,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 12,
+            "comp": 24,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 16,
+            "comp": 11,
+            "yds": 212,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 10,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 7,
+            "yds": 136,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dom Letteri",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Noah Hebberd",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Sal Fracapane",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan  Michalowski",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Gianni Amodemo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Vincent Bonfanti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 7,
+    "gameId": "5589",
+    "box": {
+      "gameId": "5589",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 23,
+            "yds": 231,
+            "tds": 4
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 8,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 6,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 14,
+            "yds": 95,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "att": 11,
+            "yds": 35,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 9,
+            "comp": 4,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 27,
+            "comp": 10,
+            "yds": 92,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 2,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "rec": 4,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Bonocore",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Luca Pipia",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin  Stummer",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Golio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Thomas Nazaruk",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2022",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 7,
+    "gameId": "6101",
+    "box": {
+      "gameId": "6101",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "28",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 49, Hauppauge 7: Jake Tripptree completed 9 of 9 passes for 234 yards and three touchdowns in the first half and Kyle Messina had three rushing touchdowns and a 59-yard touchdown reception as No. 1 Sayville defeated No. 8 Hauppauge in the Suffolk Division III quarterfinals. Benny Sands had 10 tackles, including two for a loss and Joey Byrne had eight tackles, including two for a loss as Sayville's defense held Hauppauge to 33 rushing yards. Timari Jackson and Mikey Sands each added a sack and Dom Lettieri had two interceptions. Hauppauge finishes 4-5. Sayville (9-0) hosts the winner of No. 5 East Islip/No. 4 Harborfields in the Division III semifinals next weekend.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 8,
+            "yds": 114,
+            "tds": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 7,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Golio",
+            "att": 2,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 2,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 9,
+            "comp": 9,
+            "yds": 234,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 7,
+            "comp": 4,
+            "yds": 33,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 2,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 3,
+            "yds": 59,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 2,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Noah  Jabour",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael  McGuinness",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Jeremy Brett",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mikey Sands",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dom Letteri",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/11/2022",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 0,
+    "gameId": "6122",
+    "box": {
+      "gameId": "6122",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 6,
+            "yds": 160,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 13,
+            "yds": 130,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 3,
+            "yds": 87,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Patrick Coan",
+            "att": 4,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tomas McCann",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 6,
+            "comp": 5,
+            "yds": 67,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 4,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Zach Watson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/17/2022",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 3,
+    "gameId": "6136",
+    "box": {
+      "gameId": "6136",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "3",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "3"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Nolan  Michalowski",
+            "att": 8,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 33,
+            "yds": 273,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 9,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Dan Holohan",
+            "att": 4,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 23,
+            "comp": 9,
+            "yds": 67,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 6,
+            "comp": 4,
+            "yds": 9,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 2,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Mike LoRusso",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "heath  sumwalt",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 3,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 2,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 2,
+            "yds": 34,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "rec": 2,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benjamin Pierce",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/26/2022",
+    "opponent": "Plainedge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 7,
+    "gameId": "6149",
+    "box": {
+      "gameId": "6149",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Plainedge",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Sayville",
+          "q1": "21",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville wins the Class III LIC.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 23,
+            "yds": 108,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 23,
+            "comp": 17,
+            "yds": 200,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 3,
+            "yds": 70,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 6,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Luke  Hansen",
+            "rec": 4,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Tony Contaldi",
+            "rec": 3,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Michael Milo",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Owen Burke",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Ryan Leniec",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Joey Byrne",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Thomas Golio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Timari Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

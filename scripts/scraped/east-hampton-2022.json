@@ -1,0 +1,655 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 41,
+    "gameId": "5648",
+    "box": {
+      "gameId": "5648",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "21",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 41, East Hampton 21: Jeremy Graham rushed for 125 yards and two touchdowns on three carries and threw for one touchdown for Rocky Point (1-1) in Suffolk III. Joey Cecere added 145 yards and a touchdown on 21 carries. Liam Resinger rushed for 60 yards and touchdown and Ryan Meyers added 30 rushing yards and touchdown. Anthony Viggiano caught a 35-yard touchdown pass from Graham in the first quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 21,
+            "yds": 145,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 3,
+            "yds": 125,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 7,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 4,
+            "comp": 3,
+            "yds": 60,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 5,
+            "comp": 1,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jayden White",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 49,
+    "gameId": "6037",
+    "box": {
+      "gameId": "6037",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "28",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 49, East Hampton 13: Nolan Michalowski rushed for 95 yards and three touchdown on 12 carries in Suffolk III. All three touchdowns came from 1-yard out. His third touchdown, which came second quarter, gave Westhampton a 34-0 lead. Broady Schaffer rushed for 98 yards on three carries, returned a kickoff 90 yards for a touchdown in the third quarter, had an interception, and made four tackles. Kevin Smith caught three passes for 78 yards and two touchdowns and Noah Hebberd made five tackles for Westhampton (3-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "att": 3,
+            "yds": 98,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nolan  Michalowski",
+            "att": 12,
+            "yds": 95,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "William Gambino",
+            "att": 8,
+            "comp": 4,
+            "yds": 95,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Kevin Smith",
+            "rec": 3,
+            "yds": 78,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 34,
+    "gameId": "5601",
+    "box": {
+      "gameId": "5601",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "13",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 34, East Hampton 6: Jojo Provenzano had 25 carries for 263 yards and four touchdowns, including a 61-yard run for Hauppauge (3-1) in Suffolk III. Provenzano added two sacks and Brandon Mileti had eight tackles, including two for a loss and a forced fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Hauppauge",
+            "player": "Jojo Provenzano",
+            "att": 24,
+            "yds": 307,
+            "tds": 4
+          }
+        ],
+        "passing": [
+          {
+            "team": "Hauppauge",
+            "player": "Vincent Barbera",
+            "att": 6,
+            "comp": 12,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Amityville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 20,
+    "gameId": "5708",
+    "box": {
+      "gameId": "5708",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "6",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 20, East Hampton 13: Joshua Garrett rushed 20 yards for the winning touchdown and ran in the ensuing two-point conversion in Suffolk III. Tyree Jones opened the scoring with an 8-yard run for Amityville (2-3). Will Darrell answered for East Hampton (1-4) with a 60-yard touchdown pass to Charlie Corwin. Amityville struck down the lead with a 20-yard touchdown run by Jermaine Jackson. Jackson made eight tackles and rushed 106 yards on 12 carries. Darrell blocked a punt to gain possession and took the ball 40 yards for a touchdown for East Hampton's final score before Amityville took the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 34,
+    "gameId": "5732",
+    "box": {
+      "gameId": "5732",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "14",
+          "q2": "14",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 34, East Hampton 14: Michael Ferrenti rushed for two touchdowns in the first quarter for Harborfields (5-1) in Suffolk III. Shane Longin rushed for a 45-yard touchdown and threw a 6-yard touchdown pass to Peter Johnston. Jack Poller scored a 3-yard rushing touchdown in the second quarter to give Harborfields a 28-0 lead.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "5588",
+    "box": {
+      "gameId": "5588",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "21",
+          "q2": "21",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 42, East Hampton 7: Joseph Filardi was 7-for-12 for 215 yards and four touchdowns and added an interception for Half Hollow Hills West (7-0) in Suffolk III. Jesse Brooks returned a fumble two yards for a touchdown and caught three passes for 122 yards, including an 80-yard touchdown reception. Mitch Diamond returned an interception 25 yards for a touchdown. Anthony Raio caught a 61-yard touchdown pass and Ryan Bonocore and Jalyn Jacques each added a touchdown reception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "att": 4,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 2,
+            "yds": 19,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 12,
+            "comp": 7,
+            "yds": 215,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 3,
+            "yds": 122,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Anthony Raio",
+            "rec": 1,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan Bonocore",
+            "rec": 1,
+            "yds": 17,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin  Stummer",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Teruno Hayman",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Mitch Diamond",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

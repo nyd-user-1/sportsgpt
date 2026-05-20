@@ -1,0 +1,230 @@
+{
+  "slug": "westhampton",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Andrew Wendel",
+      "newsday_player_id": 24715,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 66
+    },
+    {
+      "name": "Jackson Wassle",
+      "newsday_player_id": 24717,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 75
+    },
+    {
+      "name": "Antonio Washington",
+      "newsday_player_id": 24689,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Pablo Velez",
+      "newsday_player_id": 24713,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 63
+    },
+    {
+      "name": "Jackson Sword",
+      "newsday_player_id": 24720,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 79
+    },
+    {
+      "name": "Nic Simone",
+      "newsday_player_id": 24695,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 9
+    },
+    {
+      "name": "Dan Shannon",
+      "newsday_player_id": 24700,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 15
+    },
+    {
+      "name": "Jon Rodriguez",
+      "newsday_player_id": 24718,
+      "class": "11",
+      "position": "OG/DE",
+      "jersey_number": 65
+    },
+    {
+      "name": "Constantine Reilly",
+      "newsday_player_id": 24711,
+      "class": "12",
+      "position": "OG/DE",
+      "jersey_number": 53
+    },
+    {
+      "name": "Connor Ragimierski",
+      "newsday_player_id": 24705,
+      "class": "10",
+      "position": "RB/LB",
+      "jersey_number": 34
+    },
+    {
+      "name": "JP Peters",
+      "newsday_player_id": 24719,
+      "class": "12",
+      "position": "OT/DT",
+      "jersey_number": 77
+    },
+    {
+      "name": "George Ostensen",
+      "newsday_player_id": 24704,
+      "class": "12",
+      "position": "Specials",
+      "jersey_number": 8
+    },
+    {
+      "name": "Riley Maire",
+      "newsday_player_id": 24696,
+      "class": "12",
+      "position": "WR/S",
+      "jersey_number": 11
+    },
+    {
+      "name": "Ben Magee",
+      "newsday_player_id": 24712,
+      "class": "12",
+      "position": "C/DT",
+      "jersey_number": 55
+    },
+    {
+      "name": "Nate LoGelfo",
+      "newsday_player_id": 24691,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": null
+    },
+    {
+      "name": "Andrew Lewis",
+      "newsday_player_id": 24707,
+      "class": "11",
+      "position": "TE/LB",
+      "jersey_number": 45
+    },
+    {
+      "name": "Brady Hudson",
+      "newsday_player_id": 24694,
+      "class": "11",
+      "position": "WR/S",
+      "jersey_number": 6
+    },
+    {
+      "name": "Dylan Herrera",
+      "newsday_player_id": 24706,
+      "class": "10",
+      "position": "TE/LB",
+      "jersey_number": 44
+    },
+    {
+      "name": "Sonny Hebberd",
+      "newsday_player_id": 24710,
+      "class": "10",
+      "position": "OG/DE",
+      "jersey_number": 56
+    },
+    {
+      "name": "Derrick Hansen",
+      "newsday_player_id": 24693,
+      "class": "12",
+      "position": "TE/DE",
+      "jersey_number": 3
+    },
+    {
+      "name": "Blake Gilks",
+      "newsday_player_id": 24714,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 70
+    },
+    {
+      "name": "Miguel Garcia",
+      "newsday_player_id": 24701,
+      "class": "12",
+      "position": "TE/LB",
+      "jersey_number": 19
+    },
+    {
+      "name": "Pat Fay",
+      "newsday_player_id": 24698,
+      "class": "12",
+      "position": "WR/S",
+      "jersey_number": 10
+    },
+    {
+      "name": "Lee DeBellis",
+      "newsday_player_id": 24709,
+      "class": "11",
+      "position": "OT/DE",
+      "jersey_number": 52
+    },
+    {
+      "name": "Max Debellis",
+      "newsday_player_id": 24699,
+      "class": "11",
+      "position": "WR/LB",
+      "jersey_number": 18
+    },
+    {
+      "name": "Kyle Coffey",
+      "newsday_player_id": 24690,
+      "class": "11",
+      "position": "WR/S",
+      "jersey_number": 2
+    },
+    {
+      "name": "Jaedyn Cobb",
+      "newsday_player_id": 24716,
+      "class": "11",
+      "position": "OT/DT",
+      "jersey_number": 73
+    },
+    {
+      "name": "Alan Cholac",
+      "newsday_player_id": 24702,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 21
+    },
+    {
+      "name": "Jake Calloway",
+      "newsday_player_id": 24692,
+      "class": "11",
+      "position": "QB/S",
+      "jersey_number": 4
+    },
+    {
+      "name": "Aiden Calamita",
+      "newsday_player_id": 24697,
+      "class": "11",
+      "position": "WR/CB",
+      "jersey_number": 14
+    },
+    {
+      "name": "John Cafone",
+      "newsday_player_id": 24703,
+      "class": "11",
+      "position": "WR/LB",
+      "jersey_number": 23
+    },
+    {
+      "name": "Liam Brand",
+      "newsday_player_id": 24708,
+      "class": "11",
+      "position": "OG/DE",
+      "jersey_number": 50
+    }
+  ]
+}

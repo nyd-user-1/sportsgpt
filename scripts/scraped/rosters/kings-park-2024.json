@@ -1,0 +1,132 @@
+{
+  "slug": "kings-park",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Kevin Vasquez",
+      "newsday_player_id": 23669,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Diego Valladares",
+      "newsday_player_id": 24323,
+      "class": null,
+      "position": null,
+      "jersey_number": 70
+    },
+    {
+      "name": "Alex Squillacioti",
+      "newsday_player_id": 23673,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Brandon Shapiro",
+      "newsday_player_id": 23668,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Jacob Samlick",
+      "newsday_player_id": 24509,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Trevor Quigley",
+      "newsday_player_id": 24510,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Nick  Paliotta",
+      "newsday_player_id": 23670,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Finn  O'Melia",
+      "newsday_player_id": 24149,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Gage McKigney",
+      "newsday_player_id": 24150,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Anthony LoBasso",
+      "newsday_player_id": 23672,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Zach  Lampert",
+      "newsday_player_id": 24452,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Parker Iglio",
+      "newsday_player_id": 23675,
+      "class": null,
+      "position": null,
+      "jersey_number": 84
+    },
+    {
+      "name": "Matt Corrado",
+      "newsday_player_id": 24148,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Gavin Clark",
+      "newsday_player_id": 24151,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Frankie Buffolino",
+      "newsday_player_id": 23671,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Aidan Barbosa",
+      "newsday_player_id": 23667,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Tom Bailes",
+      "newsday_player_id": 23674,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Anthony Alberici",
+      "newsday_player_id": 24322,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    }
+  ]
+}

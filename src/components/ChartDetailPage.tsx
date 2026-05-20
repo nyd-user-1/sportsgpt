@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar,
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
@@ -55,6 +56,7 @@ interface Props {
   children?: React.ReactNode
   seasonFilters?: string[]
   rowLinks?: Record<string, string>
+  rowPlayerSlugs?: Record<string, string>
   seasonRows?: Record<string, StdRow[]>
   valueLabel?: string
   showRank?: boolean
@@ -69,11 +71,14 @@ export function ChartDetailPage({
   children,
   seasonFilters,
   rowLinks,
+  rowPlayerSlugs,
   seasonRows,
   valueLabel,
   showRank,
   panelMode,
 }: Props) {
+  const router   = useRouter()
+  const pathname = usePathname()
   const [period, setPeriod]   = useState<Period>('weekly')
   const [filter, setFilter]   = useState(config.filters?.[0]?.key ?? '')
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
@@ -372,10 +377,23 @@ export function ChartDetailPage({
                       <div
                         className={cn(
                           'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
-                          hasRowSubRows ? 'cursor-pointer' : rowLinks?.[row.name] ? 'cursor-pointer' : 'cursor-default',
+                          hasRowSubRows || rowPlayerSlugs?.[row.name] || rowLinks?.[row.name] ? 'cursor-pointer' : 'cursor-default',
+
                         )}
                         style={{ gridTemplateColumns: colTemplate }}
-                        onClick={hasRowSubRows ? () => toggleRow(row.name) : undefined}
+                        onClick={hasRowSubRows ? () => toggleRow(row.name) : (() => {
+                          const chartSlug = pathname.split('/').filter(Boolean)[1]
+                          if (!chartSlug) return undefined
+                          if (rowPlayerSlugs?.[row.name]) {
+                            return () => router.push(`/charts/${chartSlug}/${rowPlayerSlugs[row.name]}`, { scroll: false })
+                          }
+                          const teamLink = rowLinks?.[row.name]
+                          if (teamLink?.startsWith('/team/')) {
+                            const teamSlug = teamLink.replace('/team/', '')
+                            return () => router.push(`/charts/${chartSlug}/team/${teamSlug}`, { scroll: false })
+                          }
+                          return undefined
+                        })()}
                       >
                         {hasSubRows && (
                           <span className="flex items-center justify-center">

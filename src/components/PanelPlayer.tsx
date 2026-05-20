@@ -188,6 +188,20 @@ function ReceivingStats({ player }: { player: PlayerReceiver }) {
   )
 }
 
+// ── Shared body (used by PanelPlayer + @panel parallel route) ─────────────────
+
+export function PlayerPanelContent({ player, statTab }: { player: AnyPlayerRow; statTab: StatTab }) {
+  return (
+    <div className="flex-1 overflow-y-auto no-scrollbar">
+      <PlayerPhoto player={player} />
+      <PlayerInfoBar player={player} />
+      {statTab === 'Passing'   && <PassingStats   player={player as PlayerPasser} />}
+      {statTab === 'Rushing'   && <RushingStats   player={player as PlayerRusher} />}
+      {statTab === 'Receiving' && <ReceivingStats player={player as PlayerReceiver} />}
+    </div>
+  )
+}
+
 // ── Main component ────────────────────────────────────────────────────────────
 
 export function PanelPlayer({
@@ -217,17 +231,7 @@ export function PanelPlayer({
       title={player?.player_name ?? 'Player'}
       footer={footer}
     >
-      {player && (
-        <>
-          <div className="flex-1 overflow-y-auto no-scrollbar">
-            <PlayerPhoto player={player} />
-            <PlayerInfoBar player={player} />
-            {statTab === 'Passing'   && <PassingStats   player={player as PlayerPasser} />}
-            {statTab === 'Rushing'   && <RushingStats   player={player as PlayerRusher} />}
-            {statTab === 'Receiving' && <ReceivingStats player={player as PlayerReceiver} />}
-          </div>
-        </>
-      )}
+      {player && <PlayerPanelContent player={player} statTab={statTab} />}
     </AppPanel>
   )
 }

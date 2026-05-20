@@ -1,0 +1,118 @@
+{
+  "slug": "west-islip",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Darren  Thier",
+      "newsday_player_id": 24988,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "TJ Sonnenberg",
+      "newsday_player_id": 24982,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Emmanuel Obayi",
+      "newsday_player_id": 24983,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Matt McDermott",
+      "newsday_player_id": 25959,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Matthew Marker",
+      "newsday_player_id": 26590,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Peter Malone",
+      "newsday_player_id": 24985,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Jake Kramer",
+      "newsday_player_id": 24981,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Conor Kenefick",
+      "newsday_player_id": 24989,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "AJ Gentile",
+      "newsday_player_id": 24991,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Ryan Gaffney",
+      "newsday_player_id": 24986,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Jack Elko",
+      "newsday_player_id": 26481,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Ben Delanoy",
+      "newsday_player_id": 24987,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Jayson Carlson",
+      "newsday_player_id": 24984,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Jovan Brewster",
+      "newsday_player_id": 25658,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Luke Alongi",
+      "newsday_player_id": 24990,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "AJ Aliani",
+      "newsday_player_id": 24992,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    }
+  ]
+}

@@ -1,0 +1,1282 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Greenport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "5642",
+    "box": {
+      "gameId": "5642",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "20",
+          "q2": "7",
+          "q3": "6",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 35, Greenport/Southold/Mattituck 0: Matt Albino ran for 81 yards and a touchdown on 14 carries in Suffolk IV. His eight-yard touchdown run in the third quarter extended the Center Moriches lead to 33-0. Brayden Hromada ran for 58 yards and a touchdown on eight carries. His three-yard touchdown run came in the second quarter. Noah Reed returned a fumble for a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 14,
+            "yds": 81,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 8,
+            "yds": 58,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kliene",
+            "att": 5,
+            "comp": 2,
+            "yds": 38,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Noah Reed",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 29,
+    "gameId": "5614",
+    "box": {
+      "gameId": "5614",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "15",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 29, Center Moriches 0: Chris Franzese was 17-for-18 with 187 yards passing and two touchdowns, ran for 84 yards and a touchdown on 19 carries, caught two passes for 47 yards and a touchdown and had five tackles to lead Glenn (1-1) in Suffolk IV. Kahran King ran for 50 yards on seven carries and had two catches for 35 yards and a touchdown. Melkin Chavez led Glenn with six tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 19,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 7,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 10,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "att": 7,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "att": 7,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 7,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 18,
+            "comp": 7,
+            "yds": 187,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Brady Madden",
+            "att": 5,
+            "comp": 4,
+            "yds": 59,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 4,
+            "yds": 79,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "rec": 2,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Michael Sainte Croix",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Joe Pepper",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Palencia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Tyler Bonventre",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 27,
+    "gameId": "5680",
+    "box": {
+      "gameId": "5680",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "8",
+          "q2": "6",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 27, Center Moriches 0: Aidan Winter rushed for 157 yards  and two touchdowns on 12 carries for Babylon (3-0) in Suffolk IV.  Winter also threw a 25 yard pass to Joe Hanson and made nine tackles.  The defense was led by Winter, Jack Pinna (seven tackles) and Reece Koerner (seven tackles.) Joe Hanson had a touchdown reception, interception and one sack for the Panthers. Pinna caught a 27-yard pass from Andrew DiPalma for a touchdown. Babylon scored one touchdown in every quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 7,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Noah Reed",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 14,
+    "gameId": "5710",
+    "box": {
+      "gameId": "5710",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "6",
+          "q3": "13",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 34, Port Jefferson 14: Matthew Albino ran for 163 yards and a touchdown on 17 carries in Suffolk IV. His 40-yard touchdown in the third quarter gave Center Moriches a 32-7 lead.  Gavin Kleine completed 8 of 13 passes for 98 yards and a touchdown. Xavier Bryant made three catches for 46 yards and had an interception on defense. Jordan Lutz had two sacks for Center Moriches (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 17,
+            "yds": 163,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 16,
+            "yds": 94,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "att": 2,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kliene",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kliene",
+            "att": 13,
+            "comp": 8,
+            "yds": 98,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Marcellus Shedrick",
+            "rec": 2,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Marcellus Shedrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "Kings Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 51,
+    "gameId": "5728",
+    "box": {
+      "gameId": "5728",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "24",
+          "q2": "21",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 51, Center Moriches 7: Mark Griffin rushed for 196 yards and three touchdowns on 13 carries, all in the first half, in Suffolk IV. Griffin ran for touchdowns of 59, 3, and 59 yards, ran for two two-point conversions, and made five tackles. John Flynn rushed for 86 yards, three touchdowns, and two-point conversions. Kyle Weeks rushed for 85 yards on seven carries, had a two-point conversion, and recovered a fumble for Kings Park (4-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 12,
+            "yds": 98,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 13,
+            "yds": 196,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 7,
+            "yds": 86,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 7,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "JJ Joyce",
+            "att": 6,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 6,
+            "yds": 9,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kliene",
+            "att": 6,
+            "comp": 4,
+            "yds": 22,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 1,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Joe  Klemballa",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 46,
+    "gameId": "5715",
+    "box": {
+      "gameId": "5715",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "13",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "21",
+          "q2": "19",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "46"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 46, Center Moriches 19: Jake Spallina ran for three touchdowns in the first quarter and another in the third in Suffolk IV. His first quarter touchdowns, coming from 10, 24, and 35 yards out helped stake Mt. Sinai to a 21-7 lead. Jaden Rotella ran for two touchdowns in the second quarter. His 1-yard run gave the Mustangs a 27-13 lead and his 25-yarder pushed the lead to 34-13. Rotella also found Drew Feinstein for an 8-yard touchdown pass in the third quarter for Mt. Sinai (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 4,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Conor Planz",
+            "att": 4,
+            "yds": 14,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake  Spallina",
+            "att": 21,
+            "yds": 226,
+            "tds": 4
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden  Rotella",
+            "att": 9,
+            "yds": 63,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Bret Spallina",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Conor Planz",
+            "att": 14,
+            "comp": 8,
+            "yds": 186,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden  Rotella",
+            "att": 4,
+            "comp": 2,
+            "yds": 68,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 5,
+            "yds": 160,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Christopher Paz",
+            "rec": 1,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 1,
+            "yds": 11,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nathaniel McNally",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 36,
+    "gameId": "5771",
+    "box": {
+      "gameId": "5771",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "19",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "14",
+          "q2": "14",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 36, Center Moriches 19: Michael Giugliano threw two touchdown passes as Miller Place (4-3) built a 36-point lead through three quarters. Robby Cunningham caught a 22-yard TD pass in the first quarter and D.J. Williamson caught a 40-yard scoring pass late in the second quarter. The other touchdowns came on a 4-yard run by Joe'll Spagnuolo in the first quarter, a 62-yard punt return by Nick Oliva in the second quarter and a 3-yard run by Eddie Haeffer in the third quarter. Conor Planz threw two touchdown passes for Center Moriches (2-5). Matthew Albino had a 23-yard TD reception and a 24-yard scoring run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 11,
+            "yds": 87,
+            "tds": 1
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Conor Planz",
+            "att": 7,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "att": 2,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 14,
+            "yds": 68,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 12,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll Spagnuolo",
+            "att": 3,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Eddie Haeffer",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Conor Planz",
+            "att": 16,
+            "comp": 11,
+            "yds": 161,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 10,
+            "comp": 7,
+            "yds": 146,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 4,
+            "yds": 87,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "rec": 3,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joseph Citrangola",
+            "rec": 2,
+            "yds": 49,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 1,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Robby Cunningham",
+            "rec": 2,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Logan LaMountain",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

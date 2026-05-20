@@ -1,0 +1,202 @@
+{
+  "slug": "ward-melville",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Jackson Weber",
+      "newsday_player_id": 19847,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "CJ  Ward",
+      "newsday_player_id": 20779,
+      "class": null,
+      "position": null,
+      "jersey_number": 46
+    },
+    {
+      "name": "Jake Ventimiglia",
+      "newsday_player_id": 19843,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Lorenzo Velez",
+      "newsday_player_id": 19846,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Mike  Riccardi",
+      "newsday_player_id": 20685,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Mike  Riccardi",
+      "newsday_player_id": 20689,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Josh  Rettig",
+      "newsday_player_id": 21229,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Trevor Murray",
+      "newsday_player_id": 19848,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Hunter Morgan",
+      "newsday_player_id": 19842,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Brody Morgan",
+      "newsday_player_id": 19845,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Dylan Moore",
+      "newsday_player_id": 20684,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Dylan Moore",
+      "newsday_player_id": 20688,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Joe Massaro",
+      "newsday_player_id": 21094,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Mike Marzovilla",
+      "newsday_player_id": 20085,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Will Marino",
+      "newsday_player_id": 20683,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Will Marino",
+      "newsday_player_id": 20687,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Devon Larsen",
+      "newsday_player_id": 20682,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Devon Larsen",
+      "newsday_player_id": 20686,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Griffin Kramer",
+      "newsday_player_id": 19841,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Sebastian Jolley",
+      "newsday_player_id": 20920,
+      "class": null,
+      "position": null,
+      "jersey_number": 84
+    },
+    {
+      "name": "Nick Gaffney",
+      "newsday_player_id": 19840,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "AJ Folkman",
+      "newsday_player_id": 20091,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Dan Cosentino",
+      "newsday_player_id": 20092,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Ethan Buscaglia",
+      "newsday_player_id": 20090,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Ethan Burgos",
+      "newsday_player_id": 19844,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Dan Brausch",
+      "newsday_player_id": 20919,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Norman Bergamaschi",
+      "newsday_player_id": 20093,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Andrew Belli",
+      "newsday_player_id": 19839,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    }
+  ]
+}

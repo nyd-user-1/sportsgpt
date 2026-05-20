@@ -1,0 +1,146 @@
+{
+  "slug": "smithtown-west",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Isiaha  Woodhall",
+      "newsday_player_id": 21445,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Brayden Stahl",
+      "newsday_player_id": 21438,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "George  Siolos",
+      "newsday_player_id": 21444,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Jaiden Roman",
+      "newsday_player_id": 22568,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Jake Rearick",
+      "newsday_player_id": 22575,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Rocco Pesola",
+      "newsday_player_id": 21919,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Max Nicholas",
+      "newsday_player_id": 21441,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Jack  Melore",
+      "newsday_player_id": 21440,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "James Martino",
+      "newsday_player_id": 21447,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Vincent LePore",
+      "newsday_player_id": 22570,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Brian Hope",
+      "newsday_player_id": 21448,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Josh Hoffman",
+      "newsday_player_id": 21446,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Dylan Green",
+      "newsday_player_id": 22569,
+      "class": null,
+      "position": null,
+      "jersey_number": 31
+    },
+    {
+      "name": "Nick DeVito",
+      "newsday_player_id": 21920,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Jax  Casscione",
+      "newsday_player_id": 22567,
+      "class": null,
+      "position": null,
+      "jersey_number": 29
+    },
+    {
+      "name": "Michael Casccione",
+      "newsday_player_id": 21449,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Nick  Briffa",
+      "newsday_player_id": 21443,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Jason Antunes",
+      "newsday_player_id": 21439,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Ethan Alvarado",
+      "newsday_player_id": 21442,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Dan Akhlaghi",
+      "newsday_player_id": 22810,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

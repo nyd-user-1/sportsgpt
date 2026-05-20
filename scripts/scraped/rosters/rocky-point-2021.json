@@ -1,0 +1,111 @@
+{
+  "slug": "rocky-point",
+  "season": 2021,
+  "players": [
+    {
+      "name": "AJ Walker",
+      "newsday_entry_id": 17814,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Dominick Viggiano",
+      "newsday_entry_id": 18837,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Liam Reisinger",
+      "newsday_entry_id": 17816,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Ezra Pole",
+      "newsday_entry_id": 19100,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Brandon Nyack",
+      "newsday_entry_id": 17817,
+      "class": null,
+      "position": null,
+      "jersey_number": 78
+    },
+    {
+      "name": "Daniel Morton",
+      "newsday_entry_id": 18835,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Kyle Moore",
+      "newsday_entry_id": 18836,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Tyler Moeller",
+      "newsday_entry_id": 18657,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Cody Miller",
+      "newsday_entry_id": 17813,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Trevor Lamoureaux",
+      "newsday_entry_id": 17815,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Colton Feinberg",
+      "newsday_entry_id": 17818,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "James Dowd",
+      "newsday_entry_id": 17820,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Brayden D'Ambrosio",
+      "newsday_entry_id": 17819,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Peter Bonello",
+      "newsday_entry_id": 19099,
+      "class": null,
+      "position": null,
+      "jersey_number": 71
+    },
+    {
+      "name": "Jeremiah Adelphin",
+      "newsday_entry_id": 18834,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    }
+  ]
+}

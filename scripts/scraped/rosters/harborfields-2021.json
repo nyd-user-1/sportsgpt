@@ -1,0 +1,139 @@
+{
+  "slug": "harborfields",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Dylan  Wolf",
+      "newsday_entry_id": 18680,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Sean  Tucker",
+      "newsday_entry_id": 18683,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Aidan Terry",
+      "newsday_entry_id": 19171,
+      "class": null,
+      "position": null,
+      "jersey_number": 41
+    },
+    {
+      "name": "Thomas  Sullivan",
+      "newsday_entry_id": 19346,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "Drew Saulk",
+      "newsday_entry_id": 19310,
+      "class": null,
+      "position": null,
+      "jersey_number": 86
+    },
+    {
+      "name": "Ethan Radecki",
+      "newsday_entry_id": 18685,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Carmine Pitelli",
+      "newsday_entry_id": 19212,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Declan  McCarthy",
+      "newsday_entry_id": 19344,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Shane  Longin",
+      "newsday_entry_id": 18684,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Ryan  Lawson",
+      "newsday_entry_id": 19309,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Anthony  Kelly",
+      "newsday_entry_id": 18686,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Kevin Kearney",
+      "newsday_entry_id": 19213,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Brandan Hohner",
+      "newsday_entry_id": 19345,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Hunter Droskoski",
+      "newsday_entry_id": 18656,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Luke Derosa",
+      "newsday_entry_id": 19170,
+      "class": null,
+      "position": null,
+      "jersey_number": 39
+    },
+    {
+      "name": "Frankie Ciaramatrio",
+      "newsday_entry_id": 18681,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Ben Castaldo",
+      "newsday_entry_id": 18679,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Jude Bazes",
+      "newsday_entry_id": 18687,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "John Acritani",
+      "newsday_entry_id": 18682,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    }
+  ]
+}

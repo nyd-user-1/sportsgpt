@@ -1,0 +1,69 @@
+{
+  "slug": "patchogue-medford",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Dylan Travis",
+      "newsday_entry_id": 19187,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Casey Taylor",
+      "newsday_entry_id": 19192,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jose Rasado",
+      "newsday_entry_id": 19190,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Justi Marcia-Joachim",
+      "newsday_entry_id": 18152,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Joe Kelly",
+      "newsday_entry_id": 19191,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Tyree Jackson",
+      "newsday_entry_id": 18150,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "CJ Forgione",
+      "newsday_entry_id": 19188,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Tobey Evans",
+      "newsday_entry_id": 18151,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Aidan Catalano",
+      "newsday_entry_id": 19189,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

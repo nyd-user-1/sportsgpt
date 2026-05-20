@@ -1,0 +1,160 @@
+{
+  "slug": "longwood",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Vinny Rosario",
+      "newsday_player_id": 21180,
+      "class": null,
+      "position": null,
+      "jersey_number": 47
+    },
+    {
+      "name": "Terrance Robinson",
+      "newsday_player_id": 19717,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Anthony Ordonez",
+      "newsday_player_id": 19718,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Nnamdi Nwanyanwu",
+      "newsday_player_id": 19719,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Felipe Neves",
+      "newsday_player_id": 21138,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Ben Moscatiello",
+      "newsday_player_id": 20315,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Alex  Missing",
+      "newsday_player_id": 20811,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Nick Miltenberger",
+      "newsday_player_id": 20813,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Prince Mack",
+      "newsday_player_id": 21181,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Louis Kaleb",
+      "newsday_player_id": 19720,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Josh  Jackson",
+      "newsday_player_id": 19725,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Shamai Hipp",
+      "newsday_player_id": 21179,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Najee Henderson",
+      "newsday_player_id": 19723,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Mason Hauser",
+      "newsday_player_id": 20313,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Tyler  Hammel",
+      "newsday_player_id": 19724,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Miles Flagg",
+      "newsday_player_id": 19721,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Ed Cuello-Briones",
+      "newsday_player_id": 20812,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Caleib Corbett",
+      "newsday_player_id": 19722,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Angel Chestnut",
+      "newsday_player_id": 20810,
+      "class": null,
+      "position": null,
+      "jersey_number": 36
+    },
+    {
+      "name": "Dameon Charles",
+      "newsday_player_id": 20574,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Danny Blank",
+      "newsday_player_id": 20314,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Jared Basar",
+      "newsday_player_id": 21232,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "kings-park",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Kyle Weeks",
+      "newsday_player_id": 21337,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Alex Squillacioti",
+      "newsday_player_id": 21344,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Brandon  Shapiro",
+      "newsday_player_id": 22795,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Aaron Shapiro",
+      "newsday_player_id": 22565,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Sean Richardson",
+      "newsday_player_id": 22796,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Dean Renna",
+      "newsday_player_id": 21339,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Nick Paliotta",
+      "newsday_player_id": 21345,
+      "class": null,
+      "position": null,
+      "jersey_number": 41
+    },
+    {
+      "name": "Declan O'Melia",
+      "newsday_player_id": 22722,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Sam Myung",
+      "newsday_player_id": 21732,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Matthew Munsinger",
+      "newsday_player_id": 22566,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Anthony Marino",
+      "newsday_player_id": 21342,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Anthony LoBasso",
+      "newsday_player_id": 22068,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Brandon Hauk",
+      "newsday_player_id": 21343,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Kevin Greabell",
+      "newsday_player_id": 22372,
+      "class": null,
+      "position": null,
+      "jersey_number": 29
+    },
+    {
+      "name": "John Flynn",
+      "newsday_player_id": 21338,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Matt Corrado",
+      "newsday_player_id": 21341,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Tommy  Cassar",
+      "newsday_player_id": 22070,
+      "class": null,
+      "position": null,
+      "jersey_number": 59
+    },
+    {
+      "name": "Matt Burke",
+      "newsday_player_id": 21731,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Giuseppe Buffolino",
+      "newsday_player_id": 21346,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Aidan Barbosa",
+      "newsday_player_id": 21340,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Tommy  Bailes",
+      "newsday_player_id": 22069,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    }
+  ]
+}

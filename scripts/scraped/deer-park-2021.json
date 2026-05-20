@@ -1,0 +1,820 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/03/2021",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 33,
+    "gameId": "4864",
+    "box": {
+      "gameId": "4864",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "14",
+          "q2": "0",
+          "q3": "6",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "7",
+          "q3": "13",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 33, Deer Park 26: In the Suffolk III opener for both teams, Rocky Point had five plays of 45 yards or more that went for touchdowns. Quarterback/safety Cody Miller had a 48-yard touchdown run, an 87-yard interception return for a touchdown and a 65-yard touchdown pass to Trevor Lamoureaux. He also passed to Lamoureaux for a two-point conversion. A.J. Walker added a 45-yard TD run and Liam Reisinger had 46-yard interception return for a touchdown for for the Eagles.\nLogan Rhodes threw for three touchdowns and ran for a fourth, but was picked off three times - two that were returned for touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 8,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Walker",
+            "att": 0,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brayden D'Ambrosio",
+            "att": 0,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "James Dowd",
+            "att": 0,
+            "yds": 15,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 0,
+            "comp": 0,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Trevor Lamoureaux",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brayden D'Ambrosio",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 7,
+    "gameId": "4958",
+    "box": {
+      "gameId": "4958",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "6",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 20, Half Hollow Hills West 7: Mathies Edmond had 15 carries for 103 yards including a 16-yard touchdown run that gave Deer Park (1-1) a 20-point lead in a Suffolk III win. Noah Fearon added 12 carries for 55 yards and a touchdown, Alex Aiello had eight tackles, a sack and a fumble recovery to lead the Falcons defense, Chris Thermitus added six tackles and two sacks, and Hayden Lovinsky had an interception and caught a 23-yard touchdown pass in the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 12,
+    "gameId": "5292",
+    "box": {
+      "gameId": "5292",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "14",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "12",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 26, Harborfields 12: Noah Fearon ran for 90 yards and two touchdowns on nine carries to lead Deer Park (2-1) in Suffolk III. Mathais Edmond ran for 113 yards on 21 carries and Logan Rhodes completed 13 of 17 passes for 137 yards and a touchdown. Roshmani Pierre had three sacks and Alex Collins had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 4,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Frankie Ciaramatrio",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jude Bazes",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 23,
+            "comp": 6,
+            "yds": 148,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Dylan  Wolf",
+            "rec": 3,
+            "yds": 118,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Frankie Ciaramatrio",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Sean  Tucker",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 7,
+    "gameId": "5298",
+    "box": {
+      "gameId": "5298",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "21",
+          "q2": "9",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 43, Eastport - South Manor 7: Hunter Lovinsky ran for two touchdowns and Logan Rhodes threw two touchdown passes in Suffolk III Friday night. Lovinsky's 45-yard touchdown run in the first quarter, followed by a Nicholas Glancy extra point gave Deer Park a 7-0 lead. His 33-yard touchdown run in the second quarter, followed by an extra point, pushed the lead to 30-0.    Rhodes threw a 25-yard touchdown pass to Alex Collins in the first quarter and a 22-yarder to Kerry Mercediue in the third. Lovinsky and Kris Thermitus each had an interception. John Laird and Kevin Bailey each had two sacks for Deer Park (3-1). Eastport - South Manor is 1-4.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 34,
+    "gameId": "5322",
+    "box": {
+      "gameId": "5322",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "7",
+          "q2": "7",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 34, Deer Park 27: Robert Moreland ran for 277 yards and two touchdowns on 27 carries and Deegan Laube ran for 141 yards and a touchdown on eight carries to lead Westhampton (1-3) in Suffolk III. Luke Kilroy recoverd an onside kick with under two minutes remaining to seal the win. Dom Jurgel had six tackles and two sacks and Noah Hebberd had five tackles and two sacks.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Robert  Moreland",
+            "att": 27,
+            "yds": 277,
+            "tds": 2
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "att": 8,
+            "yds": 141,
+            "tds": 1
+          },
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nick  Waszkelewicz",
+            "att": 5,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "Will Gambino",
+            "att": 9,
+            "comp": 3,
+            "yds": 60,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Geoff Arrasate",
+            "att": 2,
+            "comp": 6,
+            "yds": 41,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "rec": 3,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Christian Killoran",
+            "rec": 1,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Dom  Jurgel",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Noah  Hebberd",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Amityville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 6,
+    "gameId": "5355",
+    "box": {
+      "gameId": "5355",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "15",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 29, Amityville 6: Logan Rhodes completed 10 of 18 passes for 120 yards and two touchdowns to lead Deer Park (4-2) in Suffolk III. Rhodes hit Hayden Lovinsky for a seven-yard touchdown on fourth down and found Sam Adolphe for a 20-yard score with eight seconds left in the first half. Noah Fearon ran for 84 yards and Roshmani Pierre and Jariq Shaw each had two sacks.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 21,
+    "gameId": "5388",
+    "box": {
+      "gameId": "5388",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 28, Islip 21: Hunter Lovinksy rushed for 72 yards and two touchdowns, including the game-winner with 1:15 left in the fourth quarter to lead Deer Park (5-2) in Suffolk III. Lovinsky's game-winning score came on a three-yard run. Lonvinsky scored his first touchdown on a three-yard run in the third quarter to extend the Deer Park lead to 20-7.  Noah Fearon rushed eight times for 42 yards and a touchdown. Fearon opened the scoring for Deer Park with a three-yard touchdown run in the first quarter. Deer Park extended the lead to 13-0 on a 22-yard touchdown run from Mathaias Edmond. Edmond rushed 11 times for 63 yards. John Laird had two sacks and four tackles. Islip is (5-3).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Kings Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 38,
+    "gameId": "5416",
+    "box": {
+      "gameId": "5416",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "17",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 38, Deer Park 14: Jonathan Borkowski rushed for 214 yards, a touchdown and threw for 245 yards and two touchdowns to lead No. 3 Kings Park over No. 6 Deer Park in the Suffolk III semi-finals. Borkowski added an interception on defense and set a school record for most total yards in a game with 459 yards. John Matthews had four receptions for 145 yards and two touchdowns. Nico Laviano had 30 yards and rushed for two touchdowns. Scott McConville had 11 tackles. Tyler Avelli had a fumble recovery. Kings Park (6-2) will face East Islip at 7 p.m. on Friday, November 12th at East Islip High School.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 25,
+            "yds": 214,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 3,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 10,
+            "yds": 30,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 13,
+            "comp": 11,
+            "yds": 245,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 4,
+            "yds": 145,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 3,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tyler Avell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

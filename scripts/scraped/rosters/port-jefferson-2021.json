@@ -1,0 +1,90 @@
+{
+  "slug": "port-jefferson",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Kyle Yannucci",
+      "newsday_entry_id": 18449,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Ryan Whiffen",
+      "newsday_entry_id": 18448,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Michael Tesser",
+      "newsday_entry_id": 19248,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "John Sheils",
+      "newsday_entry_id": 18450,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Liam Rogers",
+      "newsday_entry_id": 18512,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Anthony Pipia",
+      "newsday_entry_id": 18511,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Luke  Filippi",
+      "newsday_entry_id": 18444,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Ryan Filippi",
+      "newsday_entry_id": 18447,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Brady DeWitt",
+      "newsday_entry_id": 18446,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Junior Beltran",
+      "newsday_entry_id": 18445,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Stephen Bayer",
+      "newsday_entry_id": 19312,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Frank Andriani",
+      "newsday_entry_id": 19151,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

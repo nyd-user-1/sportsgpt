@@ -1,0 +1,20 @@
+{
+  "slug": "port-jefferson",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Ryan Filippi",
+      "newsday_player_id": 21135,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Junior Beltran",
+      "newsday_player_id": 21136,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

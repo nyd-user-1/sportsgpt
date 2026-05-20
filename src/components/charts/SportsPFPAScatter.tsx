@@ -66,18 +66,18 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: unknow
   const logo = SCHOOL_LOGOS[d.school_slug]
   const name = d.name.replace(' Varsity Football', '').replace(' Football', '')
   return (
-    <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 8, padding: '8px 12px', fontSize: 12, minWidth: 150 }}>
+    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 12, minWidth: 150 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>
         {logo && <img src={logo} alt="" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} />}
         <span style={{ fontWeight: 700 }}>{name}</span>
       </div>
       <p>
-        <span style={{ color: '#6b7280' }}>PF </span><span style={{ fontWeight: 600 }}>{d.pf}</span>
-        <span style={{ color: '#6b7280', marginLeft: 10 }}>PA </span><span style={{ fontWeight: 600 }}>{d.pa}</span>
+        <span style={{ color: 'var(--muted)' }}>PF </span><span style={{ fontWeight: 600 }}>{d.pf}</span>
+        <span style={{ color: 'var(--muted)', marginLeft: 10 }}>PA </span><span style={{ fontWeight: 600 }}>{d.pa}</span>
       </p>
       <p>
-        <span style={{ color: '#6b7280' }}>Diff </span><span style={{ fontWeight: 600, color: d.pf - d.pa >= 0 ? '#033882' : '#ef4444' }}>{d.pf - d.pa > 0 ? '+' : ''}{d.pf - d.pa}</span>
-        <span style={{ color: '#6b7280', marginLeft: 10 }}>Wins </span><span style={{ fontWeight: 600, color: '#033882' }}>{d.wins}</span>
+        <span style={{ color: 'var(--muted)' }}>Diff </span><span style={{ fontWeight: 600, color: d.pf - d.pa >= 0 ? '#033882' : '#ef4444' }}>{d.pf - d.pa > 0 ? '+' : ''}{d.pf - d.pa}</span>
+        <span style={{ color: 'var(--muted)', marginLeft: 10 }}>Wins </span><span style={{ fontWeight: 600, color: '#033882' }}>{d.wins}</span>
       </p>
     </div>
   )

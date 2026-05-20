@@ -1,0 +1,752 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/04/2021",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 12,
+    "gameId": "4873",
+    "box": {
+      "gameId": "4873",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "3",
+          "q2": "0",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "6",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 18, Amityville 12: Jaylen Jacques had a 20-yard rushing touchdown in overtime to grab the win for Half Hollow Hills West (1-0) in Suffolk III. Jacques rushed for 121 yards and two touchdowns on 23 carries, scoring the touchdown to force overtime as well. Juan Rodriguez forced a safety to open the scoring in the third quarter. Malcolm McKinnon recorded 10 tackles, three for loss, and one sack. Luca Pipia grabbed an interception.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 20,
+    "gameId": "4958",
+    "box": {
+      "gameId": "4958",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "6",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 20, Half Hollow Hills West 7: Mathies Edmond had 15 carries for 103 yards including a 16-yard touchdown run that gave Deer Park (1-1) a 20-point lead in a Suffolk III win. Noah Fearon added 12 carries for 55 yards and a touchdown, Alex Aiello had eight tackles, a sack and a fumble recovery to lead the Falcons defense, Chris Thermitus added six tackles and two sacks, and Hayden Lovinsky had an interception and caught a 23-yard touchdown pass in the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 31,
+    "gameId": "5267",
+    "box": {
+      "gameId": "5267",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "3",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Eastport South Manor 31, Half Hollow Hills West 13: Paul Drummond was involved in two of Eastport - South Manor's three fourth quarter touchdowns to take control of the Suffolk III win. Drummond threw a 30-yard touchdown pass to Richard Stanya that gave the Sharks a 16-13 lead. Drummond's 15-yard touchdown run later in the fourth off an option play pushed the lead to 30-13. Hudson Quijano ran for 150 yards and two touchdowns on 13 carries. He ran for a 5-yard touchdown in the first quarter and a 1-yard touchdown in the fourth. Stanya ran for 110 yards on 10 carries. J.T Morello had 10 tackles and three sacks. Aston Lides had an interception for Eastport - South Manor (1-2). Half Hollow Hills West is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Eastport-South Manor",
+            "player": "Hudson Quijano",
+            "att": 13,
+            "yds": 150,
+            "tds": 2
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Richard Stanya",
+            "att": 10,
+            "yds": 110,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Troy Fiume",
+            "att": 7,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Eastport-South Manor",
+            "player": "Paul Drummond",
+            "att": 10,
+            "yds": 50,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 33,
+    "gameId": "5286",
+    "box": {
+      "gameId": "5286",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "7",
+          "q2": "20",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 33, Half Hollow Hills West 0: Joey Vitale ran for 53 yards and two touchdowns and Alex Oliver had a 23-yard interception return for a touchdown to lead Islip (2-1) in Suffolk III. George Trimigliozzi and Nate Moran each had eight tackles.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Hauppauge",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 6,
+    "gameId": "5320",
+    "box": {
+      "gameId": "5320",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 14, Hauppauge 6: Joseph Filardi had 158 yards passing, a touchdown through the air, and 75 rushing yards for Half Hollow Hills West (2-3) in Suffolk III. Jalyn Jacques scored on a run from two yards out to tie the score at 6-6 in the third quarter. Filardi connected with Luca Pipia on a 15-yard touchdown pass to give Hills West the lead for good in the fourth quarter. Ryan Bonacore finished with 78 yards receiving and 10 tackles on defense. Hauppauge is now 2-3.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "5326",
+    "box": {
+      "gameId": "5326",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "East Islip",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 42, Half Hollow Hills West 7: Derek Burrell completed 6 of 8 passes for 101 yards and a touchdown and ran for 65 yard and two touchdowns to lead East Islip (5-0) in Suffolk III. Leo Lopez ran for 51 yards and two touchdowns on eight carries, Aiden Lenox had an interception and Cooper Parkinson had a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Dave Reynolds",
+            "att": 4,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 8,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 8,
+            "yds": 51,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 6,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Bauco",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt Baldino",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 8,
+            "comp": 6,
+            "yds": 101,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "rec": 2,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Jason Fiorello",
+            "rec": 2,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Matt McIntee",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Gavin  Herzog",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "East Islip",
+            "player": "Cooper  Parkinson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Aiden Lenox",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Rocky Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 0,
+    "gameId": "5358",
+    "box": {
+      "gameId": "5358",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "24",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 38, Rocky Point 0: Jalyn Jacques rushed for 119 yards and a touchdown on 20 carries in Suffolk III. His 1-yard touchdown run early in the second quarter, followed by a two point conversion, gave Half Hollow Hills West an 8-0 lead. Later in the second quarter, Zach Vasconcellos' four yard touchdown pushed the lead to 14-0. Vasconcellos rushed for 61 yards and two touchdowns on five carries. Joseph Filardi compleated 10-of-16 passes for 82 yards and threw two two-point conversion passes. He also ran for 30 yards and scored a 2-yard rushing touchdown in the fourth quarter. Half Hollow Hills West ran for 255 yards as a team.  Dillion Aery had two interceptions, returning one 30-yards for a touchdown in the fourth. Malcolm McKinnon mad nine tackles to lead Half Hollow Hills West (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 13,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn  Jacques",
+            "att": 20,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "att": 5,
+            "yds": 61,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 5,
+            "yds": 30,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 16,
+            "comp": 10,
+            "yds": 82,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Ryan  Bonocore",
+            "rec": 7,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 22,
+    "gameId": "5394",
+    "box": {
+      "gameId": "5394",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "15",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 22, Half Hollow Hills West 13: Daimler Valerio ran for 134 yards on 15 carries in Suffolk III Friday night.  Giovanni Fragapagne ran for 90 yards and two touchdowns on 17 carries. His 1-yard touchdown run in the second quarter gave Comsewogue a 13-0 lead. A two-point conversion run from Kaeden West extended the lead to 15-0. West made six tackles and recovered a fumble. Kevin Radmann made seven tackles and had an interception and Aaron Nieves had three sacks for Consewogue (3-5). Half Hollow Hills West is 3-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 16,
+            "yds": 132,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 19,
+            "yds": 83,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 4,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 4,
+            "comp": 8,
+            "yds": 28,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "Chris Beverly",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Blaise Cappola",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

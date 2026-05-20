@@ -1,0 +1,1659 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 57,
+    "oppScore": 6,
+    "gameId": "5570",
+    "box": {
+      "gameId": "5570",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "21",
+          "q2": "14",
+          "q3": "15",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "57"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Tommy Azzara 4 touchdown passes 227 Yards Passing\nChris Moran 2 Touchdown Runs 78 yards rushing on 2 carries\nMike Devlin 3 TFL 6 overall tackles\nWIll Kaminicki 1 catch 52 yards, TD and Interception \nSmithtown East Defense 6 turnovers forced",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 2,
+            "yds": 78,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 4,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 8,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "att": 2,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 1,
+            "yds": 5,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Grace  McDonald",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 11,
+            "comp": 7,
+            "yds": 237,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 2,
+            "comp": 1,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 2,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 2,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jack Pulisic",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 41,
+    "gameId": "5571",
+    "box": {
+      "gameId": "5571",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "13",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 41, Smithtown East 21: Brandon Stahl completed 10 of 17 passes for 326 yards and four touchdowns in Suffolk II. He threw touchdowns of 34, 42, 58, and 46 yards. Jacque LaPrarie had five receptions for 187 yards and three touchdowns. Laprarie also had a 52-yard interception return.  Jack Melore made three receptions for 97 yards and one touchdown.  Tim Vanderbrink made two catches for 61 yards and had four carries for 23 yards and a touchdown.  Vanderbrink led the defense with nine tackles. Smithtown West (1-1) gained  421 yards of total offense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 17,
+            "yds": 165,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 7,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 6,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "att": 2,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "att": 14,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "att": 4,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 5,
+            "yds": 19,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 18,
+            "comp": 6,
+            "yds": 37,
+            "tds": 1,
+            "int": 4
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 4,
+            "comp": 3,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 17,
+            "comp": 10,
+            "yds": 326,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 5,
+            "yds": 187,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 3,
+            "yds": 97,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 2,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Zinz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Will Fitzsimmons",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 7,
+    "gameId": "5572",
+    "box": {
+      "gameId": "5572",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 7, Smithtown East 6:  Xavier Calixte recovered a 27-yard fumble return for a touchdown in Suffolk II. Ryan Rooney rushed 1 yard for a touchdown with less than a minute left for Smithtown East (1-2). Riddick Drab ran for 106 yards on 20 carries and LaRawn Robinson had nine tackles and a sack for Centereach (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 6,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 12,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 5,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 17,
+            "comp": 7,
+            "yds": 94,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 6,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 13,
+    "gameId": "5573",
+    "box": {
+      "gameId": "5573",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "6",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 13, Smithtown East 7: Tyler McCarthy ran for 151 yards, including a 65-yard touchdown and a 27-yard run on a fake punt, and he broke up two passes to lead Connetquot (2-2). Nick Pepitone threw for 130 yards and ran for 55 yards and a touchdown. Lucas Weaver made nine tackles, including four for losses, and Gio DeRenzo had nine tackles, including two for losses. Connetquot finished with four sacks. Pepitone rushed for a 5-yard TD in the first quarter. McCarthy followed with his 65-yard scoring run in the third. Ryan Rooney had a 2-yard touchdown run for Smithtown East (1-3) to break up the shutout in the final quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 17,
+            "yds": 151,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 11,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 21,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 25,
+            "comp": 16,
+            "yds": 130,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 14,
+            "comp": 9,
+            "yds": 114,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 5,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Gio DeRenzo",
+            "rec": 3,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Buttino",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Stephen Bubier",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "rec": 4,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 5,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Vincent  Camarda",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Kyle McLaughlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Chris Ungro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Victor Truglio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aydan DeLiso",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jayden Medina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Cormac Ryan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Tedeschi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "George Donohue",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 0,
+    "gameId": "5574",
+    "box": {
+      "gameId": "5574",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown East 13, Huntington 0: George Donohue made 10 tackles to lead Smithtown East  in Suffolk II. Vincent Camarda, Steven D'Elia and Ryan Cormac each forced a fumble and Ryan Rooney had an interception. Jake Fields went 8-of-15 for 96 yards and a touchdown pass. His 21-yard strike to Dom Galati in the first quarter gave Smithtown East a 6-0 lead. Dom Galati caught four passes for 45 yards and a touchdown and Chris Moran rushed for a two-yard touchdown in the fourth quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 16,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 2,
+            "yds": 5,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 15,
+            "comp": 8,
+            "yds": 96,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 4,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "James Tedeschi",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Cormac Ryan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Vincent  Camarda",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Steven D´Elia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 42,
+    "gameId": "5566",
+    "box": {
+      "gameId": "5566",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "15",
+          "q2": "0",
+          "q3": "14",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 42, Smithtown east 21: Nathaniel Griffith ran for 360 yards and three touchdowns on 29 carries to lead North Babylon (4-2) in Suffolk II. Griffith opened the scoring with a 81-yard rushing touchdown in the first quarter. Jaymari Curtis added 137 yards and scored two touchdowns on a 17-yard run in the first and a 16-yard run in the third quarter. Jawara Keahey scored a four-yard rushing touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel  Griffith",
+            "att": 29,
+            "yds": 360,
+            "tds": 3
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 11,
+            "yds": 137,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 8,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "att": 2,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 11,
+            "yds": 42,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 21,
+            "comp": 16,
+            "yds": 221,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 8,
+            "yds": 110,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 3,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown East",
+            "player": "Steven D´Elia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "5576",
+    "box": {
+      "gameId": "5576",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "15",
+          "q2": "14",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 42, Smithtown East 14: Isaiah Richardson returned an interception 99 yards for a touchdown and caught a 16-yard touchdown pass for West Babylon (3-4) in Suffolk II. Elijah Outlaw threw for two touchdown passes and Drew McKittrick rushed for two touchdowns. Thomas Raccomandato added a 19-yard touchdown reception and Nick Field had an 11-yard rushing score.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 6,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 13,
+            "yds": 63,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 3,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "att": 18,
+            "yds": 136,
+            "tds": 2
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 13,
+            "yds": 84,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Serrano",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 13,
+            "comp": 8,
+            "yds": 68,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 7,
+            "comp": 6,
+            "yds": 60,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 15,
+            "comp": 12,
+            "yds": 152,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 5,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 2,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Steven D´Elia",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 4,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sean McGuire",
+            "rec": 3,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Field",
+            "rec": 2,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "rec": 1,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elvis Fernandez",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Chris Graham",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Serrano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Bobby Schwartz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sean McGuire",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 47,
+    "gameId": "5577",
+    "box": {
+      "gameId": "5577",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "14",
+          "q2": "21",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 47, Smithtown East 28: Patrick Keenan had 117 yards and two touchdowns on four carries and completed 3 of 4 passes for 134 yards and a touchdown to lead West Islip (5-3) in Suffolk II. Rocco Carpinello had a rushing touchdown and an interception and Chris Piropato, Evan Aponte and Jack Harvel each scored rushing touchdowns. Brian Brannigan recovered a fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 4,
+            "yds": 117,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Jack  Harvel",
+            "att": 10,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Evan  Aponte",
+            "att": 6,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Nick  Klemitas",
+            "att": 7,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 4,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Brian Brannigan",
+            "att": 3,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 2,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "att": 5,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Nick Garguilo",
+            "att": 1,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 12,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 5,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 4,
+            "comp": 3,
+            "yds": 134,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 5,
+            "comp": 3,
+            "yds": 140,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 9,
+            "comp": 3,
+            "yds": 15,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 4,
+            "yds": 145,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

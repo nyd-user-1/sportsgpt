@@ -1,0 +1,125 @@
+{
+  "slug": "half-hollow-hills-east",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Daniel  White",
+      "newsday_player_id": 25596,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Ryan soto",
+      "newsday_player_id": 26358,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Nick  Sevilla",
+      "newsday_player_id": 25600,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Noah reinstein",
+      "newsday_player_id": 25603,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Brody  Pleasents",
+      "newsday_player_id": 25891,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "RJ Peters",
+      "newsday_player_id": 25597,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Gianpierro Nicolia",
+      "newsday_player_id": 26359,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Dante  Milano",
+      "newsday_player_id": 26588,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Adrian  Merchant",
+      "newsday_player_id": 25601,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Kaylib  Merchant",
+      "newsday_player_id": 26607,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "chase McCoy",
+      "newsday_player_id": 25892,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Tony keahey",
+      "newsday_player_id": 25599,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Donnie Jones",
+      "newsday_player_id": 25602,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Akio Johnson",
+      "newsday_player_id": 26119,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Alex Floropolus",
+      "newsday_player_id": 26360,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Jayden Bryan",
+      "newsday_player_id": 25598,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Vinncent Banculli",
+      "newsday_player_id": 26118,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    }
+  ]
+}

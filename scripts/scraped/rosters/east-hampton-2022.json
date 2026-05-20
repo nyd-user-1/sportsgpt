@@ -1,0 +1,34 @@
+{
+  "slug": "east-hampton",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Danny Lester",
+      "newsday_player_id": 20531,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Will Darrell",
+      "newsday_player_id": 20532,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Charlie Corwin",
+      "newsday_player_id": 20530,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Finn Byrnes",
+      "newsday_player_id": 20529,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

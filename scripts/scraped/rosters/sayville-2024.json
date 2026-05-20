@@ -1,0 +1,181 @@
+{
+  "slug": "sayville",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Nicholas  Watson",
+      "newsday_player_id": 23940,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Tristan Vitale",
+      "newsday_player_id": 23707,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Javen Taff",
+      "newsday_player_id": 24090,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Mikey Sands",
+      "newsday_player_id": 23712,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Luke  Neugebauer",
+      "newsday_player_id": 24091,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "chase neugebauer",
+      "newsday_player_id": 23730,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Michael Morgan",
+      "newsday_player_id": 24306,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "leo  mongiello",
+      "newsday_player_id": 23706,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Frankie Miller",
+      "newsday_player_id": 24434,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "kyle messina",
+      "newsday_player_id": 23705,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Tomas McCann",
+      "newsday_player_id": 23708,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Alex Labella",
+      "newsday_player_id": 23943,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Keith Kolar",
+      "newsday_player_id": 23944,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Dylan Kent",
+      "newsday_player_id": 23711,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Jack  Dolan",
+      "newsday_player_id": 23941,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Brady Dolan",
+      "newsday_player_id": 24089,
+      "class": null,
+      "position": null,
+      "jersey_number": 76
+    },
+    {
+      "name": "Richard Delgiorno",
+      "newsday_player_id": 24470,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Patrick Coan",
+      "newsday_player_id": 23704,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "John Clampett",
+      "newsday_player_id": 23942,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "John Clampett",
+      "newsday_player_id": 24305,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Stash Chorowski",
+      "newsday_player_id": 24304,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "michael carmody",
+      "newsday_player_id": 23709,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Gabriel Bethea",
+      "newsday_player_id": 24469,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "donovan bartolotta",
+      "newsday_player_id": 23710,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "jack alliegro",
+      "newsday_player_id": 23713,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    }
+  ]
+}

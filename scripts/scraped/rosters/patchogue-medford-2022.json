@@ -1,0 +1,76 @@
+{
+  "slug": "patchogue-medford",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Justin Marcia-Joachim",
+      "newsday_player_id": 20792,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Joe Kelly",
+      "newsday_player_id": 20359,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Jayden  Isselbacher",
+      "newsday_player_id": 20793,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Kieran Hughes",
+      "newsday_player_id": 20361,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "ALEX Hofmann",
+      "newsday_player_id": 20925,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "CJ Forgione",
+      "newsday_player_id": 20362,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "nick elliott",
+      "newsday_player_id": 21147,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Jonny Cautard",
+      "newsday_player_id": 20360,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Beyrim Ayari",
+      "newsday_player_id": 20363,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jesse Andrade",
+      "newsday_player_id": 21098,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    }
+  ]
+}

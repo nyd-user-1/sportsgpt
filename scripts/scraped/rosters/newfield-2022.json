@@ -1,0 +1,97 @@
+{
+  "slug": "newfield",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Sean Sullivan",
+      "newsday_player_id": 20391,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "David  Spooner",
+      "newsday_player_id": 20475,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Dylan Smith",
+      "newsday_player_id": 20389,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Christian Smith",
+      "newsday_player_id": 20476,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Kenny Petit-Frere",
+      "newsday_player_id": 20388,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Chris McDaniels",
+      "newsday_player_id": 20390,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Chris Mastress",
+      "newsday_player_id": 20471,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "James Marra",
+      "newsday_player_id": 20392,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Matt Hirsch",
+      "newsday_player_id": 20474,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Jadon Forthe",
+      "newsday_player_id": 20393,
+      "class": null,
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "Matt  Evers",
+      "newsday_player_id": 20472,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "JJ Deliat",
+      "newsday_player_id": 20473,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Tim Cabral",
+      "newsday_player_id": 20394,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    }
+  ]
+}

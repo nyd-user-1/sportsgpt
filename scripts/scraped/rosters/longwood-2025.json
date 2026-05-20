@@ -1,0 +1,188 @@
+{
+  "slug": "longwood",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Marko Tricarico",
+      "newsday_player_id": 25980,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Nyyir Thomas",
+      "newsday_player_id": 25055,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Kyon Sarwari",
+      "newsday_player_id": 25050,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Kaden Reid",
+      "newsday_player_id": 25057,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Matt  Reany",
+      "newsday_player_id": 26551,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Keyshawn Profitt",
+      "newsday_player_id": 26309,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Ed  Princivil",
+      "newsday_player_id": 25981,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Hayri Ozgun",
+      "newsday_player_id": 26311,
+      "class": null,
+      "position": null,
+      "jersey_number": 99
+    },
+    {
+      "name": "Caleb  Munoz",
+      "newsday_player_id": 26312,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "David  Mileto-Rodriguez",
+      "newsday_player_id": 26550,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Nick  McDowell",
+      "newsday_player_id": 25979,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Tyler Lorentzen",
+      "newsday_player_id": 26310,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Micah Laney",
+      "newsday_player_id": 25977,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Dior Kokason",
+      "newsday_player_id": 26306,
+      "class": null,
+      "position": null,
+      "jersey_number": 38
+    },
+    {
+      "name": "Giovanni Johnson",
+      "newsday_player_id": 25059,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Jeremyh Jean-Baptiste",
+      "newsday_player_id": 26307,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Makai Jacobs",
+      "newsday_player_id": 25052,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Julian Jackson",
+      "newsday_player_id": 25051,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Ambrose Isaac",
+      "newsday_player_id": 26620,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Craig Harty",
+      "newsday_player_id": 25054,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Ryan Greene",
+      "newsday_player_id": 25056,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Travis Gibbs",
+      "newsday_player_id": 25058,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Mark Davis",
+      "newsday_player_id": 25053,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Cameron  Clemons",
+      "newsday_player_id": 25978,
+      "class": null,
+      "position": null,
+      "jersey_number": 47
+    },
+    {
+      "name": "Orion Bodden",
+      "newsday_player_id": 26308,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "John Biancarosa",
+      "newsday_player_id": 26619,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    }
+  ]
+}

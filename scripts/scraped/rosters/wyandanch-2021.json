@@ -1,0 +1,20 @@
+{
+  "slug": "wyandanch",
+  "season": 2021,
+  "players": [
+    {
+      "name": "DeAndre Smith",
+      "newsday_entry_id": 19249,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Tyree Hayes",
+      "newsday_entry_id": 19250,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

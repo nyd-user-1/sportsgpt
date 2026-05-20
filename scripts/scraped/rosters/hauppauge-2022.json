@@ -1,0 +1,216 @@
+{
+  "slug": "hauppauge",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Cole Wood",
+      "newsday_player_id": 19546,
+      "class": "10",
+      "position": "WR, DB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Zion Williams",
+      "newsday_player_id": 19545,
+      "class": "10",
+      "position": "OL, DL",
+      "jersey_number": null
+    },
+    {
+      "name": "Aiden Weiss",
+      "newsday_player_id": 19544,
+      "class": "11",
+      "position": "WR, DB",
+      "jersey_number": 27
+    },
+    {
+      "name": "George Sourlis",
+      "newsday_player_id": 19543,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "Andrew Sharrer",
+      "newsday_player_id": 19542,
+      "class": "11",
+      "position": "OL, DL",
+      "jersey_number": 58
+    },
+    {
+      "name": "Christian Russo",
+      "newsday_player_id": 19541,
+      "class": "11",
+      "position": "RB, LB",
+      "jersey_number": 5
+    },
+    {
+      "name": "Brandon Ress",
+      "newsday_player_id": 19540,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 76
+    },
+    {
+      "name": "Jojo Provenzano",
+      "newsday_player_id": 19539,
+      "class": "12",
+      "position": "RB, DB",
+      "jersey_number": 7
+    },
+    {
+      "name": "Anthony Palermo",
+      "newsday_player_id": 19538,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 57
+    },
+    {
+      "name": "Frank Moccia",
+      "newsday_player_id": 19537,
+      "class": "12",
+      "position": "WR, DB",
+      "jersey_number": 19
+    },
+    {
+      "name": "Brandon Mileti",
+      "newsday_player_id": 19536,
+      "class": "12",
+      "position": "OL, LB",
+      "jersey_number": 50
+    },
+    {
+      "name": "Dan Martinez",
+      "newsday_player_id": 19535,
+      "class": "10",
+      "position": "WR, DB, K",
+      "jersey_number": null
+    },
+    {
+      "name": "Seth Lewin",
+      "newsday_player_id": 19534,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 61
+    },
+    {
+      "name": "Michael Lalli",
+      "newsday_player_id": 19533,
+      "class": "11",
+      "position": "WR, DB",
+      "jersey_number": 4
+    },
+    {
+      "name": "Matthew Kinsley",
+      "newsday_player_id": 19532,
+      "class": "12",
+      "position": "TE, LB",
+      "jersey_number": 8
+    },
+    {
+      "name": "Joe Holder",
+      "newsday_player_id": 19531,
+      "class": "12",
+      "position": "RB, LB",
+      "jersey_number": 21
+    },
+    {
+      "name": "Andrew Herrera",
+      "newsday_player_id": 19530,
+      "class": "11",
+      "position": "OL, LB",
+      "jersey_number": 68
+    },
+    {
+      "name": "Connor Haggerty",
+      "newsday_player_id": 19529,
+      "class": "11",
+      "position": "WR, DB",
+      "jersey_number": 12
+    },
+    {
+      "name": "Connor Foley",
+      "newsday_player_id": 19528,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 74
+    },
+    {
+      "name": "Alex Fletcher",
+      "newsday_player_id": 19527,
+      "class": "11",
+      "position": "OL, DL",
+      "jersey_number": 84
+    },
+    {
+      "name": "Michael Esposito",
+      "newsday_player_id": 19526,
+      "class": "11",
+      "position": "OL, DL",
+      "jersey_number": 62
+    },
+    {
+      "name": "Cortes Gonzalez Elvis",
+      "newsday_player_id": 19521,
+      "class": "11",
+      "position": "TE, LB",
+      "jersey_number": 6
+    },
+    {
+      "name": "Braun Dylan",
+      "newsday_player_id": 19519,
+      "class": "12",
+      "position": "OL, DL",
+      "jersey_number": 99
+    },
+    {
+      "name": "Owen Dixon",
+      "newsday_player_id": 19525,
+      "class": "11",
+      "position": "RB, LB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Dom Divito",
+      "newsday_player_id": 19524,
+      "class": "12",
+      "position": "OL, LB",
+      "jersey_number": 52
+    },
+    {
+      "name": "Chris Diesso",
+      "newsday_player_id": 19523,
+      "class": "12",
+      "position": "RB, LB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Michael Cira",
+      "newsday_player_id": 19522,
+      "class": "12",
+      "position": "OL, LB",
+      "jersey_number": 56
+    },
+    {
+      "name": "Paul Chung",
+      "newsday_player_id": 19520,
+      "class": "12",
+      "position": "WR, DB",
+      "jersey_number": 23
+    },
+    {
+      "name": "Vincent Barbera",
+      "newsday_player_id": 19518,
+      "class": "12",
+      "position": "QB, DB",
+      "jersey_number": 11
+    },
+    {
+      "name": "Brett Artura",
+      "newsday_player_id": 19517,
+      "class": "12",
+      "position": "RB, DB",
+      "jersey_number": 2
+    }
+  ]
+}

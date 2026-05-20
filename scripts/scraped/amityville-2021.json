@@ -1,0 +1,741 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/04/2021",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 18,
+    "gameId": "4873",
+    "box": {
+      "gameId": "4873",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "3",
+          "q2": "0",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "6",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 18, Amityville 12: Jaylen Jacques had a 20-yard rushing touchdown in overtime to grab the win for Half Hollow Hills West (1-0) in Suffolk III. Jacques rushed for 121 yards and two touchdowns on 23 carries, scoring the touchdown to force overtime as well. Juan Rodriguez forced a safety to open the scoring in the third quarter. Malcolm McKinnon recorded 10 tackles, three for loss, and one sack. Luca Pipia grabbed an interception.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 13,
+    "gameId": "4950",
+    "box": {
+      "gameId": "4950",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Amityville 14, Eastport-South Manor 13: TyJon Billinger rushed a 5-yard touchdown with 1:21 remaining in the fourth quarter and ran in the ensuing two-point conversion for the final score to give Amityville a 14-13 victory over Eastport-South Manor in Suffolk III football. Tyree Billinger then recorded an interception at Amityville's 3-yard line with 19 seconds remaining in the fourth quarter to secure the victory for Amityville (1-1). The win snapped a 24-game losing streak for Amityville, according to Newsday records. TyJon Billinger had 130 yards on 14 carries and Josh Garrett added a 60-yard touchdown run in the first quarter to open the scoring for Amityville.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Hauppauge",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 30,
+    "gameId": "5263",
+    "box": {
+      "gameId": "5263",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "7",
+          "q2": "9",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "18",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 30, Amityville 26: Amityville scored 18-unanswered points in the fourth quarter to climb back in the game, but Hauppauge ran out the clock to secure the Suffolk III win. Phoenix Walker recovered a fumble in the endzone with 3:44 left in the third quarter to give Hauppauge a 23-8 lead after a Frank Moccia extra point. Jojo Provenzano scored three touchdowns for Hauppauge (1-2). Provenzano had a 5-yard and 3-yard touchdown run and caught a 39-yard touchdown pass from Vincent Barbera. Amityville is 1-2.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 34,
+    "gameId": "5282",
+    "box": {
+      "gameId": "5282",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "8",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "6",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 34, Amityville 22: Cody Miller had five total touchdowns, three on the ground, two through the air, for Rocky Point (2-1) in Suffolk III. Miller opened the scoring with a 51-yard rushing touchdown to put Rocky Point ahead 6-0. AJ Walker hauled in a 62-yard touchdown and a 51-yard touchdown from Miller in the second quarter. Walker finished his night with 117 yards on three receptions.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 10,
+            "yds": 174,
+            "tds": 3
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Daniel Morton",
+            "att": 8,
+            "yds": 30,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 4,
+            "comp": 3,
+            "yds": 117,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "AJ Walker",
+            "rec": 3,
+            "yds": 117,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremiah Adelphin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Kyle Moore",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominick Viggiano",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 54,
+    "gameId": "5309",
+    "box": {
+      "gameId": "5309",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "20",
+          "q2": "20",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "54"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 54, Amityville 14: Vinny Rosselli scored two touchdowns for Islip (3-1) in Suffolk III. Rosselli found the end zone on a two-yard run in the first quarter to start the scoring for the Bucs. He later added a 91-yard interception return for a touchdown to give Islip a 33-0 lead. Jameson Seeger had punt return touchdowns of 56 and 54 yards. Richie Rindos ran for 85 yards and a touchdown on seven carries. Amityville is now 1-4.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 21,
+    "gameId": "5335",
+    "box": {
+      "gameId": "5335",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "8",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 21, Amityville 13: Brady Shannon completed 11 of 17 passes for 168 yards and three touchdowns to lead Comsewogue (2-3) in Suffolk III. James Krieg had three receptions for 87 yards and two touchdowns and Matt Walsh had five receptions for 58 yards, including a 19-yard touchdown reception in the win. Aaron Nieves and Jhendeli Nunez each had two sacks for Comsewogue. Amityville falls to 1-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 13,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 17,
+            "comp": 11,
+            "yds": 168,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 3,
+            "yds": 87,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 5,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Schnupp",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Aaron Nieves",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Deer Park",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 29,
+    "gameId": "5355",
+    "box": {
+      "gameId": "5355",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Amityville",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "0",
+          "q2": "15",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Deer Park 29, Amityville 6: Logan Rhodes completed 10 of 18 passes for 120 yards and two touchdowns to lead Deer Park (4-2) in Suffolk III. Rhodes hit Hayden Lovinsky for a seven-yard touchdown on fourth down and found Sam Adolphe for a 20-yard score with eight seconds left in the first half. Noah Fearon ran for 84 yards and Roshmani Pierre and Jariq Shaw each had two sacks.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 30,
+    "gameId": "5396",
+    "box": {
+      "gameId": "5396",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "8",
+          "q2": "8",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 30, Amityville 13: Shane Longin was 9-for-12 passing for a 120 yards and a touchdown and he rushed  eight times for 75 yards and three touchdowns for Harborfields (3-4). Ethan Radecki and Jude Bazes both ran 10 times in the win, with Radecki gaining 80 yards and Bazes 76. The defense was led by Anthony Kelly and Thomas Sullivan (each with two sacks and four tackles for losses), as well as Brendan Honher (two interceptions).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "Ethan Radecki",
+            "att": 10,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jude Bazes",
+            "att": 10,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 8,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "John Acritani",
+            "att": 4,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Sean  Tucker",
+            "att": 0,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 12,
+            "comp": 9,
+            "yds": 120,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Dylan  Wolf",
+            "rec": 4,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Aidan Terry",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ethan Radecki",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Declan  McCarthy",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Harborfields",
+            "player": "Anthony  Kelly",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Thomas  Sullivan",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Brandan Hohner",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,132 @@
+{
+  "slug": "half-hollow-hills-west",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Benjamin Vogt",
+      "newsday_player_id": 23183,
+      "class": "12",
+      "position": "OL/LB",
+      "jersey_number": 54
+    },
+    {
+      "name": "Luke Taff",
+      "newsday_player_id": 23172,
+      "class": "11",
+      "position": "WR/DB/QB",
+      "jersey_number": 17
+    },
+    {
+      "name": "Jayden Smith",
+      "newsday_player_id": 23170,
+      "class": "11",
+      "position": "RB/OLB",
+      "jersey_number": 5
+    },
+    {
+      "name": "Joseph Sigismondi",
+      "newsday_player_id": 23180,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 50
+    },
+    {
+      "name": "Salvatore Santoro",
+      "newsday_player_id": 23182,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 72
+    },
+    {
+      "name": "Mason Reisch",
+      "newsday_player_id": 23169,
+      "class": "12",
+      "position": "TE/DE",
+      "jersey_number": 12
+    },
+    {
+      "name": "Anthony Raio",
+      "newsday_player_id": 23168,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 9
+    },
+    {
+      "name": "Gurneal Parhar",
+      "newsday_player_id": 23173,
+      "class": "12",
+      "position": "OL/LB",
+      "jersey_number": 18
+    },
+    {
+      "name": "Ryan  Levy",
+      "newsday_player_id": 23175,
+      "class": "12",
+      "position": "K/P",
+      "jersey_number": 22
+    },
+    {
+      "name": "Jerrel Jenkins",
+      "newsday_player_id": 24250,
+      "class": "11",
+      "position": "TE/LB",
+      "jersey_number": 88
+    },
+    {
+      "name": "Ramon Herrera",
+      "newsday_player_id": 23178,
+      "class": "12",
+      "position": "OL/LB",
+      "jersey_number": 55
+    },
+    {
+      "name": "Joseph Filardi",
+      "newsday_player_id": 23171,
+      "class": "12",
+      "position": "QB/DB",
+      "jersey_number": 11
+    },
+    {
+      "name": "Nolan Doerrie",
+      "newsday_player_id": 23179,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 56
+    },
+    {
+      "name": "Kade Diaz",
+      "newsday_player_id": 23167,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Salvatore Caiazzo",
+      "newsday_player_id": 23176,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 23
+    },
+    {
+      "name": "Jesse Brooks",
+      "newsday_player_id": 23166,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Luca Baggott",
+      "newsday_player_id": 23177,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 25
+    },
+    {
+      "name": "Christian Alfaro",
+      "newsday_player_id": 23174,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 21
+    }
+  ]
+}

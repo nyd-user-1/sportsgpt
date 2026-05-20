@@ -447,8 +447,8 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                    <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
-                      <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
+                    <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[var(--compare-bg)] hover:bg-[var(--compare-bg-hover)]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
+                      <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[var(--compare-bg)] group-hover/row:bg-[var(--compare-bg-hover)]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <Link href={`/player/${p.player_slug}`} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                           <button
@@ -486,7 +486,7 @@ export default function LeaderboardTable({
                       <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{p.int_rate != null ? Number(p.int_rate).toFixed(1) + '%' : '—'}</td>
                       <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{p.td_int_ratio != null ? Number(p.td_int_ratio).toFixed(1) : '—'}</td>
                       <td className={cn(tdR, 'w-[70px] bg-[var(--section-bg)]/60')}>{p.yva != null ? (Number(p.yva) > 0 ? '+' : '') + Number(p.yva).toFixed(0) : '—'}</td>
-                      <td className={cn(tdR, 'w-[60px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{p.cmd_score != null ? Number(p.cmd_score).toFixed(2) : '—'}</td>
+                      <td className={cn(tdR, 'w-[60px] border-l border-[var(--border)] font-semibold')} style={{ background: 'var(--advanced-bg)', color: 'var(--advanced-text)' }}>{p.cmd_score != null ? Number(p.cmd_score).toFixed(2) : '—'}</td>
                       <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.gbi_score != null ? Number(p.gbi_score).toFixed(1) : '—'}</td>
                       <td className={cn(tdR, 'w-[60px]')} style={{ background: 'var(--advanced-bg)' }}>{p.ies_score != null ? Number(p.ies_score).toFixed(1) : '—'}</td>
                     </tr>
@@ -534,8 +534,8 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
-                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[var(--compare-bg)] hover:bg-[var(--compare-bg-hover)]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors min-w-[160px]', compareActive ? 'bg-[var(--compare-bg)] group-hover/row:bg-[var(--compare-bg-hover)]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button
@@ -568,7 +568,7 @@ export default function LeaderboardTable({
                         <td className={cn(tdR, 'w-[65px] border-l border-[var(--border)] bg-[var(--section-bg)]/60')}>{ypg}</td>
                         <td className={cn(tdR, 'w-[60px] bg-[var(--section-bg)]/60')}>{tdPct}</td>
                         <td className={cn(tdR, 'w-[65px] bg-[var(--section-bg)]/60')}>{tdsPerG}</td>
-                        <td className={cn(tdR, 'w-[70px] border-l border-[var(--border)] font-semibold')} style={{ background: '#f0f4ff', color: ACCENT_COLOR }}>{rExp}</td>
+                        <td className={cn(tdR, 'w-[70px] border-l border-[var(--border)] font-semibold')} style={{ background: 'var(--advanced-bg)', color: 'var(--advanced-text)' }}>{rExp}</td>
                       </tr>
                     )
                   })}
@@ -612,8 +612,8 @@ export default function LeaderboardTable({
                     const compareLabel = isA ? '1' : isB ? '2' : (compareAKey ? '2' : '1')
                     const compareActive = isA || isB
                     return (
-                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[#eef3ff] hover:bg-[#e4ecff]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
-                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[#eef3ff] group-hover/row:bg-[#e4ecff]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
+                      <tr key={p.player_slug + i} onClick={() => handleRowClick(p)} className={cn('group/row transition-colors', compareActive ? 'bg-[var(--compare-bg)] hover:bg-[var(--compare-bg-hover)]' : !versusMode ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]')}>
+                        <td className={cn(td, 'sticky left-0 z-[1] font-semibold transition-colors', compareActive ? 'bg-[var(--compare-bg)] group-hover/row:bg-[var(--compare-bg-hover)]' : 'bg-[var(--surface)] group-hover/row:bg-[var(--row-hover)]')}>
                           <div className="flex items-center gap-1.5 min-w-0">
                             <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="hover:underline text-[var(--txt)] truncate flex-1">{p.player_name}</Link>
                             <button

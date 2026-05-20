@@ -1,0 +1,132 @@
+{
+  "slug": "kings-park",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Kyle Weeks",
+      "newsday_player_id": 19974,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Alex Squillacioti",
+      "newsday_player_id": 19980,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Dean Renna",
+      "newsday_player_id": 19975,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Ralph Perangelo",
+      "newsday_player_id": 19982,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Declan O'Melia",
+      "newsday_player_id": 19979,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Sam Myung",
+      "newsday_player_id": 19983,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Scott McConville",
+      "newsday_player_id": 19976,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Gavin Lopez",
+      "newsday_player_id": 19985,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Joe  Klemballa",
+      "newsday_player_id": 20888,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "JJ Joyce",
+      "newsday_player_id": 20887,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Brandon Hauk",
+      "newsday_player_id": 19981,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Luke Griffin",
+      "newsday_player_id": 19978,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Mark Griffin",
+      "newsday_player_id": 19984,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "John Flynn",
+      "newsday_player_id": 19977,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Patrick Dietl",
+      "newsday_player_id": 20468,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    },
+    {
+      "name": "Anthony DeVirgilio",
+      "newsday_player_id": 20470,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Tommy Cassar",
+      "newsday_player_id": 20469,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Jack  Bruetsch",
+      "newsday_player_id": 19986,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    }
+  ]
+}

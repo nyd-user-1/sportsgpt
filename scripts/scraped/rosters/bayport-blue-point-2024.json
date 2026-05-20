@@ -1,0 +1,125 @@
+{
+  "slug": "bayport-blue-point",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Traigh Tomassone",
+      "newsday_player_id": 23432,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Dylan Spano",
+      "newsday_player_id": 24536,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Mattimore Ryan",
+      "newsday_player_id": 24463,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Aidan  Richman",
+      "newsday_player_id": 24537,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Colin Reyer",
+      "newsday_player_id": 23945,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Colin Most",
+      "newsday_player_id": 23431,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Rodney Magee",
+      "newsday_player_id": 24398,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Frank Josh",
+      "newsday_player_id": 24312,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Cooper Fuller",
+      "newsday_player_id": 23429,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Shane Dunne",
+      "newsday_player_id": 24518,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Dylan Craig",
+      "newsday_player_id": 23428,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Sean Coffey",
+      "newsday_player_id": 23430,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Colin Clark",
+      "newsday_player_id": 24397,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Declan Cameron",
+      "newsday_player_id": 23946,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Hank Bosse",
+      "newsday_player_id": 24311,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Ryan Athearn",
+      "newsday_player_id": 24086,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Patrick Ahern",
+      "newsday_player_id": 23433,
+      "class": null,
+      "position": null,
+      "jersey_number": 85
+    }
+  ]
+}

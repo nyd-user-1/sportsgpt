@@ -1,0 +1,1265 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 14,
+    "gameId": "4969",
+    "box": {
+      "gameId": "4969",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Huntington",
+          "q1": "3",
+          "q2": "0",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 14, Huntington 10: Konrad Maciejny rushed for 92 yards and two one-yard touchdowns on 24 carries in Suffolk II. His touchdown in the third quarter gave West Islip a 13-10 lead. Huntington's Jack O'Brien kicked a 31-yard field goal in the fourth quarter to cut the deficit to one. West Islip's Jake Cenci's sack with a minute left forced Huntington into a 4th-and-28 that they did not convert. Pat Keenan rushed for 87 yards on 11 carries.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 14,
+    "gameId": "4837",
+    "box": {
+      "gameId": "4837",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Huntington",
+          "q1": "12",
+          "q2": "15",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 36, Smithtown East 14: Josiah Melenez rushed for two touchdowns for Huntington (1-1) in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 10,
+            "yds": 186,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 7,
+            "yds": 81,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 6,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Leo Martinez",
+            "att": 4,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Christian St. John",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 4,
+            "comp": 6,
+            "yds": 61,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "John Chirico",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Jack O'Brien",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Joey  Algieri",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 21,
+    "gameId": "5283",
+    "box": {
+      "gameId": "5283",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 21, Huntington 0: Jack Sandrib had two touchdowns and an interception to lead Northport to a shutout win in Suffolk Division II. Dylan McNaughton and Tim Cleary each had 10 tackles and Andrew Miller had six tackles and a fumble recovery for the Tigers (3-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 16,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 13,
+            "yds": 59,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 6,
+            "yds": 41,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 9,
+            "comp": 3,
+            "yds": 69,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Brendan Connolly",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 0,
+    "gameId": "5313",
+    "box": {
+      "gameId": "5313",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "6",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 34, Smithtown West 0: Anthony Annunziata completed 6 of 8 passes for 130 yards and two touchdowns and Josiah Melenez rushed for 120 yards and two touchdowns on 20 carries to lead Huntington (2-2) in Suffolk II. Lucas Petrizzi rushed for 90 yards and a touchdown on 10 carries. Robbie Smith rushed for 30 yards on four carries and Annunziata rushed for 25 yards on three carries. Jahiem Hawkins added three tackles for loss and Liam McDonald had two tackles for loss, two sacks, and a forced fumble. Smithtown West falls 1-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 20,
+            "yds": 130,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 10,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 4,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "att": 3,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Aiden  Greene",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Owen  Ellick",
+            "att": 7,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 6,
+            "comp": 8,
+            "yds": 130,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "John Chirico",
+            "rec": 4,
+            "yds": 90,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "rec": 1,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  LaPrarie",
+            "rec": 2,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Liam Mcdonald",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Long Beach",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 7,
+    "gameId": "5339",
+    "box": {
+      "gameId": "5339",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Long Beach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 28, Long Beach 7: Josiah Melendez had 16 carries for 146 yards and two touchdowns to lead Huntington (3-2) in a non-league victory over Long Beach (1-4). Robbie Smith added 16 carries for 108 yards and two touchdowns in the win. A 16-yard rushing touchdown by Melendez in the third quarter extended Huntington's lead to 21-7. John Chirico had two interceptions for the Blue Devils.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 16,
+            "yds": 146,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 16,
+            "yds": 105,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 7,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 5,
+            "comp": 1,
+            "yds": 35,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Jack O'Brien",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "John Chirico",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Joey  Algieri",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 14,
+    "gameId": "5352",
+    "box": {
+      "gameId": "5352",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "21",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 42, Centereach 14: Josiah Melendez had a receiving, rushing, and interception return touchdown for Huntington (4-2) in Suffolk II. Melendez caught an 66-yard pass from Anthony Annunziata in the second quarter. He scored again on a 60-yard interception return for Huntington's final score of the game.Ryan Porzio had the game's first score when he returned an interception 30 yards for a touchdown in the first quarter. Centereach is (1-5)",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 13,
+            "yds": 135,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 10,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 4,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 1,
+            "comp": 4,
+            "yds": 66,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 20,
+            "comp": 10,
+            "yds": 119,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "rec": 1,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 5,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 3,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ryan Porzio",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 44,
+    "oppScore": 0,
+    "gameId": "5372",
+    "box": {
+      "gameId": "5372",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "13",
+          "q3": "3",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "44"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 44, Copiague 0: Robbie Smith rushed for 140 yards and two touchdowns on 13 carries and Josiah Melenez rushed for 105 yards and two touchdowns on eight carries to lead Huntington (5-2) in Suffolk II. Lucas Petrizzi rushed for 40 yards and a touchdown on five carries and Christian St. John rushed for 50 yards and a touchdown on four carries. Jayden Taylor completed 2 of 2 passes for 20 yards. Copiague is now 0-7.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 13,
+            "yds": 140,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 8,
+            "yds": 105,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Christian St. John",
+            "att": 4,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 5,
+            "yds": 40,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 3,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jayden Taylor",
+            "att": 2,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "John Chirico",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Auggie Abbatiello",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Jack O'Brien",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Liam Mcdonald",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 16,
+    "gameId": "5274",
+    "box": {
+      "gameId": "5274",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "3",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 16, Huntington 7: Jake Trovato had nine tackles, a fumble recovery and ran for a four-yard touchdown, Danny DeFelice had 10 tackles, Chris Carson had nine tackles and Jordan Martin had nine tackles and a sack to lead Lindenhurst (7-1) in Suffolk II.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 19,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 8,
+            "yds": 40,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 2,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 21,
+            "comp": 8,
+            "yds": 135,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 57,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 4,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 2,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/06/2021",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 21,
+    "gameId": "5411",
+    "box": {
+      "gameId": "5411",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 21, Huntington 0: Jack Halpin rushed for 115 yards and three touchdowns on 15 carries to lead No. 2 Bellport over No. 7 Huntington in the Suffolk II quarterfinals. Halpin opened the scoring in the second quarter with a five-yard rushing score and followed it up with a 20-yard touchdown run to give Bellport a 14-0 lead at halftime. Donte Phillips rushed for 122 yards on 22 carries. Calvin Pedatella and Marc Promutico each had 10 tackles. Bellport (8-1) will host a semi-final matchup at 7 p.m. on Friday, November 12th.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 22,
+            "yds": 122,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 15,
+            "yds": 115,
+            "tds": 3
+          },
+          {
+            "team": "Bellport",
+            "player": "Marc Promutico",
+            "att": 7,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 9,
+            "comp": 4,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Kyle Brown",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason  Hunt",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

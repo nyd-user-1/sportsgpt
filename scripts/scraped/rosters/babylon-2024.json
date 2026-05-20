@@ -1,0 +1,83 @@
+{
+  "slug": "babylon",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Aidan Winter",
+      "newsday_player_id": 23424,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Ryan  Polletta",
+      "newsday_player_id": 24462,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Jake  Ostertag",
+      "newsday_player_id": 24525,
+      "class": null,
+      "position": null,
+      "jersey_number": 85
+    },
+    {
+      "name": "Christian Molnar",
+      "newsday_player_id": 23949,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Sarah Klienitzke",
+      "newsday_player_id": 24280,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Kai Jankow",
+      "newsday_player_id": 23426,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Paul Forthmuller",
+      "newsday_player_id": 23947,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Dan  DeBetta",
+      "newsday_player_id": 23425,
+      "class": null,
+      "position": null,
+      "jersey_number": 43
+    },
+    {
+      "name": "Charlie  Bunger",
+      "newsday_player_id": 23948,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Keven Bonilla",
+      "newsday_player_id": 23427,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Hayden Baudille",
+      "newsday_player_id": 24066,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    }
+  ]
+}

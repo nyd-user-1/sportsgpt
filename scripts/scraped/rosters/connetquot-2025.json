@@ -1,0 +1,307 @@
+{
+  "slug": "connetquot",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Ryan Zipkas",
+      "newsday_player_id": 24885,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 70
+    },
+    {
+      "name": "Justin Walter",
+      "newsday_player_id": 24884,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 63
+    },
+    {
+      "name": "Jake Vivas",
+      "newsday_player_id": 24889,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 73
+    },
+    {
+      "name": "Donovon Soucy",
+      "newsday_player_id": 24880,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 59
+    },
+    {
+      "name": "Damian Sosa",
+      "newsday_player_id": 24854,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 2
+    },
+    {
+      "name": "Logan Siani",
+      "newsday_player_id": 24863,
+      "class": "11",
+      "position": "WR/S",
+      "jersey_number": 20
+    },
+    {
+      "name": "Hunter Sepala",
+      "newsday_player_id": 24879,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 37
+    },
+    {
+      "name": "Danny Ryan",
+      "newsday_player_id": 24874,
+      "class": "12",
+      "position": "H/LB",
+      "jersey_number": 35
+    },
+    {
+      "name": "Ebo Price",
+      "newsday_player_id": 24867,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 17
+    },
+    {
+      "name": "Angelo Prestigiacomo",
+      "newsday_player_id": 24878,
+      "class": "12",
+      "position": "H/LB",
+      "jersey_number": 44
+    },
+    {
+      "name": "Joe Parise",
+      "newsday_player_id": 24871,
+      "class": "12",
+      "position": "K",
+      "jersey_number": 33
+    },
+    {
+      "name": "Gavin Olsen",
+      "newsday_player_id": 24887,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 72
+    },
+    {
+      "name": "Duke Morley",
+      "newsday_player_id": 24883,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 60
+    },
+    {
+      "name": "Jonas Mendez",
+      "newsday_player_id": 24852,
+      "class": "10",
+      "position": "WR/CB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Andrew  McQuade",
+      "newsday_player_id": 26586,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Kevin  McCuen",
+      "newsday_player_id": 24862,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 15
+    },
+    {
+      "name": "Caleb Maugeri",
+      "newsday_player_id": 24864,
+      "class": "10",
+      "position": "QB",
+      "jersey_number": 16
+    },
+    {
+      "name": "Kingston Maugeri",
+      "newsday_player_id": 24858,
+      "class": "10",
+      "position": "WR/CB",
+      "jersey_number": 7
+    },
+    {
+      "name": "Nick  Mastriano",
+      "newsday_player_id": 24857,
+      "class": "10",
+      "position": "WR/FS",
+      "jersey_number": 8
+    },
+    {
+      "name": "Matt Marzocca",
+      "newsday_player_id": 24866,
+      "class": "11",
+      "position": "H/LB",
+      "jersey_number": 21
+    },
+    {
+      "name": "Vince Marshall",
+      "newsday_player_id": 24873,
+      "class": "12",
+      "position": "H/DB",
+      "jersey_number": 34
+    },
+    {
+      "name": "James Mannino",
+      "newsday_player_id": 24882,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 57
+    },
+    {
+      "name": "Chris Lindsay",
+      "newsday_player_id": 24877,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 50
+    },
+    {
+      "name": "Sonny Kowalevich",
+      "newsday_player_id": 24881,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 53
+    },
+    {
+      "name": "Mike Kelly",
+      "newsday_player_id": 24868,
+      "class": "11",
+      "position": "RB/DB",
+      "jersey_number": 23
+    },
+    {
+      "name": "Kevin Hagan",
+      "newsday_player_id": 24888,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 66
+    },
+    {
+      "name": "Liam Gein",
+      "newsday_player_id": 24869,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 25
+    },
+    {
+      "name": "Ben Gaudioso",
+      "newsday_player_id": 24890,
+      "class": "12",
+      "position": "WR",
+      "jersey_number": 88
+    },
+    {
+      "name": "James Freism",
+      "newsday_player_id": 24876,
+      "class": "11",
+      "position": "H/LB",
+      "jersey_number": 40
+    },
+    {
+      "name": "Chris Florio",
+      "newsday_player_id": 24860,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Vincent Feraca",
+      "newsday_player_id": 24859,
+      "class": "12",
+      "position": "QB/FS",
+      "jersey_number": 9
+    },
+    {
+      "name": "Jake Engley",
+      "newsday_player_id": 24856,
+      "class": "12",
+      "position": "WR/SS",
+      "jersey_number": 11
+    },
+    {
+      "name": "Colin  Darcey",
+      "newsday_player_id": 24886,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 75
+    },
+    {
+      "name": "Camryn D'Ambrosio",
+      "newsday_player_id": 24892,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "Dominic Cowan",
+      "newsday_player_id": 24853,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 6
+    },
+    {
+      "name": "Logan Cavanaugh",
+      "newsday_player_id": 24872,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 27
+    },
+    {
+      "name": "Sean Carr",
+      "newsday_player_id": 24875,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 52
+    },
+    {
+      "name": "Billy Brophy",
+      "newsday_player_id": 24861,
+      "class": "12",
+      "position": "WR/CB",
+      "jersey_number": 12
+    },
+    {
+      "name": "Bryan  Boss",
+      "newsday_player_id": 24855,
+      "class": "12",
+      "position": "H/DE",
+      "jersey_number": 4
+    },
+    {
+      "name": "Javon Barnwell",
+      "newsday_player_id": 24850,
+      "class": "12",
+      "position": "RB/CB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Marcus Anglin",
+      "newsday_player_id": 24865,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 22
+    },
+    {
+      "name": "Jadon Anglin",
+      "newsday_player_id": 24870,
+      "class": "11",
+      "position": "WR/DE",
+      "jersey_number": 24
+    },
+    {
+      "name": "Christian Altamirano",
+      "newsday_player_id": 24851,
+      "class": "12",
+      "position": "TE/DE",
+      "jersey_number": 5
+    }
+  ]
+}

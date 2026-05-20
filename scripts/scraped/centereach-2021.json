@@ -1,0 +1,1461 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 48,
+    "gameId": "4985",
+    "box": {
+      "gameId": "4985",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "28",
+          "q2": "14",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 48, Centereach 19: Dakim Griffin rushed for 154 yards and three first quarter touchdowns in Suffolk II. His 60-yard run gave Half Hollow Hills East a 14-0 lead after a Gianni D'Agnese extra point. Jacob Robinson threw for 210 yards and three touchdowns, coming from 70, 30, and 55-yards. Louis Mathurin caught four passes for 136 yards and two touchdowns. Elias Barrett made nine tackles and had two sacks. Jordan Anderson made nine tackles and forced a fumble. Jordan Haymen had two interceptions and Max Kullberg had two fumble recoveries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 12,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "att": 7,
+            "yds": 19,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Zaita",
+            "att": 5,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 7,
+            "yds": 154,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 24,
+            "comp": 13,
+            "yds": 151,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 7,
+            "yds": 91,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 5,
+            "yds": 48,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Andrew Ferreira",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 51,
+    "gameId": "5254",
+    "box": {
+      "gameId": "5254",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "7",
+          "q2": "12",
+          "q3": "15",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "14",
+          "q3": "23",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 51, Centereach 34:  Brayden Stahl threw for 251 yards and three touchdowns on 12-of-24 passing and rushed for another two in Suffolk II. Jack LaPrarie caught five passes for 91 yards and two touchdowns.  Tim Vanderbrink rushed for 54 yards on 10 carries and caught four passes for 87 yards and a touchdown.  Jack Melore had a interception and a kick return for a touchdown. The second-quarter kick return, followed by a John Lorfice extra point, gave Smithtown West a 14-13 lead. Stahl found Tim Vanderbrink for a 42-yard touchdown in the third quarter that gave Smithtown West a 37-19 lead after an extra point. Owen Ellick rushed for 82 yards and a touchdown on 18 carries.  Nick Petchonka notched a safety with a tackle in the endzone. Smithtown West is 1-1 and Centereach is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 13,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jason Zaita",
+            "att": 7,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Owen  Ellick",
+            "att": 18,
+            "yds": 82,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "att": 10,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 5,
+            "yds": 15,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 15,
+            "comp": 8,
+            "yds": 141,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 24,
+            "comp": 12,
+            "yds": 251,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 5,
+            "yds": 100,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 2,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  LaPrarie",
+            "rec": 5,
+            "yds": 91,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "rec": 4,
+            "yds": 87,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 2,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Owen  Ellick",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "John  Lorfice",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 50,
+    "oppScore": 14,
+    "gameId": "5285",
+    "box": {
+      "gameId": "5285",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Centereach",
+          "q1": "15",
+          "q2": "28",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 50, Copiague 14: Mike Mazza returned an interception 71-yards for a touchdown and caught an 80-yard pass to lead Centereach (1-2) in Suffolk II. Justin Robbert completed 5 of 5 passes for 157 yards and three touchdowns and Riddick Drab caught two touchdowns. Matthew Gesa had 11 tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Zaita",
+            "att": 12,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamieson Shea",
+            "att": 5,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 5,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "LaRawn Robinson",
+            "att": 7,
+            "yds": 36,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 5,
+            "comp": 5,
+            "yds": 157,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 2,
+            "yds": 102,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 2,
+            "yds": 47,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Matthew Gesa",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Andrew Ferreira",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Timothy  Demetres",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 24,
+    "gameId": "5306",
+    "box": {
+      "gameId": "5306",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "7",
+          "q2": "7",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Centereach",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 24, Centereach 14: Jack Helrigel had a 34-yard TD catch that broke a 7-7 tie just before halftime to lead Northport in Suffolk Division II. Owen Johansen was 7-of-12 for 175 yards and two touchdowns. JJ Ahlstrand had a 50-yard touchdown reception, kicked a 33-yard field goal, and three extra points. Dylan McNaughton had 11 tackles, including two for a loss for the Tigers (4-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Jackson Campbell",
+            "att": 14,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "att": 8,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen Johansen",
+            "att": 12,
+            "comp": 7,
+            "yds": 171,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 23,
+            "comp": 12,
+            "yds": 146,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "rec": 1,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Aidan Campbell",
+            "rec": 3,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Helrigel",
+            "rec": 2,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Jack Sandrib",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 4,
+            "yds": 66,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 2,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 4,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "JJ Ahlstrand",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 41,
+    "gameId": "5338",
+    "box": {
+      "gameId": "5338",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "14",
+          "q2": "14",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 41, Centereach 13: Konrad Maciejny rushed 13 times for 208 yards and three touchdowns to lead West Islip (3-1) in Suffolk II. Maciejny exploded for an 88-yard rushing score in the second quarter, pushing the West Islip lead to 20-0. Maciejny would add a 20-yard rushing score in the third quarter and a 1-yard touchdown in the fourth. Bob Richardson threw for 115 yards and connected on two touchdowns with Rocco Carpinello. Their second touchdown connection came on a 48-yard pass in the second quarter. Chris Piropato had six solo tackles and two sacks. Centereach is 1-4.",
+      "stats": {
+        "rushing": [],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 41,
+            "comp": 26,
+            "yds": 300,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 8,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 3,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 4,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 5,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Andrew Ferreira",
+            "rec": 3,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "5352",
+    "box": {
+      "gameId": "5352",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "21",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 42, Centereach 14: Josiah Melendez had a receiving, rushing, and interception return touchdown for Huntington (4-2) in Suffolk II. Melendez caught an 66-yard pass from Anthony Annunziata in the second quarter. He scored again on a 60-yard interception return for Huntington's final score of the game.Ryan Porzio had the game's first score when he returned an interception 30 yards for a touchdown in the first quarter. Centereach is (1-5)",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 13,
+            "yds": 135,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 10,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 4,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 1,
+            "comp": 4,
+            "yds": 66,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 20,
+            "comp": 10,
+            "yds": 119,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "rec": 1,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 5,
+            "yds": 47,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 3,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ryan Porzio",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 28,
+    "gameId": "5273",
+    "box": {
+      "gameId": "5273",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 28, Centereach 21: Jake Trovato rushed for 125 yards and two touchdowns on 18 carries, had a 23-yard reception from Brenden O'Connor to start the scoring for the Bulldogs, and added 12 tackles to lead Lindenhurst (6-1) in Suffolk II. O'Connor completed 11 of 17 passes for 127 yards and two touchdowns and Chris Carson had eight receptions for 73 yards and a touchdown adding eight tackles and two sacks. Orrik Blaise rushed for 74 yards on eight carries. Centereach is now 1-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 18,
+            "yds": 125,
+            "tds": 2
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 8,
+            "yds": 74,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 22,
+            "comp": 17,
+            "yds": 237,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 17,
+            "comp": 11,
+            "yds": 127,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 6,
+            "yds": 75,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 4,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 3,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 8,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 1,
+            "yds": 28,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Johnny Aquino",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jordan Martin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 40,
+    "gameId": "5405",
+    "box": {
+      "gameId": "5405",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "7",
+          "q2": "0",
+          "q3": "8",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "7",
+          "q2": "23",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 40, Centereach 31: Isaiah Richardson caught three passes for 155 yards and two touchdowns in Suffolk II. His 56-yard touchdown reception from Liam Fincke gave West Babylon a 22-7 lead in the second quarter. He later caught a 97-yard touchdown pass. Drew McKittrick scored a 42-yard rushing touchdown in the first quarter, made three tackles, deflected a pass and had an interceptions. Sean McGuire made three catches for 72 yards, made four tackles, and deflected a pass. Lucas Chang made six tackles and had two sacks. Dylan Bradley made 10 tackles and had a sack for West Babylon (3-3). Centereach is 1-7.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "att": 10,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "att": 6,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 4,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Michael  Capriola",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dylan  Bradley",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 28,
+            "comp": 17,
+            "yds": 224,
+            "tds": 2,
+            "int": 2
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 7,
+            "comp": 4,
+            "yds": 216,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 8,
+            "comp": 4,
+            "yds": 44,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 7,
+            "yds": 97,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 5,
+            "yds": 87,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "rec": 3,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 3,
+            "yds": 155,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sean  McGuire",
+            "rec": 3,
+            "yds": 72,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Brendan  Barry",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Tyler Ferragamo",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Matthew Gesa",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dylan Bradley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

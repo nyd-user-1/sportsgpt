@@ -42,7 +42,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
 
   return (
     <div style={{
-      background: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px',
+      background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '8px',
       padding: '8px 12px', fontSize: '12px', minWidth: '160px',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600 }}>
@@ -61,17 +61,17 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
             display: 'inline-block', width: '10px', height: '10px',
             borderRadius: '2px', backgroundColor: row.color, flexShrink: 0,
           }} />
-          <span style={{ color: '#6b7280' }}>{row.label}</span>
+          <span style={{ color: 'var(--muted)' }}>{row.label}</span>
           <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px' }}>{row.value}</span>
         </div>
       ))}
-      <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '6px', paddingTop: '6px' }}>
+      <div style={{ borderTop: '1px solid var(--border)', marginTop: '6px', paddingTop: '6px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ color: '#6b7280' }}>Total</span>
+          <span style={{ color: 'var(--muted)' }}>Total</span>
           <span style={{ fontWeight: 600 }}>{total}</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2px' }}>
-          <span style={{ color: '#6b7280' }}>3yr Win %</span>
+          <span style={{ color: 'var(--muted)' }}>3yr Win %</span>
           <span style={{ fontWeight: 600 }}>{winPct}%</span>
         </div>
       </div>

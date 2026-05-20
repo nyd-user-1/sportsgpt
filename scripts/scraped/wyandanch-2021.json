@@ -1,0 +1,737 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 20,
+    "gameId": "4912",
+    "box": {
+      "gameId": "4912",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "14",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 53,
+    "gameId": "4903",
+    "box": {
+      "gameId": "4903",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "16",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Babylon",
+          "q1": "21",
+          "q2": "13",
+          "q3": "19",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "53"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 53, Wyandanch 16: Joe Young ran for 189 yards and a touchdown and completed 5 of 8 passes for 124 yards and three touchdowns to lead Babylon (2-0) in Suffolk IV. Elijah Kneeland caught all three touchdowns, finishing with four receptions and 107 yards and Andrew DiPalma ran for 88 yards and three touchdowns on seven carries and had two interceptions. Brady Winter had 12 tackles and Jack Pinna had 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 17,
+            "yds": 189,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 7,
+            "yds": 88,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Alix PointDuJour",
+            "att": 1,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 8,
+            "comp": 5,
+            "yds": 124,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 4,
+            "yds": 107,
+            "tds": 3,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Brandon Timko",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Trevor  Thuma",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "East Hampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 35,
+    "gameId": "5290",
+    "box": {
+      "gameId": "5290",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Pierson",
+          "q1": "6",
+          "q2": "8",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Hampton/Pierson 35, Wyandanch 12: Charlie Corwin rushed for 120 yards and two touchdowns on 12 carries and completed 4 of 5 passes for 92 yards, including a 69-yard touchdown to Aryan Chugh, to lead East Hampton/Pierson (2-1) in Suffolk IV. Finn Byrnes added two touchdowns in the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 26,
+    "gameId": "5301",
+    "box": {
+      "gameId": "5301",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "6",
+          "q2": "8",
+          "q3": "12",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "12",
+          "q2": "0",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Wyandanch 34, Center Moriches 26: DeAndre Smith had touchdowns runs of 56 and 4 yards and added a 79-yard kickoff return for a touchdown to lead Wyandanch (1-3) in Suffolk IV. His 79-yard kickoff return for a touchdown opened the second half and gave Wyandanch a 20-12 lead. Marcus Harris, who had five tackles for loss, ended the game with two consecutive sacks, including forcing a fumble on the final play. Tyree Hayes had a 28-yard touchdown run followed by a two-point conversion run by Marvin Fenwick to give Wyandanch a 34-18 lead with 1:03 remaining in the fourth quarter. Antoine Ruddock added a 40-yard touchdown run and a two-point conversion and Tavian Jennings had two interceptions in the win. Center Moriches falls to 1-3.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 42,
+    "gameId": "5337",
+    "box": {
+      "gameId": "5337",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 42, Wyandanch 6: Joe'll Spagnoulo rushed for 82 yards and three touchdowns on five carries for Miller Place (3-2) in Suffolk IV. Justin Klein connected with Anthony Bartolotto on a 16-yard touchdown and Nick Oliva made all six PATs and rushed for 61 yards on seven carries. Scotty Seymour had 13 carries for 85 yards. Wyandanch falls to 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "att": 13,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "att": 5,
+            "yds": 82,
+            "tds": 3
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 7,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 5,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden Jackson",
+            "att": 2,
+            "yds": 12,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 7,
+            "comp": 4,
+            "yds": 55,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "rec": 3,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Owen Connolly",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Hampton Bays",
+    "isAway": false,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 20,
+    "gameId": "5367",
+    "box": {
+      "gameId": "5367",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "12",
+          "q2": "6",
+          "q3": "12",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Wyandanch 36, Hampton Bays 20: DeAndre Smith rushed for 198 yards and two touchdowns on 12 carries and Tyree Hayes rushed for 87 yards and two touchdowns on 10 carries for Wyandanch (2-4) in Suffolk IV. Smith also had a 43-yard touchdown pass to Antoine Ruddock. Hampton Bays falls to 0-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Wyandanch",
+            "player": "DeAndre Smith",
+            "att": 12,
+            "yds": 198,
+            "tds": 2
+          },
+          {
+            "team": "Wyandanch",
+            "player": "Tyree Hayes",
+            "att": 10,
+            "yds": 87,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 41,
+    "gameId": "5381",
+    "box": {
+      "gameId": "5381",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Glenn",
+          "q1": "27",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Glenn 41, Wyandanch 14: Chris Franzese completed 8 of 8 passes for 168 yards and three touchdowns to lead Glenn (3-4) in Suffolk Division IV. Craig Decembre had three receptions for 93 yards and two touchdowns for the Knights. Kevin Vides returned a punt 26 yards for a touchdown in the second quarter to extend the lead to 27-0.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Joe LaCorte",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Joe LaCorte",
+            "att": 3,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 3,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "att": 1,
+            "yds": 15,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 7,
+            "comp": 8,
+            "yds": 168,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 7,
+            "comp": 8,
+            "yds": 168,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Craig Decembre",
+            "rec": 3,
+            "yds": 93,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Craig Decembre",
+            "rec": 3,
+            "yds": 93,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Karahn King",
+            "rec": 3,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mike  St. Croix",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Tim Brown",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Glenn",
+            "player": "Tim Brown",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Dan Clinard",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Christian Szokoli",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

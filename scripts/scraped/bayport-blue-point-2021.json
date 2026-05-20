@@ -1,0 +1,2012 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 51,
+    "oppScore": 0,
+    "gameId": "4956",
+    "box": {
+      "gameId": "4956",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "22",
+          "q2": "22",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 51, Center Moriches 0: Brady Clark threw two touchdowns and ran for two more and Jameson Smith caught a 75-yard touchdown and scored on the ground from four-yards out to lead Bayport-Blue Point in their Suffolk IV opener.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 6,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 6,
+            "yds": 64,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 4,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jacob Brower",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 1,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 8,
+            "comp": 3,
+            "yds": 86,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 1,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 1,
+            "yds": 9,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "David Frabizio",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dylan Spano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 27,
+    "gameId": "4986",
+    "box": {
+      "gameId": "4986",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "14",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "3",
+          "q2": "6",
+          "q3": "15",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 27, Bayport-Blue Point 26: Verissimo Pedra kicked a 25-yard field goal with nine seconds remaining in the fourth quarter on the 16th play of a drive that started at the Mt. Sinai 30-yard line to give Mt. Sinai a 27-26 victory over Bayport-Blue Point in Suffolk Division IV football Saturday. Mount Sinai (2-0) converted two fourth downs and three third downs on the winning drive. Mount Sinai's James Carretta blocked an extra point after Brady Clark ran in a 1-yard touchdown for Bayport-Blue Point with six minutes remaining to keep the Mustangs down only two points. Joey Spallina completed 8 of 9 passes for 94 yards and two touchdowns and rushed for 101 yards on 23 carries in the win. Michael Trepeta added 61 yards on a touchdown on 13 carries and Gavin Takacs had five receptions for 74 yards, a touchdown and two two-point conversions in the win. Carretta also had an interception, which led to a 25-yard field goal for the game's first points.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 12,
+            "yds": 94,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 23,
+            "yds": 101,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 13,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 17,
+            "comp": 9,
+            "yds": 179,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 9,
+            "comp": 8,
+            "yds": 94,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 5,
+            "yds": 121,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 5,
+            "yds": 74,
+            "tds": 1,
+            "pat": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2021",
+    "opponent": "Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 6,
+    "gameId": "4904",
+    "box": {
+      "gameId": "4904",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "20",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Quarterback Brady Clark threw for two touchdowns and ran for another as Bayport-Blue Point (2-1) rolled to a Suffolk IV win. Clark was 12-for-15 passing for 209 yards, connecting with Derek Varley on a 66-yard score and with JJ Aiello on a 36-yard TD. Varley had three catches for 114 yards and Gavin Locascio had an 80-yard touchdown run for the Phantoms. Joe Young rushed for 199 yards and Andrew DiPalma had a 22-yard TD run for Babylon (1-2).0",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 2,
+            "yds": 82,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 6,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 4,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 25,
+            "yds": 119,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 6,
+            "yds": 59,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "comp": 11,
+            "yds": 218,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 5,
+            "comp": 1,
+            "yds": 25,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 3,
+            "yds": 114,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 2,
+            "yds": 41,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 42,
+    "gameId": "5297",
+    "box": {
+      "gameId": "5297",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "20",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 55, Miller Place 42: Jameson Smith ran for two touchdowns and caught two more in Suffolk IV. His 30-yard touchdown reception from Brady Clark in the second quarter gave Bayport -Blue Point a 27-14 lead. Clark threw for 205 yards and three touchdowns on 12-of-19 passing. Gavin Locasio rushed for 137 yards and three touchdowns on 13 carries. He ripped off a 61-yard touchdown in the fourth quarter to extend the Phantoms lead to 21 points. Derek Varley made three catches for 71 yards and a touchdown for Bayport - Blue Point (3-1). Miller Place is 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "att": 19,
+            "yds": 101,
+            "tds": 2
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 12,
+            "yds": 95,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "att": 6,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 13,
+            "yds": 137,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 2,
+            "yds": 78,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 5,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 10,
+            "comp": 5,
+            "yds": 125,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 19,
+            "comp": 12,
+            "yds": 205,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Owen Connolly",
+            "rec": 3,
+            "yds": 73,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 4,
+            "yds": 90,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 3,
+            "yds": 71,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "East Hampton / Pierson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 13,
+    "gameId": "5325",
+    "box": {
+      "gameId": "5325",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        },
+        {
+          "team": "East Hampton / Pierson",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 55, East Hampton/Pierson 13: Brady Clark completed 9 of 12 passes for 187 yards and three touchdowns and rushed for 27 yards and a score on four carries to lead Bayport-Blue Point (4-1) in Suffolk IV. Calvin Dickinson caught four passes for 82 yards and a score, Jameson Smith had three receptions for 90 yards and a TD and Derek Varley added a 10-yard touchdown reception on his lone catch of the game. JJ Aiello rushed for 35 yards and two scores on two carries and Luke Olsen had TD runs of 7 and 8 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 2,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 2,
+            "yds": 35,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 4,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Luke Olsen",
+            "att": 2,
+            "yds": 15,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 5,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 12,
+            "comp": 9,
+            "yds": 187,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 90,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 4,
+            "yds": 82,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Shoreham-Wading River",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 14,
+    "gameId": "5330",
+    "box": {
+      "gameId": "5330",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 34, Shoreham-Wading River 14: Bayport-Blue Point moves to 5-1 in Suffolk IV.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 7,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 10,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 29,
+            "comp": 16,
+            "yds": 155,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 16,
+            "comp": 11,
+            "yds": 202,
+            "tds": 3,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 5,
+            "yds": 76,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 107,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 1,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "rec": 5,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 0,
+    "gameId": "5382",
+    "box": {
+      "gameId": "5382",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "19",
+          "q2": "15",
+          "q3": "7",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 44, Port Jefferson 0: Brady Clark found Calvin Dickinson for two touchdowns to lead Bayport-Blue Point (6-1) in Suffolk IV. JJ Aiello recorded a safety for Bayport-Blue Point's final points. Jameson Smith had a 45-yard touchdown reception from Clark and a 15-yard touchdown run in the win. Clark also had a 5-yard touchdown run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 9,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 2,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 2,
+            "yds": 36,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 7,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 2,
+            "yds": 6,
+            "tds": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 16,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Stephen Bayer",
+            "att": 11,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Anthony Pipia",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Junior Beltran",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 20,
+            "comp": 15,
+            "yds": 256,
+            "tds": 3,
+            "int": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 8,
+            "comp": 4,
+            "yds": 22,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 6,
+            "yds": 80,
+            "tds": 2,
+            "pat": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 2,
+            "yds": 75,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "rec": 4,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "John Sheils",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 20,
+    "gameId": "5404",
+    "box": {
+      "gameId": "5404",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "18",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport - Blue Point 26, Glenn 20: Gavin Locascio ran for two touchdowns and Jameson Smith ran for a touchdown and threw for one in Suffolk IV.  Smith's 21-yard rushing touchdown in the second quarter cut the Glenn lead to 7-6. Later in the quarter, Locasio's 40-yard touchdown run gave the Phantoms a 12-7 lead. Locasio's 10-yard touchdown in the third quarter pushed the lead to 26-13. Bayport- Blue Point is 7-1 and Glenn is 3-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 13,
+            "yds": 106,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 3,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 4,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 2,
+            "yds": 14,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 8,
+            "comp": 12,
+            "yds": 120,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 0,
+    "gameId": "5419",
+    "box": {
+      "gameId": "5419",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 35, Glenn 0: Brady Clark rushed for 110 yards and two touchdowns to lead No. 2 Bayport-Blue Point over No. 7 Glenn in the Suffolk IV quarterfinals. Jameson Smith rushed for 101 yards and a touchdown. Gavin Locasio added 35 yards on the ground and scored the first touchdown of the game on a four-yard run in the first quarter. Danny Aiello scored a rushing touchdown in the fourth quarter. Bayport-Blue Point (8-1) will take on Mt. Sinai on Friday, November 12th at Bayport-Blue Point High School. Glenn finishes 3-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 110,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 10,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "att": 2,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 5,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 8,
+            "yds": 26,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 8,
+            "comp": 15,
+            "yds": 92,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/13/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 14,
+    "gameId": "5461",
+    "box": {
+      "gameId": "5461",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 11,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 10,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "yds": 116,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 8,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 9,
+            "comp": 7,
+            "yds": 109,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "comp": 12,
+            "yds": 183,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 3,
+            "yds": 72,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 8,
+            "yds": 114,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/19/2021",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 26,
+    "gameId": "5468",
+    "box": {
+      "gameId": "5468",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "12",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 8,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 11,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 6,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 28,
+            "yds": 126,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 22,
+            "comp": 14,
+            "yds": 236,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 17,
+            "comp": 13,
+            "yds": 178,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 4,
+            "yds": 80,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 78,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 5,
+            "yds": 101,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

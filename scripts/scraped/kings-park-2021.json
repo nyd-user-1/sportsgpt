@@ -1,0 +1,1942 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/03/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 7,
+    "gameId": "4865",
+    "box": {
+      "gameId": "4865",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 28, Eastport - South Manor 7: Jon Borkowski threw for two touchdowns and ran for another two in Suffolk III. He threw for 170 yards and touchdowns of 33 and 27-yards on 13-of-16 passing. He rushed for 47 yards and scored two 1-yard touchdowns on nine carries.  Mark Griffin caught both touchdown passes. Their 27-yard connection in the third quarter gave Kings Park a 20-0 lead. Griffin also rushed for 18 yards on four carries and made six tackles, had a sack, and a forced fumble.  Nico Laviano made four catches for 30 yards, rushed for 45 yards on nine carries, and made nine tackles.  Scott McConville led the defense with 10 tackles.  Gavin Lopez, Jack Bonnah and Mark Griffin each had a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 9,
+            "yds": 47,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 9,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bonnah",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Lopez",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 16,
+            "comp": 13,
+            "yds": 170,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 60,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "rec": 3,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Lopez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bonnah",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 6,
+    "gameId": "4915",
+    "box": {
+      "gameId": "4915",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 21, Westhampton 6: Jon Borkowski ran for 184 yards and two touchdowns on 22 carries. Borkowski scored both of his touchdowns in the fourth quarter, his 43-yard run with 1:13 remaining put the game away. Nico Laviano scored the first touchdown for Kings Park on a two-yard run. Laviano finished the game with 44 yards and a touchdown on 10 carries. Scott McConville had 13 tackles and an interception. John Dowling made five tackles and had an interception.  Gavin Lopez had five tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Robert  Moreland",
+            "att": 9,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 22,
+            "yds": 184,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 10,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "Will Gambino",
+            "att": 12,
+            "comp": 7,
+            "yds": 97,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Geoff Arrasate",
+            "att": 7,
+            "comp": 3,
+            "yds": 55,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 15,
+            "comp": 7,
+            "yds": 13,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "rec": 4,
+            "yds": 83,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Nick  Waszkelewicz",
+            "rec": 2,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "rec": 4,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 2,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "rec": 3,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Gavin Lopez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tyler Avell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2021",
+    "opponent": "Sayville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 42,
+    "gameId": "5281",
+    "box": {
+      "gameId": "5281",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sayville",
+          "q1": "7",
+          "q2": "21",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 42, Kings Park 14: Mack Murtha had two receiving touchdowns and an 85-yard kick-off return touchdown to lead Sayville (3-0) in Suffolk III. The kickoff return touchdown opened the scoring for Sayville and Murtha's 81-yard receiving touchdown from Jack Smalley in the second quarter gave them a 13-7 lead. Smalley connected to Matt Bonfanti for a 10-yard touchdown pass with nine seconds left in the second quarter to go up 28-14 at the half. Smalley had three passing touchdowns. Kyle Mesina rushed for 112 yards and two touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "att": 12,
+            "yds": 112,
+            "tds": 2
+          },
+          {
+            "team": "Sayville",
+            "player": "Joseph  Byrne",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 18,
+            "yds": 116,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 7,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 6,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aaron Shapiro",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 9,
+            "comp": 6,
+            "yds": 172,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Eric  McFadden",
+            "att": 3,
+            "comp": 4,
+            "yds": 21,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 22,
+            "comp": 15,
+            "yds": 113,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "rec": 4,
+            "yds": 125,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Kyle  Messina",
+            "rec": 1,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Chad  Moccio",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Matt Bonfanti",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 4,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 5,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 3,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Michael Argenziano",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "James Gallagher",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Jeremy  Brett",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack Bruetsch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Rocky Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 0,
+    "gameId": "5305",
+    "box": {
+      "gameId": "5305",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 49, Rocky Point 0: Jonathan Borkowski rushed for 161 yards and four touchdowns on 12 carries and completed 7 of 8 passes for 154 yards and a touchdown for Kings Park (3-1) in Suffolk III. Nick Labita rushed for 106 yards on nine carries, including a 64-yard touchdown for the game's final score. Nico Laviano had 87 yards on seven carries, including a 5-yard touchdown. John Flynn had two receptions for 51 yards and a touchdown, Scott McConville led the defense with seven tackles and Mark Griffin had a sack in the win. Rocky Point falls to 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 12,
+            "yds": 161,
+            "tds": 4
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 9,
+            "yds": 106,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 7,
+            "yds": 87,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "James O'Melia",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Aaron Shapiro",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Micca",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cody Miller",
+            "att": 10,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 8,
+            "comp": 7,
+            "yds": 154,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Harborfields",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 7,
+    "gameId": "5336",
+    "box": {
+      "gameId": "5336",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "20",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 34, Harborfields 7: Jonathan Borkowski completed 7 of 11 passes for 116 yards and two touchdowns and rushed for 103 yards on 16 carries to lead Kings Park (4-1) in Suffolk III. Nico Laviano rushed for 57 yards and two touchdowns on nine carries and John Matthews had five receptions for 86 yards and two touchdowns. Scott McConville blocked a punt on the second play of the second quarter that led to a 2-yard touchdown run by Laviano to give Kings Park a 14-0 lead.  Dawsen Atlas had two sacks and Mark Griffin had a sack in the win. Harborfields falls to 1-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Harborfields",
+            "player": "John Acritani",
+            "att": 6,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Frankie Ciaramatrio",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Luke Derosa",
+            "att": 3,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 16,
+            "yds": 103,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 9,
+            "yds": 57,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 5,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "James O'Melia",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane  Longin",
+            "att": 28,
+            "comp": 13,
+            "yds": 103,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 11,
+            "comp": 7,
+            "yds": 127,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Harborfields",
+            "player": "Dylan  Wolf",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Frankie Ciaramatrio",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Aidan Terry",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Luke Derosa",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Jude Bazes",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 5,
+            "yds": 97,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Harborfields",
+            "player": "Ben Castaldo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Dawsen Atlas",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony Judge",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Comsewogue",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 7,
+    "gameId": "5374",
+    "box": {
+      "gameId": "5374",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 11,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 10,
+            "yds": 76,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 4,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 8,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 5,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 3,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 9,
+            "comp": 8,
+            "yds": 99,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 9,
+            "comp": 17,
+            "yds": 71,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Jack Bruetsch",
+            "rec": 1,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 3,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "rec": 4,
+            "yds": 46,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Matt Walsh",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Delhotal",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 25,
+    "gameId": "5386",
+    "box": {
+      "gameId": "5386",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "6",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "25"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 25, Kings Park 21: Derek Burrell rushed for 261 yards and two touchdowns on 19 carries and completed 3 of 4 passes for 36 yards for East Islip (7-1) in Suffolk III. Leo Lopez rushed for 133 yards and two touchdowns on 14 carries and stopped Kings Park on 4th and goal at the 3-yard line in the third quarter and Burrell broke up a 4th down pass in the fourth quarter to preserve the win. Kings Park is now 5-2. Kings Park quarterback Jonathan Borkowski carried the ball 25 times for 228 yards and a score. He was also 6-for-9 passing for 61 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 25,
+            "yds": 228,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 13,
+            "yds": 85,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 19,
+            "yds": 261,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 14,
+            "yds": 133,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 9,
+            "comp": 6,
+            "yds": 61,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 4,
+            "comp": 3,
+            "yds": 36,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dawsen Atlas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Deer Park",
+    "isAway": false,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 14,
+    "gameId": "5416",
+    "box": {
+      "gameId": "5416",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Deer Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "17",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 38, Deer Park 14: Jonathan Borkowski rushed for 214 yards, a touchdown and threw for 245 yards and two touchdowns to lead No. 3 Kings Park over No. 6 Deer Park in the Suffolk III semi-finals. Borkowski added an interception on defense and set a school record for most total yards in a game with 459 yards. John Matthews had four receptions for 145 yards and two touchdowns. Nico Laviano had 30 yards and rushed for two touchdowns. Scott McConville had 11 tackles. Tyler Avelli had a fumble recovery. Kings Park (6-2) will face East Islip at 7 p.m. on Friday, November 12th at East Islip High School.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 25,
+            "yds": 214,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 3,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 10,
+            "yds": 30,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 4,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 13,
+            "comp": 11,
+            "yds": 245,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "John Matthews",
+            "rec": 4,
+            "yds": 145,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 3,
+            "yds": 65,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tyler Avell",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/12/2021",
+    "opponent": "East Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 55,
+    "gameId": "5452",
+    "box": {
+      "gameId": "5452",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "21",
+          "q3": "21",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 26,
+            "yds": 131,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "att": 12,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nick Labita",
+            "att": 7,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 7,
+            "yds": 173,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 5,
+            "yds": 56,
+            "tds": 2
+          },
+          {
+            "team": "East Islip",
+            "player": "Dave Reynolds",
+            "att": 7,
+            "yds": 12,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Jon Borkowski",
+            "att": 7,
+            "comp": 17,
+            "yds": 109,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 6,
+            "comp": 4,
+            "yds": 188,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "rec": 3,
+            "yds": 82,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John  Dowling",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Nico Laviano",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dan Lopez",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Gavin  Herzog",
+            "rec": 1,
+            "yds": 94,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "rec": 1,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "East Islip",
+            "player": "Ryan Bauco",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Mert Duman",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

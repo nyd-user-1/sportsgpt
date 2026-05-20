@@ -106,7 +106,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
                 onClick={() => { const qs = searchParams.toString(); router.push(`/launchpad/${t.slug}${qs ? `?${qs}` : ''}`, { scroll: false }) }}
                 className={cn(
                   'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',
-                  selectedSlug === t.slug ? 'bg-blue-50 shadow-[inset_3px_0_0_#033882]' : ''
+                  selectedSlug === t.slug ? 'bg-blue-50 dark:bg-blue-950/40 shadow-[inset_3px_0_0_#033882]' : ''
                 )}
               >
                 <td className="px-4 py-3 font-medium text-[var(--txt)] w-[180px]">

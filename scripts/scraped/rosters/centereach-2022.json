@@ -1,0 +1,27 @@
+{
+  "slug": "centereach",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Jason Zaita",
+      "newsday_player_id": 20729,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Drab Riddick",
+      "newsday_player_id": 20727,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Logan Poppe",
+      "newsday_player_id": 20728,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    }
+  ]
+}

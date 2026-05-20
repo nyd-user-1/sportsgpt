@@ -1,0 +1,1453 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Harborfields",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 29,
+    "gameId": "5606",
+    "box": {
+      "gameId": "5606",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Harborfields",
+          "q1": "0",
+          "q2": "22",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Harborfields 29, Rocky Point 14: Vincent Bolognino scored a 70-yard rushing touchdown and a 30-yard receiving touchdown for Harborfields in Suffolk III. Shane Longin threw for 100 yards and two touchdowns and added 50 rushing yards. Nico Markowski had 13 tackles, including three for a loss, two sacks and Gavin Lindkvist had 10 tackles, including three for a loss.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 13,
+            "yds": 65,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 17,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vinny Bolognino",
+            "att": 5,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Shane Longin",
+            "att": 10,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nico Markowski",
+            "att": 11,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "att": 5,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Harborfields",
+            "player": "Shane Longin",
+            "att": 14,
+            "comp": 7,
+            "yds": 125,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "rec": 2,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Vinny Bolognino",
+            "rec": 3,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Michael Ferranti",
+            "rec": 3,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Peter Johnston",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charlie Serafin",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "James Dowd",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Gavin  Lindkvist",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Harborfields",
+            "player": "Nico Markowski",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Charlie Serafin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Harborfields",
+            "player": "Declan McCarthy",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "East Hampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 21,
+    "gameId": "5648",
+    "box": {
+      "gameId": "5648",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "21",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "East Hampton",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 41, East Hampton 21: Jeremy Graham rushed for 125 yards and two touchdowns on three carries and threw for one touchdown for Rocky Point (1-1) in Suffolk III. Joey Cecere added 145 yards and a touchdown on 21 carries. Liam Resinger rushed for 60 yards and touchdown and Ryan Meyers added 30 rushing yards and touchdown. Anthony Viggiano caught a 35-yard touchdown pass from Graham in the first quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 21,
+            "yds": 145,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 3,
+            "yds": 125,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 7,
+            "yds": 30,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 4,
+            "comp": 3,
+            "yds": 60,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 5,
+            "comp": 1,
+            "yds": 14,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jayden White",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Wyandanch",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 6,
+    "gameId": "5665",
+    "box": {
+      "gameId": "5665",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "21",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 49, Wyandanch 6: Colton Feinberg ran for touchdowns of 1 and 10-yards in Suffolk III. His 10-yard run in  the second quarter gave Rocky Point a 34-0 lead. Joey Cecere ran for 90 yards and a 20-yard touchdown on six carries. Jeremy Graham rushed for 90 yards on three carries and A.J. Aschettino ran for 56-yards and a 2-yard touchdown on three carries for Rocky Point (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 6,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 3,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "att": 5,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 3,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 1,
+            "yds": 47,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominick Viggiano",
+            "att": 2,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Landon Orlando",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 3,
+            "yds": 15,
+            "tds": 2
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Zach Gennaro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Cooper Peterson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Eastport-South Manor",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 0,
+    "gameId": "5694",
+    "box": {
+      "gameId": "5694",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 42, Eastport-South Manor 0: Jeremy Graham threw a touchdown and had a rushing touchdown to lead Rocky Point (3-1) in Suffolk III. Graham had 60 rushing yards. Joey Cecere ran for 140 yards and two touchdowns on 14 carries. Viggiano had a 36-yard receiving touchdown and returned a blocked punt 28 yards for a touchdown. Liam Reisinger returned a punt for a 42-yard touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 14,
+            "yds": 140,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 3,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 2,
+            "comp": 2,
+            "yds": 48,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 36,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Brandon Nyack",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Art Daly",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Dominick Viggiano",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Half Hollow Hills West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 42,
+    "gameId": "5586",
+    "box": {
+      "gameId": "5586",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "14",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 42, Rocky Point 7: Joseph Filardi was 7-for-11 with four touchdown passes and rushed 116 yards on six carries in Suffolk III. Filardi connected with Jesse Brooks for three touchdowns for 73 yards. Filardi and Brooks each had an interception in the first half for Half Hollow Hills West (5-0). Jalyn Jacques rushed 158 yards for two touchdowns in the second half and Ryan Bonocore and Zachary Vasconcello each made nine tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 12,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 7,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 2,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jalyn Jacques",
+            "att": 15,
+            "yds": 158,
+            "tds": 2
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 6,
+            "yds": 116,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Zachary Vasconcellos",
+            "att": 6,
+            "yds": 75,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "att": 11,
+            "comp": 8,
+            "yds": 105,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "rec": 5,
+            "yds": 73,
+            "tds": 3,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Benjamin  Stummer",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jayden White",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Joseph Filardi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Half Hollow Hills West",
+            "player": "Jesse Brooks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 15,
+    "oppScore": 26,
+    "gameId": "5720",
+    "box": {
+      "gameId": "5720",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "20",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 26, Rocky Point 15: Matt Ferraro caught a 25-yard touchdown pass from Joey Vitale with five minutes left to give Islip an 18-15 lead and returned an interception 99-yards for a touchdown with one minute left to ice the Suffolk III win. Ferraro caught four passes for 75 yards and a touchdown, made eight tackles, and forced a fumble. Kaiden Lewis made seven catches for 107 yards and a touchdown. Michael Vitale completed 12 of 19 passes for 187 yards and two touchdowns. Jake Lindkog made 10 tackles for Islip (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Christian  Hall",
+            "att": 7,
+            "yds": 56,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 8,
+            "yds": 33,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Matthew Ferraro",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Michael Vitale",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 22,
+            "yds": 150,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 6,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 19,
+            "comp": 12,
+            "yds": 187,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "comp": 1,
+            "yds": 22,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "AJ Aschettino",
+            "att": 0,
+            "comp": 2,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "rec": 7,
+            "yds": 107,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Matthew Ferraro",
+            "rec": 4,
+            "yds": 74,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jake Lindskog",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "rec": 1,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Islip",
+            "player": "Matthew Ferraro",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Peter Bonello",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "5749",
+    "box": {
+      "gameId": "5749",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Rocky Point 28, Amityville 6: Joey Cecere had 140 all-purpose yards and two touchdowns. Jeremy Graham passed for 130 yards and a touchdown. Mark Byrnes and Ryan Meyers both forced fumbles and Liam Reisinger added an interception for Rocky Point (4-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 18,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "yds": 21,
+            "tds": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 5,
+            "comp": 3,
+            "yds": 135,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 49,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "rec": 1,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "rec": 1,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Ryan Meyers",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Westhampton",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 28,
+    "gameId": "6049",
+    "box": {
+      "gameId": "6049",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "21",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Rocky Point",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 28, Rocky Point 14: Nolan Michalowski ran for 175 yards and three touchdowns on 25 carries to lead Westhampton (6-2) in Suffolk III. Mike LoRusso had four receptions for 54 yards and a touchdown. Aidan McDermott had eight tackles and Noah Hebberd had seven tackles. Sal Fracapane had five tackles and a sack, Andrew Mensch had five tackles and Jordyn Brown had four tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Nolan  Michalowski",
+            "att": 25,
+            "yds": 175,
+            "tds": 3
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "att": 23,
+            "yds": 80,
+            "tds": 2
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "att": 5,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "att": 4,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 6,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Rocky Point",
+            "player": "Jeremy Graham",
+            "att": 12,
+            "comp": 9,
+            "yds": 131,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Christian Vlaccich",
+            "att": 2,
+            "comp": 1,
+            "yds": 8,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Rocky Point",
+            "player": "Colton Feinberg",
+            "rec": 2,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Joey Cecere",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Liam Reisinger",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Anthony Viggiano",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Westhampton",
+            "player": "Brody Schaffer",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Rocky Point",
+            "player": "Mark Byrnes",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

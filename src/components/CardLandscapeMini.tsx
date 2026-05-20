@@ -84,9 +84,9 @@ export function CardLandscapeMini({
 export function WLBadge({ result }: { result: 'W' | 'L' | 'T' }) {
   return (
     <span className={cn('text-xs font-bold px-1.5 py-0.5 rounded',
-      result === 'W' ? 'text-green-700 bg-green-50' :
-      result === 'L' ? 'text-red-700 bg-red-50' :
-      'text-[var(--muted)] bg-[var(--inp-bg)]')}>
+      result === 'W' ? 'text-green-500' :
+      result === 'L' ? 'text-red-500' :
+      'text-[var(--muted)]')}>
       {result}
     </span>
   )

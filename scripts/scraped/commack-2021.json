@@ -1,0 +1,1576 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 14,
+    "gameId": "4944",
+    "box": {
+      "gameId": "4944",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "6",
+          "q2": "15",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 27, Ward Melville 14: Matt McGurk rushed for 66 yards and a touchdown and completed 15 of 22 yards for 125 yards and a touchdown to lead Commack in its Suffolk I season opener. Jake McKay rushed for 14 yards and a touchdown and Ryan Brady rushed for a yard and a touchdown to seal the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 0,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 13,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick  Gaffney",
+            "att": 12,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nolan Fontana",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 20,
+            "comp": 10,
+            "yds": 155,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 0,
+            "yds": 85,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 1,
+            "yds": 73,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nolan Fontana",
+            "rec": 3,
+            "yds": 37,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick  Gaffney",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Kevin Dolan",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ben Thayer",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 24,
+    "gameId": "5262",
+    "box": {
+      "gameId": "5262",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 24, Commack 21: Caden Lesiewicz made a 34-yard field goal with six seconds remaining in the fourth quarter to break a tie at 21 for Floyd (2-0) in Suffolk I. Dylan Harris rushed for 133 yards and two touchdowns on 16 carries, including a 65-yard score to give Floyd a 21-7 lead in the second quarter. Quentin Alba-Etheridge had a 24-yard interception return for a touchdown to give Floyd a 7-0 lead in the first quarter. Deontae Sykes added three sacks and Brian Benson had six tackles in the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 16,
+            "yds": 133,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 6,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "att": 9,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justin  Tenes",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 10,
+            "comp": 3,
+            "yds": 24,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Jordan O'Brien",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Josh Sutherland",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Deontay Sykes",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Brian  Benson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kelanie Trotman",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Quentin Alba-Etheridge",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 13,
+    "gameId": "5287",
+    "box": {
+      "gameId": "5287",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 35, Brentwood 13: Matthew McGurk and Tristan McMahon hooked up on two passing scores, and Jake McKay returned an interception 45 yards for an early second-half touchdown as Commack scored 28 unanswered points to earn a 35-13 Suffolk Division I victory and spoil Brentwood's Homecoming.\n\n\"We just had to stick to our game plan,\" Commack coach Joe Reggio said. \"We wanted to be able to run and throw the football. . . . We gave them that second touchdown, but then we settled down and got back to being balanced.\"\n\nCommack (2-1) opened the game with a nine-play, 80-yard drive and took a 7-0 lead on a 5-yard TD run by Ryan Carlos (6 carries, 23 yards). Brentwood answered with a 13-play, 65-yard drive and knotted the score on a 2-yard scoring run from Jo'vanny Brown with 1:13 left in the first quarter.\n\nMembers of the Cougars kick return team thought the ensuing kick had reached the end zone for a touchback, but the ball bounced at the Commack 2 and was recovered by Jayden Lucate.\n\nThree seconds later, Randy Ramnarace scored from 2 yards out. The extra point was blocked by Domenic Pirraglia as Brentwood (1-2) led 13-7.\n\nAfter that, it was all big plays for Commack. McGurk threaded the ball amongst a trio of Brentwood defenders and found McMahon on a 35-yard TD pass with 20.9 seconds left as Commack led 14-13 at halftime.\n\nMcKay made his presence felt early in the second half. The 6-1, 205-pound junior linebacker/running back picked off a Brentwood pass, weaved his way through traffic near midfield and ran along the Commack sideline for a 45-yard, pick-6 as the Cougars led 21-13 just 1:45 into the second half. He later added a second interception.\n\n\"That was the turning point of the game to me,\" Reggio said. \"When I saw him make that run, I said, 'Holy cow!' \"\n\nThen, McGurk put the finishing touches on Commack's second win of the season, and sixth in the last seven meetings with Brentwood.\n\nThe senior quarterback, in his first season as a starter, connected on a 27-yard touchdown pass to McMahon (4 catches, 84 yards) with 1:08 left in the third quarter on a curl-and-go route that Commack drew up during halftime.\n\nMcGurk later showed his athleticism on a 45-yard scoring run with 5:49 remaining in the game. \n\n\"We have to build off this win,\" said McGurk, who accounted for three scores, was 12 of 16 passing for 202 yards, and added 60 yards rushing on five carries. \"We have to play better in the first half. We've struggled with that. But from now on, we have to come out strong and not let up.\"",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 3,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "att": 6,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 19,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 5,
+            "yds": 9,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 16,
+            "comp": 12,
+            "yds": 202,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 12,
+            "comp": 4,
+            "yds": 57,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 4,
+            "yds": 84,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Christian  Baldi",
+            "rec": 2,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Domenic Pirraglia",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 17,
+    "gameId": "5296",
+    "box": {
+      "gameId": "5296",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "12",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "10",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 47, Sachem North 17: Matt McGurk threw for 257 yards and three touchdowns on 12-of-18 passing and rushed for 70 yards and a touchdown on six carries in Suffolk I Friday night. Commack scored 31 unanswered points after a 23-yard Ryan Wald field goal in the second quarter gave them a 19-17 lead. Ryan Carlos rushed for 58 yards on seven carries and Ryan Brady ran for 27 yards and a touchdown on six carries. Christian Baldi caught six passes for 163 yards and a 17-yard touchdown. Tristan McMahon caught two passes for 58 yards and a touchdown for Commack (3-1). Sachem North is 1-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 6,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "att": 7,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 6,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 18,
+            "comp": 12,
+            "yds": 257,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Christian  Baldi",
+            "rec": 6,
+            "yds": 163,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Domenic Pirraglia",
+            "rec": 1,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 1,
+            "pat": 6,
+            "points": 9
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Vincent  Rotelli",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Domenic Pirraglia",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 0,
+    "gameId": "5342",
+    "box": {
+      "gameId": "5342",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Commack",
+          "q1": "28",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 49, Riverhead 0: Jon Martine rushed for 103 yards on 11 carries and Matt McGurk rushed for 103 yards and a touchdown to lead Commack (4-1). Ryan Carlos and Justin Maikowski each had interceptions returned for touchdowns in the win. Riverhead falls to 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Jon Martine",
+            "att": 11,
+            "yds": 104,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 3,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "att": 1,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 5,
+            "comp": 3,
+            "yds": 60,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 2,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Justin Maikowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 21,
+    "gameId": "5359",
+    "box": {
+      "gameId": "5359",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "6",
+          "q2": "15",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "6",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack's Ryan Brady really didn't like his nickname: \"Brady Crunch\".\n\n\nLuckily for the Cougars senior, he continued his clutch play in overtime games and now goes by \"Mr. Overtime\".\n\n\n\"I love it,\" he said.\n\n\nCommack and its fans loved it, too, when Brady scored from four yards on third-and-goal as host Commack out-slugged Longwood, 27-21, in double overtime of a thrilling Suffolk Division I football game on Saturday. \n\n\nWhen Brady was a sophomore, he made a key play in overtime as Commack won its season-opener against Sachem East, 14-13, on Sept. 15, 2019. But he was more pleased this time, because of the help from his offensive line.\n\n\n\"I didn't even get touched,\" said Brady with a big smile. \"I don't care about stats, but I'm ready when I'm needed, whether it's a block, a run, catching a pass, I'll do whatever it takes.\"\n\n\nThe fullback/outside linebacker had six carries for 29 yards, and a catch for 38 yards, and anchored the Cougars defense, which didn't allow a point in the second half or either overtime period.\n\n\nCommack (5-1) missed a 42-yard field goal in the closing seconds of regulation in a game that had a tough cross-wind making it difficult for both teams to throw, kick and long snap.\n\n\nCougars quarterback Matthew McGurk threw his third interception of the contest in the first overtime.  \n\n\n\nLongwood (2-3) drove to the Commack 3, but missed a 20-yard field goal that would have ended the game. Longwood players even celebrated, thinking the kick was good. Both officials under the goalposts immediately waved the attempt no good.\n\n\nLongwood had the ball first in the second overtime, and only managed a yard. The Lions' 35-yard field goal attempt was blocked by John Darrell. Members of the Commack interior line, which blocked a PAT after Longwood's first score, noticed a seam with the Lions' line that they could expose.\n\n\n\"On the first [PAT], I held the guard, and Lance [Rhodes] jumped through and got the block,\" Darrell said. \"On the [field goal attempt], he held the [lineman] and I jumped through.\"\n\n\nThe ball hit Darrell squarely in his chest. \"It knocked the wind out of me,\" he said with a grin. \"But it was worth it.\"\n\n\nLongwood seemed to knock the wind out of Commack in the first half and led 21-14 thanks to talented wide receiver/cornerback Tyson Taylor. \n\n\nThe senior was moved to tailback and had scoring runs of 28 and 93 yards in the opening 24 minutes. The 5-10, 160-pound dynamo ended the game with 25 carries for 244 yards, two touchdowns and a pair of interceptions.\n\n\n\"We knew he [Taylor] and [Terrence Robinson] were shifty players,\" Commack coach Joe Reggio said, \"but we didn't know [Taylor] was going to play running back.\"\n\n\nCommack (5-1) found the equalizer when quarterback Matthew McGurk (7-for-20, 178 yards) threw his third touchdown pass of the game, this one to Domenic Pirraglia (2 TD catches) for 10 yards with 10:09 left in regulation.\n\n\nAfter the game, Brady was quick to credit the Cougars offensive line: left tackle Zachary Burgess, left guard Darrell, center Maksymilia (CQ) Sereda, right guard Rhodes, and right tackle Timothy Keher, as well as tight ends Pirraglia and Vincent Rotelli. \n\n\n\"We're a second-half team,\" Brady said.\n\n\nLuckily for Commack, it has \"Mr. Overtime,\" too.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "att": 25,
+            "yds": 244,
+            "tds": 2
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 6,
+            "yds": 29,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 20,
+            "comp": 7,
+            "yds": 178,
+            "tds": 3,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Domenic Pirraglia",
+            "rec": 2,
+            "yds": 48,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/24/2021",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 34,
+    "gameId": "5383",
+    "box": {
+      "gameId": "5383",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Whitman",
+          "q1": "7",
+          "q2": "7",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 34, Commack 14: Nicholas Bottoni threw for 305 yards and three touchdowns on 13-of-20 passing in Suffolk I Saturday. Brandon Ivy made seven catches for 176 yards and two touchdowns. Tyriek Mays-Mckoy had four catches for 93 yards and a touchdown. His 31-yard touchdown catch in the first quarter gave Whitman a 7-0 lead after an extra point. Whitman opened up a 27-7 lead after three quarters. Luke Kannavos made 11 tacks and had two sacks to lead Whitman (7-0). Commack is 5-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "AJ Evans III",
+            "att": 14,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonathan Maldonado",
+            "att": 10,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 3,
+            "yds": 6,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 20,
+            "comp": 13,
+            "yds": 305,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Brandon Ivy",
+            "rec": 7,
+            "yds": 176,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Tyriek Mays-Mckoy",
+            "rec": 4,
+            "yds": 93,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mikey Phillips",
+            "rec": 1,
+            "yds": 36,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam  Arevalo",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luke Kannavos",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Rasahn Thompson",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Chris  Silverio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 0,
+    "gameId": "5392",
+    "box": {
+      "gameId": "5392",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "26",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 33, Central Islip 0: Matt McGurk and Jeremy Weiss each threw touchdown passes in a 26-point second quarter to lead Commack in Suffolk I. Weiss connected with Christian Baldi on a 13-yard TD pass and McGurk threw a 27-yard TD pass to Jake McKay. Ryan Brady returned a fumble for an 8-yard score in the second quarter. Tristian McMahon had a 10-yard rushing score to open the scoring in the first and Ryan Carlos rushed for a 2-yard TD to cap the scoring. Commack improved to 6-2 and Central Islip fell to 2-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 6,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "att": 3,
+            "yds": 14,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Jeremy Weiss",
+            "att": 4,
+            "comp": 2,
+            "yds": 33,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 6,
+            "comp": 1,
+            "yds": 27,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Christian  Baldi",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Vincent  Rotelli",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/06/2021",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 13,
+    "gameId": "5409",
+    "box": {
+      "gameId": "5409",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "att": 14,
+            "yds": 96,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Terrance Robinson",
+            "att": 15,
+            "yds": 65,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 9,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 10,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 9,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "att": 2,
+            "yds": 12,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 5,
+            "comp": 3,
+            "yds": 43,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jeremy Weiss",
+            "att": 10,
+            "comp": 5,
+            "yds": 156,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 8,
+            "comp": 1,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Christian  Baldi",
+            "rec": 2,
+            "yds": 84,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 3,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel  Blank",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/13/2021",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 31,
+    "gameId": "5455",
+    "box": {
+      "gameId": "5455",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Floyd",
+          "q1": "17",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 31, Commack 16: Dylan Harris scored his third touchdown of the game from 1-yard out with 35 seconds remaining to cap a 14-play, 80-yard drive that spanned 8:21 on the game clock and helped No. 2 Floyd secure the win over No. 3 Commack in a Suffolk I semifinal.\nRyan Wald's 39-yard field goal had pulled Commack (7-3) to within one score before Floyd (9-1) embarked on the clinching drive.\n\"It was a battle, it was pretty much a one score game,\" Floyd coach Paul Longo said.\nDylan Harris finished the game with 138 yards on 18 carries. LaDuke Harris added a 68-yard touchdown run for Floyd, which led 17-0 after the first quarter.\nFloyd is the three-time defending Suffolk I champion and will defend its title against No. 1 Whitman Friday at 7 p.m. at Stony Brook University. It will be the 17th Suffolk final for Floyd in the last 21 years.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 18,
+            "yds": 128,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 14,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "att": 10,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Krishmar Powell",
+            "att": 5,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Francisco Canales",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Tom Scott",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jayson Thomas",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Deontay Sykes",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Jordan O'Brien",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

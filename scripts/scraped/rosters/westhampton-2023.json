@@ -1,0 +1,90 @@
+{
+  "slug": "westhampton",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Heath Sumwalt",
+      "newsday_player_id": 21418,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Kevin Smith",
+      "newsday_player_id": 21417,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Brody  Schaffer",
+      "newsday_player_id": 21422,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Brody Schaffer",
+      "newsday_player_id": 21839,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Connor  Rodgers",
+      "newsday_player_id": 21437,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Ryan  O'Conner",
+      "newsday_player_id": 21436,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Riley  Miller",
+      "newsday_player_id": 22447,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Nolan Michalowski",
+      "newsday_player_id": 21421,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "andrew  Mensch",
+      "newsday_player_id": 22526,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Mike  Lorusso",
+      "newsday_player_id": 21434,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "William Gambino",
+      "newsday_player_id": 21416,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Jordyn Brown",
+      "newsday_player_id": 21435,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    }
+  ]
+}

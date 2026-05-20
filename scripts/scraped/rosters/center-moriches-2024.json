@@ -1,0 +1,104 @@
+{
+  "slug": "center-moriches",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Mason Walsh",
+      "newsday_player_id": 23443,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Rich Roberts",
+      "newsday_player_id": 24244,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Peter Nizza",
+      "newsday_player_id": 23437,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Dan Jurgens",
+      "newsday_player_id": 23440,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Brayden Hromada",
+      "newsday_player_id": 23436,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Dan Heller",
+      "newsday_player_id": 23441,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Dennis Hayes",
+      "newsday_player_id": 23435,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Michael Gold",
+      "newsday_player_id": 23439,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Shane  Gallagher",
+      "newsday_player_id": 23442,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Caleb Delgado",
+      "newsday_player_id": 23438,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Nate Davis",
+      "newsday_player_id": 24245,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Max Cintron",
+      "newsday_player_id": 23444,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    },
+    {
+      "name": "Colin Casey",
+      "newsday_player_id": 24351,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Jeremy  Barada",
+      "newsday_player_id": 24246,
+      "class": null,
+      "position": null,
+      "jersey_number": 70
+    }
+  ]
+}

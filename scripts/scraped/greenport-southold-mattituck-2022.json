@@ -1,0 +1,192 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/02/2022",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 41,
+    "gameId": "5610",
+    "box": {
+      "gameId": "5610",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "21",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 41, Greenport/Southold/Mattituck 6: Nick Oliva ran for 161 yards and three touchdowns on eight carries for Miller Place (3-3) in Suffolk IV. Michael Giugliano had 92 yards passing, including a 25-yard touchdown pass to Oliva. Robby Cunningham scored on a 27-yard run in the second quarter to make it 34-0. DJ Williamson returned a kickoff 75 yards for a touchdown to cap Miller Place's scoring.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 9,
+            "yds": 161,
+            "tds": 3
+          },
+          {
+            "team": "Miller Place",
+            "player": "Jayden Meadows",
+            "att": 9,
+            "yds": 27,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Robby Cunningham",
+            "att": 1,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Spencer Bruno",
+            "att": 6,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 4,
+            "comp": 3,
+            "yds": 75,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Shane Kiernan",
+            "att": 2,
+            "comp": 2,
+            "yds": 12,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Logan LaMountain",
+            "rec": 1,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "rec": 1,
+            "yds": 25,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Brian Piecora",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "John Macias",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

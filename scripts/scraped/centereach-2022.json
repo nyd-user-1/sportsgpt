@@ -1,0 +1,904 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 28,
+    "gameId": "5618",
+    "box": {
+      "gameId": "5618",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 28, Centereach 7: Nick Pepitone scored two rushing touchdowns and one passing TD for Connetquot (1-0) in Suffolk II. Tyler McCarthy added a rushing touchdown and Tommy Malvagno caught a 64-yard touchdown. Connetquot's defense held Centereach to under 90 yards of total offense and forced two turnovers and had five sacks. Ryan Shannon had 12 tackles, three for a loss, and a sack. Gio DeRenzo had 13 tackles and two sacks. Jack Monahahn went 4-for-4 on PATs. Riddick Drab scored Centereach's only touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 9,
+            "yds": 70,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 8,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "att": 2,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 20,
+            "comp": 7,
+            "yds": 118,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 2,
+            "yds": 76,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Dennis  Milano",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Brian Marra",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Gio DeRenzo",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Daniel Youmans",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Chris Ungro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Ryan Shannon",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Joseph Maniaci",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 6,
+    "gameId": "5639",
+    "box": {
+      "gameId": "5639",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 42, Copiague 6: Riddick Drab completed 6-of-8 passes for 72 yards and one touchdown to lead Centereach ( 1-1) in Suffolk II. Drab also rushed for 64 yards and two touchdowns. Andrew Ferreira returned a punt 70 yards for a touchdown. Manny Menedez had two interceptions and LaRawn Robinson made five tackles. Jason Zaita had 80 all- purpose yards.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 6,
+    "gameId": "5572",
+    "box": {
+      "gameId": "5572",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 7, Smithtown East 6:  Xavier Calixte recovered a 27-yard fumble return for a touchdown in Suffolk II. Ryan Rooney rushed 1 yard for a touchdown with less than a minute left for Smithtown East (1-2). Riddick Drab ran for 106 yards on 20 carries and LaRawn Robinson had nine tackles and a sack for Centereach (2-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 6,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 12,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "att": 2,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 5,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 17,
+            "comp": 7,
+            "yds": 94,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 6,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 15,
+    "gameId": "5677",
+    "box": {
+      "gameId": "5677",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "7",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Centereach",
+          "q1": "2",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "6",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 15, Centereach 14: Joe Algieri had 12 tackles and two sacks, including the game-winning tackle on a two-point conversion rushing attempt in overtime for Huntington (1-3) in Suffolk II. Timmy McDonald had 12 carries for 80 yards and the go-ahead 10-yard touchdown in overtime to break a tie at 8. Mikey Kline had three carries for 30 yards and a 25-yard touchdown in the third quarter. McDonald's two-point conversion run extended the lead to 8-0. Drab Riddick's 10-yard rushing touchdown in the fourth tied the score and forced overtime.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Timmy McDonald",
+            "att": 12,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Mikey Kline",
+            "att": 3,
+            "yds": 30,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Logan Poppe",
+            "rec": 1,
+            "yds": 6,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Peter Breingan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Joe Algeri",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Smithtown West",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 34,
+    "gameId": "5712",
+    "box": {
+      "gameId": "5712",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "21",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 34, Centereach 12: Brayden Stahl completed 14-for-31 for 246 yards and four touchdowns in Smithtown West's Suffolk II win. Two of Stahl's touchdowns came in the second quarter and were to Jacque LaPrarie for 19 yards and 35 yards, respectively. Stahl also added 45 yards on the ground on nine carries. LaPrarie finished with five catches for 84 yards, and Jack Melore added 82 yards and one touchdown on four receptions. Nick Briffa caught the other touchdown from 20 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 9,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 6,
+            "yds": 14,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 6,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 31,
+            "comp": 14,
+            "yds": 246,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 5,
+            "yds": 84,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 4,
+            "yds": 82,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 3,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Zinz",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Chris Bassandella",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Will Fitzsimmons",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 51,
+    "gameId": "5716",
+    "box": {
+      "gameId": "5716",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "10",
+          "q3": "14",
+          "q4": "27",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 51, Centereach 0: Jovanny Brown ran for 153 yards and a touchdown in Suffolk II. Nigel Clay ran for 100 yards and a touchdown for Half Hollow Hills East (3-3). Ian Gallub had a 35-yard fumble recovery for a touchdown. Josh Isaacs caught a 22-yard touchdown pass from Benjamin Schops and made 15 tackles. Max Kullberg added 10 tackles for the Thunderbirds.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jovanny Brown",
+            "att": 0,
+            "yds": 153,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nigel Clay",
+            "att": 0,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 0,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Shakie Bethea",
+            "att": 0,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Davon Johnson",
+            "att": 0,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 22,
+    "gameId": "5567",
+    "box": {
+      "gameId": "5567",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "8",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 22, Centereach 12: Nathaniel Griffith ran for 208 yards and two touchdowns on 25 carries to lead North Babylon (5-2) in Suffolk II. Griffith scored both his touchdowns in the fourth quarter on runs of 34 yards and 81 yards. Joel Lomax opened up the scoring for the bulldogs with a 76-yard rushing touchdown in the first quarter.  Lomax ran for 87 yards and made 10 tackles including a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel  Griffith",
+            "att": 25,
+            "yds": 208,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 5,
+            "yds": 87,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 7,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 35,
+    "gameId": "5773",
+    "box": {
+      "gameId": "5773",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "14",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 35, Centereach 12: Matt Evers threw two touchdowns to Dylan Smith to lead Newfield ( 3-5) in Suffolk II. Smith touchdowns were for eight and 11 yards respectively. Kenny Petit-Frere scored on a three-yard run and JJ Deliat scored on a six-yard run. Payne Weinhauer  stepped up on defense and caught an interception and returned it 42 yards for a touchdown. Riddick Drab scored both touchdowns for Centereach one on the ground for two yards and another one was a 31 yard catch.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 6,
+            "yds": 46,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 5,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

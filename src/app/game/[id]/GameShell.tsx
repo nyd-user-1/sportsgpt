@@ -27,7 +27,7 @@ type QuarterRow = {
 
 type PlayerStat = {
   stat_type: 'Rushing' | 'Passing' | 'Receiving' | 'Kicking' | 'Defense'
-  team_name: string; player: string
+  team_name: string; team_slug?: string; player: string
   att?: number; yds?: number; tds?: number
   comp?: number; int?: number
   rec?: number; pat?: number
@@ -35,7 +35,7 @@ type PlayerStat = {
   sacks?: number; fumbles?: number
 }
 
-type Profile = { label: string; kind: 'score' | 'stat'; statType?: PlayerStat['stat_type'] }
+type GameTabType = 'Box Score' | PlayerStat['stat_type']
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -225,7 +225,7 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
         </thead>
         <tbody className="divide-y divide-[var(--border)]">
           {visible.map((p, i) => {
-            const schoolSlug = schoolSlugs[p.team_name] ?? ''
+            const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null) ?? schoolSlugs[cleanName(p.team_name)] ?? ''
             const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
             const playerSlug = playerSlugs[p.player.toLowerCase()]
             return (
@@ -284,7 +284,7 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
             </div>
             <div className="divide-y divide-[var(--border)]">
               {group.map((p, i) => {
-                const schoolSlug = schoolSlugs[p.team_name] ?? ''
+                const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null) ?? schoolSlugs[cleanName(p.team_name)] ?? ''
                 const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
                 const playerSlug = playerSlugs[p.player.toLowerCase()]
                 return (
@@ -311,6 +311,69 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
           </div>
         )
       })}
+    </div>
+  )
+}
+
+// ── Per-stat-type two-team block ──────────────────────────────────────────────
+
+function GameStatSection({ statType, players }: {
+  statType: string
+  players: FlatPlayerStat[]
+}) {
+  const colsByType: Record<string, string[]> = {
+    Passing:   ['ATT', 'COMP', 'YDS', 'TDS', 'INT'],
+    Rushing:   ['ATT', 'YDS', 'TDS'],
+    Receiving: ['REC', 'YDS', 'TDS', 'PAT'],
+    Kicking:   ['FG', 'PAT', 'PTS'],
+    Defense:   ['INT', 'SACKS', 'FUM'],
+  }
+  const cols = colsByType[statType] ?? []
+  const TH = 'px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right border-b border-[var(--border)]'
+  const TD = 'px-3 py-2.5 text-sm tabular-nums text-right text-[var(--muted)]'
+
+  function statCells(p: FlatPlayerStat): (number | null)[] {
+    if (statType === 'Passing')   return [p.pass_att, p.pass_comp, p.pass_yds, p.pass_tds, p.pass_int]
+    if (statType === 'Rushing')   return [p.rush_att, p.rush_yds, p.rush_tds]
+    if (statType === 'Receiving') return [p.rec_rec, p.rec_yds, p.rec_tds, p.kick_pat]
+    if (statType === 'Kicking')   return [p.kick_fg, p.kick_pat, p.kick_points]
+    return [p.def_int, p.def_sacks, p.def_fumbles]
+  }
+
+  if (players.length === 0) return (
+    <div className="rounded-xl border border-[var(--border)] px-4 py-8 text-center text-sm text-[var(--muted)]">No {statType.toLowerCase()} data</div>
+  )
+
+  return (
+    <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-[var(--surface)]">
+            <th className="px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-left border-b border-[var(--border)]" style={{ width: '30%' }}>Player</th>
+            {cols.map(c => <th key={c} className={TH}>{c}</th>)}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-[var(--border)]">
+          {players.map((p, i) => {
+            const logo = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
+            return (
+              <tr key={i} className="hover:bg-[var(--inp-bg)]">
+                <td className="px-3 py-2.5 text-sm">
+                  <div className="flex items-center gap-2">
+                    {logo
+                      ? <Image src={logo} alt="" width={20} height={20} className="shrink-0 object-contain" unoptimized />
+                      : <div className="shrink-0 h-5 w-5 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
+                    {p.player_slug
+                      ? <Link href={`/player/${p.player_slug}`} className="font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
+                      : <span className="font-semibold text-[var(--txt)]">{p.player_name}</span>}
+                  </div>
+                </td>
+                {statCells(p).map((v, j) => <td key={j} className={TD}>{v ?? 0}</td>)}
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -355,19 +418,32 @@ function renderHighlights(text: string, playerSlugs: Record<string, string>, gam
   ))
 }
 
+type FlatPlayerStat = {
+  player_slug: string | null
+  player_name: string
+  school_slug: string | null
+  team_name: string
+  stat_type: string
+  rush_att: number | null; rush_yds: number | null; rush_tds: number | null
+  pass_comp: number | null; pass_att: number | null; pass_yds: number | null; pass_tds: number | null; pass_int: number | null
+  rec_rec: number | null; rec_yds: number | null; rec_tds: number | null
+  kick_pat: number | null; kick_fg: number | null; kick_points: number | null
+  def_int: number | null; def_sacks: number | null; def_fumbles: number | null
+}
+
 export function GameShell({
-  game, box, prevGameId, nextGameId, refSlug, playerSlugs,
+  game, box, playerGameStats, prevGameId, nextGameId, refSlug, playerSlugs,
 }: {
   game: Record<string, unknown>
   box: Record<string, unknown> | null
+  playerGameStats: Record<string, unknown>[]
   prevGameId: number | null
   nextGameId: number | null
   refSlug: string
   playerSlugs: Record<string, string>
 }) {
   const router = useRouter()
-  const [profileIdx, setProfileIdx] = useState(0)
-  const [statExpanded, setStatExpanded] = useState(false)
+  const [gameTab, setGameTab] = useState<GameTabType>('Box Score')
   const [aiTitle, setAiTitle] = useState<string | null>(null)
   const [aiHighlights, setAiHighlights] = useState<string | null>(null)
   const [loadingHighlights, setLoadingHighlights] = useState(false)
@@ -408,13 +484,6 @@ export function GameShell({
       .catch(() => {})
       .finally(() => setLoadingHighlights(false))
   }, [gameIdNum, box])
-  const [view, setView] = useState<'score' | 'stats'>('score')
-  const [slideDir, setSlideDir] = useState(1) // 1 = forward (score→stats), -1 = back (stats→score)
-  const slideVariants = {
-    enter: (d: number) => ({ x: `${d * -100}%` }),
-    center: { x: 0 },
-    exit: (d: number) => ({ x: `${d * 100}%` }),
-  }
   const [photoOpen,  setPhotoOpen]    = useState(false)
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [playerOpen, setPlayerOpen]   = useState(false)
@@ -433,18 +502,25 @@ export function GameShell({
   const gameNumber = game.game_number as number | null
 
   const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
-  const allStats    = (box?.player_stats  as PlayerStat[] | null)  ?? []
   const highlights  = box?.highlights as string | null
 
-  const STAT_TYPES: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
-  const availableStats = STAT_TYPES.filter(t => allStats.some(p => p.stat_type === t))
+  // Use player_game_stats flat table (school_slug + player_slug on every row)
+  const flatStats = (playerGameStats as unknown as FlatPlayerStat[])
+  const allStats  = (box?.player_stats as PlayerStat[] | null) ?? [] // for PanelPlayers fallback
 
-  const PROFILES: Profile[] = availableStats.map(t => ({ label: t, kind: 'stat' as const, statType: t }))
+  const STAT_STAT_TYPES = ['Passing', 'Rushing', 'Receiving', 'Kicking', 'Defense'] as const
+  const availableStats = STAT_STAT_TYPES.filter(t =>
+    flatStats.some(p => p.stat_type === t) || allStats.some(p => p.stat_type === t)
+  )
 
-  const active = PROFILES[profileIdx] ?? null
-
-  function getTeamStats(statType: PlayerStat['stat_type'], teamName: string) {
-    return allStats.filter(p => p.stat_type === statType && p.team_name === teamName)
+  function getFlatStats(statType: string) {
+    return flatStats.filter(p => p.stat_type === statType)
+  }
+  function getTeamStats(statType: PlayerStat['stat_type'], teamSlug: string) {
+    const bySlug = allStats.filter(p => p.stat_type === statType && p.team_slug === teamSlug)
+    if (bySlug.length > 0) return bySlug
+    const schoolName = teamSlug.replace(/-varsity-football$/, '').replace(/-/g, ' ')
+    return allStats.filter(p => p.stat_type === statType && cleanName(p.team_name).toLowerCase() === schoolName)
   }
 
   // Header styling (matches team/division pages)
@@ -523,54 +599,33 @@ export function GameShell({
             />
             </RevealFx>
 
-            {/* Box Score / Stats toggle */}
+            {/* Box Score / Stats tabs */}
             <RevealFx delay={0.3} translateY={8}>
-            {(quarterRows.length > 0 || (PROFILES.length > 0 && active)) && (
-              <div className="mb-8 relative" style={{ overflowX: 'clip' }}>
-                <AnimatePresence mode="popLayout" initial={false} custom={slideDir}>
-                  {(view === 'score' || !active) ? (
-                    <motion.div key="score"
-                      custom={slideDir}
-                      variants={slideVariants}
-                      initial="enter" animate="center" exit="exit"
-                      transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
-                      className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden"
-                    >
-                      <ScoreTable
-                        rows={quarterRows}
-                        homeSlug={homeSlug}
-                        gameNumber={gameNumber}
-                        gameDate={game.game_date as string | Date | null}
-                        onToggle={PROFILES.length > 0 && active ? () => { setSlideDir(1); setView('stats') } : undefined}
-                      />
-                    </motion.div>
-                  ) : (
-                    <motion.div key="stats"
-                      custom={slideDir}
-                      variants={slideVariants}
-                      initial="enter" animate="center" exit="exit"
-                      transition={{ duration: 0.28, ease: [0.32, 0, 0.67, 0] }}
-                    >
-                      <InfoTable
-                        title={active.label}
-                        onToggle={() => setStatExpanded(v => !v)}
-                        onPrev={() => { setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setStatExpanded(false) }}
-                        onNext={() => { setProfileIdx(i => (i + 1) % PROFILES.length); setStatExpanded(false) }}
-                        onViewToggle={quarterRows.length > 0 ? () => { setSlideDir(-1); setView('score') } : undefined}
-                      >
-                        {active.kind === 'stat' && active.statType && (
-                          <StatTable
-                            players={[...getTeamStats(active.statType, homeName), ...getTeamStats(active.statType, awayName)]}
-                            statType={active.statType}
-                            schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
-                            playerSlugs={playerSlugs}
-                            expanded={statExpanded}
-                          />
-                        )}
-                      </InfoTable>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            {(quarterRows.length > 0 || allStats.length > 0) && (
+              <div className="mb-8">
+                <div className="flex items-center gap-0 border-b border-[var(--border)] mb-5">
+                  {(['Box Score', ...availableStats] as GameTabType[]).map(tab => (
+                    <button key={tab}
+                      onClick={() => setGameTab(tab)}
+                      className={cn('px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px',
+                        gameTab === tab ? 'border-[#033882] text-[var(--txt)]' : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
+                      )}
+                    >{tab}</button>
+                  ))}
+                </div>
+
+                {gameTab === 'Box Score' && quarterRows.length > 0 && (
+                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+                    <ScoreTable rows={quarterRows} homeSlug={homeSlug} gameNumber={gameNumber} gameDate={game.game_date as string | Date | null} />
+                  </div>
+                )}
+
+                {gameTab !== 'Box Score' && (
+                  <GameStatSection
+                    statType={gameTab}
+                    players={getFlatStats(gameTab)}
+                  />
+                )}
               </div>
             )}
             </RevealFx>

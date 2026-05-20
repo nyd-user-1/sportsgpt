@@ -1,0 +1,132 @@
+{
+  "slug": "glenn",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Matt Triolo",
+      "newsday_player_id": 20538,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Jack Smith",
+      "newsday_player_id": 21068,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Michael Sainte Croix",
+      "newsday_player_id": 20540,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Cameron Rossi",
+      "newsday_player_id": 20536,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Aiden Presti",
+      "newsday_player_id": 20566,
+      "class": null,
+      "position": null,
+      "jersey_number": 46
+    },
+    {
+      "name": "Joe Pepper",
+      "newsday_player_id": 20541,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Anthony Palencia",
+      "newsday_player_id": 20542,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Jasai McKay",
+      "newsday_player_id": 20569,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Brady Madden",
+      "newsday_player_id": 20537,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Andrew Knott",
+      "newsday_player_id": 21209,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Kahran King",
+      "newsday_player_id": 20534,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Cooper Kassan",
+      "newsday_player_id": 21060,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Kevin Golden",
+      "newsday_player_id": 20568,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Chris Franzese",
+      "newsday_player_id": 20533,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Dan Elling",
+      "newsday_player_id": 20567,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Graig Decembre",
+      "newsday_player_id": 20539,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Mario Bento",
+      "newsday_player_id": 20535,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Khaleif Anthony",
+      "newsday_player_id": 21067,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    }
+  ]
+}

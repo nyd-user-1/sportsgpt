@@ -1,0 +1,202 @@
+{
+  "slug": "northport",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Joey Zarcone",
+      "newsday_player_id": 24139,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Gio  Valenti",
+      "newsday_player_id": 23686,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "Scotty Triolo",
+      "newsday_player_id": 24242,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Anthony  Sylvanus",
+      "newsday_player_id": 24502,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Jacob  Serigano",
+      "newsday_player_id": 24533,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Drew Schuttinger",
+      "newsday_player_id": 24138,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Ben  Pipolo",
+      "newsday_player_id": 23687,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Tommy O'Brien",
+      "newsday_player_id": 23683,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Danny  Miller",
+      "newsday_player_id": 23684,
+      "class": null,
+      "position": null,
+      "jersey_number": 87
+    },
+    {
+      "name": "Luke Loiacono",
+      "newsday_player_id": 23680,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Zac Loh",
+      "newsday_player_id": 23685,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Asher  Levine",
+      "newsday_player_id": 23678,
+      "class": null,
+      "position": null,
+      "jersey_number": 36
+    },
+    {
+      "name": "Reid  Johansen",
+      "newsday_player_id": 23688,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Derek Hurley",
+      "newsday_player_id": 24377,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Enrique Hernandez",
+      "newsday_player_id": 23677,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Connor Henigman",
+      "newsday_player_id": 24504,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Peyton  Hamada",
+      "newsday_player_id": 24243,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Peyton  Hamada",
+      "newsday_player_id": 24503,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Cameron  Foley",
+      "newsday_player_id": 24376,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Brady Cooke",
+      "newsday_player_id": 23883,
+      "class": null,
+      "position": null,
+      "jersey_number": 59
+    },
+    {
+      "name": "Reese Ciaio",
+      "newsday_player_id": 24375,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Carson Ciaio",
+      "newsday_player_id": 24501,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Jesse Castillo",
+      "newsday_player_id": 23676,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Christian Campoli",
+      "newsday_player_id": 23681,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Greyson Cabrera",
+      "newsday_player_id": 23679,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Simon  Blissett",
+      "newsday_player_id": 23682,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Marc  Bernard",
+      "newsday_player_id": 24374,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Dan  Acosta",
+      "newsday_player_id": 24394,
+      "class": null,
+      "position": null,
+      "jersey_number": 38
+    }
+  ]
+}

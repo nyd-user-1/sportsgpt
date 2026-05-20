@@ -444,6 +444,18 @@ export function PlayerShell({
   const [statTypeIdx, setStatTypeIdx] = useState(0)
   const [statsExpanded, setStatsExpanded] = useState(true)
   const [selectedSeason, setSelectedSeason] = useState<number | null>(null)
+  const [exportOpen, setExportOpen] = useState(false)
+  const exportRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!exportOpen) return
+    const handler = (e: MouseEvent) => {
+      if (exportRef.current && !exportRef.current.contains(e.target as Node))
+        setExportOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [exportOpen])
 
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
@@ -775,9 +787,38 @@ export function PlayerShell({
                         )
                       })}
                     </div>
-                    <button onClick={downloadCSV} className="p-1 mb-px text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="Download">
-                      <Download className="h-4 w-4" />
-                    </button>
+                    <div ref={exportRef} className="relative">
+                      <button onClick={() => setExportOpen(v => !v)} className="p-1 mb-px text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors" aria-label="Export">
+                        <Download className="h-4 w-4" />
+                      </button>
+                      {exportOpen && (
+                        <div className="absolute right-0 top-full mt-1 z-50 w-40 rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-lg overflow-hidden">
+                          {[
+                            { label: 'Export CSV', fn: () => { downloadCSV(); setExportOpen(false) } },
+                            { label: 'Export Doc', fn: () => {
+                              const rows = selectedSeason === null ? tableRows : tableRows.filter(r => r.season === selectedSeason)
+                              const lines = rows.map(r => `${formatSeason(r.season)}\t${selectedType}`).join('\n')
+                              const blob = new Blob([lines], { type: 'application/msword' })
+                              const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${player.name}-${selectedType}.doc`; a.click()
+                              setExportOpen(false)
+                            }},
+                            { label: 'Export .MD', fn: () => {
+                              const rows = selectedSeason === null ? tableRows : tableRows.filter(r => r.season === selectedSeason)
+                              const header = `# ${player.name} — ${selectedType}\n\n| Season | ${selectedType} |\n|--------|------|\n`
+                              const body = rows.map(r => `| ${formatSeason(r.season)} | ${selectedType} |`).join('\n')
+                              const blob = new Blob([header + body], { type: 'text/markdown' })
+                              const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${player.name}-${selectedType}.md`; a.click()
+                              setExportOpen(false)
+                            }},
+                            { label: 'Export PDF', fn: () => { window.print(); setExportOpen(false) } },
+                          ].map(({ label, fn }) => (
+                            <button key={label} onClick={fn} className="w-full text-left px-4 py-2 text-sm text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
+                              {label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* TOTAL TAB: career stats across all seasons */}
@@ -826,7 +867,7 @@ export function PlayerShell({
                                   {selectedType === 'Total Yards' && <>{td(r.totalYds)}{td(r.passYds)}{td(r.rushYds)}{td(r.recYds)}</>}
                                   {selectedType === 'Touchdowns'  && <>{td(r.totalTds)}{td(r.passTds)}{td(r.rushTds)}{td(r.recTds)}</>}
                                   {selectedType === 'Scoring'     && <>{td(r.pts)}{td(r.totalTds)}{td(r.fg)}{td(r.pat)}{td(0)}</>}
-                                  <td className={cn('px-3 py-2 text-right font-medium tabular-nums', win ? 'text-green-600 dark:text-green-400' : 'text-red-500')}>{result}</td>
+                                  <td className="px-3 py-2 text-right font-medium tabular-nums"><Link href={`/game/${r.game_id}`} className={cn('hover:underline', win ? 'text-green-600 dark:text-green-400' : 'text-red-500')}>{result}</Link></td>
                                 </tr>
                               )
                             })}
@@ -855,7 +896,7 @@ export function PlayerShell({
                                   {selectedType === 'Passing'   && <><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.yds ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.att ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.comp ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.comp != null && r.att ? ((r.comp / r.att) * 100).toFixed(1) + '%' : '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.tds ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.pass_int ?? '—'}</td></>}
                                   {selectedType === 'Receiving' && <><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.rec ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.yds ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.tds ?? '—'}</td></>}
                                   {selectedType === 'Defense'   && <><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.sacks ?? '—'}</td><td className="px-3 py-2 text-right tabular-nums text-[var(--muted)]">{r.fumbles ?? '—'}</td></>}
-                                  <td className={cn('px-3 py-2 text-right font-medium tabular-nums', win ? 'text-green-600 dark:text-green-400' : 'text-red-500')}>{result}</td>
+                                  <td className="px-3 py-2 text-right font-medium tabular-nums"><Link href={`/game/${r.game_id}`} className={cn('hover:underline', win ? 'text-green-600 dark:text-green-400' : 'text-red-500')}>{result}</Link></td>
                                 </tr>
                               )
                             })}

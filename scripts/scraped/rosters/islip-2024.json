@@ -1,0 +1,125 @@
+{
+  "slug": "islip",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Callahan Zusi",
+      "newsday_player_id": 24302,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Michael Vitale",
+      "newsday_player_id": 24257,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Louis Tuorto",
+      "newsday_player_id": 24301,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Matt Trovato",
+      "newsday_player_id": 23697,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Caden Tierney",
+      "newsday_player_id": 23703,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Dylan Smith",
+      "newsday_player_id": 23694,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Najee Simpson",
+      "newsday_player_id": 24088,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Jack Rao",
+      "newsday_player_id": 23700,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Robbie  Rais",
+      "newsday_player_id": 23702,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Josiah Patterson",
+      "newsday_player_id": 23701,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Rodriguez Nikko",
+      "newsday_player_id": 24347,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Brady Nash",
+      "newsday_player_id": 23692,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Alex Morales",
+      "newsday_player_id": 24087,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Carver Mason",
+      "newsday_player_id": 23698,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Owen MacManus",
+      "newsday_player_id": 23696,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Christian Hall",
+      "newsday_player_id": 23693,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Jake DeGennaro",
+      "newsday_player_id": 23699,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    }
+  ]
+}

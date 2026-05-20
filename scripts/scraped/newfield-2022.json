@@ -1,0 +1,1309 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 3,
+    "oppScore": 28,
+    "gameId": "5624",
+    "box": {
+      "gameId": "5624",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "3",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "3"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 28, Newfield 3: Chris Carson had two interception returns for touchdowns to lead Lindenhurst (1-0) in Suffolk II. Carson's first return was 70 yards in the third quarter and the second went for 50 yards in the fourth quarter, he also made 12 tackles. Christian Capogna connected with Gio Tarte for a 13-yard touchdown pass. Nick Rose had 12 tackels and two sacks. Evan Chieca made 14 tackles. Tarrin Mussillo had six tackles and two sacks. Christian Campay made 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 12,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 3,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan Smith",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 6,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 5,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Dominick Artale",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "att": 4,
+            "yds": 18,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "att": 1,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Campay",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 23,
+            "comp": 9,
+            "yds": 84,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Matt  Evers",
+            "att": 8,
+            "comp": 4,
+            "yds": 61,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan Smith",
+            "att": 1,
+            "comp": 1,
+            "yds": 44,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 11,
+            "comp": 6,
+            "yds": 97,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan Smith",
+            "rec": 7,
+            "yds": 113,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 3,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 1,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Aquino",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Newfield",
+            "player": "Jadon Forthe",
+            "fg": 1,
+            "pat": 0,
+            "points": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jack Mazziotti",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Jadon Forthe",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Matt Hirsch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Christian Smith",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Nick Rose",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Tarrin Mussillo",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 20,
+    "gameId": "5562",
+    "box": {
+      "gameId": "5562",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "7",
+          "q2": "8",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 28, North Babylon 20: Sean Sullivan was 6-for-11 passing for 200 yards and one touchdown in Suffolk II. Sullivan had a 98-yard touchdown pass to Dylan Smith followed by a run from James Marra that gave Newfield a 15-0 lead in the second quarter. North Babylon's Joel Lomax responded with a 68-yard touchdown run to finish the first half. Kenny Petit-Frere rushed for 74 yards and one touchdown on 16 carries. Tim Cabral had seven tackles and a sack for Newfield (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 14,
+            "yds": 91,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 14,
+            "yds": 74,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "att": 5,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Chris Mastress",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 17,
+            "yds": 134,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 9,
+            "yds": 26,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 11,
+            "comp": 6,
+            "yds": 200,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 5,
+            "comp": 2,
+            "yds": 56,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan Smith",
+            "rec": 5,
+            "yds": 158,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 1,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Tim Cabral",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Warren Toney",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 6,
+    "gameId": "5660",
+    "box": {
+      "gameId": "5660",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Newfield",
+          "q1": "15",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 41, Copiague 6: Kenny Petit-Frere rushed for 196 yards and three touchdowns on 11 carries to lead Newfield ( 2-1) in Suffolk II. Petit-Frere also added a 106 yard touchdown off an interception on defense. JJ Deliat rushed for 44 yards and a touchdown and James Marra added 40 yards and a touchdown. Marra and David Spooner each had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 11,
+            "yds": 196,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 5,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "att": 4,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 9,
+            "yds": 37,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 29,
+    "gameId": "5693",
+    "box": {
+      "gameId": "5693",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "14",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 29, Newfield 8: Jovanny Brown scored three touchdowns to lead Half Hollow Hills East ( 2-2) in Suffolk II. Brown had 67 rushing yards with a rushing touchdown and 50 receiving yards with a touchdown. Brown also threw a touchdown pass for a 26 yards for a touchdown. Brown also made seven tackles.  Nigel Clay had 101 yards rushing and nine tackles. Josh Issac had 47 yards rushing with a rushing touchdown, 10 tackles and one sack . Alex Cruz had nine tackles and Max Kulberg had seven tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 12,
+            "yds": 78,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 5,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 27,
+    "gameId": "5701",
+    "box": {
+      "gameId": "5701",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "6",
+          "q2": "0",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Northport 27, Newfield 0: Owen Johansen threw four touchdown passes in Suffolk II. His first two touchdown passes, coming from 41 yards and 13 yards, went to Andrew Miller. Michael Raio's 56-yard touchdown catch in the third quarter gave the Tigers a 19-0 lead. Evan Gaumont caught a 24-yard touchdown pass in the fourth quarter. Michael Raio's twin brother, Christian, made 12 tackles and Calvin Blissett had four tackles and two sacks for Northport (4-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "att": 3,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "att": 3,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Christian Raio",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew DeMarco",
+            "att": 6,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Chase Sasso",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Evan Gaumont",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 16,
+            "yds": 65,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 13,
+            "comp": 5,
+            "yds": 139,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 3,
+            "yds": 59,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "rec": 1,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Evan Gaumont",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Billy Griffiths",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Calvin Blissett",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Matt Diaz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Nick Tzimas",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Campoli",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Emmett Radziul",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 14,
+    "gameId": "5724",
+    "box": {
+      "gameId": "5724",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Newfield",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 14, Newfield 13: Smithtown West defense turned Newfield over five times in the Suffolk II win. Jack Laprarie made an interception with 20 seconds left in the game to seal the win for Smithtown West (4-2). Brian Hope made 10 tackles and Dylan Philips added eight tackles. Brayden Stahl scored the go-ahead touchdown with three minutes left in the fourth quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 5,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 0,
+            "yds": 1,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 24,
+            "yds": 203,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 9,
+            "yds": 84,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 24,
+            "comp": 8,
+            "yds": 80,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 4,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 1,
+            "yds": 3,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 9,
+    "oppScore": 35,
+    "gameId": "5750",
+    "box": {
+      "gameId": "5750",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "2",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "14",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 35, Newfield 9: Donte Phillips rushed for two touchdowns, including a 67-yard score and caught a 63-yard touchdown pass for Bellport (6-1) in Suffolk II. Justin Miles scored a 9-yard rushing touchdown for Bellport's first score of the game and added a passing touchdown in the second quarter. Jaiden Green had a 9-yard rushing touchdown in the fourth quarter to cap Bellport's scoring.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 6,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 12,
+            "yds": 123,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "att": 3,
+            "yds": 67,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 6,
+            "yds": 47,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kyle  Brown",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 1,
+            "yds": 9,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 4,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 5,
+            "comp": 2,
+            "yds": 85,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 5,
+            "yds": 100,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "rec": 1,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "rec": 1,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kevin  Hawaldar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jovahn Salomon",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Marcine Allen-Boutwell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 12,
+    "gameId": "5773",
+    "box": {
+      "gameId": "5773",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "14",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 35, Centereach 12: Matt Evers threw two touchdowns to Dylan Smith to lead Newfield ( 3-5) in Suffolk II. Smith touchdowns were for eight and 11 yards respectively. Kenny Petit-Frere scored on a three-yard run and JJ Deliat scored on a six-yard run. Payne Weinhauer  stepped up on defense and caught an interception and returned it 42 yards for a touchdown. Riddick Drab scored both touchdowns for Centereach one on the ground for two yards and another one was a 31 yard catch.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 6,
+            "yds": 46,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 5,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

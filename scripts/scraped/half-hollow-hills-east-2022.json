@@ -1,0 +1,1297 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 16,
+    "gameId": "5629",
+    "box": {
+      "gameId": "5629",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "7",
+          "q2": "2",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 16, Half Hollow Hills East 7: Sal Calderone rushed for 113 yards and two touchdowns. The Lions' defense forced three fumbles and one interception. West Islip's Rocco Carpinello intercepted Hills East's Jordan Heyman with 1:03 left in the fourth quarter. Hills East's Jovanny Brown rushed for 105 yards and the team's only touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "att": 10,
+            "yds": 115,
+            "tds": 2
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "att": 6,
+            "yds": 33,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Bobby Richardson",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 9,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Islip",
+            "player": "Patrick Kennan",
+            "att": 8,
+            "comp": 4,
+            "yds": 31,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "rec": 3,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Dante Sgambati",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Islip",
+            "player": "Shaun Boyle",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Islip",
+            "player": "Sal  Calderone",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "West Islip",
+            "player": "Chris Piropato",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Rocco Carpinello",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Islip",
+            "player": "Anthony DeCristofaro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Northport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 20,
+    "gameId": "5654",
+    "box": {
+      "gameId": "5654",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "6",
+          "q2": "7",
+          "q3": "9",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Northport",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "20",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nigel Clay",
+            "att": 20,
+            "yds": 120,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "att": 10,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 8,
+            "yds": 12,
+            "tds": 3
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 5,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Emmett Radziul",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew DeMarco",
+            "att": 3,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Chase Sasso",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jordan Heyman",
+            "att": 13,
+            "comp": 8,
+            "yds": 120,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 22,
+            "comp": 10,
+            "yds": 140,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "rec": 1,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 3,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Nick Valenti",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Emmett Radziul",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Evan Gaumont",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Billy Griffiths",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Mason Hecht",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Emmett Radziul",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 20,
+    "gameId": "5671",
+    "box": {
+      "gameId": "5671",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 3,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 33,
+            "comp": 17,
+            "yds": 275,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 10,
+            "yds": 226,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 3,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 8,
+    "gameId": "5693",
+    "box": {
+      "gameId": "5693",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "14",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 29, Newfield 8: Jovanny Brown scored three touchdowns to lead Half Hollow Hills East ( 2-2) in Suffolk II. Brown had 67 rushing yards with a rushing touchdown and 50 receiving yards with a touchdown. Brown also threw a touchdown pass for a 26 yards for a touchdown. Brown also made seven tackles.  Nigel Clay had 101 yards rushing and nine tackles. Josh Issac had 47 yards rushing with a rushing touchdown, 10 tackles and one sack . Alex Cruz had nine tackles and Max Kulberg had seven tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 12,
+            "yds": 78,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 5,
+            "yds": 54,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 10,
+    "oppScore": 22,
+    "gameId": "5709",
+    "box": {
+      "gameId": "5709",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "16",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "10"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 22, Half Hollow Hills East 10: Bellport defense scored first in the first quarter with a safety via intentional grounding in the end zone. Justin Miles scored his two touchdowns of the day afterward in the first quarter for Bellport (4-1) in Suffolk II. Miles threw 8-for-22 for 132 yards and a touchdown to Jason Hunt, while also adding 35 yards and a touchdown on 10 attempts. Hunt caught five passes for 86 yards and a touchdown. Donte Phillips scored the final touchdown on a three-yard run, part of 53-yard day on 23 attempts.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 23,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 10,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 1,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 22,
+            "comp": 8,
+            "yds": 132,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 5,
+            "yds": 86,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "rec": 3,
+            "yds": 46,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/14/2022",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 51,
+    "oppScore": 0,
+    "gameId": "5716",
+    "box": {
+      "gameId": "5716",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "10",
+          "q3": "14",
+          "q4": "27",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 51, Centereach 0: Jovanny Brown ran for 153 yards and a touchdown in Suffolk II. Nigel Clay ran for 100 yards and a touchdown for Half Hollow Hills East (3-3). Ian Gallub had a 35-yard fumble recovery for a touchdown. Josh Isaacs caught a 22-yard touchdown pass from Benjamin Schops and made 15 tackles. Max Kullberg added 10 tackles for the Thunderbirds.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jovanny Brown",
+            "att": 0,
+            "yds": 153,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nigel Clay",
+            "att": 0,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Daniel White",
+            "att": 0,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Shakie Bethea",
+            "att": 0,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Davon Johnson",
+            "att": 0,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 12,
+    "gameId": "5741",
+    "box": {
+      "gameId": "5741",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "3",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 23, Lindenhurst 12: Jovanny Brown led Half Hollow Hills East with 250 rushing yards and one touchdown in the Suffolk II victory. Brown's touchdown came in the fourth quarter as Hills East (4-3) led 16-6. His 96-yard rush gave Hills East a three-score lead. Nigel Clay added 67 yards on the ground and one touchdown. On defense, Ian Gallub and Jimmy Couluris each had two sacks and combined for 15 tackles. Josh Isaacs made 10 tackles and one sack. Max Kullberg blocked the extra point attempt on the final touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Jovanny Brown",
+            "att": 0,
+            "yds": 250,
+            "tds": 1
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Nigel Clay",
+            "att": 0,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "att": 4,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 8,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 5,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 9,
+            "comp": 6,
+            "yds": 112,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Bryan Aulino",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 7,
+    "gameId": "5568",
+    "box": {
+      "gameId": "5568",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "13",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 34, North Babylon 7: Jovanny Brown rushed for 155 yards and two touchdowns and made six tackles in Suffolk II. His 17-yard touchdown run in the second quarter gave the Thunderbirds a 13-0 lead. He added a 22-yard touchdown run in the fourth. Shaki Bethea made 10 tackles, had an interception, and gained 130 yards off kick returns. Josh Issacs made 12 tackles, Ian Gallub had eight tackles and a sack, and Nigel Clay had 45 yards rushing, a touchdown, and nine tackles for Half Hollow Hills East (5-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel  Griffith",
+            "att": 22,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 7,
+            "yds": 44,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 8,
+            "yds": 38,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/05/2022",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 9,
+    "oppScore": 7,
+    "gameId": "6114",
+    "box": {
+      "gameId": "6114",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "9",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 9, West Islip 7: Max Futter kicked the game-winning 34-yard field goal with 27.5 seconds left in No. 4 Half Hollow Hills East's win over No. 5 West Islip. Earlier in the fourth quarter, Nigel Clay scored a 1-yard rushing touchdown that cut the West Islip lead to 7-6. Jovanny Brown had 102 yards rushing and 37 yards receiving. Josh Isaacs made 14 tackles, Davion Johnson had 10 tackles and one sack. Hills East (6-3) will play top-seed Bellport Nov. 11, at Bellport in the semifinals.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/12/2022",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 42,
+    "gameId": "6128",
+    "box": {
+      "gameId": "6128",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Bellport",
+          "q1": "0",
+          "q2": "27",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 19,
+            "yds": 120,
+            "tds": 2
+          },
+          {
+            "team": "Bellport",
+            "player": "Jahden Oldums",
+            "att": 0,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kingston John",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 4,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 7,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 13,
+            "comp": 9,
+            "yds": 151,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "rec": 2,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "rec": 1,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Nick Anderson",
+            "rec": 3,
+            "yds": 21,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Tyler  Burke",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

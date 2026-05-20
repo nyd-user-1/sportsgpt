@@ -1,0 +1,27 @@
+{
+  "slug": "riverhead",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Amari  Funn",
+      "newsday_player_id": 20067,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Garcia Charlie",
+      "newsday_player_id": 20069,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "John  Booker",
+      "newsday_player_id": 20068,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    }
+  ]
+}

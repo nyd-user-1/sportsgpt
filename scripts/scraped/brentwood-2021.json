@@ -1,0 +1,1671 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 15,
+    "gameId": "4965",
+    "box": {
+      "gameId": "4965",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "3",
+          "q2": "7",
+          "q3": "5",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 15, Brentwood 6: Chris Kelly threw a touchdown and rushed for 100 yards on 13 carries in Suffolk I. His 47-yard touchdown pass to Jalen Duvall in the second quarter gave Sachem North a 9-0 lead. Shane Borsari rushed for 106 yards on 21 carries. Chris Escalante kicked two field goals (23 yards and 35 yards). Nick Giorgi made six tackles and Trey Morstadt had three tackles and a sack. Tyler Davide made two interceptions.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 10,
+            "yds": 76,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Herman Davis Jr",
+            "att": 9,
+            "comp": 6,
+            "yds": 100,
+            "tds": 1,
+            "int": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 4,
+            "comp": 3,
+            "yds": 98,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 2,
+            "yds": 93,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 2,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "rec": 3,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Enoryt Copening",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Jayson Pickens",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Linsalata",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herman Davis Jr",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 14,
+    "gameId": "4920",
+    "box": {
+      "gameId": "4920",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 21, Central Islip 14: Antonio Castillo had a 26-yard interception return for a touchdown with 9:59 remaining in the third quarter to break a tie at 14 for Brentwood (1-1) in Suffolk I. Randy Ramnarace rushed for 109 yards and two touchdowns on 12 carries, including an 8-yard touchdown to tie the score at 14 with less than a minute left in the first half. He also had an interception. Jo'Vanny Brown had 140 yards on 14 carries in the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 14,
+            "yds": 140,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 12,
+            "yds": 109,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 5,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 4,
+            "comp": 1,
+            "yds": 19,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Commack",
+    "isAway": false,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 35,
+    "gameId": "5287",
+    "box": {
+      "gameId": "5287",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 35, Brentwood 13: Matthew McGurk and Tristan McMahon hooked up on two passing scores, and Jake McKay returned an interception 45 yards for an early second-half touchdown as Commack scored 28 unanswered points to earn a 35-13 Suffolk Division I victory and spoil Brentwood's Homecoming.\n\n\"We just had to stick to our game plan,\" Commack coach Joe Reggio said. \"We wanted to be able to run and throw the football. . . . We gave them that second touchdown, but then we settled down and got back to being balanced.\"\n\nCommack (2-1) opened the game with a nine-play, 80-yard drive and took a 7-0 lead on a 5-yard TD run by Ryan Carlos (6 carries, 23 yards). Brentwood answered with a 13-play, 65-yard drive and knotted the score on a 2-yard scoring run from Jo'vanny Brown with 1:13 left in the first quarter.\n\nMembers of the Cougars kick return team thought the ensuing kick had reached the end zone for a touchback, but the ball bounced at the Commack 2 and was recovered by Jayden Lucate.\n\nThree seconds later, Randy Ramnarace scored from 2 yards out. The extra point was blocked by Domenic Pirraglia as Brentwood (1-2) led 13-7.\n\nAfter that, it was all big plays for Commack. McGurk threaded the ball amongst a trio of Brentwood defenders and found McMahon on a 35-yard TD pass with 20.9 seconds left as Commack led 14-13 at halftime.\n\nMcKay made his presence felt early in the second half. The 6-1, 205-pound junior linebacker/running back picked off a Brentwood pass, weaved his way through traffic near midfield and ran along the Commack sideline for a 45-yard, pick-6 as the Cougars led 21-13 just 1:45 into the second half. He later added a second interception.\n\n\"That was the turning point of the game to me,\" Reggio said. \"When I saw him make that run, I said, 'Holy cow!' \"\n\nThen, McGurk put the finishing touches on Commack's second win of the season, and sixth in the last seven meetings with Brentwood.\n\nThe senior quarterback, in his first season as a starter, connected on a 27-yard touchdown pass to McMahon (4 catches, 84 yards) with 1:08 left in the third quarter on a curl-and-go route that Commack drew up during halftime.\n\nMcGurk later showed his athleticism on a 45-yard scoring run with 5:49 remaining in the game. \n\n\"We have to build off this win,\" said McGurk, who accounted for three scores, was 12 of 16 passing for 202 yards, and added 60 yards rushing on five carries. \"We have to play better in the first half. We've struggled with that. But from now on, we have to come out strong and not let up.\"",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "att": 3,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "att": 6,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 19,
+            "yds": 57,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 4,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 5,
+            "yds": 9,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 16,
+            "comp": 12,
+            "yds": 202,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 12,
+            "comp": 4,
+            "yds": 57,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 4,
+            "yds": 84,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Christian  Baldi",
+            "rec": 2,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Domenic Pirraglia",
+            "rec": 2,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Ryan Brady",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 1,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Commack",
+            "player": "Ryan Wald",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          },
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Riverhead",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 22,
+    "gameId": "5308",
+    "box": {
+      "gameId": "5308",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "8",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "6",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 27, Riverhead 22: Brentwood stopped Riverhead on a completed pass at the 1-yard line on the final play of the game as time expired in a 27-22 victory over Riverhead in Suffolk I. Jo'Vanny Brown rushed for 160 yards on 21 carries and Randy Ramnarace rushed for 106 yards and two touchdowns on seven carries in the win. Ramnarace also threw a 58-yard touchdown pass to Enoryt Copening to give Brentwood a 27-14 lead after a two-point conversion reception by Brown in the fourth quarter. Herman Davis, Brown and Ramnarace each had eight tackles, Nahum Benitez finished with five tackles, including three for a loss, and Antonio Castillo added an interception for Brentwood. Riverhead falls to 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 21,
+            "yds": 160,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 7,
+            "yds": 106,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 7,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 4,
+            "comp": 2,
+            "yds": 61,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Enoryt Copening",
+            "rec": 1,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 35,
+    "gameId": "5316",
+    "box": {
+      "gameId": "5316",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 35, Brentwood 14: Nick Gaffney rushed for 143 yards on 23 carries, including a 8-yard touchdown run for Ward Melville (4-1) in Suffolk I. Chris Prussen completed 8 of 14 passes for 73 yards, including a 9-yard touchdown pass to Lorenzo Velez late in the second quarter to tie the score at 14. He also rushed for 98 yards and two touchdowns on fifteen carries. Frank Carroll sealed the game with an 85-yard interception return for a touchdown in the fourth quarter for the game's final score.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Nick  Gaffney",
+            "att": 19,
+            "yds": 133,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 15,
+            "yds": 98,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin  Kramer",
+            "att": 4,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 10,
+            "yds": 46,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 2,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 2,
+            "yds": 7,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 8,
+            "comp": 14,
+            "yds": 73,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 19,
+            "comp": 5,
+            "yds": 97,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 6,
+            "yds": 53,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 1,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Frank Carroll",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Raul Benitez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 20,
+    "gameId": "5317",
+    "box": {
+      "gameId": "5317",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "13",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 35, Patchogue-Medford 20: Jo'Vanny Brown ran for 182 yards and three touchdowns, including two in the second half, on 22 carries to lead Brentwood in Suffolk I. Brentwood scored the final three touchdowns and shut out Patchogue-Medford in the second half. Randy Ramnarace had a fourth quarter interception and later scored the final touchdown on a one-yard run. Enoryt Copening and Antonio Castillo each had an interception and Chris Linsalata had seven tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 22,
+            "yds": 122,
+            "tds": 3
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 3,
+            "yds": 58,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 7,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Tyree Jackson",
+            "att": 33,
+            "comp": 16,
+            "yds": 134,
+            "tds": 1,
+            "int": 3
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Enoryt Copening",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Floyd",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 24,
+    "gameId": "5318",
+    "box": {
+      "gameId": "5318",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Floyd",
+          "q1": "0",
+          "q2": "3",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 24, Brentwood 0: Dylan Harris rushed for 195 yards and two touchdowns on 14 carries in Suffolk I. Harris' touchdowns, both in the third quarter, came from 4 and 43 yards. The 4-yarder was set up by Jayden Montalvo's 80-yard kickoff return that began the second half. LaDuke Harris rushed for 120 yards on five carries and Deonte Sykes ran for a 43-yard touchdown. Sykes also made four tackles. Caden Lesiewicz nailed a 33-yard field goal in the second quarter that broke a scoreless tie, hit all three of his extra point attempts, made five tackles, knocked down three passes, and recovered a fumble for Floyd (6-1). Brentwood is 3-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 14,
+            "yds": 195,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 5,
+            "yds": 120,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Deontay Sykes",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Quentin Alba-Etheridge",
+            "att": 3,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Nick Taiani",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 4,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 11,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herman Davis Jr",
+            "att": 1,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 1,
+            "comp": 1,
+            "yds": 3,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 15,
+            "comp": 6,
+            "yds": 115,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Herman Davis Jr",
+            "att": 7,
+            "comp": 3,
+            "yds": 19,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 4,
+            "yds": 96,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Carlos Marquina",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Connor Taphouse",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayson Pickens",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 8,
+    "gameId": "5319",
+    "box": {
+      "gameId": "5319",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "15",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 41, Bay Shore 8: Jo'Vanny Brown ran for 148 yards and two touchdowns on 11 carries, Randy Ramnarace added 80 yards and a touchdown on three carries and Oscar Rodriguez caught a 20-yard touchdown pass and had seven tackles and a sack to lead Brentwood (4-4) in Nassau I. Chris Linsalata added eight tackles. Bay Shore is 0-8.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 11,
+            "yds": 148,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 3,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Enoryt Copening",
+            "att": 11,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 3,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 2,
+            "comp": 1,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "rec": 1,
+            "yds": 20,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Nahum Benitez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/06/2021",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 42,
+    "gameId": "5406",
+    "box": {
+      "gameId": "5406",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Floyd",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 42, Brentwood 0: Dylan Harris rushed for 60 yards and three touchdowns on five carries to lead Floyd in the first round of the Suffolk I playoffs. LaDuke Harris threw for 24 yards and rushed for 78 yards. Sonny Mayo rushed for 83 yards, two touchdowns, and returned an interception for a 60-yard score. Caden Lesiewicz intercepted two passes.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 14,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 4,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 5,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "att": 4,
+            "yds": 83,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 6,
+            "yds": 78,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 7,
+            "yds": 60,
+            "tds": 3
+          },
+          {
+            "team": "Floyd",
+            "player": "Francisco Canales",
+            "att": 2,
+            "yds": 41,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Justin  Tenes",
+            "att": 6,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Krishmar Powell",
+            "att": 1,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Deontay Sykes",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Nick Taiani",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Jaden Montalvo",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 23,
+            "comp": 8,
+            "yds": 57,
+            "tds": 0,
+            "int": 4
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 3,
+            "comp": 2,
+            "yds": 24,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "rec": 1,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 3,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jayden Lucate",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Oscar Rodriguez",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Krishmar Powell",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Krishmar Powell",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

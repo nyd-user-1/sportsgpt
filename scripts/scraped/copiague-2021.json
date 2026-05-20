@@ -1,0 +1,1221 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 18,
+    "oppScore": 24,
+    "gameId": "4836",
+    "box": {
+      "gameId": "4836",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "10",
+          "q3": "8",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown East 24, Copiague 18: Tommy Azzarra found Ryan Rooney for a 38-yard touchdown to break a tie at 18 for the game's final score with eight minutes remaining in the fourth quarter for Smithtown East (1-0) in Suffolk II. Michael DeSano rushed in a 6-yard touchdown and Nicholas Saccone ran in the ensuing two-point conversion to tie the score at 18 for Smithtown East in the third quarter. Azzarra had 246 passing yards with two touchdowns. Fennell had 120 receiving yards and Rooney had 108 total yards of offense. Will Kaminicki had a blocked punt and interception in the win.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 43,
+    "gameId": "5251",
+    "box": {
+      "gameId": "5251",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "15",
+          "q2": "0",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "16",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 43, Copiague 22: Liam Fincke ran for 68 yards and three touchdowns on eight carries in Suffolk II. His touchdowns came from 1, 9, and 24-yards. His 24-yarder in the third quarter gave West Babylon a 30-16 lead after an extra point from Anthony Borawski. Elijah Outlaw threw two touchdown passes to Isaiah Richardson in the second half, a 28-yarder in the third quarter and a 29-yarder in the fourth. Richardson caught six passes for 94 yards and two touchdowns. Bobby Schwartz had two tackles for West Babylon (1-1). Copiague is 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "att": 9,
+            "yds": 110,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 8,
+            "yds": 68,
+            "tds": 3
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "att": 2,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Michael  Capriola",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 5,
+            "comp": 4,
+            "yds": 89,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 8,
+            "comp": 5,
+            "yds": 66,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "att": 1,
+            "comp": 1,
+            "yds": 2,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 6,
+            "yds": 94,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Sean  McGuire",
+            "rec": 1,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Brendan  Barry",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "rec": 3,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jace Alvino",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Tyler Ferragamo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Anthony  Borawski",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Chris Graham",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Bobby  Schwartz",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dylan Bradley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Centereach",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 50,
+    "gameId": "5285",
+    "box": {
+      "gameId": "5285",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Centereach",
+          "q1": "15",
+          "q2": "28",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "50"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 50, Copiague 14: Mike Mazza returned an interception 71-yards for a touchdown and caught an 80-yard pass to lead Centereach (1-2) in Suffolk II. Justin Robbert completed 5 of 5 passes for 157 yards and three touchdowns and Riddick Drab caught two touchdowns. Matthew Gesa had 11 tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Centereach",
+            "player": "Jason Zaita",
+            "att": 12,
+            "yds": 64,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Jamieson Shea",
+            "att": 5,
+            "yds": 62,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 5,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Centereach",
+            "player": "LaRawn Robinson",
+            "att": 7,
+            "yds": 36,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Centereach",
+            "player": "Justin Robbert",
+            "att": 5,
+            "comp": 5,
+            "yds": 157,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "rec": 2,
+            "yds": 102,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Riddick Drab",
+            "rec": 2,
+            "yds": 47,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Xavier Calixte",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Centereach",
+            "player": "Markus Figuero",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Centereach",
+            "player": "Josh Ortiz",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Centereach",
+            "player": "Matthew Gesa",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Colin Cleary",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Michael Mazza",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Andrew Ferreira",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Centereach",
+            "player": "Timothy  Demetres",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 48,
+    "gameId": "4847",
+    "box": {
+      "gameId": "4847",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "28",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 48 Copiague 8: Daivon Lofton ran for 165 yards and a touchdown on 14 carries to lead North Babylon (2-2) in Suffolk II.  Tyler Hovanec threw two touchdown passes of 25 and 26 yards to Jack Montecalvo. Jaymari Curtis added 95 yards on the ground, including a touchdown run of 56 yards before the half.  Hovanec and Joe Mott each had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 14,
+            "yds": 165,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 4,
+            "yds": 95,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 3,
+            "yds": 48,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel White",
+            "att": 3,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Lionel Charles - Pierre",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Calvin Frith",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "comp": 2,
+            "yds": 51,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 2,
+            "yds": 51,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joe Mott",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 33,
+    "gameId": "5327",
+    "box": {
+      "gameId": "5327",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "19",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 33, Copiague 0:  Owen Ellick rushed for 173 yards and two touchdowns for Smithtown West (2-3) in Suffolk II. Ellick opened up the scoring with a 47-yard rushing touchdown in the first quarter. Brayden Stahl threw for 96 yards and two touchdown. His first touchdown came on a 34-yard connection with Tim Vanderbrink in the first quarter to put Smithtown West ahead 19-0. Jason Antunes scored his first varsity touchdown with a two-yard run in the fourth quarter. The defense recorded four interceptions. Copiague is 0-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Owen  Ellick",
+            "att": 15,
+            "yds": 160,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "att": 4,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Antunes Jason",
+            "att": 6,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Danny  Wieser",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 12,
+            "comp": 4,
+            "yds": 86,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Tim  Vanderbrink",
+            "rec": 2,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Sean Carroll",
+            "rec": 1,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  LaPrarie",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown West",
+            "player": "John  Lorfice",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Newfield",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 36,
+    "gameId": "5361",
+    "box": {
+      "gameId": "5361",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 36, Copiague 6: Devin Aviles ran for 201 yards and three touchdowns and Joe Hackal added 79 yards rushing and a touchdown to lead Newfield (4-2) in Suffolk II. Dylan Smith had two catches for 52 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 21,
+            "yds": 201,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 7,
+            "yds": 79,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 9,
+            "comp": 3,
+            "yds": 74,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 2,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Huntington",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 44,
+    "gameId": "5372",
+    "box": {
+      "gameId": "5372",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Huntington",
+          "q1": "7",
+          "q2": "13",
+          "q3": "3",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "44"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 44, Copiague 0: Robbie Smith rushed for 140 yards and two touchdowns on 13 carries and Josiah Melenez rushed for 105 yards and two touchdowns on eight carries to lead Huntington (5-2) in Suffolk II. Lucas Petrizzi rushed for 40 yards and a touchdown on five carries and Christian St. John rushed for 50 yards and a touchdown on four carries. Jayden Taylor completed 2 of 2 passes for 20 yards. Copiague is now 0-7.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "att": 13,
+            "yds": 140,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Josiah Melenez",
+            "att": 8,
+            "yds": 105,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "Christian St. John",
+            "att": 4,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "att": 5,
+            "yds": 40,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 3,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Jayden Taylor",
+            "att": 2,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "John Chirico",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Auggie Abbatiello",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Jack O'Brien",
+            "fg": 1,
+            "pat": 5,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Liam Mcdonald",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Lucas Petrizzi",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Robbie  Smith",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 47,
+    "gameId": "5304",
+    "box": {
+      "gameId": "5304",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "26",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 47, Copiague 0: Michael Ross threw for 182 yards and four touchdowns on 13-of-14 passing in Suffolk II Friday night. Nick LaMantia caught four passes for 66 yards and three touchdowns. His touchdowns came from 40, 15, and 1 yards. Nick Pepitone scored a 93-yard rushing touchdown in the third quarter. Connetquot scored 26 points in the first quarter, including three of Ross' touchdown passes and a three-yard rushing touchdown from Shaun Hill. Christian Parades made eight tackles and had a sack. Billy Walker also had a sack. John Feramola forced two fumbles and Stephen Bubier recovered two for Connetquot (4-4). Copiague is 0-8.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 2,
+            "yds": 93,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 5,
+            "yds": 60,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 3,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Brian  Tricario",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Matt Higgins",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Devin  Shapiro",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 14,
+            "comp": 13,
+            "yds": 182,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 2,
+            "comp": 1,
+            "yds": 6,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "rec": 4,
+            "yds": 66,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "rec": 2,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Devin  Shapiro",
+            "rec": 2,
+            "yds": 33,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 4,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Alan  Rodrigues",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Dennis  Milano",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Christian Parades",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Billy Walker",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Matt  Gomez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Stephen Bubier",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

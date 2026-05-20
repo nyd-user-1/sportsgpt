@@ -1,0 +1,153 @@
+{
+  "slug": "bellport",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Caleb White",
+      "newsday_player_id": 20017,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Dearius Scales",
+      "newsday_player_id": 20021,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Jovahn Salomon",
+      "newsday_player_id": 21143,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Daniel Romero",
+      "newsday_player_id": 20020,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Luis Rodriguez",
+      "newsday_player_id": 20701,
+      "class": null,
+      "position": null,
+      "jersey_number": 61
+    },
+    {
+      "name": "Donte  Phillips",
+      "newsday_player_id": 20013,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Jahden Oldums",
+      "newsday_player_id": 20016,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Justin Miles",
+      "newsday_player_id": 20012,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Andrew McLaurin",
+      "newsday_player_id": 20014,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Josh Kelley",
+      "newsday_player_id": 20699,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Kingston John",
+      "newsday_player_id": 21219,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Jason Hunt",
+      "newsday_player_id": 20019,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Kevin  Hawaldar",
+      "newsday_player_id": 21144,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Jaiden Green",
+      "newsday_player_id": 20700,
+      "class": null,
+      "position": null,
+      "jersey_number": 31
+    },
+    {
+      "name": "Michael Frankie",
+      "newsday_player_id": 21182,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Tyler  Burke",
+      "newsday_player_id": 20018,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Kyle  Brown",
+      "newsday_player_id": 21142,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Alex  Brigadir",
+      "newsday_player_id": 21065,
+      "class": null,
+      "position": null,
+      "jersey_number": 63
+    },
+    {
+      "name": "Jesse Barnes",
+      "newsday_player_id": 20015,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Nick Anderson",
+      "newsday_player_id": 20790,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Marcine Allen-Boutwell",
+      "newsday_player_id": 20698,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    }
+  ]
+}

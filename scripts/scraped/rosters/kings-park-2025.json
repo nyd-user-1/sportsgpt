@@ -1,0 +1,167 @@
+{
+  "slug": "kings-park",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Nick  Vicinanza",
+      "newsday_player_id": 25722,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Joey Verme",
+      "newsday_player_id": 25010,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Kevin Vasquez",
+      "newsday_player_id": 25721,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Angelo Urso",
+      "newsday_player_id": 25207,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Brandon  Shapiro",
+      "newsday_player_id": 25011,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Jacob Samlick",
+      "newsday_player_id": 26410,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Tristan Sadowsky",
+      "newsday_player_id": 25209,
+      "class": null,
+      "position": null,
+      "jersey_number": 82
+    },
+    {
+      "name": "Joe Murolo",
+      "newsday_player_id": 24971,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Gavin Moyer",
+      "newsday_player_id": 26546,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Gage McKigney",
+      "newsday_player_id": 26349,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Aaron Matos",
+      "newsday_player_id": 25208,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Zach Lampert",
+      "newsday_player_id": 25009,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Wesley Krupp",
+      "newsday_player_id": 26169,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Michael Jaeger",
+      "newsday_player_id": 26545,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Parker Iglio",
+      "newsday_player_id": 25718,
+      "class": null,
+      "position": null,
+      "jersey_number": 84
+    },
+    {
+      "name": "Kevin Flynn",
+      "newsday_player_id": 25961,
+      "class": null,
+      "position": null,
+      "jersey_number": 63
+    },
+    {
+      "name": "James DeVirgilio",
+      "newsday_player_id": 25719,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Eric Czeremchaa",
+      "newsday_player_id": 25210,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Matt Corrado",
+      "newsday_player_id": 24970,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Gavin Clark",
+      "newsday_player_id": 25960,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Frankie Buffolino",
+      "newsday_player_id": 25720,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Aidan Barbosa",
+      "newsday_player_id": 24972,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Anthony Alberici",
+      "newsday_player_id": 25211,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    }
+  ]
+}

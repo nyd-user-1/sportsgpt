@@ -1,0 +1,111 @@
+{
+  "slug": "hauppauge",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Cole  Wood",
+      "newsday_player_id": 23638,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Jackson Ruple",
+      "newsday_player_id": 23642,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Alex Posillico",
+      "newsday_player_id": 24236,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Joseph  Pistritto",
+      "newsday_player_id": 23640,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Liam  O'Connor",
+      "newsday_player_id": 23637,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Christian Mooney",
+      "newsday_player_id": 23877,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Dan Martinez",
+      "newsday_player_id": 23641,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Reuben Lewin",
+      "newsday_player_id": 23878,
+      "class": null,
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "Nick  LaChapelle",
+      "newsday_player_id": 23635,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Oscar Jakubowlski",
+      "newsday_player_id": 24237,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Wally Faiz",
+      "newsday_player_id": 23876,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Guy  Donnelly",
+      "newsday_player_id": 23643,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Carter Dolan",
+      "newsday_player_id": 24239,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Roman  Dixon",
+      "newsday_player_id": 23639,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Gershon Diaz",
+      "newsday_player_id": 23636,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    }
+  ]
+}

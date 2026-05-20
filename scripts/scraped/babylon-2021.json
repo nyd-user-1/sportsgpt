@@ -1,0 +1,1297 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 9,
+    "oppScore": 17,
+    "gameId": "4902",
+    "box": {
+      "gameId": "4902",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "0",
+          "q2": "10",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "3",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 17, Babylon 9: Joe'll Spagnuolo rushed in a 7-yard touchdown with 1:50 remaining in the fourth quarter for the final score in Miller Place's Suffolk IV victory. He finished with 43 yards on nine rushes. Justin Klein completed 5 of 8 passes for 86 yards and a touchdown and added 45 yards on 12 carries for Miller Place (1-0). He found Anthony Bartolotto for a 25-yard score following a Babylon turnover in the second quarter. Scotty Seymour added 106 yards on 15 carries in the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "att": 15,
+            "yds": 106,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 12,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "att": 9,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Owen Connolly",
+            "att": 1,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 19,
+            "yds": 126,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 8,
+            "comp": 5,
+            "yds": 86,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 11,
+            "comp": 6,
+            "yds": 73,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "rec": 3,
+            "yds": 61,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Owen Connolly",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 3,
+            "yds": 42,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          },
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Wyandanch",
+    "isAway": false,
+    "result": "W",
+    "myScore": 53,
+    "oppScore": 16,
+    "gameId": "4903",
+    "box": {
+      "gameId": "4903",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "16",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        },
+        {
+          "team": "Babylon",
+          "q1": "21",
+          "q2": "13",
+          "q3": "19",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "53"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 53, Wyandanch 16: Joe Young ran for 189 yards and a touchdown and completed 5 of 8 passes for 124 yards and three touchdowns to lead Babylon (2-0) in Suffolk IV. Elijah Kneeland caught all three touchdowns, finishing with four receptions and 107 yards and Andrew DiPalma ran for 88 yards and three touchdowns on seven carries and had two interceptions. Brady Winter had 12 tackles and Jack Pinna had 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 17,
+            "yds": 189,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 7,
+            "yds": 88,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Alix PointDuJour",
+            "att": 1,
+            "yds": 25,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 8,
+            "comp": 5,
+            "yds": 124,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 4,
+            "yds": 107,
+            "tds": 3,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Brandon Timko",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Trevor  Thuma",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2021",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 41,
+    "gameId": "4904",
+    "box": {
+      "gameId": "4904",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "20",
+          "q3": "21",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Quarterback Brady Clark threw for two touchdowns and ran for another as Bayport-Blue Point (2-1) rolled to a Suffolk IV win. Clark was 12-for-15 passing for 209 yards, connecting with Derek Varley on a 66-yard score and with JJ Aiello on a 36-yard TD. Varley had three catches for 114 yards and Gavin Locascio had an 80-yard touchdown run for the Phantoms. Joe Young rushed for 199 yards and Andrew DiPalma had a 22-yard TD run for Babylon (1-2).0",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 2,
+            "yds": 82,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 6,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 4,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 25,
+            "yds": 119,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 6,
+            "yds": 59,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "comp": 11,
+            "yds": 218,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 5,
+            "comp": 1,
+            "yds": 25,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 3,
+            "yds": 114,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 2,
+            "yds": 41,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "East Hampton / Pierson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 7,
+    "gameId": "4905",
+    "box": {
+      "gameId": "4905",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "16",
+          "q2": "6",
+          "q3": "14",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "East Hampton / Pierson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 48, East Hampton/Pierson 7: Joe Young rushed for 131 yards and three touchdowns on 16 carries and completed 8 of 9 passes for 195 yards and three touchdowns to lead Babylon (2-2) in Suffolk IV. Elijah Kneeland had six receptions for 111 yards and a touchdown and Jack Pinna and Ben Dellafranca each had a touchdown reception in the win. Brady Winter led the Babylon defense with 12 tackles and a blocked punt and Caden Cerrone and Kneeland each added eight tackles. East Hampton/Pierson falls to 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 16,
+            "yds": 131,
+            "tds": 3
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 9,
+            "yds": 103,
+            "tds": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 9,
+            "comp": 8,
+            "yds": 195,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 6,
+            "yds": 111,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Ben Dellafranca",
+            "rec": 1,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 13,
+    "gameId": "4906",
+    "box": {
+      "gameId": "4906",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "29",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 49, Center Moriches 13: Joe Young rushed for 225 yards and five touchdowns on 13 carries to lead Babylon (3-2) in Suffolk IV. Andrew DiPalma rushed for 106 yards and two touchdowns on five carries and added two fumble recoveries. Brady Winter added 14 tackles and a forced fumble and Robbie Tripp and Brandon Timko each had an interception to secure the defense. Center Moriches is now 1-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 13,
+            "yds": 225,
+            "tds": 5
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 5,
+            "yds": 106,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 2,
+            "comp": 1,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Babylon",
+            "player": "Brandon Timko",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Robbie Tripp",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 28,
+    "gameId": "4907",
+    "box": {
+      "gameId": "4907",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 28, Babylon 7: James Carretta ran for 169 yards and a touchdown on 17 carries and caught a 10-yard touchdown to lead Mt. Sinai (5-1) in Suffolk IV. Devin Carros' three-yard touchdown run in the third quarter gave the Mustangs a 28-0 lead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 11,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 17,
+            "yds": 169,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 11,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Millen",
+            "att": 7,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 5,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 2,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 5,
+            "comp": 1,
+            "yds": 10,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo Pedra",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Hampton Bays",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 6,
+    "gameId": "4908",
+    "box": {
+      "gameId": "4908",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Babylon",
+          "q1": "27",
+          "q2": "14",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Babylon 41, Hampton Bays 6: Joe Young rushed for two touchdowns and threw for three in Suffolk IV. He rushed for touchdowns of 72 and 54 yards and threw for touchdowns of 15, 45, and 33 yards. Rohan Brown caught two of those touchdown passes and Elijah Kneeland caught the other. Kneeland also returned a kickoff 71-yards for a touchdown in the first quarter, made 10 tackles, and had a sack. Brady Winter made 13 tackles, including four for a loss for Babylon (4-3). Hampton Bays is 0-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 6,
+            "yds": 162,
+            "tds": 2
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 5,
+            "comp": 5,
+            "yds": 128,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Rohan Brown",
+            "rec": 3,
+            "yds": 78,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 3,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Brady Winter",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Robbie Tripp",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 20,
+    "gameId": "4909",
+    "box": {
+      "gameId": "4909",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 20, Babylon 14: Dylan Zahn connected with Dylan Kiely on a 25-yard touchdown pass in the fourth quarter to give Shoreham-Wading River a 20-14 lead in its Suffolk IV victory. Joe Young had a 54-yard interception for a score in the third quarter and a 2-yard rushing TD in the fourth quarter. James Bender's extra point following the 2-yard TD run tied the score at 14. Zahn completed a 34-yard touchdown pass to Kiely in the first quarter to open the scoring and added 1-yard TD run in the second quarter to put Shoreham-Wading River up two scores.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 11,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 6,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 22,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 15,
+            "yds": 49,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 6,
+            "comp": 4,
+            "yds": 65,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 33,
+            "comp": 17,
+            "yds": 161,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Robbie Tripp",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 6,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 54,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 28,
+    "gameId": "5420",
+    "box": {
+      "gameId": "5420",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 28, Babylon 13: Michael Trepeta ran for 201 yards and two touchdowns on 15 carries and James Carretta ran for 104 yards and a touchdown on 16 carries to lead No. 3 Mt. Sinai over No. 6 Babylon in a Suffolk IV quarterfinal. Mt. Sinai (7-2) will play in a semifinal next weekend. Babylon finishes 4-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 15,
+            "yds": 201,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 16,
+            "yds": 104,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 6,
+            "comp": 1,
+            "yds": 16,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

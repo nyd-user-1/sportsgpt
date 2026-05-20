@@ -1,0 +1,1692 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 7,
+    "gameId": "4963",
+    "box": {
+      "gameId": "4963",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 34, Glenn 7: James Carretta ran for 117 yards and two touchdowns on 10 carries for Mt. Sinai (1-0) in Suffolk IV. Carretta had the go ahead score in the second quarter and sealed the game with a 48-yard rushing touchdown in the fourth quarter. Joey Spallina had 107 yards and one touchdown through the air. Spallina opened the scoring with a 32-yard touchdown pass to Jake Lumley. Mike Trepeta added a 24-yard touchdown on the opening drive of the third quarter. Nick Carretta finished with 71 yards on the ground and a 58-yard touchdown run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 10,
+            "yds": 117,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 6,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 2,
+            "yds": 71,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 10,
+            "yds": 51,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 3,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 10,
+            "comp": 6,
+            "yds": 107,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 1,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 26,
+    "gameId": "4986",
+    "box": {
+      "gameId": "4986",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "0",
+          "q2": "14",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "3",
+          "q2": "6",
+          "q3": "15",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 27, Bayport-Blue Point 26: Verissimo Pedra kicked a 25-yard field goal with nine seconds remaining in the fourth quarter on the 16th play of a drive that started at the Mt. Sinai 30-yard line to give Mt. Sinai a 27-26 victory over Bayport-Blue Point in Suffolk Division IV football Saturday. Mount Sinai (2-0) converted two fourth downs and three third downs on the winning drive. Mount Sinai's James Carretta blocked an extra point after Brady Clark ran in a 1-yard touchdown for Bayport-Blue Point with six minutes remaining to keep the Mustangs down only two points. Joey Spallina completed 8 of 9 passes for 94 yards and two touchdowns and rushed for 101 yards on 23 carries in the win. Michael Trepeta added 61 yards on a touchdown on 13 carries and Gavin Takacs had five receptions for 74 yards, a touchdown and two two-point conversions in the win. Carretta also had an interception, which led to a 25-yard field goal for the game's first points.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 12,
+            "yds": 94,
+            "tds": 3
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 23,
+            "yds": 101,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 13,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 7,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 17,
+            "comp": 9,
+            "yds": 179,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 9,
+            "comp": 8,
+            "yds": 94,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 5,
+            "yds": 121,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 5,
+            "yds": 74,
+            "tds": 1,
+            "pat": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 2,
+            "pat": 2,
+            "points": 8
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 18,
+    "gameId": "4987",
+    "box": {
+      "gameId": "4987",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "18"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 22, Port Jefferson 18: James Carretta scored the game-winning touchdown on an 80-yard kick-off return for Mt. Sinai (3-0) in Suffolk IV. Michael Trepeta opened the scoring with a two-yard rushing score in the first quarter. Jaden Rotella threw for 109 yards and a touchdown, connecting with Jake Lumley on a 57-yard pass in the second quarter, giving Mt. Sinai a 14-0 lead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 12,
+            "yds": 90,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 8,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 2,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 18,
+            "yds": 142,
+            "tds": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Brady DeWitt",
+            "att": 17,
+            "yds": 128,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden Rotella",
+            "att": 4,
+            "comp": 6,
+            "yds": 109,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 11,
+            "comp": 6,
+            "yds": 65,
+            "tds": 0,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 2,
+            "yds": 85,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "rec": 3,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "John Sheils",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Anthony Pipia",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Brady DeWitt",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "fg": 1,
+            "pat": 1,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 20,
+    "gameId": "4988",
+    "box": {
+      "gameId": "4988",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "6",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 25,
+            "yds": 138,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 19,
+            "yds": 60,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 13,
+            "comp": 5,
+            "yds": 105,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "comp": 4,
+            "yds": 120,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 2,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 2,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nathaniel McNally",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 1,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo Pedra",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Hampton Bays",
+    "isAway": false,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 0,
+    "gameId": "4989",
+    "box": {
+      "gameId": "4989",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "19",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 39, Hampton Bays 0: Michael Trepeta rushed for 93 yards and two touchdowns for Mt. Sinai (4-1) in Suffolk IV. Trepeta scored on a 55-yard run in the second quarter to put Mt. Sinai ahead 13-0. Trepeta scored again in the second on a 20-yard rush. James Carreta earned 84 yards on the ground and a touchdown. Jake Spallina and Brett Spallina each scored a touchdown on the ground. Brian Kaler connected with John Pramataris for a 31-yard touchdown in the third quarter. Hampton Bays is 0-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 12,
+            "yds": 106,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 6,
+            "yds": 93,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 6,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 1,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Brett Spallina",
+            "att": 1,
+            "yds": 35,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 4,
+            "comp": 2,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Brian Kaler",
+            "rec": 1,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Williams",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Aidan Liendo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Thomas Frycek",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 7,
+    "gameId": "4907",
+    "box": {
+      "gameId": "4907",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 28, Babylon 7: James Carretta ran for 169 yards and a touchdown on 17 carries and caught a 10-yard touchdown to lead Mt. Sinai (5-1) in Suffolk IV. Devin Carros' three-yard touchdown run in the third quarter gave the Mustangs a 28-0 lead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 11,
+            "yds": 92,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 17,
+            "yds": 169,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 11,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Millen",
+            "att": 7,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "att": 5,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 2,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 5,
+            "comp": 1,
+            "yds": 10,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 1,
+            "yds": 10,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Babylon",
+            "player": "James Bender",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo Pedra",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 41,
+    "gameId": "4991",
+    "box": {
+      "gameId": "4991",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "0",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "14",
+          "q2": "10",
+          "q3": "3",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Miller Place 41, Mt. Sinai 27: Nick Oliva ran for a 67-yard touchdown in the fourth quarter that extended Miller Place lead to 41-21 in its Suffolk IV win. Oliva also kicked two field goals. Anthony Bartolotto scored on an 80-yard touchdown run and Justin Klein hit Owen Connolly for a 65-yard touchdown in the fourth quarter for Miller Place (5-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 26,
+            "yds": 121,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 14,
+            "yds": 90,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 3,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 3,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "att": 1,
+            "yds": 80,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 6,
+            "yds": 75,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "att": 9,
+            "yds": 68,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "att": 5,
+            "yds": 25,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 6,
+            "comp": 4,
+            "yds": 72,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 3,
+            "comp": 3,
+            "yds": 90,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 1,
+            "yds": 27,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Owen Connolly",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Logan  LaMountain",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 2,
+            "pat": 5,
+            "points": 11
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": false,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 12,
+    "gameId": "4992",
+    "box": {
+      "gameId": "4992",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "27",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 33, Greenport / Southold / Mattituck 12: James Carretta rushed for 84 yards and two touchdowns on four carries and started the scoring for the Mustangs on a 29-yard rush to give them a 6-0 lead and Jake Spallina extended the score to 13-0 on a 48-yard rush for Mt. Sinai (6-2) in Suffolk IV. Michael Trepeta rushed for 55 yards and a touchdown on two carries and had a 99-yard kickoff return to give the squad a 33-0 lead. Nicholas Coleman had two sacks and Nicholas Carillo added another. Greenport / Southold / Mattituck\tis now 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 4,
+            "yds": 85,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 2,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Coleman",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Plumitallo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 13,
+    "gameId": "5420",
+    "box": {
+      "gameId": "5420",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "13",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mount Sinai 28, Babylon 13: Michael Trepeta ran for 201 yards and two touchdowns on 15 carries and James Carretta ran for 104 yards and a touchdown on 16 carries to lead No. 3 Mt. Sinai over No. 6 Babylon in a Suffolk IV quarterfinal. Mt. Sinai (7-2) will play in a semifinal next weekend. Babylon finishes 4-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 15,
+            "yds": 201,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 16,
+            "yds": 104,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 6,
+            "comp": 1,
+            "yds": 16,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 1,
+            "yds": 16,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/13/2021",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 21,
+    "gameId": "5461",
+    "box": {
+      "gameId": "5461",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 11,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 10,
+            "yds": 57,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "yds": 116,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 8,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Joey Spallina",
+            "att": 9,
+            "comp": 7,
+            "yds": 109,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 15,
+            "comp": 12,
+            "yds": 183,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 3,
+            "yds": 72,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Lumley",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 8,
+            "yds": 114,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 3,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo  Pedra",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

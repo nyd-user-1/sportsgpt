@@ -1,0 +1,69 @@
+{
+  "slug": "bayport-blue-point",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Brendan Waters",
+      "newsday_player_id": 22170,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Traigh Tommasone",
+      "newsday_player_id": 22661,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Brendan  Mattimore",
+      "newsday_player_id": 22333,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Mike Luce",
+      "newsday_player_id": 21609,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Maclin Keyser",
+      "newsday_player_id": 22332,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Cooper Fuller",
+      "newsday_player_id": 21608,
+      "class": null,
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Sean Coffey",
+      "newsday_player_id": 22770,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Ryan Athearn",
+      "newsday_player_id": 22512,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Dan Aiello",
+      "newsday_player_id": 21607,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    }
+  ]
+}

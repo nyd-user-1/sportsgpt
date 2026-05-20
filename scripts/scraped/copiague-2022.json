@@ -1,0 +1,1081 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 57,
+    "gameId": "5570",
+    "box": {
+      "gameId": "5570",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "21",
+          "q2": "14",
+          "q3": "15",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "57"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Tommy Azzara 4 touchdown passes 227 Yards Passing\nChris Moran 2 Touchdown Runs 78 yards rushing on 2 carries\nMike Devlin 3 TFL 6 overall tackles\nWIll Kaminicki 1 catch 52 yards, TD and Interception \nSmithtown East Defense 6 turnovers forced",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 2,
+            "yds": 78,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 4,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 8,
+            "yds": 37,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "att": 2,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "att": 2,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 1,
+            "yds": 5,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Grace  McDonald",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 11,
+            "comp": 7,
+            "yds": 237,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 2,
+            "comp": 1,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 2,
+            "yds": 55,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 2,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Charlie Higgins",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jack Pulisic",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Centereach",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 42,
+    "gameId": "5639",
+    "box": {
+      "gameId": "5639",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Centereach 42, Copiague 6: Riddick Drab completed 6-of-8 passes for 72 yards and one touchdown to lead Centereach ( 1-1) in Suffolk II. Drab also rushed for 64 yards and two touchdowns. Andrew Ferreira returned a punt 70 yards for a touchdown. Manny Menedez had two interceptions and LaRawn Robinson made five tackles. Jason Zaita had 80 all- purpose yards.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 41,
+    "gameId": "5660",
+    "box": {
+      "gameId": "5660",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Newfield",
+          "q1": "15",
+          "q2": "13",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 41, Copiague 6: Kenny Petit-Frere rushed for 196 yards and three touchdowns on 11 carries to lead Newfield ( 2-1) in Suffolk II. Petit-Frere also added a 106 yard touchdown off an interception on defense. JJ Deliat rushed for 44 yards and a touchdown and James Marra added 40 yards and a touchdown. Marra and David Spooner each had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 11,
+            "yds": 196,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "JJ Deliat",
+            "att": 5,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "att": 4,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 9,
+            "yds": 37,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "James Marra",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "David  Spooner",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "West Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 49,
+    "gameId": "5690",
+    "box": {
+      "gameId": "5690",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "7",
+          "q2": "20",
+          "q3": "15",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Babylon 49, Copiague 8: Elijah Outlaw completed 8 of 13 passes for 190 yards and four touchdowns, and had three carries for 41 yards and a touchdown to lead West Babylon (2-2) in Suffolk II. Kendrick Mohan added five carries for 120 yards and a touchdown, and Sean McGuire added four receptions for 66 yards and a touchdown. Mohan also had eight tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Kendrick Mohan",
+            "att": 5,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Serrano",
+            "att": 8,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 3,
+            "yds": 41,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 13,
+            "comp": 8,
+            "yds": 190,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Sean McGuire",
+            "rec": 4,
+            "yds": 66,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Ricky Fasitta",
+            "rec": 1,
+            "yds": 51,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elvis Fernandez",
+            "rec": 1,
+            "yds": 44,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Nick Field",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 1,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Chris Graham",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "CJ Apuzzo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 41,
+    "gameId": "5565",
+    "box": {
+      "gameId": "5565",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "13",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 41, Copiague 0: Nathaniel Griffith ran for 228 yards and four touchdowns on 11 carries to lead North Babylon (3-2) over Copiague in a Suffolk II matchup. Jawara Keahey had a 102-yard interception return for a touchdown to give the Bulldogs a 13-0 lead in the first quarter. Jaymari Curtis added a 56-yard touchdown run in the second quarter. Joel Lomax, Alexander Griffith, Jake Miele and Alex Seger led the way for the Bulldog defense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel  Griffith",
+            "att": 11,
+            "yds": 228,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 2,
+            "yds": 72,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Jawara Keahey",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Connetquot",
+    "isAway": false,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 41,
+    "gameId": "5734",
+    "box": {
+      "gameId": "5734",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "6",
+          "q2": "28",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Connetquot 41, Copiague 8: Michael Buttino scored rushing touchdowns of 3, 15 and 20 yards to lead Connetquot (4-2) in Suffolk II. Buttino led the Thunderbirds with 120 yards rushing. Tyler McCarthy opend up the scoring with a 25-yard rushing score in the first quarter. McCarthy had 101 yards rushing on five attempts. Nick Pepitone scored on a nine-yard touchdown run during Connetquot's 28-point third quarter. Tommy Malvagno scored on a one-yard run. Sophomore Lucas Weaver led the defense with 9 tackles and a fumble recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Connetquot",
+            "player": "Michael Buttino",
+            "att": 13,
+            "yds": 120,
+            "tds": 3
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 5,
+            "yds": 101,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 5,
+            "yds": 38,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "att": 5,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Brian Tricario",
+            "att": 4,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Bobby  Elliott",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Aidan Connell",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Connetquot",
+            "player": "Nick Pepitone",
+            "att": 9,
+            "comp": 6,
+            "yds": 58,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Bobby  Elliott",
+            "att": 1,
+            "comp": 1,
+            "yds": 30,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Connetquot",
+            "player": "Dennis  Milano",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Gio DeRenzo",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Stephen Bubier",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Connetquot",
+            "player": "Jack Monahan",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "Lucas Weaver",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Smithtown West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 38,
+    "gameId": "5746",
+    "box": {
+      "gameId": "5746",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "14",
+          "q2": "17",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 38, Copiague 0: Brayden Stahl completed 12 passes for 207 yards and two touchdowns to lead Smithtown West (5-2) in Suffolk II.  Jack Melore made six catches for 150 yards and a touchdown.  Jacque Laprarie made two catches for 25 yards and one touchdown and added an interception on defense.  Smithtown West rushed for 118 yards and Dylan Philips had two rushing touchdowns.  Brian Hope led the defense with 11 solo tackles.  Martin Shook added seven tackles. Smithtown West offense came on in the first half putting up 31 points. Their defense held up to secured the shuout victory.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 6,
+            "yds": 16,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 19,
+            "comp": 12,
+            "yds": 207,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 6,
+            "yds": 150,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Huntington",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 42,
+    "gameId": "5779",
+    "box": {
+      "gameId": "5779",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Huntington",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Huntington 42, Copiague 0: Christian St. John ran for 155 yards and three touchdowns on 15 carries, Mikey Kline had 119 yards and a touchdown on 12 carries and David Dax added 89 yards and two touchdowns on nine carries to lead Huntington (2-6) in Suffolk II. Joe Algeri had eight tackles and two sacks.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Huntington",
+            "player": "Christian  St. John",
+            "att": 15,
+            "yds": 155,
+            "tds": 3
+          },
+          {
+            "team": "Huntington",
+            "player": "Mikey Kline",
+            "att": 12,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Huntington",
+            "player": "David Dax",
+            "att": 9,
+            "yds": 89,
+            "tds": 2
+          },
+          {
+            "team": "Huntington",
+            "player": "John Acompora-Miller",
+            "att": 0,
+            "yds": 2,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Huntington",
+            "player": "Anthony Annunziata",
+            "att": 4,
+            "comp": 3,
+            "yds": 67,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Huntington",
+            "player": "John Acompora-Miller",
+            "rec": 2,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Ryan Centeno",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Huntington",
+            "player": "Peter Breingan",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Huntington",
+            "player": "Joe Algeri",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "John Acompora-Miller",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Huntington",
+            "player": "Mikey Kline",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

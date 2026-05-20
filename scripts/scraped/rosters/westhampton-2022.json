@@ -1,0 +1,111 @@
+{
+  "slug": "westhampton",
+  "season": 2022,
+  "players": [
+    {
+      "name": "heath  sumwalt",
+      "newsday_player_id": 21207,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Kevin Smith",
+      "newsday_player_id": 19834,
+      "class": "11",
+      "position": "WR/SS",
+      "jersey_number": 1
+    },
+    {
+      "name": "Brody Schaffer",
+      "newsday_player_id": 19835,
+      "class": "10",
+      "position": "RB/LB/K",
+      "jersey_number": 21
+    },
+    {
+      "name": "Riley Miller",
+      "newsday_player_id": 20581,
+      "class": "11",
+      "position": "QB/FS",
+      "jersey_number": 5
+    },
+    {
+      "name": "Nolan  Michalowski",
+      "newsday_player_id": 19832,
+      "class": "11",
+      "position": "RB/LB",
+      "jersey_number": 4
+    },
+    {
+      "name": "Andrew  Mensch",
+      "newsday_player_id": 19836,
+      "class": "11",
+      "position": "OL/DL",
+      "jersey_number": 55
+    },
+    {
+      "name": "Aidan McDermott",
+      "newsday_player_id": 20580,
+      "class": "11",
+      "position": "OL/LB",
+      "jersey_number": 50
+    },
+    {
+      "name": "Mike LoRusso",
+      "newsday_player_id": 19795,
+      "class": "11",
+      "position": "WR/CB",
+      "jersey_number": 11
+    },
+    {
+      "name": "Luke Kilroy",
+      "newsday_player_id": 20576,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 34
+    },
+    {
+      "name": "TJ  HILL",
+      "newsday_player_id": 19794,
+      "class": "11",
+      "position": "WR/OLB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Noah Hebberd",
+      "newsday_player_id": 20579,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "William Gambino",
+      "newsday_player_id": 19833,
+      "class": "11",
+      "position": "QB",
+      "jersey_number": 9
+    },
+    {
+      "name": "Sal Fracapane",
+      "newsday_player_id": 19838,
+      "class": "12",
+      "position": "OL/DE",
+      "jersey_number": 54
+    },
+    {
+      "name": "Jordyn Brown",
+      "newsday_player_id": 20577,
+      "class": "11",
+      "position": "TE/DE",
+      "jersey_number": 25
+    },
+    {
+      "name": "Gianni Amodemo",
+      "newsday_player_id": 20578,
+      "class": "11",
+      "position": "WR/CB",
+      "jersey_number": 2
+    }
+  ]
+}

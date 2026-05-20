@@ -1,0 +1,1556 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 37,
+    "gameId": "5626",
+    "box": {
+      "gameId": "5626",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Floyd",
+          "q1": "7",
+          "q2": "6",
+          "q3": "3",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "37"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 37, Whitman 13: Caden Lesiewicz had three interceptions, two rushing touchdowns, 65 rushing yards and kicked a 20-yard field goal for Floyd in Suffolk I. Aaron Fisher had six tackles, a sack and blocked an extra point and Connor Taphouse added three sacks. LaDuke Harris rushed for 55 yards on 10 carries and two touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "att": 6,
+            "yds": 65,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Jason Pratt",
+            "att": 4,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 11,
+            "yds": 60,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 10,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Connor Taphouse",
+            "att": 0,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Wally Crane",
+            "att": 0,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Aaron Fisher",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 12,
+            "comp": 6,
+            "yds": 101,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 7,
+            "comp": 1,
+            "yds": 27,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 5,
+            "yds": 51,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 1,
+            "yds": 31,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Levar Rollerson",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam Arevalo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 4,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 6,
+    "gameId": "5641",
+    "box": {
+      "gameId": "5641",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Whitman",
+          "q1": "14",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 28, Brentwood 6: J.T Taylor completed 16 of 21 passes for 211 yards and two touchdowns in Suffolk I. He also rushed for another touchdown. Taylor's 32-yard touchdown pass to Jason Burke and 1-yard touchdown run helped Whitman build a 14-0 lead in the first quarter. Burke made three catches for 99 yards and a touchdown. J.D Harrison made six catches for 73 yards. JT. Villiella caught a 5-yard touchdown pass from Taylor in the second quarter to give Whitman a 20-0 lead. Jacob Somer made 10 tackles, including four for a loss. Luis Navarro made 10 tackles, including six for a loss, and Xavier Ali made seven tackles, including three for a loss for Whitman (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 10,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "att": 5,
+            "yds": 17,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Joel  Palomino",
+            "att": 3,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "att": 3,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 3,
+            "yds": 63,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 13,
+            "comp": 4,
+            "yds": 90,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 21,
+            "comp": 16,
+            "yds": 211,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Adrian Espinal",
+            "rec": 1,
+            "yds": 58,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Gio Otero",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Pierre-Louis",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 3,
+            "yds": 99,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 6,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 2,
+            "yds": 13,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Almendarez",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Kole Gottesman",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/23/2022",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 27,
+    "gameId": "5666",
+    "box": {
+      "gameId": "5666",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 27, Whitman 0: Terrance Robinson rushed for 85 yards and a touchdown on 19 carries in Suffolk I. His 32-yard touchdown run in the third quarter gave Longwood a 13-0 lead. Nmadi Nwanyanwu ran 28 yards for a touchdown later in the third to extend the lead to 19-0. Louis Kaleb rushed for 50 yards on 10 carries for Longwood (3-0).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Terrance Robinson",
+            "att": 19,
+            "yds": 85,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis Kaleb",
+            "att": 10,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Miles Flagg",
+            "att": 2,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 5,
+            "yds": 29,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 2,
+            "yds": 28,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Anthony Ordonez",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 5,
+            "comp": 3,
+            "yds": 102,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Dameon Charles",
+            "rec": 1,
+            "yds": 76,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Najee Henderson",
+            "rec": 1,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis Kaleb",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Danny Blank",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Tyler  Hammel",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mason Hauser",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Josh  Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis Kaleb",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/30/2022",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 29,
+    "oppScore": 22,
+    "gameId": "5556",
+    "box": {
+      "gameId": "5556",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "8",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Whitman",
+          "q1": "15",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 29, Central Islip 22: Cameron Carlson rushed 48 yards and two touchdowns on nine carries in Suffolk I. His 4-yarder in the first quarter gave Whitman a 13-0 lead and his 3-yarder in the third extended that lead to 21-8. Later in the third quarter, Ryan Boutin's 16-yard rushing touchdown gave Whitman a 28-14 lead. Boutin rushed for 102 yards and a touchdown on 12 carries for Whitman (2-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 12,
+            "yds": 102,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 9,
+            "yds": 48,
+            "tds": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "att": 1,
+            "yds": 22,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 20,
+            "comp": 8,
+            "yds": 65,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 5,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "rec": 1,
+            "yds": 29,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 8,
+    "gameId": "5705",
+    "box": {
+      "gameId": "5705",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Whitman",
+          "q1": "6",
+          "q2": "7",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 19, Patchogue 8: JT Taylor completed 11-of-22 for 168 yards and a touchdown for Whitman (3-2) in Suffolk I. Taylor connected with Jason Burke for three catches and 73 yards and JD Harrison for four catches and 67 yards. Harrison added a rushing touchdown in the first quarter. Ryan Boutin added a rushing touchdown of his own and totaled 78 yards on 12 carries. JT Villella caught Taylor's sole touchdown pass, and he added an interception on defense. Xavier Ali and Luis Navarro had three sacks each and Jacob Somer, Cameron Carlson, Kole Gottesman and Harrison each had 10 tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jonny Cautard",
+            "att": 9,
+            "yds": 49,
+            "tds": 1
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Joe Kelly",
+            "att": 7,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 12,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 10,
+            "yds": 49,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Kieran Hughes",
+            "att": 17,
+            "comp": 10,
+            "yds": 180,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 22,
+            "comp": 11,
+            "yds": 168,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "CJ Forgione",
+            "rec": 5,
+            "yds": 95,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Justin Marcia-Joachim",
+            "rec": 10,
+            "yds": 81,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "ALEX Hofmann",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Jayden  Isselbacher",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 3,
+            "yds": 73,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 4,
+            "yds": 67,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 2,
+            "yds": 14,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam Arevalo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Xavier Ali",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Riverhead",
+    "isAway": true,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 21,
+    "gameId": "5727",
+    "box": {
+      "gameId": "5727",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "6",
+          "q2": "14",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 41, Riverhead 21: Cameron Carlson had 57 yards and three touchdowns on nine carries for Whitman (4-2) in Suffolk I. One touchdown came in the second quarter and the other two were in the fourth quarter. Carlson also added an interception in the first quarter. Ryan Boutin added 51 rushing yards and a touchdown on eight carries, and JT Taylor had 44 yards and a touchdown on nine rushes. Taylor also threw for 175 yards and a touchdown on 10-of-17 passes. JD Harrison caught the 63-yard touchdown reception, as part of his four-catch, 89-yard day. On defense, Jacob Somer made 10 tackles and a sack, while Brayden Zalbert made an interception in the end zone at the end of the first half.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 9,
+            "yds": 57,
+            "tds": 3
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 8,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 17,
+            "comp": 10,
+            "yds": 175,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 4,
+            "yds": 89,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Brayden Zalbert",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 42,
+    "gameId": "5752",
+    "box": {
+      "gameId": "5752",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "7",
+          "q2": "7",
+          "q3": "21",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 42, Whitman 0: Andrew Belli threw for two touchdowns to lead Ward Melville (5-2) in Suffolk I. Nick Gaffney had two touchdowns in the second half on runs of one yard and eight yards. Ethan Burgos scored a 19-yard rushing touchdown and threw a 30-yard touchdown to Hunter Morgan in the third quarter. Mike Riccardi made seven tackles and Griffin Kramer batted away six passes and made three tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Jake Ventimiglia",
+            "att": 9,
+            "yds": 53,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick Gaffney",
+            "att": 15,
+            "yds": 46,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 5,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 4,
+            "yds": 17,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 1,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 12,
+            "comp": 7,
+            "yds": 108,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 1,
+            "comp": 4,
+            "yds": 30,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody Morgan",
+            "rec": 3,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Hunter Morgan",
+            "rec": 1,
+            "yds": 30,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 1,
+            "yds": 17,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 3,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody Morgan",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Norman Bergamaschi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan Cosentino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2022",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 0,
+    "gameId": "5775",
+    "box": {
+      "gameId": "5775",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "20",
+          "q2": "0",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 30, Bay Shore 0: Nick Fazio threw two touchdowns of 73 and 36 yards to lead Whitman ( 5-3) in Suffolk I. Jacob Somer blocked a punt that Cameron Carlson ran in for four yards for a touchdown to put Whitman up 13-0 in the first quarter. Carlson hit the quarterback on the next drive and deflected the ball to Luis Navarro, who caught the interception and ran back 28 yards for a touchdown. Jason Burke caught a 36-yard touchdown and Mike Mannino hit a 40-yard field goal and went 2-for-2 on extra points, and had two punts inside the 10 yard line.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 5,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 12,
+            "yds": 46,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Nick Fazio",
+            "att": 5,
+            "comp": 2,
+            "yds": 109,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 2,
+            "yds": 109,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Mike Mannino",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 1,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Carter Schum",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2022",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 38,
+    "gameId": "6084",
+    "box": {
+      "gameId": "6084",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "26",
+          "q2": "12",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 38, Whitman 7: Nick Gaffney rushed for two touchdowns to help No. 4 Ward Melville defeat No. 5 Whitman in the first round of the Suffolk I playoffs. His first touchdown was from 51 yards and the second from 28. Ward Melville scored 38 unanswered points to start the game, all in the first half, but did not score after halftime. Andrew Belli threw three touchdowns in the win, including a 60-yard pass to Jackson Weber. Cameron Carlson scored Whitman's only touchdown in the third quarter on a 7-yard run.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Nick Gaffney",
+            "att": 9,
+            "yds": 109,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jake Ventimiglia",
+            "att": 12,
+            "yds": 22,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Buscaglia",
+            "att": 4,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mike Marzovilla",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 4,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 8,
+            "comp": 7,
+            "yds": 187,
+            "tds": 3,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 1,
+            "comp": 1,
+            "yds": 2,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "rec": 1,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brody Morgan",
+            "rec": 2,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 2,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick Gaffney",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Joe Massaro",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Dan Cosentino",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

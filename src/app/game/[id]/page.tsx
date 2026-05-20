@@ -16,7 +16,7 @@ export default async function GamePage({
   const gameId = parseInt(id, 10)
   if (isNaN(gameId)) notFound()
 
-  const [gameRows, boxRows] = await Promise.all([
+  const [gameRows, boxRows, playerGameStatRows] = await Promise.all([
     sql`
       SELECT g.*,
              ht.name  AS home_team_name,  ht.school_slug AS home_school_slug,  ht.division,
@@ -32,6 +32,17 @@ export default async function GamePage({
       FROM game_box_scores
       WHERE game_id = ${gameId}
       LIMIT 1
+    `,
+    sql`
+      SELECT player_slug, player_name, school_slug, team_name, stat_type,
+             rush_att, rush_yds, rush_tds,
+             pass_comp, pass_att, pass_yds, pass_tds, pass_int,
+             rec_rec, rec_yds, rec_tds,
+             kick_pat, kick_fg, kick_points,
+             def_int, def_sacks, def_fumbles
+      FROM player_game_stats
+      WHERE game_id = ${gameId}
+      ORDER BY stat_type, team_name, player_name
     `,
   ])
 
@@ -70,6 +81,7 @@ export default async function GamePage({
     <GameShell
       game={game as Record<string, unknown>}
       box={(boxRows[0] ?? null) as Record<string, unknown> | null}
+      playerGameStats={playerGameStatRows as Record<string, unknown>[]}
       prevGameId={prevGameId ?? null}
       nextGameId={nextGameId ?? null}
       refSlug={refSlug}

@@ -1,0 +1,1948 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 8,
+    "gameId": "6022",
+    "box": {
+      "gameId": "6022",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "6",
+          "q2": "22",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Glenn",
+          "q1": "0",
+          "q2": "0",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 28, Glenn 8: John Flynn rushed for 159 yards and a touchdown on 16 carries, made two catches for 22 yards and a touchdown, and recovered a fumble on defense in Suffolk IV. Kyle Weeks rushed for 121 yards and a touchdown on 14 carries and completed 3-of-8 passes for 53 yards and a touchdown.  Jack Bruetsch had five tackles and three sacks.  Mark Griffin had two tackles and two sacks. Scott McConville made eight tackles, forced a fumble and rushed for 15 yards on five carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 16,
+            "yds": 159,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 14,
+            "yds": 121,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "att": 1,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 9,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "att": 5,
+            "yds": 15,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bruetsch",
+            "att": 0,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 0,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Gavin Lopez",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 8,
+            "yds": 28,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 8,
+            "comp": 3,
+            "yds": 53,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "comp": 7,
+            "yds": 79,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 22,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 4,
+            "yds": 50,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Mario Bento",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Aiden Presti",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Miller Place",
+    "isAway": true,
+    "result": "W",
+    "myScore": 31,
+    "oppScore": 20,
+    "gameId": "5675",
+    "box": {
+      "gameId": "5675",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "12",
+          "q2": "0",
+          "q3": "6",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "31"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "7",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 31, Miller Place 20: Kings Park scored two touchdowns in the final 35 seconds to claim a comeback win.\n\nMiller Place took a 20-18 lead on Joe'll Spagnuolo's 70-yard touchdown run and the point after with 2:49 left. Then Kings Park (2-0) went 80 yards in eight plays for the lead. John Flynn scored on a 19-yard run with 35 seconds to go to make it 24-20. Kyle Weeks tacked on another touchdown with 17 seconds remaining on a 40-yard interception return.\n\nWeeks, a junior quarterback, went 15-for-20 for 149 yards and a TD and also ran 23 times for 128 yards and a score. Ralph Perangelo had eight receptions for 74 yards and a touchdown for Kings Park.\n\nSpagnuolo had touchdown runs of 75, 70 and 71 yards for Miller Place (0-2).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 23,
+            "yds": 138,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 10,
+            "yds": 78,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 1,
+            "yds": 2,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Joe'll Spagnuolo",
+            "att": 13,
+            "yds": 260,
+            "tds": 3
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 11,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 6,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Robby Cunningham",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 20,
+            "comp": 15,
+            "yds": 164,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Michael Giugliano",
+            "att": 4,
+            "comp": 2,
+            "yds": 24,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 8,
+            "yds": 81,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "rec": 4,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Luke Griffin",
+            "rec": 3,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Dj Williamson",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Patrick Dietl",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Anthony DeVirgilio",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tommy Cassar",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 36,
+    "gameId": "5609",
+    "box": {
+      "gameId": "5609",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "14",
+          "q3": "6",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "13",
+          "q3": "7",
+          "q4": "15",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 49, Mt. Sinai 36: Kyle Weeks carried 17 times for rushed for 277 yards on 17 carries and three touchdowns in Suffolk IV. Weeks completed seven passes for 65 yards, a touchdown, and a two-point conversion for Kings Park (3-0). Jack Bruetsch had two receptions for 38 yards, a touchdown, and a sack on defense. Scott McConvile had 13 tackles for the Kingsmen. Drew Feinstein caught a 19-yard touchdown pass from Jaden Rotella for Mt. Sinai (0-3). Rotella also passed to Shea Mullahey for a two-point conversion.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake  Spallina",
+            "att": 19,
+            "yds": 42,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden  Rotella",
+            "att": 8,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 17,
+            "yds": 277,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 3,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 8,
+            "yds": 37,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 3,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden  Rotella",
+            "att": 11,
+            "comp": 18,
+            "yds": 240,
+            "tds": 4,
+            "int": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 7,
+            "comp": 7,
+            "yds": 65,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "rec": 7,
+            "yds": 159,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Drew Feinstein",
+            "rec": 4,
+            "yds": 81,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bruetsch",
+            "rec": 2,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Maire",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake  Spallina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jaden  Rotella",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Dante Spadaro",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 7
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Bret Spallina",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Brett Oppenheim",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Alden Barton",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 8
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Thomas Frycek",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Millen",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 7
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Zachary Molomo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 3
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Shea Mullahey",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 5
+          },
+          {
+            "team": "Kings Park",
+            "player": "Brandon Hauk",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Jack  Bruetsch",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5697",
+    "box": {
+      "gameId": "5697",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 23,
+            "yds": 116,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 5,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "att": 6,
+            "yds": 91,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 13,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 3,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 23,
+            "comp": 11,
+            "yds": 92,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 16,
+            "comp": 9,
+            "yds": 167,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Maclin Keyser",
+            "att": 2,
+            "comp": 1,
+            "yds": 13,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 2,
+            "yds": 29,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 2,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 3,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Dan Aiello",
+            "rec": 1,
+            "yds": 78,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 44,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Michael Luce",
+            "rec": 3,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 2,
+            "yds": 21,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Riley Spencer",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/07/2022",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 51,
+    "oppScore": 7,
+    "gameId": "5728",
+    "box": {
+      "gameId": "5728",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "24",
+          "q2": "21",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "51"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 51, Center Moriches 7: Mark Griffin rushed for 196 yards and three touchdowns on 13 carries, all in the first half, in Suffolk IV. Griffin ran for touchdowns of 59, 3, and 59 yards, ran for two two-point conversions, and made five tackles. John Flynn rushed for 86 yards, three touchdowns, and two-point conversions. Kyle Weeks rushed for 85 yards on seven carries, had a two-point conversion, and recovered a fumble for Kings Park (4-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "att": 12,
+            "yds": 98,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 13,
+            "yds": 196,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 7,
+            "yds": 86,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 7,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "JJ Joyce",
+            "att": 6,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 6,
+            "yds": 9,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kliene",
+            "att": 6,
+            "comp": 4,
+            "yds": 22,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 1,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "AJ Rudolph",
+            "rec": 2,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matthew Albino",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Center Moriches",
+            "player": "Shane Gallagher",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Brayden Hromada",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Joe  Klemballa",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 44,
+    "oppScore": 33,
+    "gameId": "5729",
+    "box": {
+      "gameId": "5729",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "8",
+          "q2": "7",
+          "q3": "0",
+          "q4": "29",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "44"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "8",
+          "q2": "10",
+          "q3": "9",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 29,
+            "yds": 126,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 13,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 23,
+            "yds": 63,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "att": 4,
+            "yds": 49,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 13,
+            "comp": 7,
+            "yds": 201,
+            "tds": 2,
+            "int": 4
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 41,
+            "comp": 22,
+            "yds": 337,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 3,
+            "yds": 106,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 1,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Declan O'Melia",
+            "rec": 1,
+            "yds": 23,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Mike Casey",
+            "rec": 6,
+            "yds": 142,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Kershis",
+            "rec": 8,
+            "yds": 82,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Daniel Greene",
+            "rec": 1,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "rec": 1,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "rec": 2,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Sam Palmer",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 14,
+    "gameId": "5763",
+    "box": {
+      "gameId": "5763",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 42, Babylon 14: Kyle Weeks rushed for 137 yards and three touchdowns on 12 carries and completed 3 of 5 passes for 31 yards in Suffolk IV. His touchdowns came from 1, 10, and 30-yards. Mark Griffin rushed for 115 yards and a touchdown on eight carries and recovered a fumble. His 11-yard touchdown in the second quarter gave Kings Park a 34-7 lead. John Flynn had a 2-yard touchdown run in the first quarter and returned a kickoff 86-yards for a touchdown in the second for Kings Park (6-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 12,
+            "yds": 137,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 8,
+            "yds": 115,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "JJ Joyce",
+            "att": 2,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Dean Renna",
+            "att": 4,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 5,
+            "yds": 6,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 5,
+            "comp": 3,
+            "yds": 31,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 2,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2022",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 21,
+    "gameId": "6099",
+    "box": {
+      "gameId": "6099",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "14",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Kings Park 42, Mt. Sinai 21: Kyle Weeks rushed for 218 yards and three touchdowns on 25 carries and completed 9 of 9 passes for 124 yards, including a 52-yard touchdown pass to Scott McConville as No. 2 Kings Park defeated No. 7 Mount Sinai in a Suffolk Division IV quarterfinal. Weeks also had an interception and four tackles. Mark Griffin rushed for 133 yards and a touchdown on 13 carries and had three receptions for 25 yards and added two sacks. John Flynn rushed for 44 yards and a touchdown on 10 carries and added a 27-yard catch. McConville added 11 tackles and Alex Squillacioti made all six of his PATs. Kings Park went on a 42-0 scoring run after allowing the game's first touchdown. Mt. Sinai finishes 2-6. Kings Park (7-1) hosts the winner of No. 6 Babylon/No. 3 Glenn in the Division IV semifinals next weekend.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 25,
+            "yds": 218,
+            "tds": 3
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 13,
+            "yds": 133,
+            "tds": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 10,
+            "yds": 44,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 9,
+            "comp": 9,
+            "yds": 124,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 3,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Ralph Perangelo",
+            "rec": 3,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Tommy Cassar",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/11/2022",
+    "opponent": "Glenn",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 24,
+    "gameId": "6123",
+    "box": {
+      "gameId": "6123",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "7",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Kings Park",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Glenn",
+            "player": "Kahran King",
+            "att": 11,
+            "yds": 123,
+            "tds": 2
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 15,
+            "yds": 75,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 36,
+            "yds": 163,
+            "tds": 2
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "att": 10,
+            "yds": 87,
+            "tds": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "att": 4,
+            "comp": 2,
+            "yds": 61,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "att": 5,
+            "comp": 8,
+            "yds": 87,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "att": 1,
+            "comp": 1,
+            "yds": 7,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Glenn",
+            "player": "Matt Triolo",
+            "rec": 1,
+            "yds": 59,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Graig Decembre",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Scott McConville",
+            "rec": 1,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Mark Griffin",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "John Flynn",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Sam Myung",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Kings Park",
+            "player": "Kyle Weeks",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Glenn",
+            "player": "Cooper Kassan",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          },
+          {
+            "team": "Kings Park",
+            "player": "Alex Squillacioti",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Glenn",
+            "player": "Cameron Rossi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Glenn",
+            "player": "Anthony Palencia",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Glenn",
+            "player": "Chris Franzese",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

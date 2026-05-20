@@ -3,13 +3,14 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { InfoTable } from '@/components/InfoTable'
+import { RevealFx } from '@/components/RevealFx'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
 
@@ -66,7 +67,7 @@ export function DivisionShell({
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
-  const [standingsExpanded, setStandingsExpanded] = useState(true)
+  const [standingsExpanded, setStandingsExpanded] = useState(false)
   const [seasonIdx, setSeasonIdx] = useState(0)
   const [slideIdx, setSlideIdx] = useState(0)
 
@@ -100,7 +101,7 @@ export function DivisionShell({
   const prevDiv = DIV_ORDER[(curIdx - 1 + n) % n]
   const nextDiv = DIV_ORDER[(curIdx + 1) % n]
 
-  const visibleStandings = standingsExpanded ? filteredStandings : filteredStandings.slice(0, 2)
+  const visibleStandings = standingsExpanded ? filteredStandings : filteredStandings.slice(0, 3)
 
   const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
   const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
@@ -116,16 +117,10 @@ export function DivisionShell({
           <div className="mx-auto max-w-4xl px-5 py-8">
 
             {/* Header */}
+            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
             <div className="mb-8 flex items-center justify-between gap-2">
               <div>
                 <div className="flex items-center gap-3">
-                  {(() => {
-                    const divNum = { I: 1, II: 2, III: 3, IV: 4 }[division as 'I'|'II'|'III'|'IV']
-                    const logo = divNum ? DIVISION_LOGOS[divNum] : undefined
-                    return logo ? (
-                      <Image src={logo} alt="" width={48} height={48} className="shrink-0 h-12 w-12 object-contain" unoptimized />
-                    ) : null
-                  })()}
                   <div className="flex flex-col">
                     <h1 className="text-2xl font-bold text-[var(--txt)]">Division {division}</h1>
                     <div className="flex items-center gap-1.5 text-xs text-[var(--muted)] mt-1">
@@ -161,8 +156,10 @@ export function DivisionShell({
                 </div>
               </div>
             </div>
+            </RevealFx>
 
             {/* Hero slider */}
+            <RevealFx delay={0.15} translateY={16}>
             {slides.length > 0 && (
               <div className="mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
                 {slides.map((src, i) => (
@@ -198,14 +195,29 @@ export function DivisionShell({
                 )}
               </div>
             )}
+            </RevealFx>
 
             {/* Standings with season carousel */}
+            <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold text-[var(--txt)]">Standings</h2>
+                {availableSeasons.length > 1 && (
+                  <div className="flex items-center gap-1">
+                    <button onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
+                      className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
+                      <ArrowLeft className="h-4 w-4" />
+                    </button>
+                    <button onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
+                      className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                )}
+              </div>
               <InfoTable
-                title={`${fmtSeason(selectedSeason)} Standings`}
+                title={`${fmtSeason(selectedSeason)} Season`}
                 onToggle={() => setStandingsExpanded(v => !v)}
-                onPrev={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length) : undefined}
-                onNext={availableSeasons.length > 1 ? () => setSeasonIdx(i => (i + 1) % availableSeasons.length) : undefined}
               >
                 <table className="w-full text-sm">
                   <thead>
@@ -249,16 +261,14 @@ export function DivisionShell({
                 </table>
               </InfoTable>
             </div>
+            </RevealFx>
 
             {/* Top Passers carousel */}
+            <RevealFx delay={0.42} translateY={8}>
             {seasonPassers.length > 0 && (
               <div className="mb-8">
-                <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Passers · {fmtSeason(selectedSeason)}</h2>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => passRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                    <button onClick={() => passRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
-                  </div>
+                <div className="mb-4">
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Passing Leaders</h2>
                 </div>
                 <div ref={passRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
@@ -292,16 +302,14 @@ export function DivisionShell({
                 </div>
               </div>
             )}
+            </RevealFx>
 
             {/* Top Rushers carousel */}
+            <RevealFx delay={0.52} translateY={8}>
             {seasonRushers.length > 0 && (
               <div className="mb-8">
-                <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Top Rushers · {fmtSeason(selectedSeason)}</h2>
-                  <div className="flex items-center gap-2">
-                    <button onClick={() => rushRef.current?.scrollBy({ left: -240, behavior: 'smooth' })} className={roundBtn}><ChevronLeft className="h-4 w-4" /></button>
-                    <button onClick={() => rushRef.current?.scrollBy({ left: 240, behavior: 'smooth' })} className={roundBtn}><ChevronRight className="h-4 w-4" /></button>
-                  </div>
+                <div className="mb-4">
+                  <h2 className="text-lg font-semibold text-[var(--txt)]">Rushing Leaders</h2>
                 </div>
                 <div ref={rushRef} className="overflow-x-auto no-scrollbar">
                   <div className="flex gap-3 pb-1">
@@ -335,6 +343,7 @@ export function DivisionShell({
                 </div>
               </div>
             )}
+            </RevealFx>
 
           </div>
         </div>

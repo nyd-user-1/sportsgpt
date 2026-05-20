@@ -1,0 +1,111 @@
+{
+  "slug": "north-babylon",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Ronald Zepeda",
+      "newsday_entry_id": 19274,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Joel White",
+      "newsday_entry_id": 18931,
+      "class": null,
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Chris Stumpf",
+      "newsday_entry_id": 19245,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Justyn Ortiz",
+      "newsday_entry_id": 18494,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Jacob Murphy",
+      "newsday_entry_id": 19244,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Joe Mott",
+      "newsday_entry_id": 18935,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Jack  Montecalvo",
+      "newsday_entry_id": 18389,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Joel Lomax",
+      "newsday_entry_id": 18388,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Daivon Lofton",
+      "newsday_entry_id": 18385,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Jason  Kolk",
+      "newsday_entry_id": 18390,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Tyler Hovanec",
+      "newsday_entry_id": 18386,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Nathaniel Griffith",
+      "newsday_entry_id": 18387,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Calvin Frith",
+      "newsday_entry_id": 18933,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jaymari Curtis",
+      "newsday_entry_id": 18934,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Lionel Charles - Pierre",
+      "newsday_entry_id": 18932,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    }
+  ]
+}

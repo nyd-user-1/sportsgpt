@@ -1,0 +1,153 @@
+{
+  "slug": "kings-park",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Kyle Weeks",
+      "newsday_entry_id": 17843,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Aaron Shapiro",
+      "newsday_entry_id": 18832,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "James O'Melia",
+      "newsday_entry_id": 18921,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "John Micca",
+      "newsday_entry_id": 18831,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Scott McConville",
+      "newsday_entry_id": 17842,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "John Matthews",
+      "newsday_entry_id": 17841,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Dan Lopez",
+      "newsday_entry_id": 17839,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Gavin Lopez",
+      "newsday_entry_id": 17846,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Nico Laviano",
+      "newsday_entry_id": 17835,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Nick Labita",
+      "newsday_entry_id": 17840,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Anthony Judge",
+      "newsday_entry_id": 19182,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Mark Griffin",
+      "newsday_entry_id": 17837,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "John Flynn",
+      "newsday_entry_id": 17838,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Mert Duman",
+      "newsday_entry_id": 17844,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "John  Dowling",
+      "newsday_entry_id": 18176,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Kyle Delhotal",
+      "newsday_entry_id": 19289,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Jack Bruetsch",
+      "newsday_entry_id": 18833,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Jon Borkowski",
+      "newsday_entry_id": 17836,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Jack  Bonnah",
+      "newsday_entry_id": 17845,
+      "class": null,
+      "position": null,
+      "jersey_number": 71
+    },
+    {
+      "name": "Tyler Avell",
+      "newsday_entry_id": 18177,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Dawsen Atlas",
+      "newsday_entry_id": 19158,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    }
+  ]
+}

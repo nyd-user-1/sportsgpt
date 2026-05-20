@@ -1,0 +1,139 @@
+{
+  "slug": "northport",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Nick Valenti",
+      "newsday_player_id": 20649,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Giancarlo Valenti",
+      "newsday_player_id": 20422,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Nick Tzimas",
+      "newsday_player_id": 20922,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Chase Sasso",
+      "newsday_player_id": 20652,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Michael Raio",
+      "newsday_player_id": 20647,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Christian Raio",
+      "newsday_player_id": 20802,
+      "class": null,
+      "position": null,
+      "jersey_number": 41
+    },
+    {
+      "name": "Emmett Radziul",
+      "newsday_player_id": 20651,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Mack O'Brien",
+      "newsday_player_id": 21092,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Andrew Miller",
+      "newsday_player_id": 20648,
+      "class": null,
+      "position": null,
+      "jersey_number": 87
+    },
+    {
+      "name": "Tom  Kraus",
+      "newsday_player_id": 20804,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Owen  Johansen",
+      "newsday_player_id": 20423,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Mason Hecht",
+      "newsday_player_id": 20654,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Billy Griffiths",
+      "newsday_player_id": 20650,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Evan Gaumont",
+      "newsday_player_id": 20653,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Matt Diaz",
+      "newsday_player_id": 20803,
+      "class": null,
+      "position": null,
+      "jersey_number": 89
+    },
+    {
+      "name": "Andrew DeMarco",
+      "newsday_player_id": 20646,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Tim Cleary",
+      "newsday_player_id": 21149,
+      "class": null,
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Michael Campoli",
+      "newsday_player_id": 20921,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Calvin Blissett",
+      "newsday_player_id": 20923,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    }
+  ]
+}

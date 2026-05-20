@@ -1,0 +1,349 @@
+{
+  "slug": "sachem-east",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Luke Watson",
+      "newsday_player_id": 25103,
+      "class": "10",
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Conor Virga",
+      "newsday_player_id": 25114,
+      "class": "11",
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Josh Vilbig",
+      "newsday_player_id": 25102,
+      "class": "11",
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Liam Thornberry",
+      "newsday_player_id": 25098,
+      "class": "11",
+      "position": null,
+      "jersey_number": 51
+    },
+    {
+      "name": "Andrew Sosa",
+      "newsday_player_id": 25092,
+      "class": "12",
+      "position": null,
+      "jersey_number": 27
+    },
+    {
+      "name": "Sal Sinacore",
+      "newsday_player_id": 25075,
+      "class": "12",
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Jake Sinacore",
+      "newsday_player_id": 25089,
+      "class": "12",
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Joe Shea",
+      "newsday_player_id": 25094,
+      "class": "12",
+      "position": null,
+      "jersey_number": 41
+    },
+    {
+      "name": "Joe Scopetta",
+      "newsday_player_id": 25128,
+      "class": "11",
+      "position": null,
+      "jersey_number": 76
+    },
+    {
+      "name": "Alex Schneider",
+      "newsday_player_id": 25093,
+      "class": "11",
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "JJ Santos",
+      "newsday_player_id": 25108,
+      "class": "12",
+      "position": null,
+      "jersey_number": 61
+    },
+    {
+      "name": "Nico Santestiban",
+      "newsday_player_id": 25076,
+      "class": "12",
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Matt River",
+      "newsday_player_id": 25081,
+      "class": "11",
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Chase Reynolds",
+      "newsday_player_id": 25085,
+      "class": "11",
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Cody Quinlivan",
+      "newsday_player_id": 25080,
+      "class": "12",
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Johnny Pitocco",
+      "newsday_player_id": 25082,
+      "class": "11",
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Nick Piezzo",
+      "newsday_player_id": 25078,
+      "class": "11",
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Ryan Pickersgill",
+      "newsday_player_id": 25074,
+      "class": "11",
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Logan Perotti",
+      "newsday_player_id": 25091,
+      "class": "12",
+      "position": null,
+      "jersey_number": 26
+    },
+    {
+      "name": "Matthew Perkins",
+      "newsday_player_id": 25112,
+      "class": "12",
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "Ben Parsons",
+      "newsday_player_id": 25086,
+      "class": "11",
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "TJ Paolicelli",
+      "newsday_player_id": 25134,
+      "class": "11",
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Daniel Mitchel",
+      "newsday_player_id": 25129,
+      "class": "11",
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Ashton Mendiola",
+      "newsday_player_id": 25107,
+      "class": "11",
+      "position": null,
+      "jersey_number": 59
+    },
+    {
+      "name": "Jack Martines",
+      "newsday_player_id": 25111,
+      "class": "12",
+      "position": null,
+      "jersey_number": 71
+    },
+    {
+      "name": "Dom Marchitto",
+      "newsday_player_id": 25131,
+      "class": "12",
+      "position": "K",
+      "jersey_number": 80
+    },
+    {
+      "name": "Bernabe Lopez",
+      "newsday_player_id": 25100,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Bernabe Lopez",
+      "newsday_player_id": 25101,
+      "class": "12",
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Vasean LaPalmer",
+      "newsday_player_id": 25087,
+      "class": "12",
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Ryan Lane",
+      "newsday_player_id": 25073,
+      "class": "12",
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Brayden King",
+      "newsday_player_id": 25096,
+      "class": "12",
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Caden Hughes",
+      "newsday_player_id": 25097,
+      "class": "11",
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Cameron Holub",
+      "newsday_player_id": 25113,
+      "class": "11",
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Ryan Hogan",
+      "newsday_player_id": 25109,
+      "class": "12",
+      "position": null,
+      "jersey_number": 66
+    },
+    {
+      "name": "Kevin Gaynor",
+      "newsday_player_id": 25130,
+      "class": "12",
+      "position": null,
+      "jersey_number": 78
+    },
+    {
+      "name": "James Dee",
+      "newsday_player_id": 25077,
+      "class": "12",
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Tenoch DeDios-Gomez",
+      "newsday_player_id": 25105,
+      "class": "11",
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "Eros De La Cruz",
+      "newsday_player_id": 25110,
+      "class": "11",
+      "position": null,
+      "jersey_number": 70
+    },
+    {
+      "name": "Ryan Conelli",
+      "newsday_player_id": 25133,
+      "class": "12",
+      "position": null,
+      "jersey_number": 85
+    },
+    {
+      "name": "Frankie Colon",
+      "newsday_player_id": 25104,
+      "class": "12",
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Dominic Canone",
+      "newsday_player_id": 25088,
+      "class": "11",
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Ethan Burns",
+      "newsday_player_id": 25090,
+      "class": "11",
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Gavin Burns",
+      "newsday_player_id": 25106,
+      "class": "12",
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Kyren Bryan",
+      "newsday_player_id": 25132,
+      "class": "12",
+      "position": null,
+      "jersey_number": 84
+    },
+    {
+      "name": "Vinny Babino",
+      "newsday_player_id": 25083,
+      "class": "12",
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Matt Amoroso",
+      "newsday_player_id": 25099,
+      "class": "11",
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Rodrigo Alvarez",
+      "newsday_player_id": 25084,
+      "class": "11",
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Guillerme Alemdia",
+      "newsday_player_id": 25095,
+      "class": "12",
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Nick Accetta",
+      "newsday_player_id": 25079,
+      "class": "11",
+      "position": null,
+      "jersey_number": 10
+    }
+  ]
+}

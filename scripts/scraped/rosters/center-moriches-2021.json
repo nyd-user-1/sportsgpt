@@ -1,0 +1,202 @@
+{
+  "slug": "center-moriches",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Judah Williams",
+      "newsday_entry_id": 18514,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Joel Treadwell",
+      "newsday_entry_id": 18540,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 70
+    },
+    {
+      "name": "Madison Trace",
+      "newsday_entry_id": 18543,
+      "class": "10",
+      "position": "K",
+      "jersey_number": 84
+    },
+    {
+      "name": "Barry Stanek",
+      "newsday_entry_id": 18529,
+      "class": "10",
+      "position": "RB/LB",
+      "jersey_number": 33
+    },
+    {
+      "name": "James Schildt",
+      "newsday_entry_id": 18531,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 51
+    },
+    {
+      "name": "Marcellus Schedricks",
+      "newsday_entry_id": 19220,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Noah Reed",
+      "newsday_entry_id": 18534,
+      "class": "10",
+      "position": "LB/TE",
+      "jersey_number": 44
+    },
+    {
+      "name": "Anthony Raynor",
+      "newsday_entry_id": 18530,
+      "class": "10",
+      "position": "LB/TE",
+      "jersey_number": 30
+    },
+    {
+      "name": "Dante Pomara",
+      "newsday_entry_id": 18520,
+      "class": "10",
+      "position": "WR/DB",
+      "jersey_number": 15
+    },
+    {
+      "name": "Conor Planz",
+      "newsday_entry_id": 18518,
+      "class": "10",
+      "position": "QB/LB",
+      "jersey_number": 4
+    },
+    {
+      "name": "Jonathan Mercurio",
+      "newsday_entry_id": 18521,
+      "class": "12",
+      "position": "TE/LB",
+      "jersey_number": 20
+    },
+    {
+      "name": "Colin Magil",
+      "newsday_entry_id": 18535,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 56
+    },
+    {
+      "name": "Evan Lutz",
+      "newsday_entry_id": 18537,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 72
+    },
+    {
+      "name": "Jordan Lutz",
+      "newsday_entry_id": 18513,
+      "class": "11",
+      "position": "TE/LB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Paul Loguercio",
+      "newsday_entry_id": 18541,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 75
+    },
+    {
+      "name": "Gavin Kleine",
+      "newsday_entry_id": 18516,
+      "class": "11",
+      "position": "QB/LB",
+      "jersey_number": 10
+    },
+    {
+      "name": "Jordan",
+      "newsday_entry_id": 18603,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Callum Jones",
+      "newsday_entry_id": 18536,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 57
+    },
+    {
+      "name": "Brayden Hromada",
+      "newsday_entry_id": 18517,
+      "class": "9",
+      "position": "QB/LB",
+      "jersey_number": 7
+    },
+    {
+      "name": "Shane Gallagher",
+      "newsday_entry_id": 18523,
+      "class": "9",
+      "position": "DB/TE",
+      "jersey_number": 21
+    },
+    {
+      "name": "Austin Faller",
+      "newsday_entry_id": 18532,
+      "class": "9",
+      "position": "OL/DL",
+      "jersey_number": 55
+    },
+    {
+      "name": "Alexander Eglevsky",
+      "newsday_entry_id": 18533,
+      "class": "9",
+      "position": "OL/DL",
+      "jersey_number": 54
+    },
+    {
+      "name": "Jacob Ducoing",
+      "newsday_entry_id": 18542,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 77
+    },
+    {
+      "name": "Colin Casey",
+      "newsday_entry_id": 18539,
+      "class": "9",
+      "position": "OL/DL",
+      "jersey_number": 65
+    },
+    {
+      "name": "Nasir Carroll",
+      "newsday_entry_id": 18515,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 2
+    },
+    {
+      "name": "Xavier Bryant",
+      "newsday_entry_id": 18519,
+      "class": "10",
+      "position": "WR/DB",
+      "jersey_number": 11
+    },
+    {
+      "name": "Tyler Bonventre",
+      "newsday_entry_id": 18538,
+      "class": "10",
+      "position": "OL/DL",
+      "jersey_number": 60
+    },
+    {
+      "name": "Matt Albino",
+      "newsday_entry_id": 18528,
+      "class": "10",
+      "position": "RB/DB",
+      "jersey_number": 24
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "slug": "connetquot",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Daniel  Youmans",
+      "newsday_player_id": 18172,
+      "class": null,
+      "position": null,
+      "jersey_number": 74
+    },
+    {
+      "name": "Billy Walker",
+      "newsday_player_id": 16556,
+      "class": "12",
+      "position": "QB",
+      "jersey_number": 16
+    },
+    {
+      "name": "Brian  Tricario",
+      "newsday_player_id": 18163,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Tristan Sweeney",
+      "newsday_player_id": 18174,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Devin  Shapiro",
+      "newsday_player_id": 16559,
+      "class": "12",
+      "position": "WR/SS",
+      "jersey_number": 5
+    },
+    {
+      "name": "Michael Ross",
+      "newsday_player_id": 16567,
+      "class": "11",
+      "position": "TE/LB",
+      "jersey_number": 3
+    },
+    {
+      "name": "Alan  Rodrigues",
+      "newsday_player_id": 16564,
+      "class": "11",
+      "position": "WR/DB",
+      "jersey_number": 12
+    },
+    {
+      "name": "Nick Pepitone",
+      "newsday_player_id": 16563,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 7
+    },
+    {
+      "name": "Christian Parades",
+      "newsday_player_id": 19316,
+      "class": null,
+      "position": null,
+      "jersey_number": 48
+    },
+    {
+      "name": "Jack Monahan",
+      "newsday_player_id": 18164,
+      "class": null,
+      "position": null,
+      "jersey_number": 35
+    },
+    {
+      "name": "Dennis  Milano",
+      "newsday_player_id": 16560,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 17
+    },
+    {
+      "name": "Tyler McCarthy",
+      "newsday_player_id": 16565,
+      "class": "12",
+      "position": "RB/DB",
+      "jersey_number": 23
+    },
+    {
+      "name": "Joseph Martin",
+      "newsday_player_id": 18167,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Brian  Marra",
+      "newsday_player_id": 18919,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Tommy Malvagno",
+      "newsday_player_id": 16557,
+      "class": "12",
+      "position": "WR/DB",
+      "jersey_number": 8
+    },
+    {
+      "name": "Jack Leary",
+      "newsday_player_id": 18165,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Nick  LaMantia",
+      "newsday_player_id": 16566,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 2
+    },
+    {
+      "name": "Shaun Hill",
+      "newsday_player_id": 18161,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Matt Higgins",
+      "newsday_player_id": 16562,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 18
+    },
+    {
+      "name": "George Gould",
+      "newsday_player_id": 18162,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Matt  Gomez",
+      "newsday_player_id": 16558,
+      "class": "12",
+      "position": "RB/LB",
+      "jersey_number": 1
+    },
+    {
+      "name": "Michael Galante",
+      "newsday_player_id": 18175,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "John Feramola",
+      "newsday_player_id": 18173,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Giovanni DeRenzo",
+      "newsday_player_id": 18168,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Aydan DeLiso",
+      "newsday_player_id": 18171,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Michael Buttino",
+      "newsday_player_id": 16561,
+      "class": "12",
+      "position": "OL/DL",
+      "jersey_number": 27
+    },
+    {
+      "name": "Stephen Bubier",
+      "newsday_player_id": 18166,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Joseph Boutros",
+      "newsday_player_id": 18170,
+      "class": null,
+      "position": null,
+      "jersey_number": 57
+    },
+    {
+      "name": "John Armenia",
+      "newsday_player_id": 18169,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    }
+  ]
+}

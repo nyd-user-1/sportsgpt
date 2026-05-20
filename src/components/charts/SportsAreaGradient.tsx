@@ -23,7 +23,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
   if (!item) return null
   return (
     <div style={{
-      background: '#fff', border: '1px solid #e5e7eb',
+      background: 'var(--surface)', border: '1px solid var(--border)',
       borderRadius: '8px', padding: '8px 12px', fontSize: '12px', minWidth: '160px',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>

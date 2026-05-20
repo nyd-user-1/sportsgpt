@@ -1,0 +1,55 @@
+{
+  "slug": "port-jefferson",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Malachi",
+      "newsday_player_id": 22726,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Alexander Layne-Stasik",
+      "newsday_player_id": 22727,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jaden Katsaros",
+      "newsday_player_id": 22723,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Ryan Filippi",
+      "newsday_player_id": 22416,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "James Dowd",
+      "newsday_player_id": 22417,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Jack Donarummo",
+      "newsday_player_id": 22725,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Malachi Bourjolly",
+      "newsday_player_id": 22724,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

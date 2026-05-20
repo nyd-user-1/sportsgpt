@@ -1,0 +1,153 @@
+{
+  "slug": "sayville",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Tristan Vitale",
+      "newsday_player_id": 25013,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Javen Taff",
+      "newsday_player_id": 25021,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Clarkson Richter",
+      "newsday_player_id": 25844,
+      "class": null,
+      "position": null,
+      "jersey_number": 39
+    },
+    {
+      "name": "Henry Reiss",
+      "newsday_player_id": 25022,
+      "class": null,
+      "position": null,
+      "jersey_number": 87
+    },
+    {
+      "name": "Luke Neugebauer",
+      "newsday_player_id": 25017,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Alex Labella",
+      "newsday_player_id": 25843,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Robert Hoss",
+      "newsday_player_id": 26585,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Timmy Holahan",
+      "newsday_player_id": 25014,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Frankie Hanley",
+      "newsday_player_id": 25842,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Frankie Hanley",
+      "newsday_player_id": 25927,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Shane Gouldsbury",
+      "newsday_player_id": 26172,
+      "class": null,
+      "position": null,
+      "jersey_number": 45
+    },
+    {
+      "name": "Brady Dolan",
+      "newsday_player_id": 25024,
+      "class": null,
+      "position": null,
+      "jersey_number": 76
+    },
+    {
+      "name": "Jack Dolan",
+      "newsday_player_id": 26283,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Colin Darling",
+      "newsday_player_id": 25018,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Patrick Coan",
+      "newsday_player_id": 25012,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Cole  Cantarella",
+      "newsday_player_id": 25015,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Sal Calicchio",
+      "newsday_player_id": 25016,
+      "class": null,
+      "position": null,
+      "jersey_number": 43
+    },
+    {
+      "name": "Gabe Bethea",
+      "newsday_player_id": 25020,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Jake Arato",
+      "newsday_player_id": 25019,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jack Andruszkiewicz",
+      "newsday_player_id": 25023,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Saad Abid",
+      "newsday_player_id": 25928,
+      "class": null,
+      "position": null,
+      "jersey_number": 85
+    }
+  ]
+}

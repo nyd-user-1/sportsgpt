@@ -1,0 +1,977 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Floyd",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 30,
+    "gameId": "4882",
+    "box": {
+      "gameId": "4882",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Floyd",
+          "q1": "9",
+          "q2": "7",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Floyd 30, Sachem East 0: Dylan Harris rushed for 105 yards and two scores on eight carries to lead Floyd in its Suffolk I opener. Michael Turner had 11 tackles and a sack, Brian Benson added 10 tackles and a sack and Deontae Sykes totaled eight tackles, two sacks and a fumble recovery for a TD. Kicker and safety Caden Lesciewicz drilled a 39-yard field goal, converted three extra points, recovered a fumble, and intercepted a pass.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Floyd",
+            "player": "Dylan Harris",
+            "att": 8,
+            "yds": 105,
+            "tds": 2
+          },
+          {
+            "team": "Floyd",
+            "player": "Justin  Tenes",
+            "att": 4,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "LaDuke Harris",
+            "att": 6,
+            "yds": 21,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Nick Taiani",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Mike  Turner",
+            "att": 4,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Quentin Alba-Etheridge",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Sonny Mayo",
+            "att": 2,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Floyd",
+            "player": "Nick Taiani",
+            "att": 1,
+            "comp": 4,
+            "yds": 28,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Floyd",
+            "player": "Jordan O'Brien",
+            "rec": 1,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "fg": 1,
+            "pat": 3,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Floyd",
+            "player": "Deontay Sykes",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 1
+          },
+          {
+            "team": "Floyd",
+            "player": "Brian  Benson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Mike  Turner",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Krishmar Powell",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Kelanie Trotman",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Quentin Alba-Etheridge",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Floyd",
+            "player": "Caden Lesiewicz",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Patchogue-Medford",
+    "isAway": false,
+    "result": "W",
+    "myScore": 23,
+    "oppScore": 15,
+    "gameId": "4883",
+    "box": {
+      "gameId": "4883",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "15"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "14",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 23, Patchogue-Medford 15: Tristian McMahon ran for 235 yards and two touchdowns on 13 carries to lead Sachem East (1-1) in Suffolk I. McMahon scored on runs of 43 and 90-yards early in the third quarter to help Sachem East overcome a 7-6 halftime deficit.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem East",
+            "player": "Tristian McMahon",
+            "att": 14,
+            "yds": 235,
+            "tds": 2
+          },
+          {
+            "team": "Sachem East",
+            "player": "Zach Burns",
+            "att": 12,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Gino LaRotunda",
+            "att": 2,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Rob Garcia",
+            "att": 1,
+            "yds": 3,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Patchogue-Medford",
+            "player": "Tyree Jackson",
+            "att": 39,
+            "comp": 17,
+            "yds": 232,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Anthony Fansano",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Rob Garcia",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Michael Vurchio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Justin McFaul",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2021",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 35,
+    "gameId": "4884",
+    "box": {
+      "gameId": "4884",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Whitman",
+          "q1": "21",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 35, Sachem East 14: Nicholas Bottoni completed 14 of 19 passes for 150 yards and a touchdown to lead Whitman (3-0) in Suffolk I. AJ Evans ran for 100 yards and a touchdown on 12 carries, Jonathan Maldonado had 63 yards and two touchdowns on 12 carries and Chris Silverio had four catches for 59 yards. Tyriek Mays-McKoy caught five passes for 50 yards and had 12 tackes, including five for a loss, and two sacks. Liam Villanti added 10 tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "AJ Evans III",
+            "att": 12,
+            "yds": 100,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jonathan Maldonado",
+            "att": 8,
+            "yds": 63,
+            "tds": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 4,
+            "yds": 19,
+            "tds": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Brandon Ivy",
+            "att": 1,
+            "yds": 6,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 19,
+            "comp": 14,
+            "yds": 150,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Chris  Silverio",
+            "rec": 4,
+            "yds": 59,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Tyriek Mays-Mckoy",
+            "rec": 5,
+            "yds": 50,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mikey Phillips",
+            "rec": 2,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Brandon Ivy",
+            "rec": 2,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Rasahn Thompson",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam  Arevalo",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Tyriek Mays-Mckoy",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Liam Villanti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Liam Villanti",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT  Villella",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Bay Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 47,
+    "oppScore": 6,
+    "gameId": "4885",
+    "box": {
+      "gameId": "4885",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "7",
+          "q2": "21",
+          "q3": "12",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 47, Bay Shore 6: Justin McFaul had three total touchdowns, including a 94-yard interception return for a score, to lead Sachem East (2-2) in Suffolk I. He also had touchdown receptions of 45 and 12 yards from Derrick Bisaccio. Tristian McMahon had two rushing touchdowns and Zach Burns rushed for 109 yards on 18 carries, including a 40-yard touchdown run for the final score of the game. Bay Shore falls to 0-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem East",
+            "player": "Zach Burns",
+            "att": 18,
+            "yds": 109,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sachem East",
+            "player": "Derrick Bisaccio",
+            "att": 14,
+            "comp": 8,
+            "yds": 109,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Sachem East",
+            "player": "Anthony Fansano",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sachem East",
+            "player": "Dan Banks",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Zach Burns",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Sachem East",
+            "player": "Justin McFaul",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sachem East",
+            "player": "Jaden Rodriguez",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Longwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 21,
+    "gameId": "4886",
+    "box": {
+      "gameId": "4886",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 21, Sachem East 7: Terrance Robinson had a 91-yard kickoff return for a touchdown and rushed for 151 yards and a touchdown on 41 carries to lead Longwood (2-2) in Suffolk I. Louis Kaleb rushed for 53 yards and a touchdown on seven carries and Tyson Taylor rushed for 43 yards on seven carries. Anthony Ordonez had 8.5 tackles and Aaron Ottenwalder had six tackles. Elijah Washington and Wallace Wilson each added a sack. Sachem East is now 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Terrance Robinson",
+            "att": 41,
+            "yds": 151,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 7,
+            "yds": 53,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "att": 7,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Wallace Wilson",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 7,
+            "comp": 4,
+            "yds": 19,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel  Blank",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Elijah  Washington",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Bailey Nowaski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mason  Hauser",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Josh Jackson",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Central Islip",
+    "isAway": true,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 14,
+    "gameId": "4887",
+    "box": {
+      "gameId": "4887",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "10",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "0",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 24, Central Islip 14: Tristian McMahon's 80-yard touchdown run midway through the third quarter gave Sachem East a 17-14 lead on the way to a win over Central Islip (1-5) in Suffolk I. Zach Burns added a 27-yard touchdown run late to ice the game and Rob Garcia added a punt block for a touchdown for Sachem East (3-3).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Sachem North",
+    "isAway": false,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 48,
+    "gameId": "4888",
+    "box": {
+      "gameId": "4888",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "20",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "21",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 48, Sachem East 35: Chris Kelly had 175 yards and three touchdowns on 13 carries and completed 2 of 3 passes for 88 yards, including a 70-yard touchdown to Jalen Duvall to lead Sachem North (3-4) in Suffolk I. Tyler Hall added 181 yards and two touchdowns on 27 carries and Duvall rushed for 42 yards on three carries, including a 15-yard touchdown, in the win. Chris Lombardo had nine tackles, Nick Giorgi had five tackles tackles, Matt Harlan had six tackles and an interception and Mark Kenny had three tackles and an interception for Sachem North.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sachem North",
+            "player": "Tyler  Hall",
+            "att": 27,
+            "yds": 181,
+            "tds": 2
+          },
+          {
+            "team": "Sachem North",
+            "player": "Chris  Kelly",
+            "att": 13,
+            "yds": 175,
+            "tds": 3
+          },
+          {
+            "team": "Sachem North",
+            "player": "Jalen Duvall",
+            "att": 3,
+            "yds": 42,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [
+          {
+            "team": "Sachem North",
+            "player": "Jalen Duvall",
+            "rec": 1,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sachem North",
+            "player": "Tyler Davide",
+            "rec": 1,
+            "yds": 18,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Riverhead",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 20,
+    "gameId": "4889",
+    "box": {
+      "gameId": "4889",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "8",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 20, Sachem East 12: Amari Funn ran for 127 yards and two touchdowns to lead Riverhead (4-4) in Suffolk I. Riverhead clinched a playoff spot after not fielding a team last season due to a failed budget.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

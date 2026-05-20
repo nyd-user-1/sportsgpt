@@ -1,0 +1,1728 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/09/2022",
+    "opponent": "Northport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 34,
+    "gameId": "5623",
+    "box": {
+      "gameId": "5623",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Northport",
+          "q1": "13",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "3",
+          "q2": "7",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 9,
+            "yds": 98,
+            "tds": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "att": 17,
+            "yds": 91,
+            "tds": 2
+          },
+          {
+            "team": "Northport",
+            "player": "Andrew DeMarco",
+            "att": 5,
+            "yds": 25,
+            "tds": 1
+          },
+          {
+            "team": "Northport",
+            "player": "Michael Raio",
+            "att": 7,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 5,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "att": 4,
+            "yds": 4,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Northport",
+            "player": "Owen  Johansen",
+            "att": 15,
+            "comp": 9,
+            "yds": 106,
+            "tds": 2,
+            "int": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 36,
+            "comp": 21,
+            "yds": 296,
+            "tds": 3,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Northport",
+            "player": "Andrew Miller",
+            "rec": 4,
+            "yds": 67,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Giancarlo Valenti",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Northport",
+            "player": "Nick Valenti",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 7,
+            "yds": 135,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 6,
+            "yds": 67,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 5,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Northport",
+            "player": "Billy Griffiths",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Northport",
+            "player": "Emmett Radziul",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Martin Shook",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/16/2022",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 41,
+    "oppScore": 21,
+    "gameId": "5571",
+    "box": {
+      "gameId": "5571",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "13",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 41, Smithtown East 21: Brandon Stahl completed 10 of 17 passes for 326 yards and four touchdowns in Suffolk II. He threw touchdowns of 34, 42, 58, and 46 yards. Jacque LaPrarie had five receptions for 187 yards and three touchdowns. Laprarie also had a 52-yard interception return.  Jack Melore made three receptions for 97 yards and one touchdown.  Tim Vanderbrink made two catches for 61 yards and had four carries for 23 yards and a touchdown.  Vanderbrink led the defense with nine tackles. Smithtown West (1-1) gained  421 yards of total offense.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "att": 17,
+            "yds": 165,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Chris Moran",
+            "att": 7,
+            "yds": 55,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "att": 6,
+            "yds": 52,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "att": 2,
+            "yds": 22,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "att": 14,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "att": 4,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 5,
+            "yds": 19,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown East",
+            "player": "Tommy Azzara",
+            "att": 18,
+            "comp": 6,
+            "yds": 37,
+            "tds": 1,
+            "int": 4
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Jake Fields",
+            "att": 4,
+            "comp": 3,
+            "yds": 18,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 17,
+            "comp": 10,
+            "yds": 326,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown East",
+            "player": "Brennan Hanley",
+            "rec": 3,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Dom  Galati",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "rec": 1,
+            "yds": 8,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Timmy Kinahan",
+            "rec": 1,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 5,
+            "yds": 187,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 3,
+            "yds": 97,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 2,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown East",
+            "player": "Ryan Rooney",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Lucas  Santangelo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown East",
+            "player": "Will Kaminicki",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Zinz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Will Fitzsimmons",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 14,
+    "gameId": "5671",
+    "box": {
+      "gameId": "5671",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 3,
+            "yds": 4,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 33,
+            "comp": 17,
+            "yds": 275,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 10,
+            "yds": 226,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 3,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "North Babylon",
+    "isAway": true,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 75,
+    "gameId": "5564",
+    "box": {
+      "gameId": "5564",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "21",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "28",
+          "q2": "14",
+          "q3": "19",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "75"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 75, Smithtown West 49: Nathaniel Griffith set the all-time Long Island single-game rushing record with 38 carries for 489 yards and seven touchdowns to lead North Babylon (2-2) in Suffolk II. The previous record of 485 yards was set by Davien Kuinlan of Plainedge in the 2015 Nassau Conference III final. \"I've been coaching here for almost 30 years and have seen a lot of great performances and this was a testament to Nathaniel's character and courage to play through the dislocated shoulder injury he re-aggravated last week,\" North Babylon coach John Rowland said. \"And the offensive line was great.\" North Babylon also set the program record for points scored in a single game. \"It was a great team accomplishment,\" Rowland said. \"Credit to the whole team and the offensive line and backs blocking for them.\" Joel Lomax added 15 carries for 197 yards, as the Bulldogs rushed for a total of 703 yards. Smithtown West quarterback Brayden Stahl completed 29 of 45 passes for 462 yards and seven touchdowns.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 3,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 4,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel  Griffith",
+            "att": 38,
+            "yds": 489,
+            "tds": 7
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 15,
+            "yds": 197,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jeffrey Michel",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 45,
+            "comp": 29,
+            "yds": 462,
+            "tds": 7,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 11,
+            "yds": 219,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 12,
+            "yds": 170,
+            "tds": 4,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 1,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "rec": 2,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Centereach",
+    "isAway": false,
+    "result": "W",
+    "myScore": 34,
+    "oppScore": 12,
+    "gameId": "5712",
+    "box": {
+      "gameId": "5712",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Centereach",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "21",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 34, Centereach 12: Brayden Stahl completed 14-for-31 for 246 yards and four touchdowns in Smithtown West's Suffolk II win. Two of Stahl's touchdowns came in the second quarter and were to Jacque LaPrarie for 19 yards and 35 yards, respectively. Stahl also added 45 yards on the ground on nine carries. LaPrarie finished with five catches for 84 yards, and Jack Melore added 82 yards and one touchdown on four receptions. Nick Briffa caught the other touchdown from 20 yards.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 9,
+            "yds": 45,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 6,
+            "yds": 14,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 6,
+            "yds": 11,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 31,
+            "comp": 14,
+            "yds": 246,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 5,
+            "yds": 84,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 4,
+            "yds": 82,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "rec": 2,
+            "yds": 42,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 3,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Brian Hope",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Zinz",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Chris Bassandella",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Will Fitzsimmons",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 13,
+    "gameId": "5724",
+    "box": {
+      "gameId": "5724",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Newfield",
+          "q1": "13",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 14, Newfield 13: Smithtown West defense turned Newfield over five times in the Suffolk II win. Jack Laprarie made an interception with 20 seconds left in the game to seal the win for Smithtown West (4-2). Brian Hope made 10 tackles and Dylan Philips added eight tackles. Brayden Stahl scored the go-ahead touchdown with three minutes left in the fourth quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 5,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 0,
+            "yds": 1,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "att": 24,
+            "yds": 203,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Sean Sullivan",
+            "att": 9,
+            "yds": 84,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 24,
+            "comp": 8,
+            "yds": 80,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 4,
+            "yds": 61,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 1,
+            "yds": 3,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petit-Frere",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/21/2022",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 38,
+    "oppScore": 0,
+    "gameId": "5746",
+    "box": {
+      "gameId": "5746",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "14",
+          "q2": "17",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "38"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Smithtown West 38, Copiague 0: Brayden Stahl completed 12 passes for 207 yards and two touchdowns to lead Smithtown West (5-2) in Suffolk II.  Jack Melore made six catches for 150 yards and a touchdown.  Jacque Laprarie made two catches for 25 yards and one touchdown and added an interception on defense.  Smithtown West rushed for 118 yards and Dylan Philips had two rushing touchdowns.  Brian Hope led the defense with 11 solo tackles.  Martin Shook added seven tackles. Smithtown West offense came on in the first half putting up 31 points. Their defense held up to secured the shuout victory.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Smithtown West",
+            "player": "Jason Antunes",
+            "att": 4,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "att": 6,
+            "yds": 16,
+            "tds": 2
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "att": 1,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 2,
+            "yds": 7,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 19,
+            "comp": 12,
+            "yds": 207,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 6,
+            "yds": 150,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 2,
+            "yds": 26,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "George Siolos",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Dylan Philips",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Phil Reinerz",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 36,
+    "gameId": "5762",
+    "box": {
+      "gameId": "5762",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "16",
+          "q2": "6",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "7",
+          "q2": "0",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 36, Smithtown West 16: Donte Phillips rushed for four touchdowns and a two point conversion and caught a 29-yard touchdown pass from Justin Miles for Bellport (7-1) in Suffolk II. Phillips accounted for all of Bellport's touchdowns and had touchdown runs of 8, 6, 10 and 26 yards. Jacque LaPrarie caught two touchdown passes from Brayden Stahl for Smithtown West (5-3).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "att": 23,
+            "yds": 174,
+            "tds": 4
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 10,
+            "yds": 64,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "att": 7,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jaiden Green",
+            "att": 2,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jesse Barnes",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Andrew McLaurin",
+            "att": 2,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 14,
+            "comp": 7,
+            "yds": 86,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 50,
+            "comp": 27,
+            "yds": 343,
+            "tds": 2,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Michael Frankie",
+            "rec": 3,
+            "yds": 39,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte  Phillips",
+            "rec": 2,
+            "yds": 35,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jason Hunt",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 9,
+            "yds": 165,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 7,
+            "yds": 74,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 6,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Nick Briffa",
+            "rec": 4,
+            "yds": 41,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dean Schaeffer",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Dean Schaeffer",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Daniel Romero",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/04/2022",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 28,
+    "gameId": "6095",
+    "box": {
+      "gameId": "6095",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown West",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 28, Smithtown West 27: John Gorman played tight coverage on a two-point conversion attempt pass that sailed out of the end zone with 32 seconds left in the fourth quarter to preserve a 28-27 victory for No. 3 Lindenhurst over No. 6 Smithtown West in a Suffolk Division II quarterfinal on Friday night. Brayden Stahl found Jacque LaPrarie for a 30-yard touchdown pass for Smithtown West to make it a one-point contest. Brady Dolan broke a 16-yard touchdown run around the outside to give Lindenhurst a 28-21 lead with 1:38 left in the fourth quarter following Jack Mazziotti's PAT. Dolan also recovered the onside kick to clinch the victory. Dolan rushed for 102 yards on 10 carries, recorded an interception and had seven tackles. Chris Carson rushed for 104 yards on 10 carries, had three receptions for 60 yards and recorded two interceptions. Carson had a 34-yard touchdown reception from Christian Capogna for Lindenhurst's first score in the second quarter after Smithtown West scored the game's first 14 points. Carson also had a 43-yard interception return for a touchdown to give Lindenhurst a 21-14 lead in the third quarter. Christian Campay added 10 tackles. \nStahl completed 32 of 55 passes for 428 yards with four touchdowns and four interceptions, LaPrarie had 14 receptions for 190 yards and two touchdowns and Jack Melore had 17 receptions for 235 yards and two touchdowns for Smithtown West (5-4).\nLindenhurst (7-2) plays the winner of No. 7 Connetquot/No. 2 Northport in the Suffolk Division II semifinals at the higher seed next weekend.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 10,
+            "yds": 104,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "att": 10,
+            "yds": 102,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 10,
+            "yds": 61,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 1,
+            "yds": 5,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Smithtown West",
+            "player": "Brayden Stahl",
+            "att": 55,
+            "comp": 32,
+            "yds": 428,
+            "tds": 4,
+            "int": 4
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Christian Capogna",
+            "att": 5,
+            "comp": 9,
+            "yds": 100,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Smithtown West",
+            "player": "Jack  Melore",
+            "rec": 16,
+            "yds": 235,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Jacque LaPrarie",
+            "rec": 14,
+            "yds": 190,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Smithtown West",
+            "player": "Tim Vanderbrink1",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 3,
+            "yds": 60,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Matthew Durnin",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jack Mazziotti",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "James Gorman",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brady Dolan",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

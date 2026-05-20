@@ -1,0 +1,69 @@
+{
+  "slug": "huntington",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Joseph Zink",
+      "newsday_player_id": 22776,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Jordan Thorborne",
+      "newsday_player_id": 22781,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Christian  St.John",
+      "newsday_player_id": 22783,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Thomas Smith",
+      "newsday_player_id": 22782,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Timothy McDonald",
+      "newsday_player_id": 22778,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Antonio Leotta",
+      "newsday_player_id": 22801,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Thomas Kline",
+      "newsday_player_id": 22780,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Jacob Guzik",
+      "newsday_player_id": 22779,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Jahmar Francis",
+      "newsday_player_id": 22777,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

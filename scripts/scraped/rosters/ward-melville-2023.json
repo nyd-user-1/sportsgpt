@@ -1,0 +1,167 @@
+{
+  "slug": "ward-melville",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Jackson Weber",
+      "newsday_player_id": 21631,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "CJ Ward",
+      "newsday_player_id": 21952,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Jake  Ventimiglia",
+      "newsday_player_id": 22501,
+      "class": null,
+      "position": null,
+      "jersey_number": 75
+    },
+    {
+      "name": "Pat  Vasquez",
+      "newsday_player_id": 22605,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Jaylen Thomas",
+      "newsday_player_id": 22426,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Conor Prussen",
+      "newsday_player_id": 22425,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Brody  Morgan",
+      "newsday_player_id": 21634,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Joe Massaro",
+      "newsday_player_id": 21953,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Mike Marzovilla",
+      "newsday_player_id": 21632,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Devon Larsen",
+      "newsday_player_id": 22193,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Brennan Kurtz",
+      "newsday_player_id": 21951,
+      "class": null,
+      "position": null,
+      "jersey_number": 65
+    },
+    {
+      "name": "Griffin Kramer",
+      "newsday_player_id": 21629,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Sebastian Jolley",
+      "newsday_player_id": 21633,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Preston Hickey",
+      "newsday_player_id": 22761,
+      "class": null,
+      "position": null,
+      "jersey_number": 68
+    },
+    {
+      "name": "Tony Gorsky",
+      "newsday_player_id": 21954,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Anthony Competello",
+      "newsday_player_id": 22713,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Anthony Competello",
+      "newsday_player_id": 22714,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Mike Carstisano",
+      "newsday_player_id": 22424,
+      "class": null,
+      "position": null,
+      "jersey_number": 43
+    },
+    {
+      "name": "Drew Buscaglia",
+      "newsday_player_id": 21949,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Ethan Burgos",
+      "newsday_player_id": 21628,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Dan  Brausch",
+      "newsday_player_id": 21630,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Tyler Blasco",
+      "newsday_player_id": 21950,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Norman Bergamaschi",
+      "newsday_player_id": 22423,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    }
+  ]
+}

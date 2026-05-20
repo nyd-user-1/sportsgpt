@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Hide all scrollbars globally */
 * {
@@ -42,6 +43,8 @@
   --advanced-bg: #f0f4ff;
   --advanced-text: #033882;
   --section-bg: #f9f9f9;
+  --compare-bg: #eef3ff;
+  --compare-bg-hover: #e4ecff;
 }
 
 html.dark {
@@ -61,6 +64,8 @@ html.dark {
   --advanced-bg: rgba(3, 56, 130, 0.18);
   --advanced-text: #93bbf0;
   --section-bg: rgba(255, 255, 255, 0.04);
+  --compare-bg: rgba(3, 56, 130, 0.20);
+  --compare-bg-hover: rgba(3, 56, 130, 0.28);
 }
 
 /* Mobile: collapse the app gutter so the page background reads as white

@@ -1,0 +1,55 @@
+{
+  "slug": "riverhead",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Chris Ramos",
+      "newsday_player_id": 23393,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Kevin Qualey",
+      "newsday_player_id": 23391,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Nate Nentwich",
+      "newsday_player_id": 23390,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Kavion Hobbs",
+      "newsday_player_id": 24056,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Anthony Elias",
+      "newsday_player_id": 23392,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Karter Doyle",
+      "newsday_player_id": 23389,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Malik Dennis",
+      "newsday_player_id": 24055,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

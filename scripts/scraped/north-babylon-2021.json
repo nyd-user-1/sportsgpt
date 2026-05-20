@@ -1,0 +1,1233 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Lindenhurst",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 42,
+    "gameId": "4844",
+    "box": {
+      "gameId": "4844",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 42, North Babylon 27: Jake Trovato rushed for 201 yards and three touchdowns on 16 carries and had 14 tackles to lead Lindenhurst (1-0) in Suffolk II. He opened the scoring with a 75-yard touchdown run in the first quarter. Brendan O'Connor completed 8 of 13 passes for 117 yards and a touchdown and rushed for 48 yards on three carries, including a 26-yard touchdown to give Lindenhurst a 28-7 lead in the third quarter. Chris Carson had four receptions for 70 yards and a touchdown and added 10 tackles, a fumble recovery and an interception. Danny DeFelice had 16 tackles and two sacks in the win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 24,
+            "yds": 158,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 5,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 7,
+            "yds": 24,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel Griffith",
+            "att": 6,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 16,
+            "yds": 201,
+            "tds": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "yds": 48,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 4,
+            "yds": 10,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 6,
+            "comp": 4,
+            "yds": 103,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 13,
+            "comp": 8,
+            "yds": 117,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 3,
+            "yds": 92,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 4,
+            "yds": 70,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Evan Chieca",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Thomas Wrightington",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/17/2021",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 29,
+    "gameId": "4845",
+    "box": {
+      "gameId": "4845",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 30 , Connetquot 29 : Daivon Lofton had 38 carries for 242 yards and four touchdowns to lead North Babylon (1-1) in Suffolk II.  Lofton scored on runs of 2, 11, 5 and 2 yards.  North Babylon had a 10-play 56 yard drive late in the fourth quarter which took six minutes off the clock.  First year coach John Rowland earned his first varsity win.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 38,
+            "yds": 242,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel Griffith",
+            "att": 5,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 4,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 9,
+            "yds": 50,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "att": 3,
+            "yds": 24,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 2,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "comp": 1,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 17,
+            "comp": 10,
+            "yds": 161,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 1,
+            "yds": 23,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "rec": 8,
+            "yds": 128,
+            "tds": 1,
+            "pat": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "rec": 2,
+            "yds": 33,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Nathaniel Griffith",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Bellport",
+    "isAway": false,
+    "result": "W",
+    "myScore": 28,
+    "oppScore": 30,
+    "gameId": "4846",
+    "box": {
+      "gameId": "4846",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bellport",
+          "q1": "12",
+          "q2": "6",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 30, North Babylon 28: Jack Halpin scored on a quarterback sneak from 1-yard out with :15 seconds remaining in the game to lead Bellport (2-1) in Suffolk II. Halpin, who threw for 152 yards and a touchdown, connected with Justin Miles for a 44-yard gain on fourth-and-1 on the game winning drive. Daivon Lofton had scored on a 1-yard run with 2:12 remaining to put North Babylon ahead 28-24. Donte Phillips ran for 131 yards and three touchdowns on 14 carries for Bellport. Marc Promutico led the defense with nine tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 14,
+            "yds": 131,
+            "tds": 3
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 9,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Marc Promutico",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 32,
+            "yds": 136,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 7,
+            "yds": 69,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 6,
+            "yds": 30,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 9,
+            "yds": 14,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 10,
+            "comp": 5,
+            "yds": 152,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 4,
+            "comp": 2,
+            "yds": 43,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "rec": 3,
+            "yds": 142,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Rahiem  McKenzie",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 1,
+            "yds": 38,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Tyler Morrell",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Copiague",
+    "isAway": false,
+    "result": "W",
+    "myScore": 48,
+    "oppScore": 8,
+    "gameId": "4847",
+    "box": {
+      "gameId": "4847",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "28",
+          "q2": "20",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 48 Copiague 8: Daivon Lofton ran for 165 yards and a touchdown on 14 carries to lead North Babylon (2-2) in Suffolk II.  Tyler Hovanec threw two touchdown passes of 25 and 26 yards to Jack Montecalvo. Jaymari Curtis added 95 yards on the ground, including a touchdown run of 56 yards before the half.  Hovanec and Joe Mott each had an interception.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 14,
+            "yds": 165,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 4,
+            "yds": 95,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 3,
+            "yds": 48,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel White",
+            "att": 3,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 4,
+            "yds": 26,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Lionel Charles - Pierre",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Calvin Frith",
+            "att": 1,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "comp": 2,
+            "yds": 51,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 2,
+            "yds": 51,
+            "tds": 2,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joe Mott",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Newfield",
+    "isAway": true,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 9,
+    "gameId": "4848",
+    "box": {
+      "gameId": "4848",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 9, North Babylon 6: The Newfield defense stopped North Babylon on fourth-and-1 with 30 seconds remaining on the 6-yard line to seal the victory in Suffolk II. The defense held North Babylon scoreless for 45 minutes after Joel Lomax rushed for a 67-yard score on the opening drive. James Hannon's 2-yard touchdown run, followed by successful extra point kick by Jadon Forthe gave Newfield (3-2) a 7-6 lead in the second quarter. They went ahead 9-6 on a safety in the fourth quarter after the ball was snapped out of the end zone. Joe Hackal rushed for 82 yards on 13 carries in the victory. North Babylon fell to 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 26,
+            "yds": 134,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 4,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 8,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 13,
+            "yds": 84,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 9,
+            "comp": 5,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 4,
+            "comp": 1,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 49,
+    "gameId": "4849",
+    "box": {
+      "gameId": "4849",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "7",
+          "q2": "7",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 49, North Babylon 27: Dakim Griffin rushed for 323 yards and four touchdowns on 14 carries to lead Half Hollow Hills East (3-2) in Suffolk II. Jacob Robinson completed 4 of 5 passes for 226 yards and three touchdowns and Louis Mathurin caught three passes for 191 yards and two scores. Jordan Heyman caught a 36-yard touchdown pass in the first half for Hills East. Gianni D'Agnese went 7-for-7 on PATs, Shaki Beatha made eight tackles and Elias Barret had four tackles and a sack. North Babylon fell to 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 26,
+            "yds": 196,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 8,
+            "yds": 86,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 10,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 3,
+            "yds": 20,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jacob Murphy",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 14,
+            "yds": 323,
+            "tds": 4
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 5,
+            "comp": 2,
+            "yds": 91,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 2,
+            "yds": 91,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Smithtown East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 55,
+    "oppScore": 22,
+    "gameId": "4842",
+    "box": {
+      "gameId": "4842",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "8",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "14",
+          "q2": "21",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "55"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "North Babylon 55, Smithtown East 22: Justyn Ortiz ran for 172 yards and 4 touchdowns on 10 carries to lead North Babylon (3-4) in Suffolk II. Davion Lofton rushed for 136 yards and two touchdowns on 17 carries and Joel Lomax rushed for 41 yards and a touchdown on three carries. Chris Stumpf completed a pass for 41 yards and a touchdown. Jack Montecalvo made a 41-yard touchdown reception. Smithtown East is now 1-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 10,
+            "yds": 172,
+            "tds": 4
+          },
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 17,
+            "yds": 136,
+            "tds": 2
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 3,
+            "yds": 41,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel White",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Ronald Zepeda",
+            "att": 1,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Jaymari Curtis",
+            "att": 3,
+            "yds": 6,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Babylon",
+            "player": "Chris Stumpf",
+            "att": 1,
+            "comp": 1,
+            "yds": 41,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "rec": 1,
+            "yds": 41,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Babylon",
+            "player": "Jason  Kolk",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "West Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 17,
+    "gameId": "5343",
+    "box": {
+      "gameId": "5343",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Islip",
+          "q1": "0",
+          "q2": "7",
+          "q3": "3",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "West Islip 17, North Babylon 14: Patrick Keenan threw a 32-yard touchdown pass to Chris Piropato with 50 seconds left in the game to give West Islip (4-4) a come-from-behind win. That capped a 70-yard drive that began with 2:32 remaining and followed West Islip forcing a three-and-out. Sal Calderone helped cause a fumble and recovered it, leading to a 27-yard field goal by Nick DiMaio that cut North Babylon's lead to 14-10 in the third quarter. Konrad Maciejny rushed 15 times for 115 yards and a touchdown for West Islip.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Islip",
+            "player": "Konrad Maciejny",
+            "att": 15,
+            "yds": 115,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,1051 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Patchogue-Medford",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 13,
+    "gameId": "4916",
+    "box": {
+      "gameId": "4916",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "14",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Patchogue-Medford",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 20, Patchogue-Medford 13: Amari Funn rushed for 171 yards on 30 carries including a 33-yard touchdown to give Riverhead a 20-7 lead in the fourth quarter, in Suffolk I. Patchogue-Medford scored first when Justin Marcia-Joachim reeled in a 36-yard touchdown from Tyree Jackson in the first quarter. Justin Mason answered with a 5-yard touchdown rush in the second quarter and Dylan Magee added a 12-yard touchdown run later in the period for Riverhead (1-0). It was Riverhead's first football game since 2019.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Amari Funn",
+            "att": 30,
+            "yds": 171,
+            "tds": 1
+          },
+          {
+            "team": "Riverhead",
+            "player": "Dylan Magee",
+            "att": 6,
+            "yds": 14,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Justin Mason",
+            "att": 14,
+            "comp": 5,
+            "yds": 62,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Patchogue-Medford",
+            "player": "Tyree Jackson",
+            "att": 32,
+            "comp": 12,
+            "yds": 247,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Ward Melville",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 41,
+    "gameId": "4917",
+    "box": {
+      "gameId": "4917",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "0",
+          "q2": "21",
+          "q3": "6",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Nick  Gaffney",
+            "att": 19,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 5,
+            "yds": 66,
+            "tds": 2
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 6,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Josh Rettig",
+            "att": 4,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Brandon Shank",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nolan Fontana",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Chris Prussen",
+            "att": 8,
+            "comp": 12,
+            "yds": 185,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 3,
+            "yds": 123,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nolan Fontana",
+            "rec": 3,
+            "yds": 40,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Nick  Gaffney",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Jackson Weber",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Kevin Dolan",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Heesung Chang",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Mikey Gaine",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 12,
+    "gameId": "4921",
+    "box": {
+      "gameId": "4921",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "8",
+          "q2": "0",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 22, Central Islip 12: Amari Funn rushed for 138 yards and a touchdown on 24 carries to lead Riverhead (2-1) in Suffolk I. Justin Mason completed 4 of 8 passes for 65 yards and a touchdown and Lamarion Hopkins had six tackles and recovered two fumbles for Riverhead.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Amari Funn",
+            "att": 24,
+            "yds": 138,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Justin Mason",
+            "att": 8,
+            "comp": 4,
+            "yds": 65,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Brentwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 22,
+    "oppScore": 27,
+    "gameId": "5308",
+    "box": {
+      "gameId": "5308",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "8",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "22"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "6",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Brentwood 27, Riverhead 22: Brentwood stopped Riverhead on a completed pass at the 1-yard line on the final play of the game as time expired in a 27-22 victory over Riverhead in Suffolk I. Jo'Vanny Brown rushed for 160 yards on 21 carries and Randy Ramnarace rushed for 106 yards and two touchdowns on seven carries in the win. Ramnarace also threw a 58-yard touchdown pass to Enoryt Copening to give Brentwood a 27-14 lead after a two-point conversion reception by Brown in the fourth quarter. Herman Davis, Brown and Ramnarace each had eight tackles, Nahum Benitez finished with five tackles, including three for a loss, and Antonio Castillo added an interception for Brentwood. Riverhead falls to 2-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "att": 21,
+            "yds": 160,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 7,
+            "yds": 106,
+            "tds": 2
+          },
+          {
+            "team": "Brentwood",
+            "player": "John Phelps",
+            "att": 7,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Brentwood",
+            "player": "Juan Ocasio",
+            "att": 2,
+            "yds": 12,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Brentwood",
+            "player": "Randy Ramnarace",
+            "att": 4,
+            "comp": 2,
+            "yds": 61,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Brentwood",
+            "player": "Enoryt Copening",
+            "rec": 1,
+            "yds": 58,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Jo'Vanny Brown",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 1
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Moises Canales",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Antonio Castillo",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "Commack",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 49,
+    "gameId": "5342",
+    "box": {
+      "gameId": "5342",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Commack",
+          "q1": "28",
+          "q2": "14",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 49, Riverhead 0: Jon Martine rushed for 103 yards on 11 carries and Matt McGurk rushed for 103 yards and a touchdown to lead Commack (4-1). Ryan Carlos and Justin Maikowski each had interceptions returned for touchdowns in the win. Riverhead falls to 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Commack",
+            "player": "Jon Martine",
+            "att": 11,
+            "yds": 104,
+            "tds": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 3,
+            "yds": 103,
+            "tds": 1
+          },
+          {
+            "team": "Commack",
+            "player": "Jake McKay",
+            "att": 1,
+            "yds": 8,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Commack",
+            "player": "Matt  McGurk",
+            "att": 5,
+            "comp": 3,
+            "yds": 60,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "rec": 2,
+            "yds": 39,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Commack",
+            "player": "Ryan  Carlos",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Tristan  McMahon",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Commack",
+            "player": "Justin Maikowski",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 0,
+    "gameId": "5354",
+    "box": {
+      "gameId": "5354",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "10",
+          "q2": "23",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 33, Bay Shore 0: Amari Funn ran for 117 yards and three touchdowns on 17 carries and returned a punt for a touchdown to lead Riverhead (3-3) in Suffolk I. The Riverhead defense held Bay Shore to 21 yards of total offense, blocked two punts and recorded a safety.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Amari Funn",
+            "att": 17,
+            "yds": 117,
+            "tds": 4
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/23/2021",
+    "opponent": "Longwood",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 47,
+    "gameId": "5376",
+    "box": {
+      "gameId": "5376",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Longwood",
+          "q1": "7",
+          "q2": "13",
+          "q3": "13",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "47"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Longwood 47, Riverhead 0: Terrance Robinson ran for 121 yards on 14 carries in Suffolk I. Louis Kaleb ran for 112 yards and two touchdowns on seven carries. Kaleb scored from 59 and 21 yards. Longwood ran for 364 yards behind the offensive line of Tyler Hammel, Felipe Neves, Ben Neves, Joey Gallo, and Josh Jackson. Jackson also had a sack.   Jayden Martino forced fumble and a sack and Tyson Taylor ran back a fumble recovery 81 yards for a touchdown for Longwood (3-3). Riverhead is 3-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Longwood",
+            "player": "Terrance Robinson",
+            "att": 14,
+            "yds": 121,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 7,
+            "yds": 112,
+            "tds": 2
+          },
+          {
+            "team": "Longwood",
+            "player": "Nnamdi Nwanyanwu",
+            "att": 4,
+            "yds": 49,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "att": 5,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Jayden  Martino",
+            "att": 2,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Longwood",
+            "player": "Eduardo Cuello-Briones",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Najee Henderson",
+            "att": 1,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Longwood",
+            "player": "Caleib Corbett",
+            "att": 9,
+            "comp": 2,
+            "yds": 70,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Louis  Kaleb",
+            "att": 1,
+            "comp": 1,
+            "yds": 15,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Longwood",
+            "player": "Aaron Ottenwalder",
+            "rec": 1,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Mason  Hauser",
+            "rec": 1,
+            "yds": 24,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Najee Henderson",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Longwood",
+            "player": "Daniel  Blank",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Longwood",
+            "player": "Jayden  Martino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Josh Jackson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Longwood",
+            "player": "Tyson  Taylor",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/30/2021",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 12,
+    "gameId": "4889",
+    "box": {
+      "gameId": "4889",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "0",
+          "q2": "6",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "8",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 20, Sachem East 12: Amari Funn ran for 127 yards and two touchdowns to lead Riverhead (4-4) in Suffolk I. Riverhead clinched a playoff spot after not fielding a team last season due to a failed budget.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Whitman",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 48,
+    "gameId": "5407",
+    "box": {
+      "gameId": "5407",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Whitman",
+          "q1": "35",
+          "q2": "7",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 48, Riverhead 0: Nicholas Bottoni completed 7 of 7 passes for 210 yards and three touchdowns to lead No. 1 Whitman over No. 8 Riverhead in a Suffolk I quarterfinal. Mikey Phillips caught two passes for 62 yards and two touchdowns, AJ Evans had 78 yards and two touchdowns on seven carries and JD Harrison added 72 yards and a touchdown on eight carries. Jacob Somer had eight tackles, including three for a loss and Diego Romero had four tackles for a loss and forced a fumble. Whitman (9-0) scored on its first five possessions in the first quarter. The Wildcats will play Ward Melville in a semifinal.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "AJ Evans III",
+            "att": 7,
+            "yds": 78,
+            "tds": 2
+          },
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "att": 8,
+            "yds": 72,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 2,
+            "yds": 29,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "Nicholas Bottoni",
+            "att": 7,
+            "comp": 7,
+            "yds": 210,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "Tyriek Mays-Mckoy",
+            "rec": 2,
+            "yds": 84,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Mikey Phillips",
+            "rec": 2,
+            "yds": 62,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Brandon Ivy",
+            "rec": 2,
+            "yds": 43,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Rasahn Thompson",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Whitman",
+            "player": "Adam  Arevalo",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,2180 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/11/2021",
+    "opponent": "Port Jefferson",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "4980",
+    "box": {
+      "gameId": "4980",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "14",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Port Jefferson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham - Wading River 42, Port Jefferson 7:",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 14,
+            "yds": 106,
+            "tds": 5
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 7,
+            "yds": 69,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 7,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 8,
+            "yds": 11,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 3,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 8,
+            "yds": 38,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Junior Beltran",
+            "att": 10,
+            "yds": 23,
+            "tds": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Brady DeWitt",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 16,
+            "comp": 10,
+            "yds": 168,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "att": 12,
+            "comp": 3,
+            "yds": 46,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 1,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 3,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 3,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "rec": 2,
+            "yds": 43,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Junior Beltran",
+            "rec": 1,
+            "yds": 3,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Kyle Yannucci",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "Luke  Filippi",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Port Jefferson",
+            "player": "John Sheils",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 27,
+    "oppScore": 21,
+    "gameId": "5253",
+    "box": {
+      "gameId": "5253",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "3",
+          "q2": "3",
+          "q3": "7",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "14",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Max Barone capped a huge day by scoring the go-ahead touchdown on an 18-yard run with 2:34 to play and then snuffing Miller Place's last threat by making an interception in the Suffolk IV victory. He rushed 25 times for 134 yards and scored touchdowns on runs of 3, 28 and 18 yards. Dylan Zahn rushed for 145 yards and a 2-yard touchdown for the host Wildcats (2-0).\nJoe'll Spagnuolo carried seven times for 114 yards and had a 76-yard touchdown run and Nick Oliva hit a pair of field goals and an extra point for the Panthers (1-1).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "att": 7,
+            "yds": 117,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 11,
+            "yds": 45,
+            "tds": 1
+          },
+          {
+            "team": "Miller Place",
+            "player": "Scotty Seymour",
+            "att": 13,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "att": 4,
+            "yds": 9,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 22,
+            "yds": 152,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 25,
+            "yds": 134,
+            "tds": 3
+          }
+        ],
+        "passing": [
+          {
+            "team": "Miller Place",
+            "player": "Justin Klein",
+            "att": 10,
+            "comp": 3,
+            "yds": 27,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 14,
+            "comp": 9,
+            "yds": 71,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Miller Place",
+            "player": "Joe'll  Spagnuolo",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Miller Place",
+            "player": "Anthony Bartolotto",
+            "rec": 2,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 4,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 1,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 3,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Miller Place",
+            "player": "Nick Oliva",
+            "fg": 2,
+            "pat": 1,
+            "points": 7
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 3,
+            "points": 3
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Glenn",
+    "isAway": true,
+    "result": "W",
+    "myScore": 42,
+    "oppScore": 7,
+    "gameId": "5284",
+    "box": {
+      "gameId": "5284",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "42"
+        },
+        {
+          "team": "Glenn",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 42, Glenn 7: Max Barone ran for one touchdown and caught three touchdown passes of 63, 75, and 15 yards from Dylan Zahn to lead Shoreham-Wading River (3-0) in Suffolk IV. Zahn also threw a 54-yard touchdown to Liam Leonard. Shoreham-Wading River scored 42 unanswered points after Glenn opened the scoring with a touchdown run by Chris Franzese.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "yds": 62,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 7,
+            "yds": 59,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 4,
+            "yds": 36,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 16,
+            "comp": 9,
+            "yds": 237,
+            "tds": 4,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 4,
+            "yds": 166,
+            "tds": 3,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 3,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/01/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 13,
+    "gameId": "4988",
+    "box": {
+      "gameId": "4988",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "6",
+          "q2": "6",
+          "q3": "8",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 5,
+            "yds": 29,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 3,
+            "yds": 7,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 25,
+            "yds": 138,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 19,
+            "yds": 60,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Devin Carros",
+            "att": 13,
+            "comp": 5,
+            "yds": 105,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "comp": 4,
+            "yds": 120,
+            "tds": 1,
+            "int": 2
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "rec": 2,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "rec": 2,
+            "yds": 47,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nathaniel McNally",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 77,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 1,
+            "yds": 33,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Verissimo Pedra",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Gavin  Takacs",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carretta",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Greenport / Southold / Mattituck",
+    "isAway": false,
+    "result": "W",
+    "myScore": 49,
+    "oppScore": 0,
+    "gameId": "5328",
+    "box": {
+      "gameId": "5328",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 49, Greenport / Southold / Mattituck 0: Dylan Zahn completed 6-of-8 passes for 94 yards and a touchdown and Tyler Hermanns completed 2-for-5 passes for 80 yards and a touchdown to lead Shoreham-Wading River (5-0) in Suffolk  IV. Zahn rushed for 37 yards and a touchdown on six carries. Will Hart rushed for 79 yards and a touchdown on five carries and caught another 65-yard touchdown pass. Max Borne rushed for 27 yards and a touchdown on two carries. Liam Leonard had four receptions for 77 yards and a touchdown and Ryan Wilson had two receptions for 19 yards and a touchdown. Greenport / Southold / Mattituck is now 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 5,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 6,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 2,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 8,
+            "comp": 6,
+            "yds": 94,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 5,
+            "comp": 2,
+            "yds": 80,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 4,
+            "yds": 77,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 2,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Bayport-Blue Point",
+    "isAway": true,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 34,
+    "gameId": "5330",
+    "box": {
+      "gameId": "5330",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "14",
+          "q2": "7",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bayport-Blue Point 34, Shoreham-Wading River 14: Bayport-Blue Point moves to 5-1 in Suffolk IV.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "yds": 43,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 9,
+            "yds": 32,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 7,
+            "yds": 84,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 10,
+            "yds": 67,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 7,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Danny Aiello",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "att": 1,
+            "yds": 16,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 29,
+            "comp": 16,
+            "yds": 155,
+            "tds": 0,
+            "int": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 16,
+            "comp": 11,
+            "yds": 202,
+            "tds": 3,
+            "int": 3
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 5,
+            "yds": 76,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 4,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "rec": 2,
+            "yds": 19,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 107,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "JJ Aiello",
+            "rec": 1,
+            "yds": 46,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "rec": 5,
+            "yds": 25,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Anglim",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Center Moriches",
+    "isAway": true,
+    "result": "W",
+    "myScore": 56,
+    "oppScore": 13,
+    "gameId": "5331",
+    "box": {
+      "gameId": "5331",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "21",
+          "q2": "7",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "56"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 56, Center Moriches 13: Liam Leonard caught four passes for 94 yards and two touchdowns and ran for a 35-yard score to lead Shoreham-Wading River (6-1) in Suffolk IV. Max Barone ran for 91 yards and two touchdowns on 14 carries and Will Hart added 112 yards and a touchdown on 11 carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 11,
+            "yds": 112,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 14,
+            "yds": 91,
+            "tds": 2
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 6,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "att": 1,
+            "yds": 35,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 2,
+            "yds": 13,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 11,
+            "comp": 6,
+            "yds": 112,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 2,
+            "comp": 1,
+            "yds": 4,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 4,
+            "yds": 94,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 1,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Brandon Meskill",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 6,
+            "points": 6
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 14,
+    "gameId": "4909",
+    "box": {
+      "gameId": "4909",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "7",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 20, Babylon 14: Dylan Zahn connected with Dylan Kiely on a 25-yard touchdown pass in the fourth quarter to give Shoreham-Wading River a 20-14 lead in its Suffolk IV victory. Joe Young had a 54-yard interception for a score in the third quarter and a 2-yard rushing TD in the fourth quarter. James Bender's extra point following the 2-yard TD run tied the score at 14. Zahn completed a 34-yard touchdown pass to Kiely in the first quarter to open the scoring and added 1-yard TD run in the second quarter to put Shoreham-Wading River up two scores.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 11,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "att": 6,
+            "yds": 35,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 22,
+            "yds": 81,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 15,
+            "yds": 49,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "att": 6,
+            "comp": 4,
+            "yds": 65,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 33,
+            "comp": 17,
+            "yds": 161,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Babylon",
+            "player": "Elijah Kneeland",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Andrew DiPalma",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Babylon",
+            "player": "Robbie Tripp",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 6,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 54,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 3,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 9,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Babylon",
+            "player": "Joe Young",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/05/2021",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 70,
+    "oppScore": 13,
+    "gameId": "5418",
+    "box": {
+      "gameId": "5418",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "20",
+          "q2": "36",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "70"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 70, Center Moriches 13: Max Barone ran for 187 yards and three touchdowns on 17 carries and Will Hart added 97 yards and three scores on nine carries to lead No. 1 Shoreham-Wading River over No. 8 Center Moriches in a Suffolk IV quarterfinal. Dylan Zahn completed 7 of 11 passes for 163 yards and three touchdowns for Shoreham-Wading River (8-1), who will host the winner a semifinal next weekend. Center Moriches finishes 3-6.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 17,
+            "yds": 185,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 9,
+            "yds": 97,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 4,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 6,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Kieran Clifford",
+            "att": 1,
+            "yds": 9,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 11,
+            "comp": 7,
+            "yds": 167,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 3,
+            "yds": 117,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "rec": 2,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/12/2021",
+    "opponent": "Miller Place",
+    "isAway": false,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 6,
+    "gameId": "5451",
+    "box": {
+      "gameId": "5451",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Miller Place",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "14",
+          "q2": "15",
+          "q3": "8",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 43, Miller Place 6: Max Barone ran for 170 yards and three touchdowns on 29 carries and Dylan Zahn ran for 148 yards and three touchdowns on 22 carries to lead No. 1 Shoreham-Wading River over No. 4 Miller Place in a Suffolk IV semifinal Friday night. Shoreham-Wading River (9-1) lead 29-6 at halftime. Miller Place finishes the season 7-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 29,
+            "yds": 170,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 22,
+            "yds": 148,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "comp": 8,
+            "yds": 80,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Daniel Greene",
+            "rec": 2,
+            "yds": 32,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 2,
+            "yds": 14,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Travis Finnegan",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/19/2021",
+    "opponent": "Bayport-Blue Point",
+    "isAway": false,
+    "result": "W",
+    "myScore": 26,
+    "oppScore": 23,
+    "gameId": "5468",
+    "box": {
+      "gameId": "5468",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Bayport-Blue Point",
+          "q1": "7",
+          "q2": "7",
+          "q3": "2",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "23"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "7",
+          "q2": "12",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "att": 8,
+            "yds": 56,
+            "tds": 1
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Gavin Locascio",
+            "att": 11,
+            "yds": 55,
+            "tds": 2
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 6,
+            "yds": 46,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 28,
+            "yds": 126,
+            "tds": 3
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 12,
+            "yds": 52,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "att": 2,
+            "yds": 3,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Brady Clark",
+            "att": 22,
+            "comp": 14,
+            "yds": 236,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 17,
+            "comp": 13,
+            "yds": 178,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Calvin Dickinson",
+            "rec": 4,
+            "yds": 80,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Jameson Smith",
+            "rec": 3,
+            "yds": 78,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Derek Varley",
+            "rec": 2,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bayport-Blue Point",
+            "player": "Sean Druckenmiller",
+            "rec": 1,
+            "yds": 12,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 5,
+            "yds": 101,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 2,
+            "yds": 30,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "rec": 2,
+            "yds": 21,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 3,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "David Raynor",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "11/27/2021",
+    "opponent": "North Shore",
+    "isAway": false,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 7,
+    "gameId": "5481",
+    "box": {
+      "gameId": "5481",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Shore",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Shore",
+            "player": "Daniel  Quigley",
+            "att": 12,
+            "yds": 54,
+            "tds": 1
+          },
+          {
+            "team": "North Shore",
+            "player": "Peter Liotta",
+            "att": 9,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "North Shore",
+            "player": "Nick  La Rosa",
+            "att": 10,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "North Shore",
+            "player": "Nick Livoti",
+            "att": 11,
+            "yds": 27,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "North Shore",
+            "player": "Peter Liotta",
+            "att": 12,
+            "comp": 6,
+            "yds": 79,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "North Shore",
+            "player": "David  Berlin",
+            "att": 1,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "North Shore",
+            "player": "David  Berlin",
+            "rec": 4,
+            "yds": 62,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Shore",
+            "player": "Ryan Freund",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "North Shore",
+            "player": "Nick  La Rosa",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "North Shore",
+            "player": "Michael Fleming",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "North Shore",
+            "player": "David  Berlin",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

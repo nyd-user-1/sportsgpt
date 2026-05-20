@@ -1,0 +1,83 @@
+{
+  "slug": "greenport-southold-mattituck",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Brady Woods",
+      "newsday_player_id": 22400,
+      "class": null,
+      "position": null,
+      "jersey_number": 67
+    },
+    {
+      "name": "Luke Weir",
+      "newsday_player_id": 22398,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Aimen Tabor",
+      "newsday_player_id": 22399,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Dylan Spooner",
+      "newsday_player_id": 22396,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Chris Palencia",
+      "newsday_player_id": 22397,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Luke Newman",
+      "newsday_player_id": 21776,
+      "class": "12",
+      "position": "WR",
+      "jersey_number": 2
+    },
+    {
+      "name": "Matt McGunnigle",
+      "newsday_player_id": 21773,
+      "class": "10",
+      "position": "RB/MLB",
+      "jersey_number": 33
+    },
+    {
+      "name": "Kenny McGunnigle",
+      "newsday_player_id": 21775,
+      "class": "11",
+      "position": "RB/OLB",
+      "jersey_number": 22
+    },
+    {
+      "name": "Thomas Mastrangelo",
+      "newsday_player_id": 21789,
+      "class": null,
+      "position": null,
+      "jersey_number": 62
+    },
+    {
+      "name": "Michael DeNicola",
+      "newsday_player_id": 21772,
+      "class": "11",
+      "position": "QB/S",
+      "jersey_number": 3
+    },
+    {
+      "name": "Leon Creighton",
+      "newsday_player_id": 21774,
+      "class": "12",
+      "position": "RB/CB",
+      "jersey_number": 5
+    }
+  ]
+}

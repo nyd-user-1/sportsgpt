@@ -1,0 +1,104 @@
+{
+  "slug": "west-islip",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Dante Sgambati",
+      "newsday_player_id": 20452,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Frank Romano",
+      "newsday_player_id": 20930,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Bobby Richardson",
+      "newsday_player_id": 20451,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Chris Piropato",
+      "newsday_player_id": 20442,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Nick  Klemitas",
+      "newsday_player_id": 21186,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Patrick Kennan",
+      "newsday_player_id": 20444,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Jack  Harvel",
+      "newsday_player_id": 21185,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Anthony DeCristofaro",
+      "newsday_player_id": 20454,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Rocco Carpinello",
+      "newsday_player_id": 20441,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Sal  Calderone",
+      "newsday_player_id": 20443,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Brian Brannigan",
+      "newsday_player_id": 21187,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Keith Brannick",
+      "newsday_player_id": 20453,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Shaun Boyle",
+      "newsday_player_id": 20445,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Evan  Aponte",
+      "newsday_player_id": 20446,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    }
+  ]
+}

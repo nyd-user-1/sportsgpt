@@ -1,0 +1,125 @@
+{
+  "slug": "commack",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Spencer Weiss",
+      "newsday_player_id": 25460,
+      "class": null,
+      "position": null,
+      "jersey_number": 83
+    },
+    {
+      "name": "Mason Ruocco",
+      "newsday_player_id": 25461,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Lincoln Riggs",
+      "newsday_player_id": 25457,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Danny Levine",
+      "newsday_player_id": 25453,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Mason Justus",
+      "newsday_player_id": 26501,
+      "class": null,
+      "position": null,
+      "jersey_number": 52
+    },
+    {
+      "name": "Jalen Jean-Louis",
+      "newsday_player_id": 25452,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Corey Jacobs",
+      "newsday_player_id": 25455,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Corey Jacobs",
+      "newsday_player_id": 26126,
+      "class": null,
+      "position": null,
+      "jersey_number": 25
+    },
+    {
+      "name": "Jordan  Hamilton",
+      "newsday_player_id": 26488,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Elias Entizar",
+      "newsday_player_id": 25462,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Logan Curry",
+      "newsday_player_id": 25839,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Thomas Conover",
+      "newsday_player_id": 26502,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "James Brusca",
+      "newsday_player_id": 25458,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Andrew Bergman",
+      "newsday_player_id": 26500,
+      "class": null,
+      "position": null,
+      "jersey_number": 28
+    },
+    {
+      "name": "Josh Bater",
+      "newsday_player_id": 25456,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "AJ Arizonis",
+      "newsday_player_id": 25459,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Keith Abruzzo",
+      "newsday_player_id": 25454,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

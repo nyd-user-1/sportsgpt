@@ -1,0 +1,885 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/03/2021",
+    "opponent": "East Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 48,
+    "gameId": "4866",
+    "box": {
+      "gameId": "4866",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Islip",
+          "q1": "7",
+          "q2": "20",
+          "q3": "14",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "East Islip 48, Hauppauge 7: Leo Lopez ran for 103 yards and three touchdowns on eight carries for East Islip (1-0) in Suffolk III. His 4-yard touchdown in the first quarter gave East Islip a 6-0 lead. He added 34-yarder in the second quarter and a 46-yarder in the third. Derek Burrell ran for 105 yards and a touchdown on seven carries and Andrew Cooper added 61 yards and a touchdown on five carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 7,
+            "yds": 105,
+            "tds": 1
+          },
+          {
+            "team": "East Islip",
+            "player": "Leo  Lopez",
+            "att": 8,
+            "yds": 103,
+            "tds": 3
+          },
+          {
+            "team": "East Islip",
+            "player": "Andrew Cooper",
+            "att": 5,
+            "yds": 61,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "East Islip",
+            "player": "Derek  Burrell",
+            "att": 3,
+            "comp": 4,
+            "yds": 34,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "att": 4,
+            "comp": 3,
+            "yds": 29,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Hauppauge",
+            "player": "John Margolies",
+            "rec": 1,
+            "yds": 9,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "East Islip",
+            "player": "Kevin Smith",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Comsewogue",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 28,
+    "gameId": "4947",
+    "box": {
+      "gameId": "4947",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Comsewogue",
+          "q1": "7",
+          "q2": "7",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Comsewogue 28, Hauppauge 6: Gio Fragapgne had 15 carries for 125 yards and a touchdown and kicked two extra points for Comsewogue (1-1) in Suffolk III on Friday. Hauppauge is 0-2. Brady Shannon had 12 carries for 55 yards and 2 TDs. He also threw an 11-yard TD pass. Kevin Radmann added five carries for 70 yards and had seven tackles. Comsewogue rushed as a team 35 times for 275 yards. Lucas Shannon (who had an 11-yard TD catch) had six tackles, one pass break-up and an interception. James Kreig added another interception. Cole Blatter was dominant on the offensive line and had five tackles in the win, as Comsewogue led 21-0 in the third quarter.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "att": 16,
+            "yds": 113,
+            "tds": 1
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kevin Radmann",
+            "att": 5,
+            "yds": 66,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 13,
+            "yds": 54,
+            "tds": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Daimler Valerio",
+            "att": 2,
+            "yds": 34,
+            "tds": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Kaeden West",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Comsewogue",
+            "player": "Brady Shannon",
+            "att": 4,
+            "comp": 5,
+            "yds": 43,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "rec": 3,
+            "yds": 38,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Comsewogue",
+            "player": "Gio Fragapagne",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          },
+          {
+            "team": "Comsewogue",
+            "player": "Josh Carrol",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Comsewogue",
+            "player": "Lucas Shannon",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Comsewogue",
+            "player": "James Krieg",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Amityville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 30,
+    "oppScore": 26,
+    "gameId": "5263",
+    "box": {
+      "gameId": "5263",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "7",
+          "q2": "9",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "30"
+        },
+        {
+          "team": "Amityville",
+          "q1": "0",
+          "q2": "8",
+          "q3": "0",
+          "q4": "18",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "26"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 30, Amityville 26: Amityville scored 18-unanswered points in the fourth quarter to climb back in the game, but Hauppauge ran out the clock to secure the Suffolk III win. Phoenix Walker recovered a fumble in the endzone with 3:44 left in the third quarter to give Hauppauge a 23-8 lead after a Frank Moccia extra point. Jojo Provenzano scored three touchdowns for Hauppauge (1-2). Provenzano had a 5-yard and 3-yard touchdown run and caught a 39-yard touchdown pass from Vincent Barbera. Amityville is 1-2.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Eastport-South Manor",
+    "isAway": true,
+    "result": "W",
+    "myScore": 33,
+    "oppScore": 7,
+    "gameId": "5289",
+    "box": {
+      "gameId": "5289",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "14",
+          "q2": "6",
+          "q3": "13",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        },
+        {
+          "team": "Eastport-South Manor",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Hauppauge 33, Eastport - South Manor 7:  John Margolies rushed for 193 yards and two touchdowns on 22 carries in Suffolk III. His 53-yard run in the first quarter gave Hauppauge a 14-7 lead after an extra point. He added a 24-yard rushing touchdown in the fourth quarter that pushed the lead to 32-7. Quarterback Vincent Barbera threw for 189 yards and three touchdowns on 7-of-9 passing.  Jojo Provenzano caught three passes for 67 yards, including a 45-yard touchdown pass, had two sacks and forced a fumble. He also rushed for 55 yards.  Ryan Collins made nine tackles, including two for a loss and Phoenix Walker made seven tackles and recovered a fumble for Hauppauge (2-2). Eastport - South Manor is also 2-2.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Half Hollow Hills West",
+    "isAway": false,
+    "result": "W",
+    "myScore": 6,
+    "oppScore": 14,
+    "gameId": "5320",
+    "box": {
+      "gameId": "5320",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills West",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "8",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills West 14, Hauppauge 6: Joseph Filardi had 158 yards passing, a touchdown through the air, and 75 rushing yards for Half Hollow Hills West (2-3) in Suffolk III. Jalyn Jacques scored on a run from two yards out to tie the score at 6-6 in the third quarter. Filardi connected with Luca Pipia on a 15-yard touchdown pass to give Hills West the lead for good in the fourth quarter. Ryan Bonacore finished with 78 yards receiving and 10 tackles on defense. Hauppauge is now 2-3.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 32,
+    "oppScore": 41,
+    "gameId": "5349",
+    "box": {
+      "gameId": "5349",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Islip",
+          "q1": "0",
+          "q2": "14",
+          "q3": "20",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "13",
+          "q3": "7",
+          "q4": "12",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "32"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Islip 41, Hauppauge 32: Vinny Rosselli carried the ball 20 times for a career-high 260 yards and three touchdowns to lead Islip (5-1) in Suffolk III. Rosselli opened up the scoring in the second half with a 59-yard run to put Islip ahead 20-13. Rosselli found the end zone again in the third quarter with a 60-yard run. Kaiden Lewis rushed for 120 yards and a touchdown. Lewis broke off a 79-yard rushing to score in the third quarter. Joey Vitale threw for 66 yards and a touchdown. Hauppauge is 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "att": 20,
+            "yds": 260,
+            "tds": 3
+          },
+          {
+            "team": "Islip",
+            "player": "Kaiden Lewis",
+            "att": 7,
+            "yds": 120,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Richie Rindos",
+            "att": 6,
+            "yds": 23,
+            "tds": 1
+          },
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 1,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Islip",
+            "player": "Joey Vitale",
+            "att": 3,
+            "comp": 3,
+            "yds": 66,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Hauppauge",
+            "player": "Vincent Barbera",
+            "att": 25,
+            "comp": 20,
+            "yds": 261,
+            "tds": 4,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Islip",
+            "player": "Vinny Rosselli",
+            "rec": 2,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Islip",
+            "player": "Jameson  Seeger",
+            "rec": 1,
+            "yds": 32,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Westhampton",
+    "isAway": true,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 27,
+    "gameId": "5369",
+    "box": {
+      "gameId": "5369",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        },
+        {
+          "team": "Westhampton",
+          "q1": "13",
+          "q2": "7",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "27"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Westhampton 27, Hauppauge 21: Deegan Laube had three interceptions, three receptions for 45 yards, including a 32-yard touchdown, and rushed for 85 yards on six carries for Westhampton (3-3) in Suffolk III. Owen Spizuoco had five receptions for 157 yards and a touchdown and rushed for an 8-yard touchdown in the win. Robert Moreland had 111 yards on 17 carries and Will Gambino completed 12 of 22 passes for 215 yards and two touchdowns and rushed for a 1-yard score for Westhampton. Frankie Noto had six tackles and Hauppauge (2-5) had an unsuccessful onside kick with 34 seconds remaining after Vincent Barbera found Dylan Sas for an 8-yard touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Westhampton",
+            "player": "Robert  Moreland",
+            "att": 17,
+            "yds": 111,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "att": 6,
+            "yds": 85,
+            "tds": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "att": 3,
+            "yds": 15,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Westhampton",
+            "player": "Will Gambino",
+            "att": 22,
+            "comp": 12,
+            "yds": 215,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Westhampton",
+            "player": "Owen  Spizuoco",
+            "rec": 5,
+            "yds": 157,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "rec": 3,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Westhampton",
+            "player": "Zack Fuhrmann",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Jordan Brown",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Westhampton",
+            "player": "Deegan  Laube",
+            "int": 3,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Sayville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 2,
+    "oppScore": 28,
+    "gameId": "5400",
+    "box": {
+      "gameId": "5400",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Hauppauge",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "2"
+        },
+        {
+          "team": "Sayville",
+          "q1": "28",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "28"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sayville 28, Hauppauge 2: Mack Murtha and Jay Filosa returned interceptions for touchdowns to lead Sayville (8-0) in a 28-point first quarter. Murtha's return went for 65 yards, while Filosa's runback went for 25. Murtha also scored on a 26-yard pass from Jack Smalley, and Charlie Sands ran the ball in from the 5. Only a fourth-quarter safety got in the way of a shutout. Sands finished with 66 yards on 17 carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "att": 17,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Sayville",
+            "player": "Joseph  Byrne",
+            "att": 3,
+            "yds": 16,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Jake  Tripptree",
+            "att": 5,
+            "yds": 5,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "att": 1,
+            "yds": 3,
+            "tds": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Vincent Palumbo",
+            "att": 2,
+            "yds": 1,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Sayville",
+            "player": "Jack  Smalley",
+            "att": 12,
+            "comp": 7,
+            "yds": 136,
+            "tds": 1,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "rec": 2,
+            "yds": 91,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Charlie  Sands",
+            "rec": 1,
+            "yds": 26,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Anthony Morrione",
+            "rec": 1,
+            "yds": 11,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Benny Sands",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Frankie Puccio",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Eric McFadden",
+            "rec": 1,
+            "yds": 1,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Sayville",
+            "player": "Michael Argenziano",
+            "fg": 0,
+            "pat": 4,
+            "points": 4
+          }
+        ],
+        "defense": [
+          {
+            "team": "Sayville",
+            "player": "Jayson Filosa",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Sayville",
+            "player": "Mack Murtha",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

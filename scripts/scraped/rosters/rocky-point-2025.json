@@ -1,0 +1,104 @@
+{
+  "slug": "rocky-point",
+  "season": 2025,
+  "players": [
+    {
+      "name": "DJ Xavier",
+      "newsday_player_id": 25465,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Don Wilkinson",
+      "newsday_player_id": 25864,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Cristian Romero",
+      "newsday_player_id": 25466,
+      "class": null,
+      "position": null,
+      "jersey_number": 40
+    },
+    {
+      "name": "Peyton Reisinger",
+      "newsday_player_id": 25463,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "JJ Perez",
+      "newsday_player_id": 25203,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "John Nadaeu",
+      "newsday_player_id": 25205,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Nick Moore",
+      "newsday_player_id": 26072,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Jack Krilovitch",
+      "newsday_player_id": 25468,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Jovani Hess",
+      "newsday_player_id": 25911,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Ryan Espinal",
+      "newsday_player_id": 25464,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Evan Cruz",
+      "newsday_player_id": 26439,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Christian Cordova",
+      "newsday_player_id": 26073,
+      "class": null,
+      "position": null,
+      "jersey_number": 79
+    },
+    {
+      "name": "Brogan Casper",
+      "newsday_player_id": 25204,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Amir Augustin",
+      "newsday_player_id": 25206,
+      "class": null,
+      "position": null,
+      "jersey_number": 60
+    }
+  ]
+}

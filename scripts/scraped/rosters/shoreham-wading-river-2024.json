@@ -1,0 +1,76 @@
+{
+  "slug": "shoreham-wading-river",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Anthony Mullen",
+      "newsday_player_id": 23582,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Kyler Kuck",
+      "newsday_player_id": 23585,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Michael Iberger",
+      "newsday_player_id": 23584,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Michael Huebner",
+      "newsday_player_id": 24229,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Noah Gregorek",
+      "newsday_player_id": 23578,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "George Greene",
+      "newsday_player_id": 23580,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Lucas Diamond",
+      "newsday_player_id": 23579,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Gavin Cleary",
+      "newsday_player_id": 23583,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Sean Casey",
+      "newsday_player_id": 23577,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Michael Casey",
+      "newsday_player_id": 23581,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

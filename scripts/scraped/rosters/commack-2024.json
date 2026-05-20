@@ -1,0 +1,90 @@
+{
+  "slug": "commack",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Andrew Riggs",
+      "newsday_player_id": 24008,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Lincoln Riggs",
+      "newsday_player_id": 24009,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Ryan Petrone",
+      "newsday_player_id": 24271,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Chris Mosquera",
+      "newsday_player_id": 24011,
+      "class": null,
+      "position": null,
+      "jersey_number": 42
+    },
+    {
+      "name": "Jon Maio",
+      "newsday_player_id": 24339,
+      "class": null,
+      "position": null,
+      "jersey_number": 59
+    },
+    {
+      "name": "Jalen Jean-Louis",
+      "newsday_player_id": 24356,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Josh Forti",
+      "newsday_player_id": 24357,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Brady Curry",
+      "newsday_player_id": 23457,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    },
+    {
+      "name": "Aidan Cooper",
+      "newsday_player_id": 24013,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "James Brusca",
+      "newsday_player_id": 24010,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "AJ Arizonis",
+      "newsday_player_id": 24012,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Keith Abruzzo",
+      "newsday_player_id": 24355,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

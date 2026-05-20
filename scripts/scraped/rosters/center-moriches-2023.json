@@ -1,0 +1,132 @@
+{
+  "slug": "center-moriches",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Barry Stanek",
+      "newsday_player_id": 21506,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Marcellus Shedrick",
+      "newsday_player_id": 22488,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Noah Reed",
+      "newsday_player_id": 22368,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "Dante Pomara",
+      "newsday_player_id": 22671,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Connor Planz",
+      "newsday_player_id": 21501,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Peter Nizza",
+      "newsday_player_id": 22812,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Braeden  Kelly",
+      "newsday_player_id": 21504,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Dan  Jurgens",
+      "newsday_player_id": 22815,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Dan Jurgens",
+      "newsday_player_id": 22813,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Brayden Hromada",
+      "newsday_player_id": 21502,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "Daniel Heller",
+      "newsday_player_id": 22367,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Dennis Hayes",
+      "newsday_player_id": 22487,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Michael Gold",
+      "newsday_player_id": 22664,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Shane Gallagher",
+      "newsday_player_id": 21505,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Austin Faller",
+      "newsday_player_id": 22190,
+      "class": null,
+      "position": null,
+      "jersey_number": 50
+    },
+    {
+      "name": "Colin Casey",
+      "newsday_player_id": 21507,
+      "class": null,
+      "position": null,
+      "jersey_number": 56
+    },
+    {
+      "name": "Xavier Bryant",
+      "newsday_player_id": 21503,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Matt Albino",
+      "newsday_player_id": 21500,
+      "class": null,
+      "position": null,
+      "jersey_number": 24
+    }
+  ]
+}

@@ -1,0 +1,818 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2022",
+    "opponent": "Central Islip",
+    "isAway": false,
+    "result": "W",
+    "myScore": 43,
+    "oppScore": 20,
+    "gameId": "5553",
+    "box": {
+      "gameId": "5553",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Central Islip",
+          "q1": "14",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "15",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "43"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 43, Central Islip 20: Amari Funn rushed for 167 yards and five touchdowns in Suffolk I. His touchdowns came from 3,2, 6, 43, and 61 yards.  John Booker rushed for 112 yards on 12 carries. Andy Mardice made two tackles and had a sack.  Connor Golz and Matthew Nunez each made three tackles.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Riverhead",
+            "player": "Amari  Funn",
+            "att": 15,
+            "yds": 167,
+            "tds": 5
+          },
+          {
+            "team": "Riverhead",
+            "player": "John  Booker",
+            "att": 12,
+            "yds": 112,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Riverhead",
+            "player": "Amari  Funn",
+            "att": 2,
+            "comp": 2,
+            "yds": 28,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Riverhead",
+            "player": "John  Booker",
+            "rec": 2,
+            "yds": 28,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Riverhead",
+            "player": "Garcia Charlie",
+            "fg": 0,
+            "pat": 5,
+            "points": 5
+          }
+        ],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/17/2022",
+    "opponent": "Sachem East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 14,
+    "gameId": "5647",
+    "box": {
+      "gameId": "5647",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Sachem East",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem East 14, Riverhead 7: Gino LaRotonda ran 80 yards for a touchdown in Suffolk I. Derrick Bisaccio threw a 7-yard touchdown pass to Jamie Capizzi. AJ Vurchio threw the ball to LaRotonda for the two-point conversion. John Booker had one touchdown for Riverhead (1-1). Sachem East's defense stopped Riverhead twice on fourth down in the red zone with a minute to go to clinch the victory for the Flaming Arrows (1-1).",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/24/2022",
+    "opponent": "Bay Shore",
+    "isAway": true,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 0,
+    "gameId": "5673",
+    "box": {
+      "gameId": "5673",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "13",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        },
+        {
+          "team": "Bay Shore",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 20, Bay Shore 0: After a scoreless first half, John Booker opened up the scoring with a 70-yard kickoff return touchdown. Booker had 139 all purpose yards. Amari Funn rushed for 174 yards and scored two rushing touchdowns. Andrew MacGray had a sack and a forced fumble.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Bay Shore",
+            "player": "Assanti Hall",
+            "att": 11,
+            "yds": 54,
+            "tds": 0
+          },
+          {
+            "team": "Bay Shore",
+            "player": "Jamir Andrieux",
+            "att": 6,
+            "yds": 43,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Bay Shore",
+            "player": "Scotty Arnett",
+            "att": 18,
+            "comp": 7,
+            "yds": 81,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/01/2022",
+    "opponent": "Commack",
+    "isAway": true,
+    "result": "W",
+    "myScore": 7,
+    "oppScore": 35,
+    "gameId": "5689",
+    "box": {
+      "gameId": "5689",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Commack",
+          "q1": "7",
+          "q2": "14",
+          "q3": "7",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Commack 35, Riverhead 7: Jeremy Weiss completed 8 of 14 passes for 225 yards and three touchdowns in Suffolk I. Jake McKay had 12 carries for 96 rushing yards including a touchdown run and an interception while Gavin Rothschild had six carries for 118 yards and a touchdown run for Commack (2-2). Andrew Riggs had four receptions for 131 yards and two touchdowns and an interception. Joon Choi had 10 tackles including two for loss and Jackson Pellegrino had nine tackles with three for loss.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2022",
+    "opponent": "Ward Melville",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 48,
+    "gameId": "5706",
+    "box": {
+      "gameId": "5706",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Ward Melville",
+          "q1": "14",
+          "q2": "13",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "48"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Ward Melville 48, Riverhead 0: Andrew Belli completed 3-of-5 passes for 68 yards and two touchdowns and added 47 rushing yards and a touchdown on four carries for Ward Melville in Suffolk I. Nick Gaffney had 14 carries for 127 yards and a touchdown and Griffin Kramer added 105 rushing yards on 14 carries. Brody Morgan returned a punt 68 yards for a touchdown and went 6-for-7 on PAT attempts. Ward Melville totaled 375 yards rushing and averaged 8.7 yards per carry.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Ward Melville",
+            "player": "Nick Gaffney",
+            "att": 14,
+            "yds": 119,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "att": 10,
+            "yds": 79,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Jake Ventimiglia",
+            "att": 9,
+            "yds": 50,
+            "tds": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 3,
+            "yds": 43,
+            "tds": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 4,
+            "yds": 36,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Ward Melville",
+            "player": "Andrew Belli",
+            "att": 5,
+            "comp": 3,
+            "yds": 67,
+            "tds": 2,
+            "int": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Ethan Burgos",
+            "att": 6,
+            "comp": 2,
+            "yds": 37,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Ward Melville",
+            "player": "Lorenzo Velez",
+            "rec": 2,
+            "yds": 63,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Dan Brausch",
+            "rec": 1,
+            "yds": 20,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Sebastian Jolley",
+            "rec": 1,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Trevor Murray",
+            "rec": 1,
+            "yds": 5,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Ward Melville",
+            "player": "Brody Morgan",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Ward Melville",
+            "player": "Norman Bergamaschi",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Ward Melville",
+            "player": "CJ  Ward",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 1
+          },
+          {
+            "team": "Ward Melville",
+            "player": "Griffin Kramer",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2022",
+    "opponent": "Whitman",
+    "isAway": false,
+    "result": "W",
+    "myScore": 21,
+    "oppScore": 41,
+    "gameId": "5727",
+    "box": {
+      "gameId": "5727",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Whitman",
+          "q1": "6",
+          "q2": "14",
+          "q3": "0",
+          "q4": "21",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "41"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "7",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "21"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Whitman 41, Riverhead 21: Cameron Carlson had 57 yards and three touchdowns on nine carries for Whitman (4-2) in Suffolk I. One touchdown came in the second quarter and the other two were in the fourth quarter. Carlson also added an interception in the first quarter. Ryan Boutin added 51 rushing yards and a touchdown on eight carries, and JT Taylor had 44 yards and a touchdown on nine rushes. Taylor also threw for 175 yards and a touchdown on 10-of-17 passes. JD Harrison caught the 63-yard touchdown reception, as part of his four-catch, 89-yard day. On defense, Jacob Somer made 10 tackles and a sack, while Brayden Zalbert made an interception in the end zone at the end of the first half.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "att": 9,
+            "yds": 57,
+            "tds": 3
+          },
+          {
+            "team": "Whitman",
+            "player": "Ryan Boutin",
+            "att": 8,
+            "yds": 51,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 9,
+            "yds": 44,
+            "tds": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Whitman",
+            "player": "JT Taylor",
+            "att": 17,
+            "comp": 10,
+            "yds": 175,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Whitman",
+            "player": "JD Harrison",
+            "rec": 4,
+            "yds": 89,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "rec": 3,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jason Burke",
+            "rec": 1,
+            "yds": 31,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Aiden Jorgensen",
+            "rec": 2,
+            "yds": 17,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Whitman",
+            "player": "Luis Navarro",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Jacob Somer",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "Cameron Carlson",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Whitman",
+            "player": "JT Villella",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Whitman",
+            "player": "Brayden Zalbert",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2022",
+    "opponent": "Brentwood",
+    "isAway": false,
+    "result": "W",
+    "myScore": 16,
+    "oppScore": 7,
+    "gameId": "5756",
+    "box": {
+      "gameId": "5756",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Brentwood",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "3",
+          "q3": "6",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "16"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Riverhead 16, Brentwood 7: Amari Funn rushed for two touchdowns in Suffolk I. His 34-yard touchdown in the third quarter gave Riverhead a 9-7 lead and his 15-yard run in the fourth increased the lead to 15-7. Charlie Garcia hit a 30-yard field goal in the second quarter for Riverhead (3-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Brentwood",
+            "player": "Daniel Ventura",
+            "att": 14,
+            "yds": 93,
+            "tds": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Chris Ayala",
+            "att": 16,
+            "yds": 48,
+            "tds": 0
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [
+          {
+            "team": "Brentwood",
+            "player": "Joshua Almendarez",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Brentwood",
+            "player": "Ne'Sean Hunt",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Edras Hernandez",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Brentwood",
+            "player": "Malachi Baker",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/28/2022",
+    "opponent": "Sachem North",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 40,
+    "gameId": "5772",
+    "box": {
+      "gameId": "5772",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Riverhead",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Sachem North",
+          "q1": "27",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "40"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Sachem North 40, Riverhead 0: Tyler Hall rushed for 145 yards and two touchdowns on 15 carries for Sachem North (6-2) in Suffolk I. Anthony Vino had a 37-yard touchdown run and was 3-for-5 for 61 yards, including a 37-yard touchdown pass to James Reid. Nate Gsell returned a fumble 46 yards for a touchdown. Lucas Singleton had four carries for 33 yards and a touchdown.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

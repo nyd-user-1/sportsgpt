@@ -1,0 +1,97 @@
+{
+  "slug": "newfield",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Sean  Sullivan",
+      "newsday_entry_id": 19004,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Dylan  Smith",
+      "newsday_entry_id": 18179,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Logan Prisco",
+      "newsday_entry_id": 19272,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Kenny Petiti-Frere",
+      "newsday_entry_id": 19005,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Jaden Paritit",
+      "newsday_entry_id": 18870,
+      "class": null,
+      "position": null,
+      "jersey_number": 49
+    },
+    {
+      "name": "James  Marra",
+      "newsday_entry_id": 18354,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Kaleb  Mapp",
+      "newsday_entry_id": 18356,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Josh Jacob",
+      "newsday_entry_id": 18178,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    },
+    {
+      "name": "James  Hannon",
+      "newsday_entry_id": 18182,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Joe Hackal",
+      "newsday_entry_id": 18181,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Jadon Forthe",
+      "newsday_entry_id": 19284,
+      "class": null,
+      "position": null,
+      "jersey_number": 99
+    },
+    {
+      "name": "Charles Clark",
+      "newsday_entry_id": 18355,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Devin  Aviles",
+      "newsday_entry_id": 18180,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "west-islip",
+  "season": 2021,
+  "players": [
+    {
+      "name": "Konrad Maciejny",
+      "newsday_entry_id": 18813,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Rocco Carpinello",
+      "newsday_entry_id": 18815,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Sal Calderone",
+      "newsday_entry_id": 18814,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    }
+  ]
+}

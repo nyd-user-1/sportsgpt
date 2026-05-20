@@ -1,0 +1,104 @@
+{
+  "slug": "islip",
+  "season": 2025,
+  "players": [
+    {
+      "name": "Najee Simpson",
+      "newsday_player_id": 26409,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Carmine  Rosselli",
+      "newsday_player_id": 25274,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jack Rao",
+      "newsday_player_id": 25272,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Anthony  Pugliese",
+      "newsday_player_id": 25276,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Alex Morales",
+      "newsday_player_id": 25277,
+      "class": null,
+      "position": null,
+      "jersey_number": 11
+    },
+    {
+      "name": "Dylan Howell",
+      "newsday_player_id": 25283,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Jack Halpin",
+      "newsday_player_id": 25278,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "David  Grant",
+      "newsday_player_id": 25275,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Jack Gardner",
+      "newsday_player_id": 25279,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Nico Fallacaro",
+      "newsday_player_id": 25281,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    },
+    {
+      "name": "Brody Deutsch",
+      "newsday_player_id": 25282,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Jake  DeGennaro",
+      "newsday_player_id": 25273,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Scott Brown",
+      "newsday_player_id": 25280,
+      "class": null,
+      "position": null,
+      "jersey_number": 16
+    },
+    {
+      "name": "Rocco Bono",
+      "newsday_player_id": 26463,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    }
+  ]
+}

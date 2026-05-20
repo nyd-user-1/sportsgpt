@@ -1,0 +1,167 @@
+{
+  "slug": "west-babylon",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Alex Villada",
+      "newsday_player_id": 23786,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Jonathan Rosario",
+      "newsday_player_id": 24331,
+      "class": null,
+      "position": null,
+      "jersey_number": 88
+    },
+    {
+      "name": "Tyren Roache",
+      "newsday_player_id": 24330,
+      "class": null,
+      "position": null,
+      "jersey_number": 54
+    },
+    {
+      "name": "Jahavi Reyes",
+      "newsday_player_id": 23781,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Josiah Price",
+      "newsday_player_id": 23784,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Elijah Outlaw",
+      "newsday_player_id": 23780,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Kalel Nunez",
+      "newsday_player_id": 24515,
+      "class": null,
+      "position": null,
+      "jersey_number": 72
+    },
+    {
+      "name": "Edwin Navarro",
+      "newsday_player_id": 24335,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Kendrick Mohan",
+      "newsday_player_id": 23777,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Jah'rece Matthews",
+      "newsday_player_id": 24328,
+      "class": null,
+      "position": null,
+      "jersey_number": 77
+    },
+    {
+      "name": "Armando Luperon",
+      "newsday_player_id": 24329,
+      "class": null,
+      "position": null,
+      "jersey_number": 23
+    },
+    {
+      "name": "Brandon  Krohley",
+      "newsday_player_id": 24332,
+      "class": null,
+      "position": null,
+      "jersey_number": 70
+    },
+    {
+      "name": "James Guzman",
+      "newsday_player_id": 23788,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Nolan Graham",
+      "newsday_player_id": 23787,
+      "class": null,
+      "position": null,
+      "jersey_number": 80
+    },
+    {
+      "name": "Anthony Gerbasio",
+      "newsday_player_id": 24333,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Sha'Brece Fuller",
+      "newsday_player_id": 24514,
+      "class": null,
+      "position": null,
+      "jersey_number": 55
+    },
+    {
+      "name": "Xavier Estevez",
+      "newsday_player_id": 23782,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "Jonathan Espinal",
+      "newsday_player_id": 23778,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Vladimir Doricent",
+      "newsday_player_id": 24334,
+      "class": null,
+      "position": null,
+      "jersey_number": 17
+    },
+    {
+      "name": "Joe Dispigno",
+      "newsday_player_id": 23783,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Jalen Campbell",
+      "newsday_player_id": 23789,
+      "class": null,
+      "position": null,
+      "jersey_number": 64
+    },
+    {
+      "name": "Justin Baldwin",
+      "newsday_player_id": 23779,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Alex  Allen",
+      "newsday_player_id": 23785,
+      "class": null,
+      "position": null,
+      "jersey_number": 12
+    }
+  ]
+}

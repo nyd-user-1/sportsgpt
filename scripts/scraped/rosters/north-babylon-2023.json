@@ -1,0 +1,83 @@
+{
+  "slug": "north-babylon",
+  "season": 2023,
+  "players": [
+    {
+      "name": "Chris Stumpf",
+      "newsday_player_id": 22107,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Jacob Serigano",
+      "newsday_player_id": 22108,
+      "class": null,
+      "position": null,
+      "jersey_number": 30
+    },
+    {
+      "name": "Malyk Montenegro",
+      "newsday_player_id": 22106,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Jake Miele",
+      "newsday_player_id": 22131,
+      "class": null,
+      "position": null,
+      "jersey_number": 87
+    },
+    {
+      "name": "Joel Lomax",
+      "newsday_player_id": 22104,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Jordan Konig",
+      "newsday_player_id": 22402,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Jawara Keahey",
+      "newsday_player_id": 21829,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Isiah Gutierrez",
+      "newsday_player_id": 22105,
+      "class": null,
+      "position": null,
+      "jersey_number": 13
+    },
+    {
+      "name": "Alexander  Griffith",
+      "newsday_player_id": 22132,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Tristan Garcia",
+      "newsday_player_id": 22558,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Josh Callado",
+      "newsday_player_id": 22738,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    }
+  ]
+}

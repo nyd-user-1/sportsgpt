@@ -1,0 +1,1578 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "West Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 24,
+    "oppScore": 13,
+    "gameId": "4948",
+    "box": {
+      "gameId": "4948",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "West Babylon",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "0",
+          "q3": "0",
+          "q4": "16",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "24"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 24, West Babylon 13: A physical Eagles defense held the squad scoreless until only two minutes left in the fourth quarter leading Newfield in their Suffolk II season opener. Joe Hackal rushed for 31 yards and a touchdown on six carries and James Hannon rushed for 10 yards and a touchdown on five carries and completed 2 of 2 passes for 17 yards to lead Newfield. Josh Jacob rushed for 36 yards on three carries and completed 3 of 4 passes for 20 yards and two PATs. Devin Aviles sealed the win with a 5-yard touchdown. He rushed for 29 yards and a touchdown on six carries.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 2,
+            "yds": 31,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 5,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "att": 8,
+            "yds": 25,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Brendan  Barry",
+            "att": 3,
+            "yds": 15,
+            "tds": 1
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jace Alvino",
+            "att": 0,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "att": 1,
+            "yds": 1,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 3,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 5,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 6,
+            "yds": 29,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 3,
+            "yds": 10,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "West Babylon",
+            "player": "Liam Fincke",
+            "att": 26,
+            "comp": 10,
+            "yds": 105,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Elijah Outlaw",
+            "att": 5,
+            "comp": 2,
+            "yds": 4,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 3,
+            "comp": 4,
+            "yds": 20,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 2,
+            "comp": 2,
+            "yds": 17,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "West Babylon",
+            "player": "Drew McKittrick",
+            "rec": 5,
+            "yds": 56,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Isaiah Richardson",
+            "rec": 3,
+            "yds": 34,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Brendan  Barry",
+            "rec": 3,
+            "yds": 15,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 2,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 1,
+            "yds": 15,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 1,
+            "yds": 6,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "West Babylon",
+            "player": "Tyler Ferragamo",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "West Babylon",
+            "player": "Dom Meo",
+            "int": 0,
+            "sacks": 4,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Thomas Raccomandato",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Lucas Chang",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Jace Alvino",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "West Babylon",
+            "player": "Vin Meo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Charles Clark",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Marra",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kaleb  Mapp",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/18/2021",
+    "opponent": "Bellport",
+    "isAway": true,
+    "result": "W",
+    "myScore": 8,
+    "oppScore": 34,
+    "gameId": "5239",
+    "box": {
+      "gameId": "5239",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "8"
+        },
+        {
+          "team": "Bellport",
+          "q1": "7",
+          "q2": "20",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Bellport 34, Newfield 8: Jack Halpin threw for 160 yards and two touchdowns for Bellport (1-1) in Suffolk II. Halpin threw a 39-yard touchdown pass to Donte Phillips to give Bellport an early 6-0 lead. Phillips scored his second touchdown of the game on the ground, with a 17-yard run. Halpin threw his second touchdown, connecting with Justin Miles on a 54-yard pass with 17 seconds left in the first half. Calvin Pedatella returned an interception 32 yards for a touchdown. Marc Promutico recorded 10 Tackles and a fumble Recovery.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 9,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 7,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 3,
+            "yds": 18,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "att": 8,
+            "yds": 91,
+            "tds": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Marc Promutico",
+            "att": 2,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "att": 1,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Alex  Fabian",
+            "att": 3,
+            "yds": 13,
+            "tds": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 3,
+            "yds": 5,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 15,
+            "comp": 6,
+            "yds": 103,
+            "tds": 1,
+            "int": 1
+          },
+          {
+            "team": "Bellport",
+            "player": "Jack Halpin",
+            "att": 7,
+            "comp": 5,
+            "yds": 160,
+            "tds": 2,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 4,
+            "yds": 60,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 2,
+            "yds": 55,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 4,
+            "yds": 45,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Donte Phillips",
+            "rec": 2,
+            "yds": 56,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "rec": 1,
+            "yds": 40,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Calvin  Pedatella",
+            "rec": 1,
+            "yds": 10,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Bellport",
+            "player": "Riley Murphy",
+            "fg": 0,
+            "pat": 2,
+            "points": 2
+          }
+        ],
+        "defense": [
+          {
+            "team": "Bellport",
+            "player": "Louis Wilson",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Richie  Hawaldar",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Kevin  McDonald",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Calvin  Pedatella",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Bellport",
+            "player": "Justin Miles",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "09/25/2021",
+    "opponent": "Lindenhurst",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 17,
+    "gameId": "5269",
+    "box": {
+      "gameId": "5269",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Lindenhurst",
+          "q1": "0",
+          "q2": "7",
+          "q3": "7",
+          "q4": "3",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "17"
+        },
+        {
+          "team": "Newfield",
+          "q1": "6",
+          "q2": "8",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Lindenhurst 17, Newfield 14 Igor Rzasa kicked a 26 yard field goal with 1:02 left in the fourth quarter to lift Lindenhurst (3-0)  in Suffolk II. The kick was set up by Jake Trovato's 84-yard run. Trovato finished with 194 yards and a touchdown on 16 carries. Dan DeFelice had eight tackles and a sack for the Bulldogs. Newfield is 1-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Jake Trovato",
+            "att": 13,
+            "yds": 227,
+            "tds": 1
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Orrik Blaise",
+            "att": 7,
+            "yds": 36,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Gio Tarte",
+            "att": 6,
+            "yds": 32,
+            "tds": 0
+          },
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 6,
+            "yds": 20,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 20,
+            "yds": 125,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 8,
+            "yds": 34,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Marra",
+            "att": 3,
+            "yds": 33,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "att": 3,
+            "comp": 11,
+            "yds": 27,
+            "tds": 0,
+            "int": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 8,
+            "comp": 4,
+            "yds": 16,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 1,
+            "comp": 1,
+            "yds": 9,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Lindenhurst",
+            "player": "Chris Carson",
+            "rec": 2,
+            "yds": 27,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 1,
+            "yds": 5,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Lindenhurst",
+            "player": "Igor Rzasa",
+            "fg": 1,
+            "pat": 2,
+            "points": 5
+          }
+        ],
+        "defense": [
+          {
+            "team": "Lindenhurst",
+            "player": "Brenden O'Connor",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/02/2021",
+    "opponent": "Smithtown East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 7,
+    "gameId": "4839",
+    "box": {
+      "gameId": "4839",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "16",
+          "q2": "8",
+          "q3": "8",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "Smithtown East",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "7"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 39, Smithtown East 7: Devin Aviles had 15 carries for 195 yards and two touchdowns to lead Newfield (2-2) in Suffolk II. Joe Hackal also added 11 carries for 116 yards and a 45-yard touchdown. The Wolverines rushed for a total of 436 yards. Dylan Smith and Kenny Petit-Frere had one interception apiece in the win. Smithtown East fell to 1-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 15,
+            "yds": 195,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 11,
+            "yds": 116,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 4,
+            "yds": 31,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Sean  Sullivan",
+            "att": 4,
+            "yds": 31,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 2,
+            "comp": 4,
+            "yds": 29,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 2,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Newfield",
+            "player": "Jaden Paritit",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petiti-Frere",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/09/2021",
+    "opponent": "North Babylon",
+    "isAway": false,
+    "result": "W",
+    "myScore": 9,
+    "oppScore": 6,
+    "gameId": "4848",
+    "box": {
+      "gameId": "4848",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "North Babylon",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "2",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "9"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 9, North Babylon 6: The Newfield defense stopped North Babylon on fourth-and-1 with 30 seconds remaining on the 6-yard line to seal the victory in Suffolk II. The defense held North Babylon scoreless for 45 minutes after Joel Lomax rushed for a 67-yard score on the opening drive. James Hannon's 2-yard touchdown run, followed by successful extra point kick by Jadon Forthe gave Newfield (3-2) a 7-6 lead in the second quarter. They went ahead 9-6 on a safety in the fourth quarter after the ball was snapped out of the end zone. Joe Hackal rushed for 82 yards on 13 carries in the victory. North Babylon fell to 2-3.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "North Babylon",
+            "player": "Daivon Lofton",
+            "att": 26,
+            "yds": 134,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Joel Lomax",
+            "att": 4,
+            "yds": 76,
+            "tds": 1
+          },
+          {
+            "team": "North Babylon",
+            "player": "Justyn Ortiz",
+            "att": 8,
+            "yds": 39,
+            "tds": 0
+          },
+          {
+            "team": "North Babylon",
+            "player": "Tyler Hovanec",
+            "att": 2,
+            "yds": 4,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 13,
+            "yds": 84,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 5,
+            "yds": 17,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 1,
+            "yds": 1,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "att": 9,
+            "comp": 5,
+            "yds": 70,
+            "tds": 0,
+            "int": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 4,
+            "comp": 1,
+            "yds": 23,
+            "tds": 0,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 1,
+            "yds": 35,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 2,
+            "yds": 22,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "North Babylon",
+            "player": "Jack  Montecalvo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/16/2021",
+    "opponent": "Copiague",
+    "isAway": true,
+    "result": "W",
+    "myScore": 36,
+    "oppScore": 6,
+    "gameId": "5361",
+    "box": {
+      "gameId": "5361",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "14",
+          "q3": "14",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "36"
+        },
+        {
+          "team": "Copiague",
+          "q1": "0",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 36, Copiague 6: Devin Aviles ran for 201 yards and three touchdowns and Joe Hackal added 79 yards rushing and a touchdown to lead Newfield (4-2) in Suffolk II. Dylan Smith had two catches for 52 yards and a touchdown.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 21,
+            "yds": 201,
+            "tds": 3
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 7,
+            "yds": 79,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 9,
+            "comp": 3,
+            "yds": 74,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 2,
+            "yds": 52,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 1,
+            "yds": 18,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "Connetquot",
+    "isAway": true,
+    "result": "W",
+    "myScore": 35,
+    "oppScore": 34,
+    "gameId": "5303",
+    "box": {
+      "gameId": "5303",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "8",
+          "q2": "6",
+          "q3": "8",
+          "q4": "13",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "35"
+        },
+        {
+          "team": "Connetquot",
+          "q1": "6",
+          "q2": "0",
+          "q3": "14",
+          "q4": "14",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "34"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Newfield 35, Connetquot 34: Newfield scored two touchdowns with under six minutes left in the game to notch the come-from-behind win in Suffolk II Friday night. James Hannon's 10-yard touchdown pass to Dylan Smith on fourth down, followed by a Jadon Forthe extra point, with under a minute left provided the final margin. Hannon threw for 120 yards on 10-of-13 passing, ran for 66 yards, and threw for and ran for a touchdown.  Joe Hackal rushed for 192 yards, caught five passes for 71 yards, had an interception, and rushed for two touchdowns for Newfield (5-2). Connetquot is 3-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 19,
+            "yds": 192,
+            "tds": 2
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 10,
+            "yds": 66,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 16,
+            "yds": 61,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Logan Prisco",
+            "att": 3,
+            "yds": 12,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Marra",
+            "att": 1,
+            "yds": 2,
+            "tds": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "att": 3,
+            "yds": 39,
+            "tds": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "att": 7,
+            "yds": 33,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 13,
+            "comp": 10,
+            "yds": 120,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Michael Ross",
+            "att": 18,
+            "comp": 13,
+            "yds": 244,
+            "tds": 3,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 5,
+            "yds": 71,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 2,
+            "yds": 12,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 1,
+            "yds": 8,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tommy Malvagno",
+            "rec": 3,
+            "yds": 116,
+            "tds": 1,
+            "pat": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Nick  LaMantia",
+            "rec": 5,
+            "yds": 112,
+            "tds": 2,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Shaun Hill",
+            "rec": 2,
+            "yds": 10,
+            "tds": 0,
+            "pat": 1
+          },
+          {
+            "team": "Connetquot",
+            "player": "Tyler McCarthy",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Connetquot",
+            "player": "Devin  Shapiro",
+            "rec": 2,
+            "yds": 2,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Newfield",
+            "player": "Jadon Forthe",
+            "fg": 0,
+            "pat": 1,
+            "points": 1
+          }
+        ],
+        "defense": [
+          {
+            "team": "Connetquot",
+            "player": "John Feramola",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": false,
+    "result": "W",
+    "myScore": 14,
+    "oppScore": 44,
+    "gameId": "5446",
+    "box": {
+      "gameId": "5446",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "14",
+          "q3": "14",
+          "q4": "9",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "44"
+        },
+        {
+          "team": "Newfield",
+          "q1": "0",
+          "q2": "7",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "HalfHollow Hills East 44, Newfield 14\nDakim Griffin rushed for 286 yards four touchdowns for Hills East (6-2) as the Thunderbirds clinched a playoff spot.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 12,
+            "yds": 286,
+            "tds": 4
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 18,
+            "yds": 80,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 7,
+            "yds": 26,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 4,
+            "yds": 23,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 23,
+            "comp": 11,
+            "yds": 140,
+            "tds": 0,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 4,
+            "yds": 83,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 2,
+            "yds": 24,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Josh Jacob",
+            "rec": 1,
+            "yds": 16,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Kenny Petiti-Frere",
+            "rec": 1,
+            "yds": 7,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "rec": 1,
+            "yds": 4,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Elias Barrett",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "11/06/2021",
+    "opponent": "Half Hollow Hills East",
+    "isAway": true,
+    "result": "W",
+    "myScore": 13,
+    "oppScore": 14,
+    "gameId": "5445",
+    "box": {
+      "gameId": "5445",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Newfield",
+          "q1": "7",
+          "q2": "6",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "13"
+        },
+        {
+          "team": "Half Hollow Hills East",
+          "q1": "7",
+          "q2": "0",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "14"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Half Hollow Hills East 14, Newfield 13: Jacob Robinson's 10-yard touchdown run and the subsequent extra point in the fourth quarter provided the final margin as No. 3 Half Hollow Hills East (7-2) defeated No. 6 Newfield in a Suffolk II quarterfinal. Dakim Griffin ran for 115 yards, Jordan Anderson had five tackles, two sacks and a blocked extra point. Elias Barret added eight tackles and a sack.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 10,
+            "yds": 40,
+            "tds": 1
+          },
+          {
+            "team": "Newfield",
+            "player": "Devin  Aviles",
+            "att": 7,
+            "yds": 28,
+            "tds": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "att": 3,
+            "yds": 14,
+            "tds": 0
+          },
+          {
+            "team": "Half Hollow Hills East",
+            "player": "Dakim Griffin",
+            "att": 17,
+            "yds": 180,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Newfield",
+            "player": "James  Hannon",
+            "att": 14,
+            "comp": 13,
+            "yds": 165,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Newfield",
+            "player": "Kenny Petiti-Frere",
+            "rec": 4,
+            "yds": 89,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Dylan  Smith",
+            "rec": 4,
+            "yds": 68,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Joe Hackal",
+            "rec": 5,
+            "yds": 45,
+            "tds": 0,
+            "pat": 0
+          },
+          {
+            "team": "Newfield",
+            "player": "Logan Prisco",
+            "rec": 1,
+            "yds": 4,
+            "tds": 1,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "slug": "north-babylon",
+  "season": 2022,
+  "players": [
+    {
+      "name": "Warren Toney",
+      "newsday_player_id": 19993,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Chris Stumpf",
+      "newsday_player_id": 19991,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Jeffrey Michel",
+      "newsday_player_id": 20748,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Joel Lomax",
+      "newsday_player_id": 19988,
+      "class": null,
+      "position": null,
+      "jersey_number": 18
+    },
+    {
+      "name": "Jawara Keahey",
+      "newsday_player_id": 20805,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Nathaniel  Griffith",
+      "newsday_player_id": 19987,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Alex Griffith",
+      "newsday_player_id": 19992,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Ashmir Gittens",
+      "newsday_player_id": 19990,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Dominick DiFazio",
+      "newsday_player_id": 19994,
+      "class": null,
+      "position": null,
+      "jersey_number": 58
+    },
+    {
+      "name": "Jaymari Curtis",
+      "newsday_player_id": 19989,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    }
+  ]
+}

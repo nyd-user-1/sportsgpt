@@ -1,0 +1,104 @@
+{
+  "slug": "newfield",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Anthony Vitale",
+      "newsday_player_id": 23470,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Ajay Sullivan",
+      "newsday_player_id": 23466,
+      "class": null,
+      "position": null,
+      "jersey_number": 15
+    },
+    {
+      "name": "David  Spooner",
+      "newsday_player_id": 24381,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Gavin  Smith",
+      "newsday_player_id": 23468,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Jacob Russo",
+      "newsday_player_id": 24383,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Dante Powell",
+      "newsday_player_id": 23460,
+      "class": null,
+      "position": null,
+      "jersey_number": 32
+    },
+    {
+      "name": "Brandon  McDaniels",
+      "newsday_player_id": 23461,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Chris Mastres",
+      "newsday_player_id": 23465,
+      "class": null,
+      "position": null,
+      "jersey_number": null
+    },
+    {
+      "name": "Nick  Lucenti",
+      "newsday_player_id": 23464,
+      "class": null,
+      "position": null,
+      "jersey_number": 14
+    },
+    {
+      "name": "Nick Leoni",
+      "newsday_player_id": 23469,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Luis Fernandez",
+      "newsday_player_id": 23459,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Matthew Evers",
+      "newsday_player_id": 23458,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "JJ Deliat",
+      "newsday_player_id": 24382,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Dom  DeAlmeida",
+      "newsday_player_id": 23467,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

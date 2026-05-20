@@ -1,0 +1,146 @@
+{
+  "slug": "connetquot",
+  "season": 2024,
+  "players": [
+    {
+      "name": "Lucas Weaver",
+      "newsday_player_id": 23963,
+      "class": null,
+      "position": null,
+      "jersey_number": 44
+    },
+    {
+      "name": "Kevin  Unterweiser",
+      "newsday_player_id": 24401,
+      "class": null,
+      "position": null,
+      "jersey_number": 22
+    },
+    {
+      "name": "Joe Tierno",
+      "newsday_player_id": 24283,
+      "class": null,
+      "position": null,
+      "jersey_number": 8
+    },
+    {
+      "name": "Ebo  Price",
+      "newsday_player_id": 23399,
+      "class": null,
+      "position": null,
+      "jersey_number": 10
+    },
+    {
+      "name": "Kyle McLaughlin",
+      "newsday_player_id": 23401,
+      "class": null,
+      "position": null,
+      "jersey_number": 5
+    },
+    {
+      "name": "Caden McLaughlin",
+      "newsday_player_id": 23402,
+      "class": null,
+      "position": null,
+      "jersey_number": 3
+    },
+    {
+      "name": "Nick Mastriano",
+      "newsday_player_id": 23398,
+      "class": null,
+      "position": null,
+      "jersey_number": 81
+    },
+    {
+      "name": "Vince Marshall",
+      "newsday_player_id": 24282,
+      "class": null,
+      "position": null,
+      "jersey_number": 34
+    },
+    {
+      "name": "Andrew Kwansah",
+      "newsday_player_id": 23404,
+      "class": null,
+      "position": null,
+      "jersey_number": 6
+    },
+    {
+      "name": "Sonny Kowalevich",
+      "newsday_player_id": 23986,
+      "class": null,
+      "position": null,
+      "jersey_number": 53
+    },
+    {
+      "name": "AJ Jeffares",
+      "newsday_player_id": 23400,
+      "class": null,
+      "position": null,
+      "jersey_number": 7
+    },
+    {
+      "name": "Reid  Harvey",
+      "newsday_player_id": 24400,
+      "class": null,
+      "position": null,
+      "jersey_number": 1
+    },
+    {
+      "name": "Steve Frias",
+      "newsday_player_id": 23964,
+      "class": null,
+      "position": null,
+      "jersey_number": 19
+    },
+    {
+      "name": "Vincent Feraca",
+      "newsday_player_id": 23396,
+      "class": null,
+      "position": null,
+      "jersey_number": 9
+    },
+    {
+      "name": "Logan Cordes",
+      "newsday_player_id": 23395,
+      "class": null,
+      "position": null,
+      "jersey_number": 21
+    },
+    {
+      "name": "Blake Coppinger",
+      "newsday_player_id": 24281,
+      "class": null,
+      "position": null,
+      "jersey_number": 33
+    },
+    {
+      "name": "Mike Catera",
+      "newsday_player_id": 23397,
+      "class": null,
+      "position": null,
+      "jersey_number": 2
+    },
+    {
+      "name": "Javon Barnwell",
+      "newsday_player_id": 23394,
+      "class": null,
+      "position": null,
+      "jersey_number": 20
+    },
+    {
+      "name": "Marcus Anglin",
+      "newsday_player_id": 24203,
+      "class": null,
+      "position": null,
+      "jersey_number": 37
+    },
+    {
+      "name": "Andrew Amarando",
+      "newsday_player_id": 23403,
+      "class": null,
+      "position": null,
+      "jersey_number": 4
+    }
+  ]
+}

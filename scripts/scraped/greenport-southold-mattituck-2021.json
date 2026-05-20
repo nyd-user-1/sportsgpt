@@ -1,0 +1,618 @@
+[
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "09/10/2021",
+    "opponent": "Wyandanch",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 6,
+    "gameId": "4912",
+    "box": {
+      "gameId": "4912",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Wyandanch",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "6"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "14",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "09/24/2021",
+    "opponent": "Hampton Bays",
+    "isAway": true,
+    "result": "W",
+    "myScore": 39,
+    "oppScore": 12,
+    "gameId": "5276",
+    "box": {
+      "gameId": "5276",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "12",
+          "q2": "7",
+          "q3": "14",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "39"
+        },
+        {
+          "team": "Hampton Bays",
+          "q1": "6",
+          "q2": "0",
+          "q3": "0",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Greenport/Southold/Mattituck 39, Hampton Bays 12: Ev Corwin ran for 129 yards and two touchdowns and returned a kickoff 80 yards for another score.",
+      "stats": {
+        "rushing": [],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": []
+      }
+    }
+  },
+  {
+    "date": "10/08/2021",
+    "opponent": "Shoreham-Wading River",
+    "isAway": true,
+    "result": "W",
+    "myScore": 0,
+    "oppScore": 49,
+    "gameId": "5328",
+    "box": {
+      "gameId": "5328",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Shoreham-Wading River",
+          "q1": "21",
+          "q2": "21",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "49"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Shoreham-Wading River 49, Greenport / Southold / Mattituck 0: Dylan Zahn completed 6-of-8 passes for 94 yards and a touchdown and Tyler Hermanns completed 2-for-5 passes for 80 yards and a touchdown to lead Shoreham-Wading River (5-0) in Suffolk  IV. Zahn rushed for 37 yards and a touchdown on six carries. Will Hart rushed for 79 yards and a touchdown on five carries and caught another 65-yard touchdown pass. Max Borne rushed for 27 yards and a touchdown on two carries. Liam Leonard had four receptions for 77 yards and a touchdown and Ryan Wilson had two receptions for 19 yards and a touchdown. Greenport / Southold / Mattituck is now 0-2.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "att": 5,
+            "yds": 79,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 6,
+            "yds": 37,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Max Barone",
+            "att": 2,
+            "yds": 27,
+            "tds": 1
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 1,
+            "yds": 8,
+            "tds": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "att": 2,
+            "yds": 2,
+            "tds": 0
+          }
+        ],
+        "passing": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Zahn",
+            "att": 8,
+            "comp": 6,
+            "yds": 94,
+            "tds": 1,
+            "int": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Tyler Hermanns",
+            "att": 5,
+            "comp": 2,
+            "yds": 80,
+            "tds": 1,
+            "int": 0
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "rec": 4,
+            "yds": 77,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Will Hart",
+            "rec": 1,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Wilson",
+            "rec": 2,
+            "yds": 19,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Dylan Kiely",
+            "rec": 1,
+            "yds": 13,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Farron",
+            "fg": 0,
+            "pat": 7,
+            "points": 7
+          }
+        ],
+        "defense": [
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Ryan Herr",
+            "int": 2,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Shoreham-Wading River",
+            "player": "Liam Leonard",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/15/2021",
+    "opponent": "Center Moriches",
+    "isAway": false,
+    "result": "W",
+    "myScore": 19,
+    "oppScore": 29,
+    "gameId": "5346",
+    "box": {
+      "gameId": "5346",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Center Moriches",
+          "q1": "14",
+          "q2": "8",
+          "q3": "0",
+          "q4": "7",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "29"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "7",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "19"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Center Moriches 29, Greenport/Southold/Mattituck 19: Judah Williams rushed for 203 yards, including a 75-yard touchdown, on 23 carries and ran in two two-point conversions to lead Center Moriches (3-4) in Suffolk IV. Barry Stanek had two sacks and a 74-yard interception return for a touchdown to give Center Moriches a 22-7 lead in the fourth quarter after WIlliams ran in the two-point conversion. Brayden Hromada has 10 tackles, including four for a loss, and Jordan Lutz had seven tackles and three sacks in the win. Gavin Kleine had two long touchdown passes, finding Xavier Bryant for a 53-yard score and Nasir Carroll had a 59-yard score. Ev Corwin had two touchdowns runs and an 80-yard interception return for a touchdown for Greenport/Southold/Mattituck (2-4).",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Center Moriches",
+            "player": "Judah Williams",
+            "att": 23,
+            "yds": 203,
+            "tds": 1
+          }
+        ],
+        "passing": [
+          {
+            "team": "Center Moriches",
+            "player": "Gavin Kleine",
+            "att": 11,
+            "comp": 3,
+            "yds": 119,
+            "tds": 2,
+            "int": 1
+          }
+        ],
+        "receiving": [
+          {
+            "team": "Center Moriches",
+            "player": "Xavier Bryant",
+            "rec": 2,
+            "yds": 65,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "rec": 1,
+            "yds": 54,
+            "tds": 1,
+            "pat": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Matt Albino",
+            "rec": 7,
+            "yds": 53,
+            "tds": 0,
+            "pat": 0
+          }
+        ],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Center Moriches",
+            "player": "Jordan Lutz",
+            "int": 0,
+            "sacks": 3,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Barry Stanek",
+            "int": 1,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Marcellus Schedricks",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Center Moriches",
+            "player": "Nasir Carroll",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/22/2021",
+    "opponent": "East Hampton / Bridgehampton / Pierson",
+    "isAway": false,
+    "result": "W",
+    "myScore": 20,
+    "oppScore": 0,
+    "gameId": "5370",
+    "box": {
+      "gameId": "5370",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "East Hampton / Bridgehampton / Pierson",
+          "q1": "0",
+          "q2": "0",
+          "q3": "0",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "0"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "7",
+          "q2": "6",
+          "q3": "7",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "20"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Greenport/Southold/Mattituck 20, East Hampton 0: Ev Corwin rushed for 187 yards and three touchdowns (4, 5, 48 yards) on 16 carries in Suffolk IV Friday night. His 48-yarder in the third quarter gave Greenport/Southold/Mattituck a 20-0 lead, after an extra point. Corwin also returned an interception 55 yards. Will Fray added an interception for  Greenport/Southold/Mattituck (3-4).  East Hampton/Pierson is 2-5.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Ev Corwin",
+            "att": 16,
+            "yds": 187,
+            "tds": 3
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Ev Corwin",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          },
+          {
+            "team": "Greenport / Southold / Mattituck",
+            "player": "Will Fray",
+            "int": 1,
+            "sacks": 0,
+            "fumbles": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "10/29/2021",
+    "opponent": "Mt. Sinai",
+    "isAway": true,
+    "result": "W",
+    "myScore": 12,
+    "oppScore": 33,
+    "gameId": "4992",
+    "box": {
+      "gameId": "4992",
+      "quarterRows": [
+        {
+          "team": "Teams",
+          "q1": "1",
+          "q2": "2",
+          "q3": "3",
+          "q4": "4",
+          "ot1": "1OT",
+          "ot2": "2OT",
+          "ot3": "3OT",
+          "final": "F"
+        },
+        {
+          "team": "Greenport / Southold / Mattituck",
+          "q1": "0",
+          "q2": "0",
+          "q3": "6",
+          "q4": "6",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "12"
+        },
+        {
+          "team": "Mt. Sinai",
+          "q1": "27",
+          "q2": "0",
+          "q3": "6",
+          "q4": "0",
+          "ot1": "0",
+          "ot2": "0",
+          "ot3": "0",
+          "final": "33"
+        }
+      ],
+      "topPerformers": "",
+      "highlights": "Mt. Sinai 33, Greenport / Southold / Mattituck 12: James Carretta rushed for 84 yards and two touchdowns on four carries and started the scoring for the Mustangs on a 29-yard rush to give them a 6-0 lead and Jake Spallina extended the score to 13-0 on a 48-yard rush for Mt. Sinai (6-2) in Suffolk IV. Michael Trepeta rushed for 55 yards and a touchdown on two carries and had a 99-yard kickoff return to give the squad a 33-0 lead. Nicholas Coleman had two sacks and Nicholas Carillo added another. Greenport / Southold / Mattituck\tis now 2-4.",
+      "stats": {
+        "rushing": [
+          {
+            "team": "Mt. Sinai",
+            "player": "James Carretta",
+            "att": 4,
+            "yds": 85,
+            "tds": 2
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael  Trepeta",
+            "att": 2,
+            "yds": 55,
+            "tds": 1
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Jake Spallina",
+            "att": 2,
+            "yds": 50,
+            "tds": 1
+          }
+        ],
+        "passing": [],
+        "receiving": [],
+        "kicking": [],
+        "defense": [
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Coleman",
+            "int": 0,
+            "sacks": 2,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Nicholas Carillo",
+            "int": 0,
+            "sacks": 1,
+            "fumbles": 0
+          },
+          {
+            "team": "Mt. Sinai",
+            "player": "Michael Plumitallo",
+            "int": 0,
+            "sacks": 0,
+            "fumbles": 1
+          }
+        ]
+      }
+    }
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  },
+  {
+    "date": "",
+    "opponent": "",
+    "isAway": false,
+    "result": "T",
+    "myScore": null,
+    "oppScore": null,
+    "gameId": null,
+    "error": "no gameId"
+  }
+]
