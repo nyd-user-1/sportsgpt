@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
-import { X, Columns2, Columns3, ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react'
+import { X, Columns2, Columns3, ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function AppPanel({
@@ -51,11 +51,10 @@ export function AppPanel({
               {detailHref && (
                 <Link
                   href={detailHref}
-                  className="group/arrow shrink-0 p-0.5 rounded text-[var(--muted)] hover:text-[var(--txt)] transition-colors relative w-4 h-4"
+                  className="shrink-0 p-1.5 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
                   aria-label="Open detail page"
                 >
-                  <ArrowUpRight className="h-4 w-4 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
-                  <ArrowRight   className="h-4 w-4 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
+                  <ArrowUpRight className="h-4 w-4" />
                 </Link>
               )}
             </div>

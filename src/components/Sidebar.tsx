@@ -31,10 +31,10 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
       {/* Brand */}
       <div className="p-3 pb-1">
-        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 hover:bg-[var(--inp-bg)] transition-colors cursor-pointer">
+        <Link href="/" className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 hover:bg-[var(--inp-bg)] transition-colors">
           <AppLogo className="h-[18px] w-[18px] shrink-0" />
           <span className="text-[15px] font-medium text-[var(--txt)]">{APP_NAME}</span>
-        </div>
+        </Link>
       </div>
 
       {/* Nav */}

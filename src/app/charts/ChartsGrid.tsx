@@ -42,7 +42,7 @@ export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, stri
   return (
     <div className="flex-1 overflow-y-auto no-scrollbar">
       <div className="p-4">
-        <div data-charts-grid className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}>
+        <div data-charts-grid className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}>
           {CHARTS.map(({ slug, category }, idx) => {
             const config      = CHART_CONFIGS.find(c => c.slug === slug)
             if (!config) return null
@@ -60,10 +60,10 @@ export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, stri
               <div key={slug} className="group/card flex flex-col gap-1.5">
                 <button
                   onClick={() => router.push(`/charts/${slug}`, { scroll: false })}
-                  className={`group relative overflow-hidden rounded-xl border text-left transition-all ${
+                  className={`group relative overflow-hidden rounded-xl border border-[var(--border)] text-left transition-all ${
                     isActive
-                      ? 'border-[#033882] shadow-md ring-2 ring-[#033882]/30 shadow-[inset_0_0_16px_rgba(3,56,130,0.18)]'
-                      : 'border-[var(--border)] hover:border-[#033882]/40 hover:shadow-md'
+                      ? 'outline outline-2 outline-[#033882] outline-offset-2 shadow-[inset_0_0_16px_rgba(3,56,130,0.18)]'
+                      : 'hover:outline hover:outline-1 hover:outline-[#033882] hover:outline-offset-2 hover:shadow-md'
                   }`}
                 >
                   <div className="relative h-[180px] bg-[var(--bg2)]">

@@ -166,6 +166,22 @@ export function ChartDetailPage({
   const total = scaledTable.reduce((s, r) => s + r.value, 0) || scaledKpi
   const sorted = [...scaledTable].sort((a, b) => b.value - a.value)
 
+  useEffect(() => {
+    if (!rowPlayerSlugs) return
+    const chartSlug = pathname.split('/').filter(Boolean)[1]
+    if (!chartSlug) return
+    const slugs = sorted.map(r => rowPlayerSlugs[r.name]).filter(Boolean)
+    sessionStorage.setItem(`chart-players-${chartSlug}`, JSON.stringify(slugs))
+  }, [sorted, rowPlayerSlugs, pathname])
+
+  useEffect(() => {
+    if (!rowLinks) return
+    const chartSlug = pathname.split('/').filter(Boolean)[1]
+    if (!chartSlug) return
+    const slugs = sorted.map(r => rowLinks[r.name]).filter(Boolean).map(l => l.replace('/team/', ''))
+    sessionStorage.setItem(`chart-teams-${chartSlug}`, JSON.stringify(slugs))
+  }, [sorted, rowLinks, pathname])
+
   const hasSubRows = !!subRows && Object.keys(subRows).length > 0
 
   const tipStyle = {
@@ -349,7 +365,6 @@ export function ChartDetailPage({
               colParts.push('1fr')
               if (hasWinPct) colParts.push('80px')
               colParts.push('100px')
-              colParts.push('48px')
               const colTemplate = colParts.join(' ')
               return (
               <div className="divide-y divide-[var(--border)]">
@@ -362,7 +377,6 @@ export function ChartDetailPage({
                   <span>{nameLabel ?? 'Name'}</span>
                   {hasWinPct && <span className="text-right">3yr Win %</span>}
                   <span className="text-right">{valueLabel ?? 'Value'}</span>
-                  <span />
                 </div>
                 {sorted.map((row, idx) => {
                   const pct = total > 0 ? (row.value / total) * 100 : 0
@@ -433,11 +447,6 @@ export function ChartDetailPage({
                           style={isOpen ? { color: config.color } : undefined}>
                           {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
                         </span>
-                        <div className="flex items-center justify-end">
-                          <div className="w-full h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
-                            <div className="h-full rounded-full transition-all" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: config.color }} />
-                          </div>
-                        </div>
                       </div>
                       {isOpen && rowSubRows?.map(sr => (
                         <div key={sr.label}
