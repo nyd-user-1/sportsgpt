@@ -360,27 +360,10 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 | 2021-22 | 197/203 ✅ Complete (6 Nassau/date-mismatch gaps) |
 
 ### **NEXT SESSION — resume here:**
-1. Intercepting route for `/player/[slug]` from launchpad (see below)
-2. Naming conventions audit (see below)
-3. Component extraction (see below)
-4. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
-5. Build Newsday player scraper (see below)
-
-### Intercepting route for /player/[slug] from launchpad — NEXT
-When a player row is clicked inside `PanelGame` (game detail panel on launchpad), it should open the real `PlayerPanelContent` (full season stats, PanelPlayer design) rather than the game-stats-only `PlayerGameCard` built this session.
-
-**Architecture:** Add `@player` parallel route slot to launchpad layout with an intercepting route `(..)player/[slug]` that catches navigations to `/player/[slug]` and renders `PlayerPanelContent` inside an AppPanel alongside the game panel. Same pattern as `@game/(..)game/[id]` built this session.
-
-**Files to create:**
-- `src/app/launchpad/@player/default.tsx` — null
-- `src/app/launchpad/@player/(..)player/[slug]/page.tsx` — same queries as `charts/@player/[slug]/[playerSlug]/page.tsx`, renders `PlayerPanelContent`
-- `src/app/launchpad/LaunchpadPlayerWrapper.tsx` — reads `/player/[slug]` URL pattern, opens AppPanel
-
-**Update:** `PanelGame.tsx` player row click → `router.push('/player/[slug]?...')` instead of `setSelectedPlayer`. Remove `PlayerGameCard` component.
-
-**Note:** The `PlayerGameCard` (game-stats-only panel) built this session is a placeholder — delete it when the proper intercepting route is implemented.
-
----
+1. Naming conventions audit (see below)
+2. Component extraction (see below)
+3. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
+4. Build Newsday player scraper (see below)
 
 ### Naming conventions audit — NEXT
 The codebase has grown organically and needs a naming pass before it gets harder to navigate.

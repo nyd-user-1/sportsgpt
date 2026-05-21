@@ -3,11 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { ChevronDown, ArrowUpRight } from 'lucide-react'
-import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS, TEAM_PHOTOS, PLAYER_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { cn } from '@/lib/utils'
+import { AppPanel } from '@/components/AppPanel'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -186,21 +186,77 @@ function BoxScore({ game, quarterRows }: { game: GamePanelData['game']; quarterR
   )
 }
 
+// ── PlayerGameCard (shown in second AppPanel when row is clicked) ─────────────
+
+function PlayerGameCard({ p }: { p: GamePanelData['playerStats'][0] }) {
+  const photo     = p.player_slug ? PLAYER_PHOTOS[p.player_slug] : undefined
+  const teamPhoto = TEAM_PHOTOS[p.school_slug]?.[0]
+  const logo      = SCHOOL_LOGOS[p.school_slug]
+  const heroSrc   = photo || teamPhoto
+  const shortTeam = p.team_name.replace(/\s+Varsity\s+Football$/i, '')
+
+  return (
+    <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="relative mx-3 mt-3 mb-1 h-[200px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
+        {heroSrc
+          ? <Image src={heroSrc} alt={p.player_name} fill className="object-cover object-top" unoptimized />
+          : <div className="h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
+              {logo && <Image src={logo} alt="" width={56} height={56} className="object-contain opacity-50" unoptimized />}
+            </div>}
+      </div>
+      <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2.5 px-3 py-2.5 bg-[var(--surface)]">
+        {logo && <Image src={logo} alt={shortTeam} width={34} height={34} className="rounded-full object-contain bg-white border border-[var(--border)] shrink-0" unoptimized />}
+        <div className="flex-1 min-w-0">
+          <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
+          <p className="text-xs text-[var(--muted)] mt-0.5">{shortTeam} · {p.stat_type}</p>
+        </div>
+      </div>
+      <div className="mx-3 my-3 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+        <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">This Game</div>
+        <div className="divide-y divide-[var(--border)]">
+          {p.stat_type === 'Passing' && <>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_yds)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">COMP/ATT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_comp)}/{fmt(p.pass_att)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_tds)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">INT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_int)}</span></div>
+          </>}
+          {p.stat_type === 'Rushing' && <>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_yds)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">ATT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_att)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_tds)}</span></div>
+          </>}
+          {p.stat_type === 'Receiving' && <>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_yds)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">REC</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_rec)}</span></div>
+            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_tds)}</span></div>
+          </>}
+        </div>
+      </div>
+      {p.player_slug && (
+        <div className="px-4 py-3 border-t border-[var(--border)]">
+          <Link href={`/player/${p.player_slug}`} className="flex items-center justify-between text-sm font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>
+            <span>View full profile</span>
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── PlayerStats ───────────────────────────────────────────────────────────────
 
-function PlayerStatRow({ p }: { p: GamePanelData['playerStats'][0] }) {
-  const router = useRouter()
-  const logo   = SCHOOL_LOGOS[p.school_slug]
-  const href   = p.player_slug ? `/player/${p.player_slug}?name=${encodeURIComponent(p.player_name)}` : null
+function PlayerStatRow({ p, onRowClick }: { p: GamePanelData['playerStats'][0]; onRowClick: (p: GamePanelData['playerStats'][0]) => void }) {
+  const logo = SCHOOL_LOGOS[p.school_slug]
   return (
     <div
-      className={cn('flex items-center gap-2 px-4 py-2.5 transition-colors', href ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : '')}
-      onClick={() => href && router.push(href)}
+      className="flex items-center gap-2 px-4 py-2.5 cursor-pointer hover:bg-[var(--inp-bg)] transition-colors"
+      onClick={() => onRowClick(p)}
     >
       {logo && <Image src={logo} alt="" width={20} height={20} className="rounded-full object-contain bg-white shrink-0" unoptimized />}
       <div className="flex-1 min-w-0">
-        {href
-          ? <Link href={href} onClick={e => e.stopPropagation()} className="text-sm font-medium text-[var(--txt)] hover:text-sky-500 transition-colors truncate block">{p.player_name}</Link>
+        {p.player_slug
+          ? <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="text-sm font-medium text-[var(--txt)] hover:text-sky-500 transition-colors truncate block">{p.player_name}</Link>
           : <p className="text-sm font-medium text-[var(--txt)] truncate">{p.player_name}</p>}
         <p className="text-xs text-[var(--muted)] truncate">{p.team_name.replace(/\s+Varsity\s+Football$/i, '')}</p>
       </div>
@@ -213,7 +269,7 @@ function PlayerStatRow({ p }: { p: GamePanelData['playerStats'][0] }) {
   )
 }
 
-function PlayerStats({ playerStats }: { playerStats: GamePanelData['playerStats'] }) {
+function PlayerStats({ playerStats, onRowClick }: { playerStats: GamePanelData['playerStats']; onRowClick: (p: GamePanelData['playerStats'][0]) => void }) {
   const passing   = playerStats.filter(p => p.stat_type === 'Passing').slice(0, 3)
   const rushing   = playerStats.filter(p => p.stat_type === 'Rushing').slice(0, 3)
   const receiving = playerStats.filter(p => p.stat_type === 'Receiving').slice(0, 3)
@@ -224,17 +280,17 @@ function PlayerStats({ playerStats }: { playerStats: GamePanelData['playerStats'
     <>
       {passing.length > 0 && (
         <AccordionStatTable title="Passing">
-          {passing.map((p, i) => <PlayerStatRow key={i} p={p} />)}
+          {passing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
         </AccordionStatTable>
       )}
       {rushing.length > 0 && (
         <AccordionStatTable title="Rushing">
-          {rushing.map((p, i) => <PlayerStatRow key={i} p={p} />)}
+          {rushing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
         </AccordionStatTable>
       )}
       {receiving.length > 0 && (
         <AccordionStatTable title="Receiving">
-          {receiving.map((p, i) => <PlayerStatRow key={i} p={p} />)}
+          {receiving.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
         </AccordionStatTable>
       )}
     </>
@@ -259,11 +315,24 @@ function Narrative({ text }: { text: string }) {
 // ── GamePanelContent ──────────────────────────────────────────────────────────
 
 export function GamePanelContent({ game, quarterRows, playerStats, narrative }: GamePanelData) {
+  const [selectedPlayer, setSelectedPlayer] = React.useState<GamePanelData['playerStats'][0] | null>(null)
+
   return (
-    <div className="flex-1 overflow-y-auto no-scrollbar">
+    <>
+      <AppPanel
+        open={!!selectedPlayer}
+        onClose={() => setSelectedPlayer(null)}
+        title={selectedPlayer?.player_name ?? ''}
+        detailHref={selectedPlayer?.player_slug ? `/player/${selectedPlayer.player_slug}` : undefined}
+        bodyClass="flex flex-col"
+      >
+        {selectedPlayer && <PlayerGameCard p={selectedPlayer} />}
+      </AppPanel>
+
+      <div className="flex-1 overflow-y-auto no-scrollbar">
       <div className="pt-2">
         <BoxScore game={game} quarterRows={quarterRows} />
-        <PlayerStats playerStats={playerStats} />
+        <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
         {narrative && <Narrative text={narrative} />}
       </div>
       <div className="px-4 py-3 border-t border-[var(--border)] mt-1">
@@ -277,5 +346,6 @@ export function GamePanelContent({ game, quarterRows, playerStats, narrative }: 
         </Link>
       </div>
     </div>
+    </>
   )
 }
