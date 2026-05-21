@@ -256,7 +256,7 @@ function PlayerStatRow({ p, onRowClick }: { p: GamePanelData['playerStats'][0]; 
       {logo && <Image src={logo} alt="" width={20} height={20} className="rounded-full object-contain bg-white shrink-0" unoptimized />}
       <div className="flex-1 min-w-0">
         {p.player_slug
-          ? <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="text-sm font-medium text-[var(--txt)] hover:text-sky-500 transition-colors truncate block">{p.player_name}</Link>
+          ? <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="text-sm font-medium text-[var(--txt)] hover:text-sky-500 transition-colors truncate">{p.player_name}</Link>
           : <p className="text-sm font-medium text-[var(--txt)] truncate">{p.player_name}</p>}
         <p className="text-xs text-[var(--muted)] truncate">{p.team_name.replace(/\s+Varsity\s+Football$/i, '')}</p>
       </div>

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
 import { CHART_CONFIGS, CHART_SLUGS_AZ } from '@/lib/chart-configs'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
+import { RevealFx } from '@/components/RevealFx'
 
 const CATEGORY: Record<string, string> = {
   'season-records': 'Team & Season', 'wins-by-school': 'Team & Season',
@@ -18,6 +19,7 @@ const CATEGORY: Record<string, string> = {
   'scoring-offense': 'Game Records', 'scoring-defense': 'Game Records',
   'top-scoring-games': 'Game Records', 'biggest-blowouts': 'Game Records',
   'single-game-rushing': 'Game Records', 'single-game-passing': 'Game Records',
+  'win-percentage':  'Team & Season',
   'winning-streaks': 'Game Records', 'losing-streaks': 'Game Records',
   'points-by-quarter': 'Game Records',
   'rushing-yards-team': 'Team & Season', 'passing-yards-team': 'Team & Season',
@@ -40,7 +42,7 @@ export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, stri
   }, [activeSlug])
 
   return (
-    <div className="flex-1 overflow-y-auto no-scrollbar">
+    <RevealFx translateY={8} className="flex-1 overflow-y-auto no-scrollbar">
       <div className="p-4">
         <div data-charts-grid className="grid gap-5" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))' }}>
           {CHARTS.map(({ slug, category }, idx) => {
@@ -92,6 +94,6 @@ export function ChartsGrid({ chartSchools }: { chartSchools: Record<string, stri
           })}
         </div>
       </div>
-    </div>
+    </RevealFx>
   )
 }

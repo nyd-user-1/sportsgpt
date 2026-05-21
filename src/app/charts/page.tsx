@@ -11,6 +11,7 @@ export default async function ChartsPage() {
     scoringOff, scoringDef, topGame, blowout,
     sgRush, sgPass,
     winStreaks, loseStreaks, ptsByQuarter, rushYdsTeam, passYdsTeam, turnovers,
+    winPct,
   ] = await Promise.all([
 
     // season-records: most all-time wins (sum across seasons)
@@ -169,6 +170,12 @@ export default async function ChartsPage() {
     sql`SELECT pgs.school_slug FROM player_game_stats pgs
     JOIN teams t ON t.school_slug = pgs.school_slug AND t.level = 'Varsity'
     GROUP BY pgs.school_slug ORDER BY SUM(COALESCE(pgs.def_int,0)+COALESCE(pgs.def_fumbles,0)) DESC LIMIT 3`,
+
+    // win-percentage: all-time win % (min 10 games)
+    sql`SELECT t.school_slug FROM team_season_stats s JOIN teams t ON t.slug = s.team_slug
+        WHERE t.level = 'Varsity' GROUP BY t.school_slug
+        HAVING SUM(s.overall_wins + s.overall_losses) >= 10
+        ORDER BY SUM(s.overall_wins)::float / NULLIF(SUM(s.overall_wins + s.overall_losses), 0) DESC LIMIT 3`,
   ])
 
   const pick3 = (rows: { school_slug: string }[]) =>
@@ -197,6 +204,7 @@ export default async function ChartsPage() {
     'biggest-blowouts':           pick3(blowout as never),
     'single-game-rushing':        pick3(sgRush as never),
     'single-game-passing':        pick3(sgPass as never),
+    'win-percentage':             pick3(winPct as never),
     'winning-streaks':            pick3(winStreaks as never),
     'losing-streaks':             pick3(loseStreaks as never),
     'points-by-quarter':          pick3(ptsByQuarter as never),

@@ -911,6 +911,35 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       break
     }
 
+    // ── win-percentage ────────────────────────────────────────────────────────
+    case 'win-percentage': {
+      const rows = await sql`
+        SELECT t.name, t.school_slug,
+          ROUND(
+            SUM(s.overall_wins)::numeric /
+            NULLIF(SUM(s.overall_wins + s.overall_losses), 0) * 100,
+            1
+          )::float AS value
+        FROM team_season_stats s
+        JOIN teams t ON t.slug = s.team_slug
+        WHERE t.level = 'Varsity'
+        GROUP BY t.name, t.school_slug
+        HAVING SUM(s.overall_wins + s.overall_losses) >= 10
+        ORDER BY value DESC`
+
+      tableRows = (rows as { name: string; school_slug: string; value: number }[]).map(r => ({
+        name:    String(r.name),
+        value:   Number(r.value),
+        logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '',
+      }))
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries(
+        (rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`])
+      )
+      chartChild = <SportsBarChart data={tableRows.slice(0, 20)} color={config.color} valueLabel="Win %" />
+      break
+    }
+
     default:
       notFound()
   }
@@ -927,8 +956,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       rowLinks={rowLinks}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
-      valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : undefined}
-      showRank={slug === 'wins-by-school' || slug === 'season-records'}
+      valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : slug === 'win-percentage' ? 'Win %' : undefined}
+      showRank={slug === 'wins-by-school' || slug === 'season-records' || slug === 'win-percentage'}
     >
       {chartChild}
     </ChartDetailPage>

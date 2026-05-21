@@ -91,20 +91,20 @@ export default async function GameDetailSlot({
 
       {/* Split photo background */}
       <div className="absolute inset-0 flex">
-        <div className="relative flex-1">
+        <div className="relative flex-1 overflow-hidden">
           {homePhoto ? (
             <>
-              <Image src={homePhoto} alt={homeName} fill className="object-cover" unoptimized />
+              <Image src={homePhoto} alt={homeName} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105" unoptimized />
               <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/60" />
             </>
           ) : (
             <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
           )}
         </div>
-        <div className="relative flex-1">
+        <div className="relative flex-1 overflow-hidden">
           {awayPhoto ? (
             <>
-              <Image src={awayPhoto} alt={awayName} fill className="object-cover" unoptimized />
+              <Image src={awayPhoto} alt={awayName} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105" unoptimized />
               <div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/60" />
             </>
           ) : (

@@ -106,6 +106,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     'total-points-leaders':       'Player',
     'single-game-rushing':        'Player',
     'single-game-passing':        'Player',
+    'win-percentage':             'Team',
     'winning-streaks':            'Team',
     'losing-streaks':             'Team',
     'points-by-quarter':          'Team',
@@ -137,6 +138,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
     'total-points-leaders':       'Points',
     'single-game-rushing':        'Rush Yds',
     'single-game-passing':        'Pass Yds',
+    'win-percentage':             'Win %',
     'winning-streaks':            'Win Streak',
     'losing-streaks':             'Loss Streak',
     'points-by-quarter':          'Q4 Pts',
@@ -996,6 +998,35 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       kpiValue = tableRows[0]?.value ?? 0
       seasonRows = Object.fromEntries(passingGameBars.map(s => [s.season, s.bars]))
       chartChild = <SportsBarChartInteractive seasons={passingGameBars} color={config.color} valueLabel="Pass Yards" />
+      break
+    }
+
+    // ── win-percentage ────────────────────────────────────────────────────────
+    case 'win-percentage': {
+      const rows = await sql`
+        SELECT t.name, t.school_slug,
+          ROUND(
+            SUM(s.overall_wins)::numeric /
+            NULLIF(SUM(s.overall_wins + s.overall_losses), 0) * 100,
+            1
+          )::float AS value
+        FROM team_season_stats s
+        JOIN teams t ON t.slug = s.team_slug
+        WHERE t.level = 'Varsity'
+        GROUP BY t.name, t.school_slug
+        HAVING SUM(s.overall_wins + s.overall_losses) >= 10
+        ORDER BY value DESC`
+
+      tableRows = (rows as { name: string; school_slug: string; value: number }[]).map(r => ({
+        name:    String(r.name),
+        value:   Number(r.value),
+        logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '',
+      }))
+      kpiValue = tableRows[0]?.value ?? 0
+      rowLinks = Object.fromEntries(
+        (rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`])
+      )
+      chartChild = <SportsBarChart data={tableRows.slice(0, 20)} color={config.color} valueLabel="Win %" />
       break
     }
 

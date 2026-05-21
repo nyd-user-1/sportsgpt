@@ -177,6 +177,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
   },
 
   // ── Streaks & Team Aggregates ─────────────────────────────────────────────
+  { slug: 'win-percentage',     title: 'Win %',                 description: 'All-time win percentage by team (min. 10 games)',                color: '#033882', chartType: 'bar', kpiLabel: 'win pct' },
   { slug: 'winning-streaks',    title: 'Winning Streaks',       description: 'Longest all-time winning streaks by team',                   color: '#033882', chartType: 'bar', kpiLabel: 'game streak' },
   { slug: 'losing-streaks',     title: 'Losing Streaks',        description: 'Longest all-time losing streaks by team',                    color: '#ef4444', chartType: 'bar', kpiLabel: 'game streak' },
   { slug: 'points-by-quarter',  title: 'Points by Quarter',     description: 'Team Q4 scoring leaders · per season',                      color: '#033882', chartType: 'bar', kpiLabel: 'Q4 pts' },

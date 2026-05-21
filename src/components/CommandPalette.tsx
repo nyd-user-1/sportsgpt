@@ -20,15 +20,13 @@ function saveRecent(r: RecentEntry) {
 }
 
 const QUICK_NAV = [
-  { key: 'nav-launchpad',  displayName: 'Launchpad',   subtitle: 'Standings, scores & game cards',  href: '/launchpad',              Icon: LayoutDashboard },
-  { key: 'nav-chat',       displayName: 'Chat',        subtitle: 'Ask about Section XI football',   href: '/chat',                   Icon: MessageSquare   },
-  { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',                   Icon: Building2       },
-  { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',                 Icon: Users           },
-  { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard',            Icon: Trophy          },
-  { key: 'nav-charts',     displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',                 Icon: BarChart2       },
-  { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',                Icon: Images          },
-  { key: 'nav-maps',       displayName: 'Maps',        subtitle: 'Suffolk district map',            href: '/maps',                   Icon: Map             },
-  { key: 'nav-divisions',  displayName: 'Divisions',   subtitle: 'Section XI — Divisions I–IV',     href: '/section/section-xi',     Icon: LayoutGrid      },
+  { key: 'nav-launchpad',  displayName: 'Launchpad',   subtitle: 'Standings, scores & game cards',  href: '/launchpad',   Icon: LayoutDashboard },
+  { key: 'nav-chat',       displayName: 'Chat',        subtitle: 'Ask about Section XI football',   href: '/chat',        Icon: MessageSquare   },
+  { key: 'nav-charts',     displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',      Icon: BarChart2       },
+  { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',      Icon: Users           },
+  { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',        Icon: Building2       },
+  { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',     Icon: Images          },
+  { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard', Icon: Trophy          },
 ]
 
 type PlayerRow  = { slug: string; name: string; position: string | null; school_slug: string; team_name: string | null }

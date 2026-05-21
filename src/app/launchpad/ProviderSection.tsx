@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Columns2 } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { cn, formatSeason } from '@/lib/utils'
+import { RevealFx } from '@/components/RevealFx'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { CURRENT_SEASON } from '@/lib/app-config'
 import Image from 'next/image'
@@ -97,7 +97,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   })
 
   return (
-    <div>
+    <RevealFx delay={0.15} translateY={8}>
       {/* Season tabs */}
       <div className="sticky top-0 z-10 bg-[var(--surface)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
         {SEASONS.map((s, i) => (
@@ -161,34 +161,31 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
 
-                {/* Week badge + expand icon */}
-                <div className="relative z-10 flex items-center justify-between px-3 pt-3">
-                  {g.game_number != null
-                    ? <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
-                    : <span />}
-                  <div className="p-1 rounded-md bg-black/30 text-white/70">
-                    <Columns2 className="h-3.5 w-3.5" />
+                {/* Top: logos in corners */}
+                <div className="relative z-10 flex items-start justify-between px-3 pt-3">
+                  <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
+                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
+                  </div>
+                  <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
+                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
                   </div>
                 </div>
 
                 <div />
 
-                {/* Teams row */}
-                <div className="relative z-10 flex items-center justify-between gap-2 px-3 pb-3">
-                  <div className="flex items-center gap-2 min-w-0"
-                    onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
-                    <div className="min-w-0">
-                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mb-0.5">Home</p>
+                {/* Bottom: week badge + team names */}
+                <div className="relative z-10 px-3 pb-3 flex flex-col gap-1.5">
+                  {g.game_number != null && (
+                    <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5 self-start">Week {g.game_number}</span>
+                  )}
+                  <div className="flex items-end justify-between gap-2">
+                    <div className="min-w-0 cursor-pointer" onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
                       <p className="text-xs font-semibold text-white truncate leading-snug">{g.home_name}</p>
+                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mt-0.5">Home</p>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 min-w-0 flex-row-reverse"
-                    onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
-                    <div className="min-w-0 text-right">
-                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mb-0.5">Away</p>
+                    <div className="min-w-0 text-right cursor-pointer" onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
                       <p className="text-xs font-semibold text-white truncate leading-snug">{g.away_name}</p>
+                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mt-0.5">Away</p>
                     </div>
                   </div>
                 </div>
@@ -201,6 +198,6 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </RevealFx>
   )
 }

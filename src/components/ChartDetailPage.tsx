@@ -421,7 +421,7 @@ export function ChartDetailPage({
                           <span className="flex items-center gap-2 min-w-0">
                             {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
                             <span className="flex flex-col min-w-0">
-                              <Link href={rowLinks[row.name]} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                              <Link href={rowLinks[row.name]} onClick={e => e.stopPropagation()} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
                               {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
                             </span>
                             {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}

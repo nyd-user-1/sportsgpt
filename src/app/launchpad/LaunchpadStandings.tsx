@@ -7,6 +7,7 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { RevealFx } from '@/components/RevealFx'
 
 export type StandingsRow = {
   slug: string
@@ -89,7 +90,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   }, [selectedSlug, filtered, router, searchParams])
 
   return (
-    <div className="w-[55%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
+    <RevealFx translateY={4} className="w-[55%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
       {/* Table */}
       <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
         <table className="w-full text-sm">
@@ -145,6 +146,6 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
           </tbody>
         </table>
       </div>
-    </div>
+    </RevealFx>
   )
 }
