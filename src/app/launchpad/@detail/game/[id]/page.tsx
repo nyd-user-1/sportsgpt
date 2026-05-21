@@ -117,7 +117,7 @@ export default async function GameDetailSlot({
       <div className="absolute inset-0 bg-black/40 z-[1]" />
 
       {/* Full-image link to game page — sits above dark overlay, below interactive elements */}
-      <Link href={`/game/${gameId}`} className="absolute inset-0 z-[5]" aria-label={`View game: ${homeName} vs ${awayName}`} />
+      <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="absolute inset-0 z-[5]" aria-label={`View game: ${homeName} vs ${awayName}`} />
 
       {/* Prev arrow */}
       {prevId && (
@@ -145,7 +145,7 @@ export default async function GameDetailSlot({
 
       {/* Score badge — centered */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <Link href={`/game/${gameId}`} className="bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
+        <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
           {scored ? (
             <p className="text-8xl font-black text-white tabular-nums leading-none">
               <span>{homeScore}</span>

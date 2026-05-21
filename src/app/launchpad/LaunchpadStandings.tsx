@@ -49,7 +49,9 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   const tableRef     = useRef<HTMLDivElement>(null)
 
   const parts = pathname.split('/').filter(Boolean)
-  const selectedSlug = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game') ? parts[1] : null
+  const selectedSlug = (parts.length === 2 && parts[0] === 'launchpad' && parts[1] !== 'game')
+    ? parts[1]
+    : (searchParams.get('team') ?? null)
 
   const divParam  = searchParams.get('div')
   const activeDivision = divParam ? SEARCH_DIV_MAP[divParam] : null

@@ -20,7 +20,7 @@ const TEAMS: { slug: string; name: string }[] = [
   { slug: 'commack',             name: 'Commack'          },
 ]
 
-export function CardCarouselPortrait() {
+export function CardCarouselExplore() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   return (

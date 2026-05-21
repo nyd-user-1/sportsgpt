@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Columns2 } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
@@ -160,12 +161,14 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
 
-                {/* Week badge + date */}
+                {/* Week badge + expand icon */}
                 <div className="relative z-10 flex items-center justify-between px-3 pt-3">
                   {g.game_number != null
                     ? <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
                     : <span />}
-                  <span className="text-[11px] text-white/60">{fmtDate(g.game_date)}</span>
+                  <div className="p-1 rounded-md bg-black/30 text-white/70">
+                    <Columns2 className="h-3.5 w-3.5" />
+                  </div>
                 </div>
 
                 <div />

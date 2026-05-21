@@ -3,7 +3,7 @@
 import { AppLogo } from '@/components/AppLogo'
 import { AppLayout } from '@/components/AppLayout'
 import { ChatInput } from '@/components/ChatInput'
-import { CardCarouselPortrait } from '@/components/CardCarouselPortrait'
+import { CardCarouselExplore } from '@/components/CardCarouselExplore'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 
 export default function ChatPage() {
@@ -31,7 +31,7 @@ export default function ChatPage() {
 
             {/* Explore carousel */}
             <div className="max-w-[636px] mx-auto w-full">
-              <CardCarouselPortrait />
+              <CardCarouselExplore />
             </div>
 
           </div>

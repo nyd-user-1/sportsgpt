@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid, BarChart2 } from 'lucide-react'
+import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid, BarChart2, LayoutDashboard, Map, MessageSquare } from 'lucide-react'
 import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
@@ -20,15 +20,15 @@ function saveRecent(r: RecentEntry) {
 }
 
 const QUICK_NAV = [
-  { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',                   Icon: Building2  },
-  { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',                 Icon: Users      },
-  { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard',            Icon: Trophy     },
-  { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',                Icon: Images     },
-  { key: 'nav-div1',       displayName: 'Division I',  subtitle: 'Standings & top performers',      href: '/division/division-i',    Icon: LayoutGrid },
-  { key: 'nav-div2',       displayName: 'Division II', subtitle: 'Standings & top performers',      href: '/division/division-ii',   Icon: LayoutGrid },
-  { key: 'nav-div3',       displayName: 'Division III',subtitle: 'Standings & top performers',      href: '/division/division-iii',  Icon: LayoutGrid },
-  { key: 'nav-div4',       displayName: 'Division IV', subtitle: 'Standings & top performers',      href: '/division/division-iv',   Icon: LayoutGrid },
-  { key: 'nav-charts',    displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',                 Icon: BarChart2  },
+  { key: 'nav-launchpad',  displayName: 'Launchpad',   subtitle: 'Standings, scores & game cards',  href: '/launchpad',              Icon: LayoutDashboard },
+  { key: 'nav-chat',       displayName: 'Chat',        subtitle: 'Ask about Section XI football',   href: '/chat',                   Icon: MessageSquare   },
+  { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',                   Icon: Building2       },
+  { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',                 Icon: Users           },
+  { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard',            Icon: Trophy          },
+  { key: 'nav-charts',     displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',                 Icon: BarChart2       },
+  { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',                Icon: Images          },
+  { key: 'nav-maps',       displayName: 'Maps',        subtitle: 'Suffolk district map',            href: '/maps',                   Icon: Map             },
+  { key: 'nav-divisions',  displayName: 'Divisions',   subtitle: 'Section XI — Divisions I–IV',     href: '/section/section-xi',     Icon: LayoutGrid      },
 ]
 
 type PlayerRow  = { slug: string; name: string; position: string | null; school_slug: string; team_name: string | null }

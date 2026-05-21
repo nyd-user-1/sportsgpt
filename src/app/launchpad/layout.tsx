@@ -2,15 +2,18 @@ import { Suspense } from 'react'
 import { AppLayout } from '@/components/AppLayout'
 import { ProviderSection, type GameRow } from './ProviderSection'
 import { LaunchpadTabs } from './LaunchpadTabs'
+import { LaunchpadGameWrapper } from './LaunchpadGameWrapper'
 import { sql } from '@/lib/db'
 import { CURRENT_SEASON } from '@/lib/season'
 
 export default async function LaunchpadLayout({
   children,
   detail,
+  game,
 }: {
   children: React.ReactNode
   detail: React.ReactNode
+  game: React.ReactNode
 }) {
   const rows = await sql`
     SELECT
@@ -43,6 +46,7 @@ export default async function LaunchpadLayout({
 
   return (
     <AppLayout showNavArrows>
+      <LaunchpadGameWrapper game={game} />
       <div className="flex-1 overflow-y-auto no-scrollbar">
         <div className="p-4 flex flex-col gap-5">
 
