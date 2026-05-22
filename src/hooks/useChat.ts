@@ -12,6 +12,58 @@ function generateId() {
   return Math.random().toString(36).slice(2, 10)
 }
 
+function friendlyError(raw: string): string {
+  try {
+    const parsed = JSON.parse(raw)
+    const type = parsed?.error?.type ?? parsed?.type ?? ''
+    const msg  = parsed?.error?.message ?? parsed?.message ?? ''
+    if (type === 'overloaded_error' || msg.toLowerCase().includes('overload')) {
+      return 'Anthropic is overloaded right now. Please try again in a moment.'
+    }
+    if (msg) return msg
+  } catch { /* not JSON */ }
+  return raw
+}
+
+async function fetchStream(
+  prevMessages: { role: 'user' | 'assistant'; content: string }[],
+  signal: AbortSignal,
+  retries = 1,
+): Promise<ReadableStreamDefaultReader<Uint8Array>> {
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages: prevMessages }),
+    signal,
+  })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const reader = res.body?.getReader()
+  if (!reader) throw new Error('No response body')
+
+  // Peek at the first chunk to detect an overload error before committing
+  const first = await reader.read()
+  if (first.done) return reader
+
+  const text = new TextDecoder().decode(first.value)
+  if (text.includes('overloaded_error') && retries > 0) {
+    await new Promise(r => setTimeout(r, 1500))
+    return fetchStream(prevMessages, signal, retries - 1)
+  }
+
+  // Return a reader that replays the first chunk
+  const { readable, writable } = new TransformStream<Uint8Array, Uint8Array>()
+  const writer = writable.getWriter()
+  writer.write(first.value)
+  ;(async () => {
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) { writer.close(); break }
+      writer.write(value)
+    }
+  })()
+  return readable.getReader()
+}
+
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [isStreaming, setIsStreaming] = useState(false)
@@ -22,28 +74,16 @@ export function useChat() {
     setMessages(prev => [...prev, userMsg])
     setIsStreaming(true)
 
-    // 6-message memory window
     const prevMessages = [...messages.slice(-6), { role: 'user' as const, content }]
 
     const assistantId = generateId()
-    // Add empty assistant message immediately so skeleton renders right away
     setMessages(prev => [...prev, { id: assistantId, role: 'assistant' as const, content: '' }])
 
     const controller = new AbortController()
     abortRef.current = controller
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: prevMessages }),
-        signal: controller.signal,
-      })
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-
-      const reader = res.body?.getReader()
-      if (!reader) throw new Error('No response body')
+      const reader = await fetchStream(prevMessages, controller.signal)
 
       const decoder = new TextDecoder()
       let built = ''
@@ -51,11 +91,7 @@ export function useChat() {
 
       const flush = () => {
         const snapshot = built
-        setMessages(prev => {
-          const existing = prev.find(m => m.id === assistantId)
-          if (existing) return prev.map(m => m.id === assistantId ? { ...m, content: snapshot } : m)
-          return [...prev, { id: assistantId, role: 'assistant' as const, content: snapshot }]
-        })
+        setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, content: snapshot } : m))
         flushTimer = null
       }
 
@@ -69,13 +105,13 @@ export function useChat() {
           if (data === '[DONE]') break
           try {
             const parsed = JSON.parse(data)
-            if (parsed.error) throw new Error(parsed.error)
+            if (parsed.error) throw new Error(friendlyError(parsed.error))
             if (parsed.text) {
               built += parsed.text
               if (flushTimer === null) flushTimer = setTimeout(flush, 40)
             }
           } catch (e) {
-            if ((e as Error).message && !(e instanceof SyntaxError)) throw e
+            if (!(e instanceof SyntaxError)) throw e
           }
         }
       }
@@ -85,12 +121,11 @@ export function useChat() {
 
     } catch (err: unknown) {
       if ((err as Error).name !== 'AbortError') {
-        const msg = (err as Error).message || 'Failed to get response'
-        setMessages(prev => {
-          const existing = prev.find(m => m.id === assistantId)
-          if (existing) return prev.map(m => m.id === assistantId ? { ...m, content: `*Error: ${msg}*` } : m)
-          return [...prev, { id: assistantId, role: 'assistant' as const, content: `*Error: ${msg}*` }]
-        })
+        const raw = (err as Error).message || 'Something went wrong. Please try again.'
+        const msg = friendlyError(raw)
+        setMessages(prev => prev.map(m =>
+          m.id === assistantId ? { ...m, content: `*${msg}*` } : m
+        ))
       }
     } finally {
       setIsStreaming(false)
