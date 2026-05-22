@@ -137,7 +137,7 @@ export default function ChatPage() {
               </button>
             </div>
           )}
-          <div className="px-4 py-3 border-t border-[var(--border)]">
+          <div className="px-4 py-3">
             <div className="mx-auto max-w-3xl">
               <ChatInput
                 onSend={sendMessage}
