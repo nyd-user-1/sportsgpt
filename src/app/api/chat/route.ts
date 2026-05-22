@@ -73,10 +73,16 @@ export async function POST(req: NextRequest) {
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`))
       })
       stream.on('error', (err) => {
+        console.error('[chat] stream error:', err.message)
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: err.message })}\n\n`))
         controller.close()
       })
-      await stream.finalMessage()
+      try {
+        await stream.finalMessage()
+      } catch (err) {
+        console.error('[chat] finalMessage error:', (err as Error).message)
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: (err as Error).message })}\n\n`))
+      }
       controller.enqueue(encoder.encode('data: [DONE]\n\n'))
       controller.close()
     },

@@ -69,11 +69,14 @@ export function useChat() {
           if (data === '[DONE]') break
           try {
             const parsed = JSON.parse(data)
+            if (parsed.error) throw new Error(parsed.error)
             if (parsed.text) {
               built += parsed.text
               if (flushTimer === null) flushTimer = setTimeout(flush, 40)
             }
-          } catch { /* skip malformed chunks */ }
+          } catch (e) {
+            if ((e as Error).message && !(e instanceof SyntaxError)) throw e
+          }
         }
       }
 
