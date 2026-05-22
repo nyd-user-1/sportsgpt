@@ -1,23 +1,24 @@
 'use client'
 
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
-import Image from 'next/image'
 import { ArrowUp, Square, MapPin, Mic, Check, ChevronUp } from 'lucide-react'
 import { PlusMenu } from '@/components/PlusMenu'
 import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 
+const BLOB = 'https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/gallery/logos/ai'
+
 export const CHAT_MODELS = [
-  { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic', logo: '/anthropic-icon.webp' },
-  { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic', logo: '/anthropic-icon.webp' },
-  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: '/openai-logo.avif'   },
-  { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: '/openai-logo.avif'   },
-  { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: '/gemini-icon.webp'   },
-  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: '/grok-logo.svg'      },
+  { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
+  { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
+  { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
+  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: `${BLOB}/grok-logo.svg`       },
 ] as const
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
 
-export const DEFAULT_MODEL: ChatModelId = 'gpt-4o'
+export const DEFAULT_MODEL: ChatModelId = 'claude-haiku-4-5-20251001'
 
 export interface ChatInputHandle {
   injectPrompt: (text: string) => void
@@ -119,7 +120,7 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
                   onClick={() => { setSelectedModel(m.id); setMenuOpen(false) }}
                   className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
                 >
-                  <Image src={m.logo} alt={m.provider} width={18} height={18} className="rounded-sm object-contain shrink-0" />
+                  <img src={m.logo} alt={m.provider} width={18} height={18} className="rounded-sm object-contain shrink-0" />
                   <span className="flex-1 text-left">
                     <span className="font-medium text-[var(--txt)]">{m.label}</span>
                     <span className="ml-2 text-[11px] text-[var(--muted)]">{m.provider}</span>
@@ -138,7 +139,7 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
                 : 'text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
             }`}
           >
-            <Image src={currentModel.logo} alt={currentModel.provider} width={14} height={14} className="rounded-sm object-contain" />
+            <img src={currentModel.logo} alt={currentModel.provider} width={14} height={14} className="rounded-sm object-contain" />
             <span>{currentModel.label}</span>
             <ChevronUp className={`h-3 w-3 transition-transform ${menuOpen ? '' : 'rotate-180'}`} />
           </button>

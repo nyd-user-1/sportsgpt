@@ -75,7 +75,7 @@ export function useChat() {
   const [isStreaming, setIsStreaming] = useState(false)
   const abortRef = useRef<AbortController | null>(null)
 
-  const sendMessage = useCallback(async (content: string, model = 'gpt-4o') => {
+  const sendMessage = useCallback(async (content: string, model = 'claude-haiku-4-5-20251001') => {
     const userMsg: Message = { id: generateId(), role: 'user', content }
     setMessages(prev => [...prev, userMsg])
     setIsStreaming(true)
