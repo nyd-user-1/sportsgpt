@@ -69,19 +69,16 @@ export async function POST(req: NextRequest) {
   const encoder = new TextEncoder()
   const readable = new ReadableStream({
     async start(controller) {
-      try {
-        for await (const event of stream) {
-          if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`))
-          }
-        }
-        controller.enqueue(encoder.encode('data: [DONE]\n\n'))
+      stream.on('text', (text) => {
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`))
+      })
+      stream.on('error', (err) => {
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: err.message })}\n\n`))
         controller.close()
-      } catch (err) {
-        const message = err instanceof Error ? err.message : 'Stream error'
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: message })}\n\n`))
-        controller.close()
-      }
+      })
+      await stream.finalMessage()
+      controller.enqueue(encoder.encode('data: [DONE]\n\n'))
+      controller.close()
     },
   })
 

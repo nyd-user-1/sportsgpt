@@ -26,6 +26,9 @@ export function useChat() {
     const prevMessages = [...messages.slice(-6), { role: 'user' as const, content }]
 
     const assistantId = generateId()
+    // Add empty assistant message immediately so skeleton renders right away
+    setMessages(prev => [...prev, { id: assistantId, role: 'assistant' as const, content: '' }])
+
     const controller = new AbortController()
     abortRef.current = controller
 
