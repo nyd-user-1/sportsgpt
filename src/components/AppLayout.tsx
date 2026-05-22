@@ -76,7 +76,8 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
     pathname.startsWith('/zip/')      ? 'Zip Code'  :
     pathname.startsWith('/city')      ? 'City'      :
     pathname.startsWith('/launchpad') ? 'Launchpad' :
-    pathname.startsWith('/chart/')    ? 'Charts'    : undefined
+    pathname.startsWith('/chart/')    ? 'Charts'    :
+    pathname.startsWith('/position/') ? 'Positions' : undefined
   )
   const title = PATH_TITLE[pathname] ?? (
     pathname.startsWith('/launchpad') ? 'Launchpad' :
