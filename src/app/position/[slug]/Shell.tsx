@@ -375,9 +375,14 @@ export function PositionShell({
 
   const slides = useMemo(() => {
     const top = config.statType ? aggRows.slice(0, 8).map(r => r.player) : players.slice(0, 8)
+    const seen = new Set<string>()
     return top
       .map(p => PLAYER_PHOTOS[p.slug] ?? (p.school_slug ? TEAM_PHOTOS[p.school_slug]?.[0] : null))
-      .filter((s): s is string => Boolean(s))
+      .filter((s): s is string => {
+        if (!s || seen.has(s)) return false
+        seen.add(s)
+        return true
+      })
       .slice(0, 6)
   }, [aggRows, players, config.statType])
 
