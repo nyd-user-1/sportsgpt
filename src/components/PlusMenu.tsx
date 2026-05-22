@@ -43,11 +43,11 @@ const MODELS = [
 ]
 
 const SAMPLE_QUESTIONS = [
-  'Which US states have the most untapped solar potential right now?',
-  "What's the typical payback period for rooftop solar in Texas?",
-  'Compare solar adoption rates and opportunity between California and Florida',
-  'How does the local electricity rate affect solar ROI in different US regions?',
-  'Which counties have the highest solar grade ratings and what drives that?',
+  'Who were the top rushing leaders in Section XI last season?',
+  'How did Sayville perform over the last five seasons?',
+  'Which Division I teams have the best all-time win percentage?',
+  'Who are the best quarterbacks Section XI has seen in recent years?',
+  'Compare Ward Melville and William Floyd head to head historically',
 ]
 
 type Panel = 'main' | 'models' | 'questions' | 'states' | 'counties'
@@ -101,8 +101,8 @@ export function PlusMenu({ onSelect }: PlusMenuProps) {
           {[
             { key: 'models',    label: 'Models',           icon: <Cpu className="h-5 w-5" />       },
             { key: 'questions', label: 'Sample Questions',  icon: <Lightbulb className="h-5 w-5" /> },
-            { key: 'states',    label: 'States',            icon: <Map className="h-5 w-5" />       },
-            { key: 'counties',  label: 'Counties',          icon: <MapPin className="h-5 w-5" />    },
+            { key: 'states',    label: 'Teams',             icon: <Map className="h-5 w-5" />       },
+            { key: 'counties',  label: 'Players',           icon: <MapPin className="h-5 w-5" />    },
           ].map(({ key, label, icon }, i) => (
             <button
               key={key}

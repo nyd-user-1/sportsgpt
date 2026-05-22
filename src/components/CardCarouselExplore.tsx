@@ -20,7 +20,11 @@ const TEAMS: { slug: string; name: string }[] = [
   { slug: 'commack',             name: 'Commack'          },
 ]
 
-export function CardCarouselExplore() {
+interface Props {
+  onTeamClick?: (prompt: string) => void
+}
+
+export function CardCarouselExplore({ onTeamClick }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   return (
@@ -43,7 +47,18 @@ export function CardCarouselExplore() {
         {TEAMS.map(({ slug, name }) => {
           const photo = TEAM_PHOTOS[slug]?.[0]
           const teamSlug = `${slug}-varsity-football`
-          return (
+          const prompt = `Tell me about the ${name} football program — their record, key players, and how they've performed in recent seasons.`
+          return onTeamClick ? (
+            <button key={slug} onClick={() => onTeamClick(prompt)}
+              className="group relative shrink-0 w-[150px] h-[100px] rounded-2xl overflow-hidden snap-start shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-[1.02] transition-transform">
+              <div className="absolute inset-0 bg-[var(--inp-bg)]"
+                style={photo ? { backgroundImage: `url(${photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-2 left-3">
+                <p className="text-xs font-semibold text-white leading-snug">{name}</p>
+              </div>
+            </button>
+          ) : (
             <Link key={slug} href={`/team/${teamSlug}`}
               className="group relative shrink-0 w-[150px] h-[100px] rounded-2xl overflow-hidden snap-start shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-[1.02] transition-transform block">
               <div className="absolute inset-0 bg-[var(--inp-bg)]"

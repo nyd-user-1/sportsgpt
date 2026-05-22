@@ -84,3 +84,16 @@ html.dark {
 }
 ::view-transition-new(root) { z-index: 9999; }
 ::view-transition-old(root) { z-index: 1; }
+
+/* Chat streaming wipe animation */
+.mask-wipe {
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black var(--mp1, 100%),
+    transparent var(--mp2, 100%),
+    transparent var(--mp3, 100%)
+  );
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
