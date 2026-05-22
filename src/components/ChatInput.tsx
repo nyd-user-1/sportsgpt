@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
-import { ArrowUp, Square, MapPin, Mic, Check, ChevronUp } from 'lucide-react'
+import { ArrowUp, Square, MapPin, Mic, Check } from 'lucide-react'
 import { PlusMenu } from '@/components/PlusMenu'
 import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 
@@ -133,15 +133,14 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
           <button
             type="button"
             onClick={() => setMenuOpen(o => !o)}
-            className={`flex items-center gap-1.5 rounded-lg px-2 py-1 text-[11px] font-medium transition-colors ${
+            className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
               menuOpen
-                ? 'bg-[#033882]/10 text-[#033882]'
-                : 'text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
+                ? 'ring-2 ring-[#033882] text-[var(--txt)]'
+                : 'text-[var(--muted)] hover:bg-black/7 hover:text-[var(--txt)]'
             }`}
+            title={currentModel.label}
           >
-            <img src={currentModel.logo} alt={currentModel.provider} width={14} height={14} className="rounded-sm object-contain" />
-            <span>{currentModel.label}</span>
-            <ChevronUp className={`h-3 w-3 transition-transform ${menuOpen ? '' : 'rotate-180'}`} />
+            <img src={currentModel.logo} alt={currentModel.provider} width={16} height={16} className="rounded-sm object-contain" />
           </button>
         </div>
 
