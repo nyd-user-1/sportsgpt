@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Copy, Check, ThumbsUp, ThumbsDown, CalendarDays } from 'lucide-react'
+import { Copy, Check, ThumbsUp, ThumbsDown, CalendarDays, BarChart2 } from 'lucide-react'
 import Image from 'next/image'
 import type { Message } from '@/hooks/useChat'
 import type { TeamMeta } from '@/components/ChatSeasonsPanel'
@@ -191,8 +191,23 @@ function ChatFooter({
     <>
       {/* Action bar */}
       <div className="pt-3 mt-1 border-t border-[var(--border)]">
-        <div className="flex items-center gap-1.5 flex-wrap">
-          {/* Seasons chip */}
+        <div className="flex items-center gap-1.5">
+          {/* 1 — Copy */}
+          <button onClick={handleCopy}
+            className="inline-flex items-center justify-center h-8 w-8 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+            title="Copy response">
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+          </button>
+
+          {/* 2 — Charts (placeholder) */}
+          <button
+            className="inline-flex items-center justify-center h-8 w-8 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+            title="Charts"
+          >
+            <BarChart2 className="h-4 w-4" />
+          </button>
+
+          {/* 3 — Seasons chip */}
           {hasTeams && onOpenSeasons && (
             <button
               onClick={() => onOpenSeasons(teams)}
@@ -210,11 +225,6 @@ function ChatFooter({
           )}
 
           <div className="flex items-center gap-1 ml-auto">
-            <button onClick={handleCopy}
-              className="inline-flex items-center justify-center h-8 w-8 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-              title="Copy response">
-              {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-            </button>
             <button onClick={() => setFeedback(feedback === 'good' ? null : 'good')}
               className={`inline-flex items-center justify-center h-8 w-8 rounded-md transition-colors ${feedback === 'good' ? 'text-green-600 bg-green-50 dark:bg-green-900/20' : 'text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)]'}`}>
               <ThumbsUp className="h-4 w-4" />
