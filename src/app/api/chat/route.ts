@@ -179,8 +179,8 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      // ── 4. Grok (xAI) ─────────────────────────────────────────────────────
-      if (grokKey) {
+      // ── 4. Grok (xAI) — only when explicitly selected ────────────────────
+      if (isGrok && grokKey) {
         try {
           const grokModel = isGrok ? model : 'grok-3-mini-fast'
           await tryOAIProvider(
