@@ -9,7 +9,7 @@ export const CHAT_MODELS = [
   { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic' },
   { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic' },
   { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI'    },
-  { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI'    },
+  { id: 'gpt-4o',                    label: 'ChatGPT',       provider: 'OpenAI'    },
   { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini'    },
   { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI'       },
 ] as const
