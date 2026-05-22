@@ -38,7 +38,7 @@ Always display as school-year format (e.g. "2025-26 season").
 - IV: Center Moriches, East Hampton, Glenn, Hampton Bays, Islip, Port Jefferson, Southampton, Wyandanch, and others
 
 ## Follow-ups (REQUIRED)
-ALWAYS end every response with a "## Follow-ups" section. List exactly 3 follow-up questions the user might want to ask next, as bullet points starting with "- " and ending with "?". Keep them concise and specific to what was just discussed.`
+ALWAYS end every response with a "## Follow-ups" section. List exactly 3 follow-up questions as bullet points starting with "- " and ending with "?".`
 
 // Convert Anthropic tool defs → OpenAI function-calling format
 const OAI_TOOLS: OpenAI.Chat.ChatCompletionTool[] = TOOLS.map(t => ({
@@ -52,6 +52,7 @@ type OAIMessage = OpenAI.Chat.ChatCompletionMessageParam
 async function runOAITools(
   msg: OpenAI.Chat.ChatCompletionMessage,
   history: OAIMessage[],
+  onToolResult?: (name: string, result: unknown) => void,
 ): Promise<boolean> {
   if (!msg.tool_calls?.length) return false
   history.push(msg)
@@ -61,6 +62,7 @@ async function runOAITools(
       .map(async (tc) => {
         const fn = (tc as { id: string; type: 'function'; function: { name: string; arguments: string } }).function
         const result = await executeToolCall(fn.name, JSON.parse(fn.arguments) as Record<string, unknown>)
+        onToolResult?.(fn.name, result)
         history.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(result) })
       })
   )
@@ -68,7 +70,7 @@ async function runOAITools(
 }
 
 export async function POST(req: NextRequest) {
-  const { messages, model = 'claude-haiku-4-5-20251001' } = await req.json() as {
+  const { messages, model = 'gpt-4o' } = await req.json() as {
     messages: { role: 'user' | 'assistant'; content: string }[]
     model?: string
   }
@@ -98,16 +100,31 @@ export async function POST(req: NextRequest) {
       // SSE heartbeat comment — keeps Vercel connection alive during tool resolution
       controller.enqueue(encoder.encode(': tool-resolution\n\n'))
 
+      // Track teams queried via search_teams so we can send them as metadata
+      const queriedTeams = new Map<string, { slug: string; name: string }>()
+
+      function trackTools(name: string, result: unknown) {
+        if (name === 'search_teams' && Array.isArray(result)) {
+          for (const t of result as Array<{ school_slug: string; name: string }>) {
+            if (t.school_slug && t.name) queriedTeams.set(t.school_slug, { slug: t.school_slug, name: t.name })
+          }
+        }
+      }
+
+      const sendMeta = () => {
+        if (queriedTeams.size > 0) {
+          const teams = Array.from(queriedTeams.values())
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ meta: { teams } })}\n\n`))
+        }
+      }
+
       const isAnthropic = model.startsWith('claude-')
       const isOpenAI    = model.startsWith('gpt-')
       const isGemini    = model.startsWith('gemini-')
       const isGrok      = model.startsWith('grok-')
 
       // ── Helper: run OpenAI-compatible provider with tools ──────────────────
-      async function tryOAIProvider(
-        client: OpenAI,
-        oaiModel: string,
-      ): Promise<boolean> {
+      async function tryOAIProvider(client: OpenAI, oaiModel: string): Promise<boolean> {
         const history: OAIMessage[] = [
           { role: 'system', content: SYSTEM_PROMPT },
           ...messages.map(m => ({ role: m.role as 'user' | 'assistant', content: m.content })),
@@ -118,7 +135,7 @@ export async function POST(req: NextRequest) {
           })
           const msg = response.choices[0]?.message
           if (!msg) break
-          const usedTools = await runOAITools(msg, history)
+          const usedTools = await runOAITools(msg, history, trackTools)
           if (!usedTools) { if (msg.content) send(msg.content); return true }
         }
         return true
@@ -138,22 +155,21 @@ export async function POST(req: NextRequest) {
             for (const block of response.content) {
               if (block.type === 'text' && block.text) send(block.text)
             }
-            if (response.stop_reason !== 'tool_use') { done(); return }
+            if (response.stop_reason !== 'tool_use') { sendMeta(); done(); return }
             const toolBlocks = response.content.filter(
               (b): b is Anthropic.Messages.ToolUseBlock => b.type === 'tool_use'
             )
-            const toolResults = await Promise.all(toolBlocks.map(async b => ({
-              type: 'tool_result' as const,
-              tool_use_id: b.id,
-              content: JSON.stringify(await executeToolCall(b.name, b.input as Record<string, unknown>)),
-            })))
+            const toolResults = await Promise.all(toolBlocks.map(async b => {
+              const result = await executeToolCall(b.name, b.input as Record<string, unknown>)
+              trackTools(b.name, result)
+              return { type: 'tool_result' as const, tool_use_id: b.id, content: JSON.stringify(result) }
+            }))
             history.push({ role: 'assistant', content: response.content })
             history.push({ role: 'user', content: toolResults })
           }
-          done(); return
+          sendMeta(); done(); return
         } catch (err) {
           console.error('[chat] Claude error:', (err as Error).message, '— trying fallback')
-          // Fall through to next provider
         }
       }
 
@@ -162,7 +178,7 @@ export async function POST(req: NextRequest) {
         try {
           const oaiModel = isOpenAI ? model : 'gpt-4o-mini'
           await tryOAIProvider(new OpenAI({ apiKey: openaiKey }), oaiModel)
-          done(); return
+          sendMeta(); done(); return
         } catch (err) {
           console.error('[chat] OpenAI error:', (err as Error).message, '— trying Gemini')
         }
@@ -176,7 +192,7 @@ export async function POST(req: NextRequest) {
             new OpenAI({ apiKey: geminiKey, baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/' }),
             geminiModel,
           )
-          done(); return
+          sendMeta(); done(); return
         } catch (err) {
           console.error('[chat] Gemini error:', (err as Error).message, '— trying Grok')
         }
@@ -185,12 +201,8 @@ export async function POST(req: NextRequest) {
       // ── 4. Grok (xAI) — only when explicitly selected ────────────────────
       if (isGrok && grokKey) {
         try {
-          const grokModel = isGrok ? model : 'grok-3-mini-fast'
-          await tryOAIProvider(
-            new OpenAI({ apiKey: grokKey, baseURL: 'https://api.x.ai/v1' }),
-            grokModel,
-          )
-          done(); return
+          await tryOAIProvider(new OpenAI({ apiKey: grokKey, baseURL: 'https://api.x.ai/v1' }), model)
+          sendMeta(); done(); return
         } catch (err) {
           console.error('[chat] Grok error:', (err as Error).message)
           send(`*Error: ${(err as Error).message}*`)

@@ -2,10 +2,15 @@
 
 import { useState, useCallback, useRef } from 'react'
 
+export interface ChatMeta {
+  teams: Array<{ slug: string; name: string }>
+}
+
 export interface Message {
   id: string
   role: 'user' | 'assistant'
   content: string
+  meta?: ChatMeta
 }
 
 function generateId() {
@@ -107,6 +112,9 @@ export function useChat() {
           try {
             const parsed = JSON.parse(data)
             if (parsed.error) throw new Error(friendlyError(parsed.error))
+            if (parsed.meta) {
+              setMessages(prev => prev.map(m => m.id === assistantId ? { ...m, meta: parsed.meta as ChatMeta } : m))
+            }
             if (parsed.text) {
               built += parsed.text
               if (flushTimer === null) flushTimer = setTimeout(flush, 40)

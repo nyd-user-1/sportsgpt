@@ -4,8 +4,10 @@ import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Copy, Check, ThumbsUp, ThumbsDown, CalendarDays } from 'lucide-react'
+import Image from 'next/image'
 import type { Message } from '@/hooks/useChat'
 import type { TeamMeta } from '@/components/ChatSeasonsPanel'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mdComponents: any = {
@@ -22,12 +24,35 @@ const mdComponents: any = {
   th:     ({ children }: { children: React.ReactNode }) => <th className="text-left text-xs font-semibold text-[var(--muted)] px-3 py-2.5 border-b border-[var(--border)]">{children}</th>,
   td:     ({ children }: { children: React.ReactNode }) => <td className="text-[var(--txt)] px-3 py-2 border-b border-[var(--border)] last:border-0 text-sm">{children}</td>,
   tr:     ({ children }: { children: React.ReactNode }) => <tr className="border-b border-[var(--border)] last:border-0">{children}</tr>,
-  hr:     () => <hr className="my-4 border-[var(--border)]" />,
+  hr:     () => <div className="my-2" />,  // invisible spacer — headings provide their own dividers
   code:   ({ children }: { children: React.ReactNode }) => <code className="rounded bg-[var(--inp-bg)] px-1.5 py-0.5 text-xs text-[#033882]">{children}</code>,
   em:     ({ children }: { children: React.ReactNode }) => <em className="italic text-[var(--muted)]">{children}</em>,
   a:      ({ href, children }: { href?: string; children?: React.ReactNode }) => (
     <a href={href} className="text-[#033882] hover:underline">{children}</a>
   ),
+}
+
+// Strip the ## Follow-ups section from rendered content so it doesn't duplicate the footer UI
+function stripFollowUps(content: string): string {
+  const idx = content.search(/\n#{1,3}\s+Follow-?[Uu]ps?\s*\n/i)
+  return idx >= 0 ? content.slice(0, idx).trimEnd() : content
+}
+
+// Extract follow-up questions from the ## Follow-ups section
+function extractFollowUps(content: string): string[] {
+  const lines = content.split('\n')
+  const followUps: string[] = []
+  let inSection = false
+  for (const line of lines) {
+    const t = line.trim()
+    if (/^#{1,3}\s+follow-?ups?/i.test(t)) { inSection = true; continue }
+    if (inSection && /^[-*\d.]\s+.+\??$/.test(t)) {
+      const q = t.replace(/^[-*\d.]+\s+/, '').replace(/\?*$/, '?')
+      followUps.push(q)
+    }
+    if (inSection && t.startsWith('#') && !/follow/i.test(t)) break
+  }
+  return followUps.slice(0, 3)
 }
 
 interface Props {
@@ -118,57 +143,32 @@ export function ChatMessage({ message, isStreaming, onSend, onOpenSeasons }: Pro
       {hasContent && (
         <div ref={wipeRef} className={`space-y-1 text-[17px]${isStreaming ? ' mask-wipe' : ''}`}>
           <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
-            {message.content}
+            {stripFollowUps(message.content)}
           </ReactMarkdown>
         </div>
       )}
 
       {!isStreaming && hasContent && (
-        <ChatFooter content={message.content} onSend={onSend} onOpenSeasons={onOpenSeasons} />
+        <ChatFooter
+          content={message.content}
+          teams={message.meta?.teams ?? []}
+          onSend={onSend}
+          onOpenSeasons={onOpenSeasons}
+        />
       )}
     </div>
   )
 }
 
-// ── Parse team links from response text ──────────────────────────────────────
-function extractTeamMeta(content: string): TeamMeta[] {
-  // Matches [Team Name](/team/anything) — handles both full slug and school_slug
-  const regex = /\[([^\]]+)\]\(\/team\/([^)\s]+)\)/g
-  const seen = new Map<string, string>()
-  let m
-  while ((m = regex.exec(content)) !== null) {
-    const name = m[1]
-    const rawSlug = m[2]
-    // Strip -varsity-football suffix if present to get school_slug
-    const slug = rawSlug.replace(/-varsity-football$/, '')
-    if (!seen.has(slug)) seen.set(slug, name)
-  }
-  return Array.from(seen.entries()).map(([slug, name]) => ({ slug, name }))
-}
-
-// ── Follow-ups extractor ──────────────────────────────────────────────────────
-function extractFollowUps(content: string): string[] {
-  const lines = content.split('\n')
-  const followUps: string[] = []
-  let inSection = false
-  for (const line of lines) {
-    const t = line.trim()
-    if (/^#+\s*(follow.ups?|you (might|may|could) also|related questions)/i.test(t)) {
-      inSection = true; continue
-    }
-    if (inSection && /^[-*]\s+.+\?$/.test(t)) followUps.push(t.replace(/^[-*]\s+/, ''))
-    if (inSection && t.startsWith('#')) break // next section
-  }
-  return followUps.slice(0, 3)
-}
-
 // ── ChatFooter ────────────────────────────────────────────────────────────────
 function ChatFooter({
   content,
+  teams,
   onSend,
   onOpenSeasons,
 }: {
   content: string
+  teams: TeamMeta[]
   onSend?: (content: string) => void
   onOpenSeasons?: (teams: TeamMeta[]) => void
 }) {
@@ -181,9 +181,11 @@ function ChatFooter({
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const followUps  = extractFollowUps(content)
-  const teamsMeta  = extractTeamMeta(content)
-  const hasTeams   = teamsMeta.length > 0
+  const followUps = extractFollowUps(content)
+  const hasTeams  = teams.length > 0
+
+  // Pick the first team's logo for the chip
+  const firstLogo = hasTeams ? SCHOOL_LOGOS[teams[0].slug] : null
 
   return (
     <>
@@ -193,11 +195,17 @@ function ChatFooter({
           {/* Seasons chip */}
           {hasTeams && onOpenSeasons && (
             <button
-              onClick={() => onOpenSeasons(teamsMeta)}
+              onClick={() => onOpenSeasons(teams)}
               className="flex items-center gap-1.5 h-7 px-2.5 rounded-full border border-[var(--border)] bg-[var(--inp-bg)] text-[var(--txt2)] hover:text-[#033882] hover:border-[#033882]/40 transition-colors text-xs font-medium"
             >
-              <CalendarDays className="h-3.5 w-3.5" />
+              {firstLogo
+                ? <Image src={firstLogo} alt="" width={14} height={14} className="object-contain rounded-sm" />
+                : <CalendarDays className="h-3.5 w-3.5" />
+              }
               Seasons
+              {teams.length > 1 && (
+                <span className="text-[10px] text-[var(--muted)]">+{teams.length - 1}</span>
+              )}
             </button>
           )}
 
