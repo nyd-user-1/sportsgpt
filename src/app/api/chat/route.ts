@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
+import OpenAI from 'openai'
 
 const SYSTEM_PROMPT = `You are SportsGPT AI — an expert on Section XI high school football on Long Island, New York (Nassau and Suffolk counties).
 
@@ -52,36 +53,79 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'messages required' }), { status: 400 })
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
-  if (!apiKey) {
-    return new Response(JSON.stringify({ error: 'API key not configured' }), { status: 500 })
-  }
-
-  const client = new Anthropic({ apiKey })
-
-  const stream = client.messages.stream({
-    model,
-    max_tokens: 2048,
-    system: SYSTEM_PROMPT,
-    messages: messages.map(m => ({ role: m.role, content: m.content })),
-  })
+  const anthropicKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
+  const openaiKey   = process.env.OPENAI_API_KEY_SPORTSGPT
 
   const encoder = new TextEncoder()
+  const sseMsgs = messages.map(m => ({ role: m.role, content: m.content }))
+
+  // Try Anthropic first; fall back to OpenAI on overload or missing key
+  const useOpenAI = !anthropicKey
+
   const readable = new ReadableStream({
     async start(controller) {
-      stream.on('text', (text) => {
+      const send = (text: string) =>
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`))
-      })
-      stream.on('error', (err) => {
-        console.error('[chat] stream error:', err.message)
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: err.message })}\n\n`))
+      const sendError = (msg: string) =>
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`))
+
+      if (!useOpenAI) {
+        const client = new Anthropic({ apiKey: anthropicKey! })
+        const stream = client.messages.stream({
+          model: model.startsWith('gpt-') ? 'claude-sonnet-4-6' : model,
+          max_tokens: 2048,
+          system: SYSTEM_PROMPT,
+          messages: sseMsgs,
+        })
+
+        let overloaded = false
+        stream.on('text', send)
+        stream.on('error', (err) => {
+          if (err.message.includes('overloaded')) {
+            overloaded = true
+          } else {
+            sendError(err.message)
+            controller.close()
+          }
+        })
+        try {
+          await stream.finalMessage()
+        } catch (err) {
+          if ((err as Error).message?.includes('overloaded')) overloaded = true
+        }
+
+        if (!overloaded) {
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'))
+          controller.close()
+          return
+        }
+        console.log('[chat] Anthropic overloaded — falling back to OpenAI')
+      }
+
+      // OpenAI fallback
+      if (!openaiKey) {
+        sendError('Service temporarily unavailable. Please try again.')
+        controller.enqueue(encoder.encode('data: [DONE]\n\n'))
         controller.close()
-      })
+        return
+      }
       try {
-        await stream.finalMessage()
+        const oai = new OpenAI({ apiKey: openaiKey })
+        const stream = await oai.chat.completions.create({
+          model: 'gpt-4o-mini',
+          max_tokens: 2048,
+          stream: true,
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...sseMsgs,
+          ],
+        })
+        for await (const chunk of stream) {
+          const text = chunk.choices[0]?.delta?.content
+          if (text) send(text)
+        }
       } catch (err) {
-        console.error('[chat] finalMessage error:', (err as Error).message)
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: (err as Error).message })}\n\n`))
+        sendError((err as Error).message || 'Unknown error')
       }
       controller.enqueue(encoder.encode('data: [DONE]\n\n'))
       controller.close()
