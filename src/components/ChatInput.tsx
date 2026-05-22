@@ -8,8 +8,8 @@ import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 const BLOB = 'https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/gallery/logos/ai'
 
 export const CHAT_MODELS = [
-  { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
-  { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'claude-haiku-4-5-20251001', label: 'Haiku',         provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'claude-sonnet-4-6',         label: 'Sonnet',        provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
   { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
   { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
   { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
@@ -121,10 +121,7 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
                   className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
                 >
                   <img src={m.logo} alt={m.provider} width={18} height={18} className="rounded-sm object-contain shrink-0" />
-                  <span className="flex-1 text-left">
-                    <span className="font-medium text-[var(--txt)]">{m.label}</span>
-                    <span className="ml-2 text-[11px] text-[var(--muted)]">{m.provider}</span>
-                  </span>
+                  <span className="flex-1 text-left font-medium text-[var(--txt)]">{m.label}</span>
                   {m.id === selectedModel && <Check className="h-3.5 w-3.5 text-[#033882] shrink-0" />}
                 </button>
               ))}

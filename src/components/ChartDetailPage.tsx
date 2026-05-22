@@ -41,7 +41,7 @@ function fmtVal(v: number, config: ChartConfig, period?: Period): string {
 }
 
 /* ── Props ───────────────────────────────────────────────────────── */
-export type StdRow = { name: string; value: number; logoUrl?: string; winPct?: number; subtitle?: string; record?: string }
+export type StdRow = { name: string; value: number; logoUrl?: string; logoUrl2?: string; winPct?: number; subtitle?: string; record?: string }
 export type MultiRow = Record<string, string | number>
 export type ScatterRow = { name: string; x: number; y: number }
 export type SubRow = { label: string; value: number; extra?: string }
@@ -68,7 +68,7 @@ interface Props {
   panelMode?: boolean
 }
 
-const PREVIEW_ROWS = 10
+const PREVIEW_ROWS = 3
 
 /* ── Component ───────────────────────────────────────────────────── */
 export function ChartDetailPage({
@@ -91,7 +91,7 @@ export function ChartDetailPage({
   const [filter, setFilter]       = useState(config.filters?.[0]?.key ?? '')
   const [expanded, setExpanded]   = useState<Set<string>>(new Set())
   const [activeSeason, setActiveSeason] = useState(seasonFilters?.[seasonFilters.length - 1] ?? '')
-  const [tableExpanded, setTableExpanded] = useState(true)
+  const [tableExpanded, setTableExpanded] = useState(false)
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
@@ -206,10 +206,14 @@ export function ChartDetailPage({
     const visibleMulti   = isDetail && !tableExpanded ? scaledMulti.slice(0, PREVIEW_ROWS)   : scaledMulti
     const visibleRows    = isDetail && !tableExpanded ? sorted.slice(0, PREVIEW_ROWS)         : sorted
 
+    const headerToggleProps = isDetail
+      ? { onClick: () => setTableExpanded(v => !v), className: 'cursor-pointer hover:bg-[var(--inp-bg)]' }
+      : { className: '' }
+
     if (config.chartType === 'scatter') {
       return (
         <div className="divide-y divide-[var(--border)]">
-          <div className="sticky top-0 grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10">
+          <div {...headerToggleProps} className={cn('sticky top-0 grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}>
             <span>County</span>
             <span className="text-right">Ann. Income</span>
             <span className="text-right">Ann. Care Cost</span>
@@ -231,7 +235,7 @@ export function ChartDetailPage({
     if (config.series) {
       return (
         <div className="divide-y divide-[var(--border)]">
-          <div className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+          <div {...headerToggleProps} className={cn('sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}
             style={{ gridTemplateColumns: `1fr repeat(${config.series.length}, 110px)` }}>
             <span>Year</span>
             {config.series.map(s => <span key={s.key} className="text-right">{s.label}</span>)}
@@ -264,13 +268,13 @@ export function ChartDetailPage({
 
     return (
       <div className="divide-y divide-[var(--border)]">
-        <div className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+        <div {...headerToggleProps} className={cn('sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}
           style={{ gridTemplateColumns: colTemplate }}>
           {hasSubRows && <span />}
           {showRank && <span>#</span>}
-          <span>{nameLabel ?? 'Name'}</span>
+          <span>{nameLabel ?? config.nameLabel ?? 'Name'}</span>
           {hasWinPct && <span className="text-right">3yr Win %</span>}
-          <span className="text-right">{valueLabel ?? 'Value'}</span>
+          <span className="text-right">{valueLabel ?? config.valueLabel ?? 'Value'}</span>
         </div>
         {visibleRows.map((row, idx) => {
           const isOpen       = expanded.has(row.name)
@@ -312,7 +316,14 @@ export function ChartDetailPage({
                 )}
                 {rowLinks?.[row.name] ? (
                   <span className="flex items-center gap-2 min-w-0">
-                    {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                    {row.logoUrl2 ? (
+                      <span className="flex -space-x-2 shrink-0">
+                        {row.logoUrl  && <img src={row.logoUrl}  alt="" width={22} height={22} className="rounded-full object-cover ring-2 ring-[var(--surface)] bg-[var(--surface)]" />}
+                        <img src={row.logoUrl2} alt="" width={22} height={22} className="rounded-full object-cover ring-2 ring-[var(--surface)] bg-[var(--surface)]" />
+                      </span>
+                    ) : (
+                      row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />
+                    )}
                     <span className="flex flex-col min-w-0">
                       <Link href={rowLinks[row.name]} onClick={e => e.stopPropagation()} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
                       {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
@@ -322,7 +333,14 @@ export function ChartDetailPage({
                   </span>
                 ) : (
                   <span className="flex items-center gap-2 min-w-0">
-                    {row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />}
+                    {row.logoUrl2 ? (
+                      <span className="flex -space-x-2 shrink-0">
+                        {row.logoUrl  && <img src={row.logoUrl}  alt="" width={22} height={22} className="rounded-full object-cover ring-2 ring-[var(--surface)] bg-[var(--surface)]" />}
+                        <img src={row.logoUrl2} alt="" width={22} height={22} className="rounded-full object-cover ring-2 ring-[var(--surface)] bg-[var(--surface)]" />
+                      </span>
+                    ) : (
+                      row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />
+                    )}
                     <span className="flex flex-col min-w-0">
                       <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
                       {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
@@ -406,6 +424,27 @@ export function ChartDetailPage({
         className="w-[88px] px-3 py-1.5 rounded-lg text-sm font-semibold border border-[var(--border)] bg-[var(--inp-bg)] text-[var(--txt)] hover:bg-[var(--row-hover)] transition-colors text-center">
         {activeSeason === 'all' ? 'All' : formatSeason(activeSeason)}
       </button>
+    )
+  })() : null
+
+  /* ── Detail-page season tabs (replaces title + toggle on detail) ── */
+  const seasonTabs = seasonFilters && seasonFilters.length > 0 ? (() => {
+    const ordered = [...seasonFilters].filter(s => s !== 'all').sort().reverse()
+    const tabs = seasonFilters.includes('all') ? ['all', ...ordered] : ordered
+    return (
+      <div className="flex items-center gap-0 border-b border-[var(--border)] overflow-x-auto">
+        {tabs.map(t => (
+          <button key={t} onClick={() => emitSeason(t)}
+            className={cn(
+              'px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px',
+              activeSeason === t
+                ? 'border-[#033882] text-[var(--txt)]'
+                : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]',
+            )}>
+            {t === 'all' ? 'All' : formatSeason(t)}
+          </button>
+        ))}
+      </div>
     )
   })() : null
 
@@ -549,19 +588,28 @@ export function ChartDetailPage({
 
             {/* Chart + filters */}
             <RevealFx delay={0.15} translateY={16}>
-            <div className="mb-6">
-              {children && <div className="mb-4">{children}</div>}
+            <div className="mb-8">
+              {children}
               {filterBar && <div className="mt-3">{filterBar}</div>}
-              {seasonToggle && <div className="mt-4">{seasonToggle}</div>}
             </div>
             </RevealFx>
 
             {/* Table */}
             <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
-              <InfoTable title={config.title} onToggle={() => setTableExpanded(v => !v)}>
+              {seasonTabs ? (
+                <div className="mb-5">{seasonTabs}</div>
+              ) : (
+                <h2
+                  onClick={() => setTableExpanded(v => !v)}
+                  className="mb-5 text-lg font-semibold text-[var(--txt)] cursor-pointer hover:text-sky-500 transition-colors"
+                >
+                  {config.title}
+                </h2>
+              )}
+              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
                 {tableBody}
-              </InfoTable>
+              </div>
             </div>
             </RevealFx>
 

@@ -8,9 +8,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
 } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
+import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -107,32 +106,26 @@ export function SportsPFPAScatter({ seasons }: { seasons: PFPASeason[] }) {
   )
 
   return (
-    <Card className="border-0 shadow-none py-0">
-      <CardContent className="px-0 pb-0">
-        <div className="h-[250px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart margin={{ top: 16, right: 32, bottom: 20, left: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis
-                type="number" dataKey="pf" name="Points For"
-                label={{ value: 'Points For →', position: 'insideBottom', offset: -4, fontSize: 10, fill: '#94a3b8' }}
-                tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }}
-              />
-              <YAxis
-                type="number" dataKey="pa" name="Points Against"
-                reversed
-                label={{ value: '← Points Against', angle: -90, position: 'insideLeft', fontSize: 10, fill: '#94a3b8' }}
-                tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }} width={40}
-              />
-              <Tooltip cursor={{ strokeDasharray: '3 3' }} content={({ active, payload }) => (
-                <CustomTooltip active={active} payload={payload as unknown[]} />
-              )} />
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <Scatter data={points} shape={shape as any} />
-            </ScatterChart>
-          </ResponsiveContainer>
-        </div>
-      </CardContent>
-    </Card>
+    <Chart>
+      <ScatterChart margin={{ top: 16, right: 32, bottom: 20, left: 0 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+        <XAxis
+          type="number" dataKey="pf" name="Points For"
+          label={{ value: 'Points For →', position: 'insideBottom', offset: -4, fontSize: 10, fill: '#94a3b8' }}
+          tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }}
+        />
+        <YAxis
+          type="number" dataKey="pa" name="Points Against"
+          reversed
+          label={{ value: '← Points Against', angle: -90, position: 'insideLeft', fontSize: 10, fill: '#94a3b8' }}
+          tickLine={false} axisLine={false} tick={{ fontSize: 9, fill: '#94a3b8' }} width={40}
+        />
+        <Tooltip cursor={{ strokeDasharray: '3 3' }} content={({ active, payload }) => (
+          <CustomTooltip active={active} payload={payload as unknown[]} />
+        )} />
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        <Scatter data={points} shape={shape as any} />
+      </ScatterChart>
+    </Chart>
   )
 }

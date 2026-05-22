@@ -784,6 +784,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       const BOX_SEASONS = LAST3_SEASONS
       const rows = await sql`
         SELECT g.id, ht.name AS home, at2.name AS away,
+          ht.school_slug AS home_school, at2.school_slug AS away_school,
           g.home_score, g.away_score, (g.home_score + g.away_score) AS total,
           g.season::text AS season
         FROM games g
@@ -793,14 +794,17 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
         ORDER BY g.season, total DESC`
 
+      const stripVF = (s: string) => s.replace(/\s+Varsity Football$/i, '')
       const scoringGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
         const bars = rows
           .filter(r => String(r.season) === yr)
           .slice(0, 25)
           .map(r => ({
-            name: `${r.home} vs ${r.away}`,
+            name: `${stripVF(String(r.home))} vs ${stripVF(String(r.away))}`,
             value: Number(r.total),
             subtitle: `${r.home_score}–${r.away_score} · ${formatSeason(yr)}`,
+            logoUrl:  SCHOOL_LOGOS[String(r.home_school)] ?? '',
+            logoUrl2: SCHOOL_LOGOS[String(r.away_school)] ?? '',
           }))
         return { season: yr, topValue: bars[0]?.value ?? 0, bars }
       })
@@ -819,6 +823,8 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
           ABS(g.home_score - g.away_score) AS margin,
           CASE WHEN g.home_score > g.away_score THEN ht.name ELSE at2.name END AS winner,
           CASE WHEN g.home_score > g.away_score THEN at2.name ELSE ht.name END AS loser,
+          CASE WHEN g.home_score > g.away_score THEN ht.school_slug ELSE at2.school_slug END AS winner_school,
+          CASE WHEN g.home_score > g.away_score THEN at2.school_slug ELSE ht.school_slug END AS loser_school,
           CASE WHEN g.home_score > g.away_score THEN g.home_score ELSE g.away_score END AS winner_score,
           CASE WHEN g.home_score > g.away_score THEN g.away_score ELSE g.home_score END AS loser_score,
           g.season::text AS season
@@ -829,14 +835,17 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
         WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
         ORDER BY g.season, margin DESC`
 
+      const stripVF = (s: string) => s.replace(/\s+Varsity Football$/i, '')
       const blowoutBars: SeasonBars[] = BOX_SEASONS.map(yr => {
         const bars = rows
           .filter(r => String(r.season) === yr)
           .slice(0, 25)
           .map(r => ({
-            name: `${r.winner} def. ${r.loser}`,
+            name: `${stripVF(String(r.winner))} def. ${stripVF(String(r.loser))}`,
             value: Number(r.margin),
             subtitle: `${r.winner_score}–${r.loser_score} · ${formatSeason(yr)}`,
+            logoUrl:  SCHOOL_LOGOS[String(r.winner_school)] ?? '',
+            logoUrl2: SCHOOL_LOGOS[String(r.loser_school)]  ?? '',
           }))
         return { season: yr, topValue: bars[0]?.value ?? 0, bars }
       })
@@ -956,7 +965,6 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       rowLinks={rowLinks}
       seasonFilters={seasonFilters}
       seasonRows={seasonRows}
-      valueLabel={slug === 'wins-by-school' ? '3YR Total Wins' : slug === 'season-records' ? 'Wins' : slug === 'win-percentage' ? 'Win %' : undefined}
       showRank={slug === 'wins-by-school' || slug === 'season-records' || slug === 'win-percentage'}
     >
       {chartChild}

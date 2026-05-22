@@ -16,6 +16,9 @@ const mdComponents: any = {
   h1:     ({ children }: { children: React.ReactNode }) => <div className="flex items-center gap-2 mt-7 mb-2"><span className="text-xs font-semibold text-[var(--muted)] shrink-0">{children}</span><div className="flex-1 border-t border-[var(--border)]" /></div>,
   h2:     ({ children }: { children: React.ReactNode }) => <div className="flex items-center gap-2 mt-6 mb-2"><span className="text-xs font-semibold text-[var(--muted)] shrink-0">{children}</span><div className="flex-1 border-t border-[var(--border)]" /></div>,
   h3:     ({ children }: { children: React.ReactNode }) => <div className="flex items-center gap-2 mt-5 mb-2"><span className="text-xs font-semibold text-[var(--muted)] shrink-0">{children}</span><div className="flex-1 border-t border-[var(--border)]" /></div>,
+  h4:     ({ children }: { children: React.ReactNode }) => <h4 className="mt-4 mb-1 text-[15px] font-semibold text-[var(--txt)]">{children}</h4>,
+  h5:     ({ children }: { children: React.ReactNode }) => <h5 className="mt-3 mb-1 text-[14px] font-semibold text-[var(--txt)]">{children}</h5>,
+  h6:     ({ children }: { children: React.ReactNode }) => <h6 className="mt-3 mb-1 text-[13px] font-semibold text-[var(--txt)]">{children}</h6>,
   ul:     ({ children }: { children: React.ReactNode }) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
   ol:     ({ children }: { children: React.ReactNode }) => <ol className="list-decimal pl-6 space-y-1 my-2">{children}</ol>,
   li:     ({ children }: { children: React.ReactNode }) => <li className="text-[var(--txt)]">{children}</li>,
@@ -217,7 +220,7 @@ function ChatFooter({
                 ? <Image src={firstLogo} alt="" width={14} height={14} className="object-contain rounded-sm" />
                 : <CalendarDays className="h-3.5 w-3.5" />
               }
-              Seasons
+              Explore
               {teams.length > 1 && (
                 <span className="text-[10px] text-[var(--muted)]">+{teams.length - 1}</span>
               )}
@@ -240,10 +243,10 @@ function ChatFooter({
         {followUps.length > 0 && onSend && (
           <div className="mt-3">
             <p className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wide mb-2">Follow-ups</p>
-            <div className="divide-y divide-[var(--border)] rounded-xl border border-[var(--border)] overflow-hidden">
+            <div className="space-y-1">
               {followUps.map((q, i) => (
                 <button key={i} onClick={() => onSend(q)}
-                  className="flex w-full items-center gap-2 px-3.5 py-2.5 text-left text-sm text-[var(--txt2)] hover:bg-[var(--inp-bg)] hover:text-[#033882] transition-colors">
+                  className="flex w-full items-center gap-2 py-1.5 text-left text-sm text-[var(--txt2)] hover:text-[#033882] transition-colors">
                   <span className="text-[var(--muted)] shrink-0 text-base leading-none">↳</span>
                   <span>{q}</span>
                 </button>

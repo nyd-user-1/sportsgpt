@@ -1,9 +1,18 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+
+/**
+ * The image slot owns its own sizing.
+ * Pass { src, variant } — the component renders an <Image> at the slot's exact dimensions.
+ * variant='logo'  → contained, no border (school logos, faces don't need to be cropped)
+ * variant='photo' → cover-cropped, rounded (player headshots, team photos)
+ */
+type CardImage = { src: string; variant?: 'logo' | 'photo' }
 
 /**
  * CardLandscapeMini — 210×90 horizontal card used in team-page carousels.
@@ -17,6 +26,8 @@ import { ACCENT_COLOR } from '@/lib/app-config'
 type Row = { text: string; color?: string }
 type Stat = { value: string; label?: string; color?: string }
 
+const IMG_SIZE = 35
+
 export function CardLandscapeMini({
   href,
   image,
@@ -28,7 +39,7 @@ export function CardLandscapeMini({
   statFirst,   // if true, stat appears before row2 (standings layout)
 }: {
   href?: string
-  image?: React.ReactNode
+  image?: CardImage
   badge?: React.ReactNode   // absolute top-right corner
   title: string
   titlePadRight?: boolean   // add pr-6 to avoid overlap with badge
@@ -42,10 +53,18 @@ export function CardLandscapeMini({
         <div className="absolute top-2.5 right-3">{badge}</div>
       )}
 
-      {/* Image slot — 45×45, no background */}
       {image && (
-        <div className="shrink-0 w-[45px] h-[45px] flex items-center justify-center">
-          {image}
+        <div className="shrink-0 flex items-center justify-center" style={{ width: IMG_SIZE, height: IMG_SIZE }}>
+          <Image
+            src={image.src}
+            alt=""
+            width={IMG_SIZE}
+            height={IMG_SIZE}
+            unoptimized
+            className={image.variant === 'photo'
+              ? 'w-full h-full rounded-lg object-cover'
+              : 'object-contain'}
+          />
         </div>
       )}
 

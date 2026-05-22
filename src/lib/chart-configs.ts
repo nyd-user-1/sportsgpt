@@ -21,6 +21,8 @@ export interface ChartConfig {
   color: string
   chartType: ChartType
   kpiLabel: string
+  nameLabel?: string
+  valueLabel?: string
   periodToggle?: boolean
   periodBase?: 'weekly' | 'annual'
   series?: SeriesDef[]
@@ -35,42 +37,49 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Home vs. Away Record',
     description: `Home wins vs. away wins per team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'home wins',
+    nameLabel: 'Team', valueLabel: 'Home Wins',
   },
   {
     slug: 'pf-pa',
     title: 'PF vs. PA',
     description: `Points for vs. points against by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'scatter-pfpa', kpiLabel: 'most points scored',
+    nameLabel: 'Team', valueLabel: 'Points',
   },
   {
     slug: 'win-loss-division',
     title: 'Win/Loss by Division',
     description: `Team wins and losses by division · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'win-loss-h', kpiLabel: 'teams tracked',
+    nameLabel: 'Team', valueLabel: 'Record',
   },
   {
     slug: 'strength-of-schedule',
     title: 'Strength of Schedule',
     description: `Average opponent win rate by team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'toughest schedule',
+    nameLabel: 'Team', valueLabel: 'SoS',
   },
   {
     slug: 'season-records',
     title: 'Season Records',
     description: 'Section XI team records by season — wins and losses',
     color: '#033882', chartType: 'bar', kpiLabel: 'teams tracked',
+    nameLabel: 'Team', valueLabel: 'Wins',
   },
   {
     slug: 'wins-by-school',
     title: 'Current Dynasty',
     description: `Combined wins per school across the last 3 seasons (${CURRENT_SEASON - 2}–${CURRENT_SEASON})`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most wins',
+    nameLabel: 'Team', valueLabel: '3YR Wins',
   },
   {
     slug: 'point-differential-leaders',
     title: 'Point Differential Leaders',
     description: 'Teams ranked by scoring margin (PF minus PA) · per season',
     color: '#033882', chartType: 'bar', kpiLabel: 'best differential',
+    nameLabel: 'Team', valueLabel: 'Differential',
   },
 
   // ── Passing ──────────────────────────────────────────────────────────────────
@@ -79,12 +88,14 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Passing Yards Leaders',
     description: `Top quarterbacks by passing yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most pass yds',
+    nameLabel: 'Player', valueLabel: 'Pass Yds',
   },
   {
     slug: 'passing-tds-leaders',
     title: 'Passing TD Leaders',
     description: `Top quarterbacks by touchdown passes · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most pass TDs',
+    nameLabel: 'Player', valueLabel: 'Pass TDs',
   },
 
   // ── Rushing ──────────────────────────────────────────────────────────────────
@@ -93,12 +104,14 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Rushing Yards Leaders',
     description: `Top ball carriers by rushing yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most rush yds',
+    nameLabel: 'Player', valueLabel: 'Rush Yds',
   },
   {
     slug: 'rushing-tds-leaders',
     title: 'Rushing TD Leaders',
     description: `Top ball carriers by rushing touchdowns · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most rush TDs',
+    nameLabel: 'Player', valueLabel: 'Rush TDs',
   },
 
   // ── Receiving ────────────────────────────────────────────────────────────────
@@ -107,12 +120,14 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Receiving Yards Leaders',
     description: `Top receivers by receiving yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most recv yds',
+    nameLabel: 'Player', valueLabel: 'Recv Yds',
   },
   {
     slug: 'receiving-tds-leaders',
     title: 'Receiving TD Leaders',
     description: `Top receivers by touchdown catches · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most recv TDs',
+    nameLabel: 'Player', valueLabel: 'Recv TDs',
   },
 
   // ── Multi-stat ───────────────────────────────────────────────────────────────
@@ -121,6 +136,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Total TD Leaders',
     description: `Top scorers by combined rushing + receiving touchdowns · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total TDs',
+    nameLabel: 'Player', valueLabel: 'Total TDs',
   },
   {
     slug: 'total-yards-leaders',
@@ -128,6 +144,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
     description: `Top offensive players by combined pass + rush + receiving yards · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'multi-bar', kpiLabel: 'most total yds',
     stacked: true,
+    nameLabel: 'Player', valueLabel: 'Total Yds',
   },
 
   // ── Scoring ──────────────────────────────────────────────────────────────────
@@ -136,6 +153,7 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Total Points Leaders',
     description: `Top scorers by total points including TDs, FGs, and PATs · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)}`,
     color: '#033882', chartType: 'bar', kpiLabel: 'most points',
+    nameLabel: 'Player', valueLabel: 'Points',
   },
 
   // ── Game Records & Scoring ────────────────────────────────────────────────
@@ -144,46 +162,52 @@ export const CHART_CONFIGS: ChartConfig[] = [
     title: 'Scoring Offense',
     description: 'Average points scored per game by team — season by season',
     color: '#033882', chartType: 'bar', kpiLabel: 'avg pts/game',
+    nameLabel: 'Team', valueLabel: 'Pts/Game',
   },
   {
     slug: 'scoring-defense',
     title: 'Scoring Defense',
     description: 'Average points allowed per game — fewest is best',
     color: '#10b981', chartType: 'bar', kpiLabel: 'fewest pts allowed',
+    nameLabel: 'Team', valueLabel: 'Pts Allowed',
   },
   {
     slug: 'top-scoring-games',
     title: 'Highest Scoring Games',
     description: 'Games with the most combined points scored — seasons with box scores',
     color: '#033882', chartType: 'bar', kpiLabel: 'pts combined',
+    nameLabel: 'Teams', valueLabel: 'Combined Pts',
   },
   {
     slug: 'biggest-blowouts',
     title: 'Biggest Blowouts',
     description: 'Largest margins of victory — seasons with box scores',
     color: '#033882', chartType: 'bar', kpiLabel: 'point margin',
+    nameLabel: 'Teams', valueLabel: 'Margin',
   },
   {
     slug: 'single-game-rushing',
     title: 'Single-Game Rushing',
     description: 'Top single-game rushing performances — seasons with box scores',
     color: '#033882', chartType: 'bar', kpiLabel: 'rush yds in one game',
+    nameLabel: 'Player', valueLabel: 'Rush Yds',
   },
   {
     slug: 'single-game-passing',
     title: 'Single-Game Passing',
     description: 'Top single-game passing performances — seasons with box scores',
     color: '#033882', chartType: 'bar', kpiLabel: 'pass yds in one game',
+    nameLabel: 'Player', valueLabel: 'Pass Yds',
   },
 
   // ── Streaks & Team Aggregates ─────────────────────────────────────────────
-  { slug: 'win-percentage',     title: 'Win %',                 description: 'All-time win percentage by team (min. 10 games)',                color: '#033882', chartType: 'bar', kpiLabel: 'win pct' },
-  { slug: 'winning-streaks',    title: 'Winning Streaks',       description: 'Longest all-time winning streaks by team',                   color: '#033882', chartType: 'bar', kpiLabel: 'game streak' },
-  { slug: 'losing-streaks',     title: 'Losing Streaks',        description: 'Longest all-time losing streaks by team',                    color: '#ef4444', chartType: 'bar', kpiLabel: 'game streak' },
-  { slug: 'points-by-quarter',  title: 'Points by Quarter',     description: 'Team Q4 scoring leaders · per season',                      color: '#033882', chartType: 'bar', kpiLabel: 'Q4 pts' },
-  { slug: 'rushing-yards-team', title: 'Rushing Yards by Team', description: 'Total team rushing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'rush yds' },
-  { slug: 'passing-yards-team', title: 'Passing Yards by Team', description: 'Total team passing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'pass yds' },
-  { slug: 'turnovers',          title: 'Turnovers',             description: 'Defensive takeaways (INT + fumble recoveries) · per season', color: '#033882', chartType: 'bar', kpiLabel: 'takeaways' },
+  { slug: 'win-percentage',     title: 'Win %',                 description: 'All-time win percentage by team (min. 10 games)',                color: '#033882', chartType: 'bar', kpiLabel: 'win pct',     nameLabel: 'Team', valueLabel: 'Win %' },
+  { slug: 'winning-streaks',    title: 'Winning Streaks',       description: 'Longest all-time winning streaks by team',                   color: '#033882', chartType: 'bar', kpiLabel: 'game streak', nameLabel: 'Team', valueLabel: 'Win Streak' },
+  { slug: 'losing-streaks',     title: 'Losing Streaks',        description: 'Longest all-time losing streaks by team',                    color: '#ef4444', chartType: 'bar', kpiLabel: 'game streak', nameLabel: 'Team', valueLabel: 'Loss Streak' },
+  { slug: 'points-by-quarter',  title: 'Points by Quarter',     description: 'Team Q4 scoring leaders · per season',                      color: '#033882', chartType: 'bar', kpiLabel: 'Q4 pts',      nameLabel: 'Team', valueLabel: 'Q4 Pts' },
+  { slug: 'rushing-yards-team', title: 'Rushing Yards by Team', description: 'Total team rushing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'rush yds',    nameLabel: 'Team', valueLabel: 'Rush Yds' },
+  { slug: 'passing-yards-team', title: 'Passing Yards by Team', description: 'Total team passing yards · per season',                     color: '#033882', chartType: 'bar', kpiLabel: 'pass yds',    nameLabel: 'Team', valueLabel: 'Pass Yds' },
+  { slug: 'turnovers',          title: 'Turnovers',             description: 'Defensive takeaways (INT + fumble recoveries) · per season', color: '#033882', chartType: 'bar', kpiLabel: 'takeaways',   nameLabel: 'Team', valueLabel: 'Takeaways' },
 
 ]
 

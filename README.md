@@ -29,6 +29,43 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Recovering archived scripts / scrapes
+
+Old ingest scripts and raw scrape JSON files (`scripts/scraped/`) have been removed from the working tree once their data was successfully ingested into the database. They remain in git history forever; recover with the commands below.
+
+### Find the commit that removed a file
+
+```bash
+git log --diff-filter=D --oneline -- scripts/scraped/east-islip-2024.json
+```
+
+This prints the SHA(s) where the file was deleted. The file lives in the **parent** of that SHA.
+
+### Restore a single file
+
+```bash
+# replace <sha> with the deletion commit; ^ means "the parent"
+git show <sha>^:scripts/scraped/east-islip-2024.json > scripts/scraped/east-islip-2024.json
+```
+
+### Restore the whole `scripts/scraped/` folder
+
+```bash
+git log --diff-filter=D --oneline -- scripts/scraped/ | head -1   # find deletion sha
+git checkout <sha>^ -- scripts/scraped/                            # bring back every file
+```
+
+### Restore an old ingest/scrape script
+
+Same pattern with a different path:
+
+```bash
+git log --diff-filter=D --oneline -- scripts/scrape-boxscores.mjs
+git checkout <sha>^ -- scripts/scrape-boxscores.mjs
+```
+
+The DB tables `game_box_scores`, `player_rosters`, and `player_game_stats` are the source of truth — recover scripts/scrapes only if you need to re-ingest from raw, regenerate the JSON for a new use, or reference the original parser.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

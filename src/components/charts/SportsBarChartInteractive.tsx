@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Cell, ReferenceLine } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
-import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
+import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 export interface SeasonBars {
@@ -90,45 +89,37 @@ export function SportsBarChartInteractive({ seasons, color, valueLabel, negative
     ? Math.round(activeBars.reduce((s, b) => s + b.value, 0) / activeBars.length)
     : null
 
-  const chartConfig = {
-    value: { label: valueLabel, color },
-  } satisfies ChartConfig
-
   return (
-    <Card>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
-          <BarChart
-            accessibilityLayer
-            data={activeBars}
-            margin={{ left: 12, right: 12 }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
-            <YAxis hide tickCount={25} />
-            <Tooltip
-              cursor={{ fill: 'rgba(0,0,0,0.04)' }}
-              content={({ active, payload }) => (
-                <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
-              )}
-            />
-            {avgValue !== null && (
-              <ReferenceLine
-                y={avgValue}
-                stroke="#94a3b8"
-                strokeDasharray="4 3"
-                strokeWidth={1.5}
-                label={{ value: `Avg ${avgValue}%`, position: 'insideTopRight', fontSize: 10, fill: '#94a3b8', dy: -4 }}
-              />
-            )}
-            <Bar dataKey="value" fill="var(--color-value)" radius={0}>
-              {negativeColor && activeBars.map((b, i) => (
-                <Cell key={i} fill={b.value >= 0 ? color : negativeColor} />
-              ))}
-            </Bar>
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+    <Chart>
+      <BarChart
+        accessibilityLayer
+        data={activeBars}
+        margin={{ left: 0, right: 0 }}
+      >
+        <CartesianGrid vertical={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+        <YAxis hide tickCount={25} />
+        <Tooltip
+          cursor={{ fill: 'rgba(0,0,0,0.04)' }}
+          content={({ active, payload }) => (
+            <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
+          )}
+        />
+        {avgValue !== null && (
+          <ReferenceLine
+            y={avgValue}
+            stroke="#94a3b8"
+            strokeDasharray="4 3"
+            strokeWidth={1.5}
+            label={{ value: `Avg ${avgValue}%`, position: 'insideTopRight', fontSize: 10, fill: '#94a3b8', dy: -4 }}
+          />
+        )}
+        <Bar dataKey="value" fill={color} radius={0}>
+          {negativeColor && activeBars.map((b, i) => (
+            <Cell key={i} fill={b.value >= 0 ? color : negativeColor} />
+          ))}
+        </Bar>
+      </BarChart>
+    </Chart>
   )
 }

@@ -1,8 +1,8 @@
 'use client'
 
 import * as React from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
+import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -63,26 +63,20 @@ export function SportsHomeAwayBar({ seasons }: { seasons: HomeAwaySeason[] }) {
   const data = (seasons.find(s => s.season === active)?.teams ?? []).slice(0, 40)
 
   return (
-    <Card className="border-0 shadow-none py-0">
-      <CardContent className="px-0 pb-0">
-        <div className="h-[250px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data} margin={{ left: 0, right: 12, top: 8, bottom: 0 }}>
-              <CartesianGrid vertical={false} stroke="#f0f0f0" strokeDasharray="3 3" />
-              <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
-              <YAxis hide tickCount={10} />
-              <Tooltip
-                cursor={{ fill: 'rgba(0,0,0,0.04)' }}
-                content={({ active, payload }) => (
-                  <CustomTooltip active={active} payload={payload as unknown[]} />
-                )}
-              />
-              <Bar dataKey="away_wins" name="Away Wins" fill="#94a3b8" radius={0} />
-              <Bar dataKey="home_wins" name="Home Wins" fill="#033882" radius={0} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </CardContent>
-    </Card>
+    <Chart>
+      <BarChart data={data} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>
+        <CartesianGrid vertical={false} stroke="#f0f0f0" strokeDasharray="3 3" />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+        <YAxis hide tickCount={10} />
+        <Tooltip
+          cursor={{ fill: 'rgba(0,0,0,0.04)' }}
+          content={({ active, payload }) => (
+            <CustomTooltip active={active} payload={payload as unknown[]} />
+          )}
+        />
+        <Bar dataKey="away_wins" name="Away Wins" fill="#94a3b8" radius={0} />
+        <Bar dataKey="home_wins" name="Home Wins" fill="#033882" radius={0} />
+      </BarChart>
+    </Chart>
   )
 }

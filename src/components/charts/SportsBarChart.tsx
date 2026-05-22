@@ -1,8 +1,7 @@
 'use client'
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
-import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
+import { Chart } from '@/components/Chart'
 
 interface DataItem {
   name: string
@@ -62,32 +61,23 @@ interface Props {
   data: DataItem[]
   color: string
   valueLabel: string
-  chartClassName?: string
 }
 
-export function SportsBarChart({ data, color, valueLabel, chartClassName }: Props) {
-  const chartConfig = {
-    value: { label: valueLabel, color },
-  } satisfies ChartConfig
-
+export function SportsBarChart({ data, color, valueLabel }: Props) {
   return (
-    <Card>
-      <CardContent>
-        <ChartContainer config={chartConfig} className={chartClassName ?? 'aspect-auto h-[260px] w-full'}>
-          <BarChart accessibilityLayer data={data} margin={{ left: 0, right: 0 }}>
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
-            <YAxis hide tickCount={25} />
-            <Tooltip
-              cursor={false}
-              content={({ active, payload }) => (
-                <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
-              )}
-            />
-            <Bar dataKey="value" fill="var(--color-value)" radius={0} />
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+    <Chart>
+      <BarChart accessibilityLayer data={data} margin={{ left: 0, right: 0 }}>
+        <CartesianGrid vertical={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+        <YAxis hide tickCount={25} />
+        <Tooltip
+          cursor={false}
+          content={({ active, payload }) => (
+            <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} valueLabel={valueLabel} />
+          )}
+        />
+        <Bar dataKey="value" fill={color} radius={0} />
+      </BarChart>
+    </Chart>
   )
 }

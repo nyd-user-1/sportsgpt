@@ -49,7 +49,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       SELECT t.slug, t.name, s.overall_wins, s.overall_losses
       FROM teams t
       LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = 2024
-      WHERE t.division = ${team.division} AND t.slug != ${slug}
+      WHERE t.division = ${team.division}
       ORDER BY s.overall_wins DESC NULLS LAST, t.name`,
     sql`
       WITH latest AS (

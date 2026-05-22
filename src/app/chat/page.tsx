@@ -6,7 +6,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { ChatInput, type ChatInputHandle, type ChatModelId, DEFAULT_MODEL } from '@/components/ChatInput'
 import { ChatMessage } from '@/components/ChatMessage'
 import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
-import { CardCarouselExplore } from '@/components/CardCarouselExplore'
+import { CardCarousel } from '@/components/CardCarousel'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 import { useChat } from '@/hooks/useChat'
 import { ArrowDown } from 'lucide-react'
@@ -100,7 +100,7 @@ export default function ChatPage() {
               </div>
 
               <div className="max-w-[636px] mx-auto w-full">
-                <CardCarouselExplore onTeamClick={(prompt) => sendMessage(prompt, selectedModel)} />
+                <CardCarousel onTeamClick={(prompt) => sendMessage(prompt, selectedModel)} />
               </div>
 
             </div>

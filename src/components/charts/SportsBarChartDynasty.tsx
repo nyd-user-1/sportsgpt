@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
-import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
+import { Chart } from '@/components/Chart'
+import { type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { formatSeason } from '@/lib/utils'
 
@@ -131,27 +131,23 @@ export function SportsBarChartDynasty({ windows }: Props) {
   } satisfies ChartConfig
 
   return (
-    <Card>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
-          <BarChart data={bars} margin={{ top: 30, left: 0, right: 0 }}>
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
-            <YAxis hide domain={[0, 36]} />
-            <Tooltip
-              cursor={false}
-              content={({ active, payload }) => (
-                <CustomTooltip active={active} payload={payload as unknown as TooltipPayload[]} />
-              )}
-            />
-            <Bar dataKey="yr1" fill="var(--color-yr1)" stackId="a" radius={0} />
-            <Bar dataKey="yr2" fill="var(--color-yr2)" stackId="a" radius={0} />
-            <Bar dataKey="yr3" fill="var(--color-yr3)" stackId="a" radius={0}>
-              <LabelList content={renderTopLogo as never} />
-            </Bar>
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+    <Chart config={chartConfig}>
+      <BarChart data={bars} margin={{ top: 30, left: 0, right: 0 }}>
+        <CartesianGrid vertical={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+        <YAxis hide domain={[0, 36]} />
+        <Tooltip
+          cursor={false}
+          content={({ active, payload }) => (
+            <CustomTooltip active={active} payload={payload as unknown as TooltipPayload[]} />
+          )}
+        />
+        <Bar dataKey="yr1" fill="var(--color-yr1)" stackId="a" radius={0} />
+        <Bar dataKey="yr2" fill="var(--color-yr2)" stackId="a" radius={0} />
+        <Bar dataKey="yr3" fill="var(--color-yr3)" stackId="a" radius={0}>
+          <LabelList content={renderTopLogo as never} />
+        </Bar>
+      </BarChart>
+    </Chart>
   )
 }

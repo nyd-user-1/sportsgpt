@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
-import { ChevronDown, User, MoreHorizontal, Search } from 'lucide-react'
+import { ChevronDown, User, MoreHorizontal, Search, LogOut } from 'lucide-react'
+import { useSession, signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 import {
   SIDEBAR_NAV_TOP, SIDEBAR_NAV_BOTTOM, SIDEBAR_NAV_MORE, SIDEBAR_FOOTER_LABEL, SIDEBAR_DATA_ITEMS,
@@ -105,12 +106,74 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
         <Link href="/admin" className="flex items-center rounded-lg px-3 py-2.5 text-[15px] font-medium text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors">
           Admin
         </Link>
-        <div className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 cursor-pointer hover:bg-[var(--inp-bg)] transition-colors">
-          <User className="h-[18px] w-[18px] text-[var(--txt)] flex-shrink-0" />
-          <span className="text-[15px] font-medium text-[var(--txt)]">Log In</span>
-        </div>
+        <SidebarAuth />
       </div>
 
     </aside>
+  )
+}
+
+function SidebarAuth() {
+  const { data: session, status } = useSession()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setMenuOpen(false)
+    }
+    if (menuOpen) document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [menuOpen])
+
+  if (status === 'loading') {
+    return <div className="h-[44px] rounded-lg border border-[var(--border)]" />
+  }
+
+  if (!session?.user) {
+    return (
+      <Link href="/sign-in" className="flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2.5 hover:bg-[var(--inp-bg)] transition-colors">
+        <User className="h-[18px] w-[18px] text-[var(--txt)] flex-shrink-0" />
+        <span className="text-[15px] font-medium text-[var(--txt)]">Log In</span>
+      </Link>
+    )
+  }
+
+  const initials = session.user.name
+    ? session.user.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()
+    : (session.user.email?.[0] ?? 'U').toUpperCase()
+
+  return (
+    <div className="relative" ref={wrapRef}>
+      <button
+        onClick={() => setMenuOpen(v => !v)}
+        className="w-full flex items-center gap-2 rounded-lg border border-[var(--border)] px-3 py-2 hover:bg-[var(--inp-bg)] transition-colors"
+      >
+        <div className="h-7 w-7 rounded-full bg-[#033882] flex items-center justify-center flex-shrink-0">
+          <span className="text-[11px] font-bold text-white">{initials}</span>
+        </div>
+        <span className="text-[15px] font-medium text-[var(--txt)] truncate text-left flex-1">
+          {session.user.name || session.user.email}
+        </span>
+      </button>
+
+      {menuOpen && (
+        <div className="absolute left-0 right-0 bottom-full mb-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
+          <div className="px-4 py-2.5 border-b border-[var(--border)]">
+            <p className="text-xs font-medium text-[var(--txt)] truncate">{session.user.name || 'Account'}</p>
+            <p className="text-xs text-[var(--muted)] truncate">{session.user.email}</p>
+          </div>
+          <Link href="/profile" onClick={() => setMenuOpen(false)} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
+            <User className="h-4 w-4 text-[var(--muted)]" /> Profile
+          </Link>
+          <button
+            onClick={() => signOut({ callbackUrl: '/' })}
+            className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-red-500 hover:bg-[var(--inp-bg)] transition-colors border-t border-[var(--border)]"
+          >
+            <LogOut className="h-4 w-4" /> Sign out
+          </button>
+        </div>
+      )}
+    </div>
   )
 }

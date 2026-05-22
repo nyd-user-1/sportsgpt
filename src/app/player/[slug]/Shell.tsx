@@ -955,9 +955,9 @@ export function PlayerShell({
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug]
                       const fallbackLogo = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
                       const img = playerPhoto
-                        ? <Image src={playerPhoto} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                        ? { src: playerPhoto, variant: 'photo' as const }
                         : fallbackLogo
-                        ? <Image src={fallbackLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                        ? { src: fallbackLogo }
                         : undefined
                       return (
                         <CardLandscapeMini
@@ -993,7 +993,7 @@ export function PlayerShell({
                         <CardLandscapeMini
                           key={t.slug}
                           href={`/team/${t.slug}`}
-                          image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                          image={tLogo ? { src: tLogo } : undefined}
                           title={t.name.replace(/\s+Varsity\s+Football$/i, '')}
                           stat={{ value: fmtRecord(t.overall_wins, t.overall_losses) }}
                           statFirst

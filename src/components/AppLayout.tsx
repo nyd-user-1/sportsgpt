@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react'
 import { flushSync } from 'react-dom'
 import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon, LogOut, User } from 'lucide-react'
-import { useSession, signOut } from 'next-auth/react'
+import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
+import { useSession } from 'next-auth/react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
@@ -82,11 +82,11 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
   )
   const title = PATH_TITLE[pathname] ?? (
     pathname.startsWith('/launchpad') ? 'Launchpad' :
-    pathname.startsWith('/chart/')    ? 'Charts'    :
     pathname.startsWith('/position/') ? 'Positions' : undefined
   )
 
-  const navIdx  = NAV_CYCLE.indexOf(pathname)
+  const isChartDetail = pathname.startsWith('/chart/')
+  const navIdx  = isChartDetail ? -1 : NAV_CYCLE.indexOf(pathname)
   const n       = NAV_CYCLE.length
   const prevNav = navIdx >= 0 ? NAV_CYCLE[(navIdx - 1 + n) % n] : null
   const nextNav = navIdx >= 0 ? NAV_CYCLE[(navIdx + 1) % n]     : null
@@ -254,61 +254,11 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
   )
 }
 
-// ── Auth buttons: sign-in/sign-up or user avatar ──────────────────────────────
+// ── Auth buttons: sign-in/sign-up shown in header only when signed out ────────
 function AuthButtons() {
   const { data: session, status } = useSession()
-  const [menuOpen, setMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setMenuOpen(false)
-    }
-    if (menuOpen) document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
-  }, [menuOpen])
-
-  if (status === 'loading') return null
-
-  if (session?.user) {
-    const initials = session.user.name
-      ? session.user.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()
-      : (session.user.email?.[0] ?? 'U').toUpperCase()
-
-    return (
-      <div className="relative" ref={menuRef}>
-        <button
-          onClick={() => setMenuOpen(v => !v)}
-          className="flex items-center gap-2 h-9 px-3 rounded-full border border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors"
-        >
-          <div className="h-6 w-6 rounded-full bg-[#033882] flex items-center justify-center">
-            <span className="text-[10px] font-bold text-white">{initials}</span>
-          </div>
-          <span className="text-sm font-medium text-[var(--txt)] hidden sm:block max-w-[120px] truncate">
-            {session.user.name || session.user.email}
-          </span>
-        </button>
-
-        {menuOpen && (
-          <div className="absolute right-0 top-full mt-2 w-48 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
-            <div className="px-4 py-2.5 border-b border-[var(--border)]">
-              <p className="text-xs font-medium text-[var(--txt)] truncate">{session.user.name || 'Account'}</p>
-              <p className="text-xs text-[var(--muted)] truncate">{session.user.email}</p>
-            </div>
-            <Link href="/profile" className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors">
-              <User className="h-4 w-4 text-[var(--muted)]" /> Profile
-            </Link>
-            <button
-              onClick={() => signOut({ callbackUrl: '/' })}
-              className="flex w-full items-center gap-2.5 px-4 py-2.5 text-sm text-red-500 hover:bg-[var(--inp-bg)] transition-colors border-t border-[var(--border)]"
-            >
-              <LogOut className="h-4 w-4" /> Sign out
-            </button>
-          </div>
-        )}
-      </div>
-    )
-  }
+  if (status === 'loading' || session?.user) return null
 
   return (
     <div className="flex items-center gap-2">

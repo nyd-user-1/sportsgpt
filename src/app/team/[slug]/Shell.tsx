@@ -28,15 +28,15 @@ function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort }: {
   const active = sortCol === col
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
   return (
-    <th className={cn('px-2 py-3 border-b border-[var(--border)] bg-[var(--surface)]', right ? 'text-center' : 'text-left')}>
+    <th className={cn('px-2 py-3 border-b border-[var(--border)]', right ? 'text-center' : 'text-left')}>
       <div className={cn('relative group/th', right ? 'w-full flex justify-center' : 'inline-block')}>
-        <button onClick={() => onSort(col)}
-          className={cn('inline-flex items-center gap-1 rounded-md px-0 py-0.5 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5 whitespace-nowrap',
+        <button onClick={e => { e.stopPropagation(); onSort(col) }}
+          className={cn('inline-flex items-center gap-1 rounded-md px-2 py-1 text-[11px] font-semibold uppercase tracking-wide transition-colors hover:bg-black/5 dark:hover:bg-white/5 whitespace-nowrap',
             active ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>
           {label}
           {active
             ? (sortDir === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />)
-            : <ChevronUp className="h-3 w-3 opacity-0" />}
+            : <ChevronDown className="h-3 w-3 opacity-50" />}
         </button>
         {term && (
           <div className={cn(
@@ -144,12 +144,10 @@ export function TeamShell({
   panelMode?: boolean
 }) {
   const [profileIdx, setProfileIdx]     = useState(0)
-  const [infoExpanded, setInfoExpanded] = useState(false)
   const [chartsOpen,  setChartsOpen]    = useState(false)
   const [mapsOpen,    setMapsOpen]      = useState(false)
   const [chatOpen,    setChatOpen]      = useState(false)
   const [playersOpen,   setPlayersOpen]  = useState(false)
-  const [playerSearch,  setPlayerSearch] = useState('')
   const [sortCol, setSortCol]           = useState<string | null>(null)
   const [sortDir, setSortDir]           = useState<'asc' | 'desc'>('desc')
   const [carouselDir, setCarouselDir]   = useState(1)
@@ -410,23 +408,22 @@ export function TeamShell({
             {/* Profiles */}
             <RevealFx delay={0.3} translateY={8}>
             <div className="mb-8">
-              <div className="flex items-center justify-between pt-3 mb-4">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">Program</h2>
-                <div className="flex items-center gap-1">
-                  <button onClick={() => { setCarouselDir(-1); setProfileIdx(i => (i - 1 + PROFILES.length) % PROFILES.length); setInfoExpanded(false) }}
-                    className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
-                    <ArrowLeft className="h-4 w-4" />
-                  </button>
-                  <button onClick={() => { setCarouselDir(1); setProfileIdx(i => (i + 1) % PROFILES.length); setInfoExpanded(false) }}
-                    className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
+              <div className="flex items-center gap-0 border-b border-[var(--border)] mb-5 overflow-x-auto">
+                {PROFILES.map((p, i) => (
+                  <button key={p.title}
+                    onClick={() => {
+                      setCarouselDir(i > profileIdx ? 1 : -1)
+                      setProfileIdx(i)
+                    }}
+                    className={cn('px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px',
+                      profileIdx === i
+                        ? 'border-[#033882] text-[var(--txt)]'
+                        : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]',
+                    )}
+                  >{i === 0 ? 'All' : p.title}</button>
+                ))}
               </div>
-              <InfoTable
-                title={activeProfile.h2}
-                onToggle={() => setInfoExpanded(v => !v)}
-              >
+              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
 
                 {/* Season History */}
                 {PROFILES[profileIdx].kind === 'history' && (
@@ -435,7 +432,7 @@ export function TeamShell({
                   ) : (
                     <div className="overflow-x-auto">
                     <table className="min-w-[520px] w-full text-sm">
-                      <thead>
+                      <thead className="bg-[var(--surface)]">
                         <tr>
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
                           <SortTh col="overall" label="Overall" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
@@ -447,11 +444,11 @@ export function TeamShell({
                         </tr>
                       </thead>
                       <tbody>
-                        {(infoExpanded ? sortedHistoryRows : sortedHistoryRows.slice(0, 2)).map(row => {
+                        {sortedHistoryRows.map(row => {
                           const seasonProfileIdx = PROFILES.findIndex(p => p.kind === 'games' && (p as { season: number }).season === row.seasonKey)
                           return (
                           <tr key={row.season} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors"
-                            onClick={() => { if (seasonProfileIdx !== -1) { setProfileIdx(seasonProfileIdx); setInfoExpanded(true) } }}>
+                            onClick={() => { if (seasonProfileIdx !== -1) setProfileIdx(seasonProfileIdx) }}>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.season}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.overall}</td>
                             <td className={cn(td, 'text-[var(--muted)]')}>{row.conf}</td>
@@ -475,7 +472,7 @@ export function TeamShell({
                 {PROFILES[profileIdx].kind === 'games' && (() => {
                   const profileSeason = (PROFILES[profileIdx] as { season: number }).season
                   const games = gameRows.filter(g => g.season === profileSeason)
-                  const visible = infoExpanded ? games : games.slice(0, 2)
+                  const visible = games
                   return (
                     <>
                       {games.length === 0 ? (
@@ -484,8 +481,7 @@ export function TeamShell({
                         <div className="overflow-x-auto no-scrollbar">
                           <table className="w-full text-sm table-fixed">
                             <thead>
-                              <tr onClick={() => setInfoExpanded(v => !v)}
-                                className="bg-[var(--surface)] hover:bg-[var(--inp-bg)] cursor-pointer transition-colors">
+                              <tr className="bg-[var(--surface)]">
                                 <th className="w-[13%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Date</th>
                                 <th className="w-[20%] px-2 py-3 text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opponent</th>
                                 <th className="w-[10%] px-2 py-3 text-right text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">Opp PCT</th>
@@ -553,20 +549,8 @@ export function TeamShell({
                     </>
                   )
                 })()}
-              </InfoTable>
+              </div>
 
-            </div>
-
-            {/* Search */}
-            <div className="sticky top-5 z-10 mb-8 bg-[var(--surface)] pb-4">
-              <h2 className="text-lg font-semibold text-[var(--txt)] mb-3">Search</h2>
-              <input
-                type="text"
-                value={playerSearch}
-                onChange={e => setPlayerSearch(e.target.value)}
-                placeholder="Search players, games…"
-                className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--surface)] text-sm text-[var(--txt)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--muted)] transition-colors"
-              />
             </div>
 
             {/* Games carousel — synced to active InfoTable season */}
@@ -575,16 +559,9 @@ export function TeamShell({
               const carouselSeason = isAllSeasons
                 ? null
                 : (activeProfile as { season: number }).season
-              let carouselGames = carouselSeason != null
+              const carouselGames = carouselSeason != null
                 ? gameRows.filter(g => g.season === carouselSeason)
                 : gameRows
-              if (playerSearch) {
-                const q = playerSearch.toLowerCase()
-                carouselGames = carouselGames.filter(g => {
-                  const opName = (g.home_team_slug === team.slug ? g.away_team_name : g.home_team_name) ?? ''
-                  return opName.toLowerCase().includes(q)
-                })
-              }
               if (carouselGames.length === 0) return null
               return (
                 <div className="mb-8">
@@ -615,70 +592,9 @@ export function TeamShell({
                             key={g.id}
                             href={`/game/${g.id}?ref=${team.slug}`}
                             title={isHome ? opDisplay : `at ${opDisplay}`}
-                            image={opLogo ? <Image src={opLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                            image={opLogo ? { src: opLogo } : undefined}
                             row2={g.game_number != null ? { text: `Week ${g.game_number}` } : undefined}
                             stat={{ value: myScore != null && opScore != null ? `${myScore}–${opScore}` : '—', color: result === 'W' ? '#15803d' : result === 'L' ? '#b91c1c' : undefined }}
-                          />
-                        )
-                      })}
-                    </div>
-                  </div>
-                </div>
-              )
-            })()}
-
-            {/* Players carousel — synced to active InfoTable season */}
-            {(() => {
-              const isAllSeasons = activeProfile.kind === 'history'
-              const carouselSeason = isAllSeasons ? null : (activeProfile as { season: number }).season
-              const teamLogo = SCHOOL_LOGOS[schoolSlug]
-
-              // Build player list: filter by season, deduplicate for all-seasons view
-              let players: { player_name: string; player_slug: string; position: string | null; season: number }[] = []
-              if (carouselSeason != null) {
-                players = (rosterRows as Record<string, unknown>[])
-                  .filter(r => Number(r.season) === carouselSeason)
-                  .map(r => ({ player_name: r.player_name as string, player_slug: r.player_slug as string, position: r.position as string | null, season: Number(r.season) }))
-                  .sort((a, b) => a.player_name.localeCompare(b.player_name))
-              } else {
-                // All players — deduplicate by slug, keep most recent season
-                const seen = new Set<string>()
-                players = (rosterRows as Record<string, unknown>[])
-                  .filter(r => { if (seen.has(r.player_slug as string)) return false; seen.add(r.player_slug as string); return true })
-                  .map(r => ({ player_name: r.player_name as string, player_slug: r.player_slug as string, position: r.position as string | null, season: Number(r.season) }))
-                  .sort((a, b) => a.player_name.localeCompare(b.player_name))
-              }
-
-              if (playerSearch) {
-                const q = playerSearch.toLowerCase()
-                players = players.filter(p => p.player_name.toLowerCase().includes(q))
-              }
-
-              if (players.length === 0) return null
-              return (
-                <div className="mb-8">
-                  <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-[var(--txt)]">
-                      {isAllSeasons ? 'Players' : fmtSeason(carouselSeason!)}
-                    </h2>
-                  </div>
-                  <div className="overflow-x-auto no-scrollbar">
-                    <div className="flex gap-3 pb-1">
-                      {players.map(p => {
-                        const photo = PLAYER_PHOTOS[p.player_slug]
-                        const img = photo
-                          ? <Image src={photo} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
-                          : teamLogo
-                          ? <Image src={teamLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
-                          : undefined
-                        return (
-                          <CardLandscapeMini
-                            key={`${p.player_slug}-${p.season}`}
-                            href={`/player/${p.player_slug}`}
-                            image={img}
-                            title={p.player_name}
-                            row2={p.position ? { text: p.position } : undefined}
-                            stat={{ value: fmtSeason(p.season) }}
                           />
                         )
                       })}
@@ -693,10 +609,7 @@ export function TeamShell({
             {/* Leader carousels — one per stat type */}
             <RevealFx delay={0.42} translateY={8}>
             {(() => {
-              const q = playerSearch.toLowerCase()
-              const leaderRows = playerSearch
-                ? playerRows.filter(p => (p.player_name as string).toLowerCase().includes(q))
-                : playerRows
+              const leaderRows = playerRows
               if (leaderRows.length === 0) return null
               return (
               <div className="mb-8">
@@ -710,9 +623,9 @@ export function TeamShell({
                       const playerPhoto = PLAYER_PHOTOS[p.player_slug as string]
                       const fallbackLogo = SCHOOL_LOGOS[schoolSlug]
                       const img = playerPhoto
-                        ? <Image src={playerPhoto} alt="" width={45} height={45} className="w-[45px] h-[45px] rounded-lg object-cover" unoptimized />
+                        ? { src: playerPhoto, variant: 'photo' as const }
                         : fallbackLogo
-                        ? <Image src={fallbackLogo} alt="" width={45} height={45} className="object-contain" unoptimized />
+                        ? { src: fallbackLogo }
                         : undefined
                       return (
                         <CardLandscapeMini
@@ -736,10 +649,7 @@ export function TeamShell({
             {/* Division Standings carousel */}
             <RevealFx delay={0.52} translateY={8}>
             {(() => {
-              const q = playerSearch.toLowerCase()
-              const standingRows = playerSearch
-                ? divTeams.filter(t => (t.name as string).toLowerCase().includes(q))
-                : divTeams
+              const standingRows = divTeams
               if (standingRows.length === 0) return null
               return (
               <div className="mb-8">
@@ -755,12 +665,11 @@ export function TeamShell({
                       <CardLandscapeMini
                         key={t.slug as string}
                         href={`/team/${t.slug}`}
-                        image={tLogo ? <Image src={tLogo} alt="" width={45} height={45} className="object-contain" unoptimized /> : undefined}
+                        image={tLogo ? { src: tLogo } : undefined}
                         title={(t.name as string).replace(/\s+Varsity\s+Football$/i, '')}
                         badge={<span className="text-[11px] text-[var(--muted)]">#{i + 1}</span>}
-                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
-                        statFirst
                         row2={{ text: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null) }}
+                        stat={{ value: fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null) }}
                       />
                     )
                   })}

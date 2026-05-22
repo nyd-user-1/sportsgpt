@@ -49,8 +49,13 @@ type PanelView =
 
 function fmtDate(raw: string | null) {
   if (!raw) return null
-  const d = new Date(raw + 'T12:00:00')
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  const d = new Date(raw)
+  if (isNaN(d.getTime())) return null
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' })
+}
+
+function stripVarsity(name: string) {
+  return name.replace(/\s+Varsity Football$/i, '')
 }
 
 function SchoolLogo({ slug, size = 28 }: { slug: string; size?: number }) {
@@ -150,30 +155,25 @@ function ScheduleView({
             onClick={() => onSelectGame(g.id)}
             className="w-full flex items-center gap-3 px-5 py-3 hover:bg-[var(--inp-bg)] transition-colors group"
           >
-            {/* Week badge */}
-            <span className="shrink-0 w-7 h-7 rounded-full bg-[var(--inp-bg)] flex items-center justify-center text-[11px] font-semibold text-[var(--muted)]">
-              {g.week ?? '?'}
-            </span>
             {/* Opponent */}
             <div className="flex-1 text-left min-w-0">
               <div className="flex items-center gap-1.5">
                 <SchoolLogo slug={g.opp_slug} size={22} />
-                <span className="text-sm font-medium text-[var(--txt)] truncate">{g.opponent_name}</span>
+                <span className="text-sm font-medium text-[var(--txt)] truncate">
+                  {g.side === 'home' ? 'vs.' : 'at'} {stripVarsity(g.opponent_name)}
+                </span>
               </div>
-              {g.game_date && (
-                <div className="text-xs text-[var(--muted)] mt-0.5 pl-[30px]">{fmtDate(g.game_date)}</div>
-              )}
+              <div className="text-xs text-[var(--muted)] mt-0.5 pl-[30px]">
+                {g.week != null && `Week ${g.week}`}
+                {g.week != null && g.game_date && ' · '}
+                {fmtDate(g.game_date)}
+              </div>
             </div>
-            {/* Score + W/L */}
+            {/* Score */}
             {hasScore ? (
-              <div className="flex items-center gap-2 shrink-0">
-                <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${won ? 'text-green-700 bg-green-50 dark:text-green-300 dark:bg-green-900/20' : lost ? 'text-red-600 bg-red-50 dark:text-red-300 dark:bg-red-900/20' : 'text-[var(--muted)] bg-[var(--inp-bg)]'}`}>
-                  {won ? 'W' : lost ? 'L' : 'T'}
-                </span>
-                <span className="text-sm tabular-nums font-medium text-[var(--txt2)]">
-                  {g.team_score}–{g.opp_score}
-                </span>
-              </div>
+              <span className={`text-sm tabular-nums font-semibold shrink-0 ${won ? 'text-green-600 dark:text-green-400' : lost ? 'text-red-600 dark:text-red-400' : 'text-[var(--txt2)]'}`}>
+                {g.team_score}–{g.opp_score}
+              </span>
             ) : (
               <span className="text-xs text-[var(--muted)]">Upcoming</span>
             )}

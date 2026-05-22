@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import {
-  ResponsiveContainer,
   BarChart,
   CartesianGrid,
   XAxis,
@@ -11,7 +10,7 @@ import {
   Bar,
 } from 'recharts'
 import { ChevronDown } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 export interface WinLossTeam { name: string; division: string; wins: number; losses: number }
@@ -76,59 +75,55 @@ export function SportsWinLossBar({ seasons }: Props) {
     .map(t => ({ ...t, name: abbreviate(t.name) }))
 
   return (
-    <Card className="border-0 shadow-none py-0">
-      <CardContent className="px-0 pb-0">
-        <div className="relative mb-2 flex items-center" ref={dropdownRef}>
-          <button
-            onClick={() => setDivOpen(o => !o)}
-            className="flex items-center gap-1 rounded px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-100"
-          >
-            Division {division}
-            <ChevronDown size={10} />
-          </button>
-          {divOpen && (
-            <div className="absolute top-full left-0 z-10 mt-1 rounded border border-gray-200 bg-white py-1 shadow-md">
-              {DIVISIONS.map(d => (
-                <button
-                  key={d}
-                  onClick={() => { setDivision(d); setDivOpen(false) }}
-                  className={`block w-full px-4 py-1 text-left text-xs hover:bg-gray-50 ${d === division ? 'font-semibold text-[#033882]' : 'text-gray-700'}`}
-                >
-                  Division {d}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-        <div className="h-[220px] w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart layout="vertical" data={data} margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
-              <CartesianGrid horizontal={false} strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis
-                type="number"
-                tickLine={false}
-                axisLine={false}
-                tick={{ fontSize: 9, fill: '#94a3b8' }}
-              />
-              <YAxis
-                type="category"
-                dataKey="name"
-                tickLine={false}
-                axisLine={false}
-                tick={{ fontSize: 9, fill: '#374151' }}
-                width={100}
-              />
-              <Tooltip
-                content={({ active, payload }) => (
-                  <CustomTooltip active={active} payload={payload as unknown as { payload?: WinLossTeam & { name: string } }[]} />
-                )}
-              />
-              <Bar dataKey="wins" stackId="a" fill="#033882" radius={0} />
-              <Bar dataKey="losses" stackId="a" fill="#ef4444" radius={[0, 3, 3, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </CardContent>
-    </Card>
+    <>
+      <div className="relative mb-2 flex items-center" ref={dropdownRef}>
+        <button
+          onClick={() => setDivOpen(o => !o)}
+          className="flex items-center gap-1 rounded px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-100"
+        >
+          Division {division}
+          <ChevronDown size={10} />
+        </button>
+        {divOpen && (
+          <div className="absolute top-full left-0 z-10 mt-1 rounded border border-gray-200 bg-white py-1 shadow-md">
+            {DIVISIONS.map(d => (
+              <button
+                key={d}
+                onClick={() => { setDivision(d); setDivOpen(false) }}
+                className={`block w-full px-4 py-1 text-left text-xs hover:bg-gray-50 ${d === division ? 'font-semibold text-[#033882]' : 'text-gray-700'}`}
+              >
+                Division {d}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <Chart>
+        <BarChart layout="vertical" data={data} margin={{ top: 0, right: 16, bottom: 0, left: 0 }}>
+          <CartesianGrid horizontal={false} strokeDasharray="3 3" stroke="#f0f0f0" />
+          <XAxis
+            type="number"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fontSize: 9, fill: '#94a3b8' }}
+          />
+          <YAxis
+            type="category"
+            dataKey="name"
+            tickLine={false}
+            axisLine={false}
+            tick={{ fontSize: 9, fill: '#374151' }}
+            width={100}
+          />
+          <Tooltip
+            content={({ active, payload }) => (
+              <CustomTooltip active={active} payload={payload as unknown as { payload?: WinLossTeam & { name: string } }[]} />
+            )}
+          />
+          <Bar dataKey="wins" stackId="a" fill="#033882" radius={0} />
+          <Bar dataKey="losses" stackId="a" fill="#ef4444" radius={[0, 3, 3, 0]} />
+        </BarChart>
+      </Chart>
+    </>
   )
 }

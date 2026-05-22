@@ -2,8 +2,7 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
-import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
+import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 export interface StackedSeasonBars {
@@ -80,30 +79,21 @@ export function SportsBarChartStackedInteractive({ seasons, color }: Props) {
 
   const activeBars = seasons.find(s => s.season === active)?.bars ?? []
 
-  const chartConfig = {
-    wins:   { label: 'Wins',   color },
-    losses: { label: 'Losses', color: '#ef4444' },
-  } satisfies ChartConfig
-
   return (
-    <Card>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-[250px] w-full">
-          <BarChart data={activeBars} margin={{ left: 0, right: 0 }}>
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
-            <YAxis hide />
-            <Tooltip
-              cursor={false}
-              content={({ active, payload }) => (
-                <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} />
-              )}
-            />
-            <Bar dataKey="losses" fill="var(--color-losses)" stackId="a" radius={0} />
-            <Bar dataKey="wins"   fill="var(--color-wins)"   stackId="a" radius={0} />
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+    <Chart>
+      <BarChart data={activeBars} margin={{ left: 0, right: 0 }}>
+        <CartesianGrid vertical={false} />
+        <XAxis dataKey="name" tickLine={false} axisLine={false} tick={false} height={4} />
+        <YAxis hide />
+        <Tooltip
+          cursor={false}
+          content={({ active, payload }) => (
+            <CustomTooltip active={active} payload={payload as unknown as TooltipPayloadEntry[]} />
+          )}
+        />
+        <Bar dataKey="losses" fill="#ef4444" stackId="a" radius={0} />
+        <Bar dataKey="wins"   fill={color}    stackId="a" radius={0} />
+      </BarChart>
+    </Chart>
   )
 }

@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
-import { Card, CardContent } from '@/components/ui/card'
-import { ChartContainer, type ChartConfig } from '@/components/ui/chart'
+import { Chart } from '@/components/Chart'
+import { type ChartConfig } from '@/components/ui/chart'
 import { type SeasonBars } from './SportsBarChartInteractive'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
@@ -80,10 +80,8 @@ export function SportsAreaGradient({ seasons, valueLabel = 'Points' }: Props) {
   }
 
   return (
-    <Card className="border-0 shadow-none py-0">
-      <CardContent className="px-0 pb-0">
-        <ChartContainer config={chartConfig} className="h-[200px] w-full">
-          <AreaChart data={chartData} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>
+    <Chart config={chartConfig}>
+      <AreaChart data={chartData} margin={{ left: 0, right: 0, top: 8, bottom: 0 }}>
             <defs>
               <linearGradient id="fillPoints" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%"  stopColor={ACCENT}       stopOpacity={0.8} />
@@ -117,9 +115,7 @@ export function SportsAreaGradient({ seasons, valueLabel = 'Points' }: Props) {
               dot={false}
               activeDot={{ r: 4, fill: ACCENT }}
             />
-          </AreaChart>
-        </ChartContainer>
-      </CardContent>
-    </Card>
+      </AreaChart>
+    </Chart>
   )
 }
