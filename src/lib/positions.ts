@@ -4,7 +4,7 @@ export type PositionConfig = {
   slug: PositionSlug
   label: string
   fullName: string
-  statType: 'Passing' | 'Rushing' | 'Receiving' | 'Scoring' | null
+  statType: 'Passing' | 'Rushing' | 'Receiving' | 'Scoring' | 'Defense' | null
 }
 
 export const POSITIONS: PositionConfig[] = [
@@ -13,9 +13,9 @@ export const POSITIONS: PositionConfig[] = [
   { slug: 'wr', label: 'WR', fullName: 'Wide Receivers',  statType: 'Receiving' },
   { slug: 'te', label: 'TE', fullName: 'Tight Ends',      statType: 'Receiving' },
   { slug: 'ol', label: 'OL', fullName: 'Offensive Line',  statType: null        },
-  { slug: 'dl', label: 'DL', fullName: 'Defensive Line',  statType: null        },
-  { slug: 'lb', label: 'LB', fullName: 'Linebackers',     statType: null        },
-  { slug: 'db', label: 'DB', fullName: 'Defensive Backs', statType: null        },
+  { slug: 'dl', label: 'DL', fullName: 'Defensive Line',  statType: 'Defense'   },
+  { slug: 'lb', label: 'LB', fullName: 'Linebackers',     statType: 'Defense'   },
+  { slug: 'db', label: 'DB', fullName: 'Defensive Backs', statType: 'Defense'   },
   { slug: 'k',  label: 'K',  fullName: 'Kickers',         statType: 'Scoring'   },
 ]
 

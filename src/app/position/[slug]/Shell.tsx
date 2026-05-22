@@ -58,10 +58,13 @@ function fmtPct(comp: number | null, att: number | null) {
 }
 
 function getPrimary(s: StatRow, slug: string): number {
-  if (slug === 'qb') return s.pass_yards  ?? 0
-  if (slug === 'rb') return s.rush_yards  ?? 0
+  if (slug === 'qb') return s.pass_yards   ?? 0
+  if (slug === 'rb') return s.rush_yards   ?? 0
   if (slug === 'wr' || slug === 'te') return s.recv_yards ?? 0
-  if (slug === 'k')  return s.points      ?? 0
+  if (slug === 'k')  return s.points       ?? 0
+  // Defense: DL/LB sort by sacks (rush_yards), DB sorts by INTs (interceptions)
+  if (slug === 'dl' || slug === 'lb') return s.rush_yards    ?? 0
+  if (slug === 'db') return s.interceptions ?? 0
   return 0
 }
 
@@ -237,6 +240,40 @@ function KickerTable({ rows }: { rows: (AggRow | SeasonRow)[] }) {
               <tr key={r.player.slug} className="hover:bg-[var(--inp-bg)] transition-colors">
                 <RankCell rank={r.rank} /><PlayerCell player={r.player} /><DivCell division={r.player.division} />
                 <Num v={s.points} bold /><Num v={s.total_tds} /><Num v={s.fg} /><Num v={s.pat} />
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
+function DefenseTable({ rows, slug }: { rows: (AggRow | SeasonRow)[]; slug: string }) {
+  const isDB = slug === 'db'
+  return (
+    <div className="overflow-x-auto no-scrollbar">
+      <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
+        <thead><tr>
+          <th className={cn(TH, 'text-center w-8')}>#</th>
+          <th className={cn(TH, 'text-left')}>Player</th>
+          <th className={cn(TH, 'text-center hidden sm:table-cell')}>Div</th>
+          {isDB
+            ? <><th className={cn(TH, 'text-right')}>INT</th><th className={cn(TH, 'text-right')}>SK</th><th className={cn(TH, 'text-right')}>FUM</th></>
+            : <><th className={cn(TH, 'text-right')}>SK</th><th className={cn(TH, 'text-right')}>FUM</th><th className={cn(TH, 'text-right')}>INT</th></>
+          }
+        </tr></thead>
+        <tbody>
+          {rows.map(r => {
+            const s = 'career' in r ? r.career : r.stat
+            // sacks stored in rush_yards, fumbles in rush_attempts, INTs in interceptions
+            return (
+              <tr key={r.player.slug} className="hover:bg-[var(--inp-bg)] transition-colors">
+                <RankCell rank={r.rank} /><PlayerCell player={r.player} /><DivCell division={r.player.division} />
+                {isDB
+                  ? <><Num v={s.interceptions} bold /><Num v={s.rush_yards} /><Num v={s.rush_attempts} /></>
+                  : <><Num v={s.rush_yards} bold /><Num v={s.rush_attempts} /><Num v={s.interceptions} /></>
+                }
               </tr>
             )
           })}
@@ -514,6 +551,7 @@ export function PositionShell({
                     : config.slug === 'qb' ? <QBTable rows={visibleRows} />
                     : config.slug === 'rb' ? <RBTable rows={visibleRows} />
                     : (config.slug === 'wr' || config.slug === 'te') ? <ReceiverTable rows={visibleRows} />
+                    : (config.slug === 'dl' || config.slug === 'lb' || config.slug === 'db') ? <DefenseTable rows={visibleRows} slug={config.slug} />
                     : <KickerTable rows={visibleRows} />
                 ) : (
                   <RosterTable players={players} />

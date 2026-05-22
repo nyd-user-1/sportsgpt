@@ -25,17 +25,34 @@ export default async function PositionPage({ params }: { params: Promise<{ slug:
   let stats: Record<string, unknown>[] = []
   if (config.statType && players.length > 0) {
     const slugs = players.map(p => p.slug as string)
-    stats = await sql`
-      SELECT player_slug, season,
-             pass_yards, pass_tds, attempts, completions, interceptions,
-             rush_yards, rush_tds, rush_attempts,
-             recv_yards, recv_tds, receptions,
-             points, total_tds, fg, pat, games_played
-      FROM player_season_stats
-      WHERE player_slug = ANY(${slugs})
-        AND stat_type = ${config.statType}
-      ORDER BY player_slug, season DESC
-    ` as Record<string, unknown>[]
+
+    if (config.statType === 'Defense') {
+      // Defense stats live in player_game_stats; aggregate per player per season.
+      // Convention (matching player Shell): sacks → rush_yards, fumbles → rush_attempts, INTs → interceptions
+      stats = await sql`
+        SELECT player_slug, season,
+               SUM(def_sacks)::int   AS rush_yards,
+               SUM(def_fumbles)::int AS rush_attempts,
+               SUM(def_int)::int     AS interceptions
+        FROM player_game_stats
+        WHERE player_slug = ANY(${slugs})
+          AND stat_type = 'Defense'
+        GROUP BY player_slug, season
+        ORDER BY player_slug, season DESC
+      ` as Record<string, unknown>[]
+    } else {
+      stats = await sql`
+        SELECT player_slug, season,
+               pass_yards, pass_tds, attempts, completions, interceptions,
+               rush_yards, rush_tds, rush_attempts,
+               recv_yards, recv_tds, receptions,
+               points, total_tds, fg, pat, games_played
+        FROM player_season_stats
+        WHERE player_slug = ANY(${slugs})
+          AND stat_type = ${config.statType}
+        ORDER BY player_slug, season DESC
+      ` as Record<string, unknown>[]
+    }
   }
 
   return (
