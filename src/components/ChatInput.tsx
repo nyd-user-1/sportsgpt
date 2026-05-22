@@ -12,7 +12,7 @@ export const CHAT_MODELS = [
   { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: '/openai-logo.avif'   },
   { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: '/openai-logo.avif'   },
   { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: '/gemini-icon.webp'   },
-  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: '/grok logo.svg'      },
+  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: '/grok-logo.svg'      },
 ] as const
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
