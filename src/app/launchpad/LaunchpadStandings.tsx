@@ -96,7 +96,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10 bg-[var(--surface)]">
             <tr className="border-b border-[var(--border)]">
-              {['Team', 'W', 'L', 'PCT', 'Conf', 'PF', 'PA', 'DIFF'].map(h => (
+              {['#', 'Team', 'W', 'L', 'PCT', 'Conf', 'PF', 'PA', 'DIFF'].map(h => (
                 <th key={h} className="text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] px-4 py-3 whitespace-nowrap">{h}</th>
               ))}
             </tr>
@@ -112,6 +112,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
                   selectedSlug === t.slug ? 'bg-blue-50 dark:bg-blue-950/40 shadow-[inset_3px_0_0_#033882]' : ''
                 )}
               >
+                <td className="px-4 py-3 text-[var(--muted)] text-xs tabular-nums w-8">{i + 1}</td>
                 <td className="px-4 py-3 font-medium text-[var(--txt)] w-[180px]">
                   <div className="flex items-center gap-2.5 min-w-0">
                     {(() => {

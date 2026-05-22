@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { sql } from '@/lib/db'
 import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
@@ -17,8 +16,12 @@ function fmtDate(raw: unknown) {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
-function navUrl(id: number, team: string | null) {
-  return `/launchpad/game/${id}${team ? `?team=${team}` : ''}`
+function navUrl(id: number, team: string | null, season?: number | null) {
+  const params = new URLSearchParams()
+  if (team) params.set('team', team)
+  if (season) params.set('season', String(season))
+  const qs = params.toString()
+  return `/launchpad/game/${id}${qs ? `?${qs}` : ''}`
 }
 
 export default async function GameDetailSlot({
@@ -50,8 +53,13 @@ export default async function GameDetailSlot({
   const season    = Number(g.season)
   const gameNum   = g.game_number != null ? Number(g.game_number) : null
 
-  // Prev / next within same season (team-filtered if team param set)
-  const [prevRows, nextRows] = await Promise.all([
+  const SEASONS_ASC = [2021, 2022, 2023, 2024, 2025]
+  const sIdx       = SEASONS_ASC.indexOf(season)
+  const olderSeason = sIdx > 0                        ? SEASONS_ASC[sIdx - 1] : null
+  const newerSeason = sIdx < SEASONS_ASC.length - 1  ? SEASONS_ASC[sIdx + 1] : null
+
+  // Prev / next within same season, falling back across season boundaries
+  const [prevRows, nextRows, crossPrevRows, crossNextRows] = await Promise.all([
     teamParam
       ? sql`SELECT id FROM games WHERE season = ${season} AND game_number < ${gameNum}
               AND (home_team_slug = ${teamParam} OR away_team_slug = ${teamParam})
@@ -64,10 +72,33 @@ export default async function GameDetailSlot({
             ORDER BY game_number ASC LIMIT 1`
       : sql`SELECT id FROM games WHERE season = ${season} AND game_number > ${gameNum}
             ORDER BY game_number ASC, id ASC LIMIT 1`,
+    newerSeason
+      ? teamParam
+          ? sql`SELECT id FROM games WHERE season = ${newerSeason}
+                  AND (home_team_slug = ${teamParam} OR away_team_slug = ${teamParam})
+                ORDER BY game_number DESC LIMIT 1`
+          : sql`SELECT id FROM games WHERE season = ${newerSeason}
+                ORDER BY game_number DESC, id DESC LIMIT 1`
+      : sql`SELECT null AS id LIMIT 0`,
+    olderSeason
+      ? teamParam
+          ? sql`SELECT id FROM games WHERE season = ${olderSeason}
+                  AND (home_team_slug = ${teamParam} OR away_team_slug = ${teamParam})
+                ORDER BY game_number ASC LIMIT 1`
+          : sql`SELECT id FROM games WHERE season = ${olderSeason}
+                ORDER BY game_number ASC, id ASC LIMIT 1`
+      : sql`SELECT null AS id LIMIT 0`,
   ])
 
-  const prevId = prevRows[0]?.id ? Number(prevRows[0].id) : null
-  const nextId = nextRows[0]?.id ? Number(nextRows[0].id) : null
+  const prevId       = prevRows[0]?.id       ? Number(prevRows[0].id)       : null
+  const nextId       = nextRows[0]?.id       ? Number(nextRows[0].id)       : null
+  const crossPrevId  = crossPrevRows[0]?.id  ? Number(crossPrevRows[0].id)  : null
+  const crossNextId  = crossNextRows[0]?.id  ? Number(crossNextRows[0].id)  : null
+
+  const effectivePrevId     = prevId     ?? crossPrevId
+  const effectiveNextId     = nextId     ?? crossNextId
+  const effectivePrevSeason = prevId     ? null : (crossPrevId  ? newerSeason : null)
+  const effectiveNextSeason = nextId     ? null : (crossNextId  ? olderSeason : null)
 
   const homeSlug   = g.home_team_slug as string
   const awaySlug   = g.away_team_slug as string
@@ -119,33 +150,17 @@ export default async function GameDetailSlot({
       {/* Full-image link to game page — sits above dark overlay, below interactive elements */}
       <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="absolute inset-0 z-[5]" aria-label={`View game: ${homeName} vs ${awayName}`} />
 
-      {/* Prev arrow */}
-      {prevId && (
-        <Link href={navUrl(prevId, teamParam)} scroll={false} className={`${arrowCls} left-2`}>
-          <ChevronLeft className="h-4 w-4" />
-        </Link>
-      )}
 
-      {/* Next arrow */}
-      {nextId && (
-        <Link href={navUrl(nextId, teamParam)} scroll={false} className={`${arrowCls} right-2`}>
-          <ChevronRight className="h-4 w-4" />
-        </Link>
-      )}
-
-      {/* Top bar — week badge left, date right */}
-      <div className="absolute top-3 left-4 right-4 z-10 flex items-center justify-between">
-        {gameNum != null && (
+      {/* Top bar — week badge */}
+      {gameNum != null && (
+        <div className="absolute top-3 left-4 z-10">
           <span className="text-xs font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {gameNum}</span>
-        )}
-        {fmtDate(g.game_date) && (
-          <span className="text-xs font-medium text-white/60">{fmtDate(g.game_date)}</span>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Score badge — centered */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="pointer-events-auto bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
           {scored ? (
             <p className="text-8xl font-black text-white tabular-nums leading-none">
               <span>{homeScore}</span>
@@ -159,7 +174,7 @@ export default async function GameDetailSlot({
       </div>
 
       {/* Home team overlay — bottom left, revealed on hover */}
-      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/card:pointer-events-auto">
         <Link href={`/team/${homeSlug}`} className="shrink-0">
           {homeLogo ? (
             <Image src={homeLogo} alt={homeName} width={32} height={32}
@@ -175,7 +190,7 @@ export default async function GameDetailSlot({
       </div>
 
       {/* Away team overlay — bottom right, revealed on hover */}
-      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/card:pointer-events-auto">
         <Link href={`/team/${awaySlug}`} className="shrink-0">
           {awayLogo ? (
             <Image src={awayLogo} alt={awayName} width={32} height={32}

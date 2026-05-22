@@ -48,7 +48,7 @@ export default async function LaunchpadLayout({
     <AppLayout showNavArrows>
       <LaunchpadGameWrapper game={game} />
       <div className="flex-1 overflow-y-auto no-scrollbar">
-        <div className="p-4 flex flex-col gap-5">
+        <div className="pt-1 px-4 pb-4 flex flex-col gap-5">
 
           {/* Division tabs — full width above both slots */}
           <Suspense fallback={<div className="h-9 border-b border-[var(--border)]" />}>
@@ -61,7 +61,7 @@ export default async function LaunchpadLayout({
               {children}
             </Suspense>
             <Suspense fallback={null}>
-              <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+              <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden transition-all duration-200 hover:ring-1 hover:ring-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]">
                 {detail}
               </div>
             </Suspense>

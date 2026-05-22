@@ -12,7 +12,7 @@ export default async function LaunchpadPage() {
       s.points_for, s.points_against
     FROM teams t
     LEFT JOIN team_season_stats s ON s.team_slug = t.slug AND s.season = ${CURRENT_SEASON}
-    ORDER BY t.division, s.overall_wins DESC NULLS LAST, t.name`
+    ORDER BY (s.overall_wins::float / NULLIF(s.overall_wins + s.overall_losses, 0)) DESC NULLS LAST, s.overall_wins DESC NULLS LAST, t.name`
 
   const standings: StandingsRow[] = rows.map(r => ({
     slug:               r.slug as string,

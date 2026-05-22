@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
@@ -61,6 +61,18 @@ const slideVariants = {
 export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
   const [direction, setDirection] = useState(1)
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const searchParamsForSeason = useSearchParams()
+  useEffect(() => {
+    const s = searchParamsForSeason.get('season')
+    if (!s) return
+    const idx = SEASONS.indexOf(s)
+    if (idx !== -1 && idx !== seasonIdx) {
+      setDirection(idx > seasonIdx ? 1 : -1)
+      setSeasonIdx(idx)
+    }
+  }, [searchParamsForSeason.get('season')])
 
   function handleSeason(i: number) {
     setDirection(i > seasonIdx ? 1 : -1)
@@ -81,7 +93,17 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   const selectedTeam = teamFromPath ?? teamFromParam ?? null
   const selectedGameId = (parts.length === 3 && parts[0] === 'launchpad' && parts[1] === 'game')
     ? Number(parts[2])
+    : (parts.length === 2 && parts[0] === 'game')
+    ? Number(parts[1])
     : null
+
+  useEffect(() => {
+    if (!selectedGameId) return
+    requestAnimationFrame(() => {
+      const el = scrollRef.current?.querySelector(`[data-game-id="${selectedGameId}"]`)
+      el?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' })
+    })
+  }, [selectedGameId])
 
   const filtered = games.filter(g => {
     if (g.season !== activeSeason) return false
@@ -129,7 +151,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
           No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
         </p>
       ) : (
-        <div className="flex gap-4 pb-6 overflow-x-auto no-scrollbar">
+        <div ref={scrollRef} className="flex gap-4 py-3 px-4 overflow-x-auto no-scrollbar">
           {filtered.map(g => {
             const homeWon = g.home_score != null && g.away_score != null && g.home_score > g.away_score
             const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
@@ -140,8 +162,20 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
             const awayPhoto  = TEAM_PHOTOS[awaySchool]?.[0]
             return (
               <div key={g.id}
-                onClick={() => router.push(`/launchpad/game/${g.id}${selectedTeam ? `?team=${selectedTeam}` : ''}`, { scroll: false })}
-                className={cn("group rounded-2xl overflow-hidden relative min-h-[292px] w-[400px] shrink-0 flex flex-col justify-between cursor-pointer transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.35)]", selectedGameId === g.id ? "shadow-[0_4px_24px_rgba(0,0,0,0.45)]" : "shadow-sm")}>
+                data-game-id={g.id}
+                onClick={() => {
+                  const panelOpen = parts.length === 2 && parts[0] === 'game'
+                  if (panelOpen) {
+                    const params = new URLSearchParams()
+                    params.set('h', g.home_name)
+                    params.set('v', g.away_name)
+                    if (selectedTeam) params.set('team', selectedTeam)
+                    router.push(`/game/${g.id}?${params.toString()}`, { scroll: false })
+                  } else {
+                    router.push(`/launchpad/game/${g.id}${selectedTeam ? `?team=${selectedTeam}` : ''}`, { scroll: false })
+                  }
+                }}
+                className={cn("group rounded-2xl overflow-hidden relative min-h-[292px] w-[400px] shrink-0 flex flex-col justify-between cursor-pointer transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.35)]", selectedGameId === g.id ? "outline outline-2 outline-[#033882] outline-offset-2 shadow-[inset_0_0_16px_rgba(3,56,130,0.18)]" : "shadow-sm")}>
 
                 {/* Split photo background */}
                 <div className="absolute inset-0 flex">
@@ -161,32 +195,22 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
 
-                {/* Top: logos in corners */}
-                <div className="relative z-10 flex items-start justify-between px-3 pt-3">
+                {/* Top: week badge left */}
+                <div className="relative z-10 px-3 pt-3">
+                  {g.game_number != null && (
+                    <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
+                  )}
+                </div>
+
+                <div />
+
+                {/* Bottom: logos in corners */}
+                <div className="relative z-10 flex items-end justify-between px-3 pb-3">
                   <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
                     <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
                   </div>
                   <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
                     <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
-                  </div>
-                </div>
-
-                <div />
-
-                {/* Bottom: week badge + team names */}
-                <div className="relative z-10 px-3 pb-3 flex flex-col gap-1.5">
-                  {g.game_number != null && (
-                    <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5 self-start">Week {g.game_number}</span>
-                  )}
-                  <div className="flex items-end justify-between gap-2">
-                    <div className="min-w-0 cursor-pointer" onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                      <p className="text-xs font-semibold text-white truncate leading-snug">{g.home_name}</p>
-                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mt-0.5">Home</p>
-                    </div>
-                    <div className="min-w-0 text-right cursor-pointer" onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                      <p className="text-xs font-semibold text-white truncate leading-snug">{g.away_name}</p>
-                      <p className="text-[9px] text-white/50 uppercase tracking-wide leading-none mt-0.5">Away</p>
-                    </div>
                   </div>
                 </div>
 
