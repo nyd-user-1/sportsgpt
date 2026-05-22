@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 import { CommandPalette } from '@/components/CommandPalette'
+import { AuthProvider } from '@/components/AuthProvider'
 
 export const metadata: Metadata = {
   title: APP_NAME,
@@ -21,8 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet" />
       </head>
       <body className="h-full bg-[var(--surface)] sm:bg-[var(--bg)]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-        {children}
-        <CommandPalette />
+        <AuthProvider>
+          {children}
+          <CommandPalette />
+        </AuthProvider>
       </body>
     </html>
   )

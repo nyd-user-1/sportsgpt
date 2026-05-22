@@ -123,7 +123,7 @@ export default function ChatPage() {
                   <ChatMessage
                     message={msg}
                     isStreaming={isStreaming && msg.role === 'assistant' && i === messages.length - 1}
-                    onSend={sendMessage}
+                    onSend={(content) => sendMessage(content, selectedModel)}
                     onOpenSeasons={openSeasons}
                   />
                 </div>
