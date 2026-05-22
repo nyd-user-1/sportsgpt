@@ -14,6 +14,7 @@ import { RevealFx } from '@/components/RevealFx'
 import { CardLandscapeMini } from '@/components/CardLandscapeMini'
 import { cn, formatSeason } from '@/lib/utils'
 import { ACCENT_COLOR } from '@/lib/app-config'
+import { primaryPositionSlug } from '@/lib/positions'
 
 type StatRow = {
   id: number
@@ -641,7 +642,14 @@ export function PlayerShell({
                 {school && (
                   <div className="flex items-center gap-1 text-xs text-[var(--muted)] mt-1">
                     <Link href={`/team/${player.school_slug}-varsity-football`} className="hover:text-[var(--txt)] transition-colors">{school.name}</Link>
-                    {player.position && <><span>/</span><span>{player.position}</span></>}
+                    {player.position && (
+                      <>
+                        <span>/</span>
+                        {primaryPositionSlug(player.position)
+                          ? <Link href={`/position/${primaryPositionSlug(player.position)}`} className="hover:text-[var(--txt)] transition-colors">{player.position}</Link>
+                          : <span>{player.position}</span>}
+                      </>
+                    )}
                     <span>/</span>
                     <span className="text-[var(--txt)]">{player.name}</span>
                   </div>

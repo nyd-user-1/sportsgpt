@@ -80,7 +80,8 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
   )
   const title = PATH_TITLE[pathname] ?? (
     pathname.startsWith('/launchpad') ? 'Launchpad' :
-    pathname.startsWith('/chart/')    ? 'Charts'    : undefined
+    pathname.startsWith('/chart/')    ? 'Charts'    :
+    pathname.startsWith('/position/') ? 'Positions' : undefined
   )
 
   const navIdx  = NAV_CYCLE.indexOf(pathname)
