@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Copy, Check, ThumbsUp, ThumbsDown } from 'lucide-react'
+import { Copy, Check, ThumbsUp, ThumbsDown, CalendarDays } from 'lucide-react'
 import type { Message } from '@/hooks/useChat'
+import type { TeamMeta } from '@/components/ChatSeasonsPanel'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mdComponents: any = {
@@ -33,9 +34,10 @@ interface Props {
   message: Message
   isStreaming?: boolean
   onSend?: (content: string) => void
+  onOpenSeasons?: (teams: TeamMeta[]) => void
 }
 
-export function ChatMessage({ message, isStreaming, onSend }: Props) {
+export function ChatMessage({ message, isStreaming, onSend, onOpenSeasons }: Props) {
   const isUser = message.role === 'user'
   const hasContent = message.content.length > 0
 
@@ -122,13 +124,54 @@ export function ChatMessage({ message, isStreaming, onSend }: Props) {
       )}
 
       {!isStreaming && hasContent && (
-        <ChatFooter content={message.content} onSend={onSend} />
+        <ChatFooter content={message.content} onSend={onSend} onOpenSeasons={onOpenSeasons} />
       )}
     </div>
   )
 }
 
-function ChatFooter({ content, onSend }: { content: string; onSend?: (content: string) => void }) {
+// ── Parse team links from response text ──────────────────────────────────────
+function extractTeamMeta(content: string): TeamMeta[] {
+  // Matches [Team Name](/team/school-slug-varsity-football) links
+  const regex = /\[([^\]]+)\]\(\/team\/([^)]+)\)/g
+  const seen = new Map<string, string>()
+  let m
+  while ((m = regex.exec(content)) !== null) {
+    const name = m[1]
+    const fullSlug = m[2] // e.g. "floyd-varsity-football"
+    // Strip the "-varsity-football" suffix to get school_slug
+    const slug = fullSlug.replace(/-varsity-football$/, '')
+    if (!seen.has(slug)) seen.set(slug, name)
+  }
+  return Array.from(seen.entries()).map(([slug, name]) => ({ slug, name }))
+}
+
+// ── Follow-ups extractor ──────────────────────────────────────────────────────
+function extractFollowUps(content: string): string[] {
+  const lines = content.split('\n')
+  const followUps: string[] = []
+  let inSection = false
+  for (const line of lines) {
+    const t = line.trim()
+    if (/^#+\s*(follow.ups?|you (might|may|could) also|related questions)/i.test(t)) {
+      inSection = true; continue
+    }
+    if (inSection && /^[-*]\s+.+\?$/.test(t)) followUps.push(t.replace(/^[-*]\s+/, ''))
+    if (inSection && t.startsWith('#')) break // next section
+  }
+  return followUps.slice(0, 3)
+}
+
+// ── ChatFooter ────────────────────────────────────────────────────────────────
+function ChatFooter({
+  content,
+  onSend,
+  onOpenSeasons,
+}: {
+  content: string
+  onSend?: (content: string) => void
+  onOpenSeasons?: (teams: TeamMeta[]) => void
+}) {
   const [copied,   setCopied]   = useState(false)
   const [feedback, setFeedback] = useState<'good' | 'bad' | null>(null)
 
@@ -138,18 +181,32 @@ function ChatFooter({ content, onSend }: { content: string; onSend?: (content: s
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const followUps = extractFollowUps(content)
+  const followUps  = extractFollowUps(content)
+  const teamsMeta  = extractTeamMeta(content)
+  const hasTeams   = teamsMeta.length > 0
 
   return (
     <>
+      {/* Action bar */}
       <div className="pt-3 mt-1 border-t border-[var(--border)]">
-        <div className="flex items-center gap-1">
-          <button onClick={handleCopy}
-            className="inline-flex items-center justify-center h-8 w-8 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-            title="Copy response">
-            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-          </button>
+        <div className="flex items-center gap-1.5 flex-wrap">
+          {/* Seasons chip */}
+          {hasTeams && onOpenSeasons && (
+            <button
+              onClick={() => onOpenSeasons(teamsMeta)}
+              className="flex items-center gap-1.5 h-7 px-2.5 rounded-full border border-[var(--border)] bg-[var(--inp-bg)] text-[var(--txt2)] hover:text-[#033882] hover:border-[#033882]/40 transition-colors text-xs font-medium"
+            >
+              <CalendarDays className="h-3.5 w-3.5" />
+              Seasons
+            </button>
+          )}
+
           <div className="flex items-center gap-1 ml-auto">
+            <button onClick={handleCopy}
+              className="inline-flex items-center justify-center h-8 w-8 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+              title="Copy response">
+              {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+            </button>
             <button onClick={() => setFeedback(feedback === 'good' ? null : 'good')}
               className={`inline-flex items-center justify-center h-8 w-8 rounded-md transition-colors ${feedback === 'good' ? 'text-green-600 bg-green-50 dark:bg-green-900/20' : 'text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)]'}`}>
               <ThumbsUp className="h-4 w-4" />
@@ -160,30 +217,23 @@ function ChatFooter({ content, onSend }: { content: string; onSend?: (content: s
             </button>
           </div>
         </div>
+
+        {/* Follow-ups */}
         {followUps.length > 0 && onSend && (
-          <div className="mt-3 divide-y divide-[var(--border)]">
-            {followUps.map((q, i) => (
-              <button key={i} onClick={() => onSend(q)}
-                className="flex w-full items-start py-2 text-left text-sm text-[var(--txt2)] hover:text-[#033882] transition-colors">
-                {q}
-              </button>
-            ))}
+          <div className="mt-3">
+            <p className="text-[11px] font-semibold text-[var(--muted)] uppercase tracking-wide mb-2">Follow-ups</p>
+            <div className="divide-y divide-[var(--border)] rounded-xl border border-[var(--border)] overflow-hidden">
+              {followUps.map((q, i) => (
+                <button key={i} onClick={() => onSend(q)}
+                  className="flex w-full items-center gap-2 px-3.5 py-2.5 text-left text-sm text-[var(--txt2)] hover:bg-[var(--inp-bg)] hover:text-[#033882] transition-colors">
+                  <span className="text-[var(--muted)] shrink-0 text-base leading-none">↳</span>
+                  <span>{q}</span>
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
     </>
   )
-}
-
-function extractFollowUps(content: string): string[] {
-  const lines = content.split('\n')
-  const followUps: string[] = []
-  let inSection = false
-  for (const line of lines) {
-    const t = line.trim()
-    if (/follow.up|you (might|may|could) also (ask|want)|related questions/i.test(t)) { inSection = true; continue }
-    if (inSection && /^[-*]\s+.+\?$/.test(t)) followUps.push(t.replace(/^[-*]\s+/, ''))
-    if (inSection && t === '' && followUps.length > 0) break
-  }
-  return followUps.slice(0, 3)
 }

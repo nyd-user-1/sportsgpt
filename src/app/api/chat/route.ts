@@ -35,7 +35,10 @@ Always display as school-year format (e.g. "2025-26 season").
 - I: Brentwood, Commack, Connetquot, Longwood, Sachem East, Sachem North, Ward Melville, William Floyd
 - II: Hauppauge, Hills East, Hills West, Huntington, Northport, Smithtown East, Smithtown West, Walt Whitman, West Islip
 - III: Bay Shore, Bayport-Blue Point, Centereach, East Islip, Floyd, Harborfields, Kings Park, Miller Place, Rocky Point, and others
-- IV: Center Moriches, East Hampton, Glenn, Hampton Bays, Islip, Port Jefferson, Southampton, Wyandanch, and others`
+- IV: Center Moriches, East Hampton, Glenn, Hampton Bays, Islip, Port Jefferson, Southampton, Wyandanch, and others
+
+## Follow-ups (REQUIRED)
+ALWAYS end every response with a "## Follow-ups" section. List exactly 3 follow-up questions the user might want to ask next, as bullet points starting with "- " and ending with "?". Keep them concise and specific to what was just discussed.`
 
 // Convert Anthropic tool defs → OpenAI function-calling format
 const OAI_TOOLS: OpenAI.Chat.ChatCompletionTool[] = TOOLS.map(t => ({

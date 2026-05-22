@@ -16,7 +16,7 @@ export const CHAT_MODELS = [
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
 
-export const DEFAULT_MODEL: ChatModelId = 'claude-haiku-4-5-20251001'
+export const DEFAULT_MODEL: ChatModelId = 'gpt-4o'
 
 export interface ChatInputHandle {
   injectPrompt: (text: string) => void

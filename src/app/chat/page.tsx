@@ -1,15 +1,15 @@
 'use client'
 
-import { useRef, useEffect, useCallback } from 'react'
+import { useRef, useEffect, useCallback, useState } from 'react'
 import { AppLogo } from '@/components/AppLogo'
 import { AppLayout } from '@/components/AppLayout'
 import { ChatInput, type ChatInputHandle, type ChatModelId, DEFAULT_MODEL } from '@/components/ChatInput'
 import { ChatMessage } from '@/components/ChatMessage'
+import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
 import { CardCarouselExplore } from '@/components/CardCarouselExplore'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 import { useChat } from '@/hooks/useChat'
 import { ArrowDown } from 'lucide-react'
-import { useState } from 'react'
 
 export default function ChatPage() {
   const { messages, isStreaming, sendMessage, stopStreaming } = useChat()
@@ -19,6 +19,15 @@ export default function ChatPage() {
   const isNearBottomRef = useRef(true)
   const [showScrollBtn, setShowScrollBtn] = useState(false)
   const lastUserMsgRef = useRef<HTMLDivElement>(null)
+
+  // Seasons panel state
+  const [panelTeams, setPanelTeams] = useState<TeamMeta[]>([])
+  const [panelOpen, setPanelOpen] = useState(false)
+
+  const openSeasons = useCallback((teams: TeamMeta[]) => {
+    setPanelTeams(teams)
+    setPanelOpen(true)
+  }, [])
 
   const hasMessages = messages.length > 0
 
@@ -41,7 +50,7 @@ export default function ChatPage() {
     el.scrollTo({ top: Math.max(0, targetScrollTop), behavior: 'smooth' })
   }, [messages])
 
-  // Auto-scroll when near bottom; show button when content pushed off-screen during streaming
+  // Auto-scroll when near bottom
   useEffect(() => {
     const el = scrollRef.current
     if (!el) return
@@ -115,6 +124,7 @@ export default function ChatPage() {
                     message={msg}
                     isStreaming={isStreaming && msg.role === 'assistant' && i === messages.length - 1}
                     onSend={sendMessage}
+                    onOpenSeasons={openSeasons}
                   />
                 </div>
               )
@@ -153,6 +163,13 @@ export default function ChatPage() {
           </div>
         </div>
       </div>
+
+      {/* Seasons drill-down panel */}
+      <ChatSeasonsPanel
+        open={panelOpen}
+        onClose={() => setPanelOpen(false)}
+        teams={panelTeams}
+      />
     </AppLayout>
   )
 }
