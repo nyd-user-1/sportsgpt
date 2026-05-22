@@ -28,12 +28,13 @@ function friendlyError(raw: string): string {
 async function fetchStream(
   prevMessages: { role: 'user' | 'assistant'; content: string }[],
   signal: AbortSignal,
+  model: string,
   retries = 1,
 ): Promise<ReadableStreamDefaultReader<Uint8Array>> {
   const res = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ messages: prevMessages }),
+    body: JSON.stringify({ messages: prevMessages, model }),
     signal,
   })
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -47,7 +48,7 @@ async function fetchStream(
   const text = new TextDecoder().decode(first.value)
   if (text.includes('overloaded_error') && retries > 0) {
     await new Promise(r => setTimeout(r, 1500))
-    return fetchStream(prevMessages, signal, retries - 1)
+    return fetchStream(prevMessages, signal, model, retries - 1)
   }
 
   // Return a reader that replays the first chunk
@@ -69,7 +70,7 @@ export function useChat() {
   const [isStreaming, setIsStreaming] = useState(false)
   const abortRef = useRef<AbortController | null>(null)
 
-  const sendMessage = useCallback(async (content: string) => {
+  const sendMessage = useCallback(async (content: string, model = 'claude-haiku-4-5-20251001') => {
     const userMsg: Message = { id: generateId(), role: 'user', content }
     setMessages(prev => [...prev, userMsg])
     setIsStreaming(true)
@@ -83,7 +84,7 @@ export function useChat() {
     abortRef.current = controller
 
     try {
-      const reader = await fetchStream(prevMessages, controller.signal)
+      const reader = await fetchStream(prevMessages, controller.signal, model)
 
       const decoder = new TextDecoder()
       let built = ''

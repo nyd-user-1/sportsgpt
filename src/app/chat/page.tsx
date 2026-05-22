@@ -78,7 +78,7 @@ export default function ChatPage() {
               <div className="relative">
                 <ChatInput
                   ref={chatInputRef}
-                  onSend={sendMessage}
+                  onSend={(msg, model) => sendMessage(msg, model)}
                   onStop={stopStreaming}
                   isStreaming={isStreaming}
                 />
@@ -140,7 +140,7 @@ export default function ChatPage() {
           <div className="px-4 py-3">
             <div className="mx-auto max-w-3xl">
               <ChatInput
-                onSend={sendMessage}
+                onSend={(msg, model) => sendMessage(msg, model)}
                 onStop={stopStreaming}
                 isStreaming={isStreaming}
               />

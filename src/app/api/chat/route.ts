@@ -59,8 +59,9 @@ type AnthropicMessage = Anthropic.Messages.MessageParam
 type OAIMessage       = OpenAI.Chat.ChatCompletionMessageParam
 
 export async function POST(req: NextRequest) {
-  const { messages } = await req.json() as {
+  const { messages, model = 'claude-haiku-4-5-20251001' } = await req.json() as {
     messages: { role: 'user' | 'assistant'; content: string }[]
+    model?: string
   }
 
   if (!messages?.length) {
@@ -82,19 +83,19 @@ export async function POST(req: NextRequest) {
         controller.close()
       }
 
+      const isAnthropic = model.startsWith('claude-')
+      const isOpenAI    = model.startsWith('gpt-')
+      const isGemini    = model.startsWith('gemini-')
+
       // ── 1. Anthropic (Claude) with tool use ──────────────────────────────
-      if (anthropicKey) {
+      if (isAnthropic && anthropicKey) {
         const client = new Anthropic({ apiKey: anthropicKey })
         const conversationMsgs: AnthropicMessage[] = messages.map(m => ({
           role: m.role, content: m.content,
         }))
         let overloaded = false
 
-        // Try Haiku first (lighter, less likely to overload), then Sonnet
-        const claudeModels = ['claude-haiku-4-5-20251001', 'claude-sonnet-4-6']
-
         for (let iter = 0; iter < 5; iter++) {
-          const model = iter === 0 ? claudeModels[0] : claudeModels[claudeModels.length - 1]
           let response: Anthropic.Messages.Message
           try {
             response = await client.messages.create({
@@ -136,8 +137,8 @@ export async function POST(req: NextRequest) {
         console.log('[chat] Claude overloaded — trying OpenAI')
       }
 
-      // ── 2. OpenAI (gpt-4o-mini) with tool use ────────────────────────────
-      if (openaiKey) {
+      // ── 2. OpenAI with tool use ───────────────────────────────────────────
+      if ((isOpenAI || isAnthropic) && openaiKey) {
         try {
           const oai = new OpenAI({ apiKey: openaiKey })
           const oaiMsgs: OAIMessage[] = [
@@ -146,8 +147,9 @@ export async function POST(req: NextRequest) {
           ]
 
           for (let iter = 0; iter < 5; iter++) {
+            const oaiModel = isOpenAI ? model : 'gpt-4o-mini'
             const response = await oai.chat.completions.create({
-              model: 'gpt-4o-mini',
+              model: oaiModel,
               max_tokens: 2048,
               tools: OAI_TOOLS,
               tool_choice: 'auto',
@@ -182,7 +184,7 @@ export async function POST(req: NextRequest) {
       }
 
       // ── 3. Gemini via OpenAI-compatible endpoint ──────────────────────────
-      if (geminiKey) {
+      if ((isGemini || isAnthropic || isOpenAI) && geminiKey) {
         try {
           const gemini = new OpenAI({
             apiKey:  geminiKey,
@@ -194,8 +196,9 @@ export async function POST(req: NextRequest) {
           ]
 
           for (let iter = 0; iter < 5; iter++) {
+            const geminiModel = isGemini ? model : 'gemini-2.0-flash'
             const response = await gemini.chat.completions.create({
-              model: 'gemini-2.0-flash',
+              model: geminiModel,
               max_tokens: 2048,
               tools: OAI_TOOLS,
               tool_choice: 'auto',
