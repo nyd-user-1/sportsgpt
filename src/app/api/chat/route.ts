@@ -71,6 +71,7 @@ export async function POST(req: NextRequest) {
   const anthropicKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
   const openaiKey    = process.env.OPENAI_API_KEY_SPORTSGPT
   const geminiKey    = process.env.Gemini_API_Key
+  const grokKey      = process.env.GROK_API_KEY
 
   const encoder = new TextEncoder()
 
@@ -86,6 +87,7 @@ export async function POST(req: NextRequest) {
       const isAnthropic = model.startsWith('claude-')
       const isOpenAI    = model.startsWith('gpt-')
       const isGemini    = model.startsWith('gemini-')
+      const isGrok      = model.startsWith('grok-')
 
       // ── 1. Anthropic (Claude) with tool use ──────────────────────────────
       if (isAnthropic && anthropicKey) {
@@ -222,6 +224,37 @@ export async function POST(req: NextRequest) {
                   const result = await executeToolCall(fn.name, JSON.parse(fn.arguments) as Record<string, unknown>)
                   geminiMsgs.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(result) })
                 })
+            )
+          }
+          done(); return
+        } catch (err) {
+          send(`*Error: ${(err as Error).message}*`)
+        }
+      }
+
+      // ── 4. Grok (xAI) via OpenAI-compatible endpoint ─────────────────────
+      if ((isGrok || isAnthropic || isOpenAI || isGemini) && grokKey) {
+        try {
+          const xai = new OpenAI({ apiKey: grokKey, baseURL: 'https://api.x.ai/v1' })
+          const xaiMsgs: OAIMessage[] = [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...messages.map(m => ({ role: m.role as 'user' | 'assistant', content: m.content })),
+          ]
+          const xaiModel = isGrok ? model : 'grok-3-mini-fast'
+          for (let iter = 0; iter < 5; iter++) {
+            const response = await xai.chat.completions.create({
+              model: xaiModel, max_tokens: 2048, tools: OAI_TOOLS, tool_choice: 'auto', messages: xaiMsgs,
+            })
+            const msg = response.choices[0]?.message
+            if (!msg) break
+            xaiMsgs.push(msg)
+            if (!msg.tool_calls?.length) { if (msg.content) send(msg.content); done(); return }
+            await Promise.all(
+              msg.tool_calls.filter(tc => tc.type === 'function').map(async (tc) => {
+                const fn = (tc as { id: string; type: 'function'; function: { name: string; arguments: string } }).function
+                const result = await executeToolCall(fn.name, JSON.parse(fn.arguments) as Record<string, unknown>)
+                xaiMsgs.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(result) })
+              })
             )
           }
           done(); return

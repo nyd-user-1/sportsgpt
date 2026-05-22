@@ -11,6 +11,7 @@ export const CHAT_MODELS = [
   { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI'    },
   { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI'    },
   { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini'    },
+  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI'       },
 ] as const
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
@@ -76,29 +77,7 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
   const currentModel = CHAT_MODELS.find(m => m.id === selectedModel) ?? CHAT_MODELS[0]
 
   return (
-    <div className="relative flex flex-col rounded-2xl border border-[var(--border)] bg-[var(--inp-bg)] px-4 pt-3 pb-3 transition-all gap-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-
-      {/* Model dropdown — opens upward */}
-      {menuOpen && (
-        <div
-          ref={menuRef}
-          className="absolute bottom-full right-4 mb-2 w-52 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50"
-        >
-          {CHAT_MODELS.map((m, i) => (
-            <button
-              key={m.id}
-              onClick={() => { setSelectedModel(m.id); setMenuOpen(false) }}
-              className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
-            >
-              <span className="flex-1 text-left">
-                <span className="font-medium text-[var(--txt)]">{m.label}</span>
-                <span className="ml-2 text-[11px] text-[var(--muted)]">{m.provider}</span>
-              </span>
-              {m.id === selectedModel && <Check className="h-3.5 w-3.5 text-[#033882] shrink-0" />}
-            </button>
-          ))}
-        </div>
-      )}
+    <div className="flex flex-col rounded-2xl border border-[var(--border)] bg-[var(--inp-bg)] px-4 pt-3 pb-3 transition-all gap-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
 
       {/* Textarea */}
       <div className="flex items-start">
@@ -125,19 +104,38 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
         </button>
         <div className="flex-1" />
 
-        {/* Model selector button */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen(o => !o)}
-          className={`mr-2 flex items-center gap-1 rounded-lg px-2 py-1 text-[11px] font-medium transition-colors ${
-            menuOpen
-              ? 'bg-[#033882]/10 text-[#033882]'
-              : 'text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
-          }`}
-        >
-          <span>{currentModel.label}</span>
-          <ChevronUp className={`h-3 w-3 transition-transform ${menuOpen ? '' : 'rotate-180'}`} />
-        </button>
+        {/* Model selector */}
+        <div className="relative mr-2" ref={menuRef}>
+          {menuOpen && (
+            <div className="absolute bottom-full right-0 mb-2 w-52 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
+              {CHAT_MODELS.map((m, i) => (
+                <button
+                  key={m.id}
+                  onClick={() => { setSelectedModel(m.id); setMenuOpen(false) }}
+                  className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
+                >
+                  <span className="flex-1 text-left">
+                    <span className="font-medium text-[var(--txt)]">{m.label}</span>
+                    <span className="ml-2 text-[11px] text-[var(--muted)]">{m.provider}</span>
+                  </span>
+                  {m.id === selectedModel && <Check className="h-3.5 w-3.5 text-[#033882] shrink-0" />}
+                </button>
+              ))}
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(o => !o)}
+            className={`flex items-center gap-1 rounded-lg px-2 py-1 text-[11px] font-medium transition-colors ${
+              menuOpen
+                ? 'bg-[#033882]/10 text-[#033882]'
+                : 'text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
+            }`}
+          >
+            <span>{currentModel.label}</span>
+            <ChevronUp className={`h-3 w-3 transition-transform ${menuOpen ? '' : 'rotate-180'}`} />
+          </button>
+        </div>
 
         {/* Send / Stop */}
         <button
