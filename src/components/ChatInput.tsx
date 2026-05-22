@@ -1,17 +1,18 @@
 'use client'
 
 import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from 'react'
+import Image from 'next/image'
 import { ArrowUp, Square, MapPin, Mic, Check, ChevronUp } from 'lucide-react'
 import { PlusMenu } from '@/components/PlusMenu'
 import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 
 export const CHAT_MODELS = [
-  { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic' },
-  { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic' },
-  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI'    },
-  { id: 'gpt-4o',                    label: 'ChatGPT',       provider: 'OpenAI'    },
-  { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini'    },
-  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI'       },
+  { id: 'claude-haiku-4-5-20251001', label: 'Claude Haiku',  provider: 'Anthropic', logo: '/anthropic-icon.webp' },
+  { id: 'claude-sonnet-4-6',         label: 'Claude Sonnet', provider: 'Anthropic', logo: '/anthropic-icon.webp' },
+  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: '/openai-logo.avif'   },
+  { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: '/openai-logo.avif'   },
+  { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: '/gemini-icon.webp'   },
+  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: '/grok logo.svg'      },
 ] as const
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
@@ -111,13 +112,14 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
         {/* Model selector */}
         <div className="relative mr-2" ref={menuRef}>
           {menuOpen && (
-            <div className="absolute bottom-full right-0 mb-2 w-52 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
+            <div className="absolute bottom-full right-0 mb-2 w-56 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
               {CHAT_MODELS.map((m, i) => (
                 <button
                   key={m.id}
                   onClick={() => { setSelectedModel(m.id); setMenuOpen(false) }}
                   className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
                 >
+                  <Image src={m.logo} alt={m.provider} width={18} height={18} className="rounded-sm object-contain shrink-0" />
                   <span className="flex-1 text-left">
                     <span className="font-medium text-[var(--txt)]">{m.label}</span>
                     <span className="ml-2 text-[11px] text-[var(--muted)]">{m.provider}</span>
@@ -130,12 +132,13 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
           <button
             type="button"
             onClick={() => setMenuOpen(o => !o)}
-            className={`flex items-center gap-1 rounded-lg px-2 py-1 text-[11px] font-medium transition-colors ${
+            className={`flex items-center gap-1.5 rounded-lg px-2 py-1 text-[11px] font-medium transition-colors ${
               menuOpen
                 ? 'bg-[#033882]/10 text-[#033882]'
                 : 'text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
             }`}
           >
+            <Image src={currentModel.logo} alt={currentModel.provider} width={14} height={14} className="rounded-sm object-contain" />
             <span>{currentModel.label}</span>
             <ChevronUp className={`h-3 w-3 transition-transform ${menuOpen ? '' : 'rotate-180'}`} />
           </button>
