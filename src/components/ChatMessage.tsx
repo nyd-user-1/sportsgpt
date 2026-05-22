@@ -132,15 +132,15 @@ export function ChatMessage({ message, isStreaming, onSend, onOpenSeasons }: Pro
 
 // ── Parse team links from response text ──────────────────────────────────────
 function extractTeamMeta(content: string): TeamMeta[] {
-  // Matches [Team Name](/team/school-slug-varsity-football) links
-  const regex = /\[([^\]]+)\]\(\/team\/([^)]+)\)/g
+  // Matches [Team Name](/team/anything) — handles both full slug and school_slug
+  const regex = /\[([^\]]+)\]\(\/team\/([^)\s]+)\)/g
   const seen = new Map<string, string>()
   let m
   while ((m = regex.exec(content)) !== null) {
     const name = m[1]
-    const fullSlug = m[2] // e.g. "floyd-varsity-football"
-    // Strip the "-varsity-football" suffix to get school_slug
-    const slug = fullSlug.replace(/-varsity-football$/, '')
+    const rawSlug = m[2]
+    // Strip -varsity-football suffix if present to get school_slug
+    const slug = rawSlug.replace(/-varsity-football$/, '')
     if (!seen.has(slug)) seen.set(slug, name)
   }
   return Array.from(seen.entries()).map(([slug, name]) => ({ slug, name }))

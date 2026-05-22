@@ -97,7 +97,7 @@ export function PlusMenu({ onSelect }: PlusMenuProps) {
 
       {/* Main panel */}
       {open && panel === 'main' && (
-        <div className="absolute left-0 top-full mt-2 w-56 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden z-20">
+        <div className="absolute left-0 bottom-full mb-2 w-56 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden z-20">
           {[
             { key: 'models',    label: 'Models',           icon: <Cpu className="h-5 w-5" />       },
             { key: 'questions', label: 'Sample Questions',  icon: <Lightbulb className="h-5 w-5" /> },
@@ -119,7 +119,7 @@ export function PlusMenu({ onSelect }: PlusMenuProps) {
 
       {/* Drill-down panel */}
       {open && panel !== 'main' && (
-        <div className="absolute left-0 top-full mt-2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden z-20">
+        <div className="absolute left-0 bottom-full mb-2 w-80 max-w-[calc(100vw-2rem)] rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden z-20">
           {/* Search header */}
           <div className="flex items-center gap-2 px-3 py-2.5 border-b border-[var(--border)]">
             <button onClick={goBack} className="text-[var(--muted)] hover:text-[var(--txt)] shrink-0">
