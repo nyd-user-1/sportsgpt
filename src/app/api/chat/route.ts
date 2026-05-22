@@ -43,9 +43,20 @@ Example: [William Floyd](/team/floyd-varsity-football) had a standout season, le
 - **Division III**: Bay Shore, Bayport-Blue Point, Centereach, East Islip, Floyd, Harborfields, Kings Park, Miller Place, Rocky Point, and others
 - **Division IV**: Center Moriches, East Hampton, Glenn, Hampton Bays, Islip, Port Jefferson, Southampton, Wyandanch, and others`
 
+// Convert Anthropic tool definitions → OpenAI function-calling format
+const OAI_TOOLS: OpenAI.Chat.ChatCompletionTool[] = TOOLS.map(t => ({
+  type: 'function' as const,
+  function: {
+    name:        t.name,
+    description: t.description,
+    parameters:  t.input_schema,
+  },
+}))
+
 export const dynamic = 'force-dynamic'
 
 type AnthropicMessage = Anthropic.Messages.MessageParam
+type OAIMessage       = OpenAI.Chat.ChatCompletionMessageParam
 
 export async function POST(req: NextRequest) {
   const { messages } = await req.json() as {
@@ -57,10 +68,10 @@ export async function POST(req: NextRequest) {
   }
 
   const anthropicKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
-  const openaiKey   = process.env.OPENAI_API_KEY_SPORTSGPT
+  const openaiKey    = process.env.OPENAI_API_KEY_SPORTSGPT
+  const geminiKey    = process.env.Gemini_API_Key
 
   const encoder = new TextEncoder()
-  const userMessages: AnthropicMessage[] = messages.map(m => ({ role: m.role, content: m.content }))
 
   const readable = new ReadableStream({
     async start(controller) {
@@ -71,10 +82,12 @@ export async function POST(req: NextRequest) {
         controller.close()
       }
 
-      // ── Anthropic path with tool use ──────────────────────────────────────
+      // ── 1. Anthropic (Claude) with tool use ──────────────────────────────
       if (anthropicKey) {
         const client = new Anthropic({ apiKey: anthropicKey })
-        let conversationMsgs: AnthropicMessage[] = [...userMessages]
+        const conversationMsgs: AnthropicMessage[] = messages.map(m => ({
+          role: m.role, content: m.content,
+        }))
         let overloaded = false
 
         for (let iter = 0; iter < 5; iter++) {
@@ -90,69 +103,127 @@ export async function POST(req: NextRequest) {
           } catch (err) {
             const msg = (err as Error).message ?? ''
             if (msg.includes('overloaded')) { overloaded = true; break }
-            send(`*Error: ${msg}*`)
-            done()
-            return
+            send(`*Error: ${msg}*`); done(); return
           }
 
-          // Send any text in this round
           for (const block of response.content) {
             if (block.type === 'text' && block.text) send(block.text)
           }
-
-          // If Claude is done, finish
           if (response.stop_reason !== 'tool_use') { done(); return }
 
-          // Execute all tool calls in parallel
           const toolUseBlocks = response.content.filter(
             (b): b is Anthropic.Messages.ToolUseBlock => b.type === 'tool_use'
           )
           const toolResults = await Promise.all(
-            toolUseBlocks.map(async (block) => {
-              const result = await executeToolCall(block.name, block.input as Record<string, unknown>)
-              return {
-                type: 'tool_result' as const,
-                tool_use_id: block.id,
-                content: JSON.stringify(result),
-              }
-            })
+            toolUseBlocks.map(async (block) => ({
+              type: 'tool_result' as const,
+              tool_use_id: block.id,
+              content: JSON.stringify(
+                await executeToolCall(block.name, block.input as Record<string, unknown>)
+              ),
+            }))
           )
 
-          conversationMsgs = [
-            ...conversationMsgs,
-            { role: 'assistant' as const, content: response.content },
-            { role: 'user' as const, content: toolResults },
-          ]
+          conversationMsgs.push({ role: 'assistant', content: response.content })
+          conversationMsgs.push({ role: 'user',      content: toolResults })
         }
 
         if (!overloaded) { done(); return }
-        console.log('[chat] Anthropic overloaded — falling back to OpenAI')
+        console.log('[chat] Claude overloaded — trying OpenAI')
       }
 
-      // ── OpenAI fallback (no tool use, plain completion) ───────────────────
-      if (!openaiKey) {
-        send('*Service temporarily unavailable. Please try again in a moment.*')
-        done()
-        return
-      }
-      try {
-        const oai = new OpenAI({ apiKey: openaiKey })
-        const stream = await oai.chat.completions.create({
-          model: 'gpt-4o-mini',
-          max_tokens: 2048,
-          stream: true,
-          messages: [
+      // ── 2. OpenAI (gpt-4o-mini) with tool use ────────────────────────────
+      if (openaiKey) {
+        try {
+          const oai = new OpenAI({ apiKey: openaiKey })
+          const oaiMsgs: OAIMessage[] = [
             { role: 'system', content: SYSTEM_PROMPT },
             ...messages.map(m => ({ role: m.role as 'user' | 'assistant', content: m.content })),
-          ],
-        })
-        for await (const chunk of stream) {
-          const text = chunk.choices[0]?.delta?.content
-          if (text) send(text)
+          ]
+
+          for (let iter = 0; iter < 5; iter++) {
+            const response = await oai.chat.completions.create({
+              model: 'gpt-4o-mini',
+              max_tokens: 2048,
+              tools: OAI_TOOLS,
+              tool_choice: 'auto',
+              messages: oaiMsgs,
+            })
+
+            const msg = response.choices[0]?.message
+            if (!msg) break
+
+            oaiMsgs.push(msg)
+
+            if (!msg.tool_calls?.length) {
+              if (msg.content) send(msg.content)
+              done(); return
+            }
+
+            // Execute tool calls in parallel
+            await Promise.all(
+              msg.tool_calls
+                .filter(tc => tc.type === 'function')
+                .map(async (tc) => {
+                  const fn = (tc as { id: string; type: 'function'; function: { name: string; arguments: string } }).function
+                  const result = await executeToolCall(fn.name, JSON.parse(fn.arguments) as Record<string, unknown>)
+                  oaiMsgs.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(result) })
+                })
+            )
+          }
+          done(); return
+        } catch (err) {
+          console.log('[chat] OpenAI error:', (err as Error).message, '— trying Gemini')
         }
-      } catch (err) {
-        send(`*Error: ${(err as Error).message}*`)
       }
+
+      // ── 3. Gemini via OpenAI-compatible endpoint ──────────────────────────
+      if (geminiKey) {
+        try {
+          const gemini = new OpenAI({
+            apiKey:  geminiKey,
+            baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
+          })
+          const geminiMsgs: OAIMessage[] = [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...messages.map(m => ({ role: m.role as 'user' | 'assistant', content: m.content })),
+          ]
+
+          for (let iter = 0; iter < 5; iter++) {
+            const response = await gemini.chat.completions.create({
+              model: 'gemini-2.0-flash',
+              max_tokens: 2048,
+              tools: OAI_TOOLS,
+              tool_choice: 'auto',
+              messages: geminiMsgs,
+            })
+
+            const msg = response.choices[0]?.message
+            if (!msg) break
+            geminiMsgs.push(msg)
+
+            if (!msg.tool_calls?.length) {
+              if (msg.content) send(msg.content)
+              done(); return
+            }
+
+            await Promise.all(
+              msg.tool_calls
+                .filter(tc => tc.type === 'function')
+                .map(async (tc) => {
+                  const fn = (tc as { id: string; type: 'function'; function: { name: string; arguments: string } }).function
+                  const result = await executeToolCall(fn.name, JSON.parse(fn.arguments) as Record<string, unknown>)
+                  geminiMsgs.push({ role: 'tool', tool_call_id: tc.id, content: JSON.stringify(result) })
+                })
+            )
+          }
+          done(); return
+        } catch (err) {
+          send(`*Error: ${(err as Error).message}*`)
+        }
+      }
+
+      send('*Service temporarily unavailable. Please try again in a moment.*')
       done()
     },
   })
