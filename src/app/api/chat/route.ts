@@ -90,11 +90,15 @@ export async function POST(req: NextRequest) {
         }))
         let overloaded = false
 
+        // Try Haiku first (lighter, less likely to overload), then Sonnet
+        const claudeModels = ['claude-haiku-4-5-20251001', 'claude-sonnet-4-6']
+
         for (let iter = 0; iter < 5; iter++) {
+          const model = iter === 0 ? claudeModels[0] : claudeModels[claudeModels.length - 1]
           let response: Anthropic.Messages.Message
           try {
             response = await client.messages.create({
-              model: 'claude-sonnet-4-6',
+              model,
               max_tokens: 2048,
               system: SYSTEM_PROMPT,
               tools: TOOLS,
