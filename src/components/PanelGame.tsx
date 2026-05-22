@@ -162,7 +162,7 @@ function BoxScore({ game, quarterRows }: { game: GamePanelData['game']; quarterR
           <span className="text-center">Q4</span>
           <span className="text-center">F</span>
         </div>
-        {quarterRows.map(r => {
+        {[...quarterRows].sort((a, b) => a.team_slug === game.home_team_slug ? -1 : 1).map(r => {
           const isHome = r.team_slug === game.home_team_slug
           const name   = isHome ? game.home_name : game.away_name
           const logo   = SCHOOL_LOGOS[isHome ? game.home_school : game.away_school]
