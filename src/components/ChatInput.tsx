@@ -26,14 +26,18 @@ interface Props {
   onSend?: (message: string, model: ChatModelId) => void
   onStop?: () => void
   isStreaming?: boolean
+  selectedModel?: ChatModelId
+  onModelChange?: (model: ChatModelId) => void
 }
 
 export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
-  { onSend, onStop, isStreaming = false },
+  { onSend, onStop, isStreaming = false, selectedModel: controlledModel, onModelChange },
   ref
 ) {
   const [input, setInput] = useState('')
-  const [selectedModel, setSelectedModel] = useState<ChatModelId>(DEFAULT_MODEL)
+  const [internalModel, setInternalModel] = useState<ChatModelId>(DEFAULT_MODEL)
+  const selectedModel = controlledModel ?? internalModel
+  const setSelectedModel = (m: ChatModelId) => { setInternalModel(m); onModelChange?.(m) }
   const [menuOpen, setMenuOpen] = useState(false)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const menuRef = useRef<HTMLDivElement>(null)

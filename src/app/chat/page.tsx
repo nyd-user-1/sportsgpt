@@ -3,7 +3,7 @@
 import { useRef, useEffect, useCallback } from 'react'
 import { AppLogo } from '@/components/AppLogo'
 import { AppLayout } from '@/components/AppLayout'
-import { ChatInput, type ChatInputHandle } from '@/components/ChatInput'
+import { ChatInput, type ChatInputHandle, type ChatModelId, DEFAULT_MODEL } from '@/components/ChatInput'
 import { ChatMessage } from '@/components/ChatMessage'
 import { CardCarouselExplore } from '@/components/CardCarouselExplore'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
@@ -13,6 +13,7 @@ import { useState } from 'react'
 
 export default function ChatPage() {
   const { messages, isStreaming, sendMessage, stopStreaming } = useChat()
+  const [selectedModel, setSelectedModel] = useState<ChatModelId>(DEFAULT_MODEL)
   const scrollRef = useRef<HTMLDivElement>(null)
   const chatInputRef = useRef<ChatInputHandle>(null)
   const isNearBottomRef = useRef(true)
@@ -81,6 +82,8 @@ export default function ChatPage() {
                   onSend={(msg, model) => sendMessage(msg, model)}
                   onStop={stopStreaming}
                   isStreaming={isStreaming}
+                  selectedModel={selectedModel}
+                  onModelChange={setSelectedModel}
                 />
                 <p className="text-center text-[10px] text-[var(--muted2)] mt-2">
                   {APP_TAGLINE} · Design &amp; Development by NYSgpt
@@ -88,7 +91,7 @@ export default function ChatPage() {
               </div>
 
               <div className="max-w-[636px] mx-auto w-full">
-                <CardCarouselExplore onTeamClick={(prompt) => sendMessage(prompt)} />
+                <CardCarouselExplore onTeamClick={(prompt) => sendMessage(prompt, selectedModel)} />
               </div>
 
             </div>
@@ -143,6 +146,8 @@ export default function ChatPage() {
                 onSend={(msg, model) => sendMessage(msg, model)}
                 onStop={stopStreaming}
                 isStreaming={isStreaming}
+                selectedModel={selectedModel}
+                onModelChange={setSelectedModel}
               />
             </div>
           </div>

@@ -19,7 +19,7 @@ export async function GET(
   if (!raw) return new Response('', { status: 204 })
 
   const stream = anthropic.messages.stream({
-    model: 'claude-haiku-4-5',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 1024,
     system: 'You are a high school sports beat reporter. First, write a punchy newspaper-style article headline (one line, no quotes, no period). Then a blank line. Then rewrite the game summary in a vivid, engaging voice — active verbs, player-first storytelling, sense of atmosphere. 2-3 short paragraphs. End with the final score in bold. Keep all stats accurate. Do not use markdown headings (#). Use **bold** only for the final score line.',
     messages: [{ role: 'user', content: raw }],
@@ -31,8 +31,17 @@ export async function GET(
       stream.on('text', (text) => {
         controller.enqueue(encoder.encode(text))
       })
-      await stream.finalMessage()
-      controller.close()
+      stream.on('error', (err) => {
+        console.error('[highlights] stream error:', err.message)
+        controller.enqueue(encoder.encode(`\n\n*Unable to generate highlights: ${err.message}*`))
+        controller.close()
+      })
+      try {
+        await stream.finalMessage()
+      } catch (err) {
+        console.error('[highlights] finalMessage error:', (err as Error).message)
+      }
+      try { controller.close() } catch { /* already closed */ }
     },
   })
 
