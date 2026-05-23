@@ -5,14 +5,14 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ArrowRight, ChartSpline, ChevronLeft, ChevronRight, FileUser, Image as ImageIcon, MessageCircle } from 'lucide-react'
+import { ArrowRight, ChartSpline, FileUser, MessageCircle } from 'lucide-react'
+import { ButtonGroup } from '@/components/ButtonGroup'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { AppPanel } from '@/components/AppPanel'
 import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelChat } from '@/components/PanelChat'
-import { PanelImage } from '@/components/PanelImage'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { cn } from '@/lib/utils'
@@ -490,7 +490,6 @@ export function GameShell({
       .catch(() => {})
       .finally(() => setLoadingHighlights(false))
   }, [gameIdNum, box])
-  const [photoOpen,  setPhotoOpen]    = useState(false)
   const [chartsOpen, setChartsOpen]   = useState(false)
   const [playerOpen, setPlayerOpen]   = useState(false)
   const [chatOpen,   setChatOpen]     = useState(false)
@@ -529,10 +528,7 @@ export function GameShell({
     return allStats.filter(p => p.stat_type === statType && cleanName(p.team_name).toLowerCase() === schoolName)
   }
 
-  // Header styling (matches team/division pages)
   const homeLogo = SCHOOL_LOGOS[homeSchool]
-  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[#033882] hover:bg-[var(--inp-bg)] transition-colors'
-  const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
 
   const mobileHeader = (
     <span className="text-[15px] font-bold text-[var(--txt)] truncate">{awayName} at {homeName}</span>
@@ -561,34 +557,15 @@ export function GameShell({
                   <span className="font-medium" style={{ color: ACCENT_COLOR }}>{fmtDate(game.game_date as string | Date)}</span>
                 </div>
               </div>
-              <div className="hidden sm:flex items-center shrink-0">
-                <div className="inline-flex -space-x-px">
-                  <div className="relative group">
-                    <button onClick={() => prevGameId && router.push(`/game/${prevGameId}?ref=${refSlug}`)} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></button>
-                    <span className={tip}>Previous game</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setPhotoOpen(v => !v)} className={`${btn} ${photoOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><ImageIcon className="h-4 w-4" /></button>
-                    <span className={tip}>Photos</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><ChartSpline className="h-4 w-4" /></button>
-                    <span className={tip}>Charts</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setPlayerOpen(v => !v)} className={`${btn} ${playerOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><FileUser className="h-4 w-4" /></button>
-                    <span className={tip}>Game Log</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? 'bg-[var(--inp-bg)] text-[#033882]' : ''}`}><MessageCircle className="h-4 w-4" /></button>
-                    <span className={tip}>Ask SportsGPT</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => nextGameId && router.push(`/game/${nextGameId}?ref=${refSlug}`)} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></button>
-                    <span className={tip}>Next game</span>
-                  </div>
-                </div>
-              </div>
+              <ButtonGroup
+                onPrev={() => prevGameId && router.push(`/game/${prevGameId}?ref=${refSlug}`)}
+                onNext={() => nextGameId && router.push(`/game/${nextGameId}?ref=${refSlug}`)}
+                buttons={[
+                  { icon: ChartSpline,   tooltip: 'Charts',         active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
+                  { icon: FileUser,      tooltip: 'Players',        active: playerOpen, onClick: () => setPlayerOpen(v => !v) },
+                  { icon: MessageCircle, tooltip: 'Ask SportsGPT',  active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                ]}
+              />
             </div>
             </RevealFx>
 
@@ -670,7 +647,6 @@ export function GameShell({
         </div>
       </AppLayout>
 
-      <PanelImage open={photoOpen} onClose={() => setPhotoOpen(false)} homeSchool={homeSchool} homeName={homeName} awaySchool={awaySchool} awayName={awayName} />
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Game Log">
         <PanelPlayers
