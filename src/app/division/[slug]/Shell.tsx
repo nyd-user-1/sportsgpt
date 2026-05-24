@@ -10,7 +10,6 @@ import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { RevealFx } from '@/components/RevealFx'
-import { CURRENT_SEASON } from '@/lib/app-config'
 import {
   EditorialHead,
   EditorialButtonGroup,
@@ -71,13 +70,63 @@ const SECTIONS = [
 
 type SectionId = typeof SECTIONS[number]['id']
 
-const fmtSeason = (y: number) => `${y}–${String(y + 1).slice(2)}`
+const fmtSeason      = (y: number) => `${y}–${String(y + 1).slice(2)}`
+const fmtSeasonLabel = (s: number | null) => s === null ? 'All-Time' : fmtSeason(s)
 
 function fmtPct(w: number | null, l: number | null) {
   const ww = w ?? 0
   const ll = l ?? 0
   const g = ww + ll
   return g === 0 ? '—' : (ww / g).toFixed(3).replace(/^0/, '')
+}
+
+// ── All-Time aggregation helpers ─────────────────────────────────────────────
+
+function sumN(rows: StandingRow[], key: keyof StandingRow): number {
+  return rows.reduce((s, r) => s + ((r[key] as number | null) ?? 0), 0)
+}
+function sumP(rows: TopPlayer[], key: keyof TopPlayer): number | null {
+  const vals = rows.map(r => r[key] as number | null).filter(v => v != null) as number[]
+  return vals.length ? vals.reduce((s, v) => s + v, 0) : null
+}
+
+function aggregateStandings(rows: StandingRow[]): StandingRow[] {
+  const groups: Record<string, StandingRow[]> = {}
+  for (const r of rows) { (groups[r.slug] ??= []).push(r) }
+  return Object.values(groups)
+    .map(rs => ({
+      slug:              rs[0].slug,
+      name:              rs[0].name,
+      school_slug:       rs[0].school_slug,
+      overall_wins:      sumN(rs, 'overall_wins'),
+      overall_losses:    sumN(rs, 'overall_losses'),
+      overall_ties:      sumN(rs, 'overall_ties'),
+      conference_wins:   sumN(rs, 'conference_wins'),
+      conference_losses: sumN(rs, 'conference_losses'),
+      season:            null,
+    }))
+    .sort((a, b) => (b.overall_wins ?? 0) - (a.overall_wins ?? 0))
+}
+
+function aggregatePlayers(rows: TopPlayer[]): TopPlayer[] {
+  const groups: Record<string, TopPlayer[]> = {}
+  for (const r of rows) { (groups[r.player_slug] ??= []).push(r) }
+  return Object.values(groups).map(rs => ({
+    player_slug: rs[0].player_slug,
+    player_name: rs[0].player_name,
+    school_name: rs[0].school_name,
+    school_slug: rs[0].school_slug,
+    season:      0,
+    pass_yards:  sumP(rs, 'pass_yards'),
+    pass_tds:    sumP(rs, 'pass_tds'),
+    completions: sumP(rs, 'completions'),
+    attempts:    sumP(rs, 'attempts'),
+    rush_yards:  sumP(rs, 'rush_yards'),
+    rush_tds:    sumP(rs, 'rush_tds'),
+    recv_yards:  sumP(rs, 'recv_yards'),
+    recv_tds:    sumP(rs, 'recv_tds'),
+    receptions:  sumP(rs, 'receptions'),
+  }))
 }
 
 export function DivisionShell({
@@ -95,11 +144,11 @@ export function DivisionShell({
   topRushers: TopPlayer[]
   topReceivers: TopPlayer[]
 }) {
-  const [chartsOpen, setChartsOpen] = useState(false)
-  const [mapsOpen,   setMapsOpen]   = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
-  const [seasonIdx,  setSeasonIdx]  = useState(0)
-  const [query,      setQuery]      = useState('')
+  const [chartsOpen,      setChartsOpen]      = useState(false)
+  const [mapsOpen,        setMapsOpen]        = useState(false)
+  const [chatOpen,        setChatOpen]        = useState(false)
+  const [selectedSeason,  setSelectedSeason]  = useState<number | null>(null)
+  const [query,           setQuery]           = useState('')
 
   const [activeSection, setActiveSection] = useState<SectionId>('standings')
   const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
@@ -107,6 +156,7 @@ export function DivisionShell({
   })
   const searchRef = useRef<HTMLInputElement>(null)
 
+  // Hero slides: use all teams with photos — not affected by season or search.
   const slides = useMemo(() => {
     const seen = new Set<string>()
     return standings
@@ -120,35 +170,54 @@ export function DivisionShell({
       .slice(0, 6)
   }, [standings])
 
-  const availableSeasons  = useMemo(
+  const availableSeasons = useMemo(
     () => [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a),
     [standings]
   )
-  const selectedSeason    = availableSeasons[seasonIdx] ?? CURRENT_SEASON
-  const filteredStandings = standings.filter(s => s.season === selectedSeason)
-  const seasonPassers     = topPassers
-    .filter(p => p.season === selectedSeason)
-    .sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
-  const seasonRushers     = topRushers
-    .filter(p => p.season === selectedSeason)
-    .sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))
-  const seasonReceivers   = topReceivers
-    .filter(p => p.season === selectedSeason)
-    .sort((a, b) => (b.recv_yards ?? 0) - (a.recv_yards ?? 0))
+  // null = All-Time is first
+  const seasonOptions: (number | null)[] = useMemo(() => [null, ...availableSeasons], [availableSeasons])
+  const seasonOptIdx = seasonOptions.indexOf(selectedSeason)
+  function shiftSeason(delta: 1 | -1) {
+    const next = (seasonOptIdx + delta + seasonOptions.length) % seasonOptions.length
+    setSelectedSeason(seasonOptions[next])
+  }
 
-  // Apply search filter (matches team name in standings, player name in leader sections).
+  // Season-filtered (or all-time aggregated) data.
+  const filteredStandings = useMemo(() =>
+    selectedSeason === null
+      ? aggregateStandings(standings)
+      : standings.filter(s => s.season === selectedSeason),
+    [standings, selectedSeason]
+  )
+  const seasonPassers = useMemo(() => {
+    const base = selectedSeason === null ? aggregatePlayers(topPassers) : topPassers.filter(p => p.season === selectedSeason)
+    return base.sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
+  }, [topPassers, selectedSeason])
+  const seasonRushers = useMemo(() => {
+    const base = selectedSeason === null ? aggregatePlayers(topRushers) : topRushers.filter(p => p.season === selectedSeason)
+    return base.sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))
+  }, [topRushers, selectedSeason])
+  const seasonReceivers = useMemo(() => {
+    const base = selectedSeason === null ? aggregatePlayers(topReceivers) : topReceivers.filter(p => p.season === selectedSeason)
+    return base.sort((a, b) => (b.recv_yards ?? 0) - (a.recv_yards ?? 0))
+  }, [topReceivers, selectedSeason])
+
+  // Search: team name for standings; player name OR school name for player sections.
   const q = query.trim().toLowerCase()
   const matchedStandings = q
     ? filteredStandings.filter(t => t.name.toLowerCase().includes(q))
     : filteredStandings
   const matchedPassers = q
-    ? seasonPassers.filter(p => p.player_name.toLowerCase().includes(q))
+    ? seasonPassers.filter(p =>
+        p.player_name.toLowerCase().includes(q) || p.school_name.toLowerCase().includes(q))
     : seasonPassers
   const matchedRushers = q
-    ? seasonRushers.filter(p => p.player_name.toLowerCase().includes(q))
+    ? seasonRushers.filter(p =>
+        p.player_name.toLowerCase().includes(q) || p.school_name.toLowerCase().includes(q))
     : seasonRushers
   const matchedReceivers = q
-    ? seasonReceivers.filter(p => p.player_name.toLowerCase().includes(q))
+    ? seasonReceivers.filter(p =>
+        p.player_name.toLowerCase().includes(q) || p.school_name.toLowerCase().includes(q))
     : seasonReceivers
 
   const sectionCounts: Record<SectionId, number> = {
@@ -217,7 +286,7 @@ export function DivisionShell({
               meta={[
                 `${filteredStandings.length} teams`,
                 `${availableSeasons.length} seasons of record`,
-                fmtSeason(selectedSeason),
+                fmtSeasonLabel(selectedSeason),
               ]}
               rightSlot={
                 <EditorialButtonGroup
@@ -250,9 +319,9 @@ export function DivisionShell({
           <StickyControlBar>
             <div className="flex items-center gap-3 shrink-0">
               <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Season</span>
-              {availableSeasons.length > 1 && (
+              {seasonOptions.length > 1 && (
                 <button
-                  onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
+                  onClick={() => shiftSeason(-1)}
                   aria-label="Previous season"
                   className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
                 >
@@ -260,14 +329,14 @@ export function DivisionShell({
                 </button>
               )}
               <span
-                className="text-[var(--paper-text)] tabular-nums min-w-[5rem] text-center"
+                className="text-[var(--paper-text)] tabular-nums min-w-[5.5rem] text-center"
                 style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}
               >
-                {fmtSeason(selectedSeason)}
+                {fmtSeasonLabel(selectedSeason)}
               </span>
-              {availableSeasons.length > 1 && (
+              {seasonOptions.length > 1 && (
                 <button
-                  onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
+                  onClick={() => shiftSeason(1)}
                   aria-label="Next season"
                   className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
                 >
@@ -327,7 +396,7 @@ export function DivisionShell({
                   }))}
                   emptyLabel={q
                     ? `No teams match “${query}”.`
-                    : `No standings recorded for ${fmtSeason(selectedSeason)}.`}
+                    : 'No standings recorded.'}
                 />
               </section>
 
@@ -352,7 +421,7 @@ export function DivisionShell({
                     primary:    p.pass_yards != null ? `${p.pass_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.pass_tds   != null ? `${p.pass_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No passers match “${query}”.` : `No passing leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                  emptyLabel={q ? `No passers match “${query}”.` : 'No passing leaders recorded.'}
                 />
               </section>
 
@@ -377,7 +446,7 @@ export function DivisionShell({
                     primary:    p.rush_yards != null ? `${p.rush_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.rush_tds   != null ? `${p.rush_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No rushers match “${query}”.` : `No rushing leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                  emptyLabel={q ? `No rushers match “${query}”.` : 'No rushing leaders recorded.'}
                 />
               </section>
 
@@ -402,7 +471,7 @@ export function DivisionShell({
                     primary:    p.recv_yards != null ? `${p.recv_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.recv_tds   != null ? `${p.recv_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No receivers match “${query}”.` : `No receiving leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                  emptyLabel={q ? `No receivers match “${query}”.` : 'No receiving leaders recorded.'}
                 />
               </section>
 

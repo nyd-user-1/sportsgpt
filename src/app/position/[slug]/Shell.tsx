@@ -390,7 +390,10 @@ export function PositionShell({
         }))
       const totalCount = ranked.length
       const rows = q
-        ? ranked.filter(r => r.player.name.toLowerCase().includes(q))
+        ? ranked.filter(r =>
+            r.player.name.toLowerCase().includes(q) ||
+            (r.player.school_name ?? '').toLowerCase().includes(q)
+          )
         : ranked
       out.push({ id: chapter.id, chapter, totalCount, rows })
     }
@@ -428,13 +431,20 @@ export function PositionShell({
 
   useSearchHotkey(searchRef, () => setQuery(''))
 
-  // Hero slides — top players from the first chapter (or just the player list for OL).
+  // Hero slides — top players from the first chapter, NOT query-filtered so the
+  // slider stays stable while the user is searching.
+  const slidePlayers = useMemo(() => {
+    if (chapters.length === 0) return players.slice(0, 8)
+    return [...playerStatMap.entries()]
+      .filter(([slug, s]) => chapters[0].qualifies(s) && playerMap.has(slug))
+      .sort((a, b) => chapters[0].rankBy(b[1]) - chapters[0].rankBy(a[1]))
+      .slice(0, 8)
+      .map(([slug]) => playerMap.get(slug)!)
+  }, [chapters, playerStatMap, playerMap, players])
+
   const slides = useMemo(() => {
-    const top = chapters.length > 0
-      ? (chapterData[0]?.rows.slice(0, 8).map(r => r.player) ?? players.slice(0, 8))
-      : players.slice(0, 8)
     const seen = new Set<string>()
-    return top
+    return slidePlayers
       .map(p => PLAYER_PHOTOS[p.slug] ?? (p.school_slug ? TEAM_PHOTOS[p.school_slug]?.[0] : null))
       .filter((s): s is string => {
         if (!s || seen.has(s)) return false
@@ -442,7 +452,7 @@ export function PositionShell({
         return true
       })
       .slice(0, 6)
-  }, [chapters.length, chapterData, players])
+  }, [slidePlayers])
 
   const mobileHeader = (
     <div className="flex items-center gap-2 w-full">
