@@ -116,8 +116,8 @@ export function ChartDetailPage({
   useEffect(() => {
     if (!panelMode) return
     const detail = {
-      prevHref: `/chart/${prevSlug}`,
-      nextHref: `/chart/${nextSlug}`,
+      prevHref: `/charts/${prevSlug}`,
+      nextHref: `/charts/${nextSlug}`,
       color: config.color,
       pageTitle: config.title,
     }
@@ -562,7 +562,7 @@ export function ChartDetailPage({
               <div className="hidden sm:flex items-center shrink-0">
                 <div className="inline-flex -space-x-px">
                   <div className="relative group">
-                    <Link href={`/chart/${prevSlug}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
+                    <Link href={`/charts/${prevSlug}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
                     <span className={tip}>Prev</span>
                   </div>
                   <div className="relative group">
@@ -578,7 +578,7 @@ export function ChartDetailPage({
                     <span className={tip}>Ask SportsGPT</span>
                   </div>
                   <div className="relative group">
-                    <Link href={`/chart/${nextSlug}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
+                    <Link href={`/charts/${nextSlug}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
                     <span className={tip}>Next</span>
                   </div>
                 </div>
