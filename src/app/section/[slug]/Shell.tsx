@@ -353,13 +353,7 @@ export function SectionShell({
                           className="mt-4 text-[13px] text-[var(--paper-strong)] font-medium tabular-nums"
                           style={MONO}
                         >
-                          {d.game_count.toLocaleString()} games
-                        </p>
-                        <p
-                          className="mt-1 text-[13px] text-[var(--paper-strong)] font-medium tabular-nums"
-                          style={MONO}
-                        >
-                          {d.player_count.toLocaleString()} players
+                          {(d.game_count + d.player_count).toLocaleString()} game and player records
                         </p>
                       </div>
                     </button>
