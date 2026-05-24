@@ -20,6 +20,62 @@
 
 ---
 
+## Editorial Design System (Paper Palette)
+
+All panels, shells, and detail pages use a shared dark-background editorial design language. These CSS variables are defined in `globals.css`:
+
+| Variable | Role |
+|----------|------|
+| `--paper` | Panel background (near-black) |
+| `--paper-text` | Primary text — names, stat values |
+| `--paper-strong` | Accent blue (#033882 equivalent) — **links and interactive elements ONLY** |
+| `--paper-muted` | Secondary text — team names, season labels, subtitles |
+| `--paper-faint` | Tertiary text — section headers, column headers, rank numbers |
+| `--paper-quiet` | Subtle hover background |
+| `--paper-rule` | Primary divider |
+| `--paper-rule-soft` | Row-level divider (lighter) |
+
+### Typography stack
+- **Display / Names:** `var(--font-display)` = Fraunces serif
+- **UI / Labels / Buttons:** `var(--font-sans)` = DM Sans
+- **Numbers / Stats:** `var(--font-mono)` = monospace, `tabular-nums`
+
+### Design rules (do not break these)
+- **Blue = interactive only.** `--paper-strong` goes on hovered player names (clickable) and actual links ("View full profile"). Never on static stat numbers.
+- **Stat numbers are neutral.** Values like "121", "534", "8 TD" are `--paper-text`. Units ("yds", "pts") are `--paper-muted` DM Sans at ~10px, rendered as a separate element.
+- **Section headers:** 10px, uppercase, `tracking-[0.24em]`, `--paper-faint`, DM Sans.
+- **Rank indicators** in list panels: small mono `--paper-faint` before each row (1. 2. 3.).
+- **Player name hover pattern:** `group` on the row div, `text-[var(--paper-text)] group-hover:text-[var(--paper-strong)]` on the name span. Never set color in inline style (inline styles override Tailwind group-hover).
+- **Stat tables:** Use flex rows with `flex-1` season label + `w-10` fixed-width stat columns (not `w-full` table — it spreads sparse numbers too wide across the panel).
+- **`PAPER_BRIDGE`:** `const PAPER_BRIDGE = { background: 'var(--paper)', color: 'var(--paper-text)' }` — wrap any panel root that needs to force the paper palette.
+
+### Section header pattern (Game Log, Player Profile)
+```tsx
+<div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
+  <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+    {sectionLabel}
+  </span>
+</div>
+```
+
+### Player row pattern (Game Log)
+```tsx
+<div className="group flex items-center gap-2.5 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors">
+  <span className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right" style={{ ...MONO, fontSize: 11 }}>{rank}.</span>
+  {/* logo */}
+  <div className="flex-1 min-w-0">
+    <span className="text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors" style={SERIF}>name</span>
+    <p className="text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>team</p>
+  </div>
+  <div className="flex items-baseline gap-1">
+    <span className="text-[13px] tabular-nums text-[var(--paper-text)]" style={MONO}>{value}</span>
+    <span className="text-[10px] text-[var(--paper-muted)]" style={SANS}>{unit}</span>
+  </div>
+</div>
+```
+
+---
+
 ## Double-highlight fix for sticky table columns
 
 Use `group/row` (named group) on `<tr>` and `group-hover/row:bg-[var(--row-hover)]` on sticky cells.
@@ -160,6 +216,7 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/division/[slug]` | `Shell.tsx` | Hero photo slider (auto-advance, arrows), Standings + season carousel |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
 | `/maps` | `page.tsx` + parallel route | Suffolk district choropleth colored by school identity; click → team detail in AppPanel |
+| `/section/[slug]` | `Shell.tsx` + `page.tsx` | Section XI overview. Only `section-xi` is valid. Hero strip → division cards (2×2 grid, 520px tall). Sections: Division I–IV (ranked team lists), Season (one card per team×season → team page), Games (all games → `/game/[id]`). Sticky ContentsNav with IntersectionObserver. `selectedSeason: number \| null` (null = All-Time). Per-division player+game counts via SQL CTEs. |
 | `/colors` | `page.tsx` | Dev review page: all 52 school logos + color swatches, ✓/✗ confirmation (localStorage) |
 
 ### Game Detail (`/game/[id]`)
@@ -174,7 +231,8 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
    - Box Score tab: `ScoreTable` (quarter breakdown, team logos, W/L, final score)
    - Stat tabs: `GameStatSection` — flat player list sourced from `player_game_stats` table. Each row: school logo (from `school_slug`) + player name linked to `/player/[slug]` (from `player_slug`) + stat columns. No JSONB parsing.
 3. AI Highlights — AI-rewritten text via client-side deferred fetch
-4. Game Log panel (header icon) — `PanelPlayers` from `game_box_scores.player_stats` JSONB (fallback)
+4. Game Log panel (header icon) — `PanelPlayers` from `game_box_scores.player_stats` JSONB (fallback). Editorial design: rank numbers per category, player name (Fraunces) + team (italic), stat value (mono --paper-text) + unit (DM Sans --paper-muted) as separate elements. Click player name → opens player profile parallel route panel.
+5. Player profile panel (`@panel/player/[slug]/page.tsx`) — editorial design: full-bleed hero, identity row with position (e.g. "Longwood · Division I · RB"), stat sections (flex rows, `flex-1` season + `w-10` per stat column to avoid sparse sprawl), "View full profile" link in --paper-strong.
 
 **CRITICAL: Always use `player_game_stats` for game stat tabs, NOT `game_box_scores.player_stats` JSONB.**
 - `player_game_stats` has `school_slug` + `player_slug` on every row → logos and links work without any name matching
@@ -364,6 +422,7 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 2. Component extraction (see below)
 3. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
 4. Build Newsday player scraper (see below)
+5. Season card vs. game card width differences on the Section XI page (deferred — "we'll go over the differences tomorrow")
 
 ### Naming conventions audit — NEXT
 The codebase has grown organically and needs a naming pass before it gets harder to navigate.
