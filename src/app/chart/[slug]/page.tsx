@@ -495,7 +495,12 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
       homeAwaySeasons.push({ season: 'all', teams: allTeams })
 
       seasonRows = Object.fromEntries(homeAwaySeasons.map(s => [s.season,
-        s.teams.map(t => ({ name: t.name, value: t.home_wins + t.away_wins, logoUrl: SCHOOL_LOGOS[t.school_slug] ?? '' }))
+        s.teams.map(t => ({
+          name:    t.name,
+          value:   t.home_wins + t.away_wins,
+          logoUrl: SCHOOL_LOGOS[t.school_slug] ?? '',
+          record:  `${t.home_wins}H · ${t.away_wins}A`,
+        }))
       ]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0

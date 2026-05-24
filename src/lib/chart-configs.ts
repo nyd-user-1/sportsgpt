@@ -69,9 +69,9 @@ export const CHART_CONFIGS: ChartConfig[] = [
   {
     slug: 'home-away-record',
     title: 'Home vs. Away Record',
-    description: `Home wins vs. away wins per team · ${CURRENT_SEASON}-${String(CURRENT_SEASON + 1).slice(2)} season`,
+    description: 'Home wins vs. away wins per team',
     color: '#033882', chartType: 'bar', kpiLabel: 'home wins',
-    nameLabel: 'Team', valueLabel: 'Home Wins',
+    nameLabel: 'Team', valueLabel: 'Home & Away Wins',
     metric: 'wins', entity: 'team',
   },
   {
