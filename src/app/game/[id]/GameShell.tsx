@@ -272,20 +272,37 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
   playerSlugs: Record<string, string>
   onPlayerSelect: (slug: string) => void
 }) {
+  const SANS = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+  const SERIF_S = { fontFamily: 'var(--font-display), Georgia, serif' }
+  const MONO_S = { fontFamily: 'var(--font-mono, ui-monospace), monospace' }
+
   if (stats.length === 0) return (
-    <div className="flex items-center justify-center h-32 text-sm text-[var(--muted)]">No player data</div>
+    <div className="flex items-center justify-center h-32">
+      <p className="text-sm text-[var(--paper-muted)]" style={{ ...SERIF_S, fontStyle: 'italic' }}>
+        No player data available.
+      </p>
+    </div>
   )
+
   return (
-    <div className="pb-4">
+    <div className="pb-6">
       {STAT_ORDER.map(type => {
         const group = stats.filter(p => p.stat_type === type)
         if (group.length === 0) return null
         return (
           <div key={type}>
-            <div className="px-4 pt-5 pb-1.5">
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">{type}</span>
+            {/* Section header */}
+            <div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
+              <span
+                className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+                style={SANS}
+              >
+                {type}
+              </span>
             </div>
-            <div className="divide-y divide-[var(--border)]">
+
+            {/* Player rows */}
+            <div className="divide-y divide-[var(--paper-rule-soft)]">
               {group.map((p, i) => {
                 const normTeam = cleanName(p.team_name).toLowerCase()
                 const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null)
@@ -296,20 +313,52 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
                 return (
                   <div
                     key={i}
-                    className={`flex items-center gap-3 px-4 py-3 transition-colors ${playerSlug ? 'cursor-pointer hover:bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
-                    onClick={() => {
-                      if (!playerSlug) return
-                      onPlayerSelect(playerSlug)
-                    }}
+                    className="group flex items-center gap-3 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors"
+                    style={{ cursor: playerSlug ? 'pointer' : 'default' }}
+                    onClick={() => { if (playerSlug) onPlayerSelect(playerSlug) }}
                   >
+                    {/* Logo */}
                     {logo
-                      ? <Image src={logo} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
-                      : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
+                      ? <Image
+                          src={logo}
+                          alt=""
+                          width={28}
+                          height={28}
+                          className="shrink-0 rounded-full object-contain border border-[var(--paper-rule)]"
+                          style={{ background: 'var(--paper-quiet)' }}
+                          unoptimized
+                        />
+                      : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />
+                    }
+
+                    {/* Name + team */}
                     <div className="flex-1 min-w-0">
-                      <span className={`text-sm font-semibold truncate block ${playerSlug ? 'hover:underline' : 'text-[var(--txt)]'}`} style={playerSlug ? { color: ACCENT_COLOR } : undefined}>{p.player}</span>
-                      <p className="text-xs text-[var(--muted)] truncate">{cleanName(p.team_name)}</p>
+                      <span
+                        className={`truncate block leading-snug transition-colors ${playerSlug ? 'text-[var(--paper-text)] group-hover:text-[var(--paper-strong)]' : 'text-[var(--paper-text)]'}`}
+                        style={{
+                          ...SERIF_S,
+                          fontSize: 13.5,
+                          fontWeight: 500,
+                          letterSpacing: '-0.005em',
+                        }}
+                      >
+                        {p.player}
+                      </span>
+                      <p
+                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
+                        style={{ ...SERIF_S, fontStyle: 'italic' }}
+                      >
+                        {cleanName(p.team_name)}
+                      </p>
                     </div>
-                    <span className="text-sm tabular-nums font-medium text-[var(--txt)] shrink-0">{mainStat(p)}</span>
+
+                    {/* Stat */}
+                    <span
+                      className="text-[13px] tabular-nums font-medium text-[var(--paper-strong)] shrink-0"
+                      style={MONO_S}
+                    >
+                      {mainStat(p)}
+                    </span>
                   </div>
                 )
               })}
