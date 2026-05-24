@@ -11,16 +11,32 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
 
   const [divisionSummaryRows, recentChampsRows, allTeamRows, gameRows, leaderRows] = await Promise.all([
     sql`
+      WITH game_counts AS (
+        SELECT t.division, COUNT(DISTINCT g.id)::int AS cnt
+        FROM teams t
+        JOIN games g ON g.home_team_slug = t.slug OR g.away_team_slug = t.slug
+        GROUP BY t.division
+      ),
+      player_counts AS (
+        SELECT t.division, COUNT(DISTINCT p.slug)::int AS cnt
+        FROM players p
+        JOIN teams t ON t.school_slug = p.school_slug
+        GROUP BY t.division
+      )
       SELECT t.division,
         COUNT(DISTINCT t.slug)::int AS team_count,
         AVG(
           CASE WHEN s.season = ${CURRENT_SEASON} AND (s.overall_wins + s.overall_losses) > 0
             THEN s.overall_wins::float / (s.overall_wins + s.overall_losses)
           END
-        ) AS avg_win_pct
+        ) AS avg_win_pct,
+        gc.cnt AS game_count,
+        pc.cnt AS player_count
       FROM teams t
       LEFT JOIN team_season_stats s ON s.team_slug = t.slug
-      GROUP BY t.division
+      LEFT JOIN game_counts gc ON gc.division = t.division
+      LEFT JOIN player_counts pc ON pc.division = t.division
+      GROUP BY t.division, gc.cnt, pc.cnt
       ORDER BY t.division
     `,
     sql`
@@ -69,9 +85,11 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
   return (
     <SectionShell
       divisionSummary={divisionSummaryRows.map(r => ({
-        division:    r.division as string,
-        team_count:  Number(r.team_count),
-        avg_win_pct: r.avg_win_pct != null ? Number(r.avg_win_pct) : null,
+        division:     r.division as string,
+        team_count:   Number(r.team_count),
+        avg_win_pct:  r.avg_win_pct != null ? Number(r.avg_win_pct) : null,
+        player_count: Number(r.player_count ?? 0),
+        game_count:   Number(r.game_count   ?? 0),
       }))}
       recentChamps={recentChampsRows.map(r => ({
         season:        Number(r.season),

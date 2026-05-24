@@ -29,6 +29,8 @@ type DivisionSummary = {
   division: string
   team_count: number
   avg_win_pct: number | null
+  player_count: number
+  game_count: number
 }
 
 type RecentChamp = {
@@ -347,14 +349,18 @@ export function SectionShell({
                         >
                           {d.team_count} teams
                         </p>
-                        {d.avg_win_pct != null && (
-                          <p
-                            className="mt-4 text-[13px] text-[var(--paper-strong)] font-medium"
-                            style={MONO}
-                          >
-                            {(d.avg_win_pct * 100).toFixed(1)}% avg win
-                          </p>
-                        )}
+                        <p
+                          className="mt-4 text-[13px] text-[var(--paper-strong)] font-medium tabular-nums"
+                          style={MONO}
+                        >
+                          {d.game_count.toLocaleString()} games
+                        </p>
+                        <p
+                          className="mt-1 text-[13px] text-[var(--paper-strong)] font-medium tabular-nums"
+                          style={MONO}
+                        >
+                          {d.player_count.toLocaleString()} players
+                        </p>
                       </div>
                     </button>
                   )
