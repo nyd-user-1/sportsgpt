@@ -12,6 +12,7 @@ import {
 import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { ChartTooltipShell } from './ChartTooltip'
 
 export interface PFPAPoint { name: string; school_slug: string; pf: number; pa: number; wins: number }
 export interface PFPASeason { season: string; points: PFPAPoint[] }
@@ -65,20 +66,20 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: unknow
   const logo = SCHOOL_LOGOS[d.school_slug]
   const name = d.name.replace(' Varsity Football', '').replace(' Football', '')
   return (
-    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 12, minWidth: 150 }}>
+    <ChartTooltipShell minWidth={150}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>
         {logo && <img src={logo} alt="" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} />}
-        <span style={{ fontWeight: 700 }}>{name}</span>
+        <span style={{ fontWeight: 700, color: 'var(--paper-text)' }}>{name}</span>
       </div>
       <p>
-        <span style={{ color: 'var(--muted)' }}>PF </span><span style={{ fontWeight: 600 }}>{d.pf}</span>
-        <span style={{ color: 'var(--muted)', marginLeft: 10 }}>PA </span><span style={{ fontWeight: 600 }}>{d.pa}</span>
+        <span style={{ color: 'var(--paper-muted)' }}>PF </span><span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{d.pf}</span>
+        <span style={{ color: 'var(--paper-muted)', marginLeft: 10 }}>PA </span><span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{d.pa}</span>
       </p>
       <p>
-        <span style={{ color: 'var(--muted)' }}>Diff </span><span style={{ fontWeight: 600, color: d.pf - d.pa >= 0 ? '#033882' : '#ef4444' }}>{d.pf - d.pa > 0 ? '+' : ''}{d.pf - d.pa}</span>
-        <span style={{ color: 'var(--muted)', marginLeft: 10 }}>Wins </span><span style={{ fontWeight: 600, color: '#033882' }}>{d.wins}</span>
+        <span style={{ color: 'var(--paper-muted)' }}>Diff </span><span style={{ fontWeight: 600, color: d.pf - d.pa >= 0 ? '#033882' : '#ef4444' }}>{d.pf - d.pa > 0 ? '+' : ''}{d.pf - d.pa}</span>
+        <span style={{ color: 'var(--paper-muted)', marginLeft: 10 }}>Wins </span><span style={{ fontWeight: 600, color: '#033882' }}>{d.wins}</span>
       </p>
-    </div>
+    </ChartTooltipShell>
   )
 }
 

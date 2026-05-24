@@ -6,6 +6,7 @@ import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassin
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing, fetchRushingYardsByTeam } from '@/lib/chart-data/rushing'
 import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
 import { fetchTotalTdsLeaders, fetchTotalYardsLeaders, fetchTotalPointsLeaders } from '@/lib/chart-data/composite'
+import { fetchPFPA, fetchPointDifferential, fetchScoringOffense, fetchScoringDefense, fetchTopScoringGames, fetchBiggestBlowouts, fetchPointsByQuarter } from '@/lib/chart-data/scoring'
 import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
@@ -321,42 +322,23 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
 
     // ── point-differential-leaders ────────────────────────────────────────────
     case 'point-differential-leaders': {
-      const rows = await sql`
-        SELECT
-          t.name,
-          t.school_slug,
-          s.season,
-          s.overall_wins,
-          s.overall_losses,
-          (
-            SUM(CASE WHEN g.home_team_slug = t.slug THEN g.home_score ELSE g.away_score END)
-            - SUM(CASE WHEN g.home_team_slug = t.slug THEN g.away_score ELSE g.home_score END)
-          )::int AS value
-        FROM teams t
-        JOIN team_season_stats s ON s.team_slug = t.slug
-        JOIN games g ON (g.home_team_slug = t.slug OR g.away_team_slug = t.slug)
-          AND g.season = s.season
-          AND g.home_score IS NOT NULL
-        WHERE s.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
-        GROUP BY t.name, t.school_slug, s.season, s.overall_wins, s.overall_losses
-        ORDER BY s.season, value DESC`
-
+      const rows = await fetchPointDifferential(AVAILABLE_SEASONS.slice(-3))
       const seasonBars = LAST3_SEASONS.map(yr => {
         const yrows = rows
           .filter(r => String(r.season) === yr)
-          .sort((a, b) => Number(b.value) - Number(a.value))
+          .sort((a, b) => b.value - a.value)
           .slice(0, 52)
           .map(r => ({
-            name: String(r.name),
-            value: Number(r.value),
-            logoUrl: r.school_slug ? (SCHOOL_LOGOS[String(r.school_slug)] ?? '') : '',
+            name: r.name,
+            value: r.value,
+            logoUrl: SCHOOL_LOGOS[r.school_slug] ?? '',
             record: `${r.overall_wins ?? 0}–${r.overall_losses ?? 0}`,
           }))
         return { season: yr, topValue: yrows[0]?.value ?? 0, bars: yrows }
       })
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      rowLinks = Object.fromEntries(rows.map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = (
         <SportsBarChartInteractive
           seasons={seasonBars}
@@ -545,18 +527,7 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
 
     // ── pf-pa ─────────────────────────────────────────────────────────────────
     case 'pf-pa': {
-      const rows = await sql`
-        WITH scored AS (
-          SELECT home_team_slug AS ts, home_score AS pf, away_score AS pa, season FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-          UNION ALL SELECT away_team_slug, away_score, home_score, season FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT t.name, t.school_slug, s.season::text AS season,
-          SUM(pf)::int AS pf, SUM(pa)::int AS pa, ts2.overall_wins::int AS wins
-        FROM scored s JOIN teams t ON t.slug = s.ts
-        JOIN team_season_stats ts2 ON ts2.team_slug = t.slug AND ts2.season = s.season
-        WHERE t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug, s.season, ts2.overall_wins
-        ORDER BY s.season, pf DESC`
+      const rows = await fetchPFPA(AVAILABLE_SEASONS)
 
       const pfpaSeasons: PFPASeason[] = ALL_SEASONS.map(yr => ({
         season: yr,
@@ -655,68 +626,38 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
 
     // ── scoring-offense ───────────────────────────────────────────────────────
     case 'scoring-offense': {
-      const rows = await sql`
-        WITH tg AS (
-          SELECT home_team_slug AS team_slug, home_score AS score, season
-          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-          UNION ALL
-          SELECT away_team_slug, away_score, season
-          FROM games WHERE away_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT t.name, t.school_slug, ROUND(AVG(tg.score)::numeric,1) AS value, tg.season::text AS season
-        FROM tg JOIN teams t ON t.slug = tg.team_slug
-        WHERE t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug, tg.season
-        ORDER BY tg.season, value DESC`
-
-      const seasonBarsArr = buildSeasonBars(
-        rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
-        ALL_SEASONS
-      )
+      const rows = await fetchScoringOffense(AVAILABLE_SEASONS)
+      const seasonBarsArr = buildSeasonBars(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      rowLinks = Object.fromEntries(rows.map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Avg Pts/Game" />
       break
     }
 
     // ── scoring-defense ───────────────────────────────────────────────────────
     case 'scoring-defense': {
-      const rows = await sql`
-        WITH tg AS (
-          SELECT home_team_slug AS team_slug, away_score AS allowed, season
-          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-          UNION ALL
-          SELECT away_team_slug, home_score AS allowed, season
-          FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT t.name, t.school_slug, ROUND(AVG(tg.allowed)::numeric,1) AS value, tg.season::text AS season
-        FROM tg JOIN teams t ON t.slug = tg.team_slug
-        WHERE t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug, tg.season
-        ORDER BY tg.season, value ASC`
-
-      const BOX_SEASONS = ['2023', '2024', '2025']
+      const rows = await fetchScoringDefense(AVAILABLE_SEASONS)
       const defenseSeasonBars: SeasonBars[] = ALL_SEASONS.map(yr => {
         const yrows = rows
-          .filter(r => String(r.season) === yr)
-          .sort((a, b) => Number(a.value) - Number(b.value))
+          .filter(r => r.season === yr)
+          .sort((a, b) => a.value - b.value)
           .slice(0, 52)
           .map(r => ({
-            name: String(r.name),
-            value: Number(r.value),
-            logoUrl: r.school_slug ? (SCHOOL_LOGOS[String(r.school_slug)] ?? '') : '',
+            name: r.name,
+            value: r.value,
+            logoUrl: SCHOOL_LOGOS[r.school_slug] ?? '',
           }))
         return { season: yr, topValue: yrows[0]?.value ?? 0, bars: yrows }
       })
       const allDefBars = [...rows]
-        .sort((a, b) => Number(a.value) - Number(b.value))
+        .sort((a, b) => a.value - b.value)
         .reduce((acc: typeof defenseSeasonBars[0]['bars'], r) => {
-          const ex = acc.find(b => b.name === String(r.name))
-          if (!ex) acc.push({ name: String(r.name), value: Number(r.value), logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '' })
+          const ex = acc.find(b => b.name === r.name)
+          if (!ex) acc.push({ name: r.name, value: r.value, logoUrl: SCHOOL_LOGOS[r.school_slug] ?? '' })
           return acc
         }, [])
       defenseSeasonBars.push({ season: 'all', topValue: allDefBars[0]?.value ?? 0, bars: allDefBars })
@@ -724,34 +665,25 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       seasonRows = Object.fromEntries(defenseSeasonBars.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      void BOX_SEASONS
-      rowLinks = Object.fromEntries((rows as {name:string;school_slug:string}[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      rowLinks = Object.fromEntries(rows.map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={defenseSeasonBars} color="#10b981" valueLabel="Avg Pts Allowed" />
       break
     }
 
     // ── top-scoring-games ─────────────────────────────────────────────────────
     case 'top-scoring-games': {
-      const BOX_SEASONS = LAST3_SEASONS
-      const rows = await sql`
-        SELECT g.id, ht.name AS home, at2.name AS away,
-          g.home_score, g.away_score, (g.home_score + g.away_score) AS total,
-          g.season::text AS season
-        FROM games g
-        JOIN game_box_scores bs ON bs.game_id = g.id
-        JOIN teams ht ON ht.slug = g.home_team_slug
-        JOIN teams at2 ON at2.slug = g.away_team_slug
-        WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
-        ORDER BY g.season, total DESC`
-
-      const scoringGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+      const rows = await fetchTopScoringGames(AVAILABLE_SEASONS.slice(-3))
+      const stripVF = (s: string) => s.replace(/\s+Varsity Football$/i, '')
+      const scoringGameBars: SeasonBars[] = LAST3_SEASONS.map(yr => {
         const bars = rows
-          .filter(r => String(r.season) === yr)
+          .filter(r => r.season === yr)
           .slice(0, 25)
           .map(r => ({
-            name: `${r.home} vs ${r.away}`,
-            value: Number(r.total),
+            name: `${stripVF(r.home)} vs ${stripVF(r.away)}`,
+            value: r.total,
             subtitle: `${r.home_score}–${r.away_score} · ${formatSeason(yr)}`,
+            logoUrl:  SCHOOL_LOGOS[r.home_school] ?? '',
+            logoUrl2: SCHOOL_LOGOS[r.away_school] ?? '',
           }))
         return { season: yr, topValue: bars[0]?.value ?? 0, bars }
       })
@@ -764,30 +696,18 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
 
     // ── biggest-blowouts ──────────────────────────────────────────────────────
     case 'biggest-blowouts': {
-      const BOX_SEASONS = LAST3_SEASONS
-      const rows = await sql`
-        SELECT g.id,
-          ABS(g.home_score - g.away_score) AS margin,
-          CASE WHEN g.home_score > g.away_score THEN ht.name ELSE at2.name END AS winner,
-          CASE WHEN g.home_score > g.away_score THEN at2.name ELSE ht.name END AS loser,
-          CASE WHEN g.home_score > g.away_score THEN g.home_score ELSE g.away_score END AS winner_score,
-          CASE WHEN g.home_score > g.away_score THEN g.away_score ELSE g.home_score END AS loser_score,
-          g.season::text AS season
-        FROM games g
-        JOIN game_box_scores bs ON bs.game_id = g.id
-        JOIN teams ht ON ht.slug = g.home_team_slug
-        JOIN teams at2 ON at2.slug = g.away_team_slug
-        WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
-        ORDER BY g.season, margin DESC`
-
-      const blowoutBars: SeasonBars[] = BOX_SEASONS.map(yr => {
+      const rows = await fetchBiggestBlowouts(AVAILABLE_SEASONS.slice(-3))
+      const stripVF = (s: string) => s.replace(/\s+Varsity Football$/i, '')
+      const blowoutBars: SeasonBars[] = LAST3_SEASONS.map(yr => {
         const bars = rows
-          .filter(r => String(r.season) === yr)
+          .filter(r => r.season === yr)
           .slice(0, 25)
           .map(r => ({
-            name: `${r.winner} def. ${r.loser}`,
-            value: Number(r.margin),
+            name: `${stripVF(r.winner)} def. ${stripVF(r.loser)}`,
+            value: r.margin,
             subtitle: `${r.winner_score}–${r.loser_score} · ${formatSeason(yr)}`,
+            logoUrl:  SCHOOL_LOGOS[r.winner_school] ?? '',
+            logoUrl2: SCHOOL_LOGOS[r.loser_school]  ?? '',
           }))
         return { season: yr, topValue: bars[0]?.value ?? 0, bars }
       })
@@ -941,24 +861,14 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
 
     // ── points-by-quarter ─────────────────────────────────────────────────────
     case 'points-by-quarter': {
-      const rows = await sql`
-        SELECT t.name, t.school_slug, g.season::text AS season,
-          SUM((elem->>'q4')::int) AS value
-        FROM game_box_scores b
-        CROSS JOIN LATERAL jsonb_array_elements(b.quarter_scores) AS elem
-        JOIN games g ON g.id = b.game_id
-        JOIN teams t ON t.slug = (elem->>'team_slug')
-        WHERE (elem->>'q4') IS NOT NULL AND t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug, g.season
-        ORDER BY g.season, value DESC`
-
-      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const rows = await fetchPointsByQuarter(AVAILABLE_SEASONS)
+      const seasonBarsArr = buildSeasonBars(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
       seasonRows = Object.fromEntries(seasonBarsArr.map(s => [s.season, s.bars]))
       tableRows = seasonRows[String(CURRENT_SEASON)] ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      rowLinks = Object.fromEntries((rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
+      rowLinks = Object.fromEntries(rows.map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChartInteractive seasons={seasonBarsArr} color={config.color} valueLabel="Q4 Pts" />
       break
     }

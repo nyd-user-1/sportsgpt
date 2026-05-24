@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from 'recharts'
+import { ChartTooltipShell } from './ChartTooltip'
 import { Chart } from '@/components/Chart'
 import { type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
@@ -41,11 +42,8 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
   const winPct = bar.totalGames > 0 ? ((total / bar.totalGames) * 100).toFixed(1) : '—'
 
   return (
-    <div style={{
-      background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '8px',
-      padding: '8px 12px', fontSize: '12px', minWidth: '160px',
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600 }}>
+    <ChartTooltipShell minWidth={160}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600, color: 'var(--paper-text)' }}>
         {bar.logoUrl && (
           <img src={bar.logoUrl} alt="" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
         )}
@@ -61,21 +59,21 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
             display: 'inline-block', width: '10px', height: '10px',
             borderRadius: '2px', backgroundColor: row.color, flexShrink: 0,
           }} />
-          <span style={{ color: 'var(--muted)' }}>{row.label}</span>
-          <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px' }}>{row.value}</span>
+          <span style={{ color: 'var(--paper-muted)' }}>{row.label}</span>
+          <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px', color: 'var(--paper-text)' }}>{row.value}</span>
         </div>
       ))}
-      <div style={{ borderTop: '1px solid var(--border)', marginTop: '6px', paddingTop: '6px' }}>
+      <div style={{ borderTop: '1px solid var(--paper-rule)', marginTop: '6px', paddingTop: '6px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ color: 'var(--muted)' }}>Total</span>
-          <span style={{ fontWeight: 600 }}>{total}</span>
+          <span style={{ color: 'var(--paper-muted)' }}>Total</span>
+          <span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{total}</span>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2px' }}>
-          <span style={{ color: 'var(--muted)' }}>3yr Win %</span>
-          <span style={{ fontWeight: 600 }}>{winPct}%</span>
+          <span style={{ color: 'var(--paper-muted)' }}>3yr Win %</span>
+          <span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{winPct}%</span>
         </div>
       </div>
-    </div>
+    </ChartTooltipShell>
   )
 }
 

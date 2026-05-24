@@ -12,6 +12,7 @@ import {
 import { ChevronDown } from 'lucide-react'
 import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
+import { ChartTooltipShell } from './ChartTooltip'
 
 export interface WinLossTeam { name: string; division: string; wins: number; losses: number }
 export interface WinLossSeason { season: string; teams: WinLossTeam[] }
@@ -27,12 +28,12 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: { payl
   const d = payload[0]?.payload
   if (!d) return null
   return (
-    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 12 }}>
-      <p style={{ fontWeight: 700, color: '#111', marginBottom: 4 }}>{d.name}</p>
+    <ChartTooltipShell>
+      <p style={{ fontWeight: 700, color: 'var(--paper-text)', marginBottom: 4 }}>{d.name}</p>
       <span style={{ color: '#033882', fontWeight: 600 }}>{d.wins}W</span>
       {' '}
       <span style={{ color: '#ef4444', fontWeight: 600 }}>{d.losses}L</span>
-    </div>
+    </ChartTooltipShell>
   )
 }
 

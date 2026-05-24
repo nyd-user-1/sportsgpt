@@ -5,6 +5,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
+import { ChartTooltipShell } from './ChartTooltip'
 
 export interface HomeAwayTeam {
   name: string
@@ -28,22 +29,22 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: unknow
   if (!item) return null
   const logo = SCHOOL_LOGOS[item.school_slug]
   return (
-    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '8px 12px', fontSize: 12, minWidth: 160 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6, fontWeight: 700 }}>
+    <ChartTooltipShell minWidth={160}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6, fontWeight: 700, color: 'var(--paper-text)' }}>
         {logo && <img src={logo} alt="" width={24} height={24} style={{ borderRadius: '50%', objectFit: 'cover' }} />}
         <span>{abbrev(item.name)}</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
         <span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: 2, backgroundColor: '#033882', flexShrink: 0 }} />
-        <span style={{ color: 'var(--muted)' }}>Home Wins</span>
-        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: 8 }}>{item.home_wins}</span>
+        <span style={{ color: 'var(--paper-muted)' }}>Home Wins</span>
+        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: 8, color: 'var(--paper-text)' }}>{item.home_wins}</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
         <span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: 2, backgroundColor: '#94a3b8', flexShrink: 0 }} />
-        <span style={{ color: 'var(--muted)' }}>Away Wins</span>
-        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: 8 }}>{item.away_wins}</span>
+        <span style={{ color: 'var(--paper-muted)' }}>Away Wins</span>
+        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: 8, color: 'var(--paper-text)' }}>{item.away_wins}</span>
       </div>
-    </div>
+    </ChartTooltipShell>
   )
 }
 

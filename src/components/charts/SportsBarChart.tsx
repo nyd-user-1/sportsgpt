@@ -2,6 +2,7 @@
 
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import { Chart } from '@/components/Chart'
+import { ChartTooltipShell } from './ChartTooltip'
 
 interface DataItem {
   name: string
@@ -29,15 +30,8 @@ function CustomTooltip({
   const item = entry.payload
   if (!item) return null
   return (
-    <div style={{
-      background: 'var(--surface)',
-      border: '1px solid var(--border)',
-      borderRadius: '8px',
-      padding: '8px 12px',
-      fontSize: '12px',
-      minWidth: '140px',
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600 }}>
+    <ChartTooltipShell>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600, color: 'var(--paper-text)' }}>
         {item.logoUrl && (
           <img src={item.logoUrl} alt="" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
         )}
@@ -48,12 +42,12 @@ function CustomTooltip({
           display: 'inline-block', width: '10px', height: '10px',
           borderRadius: '2px', backgroundColor: entry.color ?? '#033882', flexShrink: 0,
         }} />
-        <span style={{ color: 'var(--muted)' }}>{valueLabel}</span>
-        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px' }}>
+        <span style={{ color: 'var(--paper-muted)' }}>{valueLabel}</span>
+        <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px', color: 'var(--paper-text)' }}>
           {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
         </span>
       </div>
-    </div>
+    </ChartTooltipShell>
   )
 }
 

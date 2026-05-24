@@ -189,7 +189,7 @@ function ChartPanelContent({ slug }: { slug: string }) {
       <div className="flex-1 overflow-y-auto no-scrollbar">
         {/* Column headers */}
         <div
-          className="sticky top-0 grid grid-cols-[1fr_72px_44px] gap-2 px-5 py-2.5 border-b border-t border-[var(--paper-rule)] bg-[var(--paper)] z-10"
+          className="sticky top-0 grid grid-cols-[1fr_72px] gap-2 px-5 py-2.5 border-b border-t border-[var(--paper-rule)] bg-[var(--paper)] z-10"
         >
           <span
             className="text-[10px] uppercase tracking-[0.2em] text-[var(--paper-faint)]"
@@ -203,21 +203,13 @@ function ChartPanelContent({ slug }: { slug: string }) {
           >
             {config.valueLabel ?? 'Value'}
           </span>
-          <span
-            className="text-right text-[10px] uppercase tracking-[0.2em] text-[var(--paper-faint)]"
-            style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
-          >
-            Share
-          </span>
         </div>
 
         <div className="divide-y divide-[var(--paper-rule-soft)]">
-          {sorted.map((row, idx) => {
-            const pct = total > 0 ? (row.value / total) * 100 : 0
-            return (
+          {sorted.map((row, idx) => (
               <div
                 key={row.name}
-                className="grid grid-cols-[1fr_72px_44px] gap-2 px-5 py-3 items-center hover:bg-[var(--paper-quiet)] transition-colors"
+                className="grid grid-cols-[1fr_72px] gap-2 px-5 py-3 items-center hover:bg-[var(--paper-quiet)] transition-colors"
               >
                 <div className="flex items-center gap-2.5 min-w-0">
                   <span
@@ -239,15 +231,8 @@ function ChartPanelContent({ slug }: { slug: string }) {
                 >
                   {row.value.toLocaleString()}
                 </span>
-                <span
-                  className="text-right text-[12px] tabular-nums text-[var(--paper-muted)]"
-                  style={{ fontFamily: 'var(--font-mono, ui-monospace), monospace' }}
-                >
-                  {pct.toFixed(0)}%
-                </span>
               </div>
-            )
-          })}
+          ))}
         </div>
       </div>
 

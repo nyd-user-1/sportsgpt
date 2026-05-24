@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
+import { ChartTooltipShell } from './ChartTooltip'
 import { Chart } from '@/components/Chart'
 import { type ChartConfig } from '@/components/ui/chart'
 import { type SeasonBars } from './SportsBarChartInteractive'
@@ -22,19 +23,16 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
   const item = payload[0]?.payload
   if (!item) return null
   return (
-    <div style={{
-      background: 'var(--surface)', border: '1px solid var(--border)',
-      borderRadius: '8px', padding: '8px 12px', fontSize: '12px', minWidth: '160px',
-    }}>
+    <ChartTooltipShell minWidth={160}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
         {item.logoUrl && (
           <img src={item.logoUrl} alt="" width={20} height={20} style={{ objectFit: 'contain', flexShrink: 0 }} />
         )}
-        <span style={{ fontWeight: 700, color: 'var(--txt)' }}>{item.name}</span>
+        <span style={{ fontWeight: 700, color: 'var(--paper-text)' }}>{item.name}</span>
       </div>
       <p style={{ color: ACCENT }}><span style={{ fontWeight: 600 }}>{item.points}</span> pts</p>
       <p style={{ color: MEDIAN_COLOR }}>Median: {item.median}</p>
-    </div>
+    </ChartTooltipShell>
   )
 }
 
