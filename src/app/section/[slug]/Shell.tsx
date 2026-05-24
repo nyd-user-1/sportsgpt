@@ -12,7 +12,6 @@ import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
   EditorialButtonGroup,
-  HeroStrip,
   PAPER_BRIDGE,
   PlayerRankedList,
   SectionHead,
@@ -21,7 +20,7 @@ import {
   SearchInput,
   useSearchHotkey,
 } from '@/components/editorial'
-import { TEAM_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -89,9 +88,8 @@ const SECTIONS = [
   { id: 'division-ii'  as const, label: 'Division II'  },
   { id: 'division-iii' as const, label: 'Division III' },
   { id: 'division-iv'  as const, label: 'Division IV'  },
-  { id: 'schedule'     as const, label: 'Schedule'     },
+  { id: 'schedule'     as const, label: 'Season'       },
   { id: 'games'        as const, label: 'Games'        },
-  { id: 'divisions'    as const, label: 'Divisions'    },
 ]
 
 type SectionId = typeof SECTIONS[number]['id']
@@ -159,7 +157,7 @@ export function SectionShell({
 
   const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
     'division-i': null, 'division-ii': null, 'division-iii': null, 'division-iv': null,
-    'schedule': null, 'games': null, 'divisions': null,
+    'schedule': null, 'games': null,
   })
   const scheduleRef = useRef<HTMLDivElement>(null)
   const gamesRef    = useRef<HTMLDivElement>(null)
@@ -251,24 +249,11 @@ export function SectionShell({
     'division-iv':  matchedByDiv['IV']?.length  ?? 0,
     'schedule':     matchedSchedule.length,
     'games':        matchedGames.length,
-    'divisions':    divisionSummary.length,
   }
 
   const totalRanked  = DIV_ORDER.reduce((s, d) => s + (teamsByDiv[d]?.length ?? 0), 0)
   const totalVisible = DIV_ORDER.reduce((s, d) => s + (matchedByDiv[d]?.length ?? 0), 0)
   const totalTeams   = useMemo(() => [...new Set(allTeams.map(t => t.slug))].length, [allTeams])
-
-  // ── Hero slides (one photo per division) ────────────────────────────────
-  const heroSlides = useMemo(() => {
-    const slides: string[] = []
-    for (const div of DIV_ORDER) {
-      for (const team of allTeams.filter(t => t.division === div)) {
-        const slug = team.school_slug ?? team.slug.replace(/-varsity-football$/, '')
-        if (TEAM_PHOTOS[slug]?.[0]) { slides.push(TEAM_PHOTOS[slug][0]); break }
-      }
-    }
-    return slides
-  }, [allTeams])
 
   // ── Scroll-spy ───────────────────────────────────────────────────────────
   useEffect(() => {
@@ -321,14 +306,62 @@ export function SectionShell({
             </EditorialHead>
           </div>
 
-          {/* ── Hero photo strip ──────────────────────────────────── */}
-          {heroSlides.length > 0 && (
-            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
-              <RevealFx delay={0.1} translateY={8}>
-                <HeroStrip slides={heroSlides} />
-              </RevealFx>
-            </div>
-          )}
+          {/* ── Division cards — hero position, 520px total height ── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
+            <RevealFx delay={0.1} translateY={8}>
+              <div className="grid grid-cols-2 gap-4" style={{ height: 520 }}>
+                {divisionSummary.map(d => {
+                  const divNum = ({ I: 1, II: 2, III: 3, IV: 4 } as Record<string, number>)[d.division]
+                  const logo   = divNum ? DIVISION_LOGOS[divNum] : undefined
+                  const sectionId = DIV_SLUGS[d.division]
+                  return (
+                    <button
+                      key={d.division}
+                      onClick={() => {
+                        document.getElementById(sectionId)
+                          ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }}
+                      className="group border border-[var(--paper-rule)] bg-[var(--paper)] flex flex-col justify-between px-8 py-8 hover:bg-[var(--paper-quiet)] transition-colors text-left w-full"
+                      style={{ borderRadius: 3 }}
+                    >
+                      {logo && (
+                        <Image
+                          src={logo}
+                          alt=""
+                          width={52}
+                          height={52}
+                          className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                          unoptimized
+                        />
+                      )}
+                      <div>
+                        <p
+                          className="text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors leading-tight mb-2"
+                          style={{ ...SERIF, fontSize: 22, fontWeight: 600, letterSpacing: '-0.01em' }}
+                        >
+                          Division {d.division}
+                        </p>
+                        <p
+                          className="text-[13px] text-[var(--paper-muted)]"
+                          style={{ ...SERIF, fontStyle: 'italic' }}
+                        >
+                          {d.team_count} teams
+                        </p>
+                        {d.avg_win_pct != null && (
+                          <p
+                            className="mt-4 text-[13px] text-[var(--paper-strong)] font-medium"
+                            style={MONO}
+                          >
+                            {(d.avg_win_pct * 100).toFixed(1)}% avg win
+                          </p>
+                        )}
+                      </div>
+                    </button>
+                  )
+                })}
+              </div>
+            </RevealFx>
+          </div>
 
           {/* ── Sticky control bar ────────────────────────────────── */}
           <StickyControlBar>
@@ -525,7 +558,7 @@ export function SectionShell({
                   className="mb-20 scroll-mt-24"
                 >
                   <SectionHead
-                    title="Schedule"
+                    title="Season"
                     blurb={selectedSeason === null
                       ? 'All seasons — one record per team per season, newest first.'
                       : `${fmtSeasonLabel(selectedSeason)} — one record per team, ranked by wins.`}
@@ -554,7 +587,7 @@ export function SectionShell({
                           <Link
                             key={`${t.slug}-${t.season}`}
                             href={`/team/${t.slug}`}
-                            className="shrink-0 w-[196px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-2 hover:bg-[var(--paper-quiet)] transition-colors"
+                            className="shrink-0 w-[305px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-2 hover:bg-[var(--paper-quiet)] transition-colors"
                             style={{ borderRadius: 3 }}
                           >
                             <div className="flex items-center gap-2 min-w-0">
@@ -641,7 +674,7 @@ export function SectionShell({
                           <Link
                             key={g.id}
                             href={`/game/${g.id}`}
-                            className="shrink-0 w-[196px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-1.5 hover:bg-[var(--paper-quiet)] transition-colors"
+                            className="shrink-0 w-[240px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-1.5 hover:bg-[var(--paper-quiet)] transition-colors"
                             style={{ borderRadius: 3 }}
                           >
                             <div className="flex items-center gap-2 min-w-0">
@@ -682,67 +715,6 @@ export function SectionShell({
                         )
                       })}
                     </div>
-                  </div>
-                </section>
-              )}
-
-              {/* ── Divisions ──────────────────────────────────────── */}
-              {divisionSummary.length > 0 && (
-                <section
-                  id="divisions"
-                  ref={(el: HTMLElement | null) => { sectionRefs.current['divisions'] = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title="Divisions"
-                    blurb="The four classifications of Section XI football."
-                  />
-                  <div className="grid grid-cols-2 gap-4">
-                    {divisionSummary.map(d => {
-                      const divNum = ({ I: 1, II: 2, III: 3, IV: 4 } as Record<string, number>)[d.division]
-                      const logo   = divNum ? DIVISION_LOGOS[divNum] : undefined
-                      return (
-                        <Link
-                          key={d.division}
-                          href={`/division/${DIV_SLUGS[d.division]}`}
-                          className="group border border-[var(--paper-rule)] bg-[var(--paper)] px-5 py-5 flex flex-col gap-3 hover:bg-[var(--paper-quiet)] transition-colors"
-                          style={{ borderRadius: 3 }}
-                        >
-                          {logo && (
-                            <Image
-                              src={logo}
-                              alt=""
-                              width={36}
-                              height={36}
-                              className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                              unoptimized
-                            />
-                          )}
-                          <div>
-                            <p
-                              className="text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors leading-snug"
-                              style={{ ...SERIF, fontSize: 17, fontWeight: 500, letterSpacing: '-0.005em' }}
-                            >
-                              Division {d.division}
-                            </p>
-                            <p
-                              className="mt-0.5 text-[12px] text-[var(--paper-muted)]"
-                              style={{ ...SERIF, fontStyle: 'italic' }}
-                            >
-                              {d.team_count} teams
-                            </p>
-                          </div>
-                          {d.avg_win_pct != null && (
-                            <span
-                              className="text-[12px] text-[var(--paper-strong)] font-medium"
-                              style={MONO}
-                            >
-                              {(d.avg_win_pct * 100).toFixed(1)}% avg win
-                            </span>
-                          )}
-                        </Link>
-                      )
-                    })}
                   </div>
                 </section>
               )}
