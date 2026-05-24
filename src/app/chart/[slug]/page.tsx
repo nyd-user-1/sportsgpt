@@ -3,6 +3,7 @@ import { sql } from '@/lib/db'
 import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing } from '@/lib/chart-data/rushing'
+import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
 import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
@@ -348,14 +349,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── receiving-yards-leaders ────────────────────────────────────────────────
     case 'receiving-yards-leaders': {
-      const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.recv_yards AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM player_season_stats ps
-        LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
-        WHERE ps.stat_type = 'Receiving' AND ps.recv_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
-        ORDER BY ps.season, ps.recv_yards DESC`
+      const rows = await fetchReceivingYardsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -368,14 +362,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── receiving-tds-leaders ──────────────────────────────────────────────────
     case 'receiving-tds-leaders': {
-      const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.recv_tds AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM player_season_stats ps
-        LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
-        WHERE ps.stat_type = 'Receiving' AND ps.recv_tds IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
-        ORDER BY ps.season, ps.recv_tds DESC`
+      const rows = await fetchReceivingTdsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })

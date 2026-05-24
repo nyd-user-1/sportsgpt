@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { sql } from '@/lib/db'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing } from '@/lib/chart-data/rushing'
+import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
 
 const DIV_COLORS: Record<string, string> = {
   I: '#033882', II: '#4338ca', III: '#0ea5e9', IV: '#10b981',
@@ -126,23 +127,21 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
       }
 
       case 'receiving-yards-leaders': {
-        const rows = await sql`
-          SELECT player_name AS name, recv_yards AS value, season
-          FROM player_season_stats WHERE stat_type='Receiving' AND recv_yards IS NOT NULL AND season IN (2022,2023,2024)
-          ORDER BY season, recv_yards DESC`
-        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
-        const tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
-        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: ['2022','2023','2024'], valueLabel: 'Recv Yards' })
+        const seasons = [2021,2022,2023,2024,2025]
+        const seasonStrs = seasons.map(String)
+        const rows = await fetchReceivingYardsLeaders(seasons)
+        const seasonBars = buildSeasonBars(rows, seasonStrs)
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasonStrs, valueLabel: 'Recv Yards' })
       }
 
       case 'receiving-tds-leaders': {
-        const rows = await sql`
-          SELECT player_name AS name, recv_tds AS value, season
-          FROM player_season_stats WHERE stat_type='Receiving' AND recv_tds IS NOT NULL AND season IN (2022,2023,2024)
-          ORDER BY season, recv_tds DESC`
-        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2022','2023','2024'])
-        const tableRows = seasonBars.find(s => s.season === '2024')?.bars ?? []
-        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: ['2022','2023','2024'], valueLabel: 'Recv TDs' })
+        const seasons = [2021,2022,2023,2024,2025]
+        const seasonStrs = seasons.map(String)
+        const rows = await fetchReceivingTdsLeaders(seasons)
+        const seasonBars = buildSeasonBars(rows, seasonStrs)
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasonStrs, valueLabel: 'Recv TDs' })
       }
 
       case 'total-tds-leaders': {
