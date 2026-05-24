@@ -1,18 +1,38 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import {
+  ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight,
+} from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, PLAYER_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
-import { InfoTable } from '@/components/InfoTable'
 import { RevealFx } from '@/components/RevealFx'
 import { cn } from '@/lib/utils'
-import { ACCENT_COLOR, CURRENT_SEASON } from '@/lib/app-config'
+import { CURRENT_SEASON } from '@/lib/app-config'
+import {
+  EditorialHead,
+  EditorialButtonGroup,
+  HeroStrip,
+  MetaToggle,
+  PAPER_BRIDGE,
+  PlayerRankedList,
+  SectionHead,
+  Tablet,
+  EmptyTablet,
+  MONO,
+  tabletTh,
+  tabletTd,
+  StickyControlBar,
+  ContentsNav,
+  SearchInput,
+  useSearchHotkey,
+} from '@/components/editorial'
 
 type StandingRow = {
   slug: string
@@ -37,12 +57,31 @@ type TopPlayer = {
   attempts?: number | null
   rush_yards?: number | null
   rush_tds?: number | null
+  recv_yards?: number | null
+  recv_tds?: number | null
+  receptions?: number | null
   season: number
 }
 
 const DIV_ORDER = ['division-i', 'division-ii', 'division-iii', 'division-iv']
 
-const fmtSeason = (y: number) => `${y}-${String(y + 1).slice(2)}`
+const DIVISION_BLURB: Record<string, string> = {
+  'I':   'Section XI’s largest schools — the marquee class of Long Island football.',
+  'II':  'The middle weight — perennial contenders and the closest weekly margins.',
+  'III': 'Mid-size programs, where small swings decide the standings.',
+  'IV':  'Section XI’s smallest classification — tight races, loud Friday nights.',
+}
+
+const SECTIONS = [
+  { id: 'standings', label: 'Standings' },
+  { id: 'passing',   label: 'Passing' },
+  { id: 'rushing',   label: 'Rushing' },
+  { id: 'receiving', label: 'Receiving' },
+] as const
+
+type SectionId = typeof SECTIONS[number]['id']
+
+const fmtSeason = (y: number) => `${y}–${String(y + 1).slice(2)}`
 
 function fmtPct(w: number | null, l: number | null) {
   const ww = w ?? 0
@@ -51,307 +90,466 @@ function fmtPct(w: number | null, l: number | null) {
   return g === 0 ? '—' : (ww / g).toFixed(3).replace(/^0/, '')
 }
 
+// Standings keeps its original behavior — short preview, expand to all.
+const STANDINGS_PREVIEW = 3
+// Player sections standardize at top 5 / top 10 regardless of how many exist.
+const PLAYERS_PREVIEW   = 5
+const PLAYERS_EXPANDED  = 10
+
 export function DivisionShell({
   divSlug,
   division,
   standings,
   topPassers,
   topRushers,
+  topReceivers,
 }: {
   divSlug: string
   division: string
   standings: StandingRow[]
   topPassers: TopPlayer[]
   topRushers: TopPlayer[]
+  topReceivers: TopPlayer[]
 }) {
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
-  const [standingsExpanded, setStandingsExpanded] = useState(false)
-  const [seasonIdx, setSeasonIdx] = useState(0)
-  const [slideIdx, setSlideIdx] = useState(0)
+  const [seasonIdx,  setSeasonIdx]  = useState(0)
+  const [query,      setQuery]      = useState('')
 
-  const seenPhotoSlugs = new Set<string>()
-  const slides = standings
-    .filter(s => {
-      const slug = s.school_slug
-      if (!slug || seenPhotoSlugs.has(slug) || !TEAM_PHOTOS[slug]?.[0]) return false
-      seenPhotoSlugs.add(slug)
-      return true
-    })
-    .map(s => TEAM_PHOTOS[s.school_slug!]![0])
-    .slice(0, 6)
+  const [expanded, setExpanded] = useState<Record<SectionId, boolean>>({
+    standings: false, passing: false, rushing: false, receiving: false,
+  })
+  const toggle = (s: SectionId) => setExpanded(prev => ({ ...prev, [s]: !prev[s] }))
 
-  useEffect(() => {
-    if (slides.length < 2) return
-    const t = setInterval(() => setSlideIdx(i => (i + 1) % slides.length), 4000)
-    return () => clearInterval(t)
-  }, [slides.length])
-  const passRef = useRef<HTMLDivElement>(null)
-  const rushRef = useRef<HTMLDivElement>(null)
+  const [activeSection, setActiveSection] = useState<SectionId>('standings')
+  const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
+    standings: null, passing: null, rushing: null, receiving: null,
+  })
+  const searchRef = useRef<HTMLInputElement>(null)
 
-  const availableSeasons = [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a)
+  const slides = useMemo(() => {
+    const seen = new Set<string>()
+    return standings
+      .filter(s => {
+        const slug = s.school_slug
+        if (!slug || seen.has(slug) || !TEAM_PHOTOS[slug]?.[0]) return false
+        seen.add(slug)
+        return true
+      })
+      .map(s => TEAM_PHOTOS[s.school_slug!]![0])
+      .slice(0, 6)
+  }, [standings])
+
+  const availableSeasons  = useMemo(
+    () => [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a),
+    [standings]
+  )
   const selectedSeason    = availableSeasons[seasonIdx] ?? CURRENT_SEASON
   const filteredStandings = standings.filter(s => s.season === selectedSeason)
-  const seasonPassers     = topPassers.filter(p => p.season === selectedSeason).sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
-  const seasonRushers     = topRushers.filter(p => p.season === selectedSeason).sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))
+  const seasonPassers     = topPassers
+    .filter(p => p.season === selectedSeason)
+    .sort((a, b) => (b.pass_yards ?? 0) - (a.pass_yards ?? 0))
+  const seasonRushers     = topRushers
+    .filter(p => p.season === selectedSeason)
+    .sort((a, b) => (b.rush_yards ?? 0) - (a.rush_yards ?? 0))
+  const seasonReceivers   = topReceivers
+    .filter(p => p.season === selectedSeason)
+    .sort((a, b) => (b.recv_yards ?? 0) - (a.recv_yards ?? 0))
+
+  // Apply search filter (matches team name in standings, player name in leader sections).
+  const q = query.trim().toLowerCase()
+  const matchedStandings = q
+    ? filteredStandings.filter(t => t.name.toLowerCase().includes(q))
+    : filteredStandings
+  const matchedPassers = q
+    ? seasonPassers.filter(p => p.player_name.toLowerCase().includes(q))
+    : seasonPassers
+  const matchedRushers = q
+    ? seasonRushers.filter(p => p.player_name.toLowerCase().includes(q))
+    : seasonRushers
+  const matchedReceivers = q
+    ? seasonReceivers.filter(p => p.player_name.toLowerCase().includes(q))
+    : seasonReceivers
+
+  const sectionCounts: Record<SectionId, number> = {
+    standings: matchedStandings.length,
+    passing:   matchedPassers.length,
+    rushing:   matchedRushers.length,
+    receiving: matchedReceivers.length,
+  }
+  const sectionTotals: Record<SectionId, number> = {
+    standings: filteredStandings.length,
+    passing:   seasonPassers.length,
+    rushing:   seasonRushers.length,
+    receiving: seasonReceivers.length,
+  }
+  const totalVisible = sectionCounts.standings + sectionCounts.passing + sectionCounts.rushing + sectionCounts.receiving
+  const totalRanked  = sectionTotals.standings + sectionTotals.passing + sectionTotals.rushing + sectionTotals.receiving
 
   const curIdx  = DIV_ORDER.indexOf(divSlug)
   const n       = DIV_ORDER.length
   const prevDiv = DIV_ORDER[(curIdx - 1 + n) % n]
   const nextDiv = DIV_ORDER[(curIdx + 1) % n]
 
-  const visibleStandings = standingsExpanded ? filteredStandings : filteredStandings.slice(0, 3)
+  function capStandings(rows: StandingRow[], isExpanded: boolean) {
+    if (q) return rows // search bypasses cap
+    return isExpanded ? rows : rows.slice(0, STANDINGS_PREVIEW)
+  }
+  function capPlayers<T>(rows: T[], isExpanded: boolean) {
+    if (q) return rows
+    return isExpanded ? rows.slice(0, PLAYERS_EXPANDED) : rows.slice(0, PLAYERS_PREVIEW)
+  }
 
-  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
-  const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
-  const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
-  const roundBtn = 'inline-flex items-center justify-center h-8 w-8 rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
-  const th = 'px-3 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] whitespace-nowrap'
-  const td = 'px-3 py-2.5 text-sm border-b border-[var(--border)]'
+  function metaSlotFor(sectionId: SectionId): React.ReactNode {
+    if (q) return null // hide toggle while searching
+    const total      = sectionTotals[sectionId]
+    const isExpanded = expanded[sectionId]
+    if (sectionId === 'standings') {
+      if (total <= STANDINGS_PREVIEW) return null
+      return (
+        <MetaToggle
+          label={isExpanded ? 'Show fewer' : `Show all ${total} teams`}
+          expanded={isExpanded}
+          onClick={() => toggle('standings')}
+        />
+      )
+    }
+    if (total <= PLAYERS_PREVIEW) return null
+    return (
+      <MetaToggle
+        label={isExpanded ? 'Show Top 5' : 'Show Top 10'}
+        expanded={isExpanded}
+        onClick={() => toggle(sectionId)}
+      />
+    )
+  }
+
+  // Scroll-spy across sections.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries.filter(e => e.isIntersecting)
+        if (!visible.length) return
+        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        setActiveSection(visible[0].target.id as SectionId)
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: [0, 0.4] }
+    )
+    Object.values(sectionRefs.current).forEach(el => el && observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
+  useSearchHotkey(searchRef, () => setQuery(''))
 
   return (
     <>
       <AppLayout>
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 py-8">
+        <div
+          className="flex-1 overflow-y-auto no-scrollbar"
+          style={{ backgroundColor: 'var(--paper)' }}
+        >
+          {/* ── Masthead ──────────────────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
+            <EditorialHead
+              size="xl"
+              eyebrow="Section XI · Long Island"
+              subhead={DIVISION_BLURB[division]}
+              meta={[
+                `${filteredStandings.length} teams`,
+                `${availableSeasons.length} seasons of record`,
+                fmtSeason(selectedSeason),
+              ]}
+              rightSlot={
+                <EditorialButtonGroup
+                  prevHref={`/division/${prevDiv}`}
+                  nextHref={`/division/${nextDiv}`}
+                  prevLabel="Previous division"
+                  nextLabel="Next division"
+                  buttons={[
+                    { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
+                    { icon: Map,           tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                  ]}
+                />
+              }
+            >
+              Division {division}
+            </EditorialHead>
+          </div>
 
-            {/* Header */}
-            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
-            <div className="mb-8 flex items-center justify-between gap-2">
-              <div>
-                <div className="flex items-center gap-3">
-                  <div className="flex flex-col">
-                    <h1 className="text-2xl font-bold text-[var(--txt)]">Division {division}</h1>
-                    <div className="flex items-center gap-1.5 text-xs text-[var(--muted)] mt-1">
-                      <Link href="/section/section-xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
-                      <span>/</span>
-                      <span className="font-medium" style={{ color: ACCENT_COLOR }}>Division {division}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="hidden sm:flex items-center shrink-0">
-                <div className="inline-flex -space-x-px">
-                  <div className="relative group">
-                    <Link href={`/division/${prevDiv}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
-                    <span className={tip}>Prev Division</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
-                    <span className={tip}>Charts</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
-                    <span className={tip}>Map</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
-                    <span className={tip}>Ask SportsGPT</span>
-                  </div>
-                  <div className="relative group">
-                    <Link href={`/division/${nextDiv}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
-                    <span className={tip}>Next Division</span>
-                  </div>
-                </div>
-              </div>
+          {/* ── Hero photo strip ──────────────────────────────────── */}
+          {slides.length > 0 && (
+            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
+              <RevealFx delay={0.1} translateY={8}>
+                <HeroStrip slides={slides} />
+              </RevealFx>
             </div>
-            </RevealFx>
+          )}
 
-            {/* Hero slider */}
-            <RevealFx delay={0.15} translateY={16}>
-            {slides.length > 0 && (
-              <div className="mb-8 relative rounded-2xl overflow-hidden w-full" style={{ height: 420 }}>
-                {slides.map((src, i) => (
-                  <div key={src}
-                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-                    style={{ opacity: i === slideIdx ? 1 : 0 }}>
-                    <Image src={src} alt="" fill className="object-cover object-top" unoptimized />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                  </div>
-                ))}
-                <div className="absolute bottom-0 left-0 p-5 pointer-events-none">
-                  <p className="text-base font-bold text-white leading-snug">Division {division}</p>
-                  <p className="text-sm text-white/60 mt-0.5">Section XI Football</p>
-                </div>
-                {slides.length > 1 && (
-                  <>
-                    <button onClick={() => setSlideIdx(i => (i - 1 + slides.length) % slides.length)}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-                    <button onClick={() => setSlideIdx(i => (i + 1) % slides.length)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-                      {slides.map((_, i) => (
-                        <button key={i} onClick={() => setSlideIdx(i)}
-                          className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
-                          style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            )}
-            </RevealFx>
-
-            {/* Standings with season carousel */}
-            <RevealFx delay={0.3} translateY={8}>
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-semibold text-[var(--txt)]">Standings</h2>
-                {availableSeasons.length > 1 && (
-                  <div className="flex items-center gap-1">
-                    <button onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
-                      className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
-                      <ArrowLeft className="h-4 w-4" />
-                    </button>
-                    <button onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
-                      className="p-1 text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] rounded-md transition-colors">
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
-              </div>
-              <InfoTable
-                title={`${fmtSeason(selectedSeason)} Season`}
-                onToggle={() => setStandingsExpanded(v => !v)}
+          {/* ── Sticky control bar ────────────────────────────────── */}
+          <StickyControlBar>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Season</span>
+              {availableSeasons.length > 1 && (
+                <button
+                  onClick={() => setSeasonIdx(i => (i - 1 + availableSeasons.length) % availableSeasons.length)}
+                  aria-label="Previous season"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
+              )}
+              <span
+                className="text-[var(--paper-text)] tabular-nums min-w-[5rem] text-center"
+                style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}
               >
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="bg-[var(--surface)]">
-                      <th className={cn(th, 'text-left')}>#</th>
-                      <th className={cn(th, 'text-left')}>Team</th>
-                      <th className={cn(th, 'text-right')}>W</th>
-                      <th className={cn(th, 'text-right')}>L</th>
-                      <th className={cn(th, 'text-right')}>PCT</th>
-                      <th className={cn(th, 'text-right')}>Conf W-L</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredStandings.length === 0 && (
-                      <tr><td colSpan={7} className="px-4 py-8 text-center text-sm text-[var(--muted)]">No standings data for {fmtSeason(selectedSeason)}</td></tr>
-                    )}
-                    {visibleStandings.map((t, i) => (
-                      <tr key={t.slug} className="border-t border-[var(--border)] hover:bg-[var(--inp-bg)] transition-colors">
-                        <td className={cn(td, 'text-[var(--muted)]')}>{i + 1}</td>
-                        <td className={cn(td, 'font-semibold')}>
-                          <div className="flex items-center gap-2">
-                            {t.school_slug && SCHOOL_LOGOS[t.school_slug] && (
-                              <Image src={SCHOOL_LOGOS[t.school_slug]} alt="" width={20} height={20} className="shrink-0 h-5 w-5 object-contain" unoptimized />
-                            )}
-                            <Link href={`/team/${t.slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>
-                              {t.name.replace(/\s+Varsity\s+Football$/i, '')}
-                            </Link>
-                          </div>
-                        </td>
-                        <td className={cn(td, 'text-right font-bold text-[var(--txt)]')}>{t.overall_wins ?? '—'}</td>
-                        <td className={cn(td, 'text-right text-[var(--muted)]')}>{t.overall_losses ?? '—'}</td>
-                        <td className={cn(td, 'text-right text-[var(--txt)]')}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
-                        <td className={cn(td, 'text-right text-[var(--muted)]')}>
-                          {(t.conference_wins != null || t.conference_losses != null)
-                            ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0}`
-                            : '—'}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </InfoTable>
+                {fmtSeason(selectedSeason)}
+              </span>
+              {availableSeasons.length > 1 && (
+                <button
+                  onClick={() => setSeasonIdx(i => (i + 1) % availableSeasons.length)}
+                  aria-label="Next season"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              )}
             </div>
-            </RevealFx>
 
-            {/* Top Passers carousel */}
-            <RevealFx delay={0.42} translateY={8}>
-            {seasonPassers.length > 0 && (
-              <div className="mb-8">
-                <div className="mb-4">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Passing Leaders</h2>
+            <SearchInput
+              value={query}
+              onChange={setQuery}
+              inputRef={searchRef}
+              placeholder="Search teams & players…"
+            />
+
+            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
+              {q
+                ? `${totalVisible} / ${totalRanked} ranked`
+                : `${totalRanked} ranked entries`}
+            </div>
+          </StickyControlBar>
+
+          {/* ── Body: sidebar + content ────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
+
+            {/* Chapter sidebar */}
+            <ContentsNav
+              items={SECTIONS.map(s => ({ id: s.id, label: s.label, count: sectionCounts[s.id] }))}
+              activeId={activeSection}
+            />
+
+            <main className="min-w-0">
+
+              {/* Section: Standings */}
+              <section
+                id="standings"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.standings = el }}
+                className="mb-20 scroll-mt-24 first:mt-0"
+              >
+                <SectionHead
+                  title="Standings"
+                  blurb="The order of finish, by overall record."
+                  meta={metaSlotFor('standings')}
+                />
+                {matchedStandings.length === 0 ? (
+                  <EmptyTablet label={q ? `No teams match “${query}”.` : `No standings recorded for ${fmtSeason(selectedSeason)}.`} />
+                ) : (
+                  <StandingsTablet rows={capStandings(matchedStandings, expanded.standings)} />
+                )}
+              </section>
+
+              {/* Section: Passing */}
+              <section
+                id="passing"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.passing = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Passing"
+                  blurb="Quarterbacks, ranked by yards thrown."
+                  meta={metaSlotFor('passing')}
+                />
+                <PlayerRankedList
+                  rows={capPlayers(matchedPassers, expanded.passing).map((p, i) => ({
+                    rank:       i + 1,
+                    slug:       p.player_slug,
+                    name:       p.player_name,
+                    school:     p.school_name,
+                    schoolSlug: p.school_slug,
+                    primary:    p.pass_yards != null ? `${p.pass_yards.toLocaleString()} YDS` : '— YDS',
+                    secondary:  p.pass_tds   != null ? `${p.pass_tds} TD` : '— TD',
+                  }))}
+                  emptyLabel={q ? `No passers match “${query}”.` : `No passing leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                />
+              </section>
+
+              {/* Section: Rushing */}
+              <section
+                id="rushing"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.rushing = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Rushing"
+                  blurb="Ball carriers, ranked by yards gained."
+                  meta={metaSlotFor('rushing')}
+                />
+                <PlayerRankedList
+                  rows={capPlayers(matchedRushers, expanded.rushing).map((p, i) => ({
+                    rank:       i + 1,
+                    slug:       p.player_slug,
+                    name:       p.player_name,
+                    school:     p.school_name,
+                    schoolSlug: p.school_slug,
+                    primary:    p.rush_yards != null ? `${p.rush_yards.toLocaleString()} YDS` : '— YDS',
+                    secondary:  p.rush_tds   != null ? `${p.rush_tds} TD` : '— TD',
+                  }))}
+                  emptyLabel={q ? `No rushers match “${query}”.` : `No rushing leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                />
+              </section>
+
+              {/* Section: Receiving */}
+              <section
+                id="receiving"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.receiving = el }}
+                className="mb-8 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Receiving"
+                  blurb="Pass catchers, ranked by yards gained."
+                  meta={metaSlotFor('receiving')}
+                />
+                <PlayerRankedList
+                  rows={capPlayers(matchedReceivers, expanded.receiving).map((p, i) => ({
+                    rank:       i + 1,
+                    slug:       p.player_slug,
+                    name:       p.player_name,
+                    school:     p.school_name,
+                    schoolSlug: p.school_slug,
+                    primary:    p.recv_yards != null ? `${p.recv_yards.toLocaleString()} YDS` : '— YDS',
+                    secondary:  p.recv_tds   != null ? `${p.recv_tds} TD` : '— TD',
+                  }))}
+                  emptyLabel={q ? `No receivers match “${query}”.` : `No receiving leaders recorded for ${fmtSeason(selectedSeason)}.`}
+                />
+              </section>
+
+              {q && totalVisible === 0 && (
+                <div className="py-24 text-center">
+                  <p
+                    className="text-[var(--paper-muted)] text-lg"
+                    style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+                  >
+                    No teams or players match &ldquo;{query}&rdquo;.
+                  </p>
+                  <button
+                    onClick={() => setQuery('')}
+                    className="mt-4 text-xs uppercase tracking-[0.2em] text-[var(--paper-strong)] hover:underline underline-offset-4"
+                  >
+                    Clear search
+                  </button>
                 </div>
-                <div ref={passRef} className="overflow-x-auto no-scrollbar">
-                  <div className="flex gap-3 pb-1">
-                    {seasonPassers.map(p => {
-                      const photo = PLAYER_PHOTOS[p.player_slug]
-                      const logo  = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : undefined
-                      return (
-                        <Link key={p.player_slug} href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                            {photo
-                              ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                              : logo
-                              ? <Image src={logo} alt="" width={44} height={44} className="object-contain" unoptimized />
-                              : null}
-                          </div>
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.school_name}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.pass_yards ?? '—'} YDS</span>
-                              <span className="text-xs text-[var(--muted)]">{p.pass_tds ?? '—'} TD</span>
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </div>
+              )}
+
+              {/* Colophon */}
+              <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">
+                <p
+                  className="text-[12.5px] leading-[1.75] text-[var(--paper-faint)]"
+                  style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+                >
+                  Standings, passing, rushing, and receiving totals are drawn from
+                  Section XI official records and Newsday box scores. Nassau County
+                  opponents are excluded from this almanac.
+                </p>
               </div>
-            )}
-            </RevealFx>
 
-            {/* Top Rushers carousel */}
-            <RevealFx delay={0.52} translateY={8}>
-            {seasonRushers.length > 0 && (
-              <div className="mb-8">
-                <div className="mb-4">
-                  <h2 className="text-lg font-semibold text-[var(--txt)]">Rushing Leaders</h2>
-                </div>
-                <div ref={rushRef} className="overflow-x-auto no-scrollbar">
-                  <div className="flex gap-3 pb-1">
-                    {seasonRushers.map(p => {
-                      const photo = PLAYER_PHOTOS[p.player_slug]
-                      const logo  = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : undefined
-                      return (
-                        <Link key={p.player_slug} href={`/player/${p.player_slug}`}
-                          className="shrink-0 w-[210px] h-[90px] rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-3 flex items-center gap-3 hover:bg-[var(--inp-bg)] hover:border-transparent transition-all">
-                          <div className="shrink-0 w-[60px] h-[60px] rounded-lg overflow-hidden flex items-center justify-center">
-                            {photo
-                              ? <Image src={photo} alt="" width={60} height={60} className="w-full h-full object-cover" unoptimized />
-                              : logo
-                              ? <Image src={logo} alt="" width={44} height={44} className="object-contain" unoptimized />
-                              : null}
-                          </div>
-                          <div className="flex flex-col justify-between flex-1 min-w-0 h-[60px]">
-                            <div>
-                              <p className="text-sm font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
-                              <p className="text-xs text-[var(--muted)] mt-0.5 truncate">{p.school_name}</p>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-xs font-bold" style={{ color: ACCENT_COLOR }}>{p.rush_yards ?? '—'} YDS</span>
-                              <span className="text-xs text-[var(--muted)]">{p.rush_tds ?? '—'} TD</span>
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-            </RevealFx>
-
+            </main>
           </div>
         </div>
       </AppLayout>
 
-      <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={`Division ${division}`} />
+      <div style={PAPER_BRIDGE}>
+        <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
+        <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
+        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={`Division ${division}`} />
+      </div>
     </>
   )
 }
+
+// ──────────────────────────────────────────────────────────────────────────────
+// Standings tablet — page-specific table on the shared Tablet wrapper.
+// ──────────────────────────────────────────────────────────────────────────────
+function StandingsTablet({ rows }: { rows: StandingRow[] }) {
+  const router = useRouter()
+
+  return (
+    <Tablet>
+      <table className="w-full">
+        <thead>
+          <tr>
+            <th className={tabletTh('text-left w-14 pl-5')}>#</th>
+            <th className={tabletTh('text-left')}>Team</th>
+            <th className={tabletTh('text-right w-14')}>W</th>
+            <th className={tabletTh('text-right w-14')}>L</th>
+            <th className={tabletTh('text-right w-20')}>PCT</th>
+            <th className={tabletTh('text-right w-20 pr-5')}>Conf</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((t, i) => (
+            <tr
+              key={t.slug}
+              onClick={() => router.push(`/team/${t.slug}`)}
+              className="group/row border-t border-[var(--paper-rule-soft)] cursor-pointer hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
+            >
+              <td className={cn(tabletTd, 'pl-5 text-[var(--paper-faint)] tabular-nums')} style={MONO}>
+                {String(i + 1).padStart(2, ' ')}.
+              </td>
+              <td className={tabletTd}>
+                <Link
+                  href={`/team/${t.slug}`}
+                  onClick={e => e.stopPropagation()}
+                  className="flex items-center gap-3 text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors"
+                >
+                  {t.school_slug && SCHOOL_LOGOS[t.school_slug] && (
+                    <Image
+                      src={SCHOOL_LOGOS[t.school_slug]}
+                      alt=""
+                      width={22}
+                      height={22}
+                      className="shrink-0 h-[22px] w-[22px] object-contain"
+                      unoptimized
+                    />
+                  )}
+                  <span
+                    className="text-[16px] leading-tight"
+                    style={{ fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 500, letterSpacing: '-0.005em' }}
+                  >
+                    {t.name.replace(/\s+Varsity\s+Football$/i, '')}
+                  </span>
+                </Link>
+              </td>
+              <td className={cn(tabletTd, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>
+                {t.overall_wins ?? '—'}
+              </td>
+              <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>
+                {t.overall_losses ?? '—'}
+              </td>
+              <td className={cn(tabletTd, 'text-right text-[var(--paper-text)] tabular-nums')} style={MONO}>
+                {fmtPct(t.overall_wins, t.overall_losses)}
+              </td>
+              <td className={cn(tabletTd, 'text-right pr-5 text-[var(--paper-muted)] tabular-nums')} style={MONO}>
+                {(t.conference_wins != null || t.conference_losses != null)
+                  ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0}`
+                  : '—'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </Tablet>
+  )
+}
+

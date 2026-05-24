@@ -17,7 +17,7 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
   const division = divMap[slug]
   if (!division) notFound()
 
-  const [standings, topPassers, topRushers] = await Promise.all([
+  const [standings, topPassers, topRushers, topReceivers] = await Promise.all([
     sql`
       SELECT t.slug, t.name, t.school_slug,
         s.overall_wins, s.overall_losses, s.overall_ties,
@@ -47,6 +47,16 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         AND ps.season = ANY(${AVAILABLE_SEASONS})
         AND ps.rush_yards IS NOT NULL
       ORDER BY ps.season DESC, ps.rush_yards DESC NULLS LAST
+    `,
+    sql`
+      SELECT ps.player_slug, ps.player_name, ps.school_name, ps.school_slug,
+        ps.recv_yards, ps.recv_tds, ps.receptions, ps.season
+      FROM player_season_stats ps
+      JOIN schools sch ON sch.slug = ps.school_slug AND sch.division = ${division}
+      WHERE ps.stat_type = 'Receiving'
+        AND ps.season = ANY(${AVAILABLE_SEASONS})
+        AND ps.recv_yards IS NOT NULL
+      ORDER BY ps.season DESC, ps.recv_yards DESC NULLS LAST
     `,
   ])
 
@@ -83,6 +93,16 @@ export default async function DivisionDetailPage({ params }: { params: Promise<{
         school_slug: r.school_slug as string | undefined,
         rush_yards:  r.rush_yards != null ? Number(r.rush_yards) : null,
         rush_tds:    r.rush_tds != null ? Number(r.rush_tds) : null,
+        season:      Number(r.season),
+      }))}
+      topReceivers={topReceivers.map(r => ({
+        player_slug: r.player_slug as string,
+        player_name: r.player_name as string,
+        school_name: r.school_name as string,
+        school_slug: r.school_slug as string | undefined,
+        recv_yards:  r.recv_yards != null ? Number(r.recv_yards) : null,
+        recv_tds:    r.recv_tds != null ? Number(r.recv_tds) : null,
+        receptions:  r.receptions != null ? Number(r.receptions) : null,
         season:      Number(r.season),
       }))}
     />

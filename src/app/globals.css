@@ -45,6 +45,16 @@
   --section-bg: #f9f9f9;
   --compare-bg: #eef3ff;
   --compare-bg-hover: #e4ecff;
+
+  /* Almanac / editorial paper palette (scoped use: glossary) */
+  --paper: #fbf7ee;
+  --paper-text: #1a1612;
+  --paper-muted: rgba(26, 22, 18, 0.58);
+  --paper-faint: rgba(26, 22, 18, 0.38);
+  --paper-rule: rgba(26, 22, 18, 0.13);
+  --paper-rule-soft: rgba(26, 22, 18, 0.07);
+  --paper-quiet: rgba(26, 22, 18, 0.035);
+  --paper-strong: #033882;
 }
 
 html.dark {
@@ -66,6 +76,16 @@ html.dark {
   --section-bg: rgba(255, 255, 255, 0.04);
   --compare-bg: rgba(3, 56, 130, 0.20);
   --compare-bg-hover: rgba(3, 56, 130, 0.28);
+
+  /* Almanac dark — warm onyx, slight umber tint */
+  --paper: #15120d;
+  --paper-text: #f0e9d8;
+  --paper-muted: rgba(240, 233, 216, 0.58);
+  --paper-faint: rgba(240, 233, 216, 0.36);
+  --paper-rule: rgba(240, 233, 216, 0.12);
+  --paper-rule-soft: rgba(240, 233, 216, 0.06);
+  --paper-quiet: rgba(240, 233, 216, 0.035);
+  --paper-strong: #b6d0f4;
 }
 
 /* Mobile: collapse the app gutter so the page background reads as white

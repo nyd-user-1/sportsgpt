@@ -8,6 +8,8 @@ export type GlossaryTerm = {
   caveats: string
 }
 
+export const GLOSSARY_UPDATED = 'May 2026'
+
 export const GLOSSARY_TERMS: GlossaryTerm[] = [
 
   // ── Standard — Passing ───────────────────────────────────────────────────
