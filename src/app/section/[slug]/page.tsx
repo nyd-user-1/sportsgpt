@@ -54,7 +54,6 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       JOIN teams at2 ON at2.slug = g.away_team_slug
       WHERE g.season = ANY(${AVAILABLE_SEASONS})
       ORDER BY g.season DESC, g.game_date DESC
-      LIMIT 100
     `,
     sql`
       SELECT ps.player_slug, ps.player_name, ps.school_name, ps.school_slug,
