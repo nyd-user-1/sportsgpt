@@ -354,7 +354,7 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
 
                     {/* Stat */}
                     <span
-                      className="text-[13px] tabular-nums font-medium text-[var(--paper-strong)] shrink-0"
+                      className="text-[13px] tabular-nums font-medium text-[var(--paper-text)] shrink-0"
                       style={MONO_S}
                     >
                       {mainStat(p)}
