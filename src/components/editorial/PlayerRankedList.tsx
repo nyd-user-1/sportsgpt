@@ -8,7 +8,8 @@ import { MONO } from './Tablet'
 export type RankedPlayer = {
   slug: string
   name: string
-  school: string
+  /** Italic subtitle. Hidden if absent. (Players pass school name; teams pass conference record.) */
+  school?: string
   schoolSlug?: string
   /** Explicit rank — pass `i + 1` for unfiltered top-N, or the precomputed rank for search-filtered views. */
   rank: number
@@ -16,6 +17,8 @@ export type RankedPlayer = {
   primary: string
   /** Optional secondary stat string, e.g. "24 TD". Rendered in muted mono after a dot separator. */
   secondary?: string
+  /** Optional row link target. Defaults to `/player/{slug}`. */
+  href?: string
 }
 
 /**
@@ -55,8 +58,8 @@ export function PlayerRankedList({
             )}
           >
             <Link
-              href={`/player/${p.slug}`}
-              className="grid grid-cols-[40px_36px_1fr_auto] sm:grid-cols-[44px_40px_1fr_auto] items-center gap-3 sm:gap-4 py-4 px-2 -mx-2 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
+              href={p.href ?? `/player/${p.slug}`}
+              className="player-row-grid gap-3 sm:gap-4 py-4 px-2 -mx-2 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
               style={{ borderRadius: TABLET_RADIUS }}
             >
               <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
@@ -93,12 +96,14 @@ export function PlayerRankedList({
                 >
                   {p.name}
                 </p>
-                <p
-                  className="mt-0.5 text-[13px] text-[var(--paper-muted)] truncate"
-                  style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
-                >
-                  {p.school}
-                </p>
+                {p.school && (
+                  <p
+                    className="mt-0.5 text-[13px] text-[var(--paper-muted)] truncate"
+                    style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+                  >
+                    {p.school}
+                  </p>
+                )}
               </div>
 
               <div className="shrink-0 text-right tabular-nums" style={MONO}>

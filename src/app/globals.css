@@ -105,6 +105,19 @@ html.dark {
 ::view-transition-new(root) { z-index: 9999; }
 ::view-transition-old(root) { z-index: 1; }
 
+/* PlayerRankedList row grid — defined here so Turbopack HMR never drops the
+   grid-template-columns rule when component files are hot-reloaded. */
+.player-row-grid {
+  display: grid;
+  grid-template-columns: 40px 36px 1fr auto;
+  align-items: center;
+}
+@media (min-width: 640px) {
+  .player-row-grid {
+    grid-template-columns: 44px 40px 1fr auto;
+  }
+}
+
 /* Chat streaming wipe animation */
 .mask-wipe {
   mask-image: linear-gradient(

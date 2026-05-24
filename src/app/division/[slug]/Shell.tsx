@@ -1,33 +1,23 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import {
   ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight,
 } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
 import { RevealFx } from '@/components/RevealFx'
-import { cn } from '@/lib/utils'
 import { CURRENT_SEASON } from '@/lib/app-config'
 import {
   EditorialHead,
   EditorialButtonGroup,
   HeroStrip,
-  MetaToggle,
   PAPER_BRIDGE,
   PlayerRankedList,
   SectionHead,
-  Tablet,
-  EmptyTablet,
-  MONO,
-  tabletTh,
-  tabletTd,
   StickyControlBar,
   ContentsNav,
   SearchInput,
@@ -90,12 +80,6 @@ function fmtPct(w: number | null, l: number | null) {
   return g === 0 ? '—' : (ww / g).toFixed(3).replace(/^0/, '')
 }
 
-// Standings keeps its original behavior — short preview, expand to all.
-const STANDINGS_PREVIEW = 3
-// Player sections standardize at top 5 / top 10 regardless of how many exist.
-const PLAYERS_PREVIEW   = 5
-const PLAYERS_EXPANDED  = 10
-
 export function DivisionShell({
   divSlug,
   division,
@@ -116,11 +100,6 @@ export function DivisionShell({
   const [chatOpen,   setChatOpen]   = useState(false)
   const [seasonIdx,  setSeasonIdx]  = useState(0)
   const [query,      setQuery]      = useState('')
-
-  const [expanded, setExpanded] = useState<Record<SectionId, boolean>>({
-    standings: false, passing: false, rushing: false, receiving: false,
-  })
-  const toggle = (s: SectionId) => setExpanded(prev => ({ ...prev, [s]: !prev[s] }))
 
   const [activeSection, setActiveSection] = useState<SectionId>('standings')
   const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
@@ -192,36 +171,16 @@ export function DivisionShell({
   const prevDiv = DIV_ORDER[(curIdx - 1 + n) % n]
   const nextDiv = DIV_ORDER[(curIdx + 1) % n]
 
-  function capStandings(rows: StandingRow[], isExpanded: boolean) {
-    if (q) return rows // search bypasses cap
-    return isExpanded ? rows : rows.slice(0, STANDINGS_PREVIEW)
-  }
-  function capPlayers<T>(rows: T[], isExpanded: boolean) {
-    if (q) return rows
-    return isExpanded ? rows.slice(0, PLAYERS_EXPANDED) : rows.slice(0, PLAYERS_PREVIEW)
-  }
-
-  function metaSlotFor(sectionId: SectionId): React.ReactNode {
-    if (q) return null // hide toggle while searching
-    const total      = sectionTotals[sectionId]
-    const isExpanded = expanded[sectionId]
-    if (sectionId === 'standings') {
-      if (total <= STANDINGS_PREVIEW) return null
-      return (
-        <MetaToggle
-          label={isExpanded ? 'Show fewer' : `Show all ${total} teams`}
-          expanded={isExpanded}
-          onClick={() => toggle('standings')}
-        />
-      )
-    }
-    if (total <= PLAYERS_PREVIEW) return null
+  function metaCount(id: SectionId, noun: 'team' | 'player'): React.ReactNode {
+    const visible = sectionCounts[id]
+    const total   = sectionTotals[id]
+    if (total === 0) return null
     return (
-      <MetaToggle
-        label={isExpanded ? 'Show Top 5' : 'Show Top 10'}
-        expanded={isExpanded}
-        onClick={() => toggle(sectionId)}
-      />
+      <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)] tabular-nums">
+        {q && visible !== total
+          ? `${visible} / ${total}`
+          : `${total} ${total === 1 ? noun : `${noun}s`}`}
+      </span>
     )
   }
 
@@ -351,13 +310,25 @@ export function DivisionShell({
                 <SectionHead
                   title="Standings"
                   blurb="The order of finish, by overall record."
-                  meta={metaSlotFor('standings')}
+                  meta={metaCount('standings', 'team')}
                 />
-                {matchedStandings.length === 0 ? (
-                  <EmptyTablet label={q ? `No teams match “${query}”.` : `No standings recorded for ${fmtSeason(selectedSeason)}.`} />
-                ) : (
-                  <StandingsTablet rows={capStandings(matchedStandings, expanded.standings)} />
-                )}
+                <PlayerRankedList
+                  rows={matchedStandings.map((t, i) => ({
+                    rank:       i + 1,
+                    slug:       t.slug,
+                    name:       t.name.replace(/\s+Varsity\s+Football$/i, ''),
+                    schoolSlug: t.school_slug ?? undefined,
+                    school:     `Win pct ${fmtPct(t.overall_wins, t.overall_losses)}`,
+                    primary:    `${t.overall_wins ?? 0}–${t.overall_losses ?? 0}`,
+                    secondary:  (t.conference_wins != null || t.conference_losses != null)
+                                  ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0} CONF`
+                                  : undefined,
+                    href:       `/team/${t.slug}`,
+                  }))}
+                  emptyLabel={q
+                    ? `No teams match “${query}”.`
+                    : `No standings recorded for ${fmtSeason(selectedSeason)}.`}
+                />
               </section>
 
               {/* Section: Passing */}
@@ -369,10 +340,10 @@ export function DivisionShell({
                 <SectionHead
                   title="Passing"
                   blurb="Quarterbacks, ranked by yards thrown."
-                  meta={metaSlotFor('passing')}
+                  meta={metaCount('passing', 'player')}
                 />
                 <PlayerRankedList
-                  rows={capPlayers(matchedPassers, expanded.passing).map((p, i) => ({
+                  rows={matchedPassers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
                     name:       p.player_name,
@@ -394,10 +365,10 @@ export function DivisionShell({
                 <SectionHead
                   title="Rushing"
                   blurb="Ball carriers, ranked by yards gained."
-                  meta={metaSlotFor('rushing')}
+                  meta={metaCount('rushing', 'player')}
                 />
                 <PlayerRankedList
-                  rows={capPlayers(matchedRushers, expanded.rushing).map((p, i) => ({
+                  rows={matchedRushers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
                     name:       p.player_name,
@@ -419,10 +390,10 @@ export function DivisionShell({
                 <SectionHead
                   title="Receiving"
                   blurb="Pass catchers, ranked by yards gained."
-                  meta={metaSlotFor('receiving')}
+                  meta={metaCount('receiving', 'player')}
                 />
                 <PlayerRankedList
-                  rows={capPlayers(matchedReceivers, expanded.receiving).map((p, i) => ({
+                  rows={matchedReceivers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
                     name:       p.player_name,
@@ -478,78 +449,4 @@ export function DivisionShell({
   )
 }
 
-// ──────────────────────────────────────────────────────────────────────────────
-// Standings tablet — page-specific table on the shared Tablet wrapper.
-// ──────────────────────────────────────────────────────────────────────────────
-function StandingsTablet({ rows }: { rows: StandingRow[] }) {
-  const router = useRouter()
-
-  return (
-    <Tablet>
-      <table className="w-full">
-        <thead>
-          <tr>
-            <th className={tabletTh('text-left w-14 pl-5')}>#</th>
-            <th className={tabletTh('text-left')}>Team</th>
-            <th className={tabletTh('text-right w-14')}>W</th>
-            <th className={tabletTh('text-right w-14')}>L</th>
-            <th className={tabletTh('text-right w-20')}>PCT</th>
-            <th className={tabletTh('text-right w-20 pr-5')}>Conf</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((t, i) => (
-            <tr
-              key={t.slug}
-              onClick={() => router.push(`/team/${t.slug}`)}
-              className="group/row border-t border-[var(--paper-rule-soft)] cursor-pointer hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
-            >
-              <td className={cn(tabletTd, 'pl-5 text-[var(--paper-faint)] tabular-nums')} style={MONO}>
-                {String(i + 1).padStart(2, ' ')}.
-              </td>
-              <td className={tabletTd}>
-                <Link
-                  href={`/team/${t.slug}`}
-                  onClick={e => e.stopPropagation()}
-                  className="flex items-center gap-3 text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors"
-                >
-                  {t.school_slug && SCHOOL_LOGOS[t.school_slug] && (
-                    <Image
-                      src={SCHOOL_LOGOS[t.school_slug]}
-                      alt=""
-                      width={22}
-                      height={22}
-                      className="shrink-0 h-[22px] w-[22px] object-contain"
-                      unoptimized
-                    />
-                  )}
-                  <span
-                    className="text-[16px] leading-tight"
-                    style={{ fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 500, letterSpacing: '-0.005em' }}
-                  >
-                    {t.name.replace(/\s+Varsity\s+Football$/i, '')}
-                  </span>
-                </Link>
-              </td>
-              <td className={cn(tabletTd, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>
-                {t.overall_wins ?? '—'}
-              </td>
-              <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>
-                {t.overall_losses ?? '—'}
-              </td>
-              <td className={cn(tabletTd, 'text-right text-[var(--paper-text)] tabular-nums')} style={MONO}>
-                {fmtPct(t.overall_wins, t.overall_losses)}
-              </td>
-              <td className={cn(tabletTd, 'text-right pr-5 text-[var(--paper-muted)] tabular-nums')} style={MONO}>
-                {(t.conference_wins != null || t.conference_losses != null)
-                  ? `${t.conference_wins ?? 0}–${t.conference_losses ?? 0}`
-                  : '—'}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </Tablet>
-  )
-}
 
