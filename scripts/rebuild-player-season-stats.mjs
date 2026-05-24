@@ -115,129 +115,242 @@ async function previewWouldAdd() {
   }
 }
 
+// Aggregation design notes
+// ------------------------
+// 1. Slug derivation: when a game row has no player_slug, derive one from the
+//    player_name using REGEXP. Mirrored from CLAUDE.md's `first-last` kebab format.
+//
+// 2. GROUP BY is (player_name, school_slug, season), NOT player_slug. Two reasons:
+//    a) The same player can have multiple slug values across game rows
+//       (e.g. AJ Cannet appears as both 'aj-cannet' and 'ajcannet'), so
+//       grouping by slug would fragment them into duplicate aggregates.
+//    b) The natural key for a player-season is (name, school, season).
+//
+// 3. NOT EXISTS dedup uses the same natural key. The leaderboard's UNIQUE
+//    constraint on (player_slug, season, stat_type) is a stricter form of
+//    the same idea — we skip earlier so we don't even attempt a conflicting
+//    INSERT. (If our derived slug ever collides with a leaderboard slug for
+//    a *different* player, the constraint catches it as a safety net.)
+
 async function addPassing() {
-  // Insert only players not already in the leaderboard for (season, school, name, Passing).
   const inserted = await sql`
+    WITH labeled AS (
+      SELECT
+        COALESCE(
+          pgs.player_slug,
+          -- Derive a kebab-case slug from player_name when null. Uses POSIX
+          -- character classes ([[:space:]]) instead of \\s — JS template
+          -- literals would eat a single \\, producing buggy regexes.
+          LOWER(REGEXP_REPLACE(REGEXP_REPLACE(TRIM(pgs.player_name), '[^A-Za-z0-9[:space:]]', '', 'g'), '[[:space:]]+', '-', 'g'))
+        ) AS player_slug,
+        pgs.player_name,
+        pgs.school_slug,
+        pgs.season,
+        pgs.pass_comp, pgs.pass_att, pgs.pass_yds, pgs.pass_tds, pgs.pass_int
+      FROM player_game_stats pgs
+      WHERE pgs.stat_type = 'Passing'
+        AND pgs.season = ANY(${SEASONS})
+        AND COALESCE(pgs.pass_yds, 0) > 0
+    ),
+    agg AS (
+      SELECT
+        player_name,
+        school_slug,
+        season,
+        -- Same player can have multiple slugs across game rows; pick one
+        -- canonical slug (most common form).
+        (array_agg(player_slug ORDER BY player_slug))[1]    AS player_slug,
+        SUM(COALESCE(pass_comp, 0))::int                    AS completions,
+        SUM(COALESCE(pass_att, 0))::int                     AS attempts,
+        SUM(COALESCE(pass_yds, 0))::int                     AS pass_yards,
+        SUM(COALESCE(pass_tds, 0))::int                     AS pass_tds,
+        SUM(COALESCE(pass_int, 0))::int                     AS interceptions,
+        COUNT(*)::int                                       AS games_played
+      FROM labeled
+      -- Group by name+school (not by slug) because the same player can have
+      -- multiple slug values across game rows. The natural key for a player-
+      -- season row is (player_name, school_slug, season).
+      GROUP BY player_name, school_slug, season
+    )
     INSERT INTO player_season_stats (
       player_slug, player_name, school_slug, school_name, season, stat_type, section,
       completions, attempts, pass_yards, pass_tds, interceptions,
       games_played, comp_pct, ypa, td_rate, int_rate
     )
     SELECT
-      MAX(pgs.player_slug),
-      pgs.player_name,
-      pgs.school_slug,
-      MAX(t.name)                                         AS school_name,
-      pgs.season,
+      agg.player_slug,
+      agg.player_name,
+      agg.school_slug,
+      (SELECT name FROM teams WHERE school_slug = agg.school_slug AND level = 'Varsity' LIMIT 1) AS school_name,
+      agg.season,
       'Passing',
       'XI',
-      SUM(COALESCE(pgs.pass_comp, 0))::int                AS completions,
-      SUM(COALESCE(pgs.pass_att, 0))::int                 AS attempts,
-      SUM(COALESCE(pgs.pass_yds, 0))::int                 AS pass_yards,
-      SUM(COALESCE(pgs.pass_tds, 0))::int                 AS pass_tds,
-      SUM(COALESCE(pgs.pass_int, 0))::int                 AS interceptions,
-      COUNT(*)::int                                       AS games_played,
-      CASE WHEN SUM(COALESCE(pgs.pass_att, 0)) > 0
-           THEN ROUND(SUM(pgs.pass_comp)::numeric / NULLIF(SUM(pgs.pass_att), 0) * 100, 2)
-           END                                            AS comp_pct,
-      CASE WHEN SUM(COALESCE(pgs.pass_att, 0)) > 0
-           THEN ROUND(SUM(pgs.pass_yds)::numeric / NULLIF(SUM(pgs.pass_att), 0), 2)
-           END                                            AS ypa,
-      CASE WHEN SUM(COALESCE(pgs.pass_att, 0)) > 0
-           THEN ROUND(SUM(pgs.pass_tds)::numeric / NULLIF(SUM(pgs.pass_att), 0) * 100, 2)
-           END                                            AS td_rate,
-      CASE WHEN SUM(COALESCE(pgs.pass_att, 0)) > 0
-           THEN ROUND(SUM(pgs.pass_int)::numeric / NULLIF(SUM(pgs.pass_att), 0) * 100, 2)
-           END                                            AS int_rate
-    FROM player_game_stats pgs
-    LEFT JOIN teams t ON t.school_slug = pgs.school_slug AND t.level = 'Varsity'
-    WHERE pgs.stat_type = 'Passing'
-      AND pgs.season = ANY(${SEASONS})
-      AND COALESCE(pgs.pass_yds, 0) > 0
+      agg.completions,
+      agg.attempts,
+      agg.pass_yards,
+      agg.pass_tds,
+      agg.interceptions,
+      agg.games_played,
+      CASE WHEN agg.attempts > 0 THEN ROUND(agg.completions::numeric / agg.attempts * 100, 2) END AS comp_pct,
+      CASE WHEN agg.attempts > 0 THEN ROUND(agg.pass_yards::numeric / agg.attempts, 2)         END AS ypa,
+      CASE WHEN agg.attempts > 0 THEN ROUND(agg.pass_tds::numeric / agg.attempts * 100, 2)     END AS td_rate,
+      CASE WHEN agg.attempts > 0 THEN ROUND(agg.interceptions::numeric / agg.attempts * 100, 2) END AS int_rate
+    FROM agg
+    WHERE agg.school_slug IS NOT NULL
       AND NOT EXISTS (
         SELECT 1 FROM player_season_stats pss
-        WHERE pss.stat_type = 'Passing'
-          AND pss.season = pgs.season
-          AND pss.school_slug = pgs.school_slug
-          AND pss.player_name = pgs.player_name
+        WHERE LOWER(REGEXP_REPLACE(TRIM(pss.player_name), '[[:space:]]+', ' ', 'g')) =
+              LOWER(REGEXP_REPLACE(TRIM(agg.player_name), '[[:space:]]+', ' ', 'g'))
+          AND pss.school_slug = agg.school_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Passing'
       )
-    GROUP BY pgs.player_name, pgs.school_slug, pgs.season
+      -- Also skip if our derived slug would collide with an existing row at a
+      -- different school (the unique constraint is on slug+season+stat_type
+      -- only — same slug can't exist twice across schools). Rare but real:
+      -- e.g., two different "Max Ferraro" players at different schools.
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.player_slug = agg.player_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Passing'
+      )
     RETURNING 1`
   return inserted.length
 }
 
 async function addRushing() {
   const inserted = await sql`
+    WITH labeled AS (
+      SELECT
+        COALESCE(
+          pgs.player_slug,
+          -- Derive a kebab-case slug from player_name when null. Uses POSIX
+          -- character classes ([[:space:]]) instead of \\s — JS template
+          -- literals would eat a single \\, producing buggy regexes.
+          LOWER(REGEXP_REPLACE(REGEXP_REPLACE(TRIM(pgs.player_name), '[^A-Za-z0-9[:space:]]', '', 'g'), '[[:space:]]+', '-', 'g'))
+        ) AS player_slug,
+        pgs.player_name, pgs.school_slug, pgs.season,
+        pgs.rush_att, pgs.rush_yds, pgs.rush_tds
+      FROM player_game_stats pgs
+      WHERE pgs.stat_type = 'Rushing'
+        AND pgs.season = ANY(${SEASONS})
+        AND COALESCE(pgs.rush_yds, 0) > 0
+    ),
+    agg AS (
+      SELECT
+        player_name, school_slug, season,
+        (array_agg(player_slug ORDER BY player_slug))[1]    AS player_slug,
+        SUM(COALESCE(rush_att, 0))::int                     AS rush_attempts,
+        SUM(COALESCE(rush_yds, 0))::int                     AS rush_yards,
+        SUM(COALESCE(rush_tds, 0))::int                     AS rush_tds,
+        COUNT(*)::int                                       AS games_played
+      FROM labeled
+      -- Group by name+school (not by slug) — same player can have multiple
+      -- slug values across game rows. Natural key is (player_name, school_slug, season).
+      GROUP BY player_name, school_slug, season
+    )
     INSERT INTO player_season_stats (
       player_slug, player_name, school_slug, school_name, season, stat_type, section,
       rush_attempts, rush_yards, rush_tds, games_played, ypc
     )
     SELECT
-      MAX(pgs.player_slug),
-      pgs.player_name,
-      pgs.school_slug,
-      MAX(t.name)                                         AS school_name,
-      pgs.season,
+      agg.player_slug,
+      agg.player_name,
+      agg.school_slug,
+      (SELECT name FROM teams WHERE school_slug = agg.school_slug AND level = 'Varsity' LIMIT 1) AS school_name,
+      agg.season,
       'Rushing',
       'XI',
-      SUM(COALESCE(pgs.rush_att, 0))::int                 AS rush_attempts,
-      SUM(COALESCE(pgs.rush_yds, 0))::int                 AS rush_yards,
-      SUM(COALESCE(pgs.rush_tds, 0))::int                 AS rush_tds,
-      COUNT(*)::int                                       AS games_played,
-      CASE WHEN SUM(COALESCE(pgs.rush_att, 0)) > 0
-           THEN ROUND(SUM(pgs.rush_yds)::numeric / NULLIF(SUM(pgs.rush_att), 0), 2)
-           END                                            AS ypc
-    FROM player_game_stats pgs
-    LEFT JOIN teams t ON t.school_slug = pgs.school_slug AND t.level = 'Varsity'
-    WHERE pgs.stat_type = 'Rushing'
-      AND pgs.season = ANY(${SEASONS})
-      AND COALESCE(pgs.rush_yds, 0) > 0
+      agg.rush_attempts,
+      agg.rush_yards,
+      agg.rush_tds,
+      agg.games_played,
+      CASE WHEN agg.rush_attempts > 0 THEN ROUND(agg.rush_yards::numeric / agg.rush_attempts, 2) END AS ypc
+    FROM agg
+    WHERE agg.school_slug IS NOT NULL
       AND NOT EXISTS (
         SELECT 1 FROM player_season_stats pss
-        WHERE pss.stat_type = 'Rushing'
-          AND pss.season = pgs.season
-          AND pss.school_slug = pgs.school_slug
-          AND pss.player_name = pgs.player_name
+        WHERE LOWER(REGEXP_REPLACE(TRIM(pss.player_name), '[[:space:]]+', ' ', 'g')) =
+              LOWER(REGEXP_REPLACE(TRIM(agg.player_name), '[[:space:]]+', ' ', 'g'))
+          AND pss.school_slug = agg.school_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Rushing'
       )
-    GROUP BY pgs.player_name, pgs.school_slug, pgs.season
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.player_slug = agg.player_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Rushing'
+      )
     RETURNING 1`
   return inserted.length
 }
 
 async function addReceiving() {
   const inserted = await sql`
+    WITH labeled AS (
+      SELECT
+        COALESCE(
+          pgs.player_slug,
+          -- Derive a kebab-case slug from player_name when null. Uses POSIX
+          -- character classes ([[:space:]]) instead of \\s — JS template
+          -- literals would eat a single \\, producing buggy regexes.
+          LOWER(REGEXP_REPLACE(REGEXP_REPLACE(TRIM(pgs.player_name), '[^A-Za-z0-9[:space:]]', '', 'g'), '[[:space:]]+', '-', 'g'))
+        ) AS player_slug,
+        pgs.player_name, pgs.school_slug, pgs.season,
+        pgs.rec_rec, pgs.rec_yds, pgs.rec_tds
+      FROM player_game_stats pgs
+      WHERE pgs.stat_type = 'Receiving'
+        AND pgs.season = ANY(${SEASONS})
+        AND COALESCE(pgs.rec_yds, 0) > 0
+    ),
+    agg AS (
+      SELECT
+        player_name, school_slug, season,
+        (array_agg(player_slug ORDER BY player_slug))[1]    AS player_slug,
+        SUM(COALESCE(rec_rec, 0))::int                      AS receptions,
+        SUM(COALESCE(rec_yds, 0))::int                      AS recv_yards,
+        SUM(COALESCE(rec_tds, 0))::int                      AS recv_tds,
+        COUNT(*)::int                                       AS games_played
+      FROM labeled
+      -- Group by name+school (not by slug) — same player can have multiple
+      -- slug values across game rows. Natural key is (player_name, school_slug, season).
+      GROUP BY player_name, school_slug, season
+    )
     INSERT INTO player_season_stats (
       player_slug, player_name, school_slug, school_name, season, stat_type, section,
       receptions, recv_yards, recv_tds, games_played, ypc
     )
     SELECT
-      MAX(pgs.player_slug),
-      pgs.player_name,
-      pgs.school_slug,
-      MAX(t.name)                                         AS school_name,
-      pgs.season,
+      agg.player_slug,
+      agg.player_name,
+      agg.school_slug,
+      (SELECT name FROM teams WHERE school_slug = agg.school_slug AND level = 'Varsity' LIMIT 1) AS school_name,
+      agg.season,
       'Receiving',
       'XI',
-      SUM(COALESCE(pgs.rec_rec, 0))::int                  AS receptions,
-      SUM(COALESCE(pgs.rec_yds, 0))::int                  AS recv_yards,
-      SUM(COALESCE(pgs.rec_tds, 0))::int                  AS recv_tds,
-      COUNT(*)::int                                       AS games_played,
-      CASE WHEN SUM(COALESCE(pgs.rec_rec, 0)) > 0
-           THEN ROUND(SUM(pgs.rec_yds)::numeric / NULLIF(SUM(pgs.rec_rec), 0), 2)
-           END                                            AS ypc
-    FROM player_game_stats pgs
-    LEFT JOIN teams t ON t.school_slug = pgs.school_slug AND t.level = 'Varsity'
-    WHERE pgs.stat_type = 'Receiving'
-      AND pgs.season = ANY(${SEASONS})
-      AND COALESCE(pgs.rec_yds, 0) > 0
+      agg.receptions,
+      agg.recv_yards,
+      agg.recv_tds,
+      agg.games_played,
+      CASE WHEN agg.receptions > 0 THEN ROUND(agg.recv_yards::numeric / agg.receptions, 2) END AS ypc
+    FROM agg
+    WHERE agg.school_slug IS NOT NULL
       AND NOT EXISTS (
         SELECT 1 FROM player_season_stats pss
-        WHERE pss.stat_type = 'Receiving'
-          AND pss.season = pgs.season
-          AND pss.school_slug = pgs.school_slug
-          AND pss.player_name = pgs.player_name
+        WHERE LOWER(REGEXP_REPLACE(TRIM(pss.player_name), '[[:space:]]+', ' ', 'g')) =
+              LOWER(REGEXP_REPLACE(TRIM(agg.player_name), '[[:space:]]+', ' ', 'g'))
+          AND pss.school_slug = agg.school_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Receiving'
       )
-    GROUP BY pgs.player_name, pgs.school_slug, pgs.season
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.player_slug = agg.player_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Receiving'
+      )
     RETURNING 1`
   return inserted.length
 }
