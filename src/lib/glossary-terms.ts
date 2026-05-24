@@ -1,7 +1,7 @@
 export type GlossaryTerm = {
   id: string
   name: string
-  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics'
+  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics' | 'Data Architecture'
   definition: string
   formula?: string
   source: string
@@ -389,5 +389,74 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     formula: 'New ELO = Old ELO + K × (Result − Expected Result)',
     source: 'Football Data Hub — Official Metric Definitions',
     caveats: 'Available for 2021–2024. K-factor and full implementation details not yet recovered — displayed values are from the original computation and cannot currently be reproduced.',
+  },
+
+  // ── Data Architecture ────────────────────────────────────────────────────
+
+  {
+    id: 'data-sources',
+    name: 'Primary Data Sources',
+    category: 'Data Architecture',
+    definition: 'SportsGPT draws from two distinct sources. First, Newsday publishes official Section XI end-of-season top-25 leaderboards for Passing, Rushing, and Receiving — these are treated as the gold standard and ingested without modification. Second, Newsday publishes per-game box scores for every Section XI game, which the system scrapes, parses, and stores as player-level game stats. Most numbers you see in charts originate from one of these two pipelines. Knowing which source a figure comes from tells you how reliable it is and what edge cases to expect.',
+    source: 'Newsday (scores.newsday.com) — official Section XI results',
+    caveats: 'Nassau County box scores have occasional gaps due to reporting differences. Box score stats for a given player may be zero if their game was not published by Newsday.',
+  },
+  {
+    id: 'season-convention',
+    name: 'Season Numbering Convention',
+    category: 'Data Architecture',
+    definition: 'All seasons in the database are identified by the fall year of the school year — the year the season begins. DB season 2024 means the 2024-25 school year (games played in fall 2024). This is the standard used by Newsday, Section XI, and MaxPreps. Everywhere in SportsGPT the season is displayed in school-year format: "2024-25" or "24-25". The raw integer (2024) is an internal DB identifier only and is never shown to the user.',
+    formula: 'Display season = DB season + " – " + (DB season + 1)',
+    source: 'Section XI convention; Newsday URL structure',
+    caveats: 'The 2021 DB season = 2021-22 school year, the earliest season with complete box score coverage.',
+  },
+  {
+    id: 'leaderboard-stats',
+    name: 'Official Leaderboard Stats',
+    category: 'Data Architecture',
+    definition: 'The top-25 seasonal leaders published by Newsday are stored as "blessed" rows in the player_season_stats table. These rows are ingested once per season and never deleted or updated — they represent the official Section XI record and carry the highest data authority in the system. When a stat appears in the official leaderboard, that value takes precedence over any other calculation. All other player stats in the table are backfilled from box scores and are clearly distinguished by their source.',
+    source: 'Newsday / Section XI official end-of-season leaderboards',
+    caveats: 'Only the top 25 players per stat type per season appear in the official leaderboard. Players outside the top 25 have box-score-derived stats, which may be lower due to incomplete game coverage.',
+  },
+  {
+    id: 'box-score-coverage',
+    name: 'Box Score Coverage',
+    category: 'Data Architecture',
+    definition: 'Box scores have been ingested for all five seasons in the system: 2021-22 through 2025-26. Coverage is near-complete for Suffolk County — for 2024-25, 238 of 240 games are represented; for 2025-26, all 224 games are present. Nassau County schools have occasional gaps because their results are reported differently by Newsday. The total box score archive covers over 1,100 individual games and links player performance directly to game context.',
+    source: 'Newsday box scores, ingested via scrape-boxscores.mjs + ingest-boxscores.mjs',
+    caveats: 'A stat of zero for a player in a given game may mean they genuinely did not contribute, or it may mean their game was one of the missing box scores. Nassau County opponents not in the database are excluded from all game-derived computations.',
+  },
+  {
+    id: 'per-game-stats',
+    name: 'Per-Game Player Stats',
+    category: 'Data Architecture',
+    definition: 'The player_game_stats table stores one row per player per game per stat type, sourced from Newsday box scores. Each row includes the school_slug and player_slug, enabling logos and profile links on every game stat view without any name-matching logic. Stat types covered are Passing, Rushing, Receiving, Kicking, and Defense. This table powers all game detail stat tabs — Box Score, Passing, Rushing, Receiving, Kicking, and Defense — and is the backbone for per-game leaderboards and single-game records charts.',
+    source: 'Derived from Newsday box scores; stored in player_game_stats',
+    caveats: 'player_game_stats is the authoritative source for game-level stats. game_box_scores.player_stats is a raw JSONB fallback used only in the Game Log side panel and does not drive any chart or stat tab.',
+  },
+  {
+    id: 'additive-backfill',
+    name: 'Additive Backfill',
+    category: 'Data Architecture',
+    definition: 'Players who appear in box scores but did not make the official Newsday top-25 leaderboard are promoted into player_season_stats via an additive backfill process. The rebuild script (rebuild-player-season-stats.mjs) aggregates per-game stats by player and season, then inserts only new rows — it never deletes or overwrites existing data. Two guards protect integrity: a name+school+season+stat_type match and a slug+season+stat_type match. A final ON CONFLICT DO NOTHING clause handles any within-batch slug collisions. The script is safe to re-run at any time.',
+    formula: 'Season total = SUM(game-level stats) WHERE NOT EXISTS in player_season_stats',
+    source: 'Derived from player_game_stats; inserted into player_season_stats',
+    caveats: 'Backfill rows are limited to players with nonzero stat totals. Defense rows require at least one interception, sack, or fumble recovery. Backfill stat totals depend on box score coverage — a player with missing games will have an understated seasonal total.',
+  },
+  {
+    id: 'chart-metric-families',
+    name: 'Chart Metric Families',
+    category: 'Data Architecture',
+    definition: 'All 29 charts in SportsGPT are organized into eight metric families: Passing, Rushing, Receiving, Composite, Scoring, Wins, Schedule, and Defense. Each family has a dedicated data module (e.g., src/lib/chart-data/passing.ts) that owns all fetch functions for that family. The family taxonomy is enforced at the config layer — every chart config specifies its metric family, and the chart data registry maps each slug to both its family and its canonical fetch function. This structure makes it possible to add a new chart by writing one function and one registry line.',
+    source: 'SportsGPT chart configuration — src/lib/chart-configs.ts + src/lib/chart-data/',
+    caveats: 'Four charts (win-pct-trend, win-pct-by-division, schools-by-enrollment, team-scoring-avg) use inline SQL in the API route and are intentionally excluded from the registry. All others are fully registry-backed.',
+  },
+  {
+    id: 'chart-data-registry',
+    name: 'Chart Data Registry',
+    category: 'Data Architecture',
+    definition: 'The chart data registry (src/lib/chart-data/registry.ts) is the single source of truth mapping every chart slug to its metric family and its canonical fetch function. Before this registry existed, the same fetch logic was duplicated across three consumers — the API route, the chart detail page, and the panel page — creating 87 copies of chart SQL spread across the codebase. The registry eliminates that duplication: each of the 29 registered charts has exactly one fetchFn, and all three consumers resolve to the same function via the registry. Slug validation, documentation tooling, and future generic chart loaders all derive from this one file.',
+    source: 'SportsGPT data architecture — src/lib/chart-data/registry.ts',
+    caveats: 'The fetchFn type signature is (seasons: number[]) → Promise<any[]>. No-arg functions (win percentage, winning/losing streaks) are wrapped to accept the seasons argument and ignore it, keeping the interface uniform.',
   },
 ]

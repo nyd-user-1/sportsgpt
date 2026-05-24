@@ -18,11 +18,12 @@ const CATEGORIES = [
   'Foundational QB',
   'Advanced QB',
   'Team Analytics',
+  'Data Architecture',
 ] as const
 
 type Category = typeof CATEGORIES[number]
 
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
 
 const CHAPTER_BLURB: Record<Category, string> = {
   'Standard — Passing':   'Quarterback counting stats.',
@@ -32,6 +33,7 @@ const CHAPTER_BLURB: Record<Category, string> = {
   'Foundational QB':      'Rates and ratios — where comparison begins.',
   'Advanced QB':          'Composites that try to read the position whole.',
   'Team Analytics':       'Team dominance composites.',
+  'Data Architecture':    'Where the numbers come from — and how the system is built.',
 }
 
 const TIER: Record<Category, Tier> = {
@@ -42,6 +44,7 @@ const TIER: Record<Category, Tier> = {
   'Foundational QB':      2,
   'Advanced QB':          3,
   'Team Analytics':       3,
+  'Data Architecture':    1,
 }
 
 const CATEGORY_SHORT: Record<Category, string> = {
@@ -52,6 +55,7 @@ const CATEGORY_SHORT: Record<Category, string> = {
   'Foundational QB':      'Foundational QB',
   'Advanced QB':          'Advanced QB',
   'Team Analytics':       'Team Analytics',
+  'Data Architecture':    'Data Architecture',
 }
 
 function slugifyCat(cat: string) {
