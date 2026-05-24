@@ -52,7 +52,7 @@ export function ChartsPanelWrapper({ panel }: { panel: React.ReactNode }) {
       title={config?.title ?? ''}
       defaultExpanded={!hasSecondary}
       bodyClass="flex flex-col"
-      detailHref={chartSlug ? `/charts/${chartSlug}` : undefined}
+      detailHref={chartSlug ? `/chart/${chartSlug}` : undefined}
       prevHref={chartSlug ? `/charts/${prevSlug}` : undefined}
       nextHref={chartSlug ? `/charts/${nextSlug}` : undefined}
     >
