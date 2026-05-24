@@ -8,7 +8,7 @@ import {
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
   Tooltip as RechartsTip, CartesianGrid, Cell,
 } from 'recharts'
-import { ChevronRight, ChartSpline, FileUser, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
+import { ChevronRight, ChartSpline, AlignLeft, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { InfoTable } from '@/components/InfoTable'
 import { RevealFx } from '@/components/RevealFx'
@@ -671,7 +671,7 @@ export function ChartDetailPage({
                   nextHref={`/chart/${nextSlug}`}
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                    { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
+                    { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
                     { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
