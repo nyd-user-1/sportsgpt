@@ -7,7 +7,7 @@ import { TierIndicator, type Tier } from '@/components/TierIndicator'
 import { cn } from '@/lib/utils'
 import {
   EditorialHead, EditorialAccent, FormulaTablet, EditorialNote,
-  StickyControlBar, ContentsNav, SearchInput, useSearchHotkey,
+  StickyControlBar, ContentsNav, SearchInput, useSearchHotkey, Highlight,
 } from '@/components/editorial'
 
 const CATEGORIES = [
@@ -281,7 +281,7 @@ export function AlmanacClient() {
                             letterSpacing: '-0.01em',
                           }}
                         >
-                          {t.name}
+                          <Highlight text={t.name} query={query} />
                         </h3>
                         <a
                           href={`#${t.id}`}
@@ -295,7 +295,7 @@ export function AlmanacClient() {
                       </header>
 
                       <p className="max-w-[68ch] text-[15px] sm:text-[15.5px] leading-[1.72] text-[var(--paper-text)]/85">
-                        {t.definition}
+                        <Highlight text={t.definition} query={query} />
                       </p>
 
                       {t.formula && <FormulaTablet text={t.formula} className="mt-6" />}

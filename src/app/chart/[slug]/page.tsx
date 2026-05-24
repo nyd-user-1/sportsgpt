@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
+import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
@@ -294,14 +295,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── passing-yards-leaders ──────────────────────────────────────────────────
     case 'passing-yards-leaders': {
-      const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.pass_yards AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM player_season_stats ps
-        LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
-        WHERE ps.stat_type = 'Passing' AND ps.pass_yards IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
-        ORDER BY ps.season, ps.pass_yards DESC`
+      const rows = await fetchPassingYardsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -314,14 +308,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── passing-tds-leaders ────────────────────────────────────────────────────
     case 'passing-tds-leaders': {
-      const rows = await sql`
-        SELECT ps.player_name AS name, ps.school_slug, ps.season, ps.pass_tds AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM player_season_stats ps
-        LEFT JOIN teams tm ON tm.school_slug = ps.school_slug AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = ps.season
-        WHERE ps.stat_type = 'Passing' AND ps.pass_tds IS NOT NULL AND ps.season = ANY(${AVAILABLE_SEASONS})
-        ORDER BY ps.season, ps.pass_tds DESC`
+      const rows = await fetchPassingTdsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -891,25 +878,15 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
     // ── single-game-passing ───────────────────────────────────────────────────
     case 'single-game-passing': {
       const BOX_SEASONS = LAST3_SEASONS
-      const rows = await sql`
-        SELECT s->>'player' AS player, (s->>'yds')::int AS yds,
-          s->>'team_name' AS team_name, g.season::text AS season
-        FROM game_box_scores bs
-        JOIN games g ON g.id = bs.game_id,
-        LATERAL jsonb_array_elements(bs.player_stats) s
-        WHERE s->>'stat_type' = 'Passing'
-          AND (s->>'yds') IS NOT NULL AND (s->>'yds')::int > 0
-          AND g.season = ANY(${AVAILABLE_SEASONS.slice(-3)})
-        ORDER BY g.season, (s->>'yds')::int DESC`
-
+      const rows = await fetchSingleGamePassing(AVAILABLE_SEASONS.slice(-3))
       const passingGameBars: SeasonBars[] = BOX_SEASONS.map(yr => {
         const bars = rows
           .filter(r => String(r.season) === yr)
           .slice(0, 25)
           .map(r => ({
-            name: String(r.player),
-            value: Number(r.yds),
-            subtitle: String(r.team_name ?? '') + ' · ' + formatSeason(yr),
+            name: r.player,
+            value: r.yds,
+            subtitle: (r.team_name ?? '') + ' · ' + formatSeason(yr),
           }))
         return { season: yr, topValue: bars[0]?.value ?? 0, bars }
       })

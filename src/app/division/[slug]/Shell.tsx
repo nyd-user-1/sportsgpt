@@ -382,6 +382,7 @@ export function DivisionShell({
                   meta={metaCount('standings', 'team')}
                 />
                 <PlayerRankedList
+                  query={q}
                   rows={matchedStandings.map((t, i) => ({
                     rank:       i + 1,
                     slug:       t.slug,
@@ -395,7 +396,7 @@ export function DivisionShell({
                     href:       `/team/${t.slug}`,
                   }))}
                   emptyLabel={q
-                    ? `No teams match “${query}”.`
+                    ? `No teams match "${query}".`
                     : 'No standings recorded.'}
                 />
               </section>
@@ -412,6 +413,7 @@ export function DivisionShell({
                   meta={metaCount('passing', 'player')}
                 />
                 <PlayerRankedList
+                  query={q}
                   rows={matchedPassers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
@@ -421,7 +423,7 @@ export function DivisionShell({
                     primary:    p.pass_yards != null ? `${p.pass_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.pass_tds   != null ? `${p.pass_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No passers match “${query}”.` : 'No passing leaders recorded.'}
+                  emptyLabel={q ? `No passers match "${query}".` : 'No passing leaders recorded.'}
                 />
               </section>
 
@@ -437,6 +439,7 @@ export function DivisionShell({
                   meta={metaCount('rushing', 'player')}
                 />
                 <PlayerRankedList
+                  query={q}
                   rows={matchedRushers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
@@ -446,7 +449,7 @@ export function DivisionShell({
                     primary:    p.rush_yards != null ? `${p.rush_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.rush_tds   != null ? `${p.rush_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No rushers match “${query}”.` : 'No rushing leaders recorded.'}
+                  emptyLabel={q ? `No rushers match "${query}".` : 'No rushing leaders recorded.'}
                 />
               </section>
 
@@ -462,6 +465,7 @@ export function DivisionShell({
                   meta={metaCount('receiving', 'player')}
                 />
                 <PlayerRankedList
+                  query={q}
                   rows={matchedReceivers.map((p, i) => ({
                     rank:       i + 1,
                     slug:       p.player_slug,
@@ -471,7 +475,7 @@ export function DivisionShell({
                     primary:    p.recv_yards != null ? `${p.recv_yards.toLocaleString()} YDS` : '— YDS',
                     secondary:  p.recv_tds   != null ? `${p.recv_tds} TD` : '— TD',
                   }))}
-                  emptyLabel={q ? `No receivers match “${query}”.` : 'No receiving leaders recorded.'}
+                  emptyLabel={q ? `No receivers match "${query}".` : 'No receiving leaders recorded.'}
                 />
               </section>
 

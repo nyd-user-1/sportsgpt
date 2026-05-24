@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { PLAYER_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { TABLET_RADIUS } from './PaperBridge'
 import { MONO } from './Tablet'
+import { Highlight } from './Highlight'
 
 export type RankedPlayer = {
   slug: string
@@ -28,10 +29,13 @@ export type RankedPlayer = {
 export function PlayerRankedList({
   rows,
   emptyLabel,
+  query = '',
 }: {
   rows: RankedPlayer[]
   /** Optional. If provided and `rows` is empty, renders a centered italic message instead of nothing. */
   emptyLabel?: string
+  /** When set, wraps matching text in each row's name and subtitle with <mark.search-highlight>. */
+  query?: string
 }) {
   if (rows.length === 0 && emptyLabel) {
     return (
@@ -94,14 +98,14 @@ export function PlayerRankedList({
                   className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
                   style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 19, fontWeight: 500, letterSpacing: '-0.005em' }}
                 >
-                  {p.name}
+                  <Highlight text={p.name} query={query} />
                 </p>
                 {p.school && (
                   <p
                     className="mt-0.5 text-[13px] text-[var(--paper-muted)] truncate"
                     style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
                   >
-                    {p.school}
+                    <Highlight text={p.school} query={query} />
                   </p>
                 )}
               </div>

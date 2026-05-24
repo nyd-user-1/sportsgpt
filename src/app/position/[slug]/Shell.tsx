@@ -622,6 +622,7 @@ export function PositionShell({
                         </p>
                       ) : (
                         <PlayerRankedList
+                          query={query}
                           rows={c.rows.map(r => ({
                             slug: r.player.slug,
                             name: r.player.name,

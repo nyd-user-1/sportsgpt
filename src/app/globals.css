@@ -118,6 +118,14 @@ html.dark {
   }
 }
 
+/* Search match highlight — bold accent color, no background.
+   font-style is inherited so italic subtitles stay italic. */
+mark.search-highlight {
+  background: transparent;
+  color: var(--paper-strong);
+  font-weight: 700;
+}
+
 /* Chat streaming wipe animation */
 .mask-wipe {
   mask-image: linear-gradient(
