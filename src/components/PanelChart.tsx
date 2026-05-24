@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft, ArrowUpRight } from 'lucide-react'
 import { BarChart, Bar, XAxis, ResponsiveContainer } from 'recharts'
 import { AppPanel } from './AppPanel'
-import { CHART_CONFIGS } from '@/lib/chart-configs'
+import { CHART_CONFIGS, chartsByMetric, METRIC_LABELS, type ChartMetric } from '@/lib/chart-configs'
 import { SportsBarChart } from './charts/SportsBarChart'
 import { SportsBarChartInteractive, type SeasonBars } from './charts/SportsBarChartInteractive'
 import { SportsBarChartMulti } from './charts/SportsBarChartMulti'
@@ -45,30 +45,76 @@ function sparkData(slug: string) {
   }))
 }
 
+// Metric display order
+const METRIC_ORDER: ChartMetric[] = [
+  'wins', 'scoring', 'passing', 'rushing', 'receiving', 'composite', 'defense', 'schedule',
+]
+
 function ChartPickerGrid({ onSelect }: { onSelect: (slug: string) => void }) {
+  const grouped = chartsByMetric()
+
   return (
-    <div className="@container p-4">
-      <div className="grid grid-cols-1 @[520px]:grid-cols-2 gap-3">
-        {CHART_CONFIGS.map(chart => (
-          <button
-            key={chart.slug}
-            onClick={() => onSelect(chart.slug)}
-            className="group text-left rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:shadow-md hover:border-[var(--accent,#033882)] transition-all overflow-hidden"
-          >
-            <div className="h-[196px] px-3 pt-3">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={sparkData(chart.slug)} margin={{ top: 4, right: 4, bottom: 0, left: 4 }}>
-                  <Bar dataKey="y" fill={chart.color} radius={[3, 3, 0, 0]} animationDuration={300} />
-                  <XAxis dataKey="x" hide />
-                </BarChart>
-              </ResponsiveContainer>
+    <div className="flex flex-col pb-6">
+      {METRIC_ORDER.map(metric => {
+        const charts = grouped[metric]
+        if (!charts?.length) return null
+        return (
+          <div key={metric}>
+            {/* Section header */}
+            <div className="px-5 pt-6 pb-2">
+              <span
+                className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+                style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+              >
+                {METRIC_LABELS[metric]}
+              </span>
             </div>
-            <div className="px-3 pb-3 pt-1.5">
-              <p className="text-sm font-semibold text-[var(--txt)] leading-snug">{chart.title}</p>
+
+            {/* Chart rows */}
+            <div className="flex flex-col">
+              {charts.map((chart, i) => (
+                <button
+                  key={chart.slug}
+                  onClick={() => onSelect(chart.slug)}
+                  className={`group flex items-center gap-4 px-5 py-3.5 text-left transition-colors hover:bg-[var(--paper-quiet)] ${
+                    i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''
+                  }`}
+                >
+                  {/* Tiny sparkline */}
+                  <div className="shrink-0 w-14 h-8 opacity-40 group-hover:opacity-70 transition-opacity">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={sparkData(chart.slug)} margin={{ top: 1, right: 0, bottom: 0, left: 0 }}>
+                        <Bar dataKey="y" fill="var(--paper-strong)" radius={[1, 1, 0, 0]} animationDuration={0} />
+                        <XAxis dataKey="x" hide />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+
+                  {/* Title + description */}
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className="text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors leading-snug"
+                      style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+                    >
+                      {chart.title}
+                    </p>
+                    {chart.description && (
+                      <p
+                        className="mt-0.5 text-[11px] text-[var(--paper-muted)] leading-snug line-clamp-1"
+                        style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+                      >
+                        {chart.description}
+                      </p>
+                    )}
+                  </div>
+
+                  <ArrowUpRight className="shrink-0 h-3 w-3 text-[var(--paper-faint)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              ))}
             </div>
-          </button>
-        ))}
-      </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -90,10 +136,24 @@ function ChartPanelContent({ slug }: { slug: string }) {
   if (!config) return null
 
   if (loading) return (
-    <div className="flex items-center justify-center h-48 text-sm text-[var(--muted)]">Loading…</div>
+    <div className="flex items-center justify-center h-48">
+      <p
+        className="text-[var(--paper-faint)] text-sm"
+        style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+      >
+        Loading…
+      </p>
+    </div>
   )
   if (!data) return (
-    <div className="flex items-center justify-center h-48 text-sm text-[var(--muted)]">Failed to load</div>
+    <div className="flex items-center justify-center h-48">
+      <p
+        className="text-[var(--paper-faint)] text-sm"
+        style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}
+      >
+        Failed to load.
+      </p>
+    </div>
   )
 
   let chartNode: React.ReactNode = null
@@ -120,26 +180,71 @@ function ChartPanelContent({ slug }: { slug: string }) {
     <div className="flex flex-col h-full overflow-hidden">
       {/* Chart */}
       {chartNode && (
-        <div className="shrink-0 px-4 pt-4 pb-2">
+        <div className="shrink-0 px-4 pt-5 pb-3">
           {chartNode}
         </div>
       )}
 
       {/* Table */}
       <div className="flex-1 overflow-y-auto no-scrollbar">
-        <div className="divide-y divide-[var(--border)]">
-          <div className="sticky top-0 grid grid-cols-[1fr_90px_56px] gap-2 px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10">
-            <span>Name</span>
-            <span className="text-right">Value</span>
-            <span className="text-right">Share</span>
-          </div>
-          {sorted.map(row => {
+        {/* Column headers */}
+        <div
+          className="sticky top-0 grid grid-cols-[1fr_72px_44px] gap-2 px-5 py-2.5 border-b border-t border-[var(--paper-rule)] bg-[var(--paper)] z-10"
+        >
+          <span
+            className="text-[10px] uppercase tracking-[0.2em] text-[var(--paper-faint)]"
+            style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+          >
+            {config.nameLabel ?? 'Name'}
+          </span>
+          <span
+            className="text-right text-[10px] uppercase tracking-[0.2em] text-[var(--paper-faint)]"
+            style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+          >
+            {config.valueLabel ?? 'Value'}
+          </span>
+          <span
+            className="text-right text-[10px] uppercase tracking-[0.2em] text-[var(--paper-faint)]"
+            style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+          >
+            Share
+          </span>
+        </div>
+
+        <div className="divide-y divide-[var(--paper-rule-soft)]">
+          {sorted.map((row, idx) => {
             const pct = total > 0 ? (row.value / total) * 100 : 0
             return (
-              <div key={row.name} className="grid grid-cols-[1fr_90px_56px] gap-2 px-4 py-2.5 items-center hover:bg-[var(--inp-bg)] transition-colors">
-                <span className="text-sm text-[var(--txt)] truncate">{row.name}</span>
-                <span className="text-right text-sm tabular-nums font-medium" style={{ color: config.color }}>{row.value.toLocaleString()}</span>
-                <span className="text-right text-xs text-[var(--muted)] tabular-nums">{pct.toFixed(0)}%</span>
+              <div
+                key={row.name}
+                className="grid grid-cols-[1fr_72px_44px] gap-2 px-5 py-3 items-center hover:bg-[var(--paper-quiet)] transition-colors"
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <span
+                    className="shrink-0 text-[11px] tabular-nums text-[var(--paper-faint)]"
+                    style={{ fontFamily: 'var(--font-mono, ui-monospace), monospace' }}
+                  >
+                    {String(idx + 1).padStart(2, ' ')}.
+                  </span>
+                  <span
+                    className="text-[13.5px] text-[var(--paper-text)] truncate"
+                    style={{ fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 500, letterSpacing: '-0.005em' }}
+                  >
+                    {row.name}
+                  </span>
+                </div>
+                <span
+                  className="text-right text-[13px] tabular-nums font-medium text-[var(--paper-strong)]"
+                  style={{ fontFamily: 'var(--font-mono, ui-monospace), monospace' }}
+                >
+                  {row.value.toLocaleString()}
+                </span>
+                <span
+                  className="text-right text-[12px] tabular-nums text-[var(--paper-muted)]"
+                  style={{ fontFamily: 'var(--font-mono, ui-monospace), monospace' }}
+                >
+                  {pct.toFixed(0)}%
+                </span>
               </div>
             )
           })}
@@ -147,10 +252,19 @@ function ChartPanelContent({ slug }: { slug: string }) {
       </div>
 
       {/* Footer */}
-      <div className="shrink-0 border-t border-[var(--border)] px-4 py-3 flex items-center justify-between">
-        <span className="text-xs text-[var(--muted)]">{sorted.length} entries</span>
-        <Link href={`/chart/${slug}`} className="text-sm font-semibold hover:underline" style={{ color: config.color }}>
-          Full view →
+      <div className="shrink-0 border-t border-[var(--paper-rule)] px-5 py-3.5 flex items-center justify-between">
+        <span
+          className="text-[11px] text-[var(--paper-faint)] tabular-nums"
+          style={{ fontFamily: 'var(--font-mono, ui-monospace), monospace' }}
+        >
+          {sorted.length} entries
+        </span>
+        <Link
+          href={`/charts/${slug}`}
+          className="inline-flex items-center gap-1 text-[12px] uppercase tracking-[0.16em] text-[var(--paper-strong)] hover:underline underline-offset-4 transition-colors"
+          style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+        >
+          Full view <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
     </div>
@@ -168,9 +282,7 @@ export function PanelChart({
 }) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(activeSlug ?? null)
 
-  // Sync when the activeSlug prop changes (e.g. /charts page clicking different chart)
   useEffect(() => { setSelectedSlug(activeSlug ?? null) }, [activeSlug])
-  // Reset to picker when panel closes (only if not controlled by activeSlug prop)
   useEffect(() => { if (!open && !activeSlug) setSelectedSlug(null) }, [open, activeSlug])
 
   const config = selectedSlug ? CHART_CONFIGS.find(c => c.slug === selectedSlug) : null
@@ -179,7 +291,7 @@ export function PanelChart({
     <div className="flex items-center gap-1 min-w-0">
       <button
         onClick={() => setSelectedSlug(null)}
-        className="shrink-0 -ml-1 p-1 rounded-md text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+        className="shrink-0 -ml-1 p-1 rounded-md text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
         aria-label="Back to charts"
       >
         <ChevronLeft className="h-4 w-4" />
@@ -189,7 +301,7 @@ export function PanelChart({
   ) : 'Charts'
 
   return (
-    <AppPanel open={open} onClose={onClose} title={panelTitle} defaultExpanded={true}>
+    <AppPanel open={open} onClose={onClose} title={panelTitle}>
       {selectedSlug
         ? <ChartPanelContent slug={selectedSlug} />
         : <ChartPickerGrid onSelect={setSelectedSlug} />

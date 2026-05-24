@@ -3,9 +3,10 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, User, Download } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChartSpline, Map, MessageCircle, User, Download, FileUser } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { PLAYER_PHOTOS, SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
+import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -458,9 +459,10 @@ export function PlayerShell({
     return () => document.removeEventListener('mousedown', handler)
   }, [exportOpen])
 
-  const [chartsOpen, setChartsOpen] = useState(false)
-  const [mapsOpen,   setMapsOpen]   = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
+  const [chartsOpen,  setChartsOpen]  = useState(false)
+  const [mapsOpen,    setMapsOpen]    = useState(false)
+  const [playersOpen, setPlayersOpen] = useState(false)
+  const [chatOpen,    setChatOpen]    = useState(false)
 
   // Merge player_season_stats with game log aggregates (fill seasons missing from DB)
   const mergedStats: StatRow[] = (() => {
@@ -666,8 +668,8 @@ export function PlayerShell({
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
-                    <span className={tip}>Map</span>
+                    <button onClick={() => setPlayersOpen(v => !v)} className={`${btn} ${playersOpen ? active : ''}`}><FileUser className="h-4 w-4" /></button>
+                    <span className={tip}>Players</span>
                   </div>
                   <div className="relative group">
                     <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
@@ -1043,6 +1045,7 @@ export function PlayerShell({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
+      <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={player.name} />
     </>
   )

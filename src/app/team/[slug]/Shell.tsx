@@ -2,7 +2,7 @@
 
 import { useState, useRef, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight, ArrowLeft, ArrowRight, Users } from 'lucide-react'
+import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown, ChartSpline, Map, MessageCircle, Info, ArrowUpRight, ArrowLeft, ArrowRight, FileUser } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS, SCHOOL_LOGOS, PLAYER_PHOTOS } from '@/lib/team-images'
@@ -321,11 +321,7 @@ export function TeamShell({
                     <span className={tip}>Charts</span>
                   </div>
                   <div className="relative group">
-                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><Map className="h-4 w-4" /></button>
-                    <span className={tip}>Map</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setPlayersOpen(v => !v)} className={`${btn} ${playersOpen ? active : ''}`}><Users className="h-4 w-4" /></button>
+                    <button onClick={() => setPlayersOpen(v => !v)} className={`${btn} ${playersOpen ? active : ''}`}><FileUser className="h-4 w-4" /></button>
                     <span className={tip}>Players</span>
                   </div>
                   <div className="relative group">

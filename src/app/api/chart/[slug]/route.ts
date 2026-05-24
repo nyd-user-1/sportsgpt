@@ -3,6 +3,7 @@ import { sql } from '@/lib/db'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing } from '@/lib/chart-data/rushing'
 import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
+import { fetchTotalTdsLeaders, fetchTotalYardsLeaders, fetchTotalPointsLeaders } from '@/lib/chart-data/composite'
 
 const DIV_COLORS: Record<string, string> = {
   I: '#033882', II: '#4338ca', III: '#0ea5e9', IV: '#10b981',
@@ -145,39 +146,30 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
       }
 
       case 'total-tds-leaders': {
-        const rows = await sql`
-          SELECT player_name AS name, COALESCE(rush_tds,0) AS rush, COALESCE(recv_tds,0) AS recv, COALESCE(total_tds,0) AS total
-          FROM player_season_stats WHERE stat_type='Touchdowns' AND season=2023
-          ORDER BY total_tds DESC NULLS LAST LIMIT 20`
-        const tableRows: StdRow[] = rows.map(r => ({ name: r.name as string, value: Number(r.total) }))
-        const multiSeriesData = rows.map(r => ({ name: r.name as string, rush: Number(r.rush), recv: Number(r.recv) }))
-        return NextResponse.json({
-          variant: 'bar-multi', tableRows, kpiValue: tableRows[0]?.value ?? 0, multiSeriesData,
-          series: [{ key: 'rush', label: 'Rush TDs', color: '#033882' }, { key: 'recv', label: 'Recv TDs', color: '#4338ca' }],
-        })
+        const seasons = [2021,2022,2023,2024,2025]
+        const seasonStrs = seasons.map(String)
+        const rows = await fetchTotalTdsLeaders(seasons)
+        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], seasonStrs)
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasonStrs, valueLabel: 'Total TDs' })
       }
 
       case 'total-yards-leaders': {
-        const rows = await sql`
-          SELECT player_name AS name, COALESCE(pass_yards,0) AS pass, COALESCE(rush_yards,0) AS rush, COALESCE(recv_yards,0) AS recv, COALESCE(total_yards,0) AS total
-          FROM player_season_stats WHERE stat_type='Total Yards' AND season=2023
-          ORDER BY total_yards DESC NULLS LAST LIMIT 15`
-        const tableRows: StdRow[] = rows.map(r => ({ name: r.name as string, value: Number(r.total) }))
-        const multiSeriesData = rows.map(r => ({ name: r.name as string, pass: Number(r.pass), rush: Number(r.rush), recv: Number(r.recv) }))
-        return NextResponse.json({
-          variant: 'bar-multi', tableRows, kpiValue: tableRows[0]?.value ?? 0, multiSeriesData, stacked: true,
-          series: [{ key: 'pass', label: 'Pass Yds', color: '#033882' }, { key: 'rush', label: 'Rush Yds', color: '#4338ca' }, { key: 'recv', label: 'Recv Yds', color: '#0ea5e9' }],
-        })
+        const seasons = [2021,2022,2023,2024,2025]
+        const seasonStrs = seasons.map(String)
+        const rows = await fetchTotalYardsLeaders(seasons)
+        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], seasonStrs)
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasonStrs, valueLabel: 'Total Yards' })
       }
 
       case 'total-points-leaders': {
-        const rows = await sql`
-          SELECT player_name AS name, points AS value, season
-          FROM player_season_stats WHERE stat_type='Scoring' AND season=2023 AND points IS NOT NULL
-          ORDER BY points DESC LIMIT 20`
-        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], ['2023'])
-        const tableRows = seasonBars[0]?.bars ?? []
-        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, valueLabel: 'Points' })
+        const seasons = [2021,2022,2023,2024,2025]
+        const seasonStrs = seasons.map(String)
+        const rows = await fetchTotalPointsLeaders(seasons)
+        const seasonBars = buildSeasonBars(rows as {name:unknown;value:unknown;season:unknown}[], seasonStrs)
+        const tableRows = seasonBars.find(s => s.season === '2025')?.bars ?? []
+        return NextResponse.json({ variant: 'bar-interactive', tableRows, kpiValue: tableRows[0]?.value ?? 0, seasonBars, seasonFilters: seasonStrs, valueLabel: 'Points' })
       }
 
       case 'home-away-record': {

@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react'
 import {
-  ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight,
+  ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight, FileUser,
 } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { TEAM_PHOTOS } from '@/lib/team-images'
+import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -146,6 +147,7 @@ export function DivisionShell({
 }) {
   const [chartsOpen,      setChartsOpen]      = useState(false)
   const [mapsOpen,        setMapsOpen]        = useState(false)
+  const [playersOpen,     setPlayersOpen]     = useState(false)
   const [chatOpen,        setChatOpen]        = useState(false)
   const [selectedSeason,  setSelectedSeason]  = useState<number | null>(null)
   const [query,           setQuery]           = useState('')
@@ -295,9 +297,9 @@ export function DivisionShell({
                   prevLabel="Previous division"
                   nextLabel="Next division"
                   buttons={[
-                    { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                    { icon: Map,           tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
+                    { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -514,9 +516,10 @@ export function DivisionShell({
       </AppLayout>
 
       <div style={PAPER_BRIDGE}>
-        <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={`Division ${division}`} />
+        <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
+        <PanelMap   open={mapsOpen}    onClose={() => setMapsOpen(false)}   />
+        <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
+        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)}   countyName={`Division ${division}`} />
       </div>
     </>
   )

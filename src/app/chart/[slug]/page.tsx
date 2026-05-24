@@ -4,6 +4,7 @@ import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing } from '@/lib/chart-data/rushing'
 import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
+import { fetchTotalTdsLeaders, fetchTotalYardsLeaders, fetchTotalPointsLeaders } from '@/lib/chart-data/composite'
 import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
@@ -375,32 +376,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── total-tds-leaders ──────────────────────────────────────────────────────
     case 'total-tds-leaders': {
-      const rows = await sql`
-        WITH rushing AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(rush_tds, 0) AS rush_tds
-          FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
-        ),
-        receiving AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(recv_tds, 0) AS recv_tds
-          FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT
-          COALESCE(r.player_name, v.player_name) AS name,
-          COALESCE(r.school_slug, v.school_slug) AS school_slug,
-          COALESCE(r.season, v.season) AS season,
-          COALESCE(r.rush_tds, 0) + COALESCE(v.recv_tds, 0) AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM rushing r
-        FULL OUTER JOIN receiving v ON v.player_slug = r.player_slug AND v.season = r.season
-        LEFT JOIN teams tm ON tm.school_slug = COALESCE(r.school_slug, v.school_slug) AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = COALESCE(r.season, v.season)
-        WHERE COALESCE(r.rush_tds, 0) + COALESCE(v.recv_tds, 0) > 0
-        ORDER BY season, value DESC`
-
+      const rows = await fetchTotalTdsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -413,41 +389,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── total-yards-leaders ────────────────────────────────────────────────────
     case 'total-yards-leaders': {
-      const rows = await sql`
-        WITH passing AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(pass_yards, 0) AS pass_yards
-          FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season = ANY(${AVAILABLE_SEASONS})
-        ),
-        rushing AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(rush_yards, 0) AS rush_yards
-          FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
-        ),
-        receiving AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(recv_yards, 0) AS recv_yards
-          FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT
-          COALESCE(pa.player_name, ru.player_name, re.player_name) AS name,
-          COALESCE(pa.school_slug, ru.school_slug, re.school_slug) AS school_slug,
-          COALESCE(pa.season, ru.season, re.season) AS season,
-          COALESCE(pa.pass_yards, 0) + COALESCE(ru.rush_yards, 0) + COALESCE(re.recv_yards, 0) AS value,
-          ts.overall_wins, ts.overall_losses
-        FROM passing pa
-        FULL OUTER JOIN rushing ru ON ru.player_slug = pa.player_slug AND ru.season = pa.season
-        FULL OUTER JOIN receiving re
-          ON re.player_slug = COALESCE(pa.player_slug, ru.player_slug)
-          AND re.season = COALESCE(pa.season, ru.season)
-        LEFT JOIN teams tm ON tm.school_slug = COALESCE(pa.school_slug, ru.school_slug, re.school_slug) AND tm.level = 'Varsity'
-        LEFT JOIN team_season_stats ts ON ts.team_slug = tm.slug AND ts.season = COALESCE(pa.season, ru.season, re.season)
-        WHERE COALESCE(pa.pass_yards, 0) + COALESCE(ru.rush_yards, 0) + COALESCE(re.recv_yards, 0) > 0
-        ORDER BY season, value DESC`
-
+      const rows = await fetchTotalYardsLeaders(AVAILABLE_SEASONS)
       const seasonBarsArr = buildBarsWithRecord(rows as never[], ALL_SEASONS)
       const allBars = seasonBarsArr.flatMap(s => s.bars).sort((a, b) => b.value - a.value)
       seasonBarsArr.push({ season: 'all', topValue: allBars[0]?.value ?? 0, bars: allBars })
@@ -460,53 +402,14 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── total-points-leaders ───────────────────────────────────────────────────
     case 'total-points-leaders': {
-      const rows = await sql`
-        WITH tds AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(rush_tds, 0) AS rush_tds
-          FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season = ANY(${AVAILABLE_SEASONS})
-        ),
-        recv AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(recv_tds, 0) AS recv_tds,
-            COALESCE(pat, 0) AS pat
-          FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season = ANY(${AVAILABLE_SEASONS})
-        ),
-        passing AS (
-          SELECT player_slug, school_slug, player_name, season,
-            COALESCE(pass_tds, 0) AS pass_tds
-          FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT
-          COALESCE(t.player_name, r.player_name, p.player_name) AS name,
-          COALESCE(t.school_slug, r.school_slug, p.school_slug) AS school_slug,
-          COALESCE(t.season, r.season, p.season) AS season,
-          (COALESCE(t.rush_tds, 0) + COALESCE(r.recv_tds, 0) + COALESCE(p.pass_tds, 0)) * 6
-            + COALESCE(r.pat, 0) AS value
-        FROM tds t
-        FULL OUTER JOIN recv r ON r.player_slug = t.player_slug AND r.season = t.season
-        FULL OUTER JOIN passing p
-          ON p.player_slug = COALESCE(t.player_slug, r.player_slug)
-          AND p.season = COALESCE(t.season, r.season)
-        WHERE (COALESCE(t.rush_tds, 0) + COALESCE(r.recv_tds, 0) + COALESCE(p.pass_tds, 0)) * 6
-          + COALESCE(r.pat, 0) > 0
-        ORDER BY season, value DESC`
-
+      const rows = await fetchTotalPointsLeaders(AVAILABLE_SEASONS)
       const seasonBars = buildSeasonBars(
         rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[],
         ALL_SEASONS
       )
       tableRows = seasonBars.find(s => s.season === String(CURRENT_SEASON))?.bars ?? []
       kpiValue = tableRows[0]?.value ?? 0
-      chartChild = (
-        <SportsAreaGradient
-          seasons={seasonBars}
-          valueLabel="Points"
-        />
-      )
+      chartChild = <SportsAreaGradient seasons={seasonBars} valueLabel="Points" />
       break
     }
 
