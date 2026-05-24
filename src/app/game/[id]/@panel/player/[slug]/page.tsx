@@ -4,10 +4,13 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { sql } from '@/lib/db'
 import { PLAYER_PHOTOS, SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
-import { ACCENT_COLOR } from '@/lib/app-config'
 import { formatSeason } from '@/lib/utils'
 
 export const dynamic = 'force-dynamic'
+
+const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' }
+const MONO  = { fontFamily: 'var(--font-mono, ui-monospace), monospace' }
 
 function fmtVal(v: unknown) {
   if (v == null) return '—'
@@ -51,7 +54,7 @@ export default async function PlayerPanelPage({
   const heroSrc    = photo ?? teamPhoto ?? null
   const logo       = SCHOOL_LOGOS[schoolSlug]
 
-  // Group stats by type, keep most recent season per type
+  // Group stats by type
   const byType: Record<string, typeof statRows[0][]> = {}
   for (const r of statRows) {
     const t = r.stat_type as string
@@ -63,40 +66,37 @@ export default async function PlayerPanelPage({
     {
       type: 'Passing', label: 'Passing',
       cols: [
-        { key: 'pass_yards', label: 'YDS' },
-        { key: 'attempts', label: 'ATT' },
-        { key: 'completions', label: 'COMP' },
-        { key: 'pass_tds', label: 'TD' },
-        { key: 'interceptions', label: 'INT' },
+        { key: 'pass_yards',    label: 'YDS'  },
+        { key: 'attempts',      label: 'ATT'  },
+        { key: 'completions',   label: 'COMP' },
+        { key: 'pass_tds',      label: 'TD'   },
+        { key: 'interceptions', label: 'INT'  },
       ],
     },
     {
       type: 'Rushing', label: 'Rushing',
       cols: [
         { key: 'rush_yards', label: 'YDS' },
-        { key: 'rush_tds', label: 'TD' },
+        { key: 'rush_tds',   label: 'TD'  },
         { key: 'games_played', label: 'GP' },
       ],
     },
     {
       type: 'Receiving', label: 'Receiving',
       cols: [
-        { key: 'recv_yards', label: 'YDS' },
-        { key: 'receptions', label: 'REC' },
-        { key: 'recv_tds', label: 'TD' },
+        { key: 'recv_yards',  label: 'YDS' },
+        { key: 'receptions',  label: 'REC' },
+        { key: 'recv_tds',    label: 'TD'  },
       ],
     },
   ]
 
   const activeSections = STAT_SECTIONS.filter(s => byType[s.type]?.length)
 
-  const th = 'py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right first:text-left first:pl-0 pr-0'
-  const td = 'py-2.5 text-sm tabular-nums text-right text-[var(--txt)] first:text-left first:pl-0 pr-0'
-
   return (
     <div className="flex flex-col">
 
-      {/* Hero photo */}
+      {/* Hero photo — full bleed */}
       {heroSrc && (
         <div className="relative w-full aspect-[16/9] overflow-hidden shrink-0">
           <Image src={heroSrc} alt={player.name as string} fill className="object-cover" unoptimized />
@@ -104,38 +104,76 @@ export default async function PlayerPanelPage({
       )}
 
       {/* Identity */}
-      <div className="flex items-center gap-3 px-5 py-4 border-b border-[var(--border)]">
-        {logo && (
-          <Image src={logo} alt="" width={36} height={36}
-            className="shrink-0 rounded-full bg-white border border-[var(--border)] object-contain p-0.5" unoptimized />
-        )}
+      <div className="flex items-center gap-3 px-5 py-4 border-b border-[var(--paper-rule)]">
+        {logo
+          ? <Image src={logo} alt="" width={36} height={36}
+              className="shrink-0 rounded-full object-contain border border-[var(--paper-rule)]"
+              style={{ background: 'var(--paper-quiet)' }} unoptimized />
+          : <div className="shrink-0 w-9 h-9 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />
+        }
         <div>
-          <p className="text-sm font-bold text-[var(--txt)]">{player.name as string}</p>
-          <p className="text-xs text-[var(--muted)]">
+          <p
+            className="leading-snug text-[var(--paper-text)]"
+            style={{ ...SERIF, fontSize: 15, fontWeight: 600, letterSpacing: '-0.01em' }}
+          >
+            {player.name as string}
+          </p>
+          <p className="text-[11.5px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
             {teamName}{player.division ? ` · Division ${player.division}` : ''}
           </p>
         </div>
       </div>
 
-      {/* Career stats by type */}
+      {/* Stat sections */}
       {activeSections.map(section => (
-        <div key={section.type} className="px-5 pt-4 pb-2 border-b border-[var(--border)]">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--muted)] mb-3">{section.label}</p>
-          <div className="overflow-x-auto no-scrollbar">
+        <div key={section.type} className="border-b border-[var(--paper-rule)]">
+          {/* Section header */}
+          <div className="px-5 pt-5 pb-2">
+            <span
+              className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+              style={SANS}
+            >
+              {section.label}
+            </span>
+          </div>
+
+          {/* Table */}
+          <div className="px-5 pb-4 overflow-x-auto no-scrollbar">
             <table className="w-full border-separate" style={{ borderSpacing: 0 }}>
               <thead>
                 <tr>
-                  <th className={th}>Season</th>
-                  {section.cols.map(c => <th key={c.key} className={th}>{c.label}</th>)}
+                  <th
+                    className="pb-2 text-left text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
+                    style={SANS}
+                  >
+                    Season
+                  </th>
+                  {section.cols.map(c => (
+                    <th
+                      key={c.key}
+                      className="pb-2 text-right text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
+                      style={SANS}
+                    >
+                      {c.label}
+                    </th>
+                  ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[var(--border)]">
+              <tbody>
                 {byType[section.type].map((r, i) => (
-                  <tr key={i}>
-                    <td className={td}>{formatSeason(r.season as number)}</td>
+                  <tr key={i} className="border-t border-[var(--paper-rule-soft)]">
+                    <td
+                      className="py-2.5 text-left text-[12px] text-[var(--paper-muted)]"
+                      style={SANS}
+                    >
+                      {formatSeason(r.season as number)}
+                    </td>
                     {section.cols.map(c => (
-                      <td key={c.key} className={td}
-                        style={c.key.includes('yards') ? { color: ACCENT_COLOR, fontWeight: 700 } : undefined}>
+                      <td
+                        key={c.key}
+                        className="py-2.5 text-right text-[13px] tabular-nums text-[var(--paper-text)]"
+                        style={MONO}
+                      >
                         {fmtVal(r[c.key as keyof typeof r])}
                       </td>
                     ))}
@@ -151,8 +189,8 @@ export default async function PlayerPanelPage({
       <div className="px-5 py-4">
         <Link
           href={`/player/${slug}`}
-          className="flex items-center justify-between text-sm font-semibold hover:underline"
-          style={{ color: ACCENT_COLOR }}
+          className="flex items-center justify-between text-sm font-medium hover:underline text-[var(--paper-strong)]"
+          style={SANS}
         >
           <span>View full profile</span>
           <ArrowUpRight className="h-4 w-4" />
