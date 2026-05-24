@@ -421,8 +421,7 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 1. Naming conventions audit (see below)
 2. Component extraction (see below)
 3. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
-4. Build Newsday player scraper (see below)
-5. Season card vs. game card width differences on the Section XI page (deferred — "we'll go over the differences tomorrow")
+4. Season card vs. game card width differences on the Section XI page (deferred — "we'll go over the differences tomorrow")
 
 ### Naming conventions audit — NEXT
 The codebase has grown organically and needs a naming pass before it gets harder to navigate.
@@ -468,21 +467,6 @@ Several components are defined inline inside page/shell files and should be extr
 
 ---
 
-### Newsday player scraper — NEXT AFTER BOX SCORES
-The same team page URLs have a **ROSTER** table below TEAM RESULTS. Each player links to:
-`https://scores.newsday.com/sports/highschool/player/football/{newsday_player_id}/{end_year}`
-
-e.g. Jake Simmons (East Islip) 2025-26: `/24993/2026`; 2024-25: `/23568/2025`
-
-**What we'd gain:** jersey numbers (not in DB at all), current active rosters, season totals.
-Note: player IDs are season-specific — not stable cross-season identifiers.
-
-**Scrape approach:**
-1. Parse `ROSTER` table on team page → player name + newsday_id (from href) + jersey number
-2. Optionally fetch each player page for season totals
-3. Store jersey numbers in `players` table or a new `player_rosters` table
-
----
 
 ## Sidebar Structure (`src/components/Sidebar.tsx`)
 

@@ -55,7 +55,7 @@ export function PlayerRankedList({
         const logo  = p.schoolSlug ? SCHOOL_LOGOS[p.schoolSlug] : undefined
         return (
           <li
-            key={p.slug}
+            key={`${p.slug}-${i}`}
             className={cn(
               'group/row',
               i > 0 && 'border-t border-[var(--paper-rule-soft)]'

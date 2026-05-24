@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import {
@@ -8,10 +8,23 @@ import {
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
   Tooltip as RechartsTip, CartesianGrid, Cell,
 } from 'recharts'
-import { ChevronRight, ChevronLeft, ChartSpline, Map as MapIcon, MessageCircle } from 'lucide-react'
+import { ChevronRight, ChartSpline, Map as MapIcon, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { InfoTable } from '@/components/InfoTable'
 import { RevealFx } from '@/components/RevealFx'
+import {
+  EditorialHead,
+  EditorialButtonGroup,
+  SectionHead,
+  StickyControlBar,
+  ContentsNav,
+  PlayerRankedList,
+  SearchInput,
+  useSearchHotkey,
+  PAPER_BRIDGE,
+  MONO,
+  TABLET_RADIUS,
+} from '@/components/editorial'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
@@ -20,7 +33,30 @@ import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
 } from '@/lib/chart-configs'
-import { CHART_NAV_EVENT, SEASON_CHANGE_EVENT, ACCENT_COLOR } from '@/lib/app-config'
+import { CHART_NAV_EVENT, SEASON_CHANGE_EVENT } from '@/lib/app-config'
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+
+/** Section XI division lookup — keyed by school slug */
+const SCHOOL_DIVISIONS: Record<string, string> = {
+  'bay-shore': 'I', 'brentwood': 'I', 'central-islip': 'I', 'commack': 'I',
+  'connetquot': 'I', 'floyd': 'I', 'lindenhurst': 'I', 'longwood': 'I',
+  'patchogue-medford': 'I', 'riverhead': 'I', 'sachem-east': 'I', 'sachem-north': 'I',
+  'ward-melville': 'I', 'whitman': 'I',
+  'bellport': 'II', 'centereach': 'II', 'copiague': 'II', 'deer-park': 'II',
+  'east-islip': 'II', 'half-hollow-hills-east': 'II', 'huntington': 'II', 'newfield': 'II',
+  'north-babylon': 'II', 'northport': 'II', 'smithtown-east': 'II', 'smithtown-west': 'II',
+  'west-babylon': 'II', 'west-islip': 'II',
+  'amityville': 'III', 'comsewogue': 'III', 'east-hampton-bridgehampton-pierson': 'III',
+  'eastport-south-manor': 'III', 'half-hollow-hills-west': 'III', 'harborfields': 'III',
+  'hauppauge': 'III', 'islip': 'III', 'kings-park': 'III', 'rocky-point': 'III',
+  'sayville': 'III', 'westhampton': 'III',
+  'babylon': 'IV', 'bayport-blue-point': 'IV', 'center-moriches': 'IV', 'glenn': 'IV',
+  'greenport-southold-mattituck': 'IV', 'hampton-bays': 'IV', 'miller-place': 'IV',
+  'mt-sinai': 'IV', 'port-jefferson': 'IV', 'shoreham-wading-river': 'IV',
+  'southampton': 'IV', 'wyandanch': 'IV',
+}
+const DIVISION_ROMAN = ['I', 'II', 'III', 'IV']
 
 /* ── Formatting ──────────────────────────────────────────────────── */
 function fmtNum(n: number) {
@@ -92,9 +128,13 @@ export function ChartDetailPage({
   const [expanded, setExpanded]   = useState<Set<string>>(new Set())
   const [activeSeason, setActiveSeason] = useState(seasonFilters?.[seasonFilters.length - 1] ?? '')
   const [tableExpanded, setTableExpanded] = useState(false)
+  const [divisionFilter, setDivisionFilter] = useState<string | null>(null)
   const [chartsOpen, setChartsOpen] = useState(false)
   const [mapsOpen,   setMapsOpen]   = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
+  const [query,      setQuery]      = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
+  useSearchHotkey(searchRef, () => setQuery(''))
 
   const emitSeason = (yr: string) => {
     setActiveSeason(yr)
@@ -171,7 +211,32 @@ export function ChartDetailPage({
   const scaledScatter: ScatterRow[] = useMemo(() => scatterPoints, [scatterPoints])
 
   const total  = scaledTable.reduce((s, r) => s + r.value, 0) || scaledKpi
-  const sorted = [...scaledTable].sort((a, b) => b.value - a.value)
+  const sorted = [...scaledTable].sort((a, b) => config.ascending ? a.value - b.value : b.value - a.value)
+
+  const q = query.trim().toLowerCase()
+  const searchedRows = q ? sorted.filter(r => r.name.toLowerCase().includes(q)) : sorted
+
+  // Division filter — team charts only
+  const rowsWithDivision = config.entity === 'team'
+    ? searchedRows.map(row => {
+        const slug = deriveSchoolSlug(row, rowLinks)
+        const div  = slug ? SCHOOL_DIVISIONS[slug] : undefined
+        return { row, slug, div }
+      })
+    : []
+
+  const divisionFilteredRows = config.entity === 'team' && divisionFilter
+    ? rowsWithDivision.filter(({ div }) => div === divisionFilter).map(({ row }) => row)
+    : searchedRows
+
+  // Derive school slug from team link (/team/floyd-varsity-football → floyd)
+  // or from logo URL (.../logos/floyd.png → floyd)
+  function deriveSchoolSlug(row: StdRow, links?: Record<string, string>): string | undefined {
+    const link = links?.[row.name]
+    if (link?.startsWith('/team/')) return link.replace('/team/', '').replace(/-varsity-football$/, '') || undefined
+    if (row.logoUrl) { const m = row.logoUrl.match(/\/logos\/([^./]+)/); if (m) return m[1] }
+    return undefined
+  }
 
   useEffect(() => {
     if (!rowPlayerSlugs) return
@@ -201,31 +266,31 @@ export function ChartDetailPage({
   /* ── Shared table body (panel + detail share the same JSX) ───────── */
   const tableBody = (() => {
     const isDetail      = !panelMode
+    const showHeader    = !isDetail  // no column headers in detail; SectionHead handles labelling
     const displayScatter = [...scaledScatter].sort((a, b) => (b.y / b.x) - (a.y / a.x))
-    const visibleScatter = isDetail && !tableExpanded ? displayScatter.slice(0, PREVIEW_ROWS) : displayScatter
-    const visibleMulti   = isDetail && !tableExpanded ? scaledMulti.slice(0, PREVIEW_ROWS)   : scaledMulti
-    const visibleRows    = isDetail && !tableExpanded ? sorted.slice(0, PREVIEW_ROWS)         : sorted
-
-    const headerToggleProps = isDetail
-      ? { onClick: () => setTableExpanded(v => !v), className: 'cursor-pointer hover:bg-[var(--inp-bg)]' }
-      : { className: '' }
+    // In detail mode, always show all rows (no expand/collapse)
+    const visibleScatter = (!isDetail && !tableExpanded) ? displayScatter.slice(0, PREVIEW_ROWS) : displayScatter
+    const visibleMulti   = (!isDetail && !tableExpanded) ? scaledMulti.slice(0, PREVIEW_ROWS)   : scaledMulti
+    const visibleRows    = !tableExpanded ? searchedRows.slice(0, PREVIEW_ROWS) : searchedRows
 
     if (config.chartType === 'scatter') {
       return (
         <div className="divide-y divide-[var(--border)]">
-          <div {...headerToggleProps} className={cn('sticky top-0 grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}>
-            <span>County</span>
-            <span className="text-right">Ann. Income</span>
-            <span className="text-right">Ann. Care Cost</span>
-            <span className="text-right">% of Income</span>
-          </div>
+          {showHeader && (
+            <div className="sticky top-0 grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10">
+              <span>County</span>
+              <span className="text-right">Ann. Income</span>
+              <span className="text-right">Ann. Care Cost</span>
+              <span className="text-right">% of Income</span>
+            </div>
+          )}
           {visibleScatter.map(row => (
             <div key={row.name}
               className="group/row grid grid-cols-[1fr_110px_110px_80px] gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors cursor-default">
-              <span className="text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors truncate">{row.name}</span>
-              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.x).toLocaleString()}</span>
-              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">${Math.round(row.y).toLocaleString()}</span>
-              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">{((row.y / row.x) * 100).toFixed(1)}%</span>
+              <span className="text-sm text-[var(--txt)] group-hover/row:text-[var(--paper-strong)] transition-colors truncate" style={SERIF}>{row.name}</span>
+              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-[var(--paper-strong)] tabular-nums transition-colors" style={MONO}>${Math.round(row.x).toLocaleString()}</span>
+              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-[var(--paper-strong)] tabular-nums transition-colors" style={MONO}>${Math.round(row.y).toLocaleString()}</span>
+              <span className="text-right text-sm text-[var(--muted)] group-hover/row:text-[var(--paper-strong)] tabular-nums transition-colors" style={MONO}>{((row.y / row.x) * 100).toFixed(1)}%</span>
             </div>
           ))}
         </div>
@@ -235,18 +300,20 @@ export function ChartDetailPage({
     if (config.series) {
       return (
         <div className="divide-y divide-[var(--border)]">
-          <div {...headerToggleProps} className={cn('sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}
-            style={{ gridTemplateColumns: `1fr repeat(${config.series.length}, 110px)` }}>
-            <span>Year</span>
-            {config.series.map(s => <span key={s.key} className="text-right">{s.label}</span>)}
-          </div>
+          {showHeader && (
+            <div className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+              style={{ gridTemplateColumns: `1fr repeat(${config.series.length}, 110px)` }}>
+              <span>Year</span>
+              {config.series.map(s => <span key={s.key} className="text-right">{s.label}</span>)}
+            </div>
+          )}
           {visibleMulti.map((row, i) => (
             <div key={i}
               className="group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors"
               style={{ gridTemplateColumns: `1fr repeat(${config.series!.length}, 110px)` }}>
-              <span className="text-sm font-medium text-[var(--txt)] group-hover/row:text-sky-500 transition-colors">{row.name}</span>
+              <span className="text-sm text-[var(--txt)] group-hover/row:text-[var(--paper-strong)] transition-colors" style={SERIF}>{row.name}</span>
               {config.series!.map(s => (
-                <span key={s.key} className="text-right text-sm text-[var(--muted)] group-hover/row:text-sky-500 tabular-nums transition-colors">
+                <span key={s.key} className="text-right text-sm text-[var(--muted)] group-hover/row:text-[var(--paper-strong)] tabular-nums transition-colors" style={MONO}>
                   {fmtVal(Number(row[s.key] ?? 0), config, config.periodToggle ? period : undefined)}
                 </span>
               ))}
@@ -268,14 +335,16 @@ export function ChartDetailPage({
 
     return (
       <div className="divide-y divide-[var(--border)]">
-        <div {...headerToggleProps} className={cn('sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10 transition-colors', headerToggleProps.className)}
-          style={{ gridTemplateColumns: colTemplate }}>
-          {hasSubRows && <span />}
-          {showRank && <span>#</span>}
-          <span>{nameLabel ?? config.nameLabel ?? 'Name'}</span>
-          {hasWinPct && <span className="text-right">3yr Win %</span>}
-          <span className="text-right">{valueLabel ?? config.valueLabel ?? 'Value'}</span>
-        </div>
+        {showHeader && (
+          <div className="sticky top-0 grid gap-3 px-5 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] bg-[var(--surface)] border-b border-[var(--border)] z-10"
+            style={{ gridTemplateColumns: colTemplate }}>
+            {hasSubRows && <span />}
+            {showRank && <span>#</span>}
+            <span>{nameLabel ?? config.nameLabel ?? 'Name'}</span>
+            {hasWinPct && <span className="text-right">3yr Win %</span>}
+            <span className="text-right">{valueLabel ?? config.valueLabel ?? 'Value'}</span>
+          </div>
+        )}
         {visibleRows.map((row, idx) => {
           const isOpen       = expanded.has(row.name)
           const rowSubRows   = subRows?.[row.name]
@@ -325,7 +394,7 @@ export function ChartDetailPage({
                       row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />
                     )}
                     <span className="flex flex-col min-w-0">
-                      <Link href={rowLinks[row.name]} onClick={e => e.stopPropagation()} className="text-sm font-medium truncate transition-colors text-[var(--txt)] group-hover/row:text-sky-500 hover:underline">{row.name}</Link>
+                      <Link href={rowLinks[row.name]} onClick={e => e.stopPropagation()} className="text-sm truncate transition-colors text-[var(--txt)] group-hover/row:text-[var(--paper-strong)] hover:underline" style={SERIF}>{row.name}</Link>
                       {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
                     </span>
                     {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
@@ -342,7 +411,7 @@ export function ChartDetailPage({
                       row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />
                     )}
                     <span className="flex flex-col min-w-0">
-                      <span className={cn('text-sm font-medium truncate transition-colors', isOpen ? 'text-sky-500' : 'text-[var(--txt)] group-hover/row:text-sky-500')}>{row.name}</span>
+                      <span className={cn('text-sm truncate transition-colors', isOpen ? 'text-[var(--paper-strong)]' : 'text-[var(--txt)] group-hover/row:text-[var(--paper-strong)]')} style={SERIF}>{row.name}</span>
                       {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
                     </span>
                     {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
@@ -350,12 +419,12 @@ export function ChartDetailPage({
                   </span>
                 )}
                 {hasWinPct && (
-                  <span className="text-right text-sm tabular-nums text-[var(--muted)] group-hover/row:text-sky-500 transition-colors">
+                  <span className="text-right text-sm tabular-nums text-[var(--muted)] group-hover/row:text-[var(--paper-strong)] transition-colors">
                     {row.winPct !== undefined ? `${row.winPct.toFixed(1)}%` : '—'}
                   </span>
                 )}
-                <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-sky-500')}
-                  style={isOpen ? { color: config.color } : undefined}>
+                <span className={cn('text-right text-sm tabular-nums transition-colors', isOpen ? 'tabular-nums' : 'text-[var(--muted)] group-hover/row:text-[var(--paper-strong)]')}
+                  style={isOpen ? { ...MONO, color: config.color } : MONO}>
                   {fmtVal(row.value, config, config.periodToggle ? period : undefined)}
                 </span>
               </div>
@@ -526,11 +595,48 @@ export function ChartDetailPage({
     )
   }
 
-  /* ── DETAIL PAGE layout (new design) ─────────────────────────── */
-  const btn    = 'inline-flex items-center justify-center h-8 w-8 border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors'
-  const active = 'text-[var(--txt)] bg-[var(--inp-bg)]'
-  const tip    = 'absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 rounded bg-[var(--txt)] text-[var(--bg)] text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50'
+  /* ── Detail-mode season cycle (mirrors Division Shell) ──────── */
+  const seasonCycleOptions: string[] = seasonFilters
+    ? [
+        ...(seasonFilters.includes('all') ? ['all'] : []),
+        ...[...seasonFilters].filter(s => s !== 'all').sort((a, b) => Number(b) - Number(a)),
+      ]
+    : []
+  const cycleIdx         = seasonCycleOptions.indexOf(activeSeason)
+  const hasSeasonControl = seasonCycleOptions.length > 1
+  const seasonLabel      = !activeSeason || activeSeason === 'all' ? 'All-Time' : formatSeason(activeSeason)
+  const totalCount  = config.chartType === 'scatter'
+    ? scaledScatter.length
+    : config.series
+      ? scaledMulti.length
+      : sorted.length
+  const entryCount  = config.chartType === 'scatter'
+    ? scaledScatter.length
+    : config.series
+      ? scaledMulti.length
+      : divisionFilteredRows.length
+  const entityNoun = config.entity === 'player' ? 'player' : 'team'
 
+  // ContentsNav — division filter for team charts; single section for player charts
+  const chartSections = config.entity === 'team'
+    ? DIVISION_ROMAN.map(d => ({
+        id: d,
+        label: `Division ${d}`,
+        count: rowsWithDivision.filter(({ div }) => div === d).length,
+      }))
+    : [{ id: 'rankings', label: config.valueLabel ?? 'Rankings', count: entryCount }]
+
+  function handleDivisionSelect(id: string) {
+    setDivisionFilter(prev => prev === id ? null : id)
+  }
+
+  function shiftSeasonCycle(delta: 1 | -1) {
+    const len  = seasonCycleOptions.length
+    const next = (cycleIdx + delta + len) % len
+    emitSeason(seasonCycleOptions[next])
+  }
+
+  /* ── DETAIL PAGE layout (editorial) ─────────────────────────── */
   const mobileHeader = (
     <div className="flex items-center gap-2 w-full">
       <div className="flex-1 min-w-0">
@@ -543,77 +649,143 @@ export function ChartDetailPage({
   return (
     <>
       <AppLayout mobileHeader={mobileHeader}>
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="max-w-4xl mx-auto px-5 pt-2 pb-8 sm:py-8">
+        <div
+          className="flex-1 overflow-y-auto no-scrollbar"
+          style={{ backgroundColor: 'var(--paper)', ...PAPER_BRIDGE }}
+        >
 
-            {/* Header */}
-            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
-            <div className="hidden sm:flex mb-8 items-start justify-between gap-2">
-              <div>
-                <h1 className="text-2xl font-bold text-[var(--txt)]">{config.title}</h1>
-                <div className="flex items-center gap-1 text-xs text-[var(--muted)] mt-1">
-                  <Link href="/section/section-xi" className="hover:text-[var(--txt)] transition-colors">Section XI</Link>
-                  <span>/</span>
-                  <Link href="/charts" className="hover:text-[var(--txt)] transition-colors">Charts</Link>
-                  <span>/</span>
-                  <span className="font-medium" style={{ color: ACCENT_COLOR }}>{config.title}</span>
-                </div>
-              </div>
-              <div className="hidden sm:flex items-center shrink-0">
-                <div className="inline-flex -space-x-px">
-                  <div className="relative group">
-                    <Link href={panelMode ? `/charts/${prevSlug}` : `/chart/${prevSlug}`} className={`${btn} rounded-l-full`}><ChevronLeft className="h-4 w-4" /></Link>
-                    <span className={tip}>Prev</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChartsOpen(v => !v)} className={`${btn} ${chartsOpen ? active : ''}`}><ChartSpline className="h-4 w-4" /></button>
-                    <span className={tip}>Charts</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setMapsOpen(v => !v)} className={`${btn} ${mapsOpen ? active : ''}`}><MapIcon className="h-4 w-4" /></button>
-                    <span className={tip}>Map</span>
-                  </div>
-                  <div className="relative group">
-                    <button onClick={() => setChatOpen(v => !v)} className={`${btn} ${chatOpen ? active : ''}`}><MessageCircle className="h-4 w-4" /></button>
-                    <span className={tip}>Ask SportsGPT</span>
-                  </div>
-                  <div className="relative group">
-                    <Link href={panelMode ? `/charts/${nextSlug}` : `/chart/${nextSlug}`} className={`${btn} rounded-r-full`}><ChevronRight className="h-4 w-4" /></Link>
-                    <span className={tip}>Next</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </RevealFx>
+          {/* ── Masthead ────────────────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
+            <EditorialHead
+              size="xl"
+              eyebrow="Section XI · Charts"
+              subhead={config.description}
+              meta={[
+                `${entryCount} ${entryCount === 1 ? entityNoun : `${entityNoun}s`}`,
+                ...(seasonFilters ? [`${seasonFilters.filter(s => s !== 'all').length} seasons of record`] : []),
+                seasonLabel,
+              ]}
+              rightSlot={
+                <EditorialButtonGroup
+                  prevHref={`/chart/${prevSlug}`}
+                  nextHref={`/chart/${nextSlug}`}
+                  buttons={[
+                    { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
+                    { icon: MapIcon,       tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                  ]}
+                />
+              }
+            >
+              {config.title}
+            </EditorialHead>
+          </div>
 
-            {/* Chart + filters */}
-            <RevealFx delay={0.15} translateY={16}>
-            <div className="mb-8">
-              {children}
-              {filterBar && <div className="mt-3">{filterBar}</div>}
-            </div>
-            </RevealFx>
-
-            {/* Table */}
-            <RevealFx delay={0.3} translateY={8}>
-            <div className="mb-8">
-              {seasonTabs ? (
-                <div className="mb-5">{seasonTabs}</div>
-              ) : (
-                <h2
-                  onClick={() => setTableExpanded(v => !v)}
-                  className="mb-5 text-lg font-semibold text-[var(--txt)] cursor-pointer hover:text-sky-500 transition-colors"
-                >
-                  {config.title}
-                </h2>
-              )}
-              <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-                {tableBody}
+          {/* ── Chart — matted hero frame ────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12">
+            <RevealFx delay={0.1} translateY={8}>
+              <div
+                className="border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+                style={{ borderRadius: TABLET_RADIUS, padding: 8 }}
+              >
+                {children}
               </div>
-            </div>
             </RevealFx>
+            {filterBar && <div className="mt-4 px-1">{filterBar}</div>}
+          </div>
+
+          {/* ── Sticky control bar ──────────────────────────────── */}
+          <StickyControlBar>
+            {hasSeasonControl && (
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Season</span>
+                <button onClick={() => shiftSeasonCycle(-1)} aria-label="Previous season"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors">
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
+                <span className="text-[var(--paper-text)] tabular-nums min-w-[5.5rem] text-center"
+                  style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}>
+                  {seasonLabel}
+                </span>
+                <button onClick={() => shiftSeasonCycle(1)} aria-label="Next season"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors">
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            )}
+
+            <SearchInput
+              value={query}
+              onChange={setQuery}
+              inputRef={searchRef}
+              placeholder={`Search ${entityNoun}s…`}
+            />
+
+            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
+              {totalCount > 0
+                ? q
+                  ? `${entryCount} / ${totalCount} ranked`
+                  : `${totalCount} ranked entries`
+                : ''}
+            </div>
+          </StickyControlBar>
+
+          {/* ── Body: sidebar + rankings ─────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
+
+            <ContentsNav
+              items={chartSections}
+              activeId={config.entity === 'team' ? (divisionFilter ?? undefined) : 'rankings'}
+              onSelect={config.entity === 'team' ? handleDivisionSelect : undefined}
+            />
+
+            <main className="min-w-0">
+              <RevealFx delay={0.3} translateY={8}>
+                <section id="rankings">
+                  <SectionHead
+                    title={
+                      divisionFilter
+                        ? `Division ${divisionFilter}`
+                        : config.valueLabel ?? 'Rankings'
+                    }
+                    blurb={config.description}
+                  />
+
+                  {/* Standard bar/area charts → editorial PlayerRankedList */}
+                  {config.chartType !== 'scatter' && !config.series ? (
+                    <PlayerRankedList
+                      query={q}
+                      rows={divisionFilteredRows.map((row, idx) => {
+                        const schoolSlug = deriveSchoolSlug(row, rowLinks)
+                        const playerSlug = rowPlayerSlugs?.[row.name]
+                        return {
+                          slug:      playerSlug ?? schoolSlug ?? row.name,
+                          name:      row.name.replace(/\s+Varsity\s+Football$/i, ''),
+                          schoolSlug,
+                          school:    row.subtitle,
+                          rank:      idx + 1,
+                          primary:   fmtVal(row.value, config, config.periodToggle ? period : undefined),
+                          secondary: row.winPct !== undefined
+                            ? `${row.winPct.toFixed(1)}% WIN`
+                            : row.record ?? undefined,
+                          href:      rowLinks?.[row.name]
+                            ?? (playerSlug ? `/player/${playerSlug}` : undefined),
+                        }
+                      })}
+                      emptyLabel={q ? `No results for "${query}".` : 'No data recorded.'}
+                    />
+                  ) : (
+                    /* Scatter / series → generic table */
+                    <div className="border border-[var(--paper-rule)]" style={{ borderRadius: TABLET_RADIUS }}>
+                      {tableBody}
+                    </div>
+                  )}
+                </section>
+              </RevealFx>
+            </main>
 
           </div>
+
         </div>
       </AppLayout>
 

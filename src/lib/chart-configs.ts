@@ -60,6 +60,8 @@ export interface ChartConfig {
   series?: SeriesDef[]
   filters?: FilterDef[]
   stacked?: boolean
+  /** When true, lower values rank higher (e.g. fewest pts allowed = best). */
+  ascending?: boolean
 }
 
 export const CHART_CONFIGS: ChartConfig[] = [
@@ -127,11 +129,12 @@ export const CHART_CONFIGS: ChartConfig[] = [
   },
   {
     slug: 'scoring-defense',
-    title: 'Scoring Defense',
-    description: 'Average points allowed per game — fewest is best',
+    title: 'Avg. Pts Allowed',
+    description: 'Average points allowed per game by team — fewest is best',
     color: '#10b981', chartType: 'bar', kpiLabel: 'fewest pts allowed',
-    nameLabel: 'Team', valueLabel: 'Pts Allowed',
+    nameLabel: 'Team', valueLabel: 'Avg. Pts Allowed',
     metric: 'scoring', entity: 'team',
+    ascending: true,
   },
   {
     slug: 'top-scoring-games',

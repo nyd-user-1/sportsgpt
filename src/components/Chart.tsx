@@ -21,7 +21,7 @@ interface ChartProps {
 
 export function Chart({ children, config }: ChartProps) {
   return (
-    <div data-slot="chart-shell" className="h-[400px] w-full">
+    <div data-slot="chart-shell" className="h-[520px] w-full">
       {config ? (
         <ChartContainer config={config} className="h-full w-full">
           {children}
