@@ -8,7 +8,7 @@ import {
   LineChart, Line, ScatterChart, Scatter, XAxis, YAxis,
   Tooltip as RechartsTip, CartesianGrid, Cell,
 } from 'recharts'
-import { ChevronRight, ChartSpline, Map as MapIcon, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
+import { ChevronRight, ChartSpline, FileUser, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { InfoTable } from '@/components/InfoTable'
 import { RevealFx } from '@/components/RevealFx'
@@ -130,7 +130,7 @@ export function ChartDetailPage({
   const [tableExpanded, setTableExpanded] = useState(false)
   const [divisionFilter, setDivisionFilter] = useState<string | null>(null)
   const [chartsOpen, setChartsOpen] = useState(false)
-  const [mapsOpen,   setMapsOpen]   = useState(false)
+  const [playersOpen, setPlayersOpen] = useState(false)
   const [chatOpen,   setChatOpen]   = useState(false)
   const [query,      setQuery]      = useState('')
   const searchRef = useRef<HTMLInputElement>(null)
@@ -671,7 +671,7 @@ export function ChartDetailPage({
                   nextHref={`/chart/${nextSlug}`}
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                    { icon: MapIcon,       tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
+                    { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
                     { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
@@ -790,7 +790,7 @@ export function ChartDetailPage({
       </AppLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
+      <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={config.title} />
     </>
   )
