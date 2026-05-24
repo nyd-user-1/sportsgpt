@@ -25,8 +25,8 @@ export function EditorialButtonGroup({
   nextLabel = 'Next',
   buttons,
 }: {
-  prevHref: string
-  nextHref: string
+  prevHref?: string
+  nextHref?: string
   prevLabel?: string
   nextLabel?: string
   buttons: EditorialBtn[]
@@ -40,32 +40,49 @@ export function EditorialButtonGroup({
   const leftRadius:  CSSProperties = { borderTopLeftRadius:  TABLET_RADIUS, borderBottomLeftRadius:  TABLET_RADIUS }
   const rightRadius: CSSProperties = { borderTopRightRadius: TABLET_RADIUS, borderBottomRightRadius: TABLET_RADIUS }
 
+  const hasPrev = !!prevHref
+  const hasNext = !!nextHref
+
   return (
     <div className="hidden sm:flex items-center shrink-0">
       <div className="inline-flex -space-x-px">
-        <div className="relative group">
-          <Link href={prevHref} className={cell} style={leftRadius}>
-            <ChevronLeft className="h-4 w-4" />
-          </Link>
-          <span className={tip} style={tipStyle}>{prevLabel}</span>
-        </div>
+        {hasPrev && (
+          <div className="relative group">
+            <Link href={prevHref!} className={cell} style={leftRadius}>
+              <ChevronLeft className="h-4 w-4" />
+            </Link>
+            <span className={tip} style={tipStyle}>{prevLabel}</span>
+          </div>
+        )}
         {buttons.map((b, i) => {
           const Icon = b.icon
+          const isFirst = i === 0 && !hasPrev
+          const isLast  = i === buttons.length - 1 && !hasNext
           return (
             <div key={i} className="relative group">
-              <button onClick={b.onClick} className={cn(cell, b.active && activeCell)} aria-label={b.tooltip}>
+              <button
+                onClick={b.onClick}
+                className={cn(cell, b.active && activeCell)}
+                aria-label={b.tooltip}
+                style={{
+                  ...(isFirst ? leftRadius  : {}),
+                  ...(isLast  ? rightRadius : {}),
+                }}
+              >
                 <Icon className="h-4 w-4" />
               </button>
               <span className={tip} style={tipStyle}>{b.tooltip}</span>
             </div>
           )
         })}
-        <div className="relative group">
-          <Link href={nextHref} className={cell} style={rightRadius}>
-            <ChevronRight className="h-4 w-4" />
-          </Link>
-          <span className={tip} style={tipStyle}>{nextLabel}</span>
-        </div>
+        {hasNext && (
+          <div className="relative group">
+            <Link href={nextHref!} className={cell} style={rightRadius}>
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+            <span className={tip} style={tipStyle}>{nextLabel}</span>
+          </div>
+        )}
       </div>
     </div>
   )

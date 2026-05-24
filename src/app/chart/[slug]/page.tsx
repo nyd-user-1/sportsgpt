@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation'
-import { sql } from '@/lib/db'
 import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing } from '@/lib/chart-data/rushing'
 import { fetchReceivingYardsLeaders, fetchReceivingTdsLeaders } from '@/lib/chart-data/receiving'
 import { fetchTotalTdsLeaders, fetchTotalYardsLeaders, fetchTotalPointsLeaders } from '@/lib/chart-data/composite'
 import { fetchPFPA, fetchPointDifferential, fetchScoringOffense, fetchScoringDefense, fetchTopScoringGames, fetchBiggestBlowouts } from '@/lib/chart-data/scoring'
+import { fetchSeasonRecords, fetchHomeAwayRecord, fetchWinLossDivision, fetchWinPercentage, fetchWinningStreaks, fetchLosingStreaks } from '@/lib/chart-data/wins'
+import { fetchStrengthOfSchedule } from '@/lib/chart-data/schedule'
 import { ChartDetailPage, type StdRow, type MultiRow, type SubRow, type SubRowMap } from '@/components/ChartDetailPage'
 import { SportsBarChart } from '@/components/charts/SportsBarChart'
 import { SportsBarChartMulti } from '@/components/charts/SportsBarChartMulti'
@@ -118,12 +119,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── season-records ─────────────────────────────────────────────────────────
     case 'season-records': {
-      const recordRows = await sql`
-        SELECT t.name, t.slug AS team_slug, t.school_slug, s.overall_wins AS wins, s.overall_losses AS losses, s.season
-        FROM teams t
-        JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season = ANY(${AVAILABLE_SEASONS})
-        ORDER BY s.season, s.overall_wins DESC`
+      const recordRows = await fetchSeasonRecords(AVAILABLE_SEASONS)
 
       const stackedSeasonBars: StackedSeasonBars[] = ALL_SEASONS.map(yr => ({
         season: yr,
@@ -176,25 +172,19 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── wins-by-school (Current Dynasty) ──────────────────────────────────────
     case 'wins-by-school': {
-      const rows = await sql`
-        SELECT t.name, t.slug AS team_slug, t.school_slug, s.season,
-          s.overall_wins, s.overall_losses, COALESCE(s.overall_ties, 0) AS overall_ties
-        FROM teams t
-        JOIN team_season_stats s ON s.team_slug = t.slug
-        WHERE s.season = ANY(${SEASONS_WITH_2020})
-        ORDER BY t.name, s.season`
+      const rows = await fetchSeasonRecords(SEASONS_WITH_2020)
 
       // Index wins/losses/ties per team per season
       const byTeam: Record<string, Record<string, { w: number; l: number; t: number }>> = {}
       const schoolSlugs: Record<string, string> = {}
       const teamSlugs: Record<string, string> = {}
       for (const r of rows) {
-        const name = r.name as string
+        const name = r.name
         const season = String(r.season)
         if (!byTeam[name]) byTeam[name] = {}
-        byTeam[name][season] = { w: Number(r.overall_wins), l: Number(r.overall_losses), t: Number(r.overall_ties) }
-        schoolSlugs[name] = r.school_slug as string
-        teamSlugs[name] = r.team_slug as string
+        byTeam[name][season] = { w: r.wins, l: r.losses, t: r.ties }
+        schoolSlugs[name] = r.school_slug
+        teamSlugs[name] = r.team_slug
       }
       const teamNames = Object.keys(byTeam)
 
@@ -397,19 +387,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── home-away-record ──────────────────────────────────────────────────────
     case 'home-away-record': {
-      const rows = await sql`
-        WITH records AS (
-          SELECT t.name, t.school_slug,
-            COUNT(*) FILTER (WHERE g.home_team_slug = t.slug AND g.home_score > g.away_score)::int AS home_wins,
-            COUNT(*) FILTER (WHERE g.away_team_slug = t.slug AND g.away_score > g.home_score)::int AS away_wins,
-            g.season::text AS season
-          FROM teams t
-          JOIN games g ON (g.home_team_slug = t.slug OR g.away_team_slug = t.slug)
-          WHERE g.home_score IS NOT NULL AND g.season = ANY(${AVAILABLE_SEASONS}) AND t.level = 'Varsity'
-          GROUP BY t.name, t.school_slug, g.season
-        )
-        SELECT * FROM records WHERE home_wins + away_wins > 0
-        ORDER BY season, home_wins + away_wins DESC`
+      const rows = await fetchHomeAwayRecord(AVAILABLE_SEASONS)
 
       const homeAwaySeasons: HomeAwaySeason[] = ALL_SEASONS.map(yr => ({
         season: yr,
@@ -479,11 +457,7 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── win-loss-division ─────────────────────────────────────────────────────
     case 'win-loss-division': {
-      const rows = await sql`
-        SELECT t.name, t.school_slug, t.division, ts.overall_wins::int AS wins, ts.overall_losses::int AS losses, ts.season::text AS season
-        FROM team_season_stats ts JOIN teams t ON t.slug = ts.team_slug
-        WHERE ts.season = ANY(${AVAILABLE_SEASONS}) AND t.level = 'Varsity'
-        ORDER BY ts.season, t.division, ts.overall_wins DESC`
+      const rows = await fetchWinLossDivision(AVAILABLE_SEASONS)
 
       const winLossSeasons: WinLossSeason[] = ALL_SEASONS.map(yr => ({
         season: yr,
@@ -504,20 +478,9 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── strength-of-schedule ──────────────────────────────────────────────────
     case 'strength-of-schedule': {
-      const rows = await sql`
-        WITH pairs AS (
-          SELECT home_team_slug AS team_slug, away_team_slug AS opp_slug, season FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-          UNION ALL SELECT away_team_slug, home_team_slug, season FROM games WHERE home_score IS NOT NULL AND season = ANY(${AVAILABLE_SEASONS})
-        )
-        SELECT t.name, t.school_slug, gp.season::text AS season,
-          ROUND(AVG(ts.overall_wins::float / NULLIF(ts.overall_wins + ts.overall_losses, 0)) * 100)::int AS value
-        FROM pairs gp JOIN teams t ON t.slug = gp.team_slug
-        JOIN teams opp ON opp.slug = gp.opp_slug
-        JOIN team_season_stats ts ON ts.team_slug = gp.opp_slug AND ts.season = gp.season
-        WHERE t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug, gp.season ORDER BY gp.season, value DESC`
+      const rows = await fetchStrengthOfSchedule(AVAILABLE_SEASONS)
 
-      const seasonBarsArr = buildSeasonBars(rows as { name: unknown; value: unknown; season: unknown; school_slug?: unknown }[], ALL_SEASONS)
+      const seasonBarsArr = buildSeasonBars(rows as never[], ALL_SEASONS)
       // "All": average SoS per team across all seasons
       const sosAllMap = new Map<string, { name: string; total: number; count: number; logoUrl: string }>()
       for (const s of seasonBarsArr) {
@@ -677,29 +640,14 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
 
     // ── win-percentage ────────────────────────────────────────────────────────
     case 'win-percentage': {
-      const rows = await sql`
-        SELECT t.name, t.school_slug,
-          ROUND(
-            SUM(s.overall_wins)::numeric /
-            NULLIF(SUM(s.overall_wins + s.overall_losses), 0) * 100,
-            1
-          )::float AS value
-        FROM team_season_stats s
-        JOIN teams t ON t.slug = s.team_slug
-        WHERE t.level = 'Varsity'
-        GROUP BY t.name, t.school_slug
-        HAVING SUM(s.overall_wins + s.overall_losses) >= 10
-        ORDER BY value DESC`
-
-      tableRows = (rows as { name: string; school_slug: string; value: number }[]).map(r => ({
-        name:    String(r.name),
-        value:   Number(r.value),
-        logoUrl: SCHOOL_LOGOS[String(r.school_slug)] ?? '',
+      const rows = await fetchWinPercentage()
+      tableRows = rows.map(r => ({
+        name:    r.name,
+        value:   r.value,
+        logoUrl: SCHOOL_LOGOS[r.school_slug] ?? '',
       }))
       kpiValue = tableRows[0]?.value ?? 0
-      rowLinks = Object.fromEntries(
-        (rows as { name: string; school_slug: string }[]).map(r => [r.name, `/team/${r.school_slug}-varsity-football`])
-      )
+      rowLinks = Object.fromEntries(rows.map(r => [r.name, `/team/${r.school_slug}-varsity-football`]))
       chartChild = <SportsBarChart data={tableRows.slice(0, 20)} color={config.color} valueLabel="Win %" />
       break
     }
