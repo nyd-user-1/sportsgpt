@@ -154,7 +154,14 @@ export function DivisionShell({
   const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
     standings: null, passing: null, rushing: null, receiving: null,
   })
-  const searchRef = useRef<HTMLInputElement>(null)
+  const searchRef     = useRef<HTMLInputElement>(null)
+  const scrollRef     = useRef<HTMLDivElement>(null)
+
+  // Scroll to top when search activates so the first result is always visible.
+  const isSearching = !!query.trim()
+  useEffect(() => {
+    if (isSearching) scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [isSearching])
 
   // Hero slides: use all teams with photos — not affected by season or search.
   const slides = useMemo(() => {
@@ -274,6 +281,7 @@ export function DivisionShell({
     <>
       <AppLayout>
         <div
+          ref={scrollRef}
           className="flex-1 overflow-y-auto no-scrollbar"
           style={{ backgroundColor: 'var(--paper)' }}
         >
