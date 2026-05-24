@@ -63,8 +63,7 @@ export default async function SectionDetailPage({ params }: { params: Promise<{ 
       WHERE ps.stat_type = 'Passing'
         AND ps.season = ANY(${AVAILABLE_SEASONS})
         AND ps.pass_yards IS NOT NULL
-      ORDER BY ps.season DESC, ps.pass_yards DESC
-      LIMIT 100
+      ORDER BY ps.pass_yards DESC
     `,
   ])
 
