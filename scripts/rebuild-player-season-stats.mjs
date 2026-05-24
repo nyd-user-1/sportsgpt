@@ -50,7 +50,7 @@ async function snapshot(label) {
   const rows = await sql`
     SELECT season, stat_type, COUNT(*)::int AS n
     FROM player_season_stats
-    WHERE season = ANY(${SEASONS}) AND stat_type IN ('Passing','Rushing','Receiving')
+    WHERE season = ANY(${SEASONS}) AND stat_type IN ('Passing','Rushing','Receiving','Defense','Kicking')
     GROUP BY season, stat_type
     ORDER BY season, stat_type`
   console.log(`\n${label}`)
@@ -104,7 +104,33 @@ async function previewWouldAdd() {
       )
     GROUP BY pgs.season ORDER BY pgs.season`
 
-  for (const [label, counts] of [['Passing', passing], ['Rushing', rushing], ['Receiving', receiving]]) {
+  const defense = await sql`
+    SELECT pgs.season, COUNT(DISTINCT (pgs.player_name, pgs.school_slug))::int AS n
+    FROM player_game_stats pgs
+    WHERE pgs.stat_type = 'Defense'
+      AND pgs.season = ANY(${SEASONS})
+      AND COALESCE(pgs.def_int, 0) + COALESCE(pgs.def_sacks, 0) + COALESCE(pgs.def_fumbles, 0) > 0
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.stat_type = 'Defense' AND pss.season = pgs.season
+          AND pss.school_slug = pgs.school_slug AND pss.player_name = pgs.player_name
+      )
+    GROUP BY pgs.season ORDER BY pgs.season`
+
+  const kicking = await sql`
+    SELECT pgs.season, COUNT(DISTINCT (pgs.player_name, pgs.school_slug))::int AS n
+    FROM player_game_stats pgs
+    WHERE pgs.stat_type = 'Kicking'
+      AND pgs.season = ANY(${SEASONS})
+      AND COALESCE(pgs.kick_pat, 0) + COALESCE(pgs.kick_fg, 0) > 0
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.stat_type = 'Kicking' AND pss.season = pgs.season
+          AND pss.school_slug = pgs.school_slug AND pss.player_name = pgs.player_name
+      )
+    GROUP BY pgs.season ORDER BY pgs.season`
+
+  for (const [label, counts] of [['Passing', passing], ['Rushing', rushing], ['Receiving', receiving], ['Defense', defense], ['Kicking', kicking]]) {
     console.log(`\n  ${label}:`)
     let total = 0
     for (const r of counts) {
@@ -355,6 +381,156 @@ async function addReceiving() {
   return inserted.length
 }
 
+/**
+ * Ensure player_season_stats has the defense columns.
+ * Safe to call every run — ADD COLUMN IF NOT EXISTS is idempotent.
+ */
+async function migrateDefenseCols() {
+  // Columns are hardcoded — safe to interpolate directly into tagged template.
+  // POSIX DDL cannot use $1 params; three explicit statements are clearest.
+  await sql`ALTER TABLE player_season_stats ADD COLUMN IF NOT EXISTS def_int     INT`
+  await sql`ALTER TABLE player_season_stats ADD COLUMN IF NOT EXISTS def_sacks   INT`
+  await sql`ALTER TABLE player_season_stats ADD COLUMN IF NOT EXISTS def_fumbles INT`
+}
+
+async function addDefense() {
+  await migrateDefenseCols()
+  const inserted = await sql`
+    WITH labeled AS (
+      SELECT
+        COALESCE(
+          pgs.player_slug,
+          -- Derive a kebab-case slug from player_name when null. Uses POSIX
+          -- character classes ([[:space:]]) instead of \\s — JS template
+          -- literals would eat a single \\, producing buggy regexes.
+          LOWER(REGEXP_REPLACE(REGEXP_REPLACE(TRIM(pgs.player_name), '[^A-Za-z0-9[:space:]]', '', 'g'), '[[:space:]]+', '-', 'g'))
+        ) AS player_slug,
+        pgs.player_name, pgs.school_slug, pgs.season,
+        pgs.def_int, pgs.def_sacks, pgs.def_fumbles
+      FROM player_game_stats pgs
+      WHERE pgs.stat_type = 'Defense'
+        AND pgs.season = ANY(${SEASONS})
+        AND COALESCE(pgs.def_int, 0) + COALESCE(pgs.def_sacks, 0) + COALESCE(pgs.def_fumbles, 0) > 0
+    ),
+    agg AS (
+      SELECT
+        player_name, school_slug, season,
+        (array_agg(player_slug ORDER BY player_slug))[1]    AS player_slug,
+        SUM(COALESCE(def_int, 0))::int                      AS def_int,
+        SUM(COALESCE(def_sacks, 0))::int                    AS def_sacks,
+        SUM(COALESCE(def_fumbles, 0))::int                  AS def_fumbles,
+        COUNT(*)::int                                       AS games_played
+      FROM labeled
+      -- Group by name+school (not by slug) — same player can have multiple
+      -- slug values across game rows. Natural key is (player_name, school_slug, season).
+      GROUP BY player_name, school_slug, season
+    )
+    INSERT INTO player_season_stats (
+      player_slug, player_name, school_slug, school_name, season, stat_type, section,
+      def_int, def_sacks, def_fumbles, games_played
+    )
+    SELECT
+      agg.player_slug,
+      agg.player_name,
+      agg.school_slug,
+      (SELECT name FROM teams WHERE school_slug = agg.school_slug AND level = 'Varsity' LIMIT 1) AS school_name,
+      agg.season,
+      'Defense',
+      'XI',
+      agg.def_int,
+      agg.def_sacks,
+      agg.def_fumbles,
+      agg.games_played
+    FROM agg
+    WHERE agg.school_slug IS NOT NULL
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE LOWER(REGEXP_REPLACE(TRIM(pss.player_name), '[[:space:]]+', ' ', 'g')) =
+              LOWER(REGEXP_REPLACE(TRIM(agg.player_name), '[[:space:]]+', ' ', 'g'))
+          AND pss.school_slug = agg.school_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Defense'
+      )
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.player_slug = agg.player_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Defense'
+      )
+    ON CONFLICT (player_slug, season, stat_type) DO NOTHING
+    RETURNING 1`
+  return inserted.length
+}
+
+async function addKicking() {
+  // Kicking rows use existing columns: pat, fg, points
+  const inserted = await sql`
+    WITH labeled AS (
+      SELECT
+        COALESCE(
+          pgs.player_slug,
+          -- Derive a kebab-case slug from player_name when null. Uses POSIX
+          -- character classes ([[:space:]]) instead of \\s — JS template
+          -- literals would eat a single \\, producing buggy regexes.
+          LOWER(REGEXP_REPLACE(REGEXP_REPLACE(TRIM(pgs.player_name), '[^A-Za-z0-9[:space:]]', '', 'g'), '[[:space:]]+', '-', 'g'))
+        ) AS player_slug,
+        pgs.player_name, pgs.school_slug, pgs.season,
+        pgs.kick_pat, pgs.kick_fg, pgs.kick_points
+      FROM player_game_stats pgs
+      WHERE pgs.stat_type = 'Kicking'
+        AND pgs.season = ANY(${SEASONS})
+        AND COALESCE(pgs.kick_pat, 0) + COALESCE(pgs.kick_fg, 0) > 0
+    ),
+    agg AS (
+      SELECT
+        player_name, school_slug, season,
+        (array_agg(player_slug ORDER BY player_slug))[1]    AS player_slug,
+        SUM(COALESCE(kick_pat, 0))::int                     AS pat,
+        SUM(COALESCE(kick_fg, 0))::int                      AS fg,
+        SUM(COALESCE(kick_points, 0))::int                  AS points,
+        COUNT(*)::int                                       AS games_played
+      FROM labeled
+      -- Group by name+school (not by slug) — same player can have multiple
+      -- slug values across game rows. Natural key is (player_name, school_slug, season).
+      GROUP BY player_name, school_slug, season
+    )
+    INSERT INTO player_season_stats (
+      player_slug, player_name, school_slug, school_name, season, stat_type, section,
+      pat, fg, points, games_played
+    )
+    SELECT
+      agg.player_slug,
+      agg.player_name,
+      agg.school_slug,
+      (SELECT name FROM teams WHERE school_slug = agg.school_slug AND level = 'Varsity' LIMIT 1) AS school_name,
+      agg.season,
+      'Kicking',
+      'XI',
+      agg.pat,
+      agg.fg,
+      agg.points,
+      agg.games_played
+    FROM agg
+    WHERE agg.school_slug IS NOT NULL
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE LOWER(REGEXP_REPLACE(TRIM(pss.player_name), '[[:space:]]+', ' ', 'g')) =
+              LOWER(REGEXP_REPLACE(TRIM(agg.player_name), '[[:space:]]+', ' ', 'g'))
+          AND pss.school_slug = agg.school_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Kicking'
+      )
+      AND NOT EXISTS (
+        SELECT 1 FROM player_season_stats pss
+        WHERE pss.player_slug = agg.player_slug
+          AND pss.season = agg.season
+          AND pss.stat_type = 'Kicking'
+      )
+    ON CONFLICT (player_slug, season, stat_type) DO NOTHING
+    RETURNING 1`
+  return inserted.length
+}
+
 async function main() {
   bar()
   console.log(`player_season_stats backfill — additive only  (${APPLY ? 'APPLY MODE' : 'DRY RUN'})`)
@@ -384,6 +560,10 @@ async function main() {
   console.log(`  Added ${rushing} Rushing rows`)
   const receiving = await addReceiving()
   console.log(`  Added ${receiving} Receiving rows`)
+  const defense = await addDefense()
+  console.log(`  Added ${defense} Defense rows`)
+  const kicking = await addKicking()
+  console.log(`  Added ${kicking} Kicking rows`)
 
   await snapshot('AFTER')
 
