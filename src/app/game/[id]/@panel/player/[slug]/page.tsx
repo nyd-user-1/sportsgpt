@@ -49,6 +49,7 @@ export default async function PlayerPanelPage({
   const player     = playerRows[0]
   const schoolSlug = player.school_slug as string
   const teamName   = (player.team_name as string | null)?.replace(/\s+Varsity\s+Football$/i, '') ?? ''
+  const position   = player.position as string | null
   const photo      = PLAYER_PHOTOS[slug]
   const teamPhoto  = TEAM_PHOTOS[schoolSlug]?.[0]
   const heroSrc    = photo ?? teamPhoto ?? null
@@ -119,7 +120,8 @@ export default async function PlayerPanelPage({
             {player.name as string}
           </p>
           <p className="text-[11.5px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
-            {teamName}{player.division ? ` · Division ${player.division}` : ''}
+            {[teamName, player.division ? `Division ${player.division}` : null, position]
+              .filter(Boolean).join(' · ')}
           </p>
         </div>
       </div>
@@ -128,7 +130,7 @@ export default async function PlayerPanelPage({
       {activeSections.map(section => (
         <div key={section.type} className="border-b border-[var(--paper-rule)]">
           {/* Section header */}
-          <div className="px-5 pt-5 pb-2">
+          <div className="px-5 pt-5 pb-3">
             <span
               className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
               style={SANS}
@@ -137,50 +139,53 @@ export default async function PlayerPanelPage({
             </span>
           </div>
 
-          {/* Table */}
-          <div className="px-5 pb-4 overflow-x-auto no-scrollbar">
-            <table className="w-full border-separate" style={{ borderSpacing: 0 }}>
-              <thead>
-                <tr>
-                  <th
-                    className="pb-2 text-left text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
-                    style={SANS}
-                  >
-                    Season
-                  </th>
+          {/* Column header row */}
+          <div className="flex items-center px-5 pb-2">
+            <span
+              className="flex-1 text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
+              style={SANS}
+            >
+              Season
+            </span>
+            <div className="flex items-center gap-5">
+              {section.cols.map(c => (
+                <span
+                  key={c.key}
+                  className="w-10 text-right text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
+                  style={SANS}
+                >
+                  {c.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Data rows */}
+          <div className="pb-4">
+            {byType[section.type].map((r, i) => (
+              <div
+                key={i}
+                className="flex items-center px-5 py-2.5 border-t border-[var(--paper-rule-soft)]"
+              >
+                <span
+                  className="flex-1 text-[12px] text-[var(--paper-muted)]"
+                  style={SANS}
+                >
+                  {formatSeason(r.season as number)}
+                </span>
+                <div className="flex items-center gap-5">
                   {section.cols.map(c => (
-                    <th
+                    <span
                       key={c.key}
-                      className="pb-2 text-right text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
-                      style={SANS}
+                      className="w-10 text-right text-[13px] tabular-nums text-[var(--paper-text)]"
+                      style={MONO}
                     >
-                      {c.label}
-                    </th>
+                      {fmtVal(r[c.key as keyof typeof r])}
+                    </span>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {byType[section.type].map((r, i) => (
-                  <tr key={i} className="border-t border-[var(--paper-rule-soft)]">
-                    <td
-                      className="py-2.5 text-left text-[12px] text-[var(--paper-muted)]"
-                      style={SANS}
-                    >
-                      {formatSeason(r.season as number)}
-                    </td>
-                    {section.cols.map(c => (
-                      <td
-                        key={c.key}
-                        className="py-2.5 text-right text-[13px] tabular-nums text-[var(--paper-text)]"
-                        style={MONO}
-                      >
-                        {fmtVal(r[c.key as keyof typeof r])}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ))}
@@ -189,8 +194,8 @@ export default async function PlayerPanelPage({
       <div className="px-5 py-4">
         <Link
           href={`/player/${slug}`}
-          className="flex items-center justify-between text-sm font-medium hover:underline text-[var(--paper-strong)]"
-          style={SANS}
+          className="flex items-center justify-between font-medium hover:underline text-[var(--paper-strong)]"
+          style={{ ...SANS, fontSize: 13 }}
         >
           <span>View full profile</span>
           <ArrowUpRight className="h-4 w-4" />

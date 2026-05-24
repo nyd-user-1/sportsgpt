@@ -257,13 +257,13 @@ function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
 
 const STAT_ORDER: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
 
-function mainStat(p: PlayerStat): string {
-  if (p.stat_type === 'Rushing')   return `${p.yds ?? 0} yds`
-  if (p.stat_type === 'Passing')   return `${p.yds ?? 0} yds`
-  if (p.stat_type === 'Receiving') return `${p.yds ?? 0} yds`
-  if (p.stat_type === 'Kicking')   return `${p.points ?? 0} pts`
-  if (p.stat_type === 'Defense')   return `${p.sacks ?? 0} sacks`
-  return ''
+function mainStatParts(p: PlayerStat): { value: string; unit: string } {
+  if (p.stat_type === 'Rushing')   return { value: String(p.yds ?? 0),    unit: 'yds'  }
+  if (p.stat_type === 'Passing')   return { value: String(p.yds ?? 0),    unit: 'yds'  }
+  if (p.stat_type === 'Receiving') return { value: String(p.yds ?? 0),    unit: 'yds'  }
+  if (p.stat_type === 'Kicking')   return { value: String(p.points ?? 0), unit: 'pts'  }
+  if (p.stat_type === 'Defense')   return { value: String(p.sacks ?? 0),  unit: 'sacks'}
+  return { value: '—', unit: '' }
 }
 
 function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
@@ -310,13 +310,22 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
                   ?? ''
                 const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
                 const playerSlug = playerSlugs[p.player.toLowerCase()]
+                const { value, unit } = mainStatParts(p)
                 return (
                   <div
                     key={i}
-                    className="group flex items-center gap-3 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors"
+                    className="group flex items-center gap-2.5 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors"
                     style={{ cursor: playerSlug ? 'pointer' : 'default' }}
                     onClick={() => { if (playerSlug) onPlayerSelect(playerSlug) }}
                   >
+                    {/* Rank */}
+                    <span
+                      className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right leading-none"
+                      style={{ ...MONO_S, fontSize: 11 }}
+                    >
+                      {i + 1}.
+                    </span>
+
                     {/* Logo */}
                     {logo
                       ? <Image
@@ -352,13 +361,23 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
                       </p>
                     </div>
 
-                    {/* Stat */}
-                    <span
-                      className="text-[13px] tabular-nums font-medium text-[var(--paper-text)] shrink-0"
-                      style={MONO_S}
-                    >
-                      {mainStat(p)}
-                    </span>
+                    {/* Stat: value + unit separate */}
+                    <div className="shrink-0 flex items-baseline gap-1">
+                      <span
+                        className="text-[13px] tabular-nums font-medium text-[var(--paper-text)]"
+                        style={MONO_S}
+                      >
+                        {value}
+                      </span>
+                      {unit && (
+                        <span
+                          className="text-[10px] text-[var(--paper-muted)]"
+                          style={SANS}
+                        >
+                          {unit}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 )
               })}
