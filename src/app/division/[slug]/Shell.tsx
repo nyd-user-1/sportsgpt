@@ -370,8 +370,8 @@ export function DivisionShell({
 
             <main className="min-w-0">
 
-              {/* Section: Standings */}
-              <section
+              {/* Section: Standings — hidden when searching by player name (no team match) */}
+              {(!q || matchedStandings.length > 0) && <section
                 id="standings"
                 ref={(el: HTMLElement | null) => { sectionRefs.current.standings = el }}
                 className="mb-20 scroll-mt-24 first:mt-0"
@@ -399,7 +399,7 @@ export function DivisionShell({
                     ? `No teams match "${query}".`
                     : 'No standings recorded.'}
                 />
-              </section>
+              </section>}
 
               {/* Section: Passing */}
               <section
