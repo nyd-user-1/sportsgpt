@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, playerGameLogs, recordsCount] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, playerGameLogs, recordsCount, playerCountRows] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT s.*,
@@ -117,6 +117,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
         (SELECT COUNT(*) FROM player_season_stats WHERE school_slug = ${team.school_slug}) +
         (SELECT COUNT(*) FROM player_game_stats WHERE school_slug = ${team.school_slug})
         AS total`,
+    sql`SELECT COUNT(DISTINCT slug)::int AS total FROM players`,
   ])
 
   // Prev/next by name order
@@ -126,7 +127,9 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const prevSlug = namesSorted[(idx - 1 + n) % n]?.slug ?? slug
   const nextSlug = namesSorted[(idx + 1) % n]?.slug ?? slug
 
-  const totalRecords = Number((recordsCount as { total: number }[])[0]?.total ?? 0)
+  const totalRecords  = Number((recordsCount    as { total: number }[])[0]?.total ?? 0)
+  const totalPlayers  = Number((playerCountRows as { total: number }[])[0]?.total ?? 0)
+  const totalTeams    = namesSorted.length
 
   return (
     <TeamShell
@@ -144,6 +147,8 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       divTeams={divTeams as Record<string, unknown>[]}
       playerRows={playerRows as Record<string, unknown>[]}
       rosterRows={rosterRows as Record<string, unknown>[]}
+      totalTeams={totalTeams}
+      totalPlayers={totalPlayers}
       allSeasonStats={allSeasonStats as { team_slug: string; season: number; overall_wins: number; overall_losses: number }[]}
       gameRows={gameRows.map(r => ({
         id:             Number(r.id),

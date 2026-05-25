@@ -132,6 +132,7 @@ function topGameStat(log: PlayerGameLog): { label: string; value: string } {
 export function TeamShell({
   team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows,
   allSeasonStats = [], totalRecords = 0, playerGameLogs = [], panelMode = false,
+  totalTeams = 52, totalPlayers = 0,
 }: {
   team: Record<string, unknown>
   prevSlug: string; nextSlug: string
@@ -144,6 +145,8 @@ export function TeamShell({
   totalRecords?: number
   playerGameLogs?: Record<string, unknown>[]
   panelMode?: boolean
+  totalTeams?: number
+  totalPlayers?: number
 }) {
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [chatOpen,    setChatOpen]    = useState(false)
@@ -633,26 +636,31 @@ export function TeamShell({
             <ContentsNav
               items={navItems}
               activeId={activeSection}
-              label="Page Contents"
+              label="Page"
               topChildren={
                 <div className="mb-8">
-                  <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Site Contents</p>
-                  <ul className="flex flex-col">
-                    {[
-                      { label: 'Division', href: `/division/division-${(division as string).toLowerCase()}` },
-                      { label: 'Teams',    href: '/team' },
-                      { label: 'Players',  href: '/player' },
-                    ].map(link => (
+                  <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Site</p>
+                  <ol className="flex flex-col">
+                    {([
+                      { roman: 'I',   label: 'Division', count: 4,            href: `/division/division-${(division as string).toLowerCase()}` },
+                      { roman: 'II',  label: 'Teams',    count: totalTeams,   href: '/team' },
+                      { roman: 'III', label: 'Players',  count: totalPlayers, href: '/player' },
+                    ] as const).map(link => (
                       <li key={link.label}>
                         <Link
                           href={link.href}
-                          className="flex items-baseline gap-3 py-1.5 text-[13px] leading-tight text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors"
+                          className="group flex items-baseline gap-3 py-1.5 text-[13px] leading-tight text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors"
                         >
-                          {link.label}
+                          <span className="shrink-0 w-6 text-right italic"
+                            style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 12 }}>
+                            {link.roman}
+                          </span>
+                          <span className="flex-1 truncate">{link.label}</span>
+                          <span className="text-[10px] tabular-nums opacity-60">{link.count}</span>
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ol>
                 </div>
               }
             />
