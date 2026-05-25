@@ -60,14 +60,17 @@ export function SortTh({
             'pointer-events-none group-hover/th:pointer-events-auto absolute top-full z-50 mt-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
             right ? 'right-0' : 'left-0',
           )}>
-            <div className="px-3.5 py-3">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[var(--paper-text)] mb-1.5">{term.name}</p>
-              <p className="text-[12px] text-[var(--paper-muted)] leading-relaxed font-normal">{term.definition}</p>
+            <div className="px-3.5 pt-3 pb-2.5">
+              <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)] mb-2">{term.name}</p>
+              <p className="text-[13px] text-[var(--paper-muted)] leading-relaxed"
+                style={{ fontFamily: 'var(--font-display), Georgia, serif', fontStyle: 'italic' }}>
+                {term.definition}
+              </p>
             </div>
             <Link
               href={`/glossary#${glossaryId}`}
               onClick={e => e.stopPropagation()}
-              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--paper-rule)] px-3.5 py-2.5 text-[11px] font-medium hover:bg-[var(--paper-quiet)] transition-colors"
+              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--paper-rule)] px-3.5 py-2.5 text-[11px] hover:bg-[var(--paper-quiet)] transition-colors"
               style={{ color: ACCENT_COLOR }}
             >
               <span className="inline-flex items-center gap-1.5"><Info className="h-3 w-3" />Learn more</span>

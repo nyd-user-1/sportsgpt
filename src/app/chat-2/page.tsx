@@ -429,13 +429,13 @@ function AssistantMessage({
                     className="flex w-full items-start gap-4 py-3 border-t border-[var(--paper-rule-soft)] text-left group transition-colors"
                   >
                     <span
-                      className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-muted)] transition-colors"
+                      className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-strong)] transition-colors"
                       style={{ ...MONO, fontSize: 11 }}
                     >
                       ↳
                     </span>
                     <span
-                      className="text-[var(--paper-muted)] group-hover:text-[var(--paper-text)] transition-colors leading-relaxed"
+                      className="text-[var(--paper-muted)] group-hover:text-[var(--paper-strong)] transition-colors leading-relaxed"
                       style={{ ...SERIF, fontSize: 15, fontStyle: 'italic' }}
                     >
                       {q}
@@ -579,13 +579,13 @@ export default function Chat2Page() {
                       className="flex w-full items-start gap-4 py-3.5 border-t border-[var(--paper-rule-soft)] text-left group transition-colors"
                     >
                       <span
-                        className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-muted)] transition-colors"
+                        className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-strong)] transition-colors"
                         style={{ ...MONO, fontSize: 11 }}
                       >
                         ↳
                       </span>
                       <span
-                        className="text-[var(--paper-muted)] group-hover:text-[var(--paper-text)] transition-colors leading-relaxed"
+                        className="text-[var(--paper-muted)] group-hover:text-[var(--paper-strong)] transition-colors leading-relaxed"
                         style={{ ...SERIF, fontSize: 16, fontStyle: 'italic' }}
                       >
                         {q}
