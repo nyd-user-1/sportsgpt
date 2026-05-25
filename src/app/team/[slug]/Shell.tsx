@@ -318,7 +318,7 @@ export function TeamShell({
           {/* ── Hero slider ─────────────────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12">
             <RevealFx delay={0.1} translateY={8}>
-              <div className="relative overflow-hidden w-full h-[400px] border border-[var(--paper-rule)]"
+              <div className="relative overflow-hidden w-full h-[520px] border border-[var(--paper-rule)]"
                 style={{ borderRadius: TABLET_RADIUS }}>
                 {heroSlides.map((slide, i) => (
                   <div key={i}
