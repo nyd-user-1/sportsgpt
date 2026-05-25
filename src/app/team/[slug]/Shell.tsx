@@ -193,6 +193,10 @@ export function TeamShell({
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
   const [schedSortCol, setSchedSortCol] = useState<string | null>(null)
   const [schedSortDir, setSchedSortDir] = useState<'asc' | 'desc'>('desc')
+  const [logSortCol,   setLogSortCol]   = useState<string | null>(null)
+  const [logSortDir,   setLogSortDir]   = useState<'asc' | 'desc'>('desc')
+  const [plyrSortCol,  setPlyrSortCol]  = useState<string | null>(null)
+  const [plyrSortDir,  setPlyrSortDir]  = useState<'asc' | 'desc'>('desc')
   const [slideIdx, setSlideIdx]       = useState(0)
   const [query,   setQuery]           = useState('')
   const [activeSection, setActiveSection] = useState<string>('seasons')
@@ -411,6 +415,67 @@ export function TeamShell({
         (log.team_name ?? '').toLowerCase().includes(q)
       )
     : typedLogs
+
+  function handleLogSort(col: string) {
+    if (logSortCol === col) setLogSortDir(d => d === 'asc' ? 'desc' : 'asc')
+    else { setLogSortCol(col); setLogSortDir('desc') }
+  }
+
+  const sortedPlayerLogs = useMemo(() => {
+    if (!logSortCol) return matchedPlayerLogs
+    const teamSlug = team.slug as string
+    const key = (log: PlayerGameLog): number | string => {
+      const playerTeamSlug = `${log.school_slug}-varsity-football`
+      const playerIsHome   = log.home_team_slug === playerTeamSlug
+      const opName         = ((playerIsHome ? log.away_team_name : log.home_team_name) ?? '').replace(/\s+Varsity\s+Football$/i, '')
+      const stat           = topGameStat(log)
+      switch (logSortCol) {
+        case 'season':   return log.season ?? 0
+        case 'player':   return log.player_name.toLowerCase()
+        case 'week':     return gameWeekMap[log.game_id] ?? 0
+        case 'opponent': return opName.toLowerCase()
+        case 'type':     return log.stat_type?.toLowerCase() ?? ''
+        case 'stat':     return Number(stat.value) || 0
+        default:         return 0
+      }
+    }
+    return [...matchedPlayerLogs].sort((a, b) => {
+      const ka = key(a), kb = key(b)
+      if (typeof ka === 'string' && typeof kb === 'string')
+        return logSortDir === 'asc' ? ka.localeCompare(kb) : kb.localeCompare(ka)
+      return logSortDir === 'asc' ? (ka as number) - (kb as number) : (kb as number) - (ka as number)
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matchedPlayerLogs, logSortCol, logSortDir, gameWeekMap])
+
+  function handlePlyrSort(col: string) {
+    if (plyrSortCol === col) setPlyrSortDir(d => d === 'asc' ? 'desc' : 'asc')
+    else { setPlyrSortCol(col); setPlyrSortDir('desc') }
+  }
+
+  const sortedPlayers = useMemo(() => {
+    if (!plyrSortCol) return matchedPlayers
+    const key = (p: Record<string, unknown>): number | string => {
+      const statType = p.stat_type as string
+      const yds = statType === 'Passing' ? p.pass_yards : statType === 'Rushing' ? p.rush_yards : p.recv_yards
+      const tds  = statType === 'Passing' ? p.pass_tds  : statType === 'Rushing' ? p.rush_tds  : p.recv_tds
+      switch (plyrSortCol) {
+        case 'player': return (p.player_name as string).toLowerCase()
+        case 'season': return Number(p.season) || 0
+        case 'type':   return (p.stat_type as string ?? '').toLowerCase()
+        case 'yards':  return Number(yds) || 0
+        case 'tds':    return Number(tds) || 0
+        default:       return 0
+      }
+    }
+    return [...matchedPlayers].sort((a, b) => {
+      const ka = key(a as Record<string, unknown>), kb = key(b as Record<string, unknown>)
+      if (typeof ka === 'string' && typeof kb === 'string')
+        return plyrSortDir === 'asc' ? ka.localeCompare(kb) : kb.localeCompare(ka)
+      return plyrSortDir === 'asc' ? (ka as number) - (kb as number) : (kb as number) - (ka as number)
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matchedPlayers, plyrSortCol, plyrSortDir])
 
   /* ── Section counts ──────────────────────────────────────────── */
   const sectionCounts = {
@@ -775,19 +840,27 @@ export function TeamShell({
                   </p>
                 ) : (
                   <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm table-fixed">
+                      <colgroup>
+                        <col style={{ width: '100px' }} className="hidden sm:table-column" />
+                        <col style={{ width: '180px' }} />
+                        <col style={{ width: '100px' }} className="hidden sm:table-column" />
+                        <col style={{ width: 'auto' }} />
+                        <col style={{ width: '110px' }} className="hidden md:table-column" />
+                        <col style={{ width: '130px' }} />
+                      </colgroup>
                       <thead>
                         <tr>
-                          <th className={cn(th, 'hidden sm:table-cell')}>Season</th>
-                          <th className={th}>Player</th>
-                          <th className={cn(th, 'hidden sm:table-cell')}>Week</th>
-                          <th className={th}>Game</th>
-                          <th className={cn(th, 'hidden md:table-cell')}>Type</th>
-                          <th className={cn(th, 'text-right')}>Stat</th>
+                          <SortTh col="season"   label="Season"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
+                          <SortTh col="player"   label="Player"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
+                          <SortTh col="week"     label="Week"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
+                          <SortTh col="opponent" label="Opponent" sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
+                          <SortTh col="type"     label="Type"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden md:table-cell" />
+                          <SortTh col="stat"     label="Stat"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} right />
                         </tr>
                       </thead>
                       <tbody>
-                        {matchedPlayerLogs.map((log, i) => {
+                        {sortedPlayerLogs.map((log, i) => {
                           // Perspective = player's own school, not the page team
                           const playerTeamSlug = `${log.school_slug}-varsity-football`
                           const playerIsHome = log.home_team_slug === playerTeamSlug
@@ -863,18 +936,25 @@ export function TeamShell({
                   </p>
                 ) : (
                   <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm table-fixed">
+                      <colgroup>
+                        <col style={{ width: 'auto' }} />
+                        <col style={{ width: '110px' }} className="hidden sm:table-column" />
+                        <col style={{ width: '120px' }} className="hidden md:table-column" />
+                        <col style={{ width: '110px' }} />
+                        <col style={{ width: '90px' }} className="hidden sm:table-column" />
+                      </colgroup>
                       <thead>
                         <tr>
-                          <th className={th}>Player</th>
-                          <th className={cn(th, 'hidden sm:table-cell')}>Season</th>
-                          <th className={cn(th, 'hidden md:table-cell')}>Type</th>
-                          <th className={cn(th, 'text-right')}>Yards</th>
-                          <th className={cn(th, 'text-right hidden sm:table-cell')}>TDs</th>
+                          <SortTh col="player" label="Player" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} />
+                          <SortTh col="season" label="Season" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} className="hidden sm:table-cell" />
+                          <SortTh col="type"   label="Type"   sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} className="hidden md:table-cell" />
+                          <SortTh col="yards"  label="Yards"  sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right />
+                          <SortTh col="tds"    label="TDs"    sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right className="hidden sm:table-cell" />
                         </tr>
                       </thead>
                       <tbody>
-                        {matchedPlayers.map((p, i) => {
+                        {sortedPlayers.map((p, i) => {
                           const playerSlug = p.player_slug as string
                           const statType   = p.stat_type as string
                           const playerLogo = SCHOOL_LOGOS[schoolSlug]
