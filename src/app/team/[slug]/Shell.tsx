@@ -151,9 +151,15 @@ export function TeamShell({
   const [sortCol, setSortCol]         = useState<string | null>(null)
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
   const [slideIdx, setSlideIdx]       = useState(0)
-  const [search, setSearch]           = useState('')
+  const [query,   setQuery]           = useState('')
+  const [activeSection, setActiveSection] = useState<string>('seasons')
+
+  type TeamSectionId = 'seasons' | 'schedule' | 'games' | 'players' | 'standings'
+  const sectionRefs = useRef<Record<TeamSectionId, HTMLElement | null>>({
+    seasons: null, schedule: null, games: null, players: null, standings: null,
+  })
   const searchRef = useRef<HTMLInputElement>(null)
-  useSearchHotkey(searchRef, () => setSearch(''))
+  useSearchHotkey(searchRef, () => setQuery(''))
 
   const teamName   = team.name as string
   const division   = team.division as string
@@ -173,6 +179,22 @@ export function TeamShell({
     return () => clearInterval(t)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [heroSlides.length])
+
+  /* ── Scroll-spy ──────────────────────────────────────────────── */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries.filter(e => e.isIntersecting)
+        if (!visible.length) return
+        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        setActiveSection(visible[0].target.id)
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: [0, 0.4] }
+    )
+    Object.values(sectionRefs.current).forEach(el => el && observer.observe(el))
+    return () => observer.disconnect()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   /* ── Season cycling ──────────────────────────────────────────── */
   const gameSeasons = useMemo(() =>
@@ -257,30 +279,63 @@ export function TeamShell({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [historyRows, sortCol, sortDir])
 
-  /* ── Filtered games ──────────────────────────────────────────── */
+  /* ── Search query ────────────────────────────────────────────── */
+  const q = query.trim().toLowerCase()
+
+  /* ── Filtered data ───────────────────────────────────────────── */
   const seasonGames = activeSeason !== null
     ? gameRows.filter(g => g.season === activeSeason)
     : gameRows
-  const filteredGames = search.trim()
-    ? seasonGames.filter(g => {
-        const isHome  = g.home_team_slug === (team.slug as string)
-        const opName  = (isHome ? g.away_team_name : g.home_team_name) ?? ''
-        const opSlug  = isHome ? g.away_team_slug : g.home_team_slug
-        return opName.toLowerCase().includes(search.toLowerCase()) ||
-               opSlug.replace(/-/g, ' ').includes(search.toLowerCase())
-      })
-    : seasonGames
 
-  /* ── Current season record for meta ─────────────────────────── */
-  const currentRow = historyRows.find(r => r.seasonKey === (activeSeason ?? gameSeasons[0]))
-  const recordMeta = currentRow ? currentRow.overall : (historyRows[0]?.overall ?? '—')
+  function opInfo(g: GameRow) {
+    const isHome  = g.home_team_slug === (team.slug as string)
+    const opName  = ((isHome ? g.away_team_name : g.home_team_name) ?? '').replace(/\s+Varsity\s+Football$/i, '')
+    const opSlug  = isHome ? g.away_team_slug : g.home_team_slug
+    const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+    return { isHome, opName, opSlug, opSchoolSlug }
+  }
+  function gameMatchesQ(g: GameRow) {
+    const { opName, opSlug } = opInfo(g)
+    return opName.toLowerCase().includes(q) || opSlug.replace(/-/g, ' ').includes(q)
+  }
+
+  const filteredGames   = q ? seasonGames.filter(gameMatchesQ) : seasonGames
+  const matchedGames    = q ? gameRows.filter(gameMatchesQ)    : gameRows
+  const matchedPlayers  = q
+    ? playerRows.filter(p => (p.player_name as string).toLowerCase().includes(q))
+    : playerRows
+  const matchedStandings = q
+    ? divTeams.filter(t => (t.name as string).toLowerCase().includes(q))
+    : divTeams
+
+  /* ── Section counts ──────────────────────────────────────────── */
+  const sectionCounts = {
+    seasons:   historyRows.length,
+    schedule:  filteredGames.length,
+    games:     matchedGames.length,
+    players:   matchedPlayers.length,
+    standings: matchedStandings.length,
+  }
+
+  function metaCount(count: number, total: number, noun: string): React.ReactNode {
+    if (total === 0) return null
+    return (
+      <span className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)] tabular-nums">
+        {q && count !== total ? `${count} / ${total}` : `${total} ${noun}${total === 1 ? '' : 's'}`}
+      </span>
+    )
+  }
+
+  const totalVisible = sectionCounts.schedule + sectionCounts.games + sectionCounts.players + sectionCounts.standings
+  const totalRanked  = seasonGames.length + gameRows.length + playerRows.length + divTeams.length
 
   /* ── ContentsNav items ───────────────────────────────────────── */
   const navItems = [
-    { id: 'history',   label: 'Season History', count: historyRows.length },
-    { id: 'schedule',  label: 'Schedule',       count: filteredGames.length },
-    { id: 'leaders',   label: 'Leaders',        count: playerRows.length },
-    { id: 'standings', label: 'Standings',      count: divTeams.length },
+    { id: 'seasons',   label: 'Seasons',   count: q ? 0 : sectionCounts.seasons },
+    { id: 'schedule',  label: 'Schedule',  count: sectionCounts.schedule },
+    { id: 'games',     label: 'Games',     count: sectionCounts.games },
+    { id: 'players',   label: 'Players',   count: sectionCounts.players },
+    { id: 'standings', label: 'Standings', count: sectionCounts.standings },
   ]
 
   /* ── Mobile header ───────────────────────────────────────────── */
@@ -411,29 +466,34 @@ export function TeamShell({
               </div>
             )}
             <SearchInput
-              value={search}
-              onChange={setSearch}
+              value={query}
+              onChange={setQuery}
               inputRef={searchRef}
-              placeholder="Search opponents…"
+              placeholder="Search opponents & players…"
             />
             <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-              {filteredGames.length > 0 ? `${filteredGames.length} games` : ''}
+              {q
+                ? `${totalVisible} / ${totalRanked} entries`
+                : filteredGames.length > 0 ? `${filteredGames.length} games` : ''}
             </div>
           </StickyControlBar>
 
           {/* ── Body: sidebar + sections ─────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
 
-            <ContentsNav items={navItems} />
+            <ContentsNav items={navItems} activeId={activeSection} />
 
             <main className="min-w-0">
 
-              {/* ── Season History ─────────────────────────────────── */}
+              {/* ── Seasons ───────────────────────────────────────── */}
+              {!q && (
               <RevealFx delay={0.2} translateY={8}>
-              <section id="history" className="mb-20 scroll-mt-24">
+              <section id="seasons" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.seasons = el }}>
                 <SectionHead
-                  title="Season History"
-                  blurb={`${historyRows.length}-season record — click any row to jump to that season's games`}
+                  title="Seasons"
+                  blurb={`${historyRows.length}-season record — click any row to jump to that season's schedule`}
+                  meta={metaCount(historyRows.length, historyRows.length, 'season')}
                 />
                 {historyRows.length === 0 ? (
                   <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
@@ -482,13 +542,17 @@ export function TeamShell({
                 )}
               </section>
               </RevealFx>
+              )}
 
               {/* ── Schedule ──────────────────────────────────────── */}
+              {(!q || filteredGames.length > 0) && (
               <RevealFx delay={0.25} translateY={8}>
-              <section id="schedule" className="mb-20 scroll-mt-24">
+              <section id="schedule" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.schedule = el }}>
                 <SectionHead
                   title={activeSeason !== null ? `${fmtSeason(activeSeason)} Schedule` : 'Schedule'}
                   blurb={`Game-by-game results${activeSeason !== null ? ` · ${fmtSeason(activeSeason)} season` : ' · all seasons'}`}
+                  meta={metaCount(filteredGames.length, seasonGames.length, 'game')}
                 />
                 {filteredGames.length === 0 ? (
                   <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>
@@ -566,59 +630,105 @@ export function TeamShell({
                 )}
               </section>
               </RevealFx>
-
-              {/* ── Leaders ───────────────────────────────────────── */}
-              {playerRows.length > 0 && (
-                <RevealFx delay={0.3} translateY={8}>
-                <section id="leaders" className="mb-20 scroll-mt-24">
-                  <SectionHead
-                    title="Leaders"
-                    blurb="Top statistical performers — all-time leaders by category"
-                  />
-                  <PlayerRankedList
-                    rows={playerRows.map((p, i) => {
-                      const stat = topStat(p)
-                      const playerSlug = p.player_slug as string
-                      return {
-                        slug:      playerSlug,
-                        name:      p.player_name as string,
-                        schoolSlug,
-                        school:    stat.label,
-                        rank:      i + 1,
-                        primary:   stat.value,
-                        href:      `/player/${playerSlug}`,
-                      }
-                    })}
-                  />
-                </section>
-                </RevealFx>
               )}
 
-              {/* ── Division Standings ─────────────────────────────── */}
-              {divTeams.length > 0 && (
-                <RevealFx delay={0.35} translateY={8}>
-                <section id="standings" className="mb-20 scroll-mt-24">
-                  <SectionHead
-                    title={`Division ${division} Standings`}
-                    blurb={`All teams in Division ${division} ranked by all-time win percentage`}
-                  />
-                  <PlayerRankedList
-                    rows={divTeams.map((t, i) => {
-                      const tSlug = (t.slug as string).replace(/-varsity-football$/, '')
-                      const tName = (t.name as string).replace(/\s+Varsity\s+Football$/i, '')
-                      return {
-                        slug:      tSlug,
-                        name:      tName,
-                        schoolSlug: tSlug,
-                        rank:      i + 1,
-                        primary:   fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null),
-                        secondary: fmtPct(t.overall_wins as number | null, t.overall_losses as number | null),
-                        href:      `/team/${t.slug}`,
-                      }
-                    })}
-                  />
-                </section>
-                </RevealFx>
+              {/* ── Games ─────────────────────────────────────────── */}
+              {(!q || matchedGames.length > 0) && (
+              <RevealFx delay={0.3} translateY={8}>
+              <section id="games" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.games = el }}>
+                <SectionHead
+                  title="Games"
+                  blurb="All-time game results — search by opponent"
+                  meta={metaCount(matchedGames.length, gameRows.length, 'game')}
+                />
+                <PlayerRankedList
+                  query={q}
+                  rows={matchedGames.map((g, i) => {
+                    const { isHome, opName, opSlug, opSchoolSlug } = opInfo(g)
+                    const myScore = isHome ? g.home_score : g.away_score
+                    const opScore = isHome ? g.away_score : g.home_score
+                    const scoreStr = myScore != null && opScore != null ? `${myScore}–${opScore}` : '—'
+                    const result   = myScore == null || opScore == null ? '—'
+                      : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
+                    const opDisplay = opName || opSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+                    return {
+                      slug:       String(g.id),
+                      name:       opDisplay,
+                      schoolSlug: opSchoolSlug,
+                      school:     `${isHome ? 'vs' : 'at'} · ${fmtSeason(g.season)}`,
+                      rank:       i + 1,
+                      primary:    `${result} ${scoreStr}`,
+                      secondary:  fmtGameDate(g.game_date) ?? undefined,
+                      href:       `/game/${g.id}`,
+                    }
+                  })}
+                  emptyLabel={q ? `No games match "${query}".` : 'No games recorded.'}
+                />
+              </section>
+              </RevealFx>
+              )}
+
+              {/* ── Players ───────────────────────────────────────── */}
+              {(!q || matchedPlayers.length > 0) && (
+              <RevealFx delay={0.35} translateY={8}>
+              <section id="players" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.players = el }}>
+                <SectionHead
+                  title="Players"
+                  blurb="Top statistical performers — all-time leaders by category"
+                  meta={metaCount(matchedPlayers.length, playerRows.length, 'player')}
+                />
+                <PlayerRankedList
+                  query={q}
+                  rows={matchedPlayers.map((p, i) => {
+                    const stat = topStat(p)
+                    const playerSlug = p.player_slug as string
+                    return {
+                      slug:      playerSlug,
+                      name:      p.player_name as string,
+                      schoolSlug,
+                      school:    stat.label,
+                      rank:      i + 1,
+                      primary:   stat.value,
+                      href:      `/player/${playerSlug}`,
+                    }
+                  })}
+                  emptyLabel={q ? `No players match "${query}".` : 'No player data recorded.'}
+                />
+              </section>
+              </RevealFx>
+              )}
+
+              {/* ── Standings ─────────────────────────────────────── */}
+              {(!q || matchedStandings.length > 0) && (
+              <RevealFx delay={0.4} translateY={8}>
+              <section id="standings" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current.standings = el }}>
+                <SectionHead
+                  title={`Division ${division} Standings`}
+                  blurb={`All teams in Division ${division} ranked by all-time win percentage`}
+                  meta={metaCount(matchedStandings.length, divTeams.length, 'team')}
+                />
+                <PlayerRankedList
+                  query={q}
+                  rows={matchedStandings.map((t, i) => {
+                    const tSlug = (t.slug as string).replace(/-varsity-football$/, '')
+                    const tName = (t.name as string).replace(/\s+Varsity\s+Football$/i, '')
+                    return {
+                      slug:       tSlug,
+                      name:       tName,
+                      schoolSlug: tSlug,
+                      rank:       i + 1,
+                      primary:    fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null),
+                      secondary:  fmtPct(t.overall_wins as number | null, t.overall_losses as number | null),
+                      href:       `/team/${t.slug}`,
+                    }
+                  })}
+                  emptyLabel={q ? `No teams match "${query}".` : 'No standings recorded.'}
+                />
+              </section>
+              </RevealFx>
               )}
 
             </main>
