@@ -29,6 +29,7 @@ export function ContentsNav({
   items,
   activeId,
   onSelect,
+  topChildren,
   children,
   className = '',
 }: {
@@ -37,12 +38,15 @@ export function ContentsNav({
   activeId?: string
   /** When provided, items render as buttons and call this handler on click. */
   onSelect?: (id: string) => void
+  /** Rendered above the label + items (e.g. a Site Contents section). */
+  topChildren?: ReactNode
   children?: ReactNode
   className?: string
 }) {
   return (
     <nav className={cn('hidden md:block', className)}>
       <div className="sticky top-24 flex flex-col">
+        {topChildren}
         <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">
           {label}
         </p>
