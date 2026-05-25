@@ -24,6 +24,7 @@ import {
   StickyControlBar,
   ContentsNav,
   PlayerRankedList,
+  SearchInput,
   PAPER_BRIDGE,
   MONO,
   TABLET_RADIUS,
@@ -148,6 +149,7 @@ export function TeamShell({
   const [sortCol, setSortCol]         = useState<string | null>(null)
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
   const [slideIdx, setSlideIdx]       = useState(0)
+  const [search, setSearch]           = useState('')
 
   const teamName   = team.name as string
   const division   = team.division as string
@@ -252,9 +254,18 @@ export function TeamShell({
   }, [historyRows, sortCol, sortDir])
 
   /* ── Filtered games ──────────────────────────────────────────── */
-  const filteredGames = activeSeason !== null
+  const seasonGames = activeSeason !== null
     ? gameRows.filter(g => g.season === activeSeason)
     : gameRows
+  const filteredGames = search.trim()
+    ? seasonGames.filter(g => {
+        const isHome  = g.home_team_slug === (team.slug as string)
+        const opName  = (isHome ? g.away_team_name : g.home_team_name) ?? ''
+        const opSlug  = isHome ? g.away_team_slug : g.home_team_slug
+        return opName.toLowerCase().includes(search.toLowerCase()) ||
+               opSlug.replace(/-/g, ' ').includes(search.toLowerCase())
+      })
+    : seasonGames
 
   /* ── Current season record for meta ─────────────────────────── */
   const currentRow = historyRows.find(r => r.seasonKey === (activeSeason ?? gameSeasons[0]))
@@ -262,8 +273,8 @@ export function TeamShell({
 
   /* ── ContentsNav items ───────────────────────────────────────── */
   const navItems = [
-    { id: 'schedule',  label: 'Schedule',       count: filteredGames.length },
     { id: 'history',   label: 'Season History', count: historyRows.length },
+    { id: 'schedule',  label: 'Schedule',       count: filteredGames.length },
     { id: 'leaders',   label: 'Leaders',        count: playerRows.length },
     { id: 'standings', label: 'Standings',      count: divTeams.length },
   ]
@@ -297,8 +308,8 @@ export function TeamShell({
             <EditorialHead
               size="xl"
               eyebrow={`Section XI · Division ${division}`}
-              subhead={`${cleanName} · Section XI varsity football`}
-              meta={[recordMeta, `Division ${division}`, seasonLabel]}
+              subhead="Varsity Football"
+              meta={[`${gameRows.length} Games`, `${playerRows.length} Players`, `${historyRows.length} Records`]}
               rightSlot={
                 <EditorialButtonGroup
                   prevHref={`/team/${prevSlug}`}
@@ -372,6 +383,12 @@ export function TeamShell({
 
           {/* ── Sticky control bar ──────────────────────────────── */}
           <StickyControlBar>
+            <SearchInput
+              value={search}
+              onChange={setSearch}
+              placeholder="Search opponent…"
+              className="w-48"
+            />
             {hasSeasonControl && (
               <div className="flex items-center gap-3 shrink-0">
                 <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Season</span>
@@ -401,8 +418,63 @@ export function TeamShell({
 
             <main className="min-w-0 space-y-20">
 
-              {/* ── Schedule ──────────────────────────────────────── */}
+              {/* ── Season History ─────────────────────────────────── */}
               <RevealFx delay={0.2} translateY={8}>
+              <section id="history">
+                <SectionHead
+                  title="Season History"
+                  blurb={`${historyRows.length}-season record — click any row to jump to that season's games`}
+                />
+                {historyRows.length === 0 ? (
+                  <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
+                ) : (
+                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
+                    <table className="min-w-[500px] w-full">
+                      <thead>
+                        <tr>
+                          <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
+                          <SortTh col="overall" label="W-L"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
+                          <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" right />
+                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf" right />
+                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa" right />
+                          <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff" right />
+                          <SortTh col="sos"     label="SoS"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos" right />
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sortedHistoryRows.map(row => {
+                          const seasonIdx = gameSeasons.indexOf(row.seasonKey)
+                          return (
+                            <tr key={row.season}
+                              className="hover:bg-[var(--paper-quiet)] cursor-pointer transition-colors"
+                              onClick={() => {
+                                if (seasonIdx !== -1) setActiveSeason(row.seasonKey)
+                                document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                              }}>
+                              <td className={cn(td, 'text-[var(--paper-muted)]')} style={MONO}>{row.season}</td>
+                              <td className={cn(td, 'font-semibold text-[var(--paper-text)]')} style={SERIF}>{row.overall}</td>
+                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.conf}</td>
+                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pf ?? '—'}</td>
+                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pa ?? '—'}</td>
+                              <td className={cn(td, 'text-right font-semibold')}
+                                style={{ ...MONO, color: row.diff == null ? 'var(--paper-muted)' : row.diff >= 0 ? '#15803d' : '#b91c1c' }}>
+                                {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
+                              </td>
+                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>
+                                {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
+                              </td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </section>
+              </RevealFx>
+
+              {/* ── Schedule ──────────────────────────────────────── */}
+              <RevealFx delay={0.25} translateY={8}>
               <section id="schedule">
                 <SectionHead
                   title={activeSeason !== null ? `${fmtSeason(activeSeason)} Schedule` : 'Schedule'}
@@ -471,61 +543,6 @@ export function TeamShell({
                                   <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline">{scoreStr}</Link>
                                 ) : scoreStr}
                                 {diff !== null && <span className="ml-1 text-[11px] opacity-60">{diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : ''}</span>}
-                              </td>
-                            </tr>
-                          )
-                        })}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </section>
-              </RevealFx>
-
-              {/* ── Season History ─────────────────────────────────── */}
-              <RevealFx delay={0.25} translateY={8}>
-              <section id="history">
-                <SectionHead
-                  title="Season History"
-                  blurb={`${historyRows.length}-season record — click any row to jump to that season's games`}
-                />
-                {historyRows.length === 0 ? (
-                  <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
-                ) : (
-                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="min-w-[500px] w-full">
-                      <thead>
-                        <tr>
-                          <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
-                          <SortTh col="overall" label="W-L"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
-                          <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" right />
-                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf" right />
-                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa" right />
-                          <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff" right />
-                          <SortTh col="sos"     label="SoS"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos" right />
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sortedHistoryRows.map(row => {
-                          const seasonIdx = gameSeasons.indexOf(row.seasonKey)
-                          return (
-                            <tr key={row.season}
-                              className="hover:bg-[var(--paper-quiet)] cursor-pointer transition-colors"
-                              onClick={() => {
-                                if (seasonIdx !== -1) setActiveSeason(row.seasonKey)
-                                document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                              }}>
-                              <td className={cn(td, 'text-[var(--paper-muted)]')} style={MONO}>{row.season}</td>
-                              <td className={cn(td, 'font-semibold text-[var(--paper-text)]')} style={SERIF}>{row.overall}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.conf}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pf ?? '—'}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pa ?? '—'}</td>
-                              <td className={cn(td, 'text-right font-semibold')}
-                                style={{ ...MONO, color: row.diff == null ? 'var(--paper-muted)' : row.diff >= 0 ? '#15803d' : '#b91c1c' }}>
-                                {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
-                              </td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>
-                                {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
                               </td>
                             </tr>
                           )
