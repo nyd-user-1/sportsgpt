@@ -602,7 +602,16 @@ export function TeamShell({
                   <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
                 ) : (
                   <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="min-w-[560px] w-full">
+                    <table className="min-w-[560px] w-full table-fixed">
+                      <colgroup>
+                        <col style={{ width: '120px' }} />
+                        <col style={{ width: 'auto' }} />
+                        <col style={{ width: '80px' }} />
+                        <col style={{ width: '80px' }} />
+                        <col style={{ width: '100px' }} />
+                        <col style={{ width: '100px' }} />
+                        <col style={{ width: '110px' }} />
+                      </colgroup>
                       <thead>
                         <tr>
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
@@ -669,7 +678,16 @@ export function TeamShell({
                   </p>
                 ) : (
                   <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm">
+                    <table className="w-full text-sm table-fixed">
+                      <colgroup>
+                        <col style={{ width: '120px' }} />
+                        <col style={{ width: 'auto' }} />
+                        <col style={{ width: '80px' }} />
+                        <col style={{ width: '80px' }} />
+                        <col style={{ width: '100px' }} />
+                        <col style={{ width: '100px' }} />
+                        <col style={{ width: '110px' }} />
+                      </colgroup>
                       <thead>
                         <tr>
                           <SortTh col="season"   label="Season"   sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} />
