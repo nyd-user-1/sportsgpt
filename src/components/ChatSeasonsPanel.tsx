@@ -8,6 +8,10 @@ import { AppPanel } from '@/components/AppPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
+const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 export type TeamMeta = { slug: string; name: string }
@@ -60,8 +64,42 @@ function stripVarsity(name: string) {
 
 function SchoolLogo({ slug, size = 28 }: { slug: string; size?: number }) {
   const src = SCHOOL_LOGOS[slug]
-  if (!src) return <div style={{ width: size, height: size }} className="rounded-full bg-[var(--inp-bg)]" />
-  return <Image src={src} alt="" width={size} height={size} className="object-contain" />
+  if (!src) {
+    return (
+      <div
+        style={{ width: size, height: size }}
+        className="rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]"
+      />
+    )
+  }
+  return (
+    <div
+      style={{ width: size, height: size }}
+      className="shrink-0 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center"
+    >
+      <Image
+        src={src}
+        alt=""
+        width={Math.round(size * 0.78)}
+        height={Math.round(size * 0.78)}
+        className="object-contain"
+        unoptimized
+      />
+    </div>
+  )
+}
+
+function SectionHeader({ label }: { label: string }) {
+  return (
+    <div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
+      <span
+        className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        {label}
+      </span>
+    </div>
+  )
 }
 
 // ── Level views ───────────────────────────────────────────────────────────────
@@ -78,41 +116,82 @@ function SeasonsView({ team, onSelect }: { team: TeamMeta; onSelect: (s: number)
   }, [team.slug])
 
   if (loading) return (
-    <div className="p-4 space-y-2">
+    <div className="px-5 py-6 space-y-2">
       {[...Array(5)].map((_, i) => (
-        <div key={i} className="h-14 rounded-xl bg-[var(--inp-bg)] animate-pulse" />
+        <div key={i} className="h-14 bg-[var(--paper-quiet)] animate-pulse rounded" />
       ))}
     </div>
   )
 
-  if (!records.length) return <p className="p-6 text-sm text-[var(--muted)]">No season records found.</p>
+  if (!records.length) return (
+    <p
+      className="px-5 py-10 text-center text-sm text-[var(--paper-muted)]"
+      style={{ ...SERIF, fontStyle: 'italic' }}
+    >
+      No season records found.
+    </p>
+  )
 
   return (
-    <div className="divide-y divide-[var(--border)]">
-      {records.map(r => {
+    <ol className="flex flex-col">
+      <SectionHeader label="Seasons" />
+      {records.map((r, i) => {
         const total = r.wins + r.losses + (r.ties ?? 0)
         const pct = total > 0 ? ((r.wins / total) * 100).toFixed(0) : '—'
         return (
-          <button
+          <li
             key={r.season}
-            onClick={() => onSelect(r.season)}
-            className="w-full flex items-center gap-3 px-5 py-3.5 hover:bg-[var(--inp-bg)] transition-colors group"
+            className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}
           >
-            <SchoolLogo slug={r.school_slug} size={32} />
-            <div className="flex-1 text-left">
-              <div className="text-sm font-semibold text-[var(--txt)]">{formatSeason(r.season)}</div>
-              <div className="text-xs text-[var(--muted)]">
-                {r.wins}–{r.losses}{r.ties > 0 ? `–${r.ties}` : ''} · Div. {r.division}
+            <button
+              onClick={() => onSelect(r.season)}
+              className="group/row w-full flex items-center gap-3 sm:gap-4 px-5 py-4 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)] text-left"
+            >
+              <SchoolLogo slug={r.school_slug} size={36} />
+
+              <span
+                className="text-[var(--paper-faint)] tabular-nums text-[13px] shrink-0"
+                style={MONO}
+              >
+                {String(i + 1).padStart(2, ' ')}.
+              </span>
+
+              <div className="flex-1 min-w-0">
+                <p
+                  className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
+                  style={{ ...SERIF, fontSize: 17, fontWeight: 500, letterSpacing: '-0.005em' }}
+                >
+                  {formatSeason(r.season)}
+                </p>
+                <p
+                  className="mt-0.5 text-[13px] text-[var(--paper-muted)] truncate"
+                  style={{ ...SERIF, fontStyle: 'italic' }}
+                >
+                  {r.wins}–{r.losses}{r.ties > 0 ? `–${r.ties}` : ''} · Division {r.division}
+                </p>
               </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm tabular-nums font-medium text-[var(--txt2)]">{pct}%</span>
-              <ChevronRight className="h-4 w-4 text-[var(--muted)] group-hover:text-[var(--txt)] transition-colors" />
-            </div>
-          </button>
+
+              <div className="shrink-0 flex items-baseline gap-1">
+                <span
+                  className="text-[13.5px] tabular-nums text-[var(--paper-text)] font-medium"
+                  style={MONO}
+                >
+                  {pct}
+                </span>
+                <span
+                  className="text-[10px] text-[var(--paper-muted)]"
+                  style={SANS}
+                >
+                  %
+                </span>
+              </div>
+
+              <ChevronRight className="h-4 w-4 text-[var(--paper-faint)] group-hover/row:text-[var(--paper-strong)] transition-colors shrink-0" />
+            </button>
+          </li>
         )
       })}
-    </div>
+    </ol>
   )
 }
 
@@ -134,54 +213,95 @@ function ScheduleView({
   }, [team.slug, season])
 
   if (loading) return (
-    <div className="p-4 space-y-2">
+    <div className="px-5 py-6 space-y-2">
       {[...Array(8)].map((_, i) => (
-        <div key={i} className="h-12 rounded-xl bg-[var(--inp-bg)] animate-pulse" />
+        <div key={i} className="h-12 bg-[var(--paper-quiet)] animate-pulse rounded" />
       ))}
     </div>
   )
 
-  if (!games.length) return <p className="p-6 text-sm text-[var(--muted)]">No games found for this season.</p>
+  if (!games.length) return (
+    <p
+      className="px-5 py-10 text-center text-sm text-[var(--paper-muted)]"
+      style={{ ...SERIF, fontStyle: 'italic' }}
+    >
+      No games found for this season.
+    </p>
+  )
 
   return (
-    <div className="divide-y divide-[var(--border)]">
-      {games.map(g => {
-        const won = g.team_score != null && g.opp_score != null && g.team_score > g.opp_score
+    <ol className="flex flex-col">
+      <SectionHeader label="Schedule" />
+      {games.map((g, i) => {
+        const won  = g.team_score != null && g.opp_score != null && g.team_score > g.opp_score
         const lost = g.team_score != null && g.opp_score != null && g.team_score < g.opp_score
         const hasScore = g.team_score != null
+        const resultLetter = won ? 'W' : lost ? 'L' : hasScore ? 'T' : null
         return (
-          <button
+          <li
             key={g.id}
-            onClick={() => onSelectGame(g.id)}
-            className="w-full flex items-center gap-3 px-5 py-3 hover:bg-[var(--inp-bg)] transition-colors group"
+            className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}
           >
-            {/* Opponent */}
-            <div className="flex-1 text-left min-w-0">
-              <div className="flex items-center gap-1.5">
-                <SchoolLogo slug={g.opp_slug} size={22} />
-                <span className="text-sm font-medium text-[var(--txt)] truncate">
-                  {g.side === 'home' ? 'vs.' : 'at'} {stripVarsity(g.opponent_name)}
-                </span>
-              </div>
-              <div className="text-xs text-[var(--muted)] mt-0.5 pl-[30px]">
-                {g.week != null && `Week ${g.week}`}
-                {g.week != null && g.game_date && ' · '}
-                {fmtDate(g.game_date)}
-              </div>
-            </div>
-            {/* Score */}
-            {hasScore ? (
-              <span className={`text-sm tabular-nums font-semibold shrink-0 ${won ? 'text-green-600 dark:text-green-400' : lost ? 'text-red-600 dark:text-red-400' : 'text-[var(--txt2)]'}`}>
-                {g.team_score}–{g.opp_score}
+            <button
+              onClick={() => onSelectGame(g.id)}
+              className="group/row w-full flex items-center gap-3 sm:gap-4 px-5 py-4 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)] text-left"
+            >
+              <SchoolLogo slug={g.opp_slug} size={32} />
+
+              <span
+                className="text-[var(--paper-faint)] tabular-nums text-[13px] shrink-0"
+                style={MONO}
+              >
+                {g.week != null ? `W${String(g.week).padStart(2, '0')}` : String(i + 1).padStart(2, ' ') + '.'}
               </span>
-            ) : (
-              <span className="text-xs text-[var(--muted)]">Upcoming</span>
-            )}
-            <ChevronRight className="h-4 w-4 text-[var(--muted)] group-hover:text-[var(--txt)] transition-colors shrink-0" />
-          </button>
+
+              <div className="flex-1 min-w-0">
+                <p
+                  className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
+                  style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
+                >
+                  {g.side === 'home' ? 'vs.' : 'at'} {stripVarsity(g.opponent_name)}
+                </p>
+                {g.game_date && (
+                  <p
+                    className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
+                    style={{ ...SERIF, fontStyle: 'italic' }}
+                  >
+                    {fmtDate(g.game_date)}
+                  </p>
+                )}
+              </div>
+
+              {hasScore ? (
+                <div className="shrink-0 flex items-baseline gap-1.5">
+                  <span
+                    className={`text-[11px] font-medium ${won ? 'text-emerald-500' : lost ? 'text-rose-500' : 'text-[var(--paper-muted)]'}`}
+                    style={SANS}
+                  >
+                    {resultLetter}
+                  </span>
+                  <span
+                    className="text-[13.5px] tabular-nums text-[var(--paper-text)] font-medium"
+                    style={MONO}
+                  >
+                    {g.team_score}–{g.opp_score}
+                  </span>
+                </div>
+              ) : (
+                <span
+                  className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)] shrink-0"
+                  style={SANS}
+                >
+                  Upcoming
+                </span>
+              )}
+
+              <ChevronRight className="h-4 w-4 text-[var(--paper-faint)] group-hover/row:text-[var(--paper-strong)] transition-colors shrink-0" />
+            </button>
+          </li>
         )
       })}
-    </div>
+    </ol>
   )
 }
 
@@ -197,14 +317,21 @@ function GameView({ gameId }: { gameId: number }) {
   }, [gameId])
 
   if (loading) return (
-    <div className="p-4 space-y-3">
-      <div className="h-20 rounded-xl bg-[var(--inp-bg)] animate-pulse" />
-      <div className="h-32 rounded-xl bg-[var(--inp-bg)] animate-pulse" />
-      <div className="h-32 rounded-xl bg-[var(--inp-bg)] animate-pulse" />
+    <div className="px-5 py-6 space-y-3">
+      <div className="h-20 bg-[var(--paper-quiet)] animate-pulse rounded" />
+      <div className="h-32 bg-[var(--paper-quiet)] animate-pulse rounded" />
+      <div className="h-32 bg-[var(--paper-quiet)] animate-pulse rounded" />
     </div>
   )
 
-  if (!data?.game) return <p className="p-6 text-sm text-[var(--muted)]">Game data not available.</p>
+  if (!data?.game) return (
+    <p
+      className="px-5 py-10 text-center text-sm text-[var(--paper-muted)]"
+      style={{ ...SERIF, fontStyle: 'italic' }}
+    >
+      Game data not available.
+    </p>
+  )
 
   const { game, playerStats } = data
   const homeWon = (game.home_score ?? 0) > (game.away_score ?? 0)
@@ -223,94 +350,150 @@ function GameView({ gameId }: { gameId: number }) {
     .sort((a, b) => (b.rec_yds ?? 0) - (a.rec_yds ?? 0)).slice(0, 4)
 
   return (
-    <div className="pb-4">
-      {/* Score card */}
-      <div className="mx-4 mt-4 rounded-xl border border-[var(--border)] overflow-hidden">
-        {/* Team rows */}
-        {[
-          { name: game.away_name, school: game.away_school, score: game.away_score, row: awayRow, won: !homeWon },
-          { name: game.home_name, school: game.home_school, score: game.home_score, row: homeRow, won: homeWon },
-        ].map((t) => (
-          <div key={t.school} className="flex items-center gap-3 px-4 py-3 border-b border-[var(--border)] last:border-0">
-            <SchoolLogo slug={t.school} size={28} />
-            <span className={`flex-1 text-sm font-medium ${t.won ? 'text-[var(--txt)]' : 'text-[var(--muted)]'}`}>{t.name}</span>
-            {/* Quarters */}
-            {(homeRow || awayRow) && (
-              <div className="hidden sm:flex gap-3 text-xs tabular-nums text-[var(--muted)]">
-                {[t.row?.q1, t.row?.q2, t.row?.q3, t.row?.q4].map((q, i) => (
-                  <span key={i}>{q ?? 0}</span>
-                ))}
-                {t.row?.ot1 != null && t.row.ot1 > 0 && <span>{t.row.ot1}</span>}
+    <div className="pb-6">
+      {/* Final score — editorial split */}
+      <div className="px-5 pt-6">
+        <p
+          className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)] mb-3"
+          style={SANS}
+        >
+          Final · Week {game.game_number ?? '?'}{game.game_date ? ` · ${fmtDate(game.game_date)}` : ''}
+        </p>
+
+        <div className="flex flex-col">
+          {[
+            { name: game.away_name, school: game.away_school, score: game.away_score, row: awayRow, won: !homeWon },
+            { name: game.home_name, school: game.home_school, score: game.home_score, row: homeRow, won: homeWon },
+          ].map((t, idx) => (
+            <div
+              key={t.school}
+              className={`flex items-center gap-3 py-3 ${idx === 0 ? '' : 'border-t border-[var(--paper-rule-soft)]'}`}
+            >
+              <SchoolLogo slug={t.school} size={32} />
+              <div className="flex-1 min-w-0">
+                <p
+                  className={`truncate ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
+                  style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
+                >
+                  {stripVarsity(t.name)}
+                </p>
+                {(homeRow || awayRow) && (
+                  <div className="mt-1 flex gap-3 text-[11px] tabular-nums text-[var(--paper-muted)]" style={MONO}>
+                    {[t.row?.q1, t.row?.q2, t.row?.q3, t.row?.q4].map((q, i) => (
+                      <span key={i}>{q ?? 0}</span>
+                    ))}
+                    {t.row?.ot1 != null && t.row.ot1 > 0 && <span>{t.row.ot1}</span>}
+                  </div>
+                )}
               </div>
-            )}
-            <span className={`text-lg font-bold tabular-nums ml-2 ${t.won ? 'text-[var(--txt)]' : 'text-[var(--muted)]'}`}>
-              {t.score ?? '—'}
-            </span>
-          </div>
-        ))}
+              <span
+                className={`text-[22px] font-medium tabular-nums shrink-0 ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
+                style={MONO}
+              >
+                {t.score ?? '—'}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Game date */}
-      {game.game_date && (
-        <p className="px-5 mt-2 text-xs text-[var(--muted)]">
-          Week {game.game_number ?? '?'} · {fmtDate(game.game_date)}
-        </p>
+      {/* Stat sections — flat editorial pattern */}
+      {passers.length > 0 && (
+        <>
+          <SectionHeader label="Passing" />
+          <StatRows rows={passers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.pass_yds ?? 0),
+            unit: 'yds',
+            meta: `${p.pass_comp ?? 0}/${p.pass_att ?? 0}${p.pass_tds ? ` · ${p.pass_tds} TD` : ''}`,
+          }))} />
+        </>
+      )}
+      {rushers.length > 0 && (
+        <>
+          <SectionHeader label="Rushing" />
+          <StatRows rows={rushers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.rush_yds ?? 0),
+            unit: 'yds',
+            meta: `${p.rush_att ?? 0} att${p.rush_tds ? ` · ${p.rush_tds} TD` : ''}`,
+          }))} />
+        </>
+      )}
+      {receivers.length > 0 && (
+        <>
+          <SectionHeader label="Receiving" />
+          <StatRows rows={receivers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.rec_yds ?? 0),
+            unit: 'yds',
+            meta: `${p.rec_rec ?? 0} rec${p.rec_tds ? ` · ${p.rec_tds} TD` : ''}`,
+          }))} />
+        </>
       )}
 
-      {/* Stat sections */}
-      {passers.length > 0 && <StatSection title="Passing" rows={passers.map(p => ({
-        name: p.player_name, slug: p.player_slug, school: p.school_slug,
-        line: `${p.pass_comp ?? 0}/${p.pass_att ?? 0} · ${p.pass_yds ?? 0} yds${p.pass_tds ? ` · ${p.pass_tds} TD` : ''}`,
-      }))} />}
-      {rushers.length > 0 && <StatSection title="Rushing" rows={rushers.map(p => ({
-        name: p.player_name, slug: p.player_slug, school: p.school_slug,
-        line: `${p.rush_att ?? 0} att · ${p.rush_yds ?? 0} yds${p.rush_tds ? ` · ${p.rush_tds} TD` : ''}`,
-      }))} />}
-      {receivers.length > 0 && <StatSection title="Receiving" rows={receivers.map(p => ({
-        name: p.player_name, slug: p.player_slug, school: p.school_slug,
-        line: `${p.rec_rec ?? 0} rec · ${p.rec_yds ?? 0} yds${p.rec_tds ? ` · ${p.rec_tds} TD` : ''}`,
-      }))} />}
-
       {/* Full page link */}
-      <div className="mx-4 mt-4">
-        <Link href={`/game/${gameId}`}
-          className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl border border-[var(--border)] text-sm font-medium text-[var(--txt2)] hover:text-[#033882] hover:border-[#033882]/30 transition-colors">
-          View Full Game Page <ArrowUpRight className="h-3.5 w-3.5" />
+      <div className="px-5 mt-8 pt-6 border-t border-[var(--paper-rule)]">
+        <Link
+          href={`/game/${gameId}`}
+          className="group/link inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
+          style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}
+        >
+          View full game page
+          <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
       </div>
     </div>
   )
 }
 
-function StatSection({
-  title, rows,
+function StatRows({
+  rows,
 }: {
-  title: string
-  rows: { name: string; slug: string | null; school: string; line: string }[]
+  rows: { name: string; slug: string | null; school: string; value: string; unit: string; meta: string }[]
 }) {
   return (
-    <div className="mx-4 mt-3 rounded-xl border border-[var(--border)] overflow-hidden">
-      <div className="px-4 py-2 bg-[var(--inp-bg)] border-b border-[var(--border)]">
-        <span className="text-xs font-semibold text-[var(--muted)] uppercase tracking-wide">{title}</span>
-      </div>
-      <div className="divide-y divide-[var(--border)]">
-        {rows.map((r, i) => (
-          <div key={i} className="flex items-center gap-2.5 px-4 py-2.5">
-            <SchoolLogo slug={r.school} size={22} />
+    <ol className="flex flex-col">
+      {rows.map((r, i) => {
+        const Row = (
+          <div className="group/row flex items-center gap-3 px-5 py-3 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]">
+            <span
+              className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right"
+              style={{ ...MONO, fontSize: 11 }}
+            >
+              {i + 1}.
+            </span>
+            <SchoolLogo slug={r.school} size={26} />
             <div className="flex-1 min-w-0">
-              {r.slug ? (
-                <Link href={`/player/${r.slug}`} className="text-sm font-medium text-[#033882] hover:underline truncate block">
-                  {r.name}
-                </Link>
-              ) : (
-                <span className="text-sm font-medium text-[var(--txt)] truncate block">{r.name}</span>
-              )}
+              <p
+                className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
+                style={{ ...SERIF, fontSize: 15, fontWeight: 500 }}
+              >
+                {r.name}
+              </p>
+              <p
+                className="mt-0.5 text-[12px] text-[var(--paper-muted)] truncate"
+                style={{ ...SERIF, fontStyle: 'italic' }}
+              >
+                {r.meta}
+              </p>
             </div>
-            <span className="text-xs tabular-nums text-[var(--muted)] shrink-0">{r.line}</span>
+            <div className="shrink-0 flex items-baseline gap-1">
+              <span className="text-[13.5px] tabular-nums text-[var(--paper-text)] font-medium" style={MONO}>{r.value}</span>
+              <span className="text-[10px] text-[var(--paper-muted)]" style={SANS}>{r.unit}</span>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
+        )
+        return (
+          <li
+            key={i}
+            className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}
+          >
+            {r.slug ? <Link href={`/player/${r.slug}`}>{Row}</Link> : Row}
+          </li>
+        )
+      })}
+    </ol>
   )
 }
 
@@ -343,31 +526,39 @@ export function ChatSeasonsPanel({
   // Build title
   const titleText = (() => {
     if (!currentView) return 'Seasons'
-    if (currentView.type === 'seasons') return currentView.team.name
+    if (currentView.type === 'seasons')  return stripVarsity(currentView.team.name)
     if (currentView.type === 'schedule') return `${formatSeason(currentView.season)} Season`
-    if (currentView.type === 'game') return 'Game Log'
+    if (currentView.type === 'game')     return 'Game Log'
     return ''
   })()
 
   const title = (
-    <div className="flex items-center gap-1.5 min-w-0">
+    <div className="flex items-center gap-2 min-w-0">
       {canGoBack && (
         <button
           onClick={popView}
-          className="shrink-0 p-1 rounded-lg text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
+          className="shrink-0 p-1 rounded-lg text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
           aria-label="Back"
         >
           <ArrowLeft className="h-4 w-4" />
         </button>
       )}
       {currentView?.type === 'seasons' && (
-        <div className="shrink-0">
-          <SchoolLogo slug={teams[0]?.slug ?? ''} size={22} />
-        </div>
+        <SchoolLogo slug={teams[0]?.slug ?? ''} size={22} />
       )}
-      <span className="font-semibold text-[var(--txt)] truncate">{titleText}</span>
+      <span
+        className="text-[var(--paper-text)] truncate"
+        style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+      >
+        {titleText}
+      </span>
       {currentView?.type === 'schedule' && (
-        <span className="text-xs text-[var(--muted)] truncate">· {currentView.team.name}</span>
+        <span
+          className="text-[12px] text-[var(--paper-muted)] truncate"
+          style={{ ...SERIF, fontStyle: 'italic' }}
+        >
+          · {stripVarsity(currentView.team.name)}
+        </span>
       )}
     </div>
   )

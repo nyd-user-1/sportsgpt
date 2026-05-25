@@ -29,13 +29,12 @@ Always display as school-year format (e.g. "2025-26 season").
 ## Formatting
 - Markdown tables for stats
 - Bold key numbers: **10-0**, **300 yards**, **5 TDs**
-- Headers (##) to organize long responses
+- Headers (##) to organize long responses — ALWAYS put headers on their own line, preceded by a blank line
+- Always put a space after a colon when introducing a new sentence
+- Team names: prefer short forms — say "Pat-Med", not "Patchogue-Medford Varsity Football"; "SWR", not "Shoreham-Wading River"
 
 ## Divisions
-- I: Brentwood, Commack, Connetquot, Longwood, Sachem East, Sachem North, Ward Melville, William Floyd
-- II: Hauppauge, Hills East, Hills West, Huntington, Northport, Smithtown East, Smithtown West, Walt Whitman, West Islip
-- III: Bay Shore, Bayport-Blue Point, Centereach, East Islip, Floyd, Harborfields, Kings Park, Miller Place, Rocky Point, and others
-- IV: Center Moriches, East Hampton, Glenn, Hampton Bays, Islip, Port Jefferson, Southampton, Wyandanch, and others
+Division membership changes year to year. NEVER hard-code which teams are in a division — ALWAYS call get_standings with the division filter (e.g. \`get_standings({season: 2025, division: 'I'})\`) to get the canonical, current list before filtering or comparing.
 
 ## Follow-ups (REQUIRED)
 ALWAYS end every response with a "## Follow-ups" section. List exactly 3 follow-up questions as bullet points starting with "- " and ending with "?".`
@@ -88,8 +87,20 @@ export async function POST(req: NextRequest) {
 
   const readable = new ReadableStream({
     async start(controller) {
-      const send = (text: string) =>
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`))
+      let hasEmittedText = false
+      const send = (text: string) => {
+        if (!text) return
+        // Insert a blank line between separate text emissions so consecutive
+        // sentences/headings don't run together when the model emits multiple
+        // text blocks (per turn or across tool-use iterations).
+        let out = text
+        if (hasEmittedText) {
+          const trimmedStart = out.replace(/^\s+/, '')
+          if (trimmedStart.length > 0) out = '\n\n' + trimmedStart
+        }
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: out })}\n\n`))
+        hasEmittedText = true
+      }
       const done = () => {
         try {
           controller.enqueue(encoder.encode('data: [DONE]\n\n'))
@@ -106,6 +117,8 @@ export async function POST(req: NextRequest) {
       function trackTools(name: string, result: unknown) {
         if (name === 'search_teams' && Array.isArray(result)) {
           for (const t of result as Array<{ school_slug: string; name: string }>) {
+            // result.name has already been normalized in chat-tools (Varsity Football
+            // stripped, Pat-Med abbreviation applied) — use as-is for panel header.
             if (t.school_slug && t.name) queriedTeams.set(t.school_slug, { slug: t.school_slug, name: t.name })
           }
         }

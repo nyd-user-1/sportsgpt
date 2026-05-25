@@ -1,5 +1,35 @@
 import { sql } from '@/lib/db'
 
+// ── Display-name normalizer ───────────────────────────────────────────────────
+// Strips noisy " Varsity Football" suffix and applies preferred abbreviations
+// (e.g. Patchogue-Medford → Pat-Med) so chat responses read naturally.
+
+const NAME_ABBREVIATIONS: Record<string, string> = {
+  'Patchogue-Medford': 'Pat-Med',
+  'Shoreham-Wading River': 'SWR',
+  'Greenport-Southold-Mattituck': 'GSMHS',
+  'East Hampton-Bridgehampton-Pierson': 'East Hampton',
+}
+
+function formatTeamName(raw: string | null | undefined): string {
+  if (!raw) return ''
+  let out = raw.replace(/\s+Varsity Football$/i, '').trim()
+  for (const [full, abbr] of Object.entries(NAME_ABBREVIATIONS)) {
+    if (out === full) { out = abbr; break }
+  }
+  return out
+}
+
+function normalizeRows<T extends Record<string, unknown>>(rows: T[]): T[] {
+  return rows.map(r => {
+    const out: Record<string, unknown> = { ...r }
+    for (const k of ['name', 'school_name', 'opponent_name']) {
+      if (typeof out[k] === 'string') out[k] = formatTeamName(out[k] as string)
+    }
+    return out as T
+  })
+}
+
 // ── Tool definitions ──────────────────────────────────────────────────────────
 
 export const TOOLS = [
@@ -97,7 +127,7 @@ export async function executeToolCall(
               OR LOWER(school_slug) LIKE ${q}
               OR LOWER(REPLACE(school_slug, '-', ' ')) LIKE ${q})
           ORDER BY name LIMIT 5`
-        return rows.length > 0 ? rows
+        return rows.length > 0 ? normalizeRows(rows)
           : { message: `No teams found matching "${input.query}". Try a shorter or different spelling.` }
       }
 
@@ -121,7 +151,7 @@ export async function executeToolCall(
           WHERE tss.team_slug = ${teamSlug}
             AND (${season}::int IS NULL OR tss.season = ${season})
           ORDER BY tss.season DESC`
-        return rows.length > 0 ? rows
+        return rows.length > 0 ? normalizeRows(rows)
           : { message: `No records found for ${input.school_slug}. Try search_teams first.` }
       }
 
@@ -132,7 +162,7 @@ export async function executeToolCall(
         const limit      = Math.min(Number(input.limit ?? 10), 20)
 
         if (statType === 'Passing') {
-          return await sql`
+          return normalizeRows(await sql`
             SELECT player_name, player_slug, school_name, school_slug, season,
                    pass_yards, pass_tds, interceptions, completions, attempts, games_played
             FROM player_season_stats
@@ -141,10 +171,10 @@ export async function executeToolCall(
               AND (${schoolSlug}::text IS NULL OR school_slug = ${schoolSlug})
               AND (${season}::int IS NULL OR season = ${season})
             ORDER BY pass_yards DESC NULLS LAST
-            LIMIT ${limit}`
+            LIMIT ${limit}`)
         }
         if (statType === 'Rushing') {
-          return await sql`
+          return normalizeRows(await sql`
             SELECT player_name, player_slug, school_name, school_slug, season,
                    rush_yards, rush_tds, games_played
             FROM player_season_stats
@@ -153,10 +183,10 @@ export async function executeToolCall(
               AND (${schoolSlug}::text IS NULL OR school_slug = ${schoolSlug})
               AND (${season}::int IS NULL OR season = ${season})
             ORDER BY rush_yards DESC NULLS LAST
-            LIMIT ${limit}`
+            LIMIT ${limit}`)
         }
         // Receiving
-        return await sql`
+        return normalizeRows(await sql`
           SELECT player_name, player_slug, school_name, school_slug, season,
                  recv_yards, recv_tds, receptions, games_played
           FROM player_season_stats
@@ -165,7 +195,7 @@ export async function executeToolCall(
             AND (${schoolSlug}::text IS NULL OR school_slug = ${schoolSlug})
             AND (${season}::int IS NULL OR season = ${season})
           ORDER BY recv_yards DESC NULLS LAST
-          LIMIT ${limit}`
+          LIMIT ${limit}`)
       }
 
       case 'get_team_games': {
@@ -186,7 +216,7 @@ export async function executeToolCall(
           WHERE (g.home_team_slug = ${teamSlug} OR g.away_team_slug = ${teamSlug})
             AND g.season = ${season}
           ORDER BY g.game_number ASC NULLS LAST`
-        return rows.length > 0 ? rows
+        return rows.length > 0 ? normalizeRows(rows)
           : { message: `No games found for ${input.school_slug} in season ${season}.` }
       }
 
@@ -207,7 +237,7 @@ export async function executeToolCall(
             AND t.level = 'Varsity'
             AND (${division}::text IS NULL OR t.division = ${division})
           ORDER BY win_pct DESC NULLS LAST, tss.overall_wins DESC, t.name`
-        return rows.length > 0 ? rows
+        return rows.length > 0 ? normalizeRows(rows)
           : { message: `No standings found for season ${season}.` }
       }
 
@@ -224,7 +254,7 @@ export async function executeToolCall(
           WHERE LOWER(player_name) LIKE ${namePat}
             AND (${schoolSlug}::text IS NULL OR school_slug = ${schoolSlug})
           ORDER BY season DESC, stat_type`
-        return rows.length > 0 ? rows
+        return rows.length > 0 ? normalizeRows(rows)
           : { message: `No player found matching "${input.player_name}". Try a shorter name.` }
       }
 

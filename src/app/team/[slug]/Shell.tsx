@@ -148,10 +148,12 @@ export function TeamShell({
   totalTeams?: number
   totalPlayers?: number
 }) {
-  const [chartsOpen,  setChartsOpen]  = useState(false)
-  const [chatOpen,    setChatOpen]    = useState(false)
-  const [playersOpen, setPlayersOpen] = useState(false)
-  const [rosterQuery, setRosterQuery] = useState('')
+  const [chartsOpen,     setChartsOpen]     = useState(false)
+  const [chatOpen,       setChatOpen]       = useState(false)
+  const [playersOpen,    setPlayersOpen]    = useState(false)
+  const [rosterQuery,    setRosterQuery]    = useState('')
+  const [gameLogOpen,    setGameLogOpen]    = useState(false)
+  const [selectedGameId, setSelectedGameId] = useState<number | null>(null)
 
   useEffect(() => { if (!playersOpen) setRosterQuery('') }, [playersOpen])
   const [sortCol, setSortCol]         = useState<string | null>(null)
@@ -490,6 +492,20 @@ export function TeamShell({
       subItems: plyrSubTypes.map(st => ({ id: `players-${st.toLowerCase()}`, label: st })) },
   ]
 
+  /* ── Game log panel data ─────────────────────────────────────── */
+  const selectedGameRow  = selectedGameId != null ? gameRows.find(g => g.id === selectedGameId) ?? null : null
+  const selectedGameLogs = selectedGameId != null ? typedLogs.filter(log => log.game_id === selectedGameId) : []
+  const gamePanelTitle   = (() => {
+    if (!selectedGameRow) return 'Game Log'
+    const isHome  = selectedGameRow.home_team_slug === (team.slug as string)
+    const rawName = isHome ? selectedGameRow.away_team_name : selectedGameRow.home_team_name
+    const rawSlug = isHome ? selectedGameRow.away_team_slug : selectedGameRow.home_team_slug
+    const n = rawName
+      ? rawName.replace(/\s+Varsity\s+Football$/i, '').trim()
+      : rawSlug.replace(/-varsity-football$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+    return `${isHome ? 'vs' : 'at'} ${n}`
+  })()
+
   /* ── Mobile header ───────────────────────────────────────────── */
   const heroLogo = SCHOOL_LOGOS[schoolSlug]
   const mobileHeader = (
@@ -789,13 +805,15 @@ export function TeamShell({
                           const resultColor = result === 'W' ? '#15803d' : result === 'L' ? '#b91c1c' : 'var(--paper-muted)'
                           return (
                             <tr key={g.id}
-                              className="hover:bg-[var(--paper-quiet)] transition-colors">
+                              className="hover:bg-[var(--paper-quiet)] transition-colors cursor-pointer"
+                              onClick={() => { setSelectedGameId(g.id); setGameLogOpen(true) }}>
                               <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtSeason(g.season)}</td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
                                   <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{isHome ? 'vs' : 'at'}</span>
                                   {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
                                   <Link href={`/team/${opSlug}`}
+                                    onClick={e => e.stopPropagation()}
                                     className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
                                     style={SERIF}>
                                     {opDisplay}
@@ -812,7 +830,7 @@ export function TeamShell({
                               </td>
                               <td className={cn(td, 'text-right font-semibold')} style={{ ...MONO, color: resultColor }}>
                                 {g.id ? (
-                                  <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline">{scoreStr}</Link>
+                                  <Link href={`/game/${g.id}?ref=${team.slug}`} onClick={e => e.stopPropagation()} className="hover:underline">{scoreStr}</Link>
                                 ) : scoreStr}
                               </td>
                             </tr>
@@ -1089,6 +1107,148 @@ export function TeamShell({
                   </div>
                 )
               })}
+            </div>
+          )
+        })()}
+      </AppPanel>
+
+      <AppPanel
+        open={gameLogOpen}
+        onClose={() => { setGameLogOpen(false); setSelectedGameId(null) }}
+        title={gamePanelTitle}
+      >
+        {(() => {
+          if (!selectedGameRow) return (
+            <div className="flex items-center justify-center h-32 text-sm text-[var(--paper-muted)] italic" style={SERIF}>
+              Select a game to view the log.
+            </div>
+          )
+
+          const glIsHome   = selectedGameRow.home_team_slug === (team.slug as string)
+          const glOpSlug   = glIsHome ? selectedGameRow.away_team_slug : selectedGameRow.home_team_slug
+          const glOpSchool = glOpSlug.replace(/-varsity-football$/, '')
+          const glOpLogo   = SCHOOL_LOGOS[glOpSchool]
+          const glMyScore  = glIsHome ? selectedGameRow.home_score : selectedGameRow.away_score
+          const glOpScore  = glIsHome ? selectedGameRow.away_score : selectedGameRow.home_score
+          const glResult   = glMyScore == null || glOpScore == null ? null
+            : glMyScore > glOpScore ? 'W' : glMyScore < glOpScore ? 'L' : 'T'
+          const glColor    = glResult === 'W' ? '#15803d' : glResult === 'L' ? '#b91c1c' : 'var(--paper-muted)'
+          const glWeek     = gameWeekMap[selectedGameRow.id] ?? null
+          const glOpRaw    = glIsHome ? selectedGameRow.away_team_name : selectedGameRow.home_team_name
+          const glOpName   = glOpRaw
+            ? glOpRaw.replace(/\s+Varsity\s+Football$/i, '').trim()
+            : glOpSlug.replace(/-varsity-football$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+
+          const GL_TYPES = ['Passing', 'Rushing', 'Receiving', 'Kicking', 'Defense'] as const
+
+          return (
+            <div style={PAPER_BRIDGE}>
+
+              {/* ── Game header ── */}
+              <div className="px-5 pt-5 pb-4 border-b border-[var(--paper-rule)]">
+                <div className="flex items-center gap-3 mb-3">
+                  {glOpLogo
+                    ? <Image src={glOpLogo} alt="" width={36} height={36}
+                        className="shrink-0 rounded-full object-contain bg-white border border-[var(--paper-rule)] p-0.5" unoptimized />
+                    : <div className="shrink-0 h-9 w-9 rounded-full border border-[var(--paper-rule)]" />}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[11px] text-[var(--paper-faint)] uppercase tracking-[0.18em] mb-0.5">
+                      {glIsHome ? 'Home' : 'Away'}
+                    </p>
+                    <p className="text-[15px] text-[var(--paper-text)] truncate" style={SERIF}>{glOpName}</p>
+                  </div>
+                  {glMyScore != null && glOpScore != null && (
+                    <div className="text-right shrink-0">
+                      <p className="text-[22px] font-semibold tabular-nums leading-none" style={{ ...MONO, color: glColor }}>
+                        {glMyScore}–{glOpScore}
+                      </p>
+                      <p className="text-[11px] uppercase tracking-[0.2em] mt-0.5" style={{ color: glColor }}>
+                        {glResult === 'W' ? 'Win' : glResult === 'L' ? 'Loss' : 'Tie'}
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center gap-2 text-[11px] text-[var(--paper-faint)] flex-wrap" style={MONO}>
+                  {glWeek != null && <><span>Week {glWeek}</span><span className="opacity-40">·</span></>}
+                  {selectedGameRow.game_date && <><span>{fmtFullDate(selectedGameRow.game_date)}</span><span className="opacity-40">·</span></>}
+                  <span>{fmtSeason(selectedGameRow.season)}</span>
+                </div>
+              </div>
+
+              {/* ── Player stat rows ── */}
+              {selectedGameLogs.length === 0 ? (
+                <div className="px-5 py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>
+                  No player stats recorded for this game.
+                </div>
+              ) : GL_TYPES.map(statType => {
+                const statRows = selectedGameLogs.filter(l => l.stat_type === statType)
+                if (statRows.length === 0) return null
+                return (
+                  <div key={statType}>
+                    <div className="px-5 pt-5 pb-2 border-t border-[var(--paper-rule)]">
+                      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]">{statType}</span>
+                    </div>
+                    <div className="divide-y divide-[var(--paper-rule)]">
+                      {statRows.map((log, i) => {
+                        const pLogo = SCHOOL_LOGOS[log.school_slug]
+                        let pv = '', pu = '', sec = ''
+
+                        if (statType === 'Passing') {
+                          pv = log.pass_yds != null ? String(log.pass_yds) : '—'; pu = 'Yds'
+                          sec = [`${log.pass_comp ?? 0}/${log.pass_att ?? 0}`,
+                            log.pass_tds ? `${log.pass_tds} TD` : '',
+                            log.pass_int ? `${log.pass_int} INT` : ''].filter(Boolean).join(' · ')
+                        } else if (statType === 'Rushing') {
+                          pv = log.rush_yds != null ? String(log.rush_yds) : '—'; pu = 'Yds'
+                          sec = [log.rush_att ? `${log.rush_att} Att` : '',
+                            log.rush_tds ? `${log.rush_tds} TD` : ''].filter(Boolean).join(' · ')
+                        } else if (statType === 'Receiving') {
+                          pv = log.rec_yds != null ? String(log.rec_yds) : '—'; pu = 'Yds'
+                          sec = [log.rec_rec ? `${log.rec_rec} Rec` : '',
+                            log.rec_tds ? `${log.rec_tds} TD` : ''].filter(Boolean).join(' · ')
+                        } else if (statType === 'Kicking') {
+                          pv = log.kick_points != null ? String(log.kick_points) : '—'; pu = 'Pts'
+                          sec = [log.kick_pat ? `${log.kick_pat} PAT` : '',
+                            log.kick_fg ? `${log.kick_fg} FG` : ''].filter(Boolean).join(' · ')
+                        } else if (statType === 'Defense') {
+                          const parts = [
+                            log.def_int     ? `${log.def_int} INT`   : '',
+                            log.def_sacks   ? `${log.def_sacks} SCK` : '',
+                            log.def_fumbles ? `${log.def_fumbles} FR` : '',
+                          ].filter(Boolean)
+                          if (parts.length === 0) return null
+                          pv = parts[0] || '—'; pu = ''; sec = parts.slice(1).join(' · ')
+                        }
+
+                        return (
+                          <Link key={`gl-${log.player_slug}-${statType}-${i}`}
+                            href={`/player/${log.player_slug}`}
+                            className="group flex items-center gap-2.5 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors">
+                            {pLogo
+                              ? <Image src={pLogo} alt="" width={28} height={28}
+                                  className="shrink-0 rounded-full object-contain bg-white border border-[var(--paper-rule)]" unoptimized />
+                              : <div className="shrink-0 h-7 w-7 rounded-full border border-[var(--paper-rule)]" />}
+                            <div className="flex-1 min-w-0">
+                              <span className="text-[13px] text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors block truncate" style={SERIF}>
+                                {log.player_name}
+                              </span>
+                              {sec && (
+                                <p className="text-[11px] text-[var(--paper-muted)] truncate mt-0.5" style={MONO}>{sec}</p>
+                              )}
+                            </div>
+                            <div className="text-right shrink-0 ml-3">
+                              <p className="text-[13px] font-semibold tabular-nums text-[var(--paper-text)] leading-none" style={MONO}>
+                                {pv}{pu && <span className="ml-1 text-[10px] font-normal text-[var(--paper-muted)]">{pu}</span>}
+                              </p>
+                            </div>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })}
+
             </div>
           )
         })()}

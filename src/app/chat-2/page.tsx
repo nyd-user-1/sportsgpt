@@ -426,7 +426,8 @@ function AssistantMessage({
                   <button
                     key={i}
                     onClick={() => onSend(q)}
-                    className="flex w-full items-start gap-4 py-3 border-t border-[var(--paper-rule-soft)] text-left group transition-colors"
+                    className="group flex w-full items-start gap-4 py-3 px-4 -mx-4 border-t border-[var(--paper-rule-soft)] text-left transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
+                    style={{ borderRadius: 3 }}
                   >
                     <span
                       className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-strong)] transition-colors"
@@ -576,7 +577,8 @@ export default function Chat2Page() {
                     <button
                       key={i}
                       onClick={() => sendMessage(q, selectedModel)}
-                      className="flex w-full items-start gap-4 py-3.5 border-t border-[var(--paper-rule-soft)] text-left group transition-colors"
+                      className="group flex w-full items-start gap-4 py-3.5 px-4 -mx-4 border-t border-[var(--paper-rule-soft)] text-left transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
+                      style={{ borderRadius: 3 }}
                     >
                       <span
                         className="shrink-0 mt-[2px] text-[var(--paper-faint)] group-hover:text-[var(--paper-strong)] transition-colors"
