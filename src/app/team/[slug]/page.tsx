@@ -132,7 +132,12 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
     <TeamShell
       team={team as Record<string, unknown>}
       totalRecords={totalRecords}
-      playerGameLogs={playerGameLogs as Record<string, unknown>[]}
+      playerGameLogs={(playerGameLogs as Record<string, unknown>[]).map(r => ({
+        ...r,
+        game_id:   r.game_id  != null ? Number(r.game_id)  : null,
+        season:    r.season   != null ? Number(r.season)   : null,
+        game_date: r.game_date ? new Date(r.game_date as unknown as string).toISOString().slice(0, 10) : null,
+      }))}
       prevSlug={prevSlug}
       nextSlug={nextSlug}
       seasonRows={seasonRows as Record<string, unknown>[]}

@@ -67,7 +67,7 @@ export function PlayerRankedList({
           >
             <Link
               href={p.href ?? `/player/${p.slug}`}
-              className="player-row-grid gap-3 sm:gap-4 py-4 px-2 -mx-2 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
+              className="player-row-grid gap-3 sm:gap-4 py-5 px-2 -mx-2 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
               style={{ borderRadius: TABLET_RADIUS }}
             >
               <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">

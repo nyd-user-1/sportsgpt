@@ -23,7 +23,6 @@ import {
   SectionHead,
   StickyControlBar,
   ContentsNav,
-  PlayerRankedList,
   SearchInput,
   useSearchHotkey,
   PAPER_BRIDGE,
@@ -100,10 +99,20 @@ function fmtRecord(w: number | null, l: number | null, ties?: number | null): st
   return t > 0 ? `${w ?? 0}–${l ?? 0}–${t}` : `${w ?? 0}–${l ?? 0}`
 }
 
-function fmtGameDate(raw: string | null) {
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
+function fmtGameDate(raw: string | null): string {
   if (!raw) return '—'
   const d = new Date(raw + 'T12:00:00')
-  return `${d.getMonth() + 1}/${d.getDate()}`
+  if (isNaN(d.getTime())) return '—'
+  return `${d.getMonth() + 1}/${d.getDate()}/${String(d.getFullYear()).slice(2)}`
+}
+
+function fmtFullDate(raw: string | null): string {
+  if (!raw) return '—'
+  const d = new Date(raw + 'T12:00:00')
+  if (isNaN(d.getTime())) return '—'
+  return `${MONTH_NAMES[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`
 }
 
 function fmtSeason(y: number) { return `${y}-${String(y + 1).slice(2)}` }
@@ -186,9 +195,9 @@ export function TeamShell({
   const [query,   setQuery]           = useState('')
   const [activeSection, setActiveSection] = useState<string>('seasons')
 
-  type TeamSectionId = 'seasons' | 'schedule' | 'games' | 'player-logs' | 'players' | 'standings'
+  type TeamSectionId = 'seasons' | 'schedule' | 'player-logs' | 'players'
   const sectionRefs = useRef<Record<TeamSectionId, HTMLElement | null>>({
-    seasons: null, schedule: null, games: null, 'player-logs': null, players: null, standings: null,
+    seasons: null, schedule: null, 'player-logs': null, players: null,
   })
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
@@ -331,14 +340,10 @@ export function TeamShell({
     return opName.toLowerCase().includes(q) || opSlug.replace(/-/g, ' ').includes(q)
   }
 
-  const filteredGames   = q ? seasonGames.filter(gameMatchesQ) : seasonGames
-  const matchedGames    = q ? gameRows.filter(gameMatchesQ)    : gameRows
-  const matchedPlayers  = q
+  const filteredGames  = q ? seasonGames.filter(gameMatchesQ) : seasonGames
+  const matchedPlayers = q
     ? playerRows.filter(p => (p.player_name as string).toLowerCase().includes(q))
     : playerRows
-  const matchedStandings = q
-    ? divTeams.filter(t => (t.name as string).toLowerCase().includes(q))
-    : divTeams
 
   /* ── Player game logs ────────────────────────────────────────── */
   const typedLogs = playerGameLogs as unknown as PlayerGameLog[]
@@ -363,12 +368,10 @@ export function TeamShell({
 
   /* ── Section counts ──────────────────────────────────────────── */
   const sectionCounts = {
-    seasons:      historyRows.length,
-    schedule:     filteredGames.length,
-    games:        matchedGames.length,
+    seasons:       historyRows.length,
+    schedule:      filteredGames.length,
     'player-logs': matchedPlayerLogs.length,
-    players:      matchedPlayers.length,
-    standings:    matchedStandings.length,
+    players:       matchedPlayers.length,
   }
 
   function metaCount(count: number, total: number, noun: string): React.ReactNode {
@@ -380,17 +383,15 @@ export function TeamShell({
     )
   }
 
-  const totalVisible = sectionCounts.schedule + sectionCounts.games + sectionCounts['player-logs'] + sectionCounts.players + sectionCounts.standings
-  const totalRanked  = seasonGames.length + gameRows.length + typedLogs.length + playerRows.length + divTeams.length
+  const totalVisible = sectionCounts.schedule + sectionCounts['player-logs'] + sectionCounts.players
+  const totalRanked  = seasonGames.length + typedLogs.length + playerRows.length
 
   /* ── ContentsNav items ───────────────────────────────────────── */
   const navItems = [
-    { id: 'seasons',     label: 'Seasons',     count: q ? 0 : sectionCounts.seasons },
-    { id: 'schedule',    label: 'Schedule',    count: sectionCounts.schedule },
-    { id: 'games',       label: 'Games',       count: sectionCounts.games },
-    { id: 'player-logs', label: 'Player Logs', count: sectionCounts['player-logs'] },
-    { id: 'players',     label: 'Players',     count: sectionCounts.players },
-    { id: 'standings',   label: 'Standings',   count: sectionCounts.standings },
+    { id: 'seasons',     label: 'Seasons',       count: q ? 0 : sectionCounts.seasons },
+    { id: 'schedule',    label: 'Schedule',      count: sectionCounts.schedule },
+    { id: 'player-logs', label: 'Player Logs',   count: sectionCounts['player-logs'] },
+    { id: 'players',     label: 'Player Totals', count: sectionCounts.players },
   ]
 
   /* ── Mobile header ───────────────────────────────────────────── */
@@ -408,8 +409,9 @@ export function TeamShell({
     </div>
   )
 
-  /* ── Table cell style ────────────────────────────────────────── */
+  /* ── Table cell styles ───────────────────────────────────────── */
   const td = 'px-3 py-2.5 border-b border-[var(--paper-rule)] text-[13px]'
+  const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]'
 
   /* ════════════════════════════════════════════════════════════════ */
   return (
@@ -547,7 +549,7 @@ export function TeamShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.seasons = el }}>
                 <SectionHead
                   title="Seasons"
-                  blurb={`${historyRows.length}-season record — click any row to jump to that season's schedule`}
+                  blurb="Click any row to jump to that season"
                   meta={metaCount(historyRows.length, historyRows.length, 'season')}
                 />
                 {historyRows.length === 0 ? (
@@ -618,7 +620,7 @@ export function TeamShell({
                     <table className="w-full text-sm">
                       <thead>
                         <tr>
-                          <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Date</th>
+                          <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Season</th>
                           <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Opponent</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] hidden sm:table-cell">Opp %</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PF</th>
@@ -649,7 +651,7 @@ export function TeamShell({
                           return (
                             <tr key={g.id}
                               className="hover:bg-[var(--paper-quiet)] transition-colors">
-                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtGameDate(g.game_date)}</td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtSeason(g.season)}</td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
                                   <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{isHome ? 'vs' : 'at'}</span>
@@ -687,42 +689,6 @@ export function TeamShell({
               </RevealFx>
               )}
 
-              {/* ── Games ─────────────────────────────────────────── */}
-              {(!q || matchedGames.length > 0) && (
-              <RevealFx delay={0.3} translateY={8}>
-              <section id="games" className="mb-20 scroll-mt-24"
-                ref={(el: HTMLElement | null) => { sectionRefs.current.games = el }}>
-                <SectionHead
-                  title="Games"
-                  blurb="All-time game results — search by opponent"
-                  meta={metaCount(matchedGames.length, gameRows.length, 'game')}
-                />
-                <PlayerRankedList
-                  query={q}
-                  rows={matchedGames.map((g, i) => {
-                    const { isHome, opName, opSlug, opSchoolSlug } = opInfo(g)
-                    const myScore = isHome ? g.home_score : g.away_score
-                    const opScore = isHome ? g.away_score : g.home_score
-                    const scoreStr = myScore != null && opScore != null ? `${myScore}–${opScore}` : '—'
-                    const result   = myScore == null || opScore == null ? '—'
-                      : myScore > opScore ? 'W' : myScore < opScore ? 'L' : 'T'
-                    const opDisplay = opName || opSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-                    return {
-                      slug:       String(g.id),
-                      name:       `${isHome ? 'vs' : 'at'} ${opDisplay}`,
-                      schoolSlug: opSchoolSlug,
-                      school:     `${fmtSeason(g.season)} · ${fmtGameDate(g.game_date) ?? ''}`,
-                      rank:       i + 1,
-                      primary:    `${result} ${scoreStr}`,
-                      href:       `/game/${g.id}`,
-                    }
-                  })}
-                  emptyLabel={q ? `No games match "${query}".` : 'No games recorded.'}
-                />
-              </section>
-              </RevealFx>
-              )}
-
               {/* ── Player Logs ───────────────────────────────────── */}
               {(!q || matchedPlayerLogs.length > 0) && (
               <RevealFx delay={0.35} translateY={8}>
@@ -733,88 +699,151 @@ export function TeamShell({
                   blurb="Individual game stat lines — search by opponent or player name"
                   meta={metaCount(matchedPlayerLogs.length, typedLogs.length, 'log')}
                 />
-                <PlayerRankedList
-                  query={q}
-                  rows={matchedPlayerLogs.map((log, i) => {
-                    const isHome = log.home_team_slug === (team.slug as string)
-                    const opName = ((isHome ? log.away_team_name : log.home_team_name) ?? '')
-                      .replace(/\s+Varsity\s+Football$/i, '')
-                    const stat = topGameStat(log)
-                    return {
-                      slug:       `${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`,
-                      name:       log.player_name,
-                      schoolSlug: log.school_slug,
-                      school:     `${opName} · ${fmtSeason(log.season)} · ${fmtGameDate(log.game_date) ?? ''}`,
-                      rank:       i + 1,
-                      primary:    stat.value,
-                      secondary:  stat.label,
-                      href:       `/player/${log.player_slug}`,
-                    }
-                  })}
-                  emptyLabel={q ? `No player logs match "${query}".` : 'No player game data recorded.'}
-                />
+                {matchedPlayerLogs.length === 0 ? (
+                  <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>
+                    {q ? `No player logs match "${query}".` : 'No player game data recorded.'}
+                  </p>
+                ) : (
+                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr>
+                          <th className={th}>Player</th>
+                          <th className={th}>Game</th>
+                          <th className={cn(th, 'hidden sm:table-cell')}>Date</th>
+                          <th className={cn(th, 'hidden md:table-cell')}>Type</th>
+                          <th className={cn(th, 'text-right')}>Stat</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {matchedPlayerLogs.map((log, i) => {
+                          // Perspective = player's own school, not the page team
+                          const playerTeamSlug = `${log.school_slug}-varsity-football`
+                          const playerIsHome = log.home_team_slug === playerTeamSlug
+                          const opName = ((playerIsHome ? log.away_team_name : log.home_team_name) ?? '')
+                            .replace(/\s+Varsity\s+Football$/i, '')
+                            .replace(/-varsity-football$/, '')
+                          const opSlug = playerIsHome ? log.away_team_slug : log.home_team_slug
+                          const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+                          const opLogo = SCHOOL_LOGOS[opSchoolSlug]
+                          const playerLogo = SCHOOL_LOGOS[log.school_slug]
+                          const stat = topGameStat(log)
+                          return (
+                            <tr key={`${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`}
+                              className="hover:bg-[var(--paper-quiet)] transition-colors">
+                              <td className={td}>
+                                <div className="flex items-center gap-2 min-w-0">
+                                  {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  <Link href={`/player/${log.player_slug}`}
+                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                    style={SERIF}>
+                                    {log.player_name}
+                                  </Link>
+                                </div>
+                              </td>
+                              <td className={td}>
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{playerIsHome ? 'vs' : 'at'}</span>
+                                  {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  <Link href={`/game/${log.game_id}`}
+                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                    style={SERIF}>
+                                    {opName}
+                                  </Link>
+                                </div>
+                              </td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums whitespace-nowrap hidden sm:table-cell')} style={MONO}>
+                                {fmtFullDate(log.game_date)}
+                              </td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] hidden md:table-cell')}>
+                                {log.stat_type ?? '—'}
+                              </td>
+                              <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                                {stat.value}
+                                <span className="ml-1.5 text-[11px] font-normal text-[var(--paper-muted)]">{stat.label}</span>
+                              </td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
               </RevealFx>
               )}
 
-              {/* ── Players ───────────────────────────────────────── */}
+              {/* ── Player Totals ─────────────────────────────────── */}
               {(!q || matchedPlayers.length > 0) && (
-              <RevealFx delay={0.35} translateY={8}>
+              <RevealFx delay={0.4} translateY={8}>
               <section id="players" className="mb-20 scroll-mt-24"
                 ref={(el: HTMLElement | null) => { sectionRefs.current.players = el }}>
                 <SectionHead
-                  title="Players"
-                  blurb="Top statistical performers — all-time leaders by category"
+                  title="Player Totals"
+                  blurb="Season statistical totals — all-time leaders by category"
                   meta={metaCount(matchedPlayers.length, playerRows.length, 'player')}
                 />
-                <PlayerRankedList
-                  query={q}
-                  rows={matchedPlayers.map((p, i) => {
-                    const stat = topStat(p)
-                    const playerSlug = p.player_slug as string
-                    return {
-                      slug:      playerSlug,
-                      name:      p.player_name as string,
-                      schoolSlug,
-                      school:    stat.label,
-                      rank:      i + 1,
-                      primary:   stat.value,
-                      href:      `/player/${playerSlug}`,
-                    }
-                  })}
-                  emptyLabel={q ? `No players match "${query}".` : 'No player data recorded.'}
-                />
-              </section>
-              </RevealFx>
-              )}
-
-              {/* ── Standings ─────────────────────────────────────── */}
-              {(!q || matchedStandings.length > 0) && (
-              <RevealFx delay={0.4} translateY={8}>
-              <section id="standings" className="mb-20 scroll-mt-24"
-                ref={(el: HTMLElement | null) => { sectionRefs.current.standings = el }}>
-                <SectionHead
-                  title={`Division ${division} Standings`}
-                  blurb={`All teams in Division ${division} ranked by all-time win percentage`}
-                  meta={metaCount(matchedStandings.length, divTeams.length, 'team')}
-                />
-                <PlayerRankedList
-                  query={q}
-                  rows={matchedStandings.map((t, i) => {
-                    const tSlug = (t.slug as string).replace(/-varsity-football$/, '')
-                    const tName = (t.name as string).replace(/\s+Varsity\s+Football$/i, '')
-                    return {
-                      slug:       tSlug,
-                      name:       tName,
-                      schoolSlug: tSlug,
-                      rank:       i + 1,
-                      primary:    fmtRecord(t.overall_wins as number | null, t.overall_losses as number | null),
-                      secondary:  fmtPct(t.overall_wins as number | null, t.overall_losses as number | null),
-                      href:       `/team/${t.slug}`,
-                    }
-                  })}
-                  emptyLabel={q ? `No teams match "${query}".` : 'No standings recorded.'}
-                />
+                {matchedPlayers.length === 0 ? (
+                  <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>
+                    {q ? `No players match "${query}".` : 'No player data recorded.'}
+                  </p>
+                ) : (
+                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr>
+                          <th className={th}>Player</th>
+                          <th className={cn(th, 'hidden sm:table-cell')}>Season</th>
+                          <th className={cn(th, 'hidden md:table-cell')}>Type</th>
+                          <th className={cn(th, 'text-right')}>Yards</th>
+                          <th className={cn(th, 'text-right hidden sm:table-cell')}>TDs</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {matchedPlayers.map((p, i) => {
+                          const playerSlug = p.player_slug as string
+                          const statType   = p.stat_type as string
+                          const playerLogo = SCHOOL_LOGOS[schoolSlug]
+                          const yds = statType === 'Passing'   ? p.pass_yards as number | null
+                                    : statType === 'Rushing'   ? p.rush_yards as number | null
+                                    : statType === 'Receiving' ? p.recv_yards as number | null
+                                    : null
+                          const tds = statType === 'Passing'   ? p.pass_tds as number | null
+                                    : statType === 'Rushing'   ? p.rush_tds as number | null
+                                    : statType === 'Receiving' ? p.recv_tds as number | null
+                                    : null
+                          return (
+                            <tr key={`${playerSlug}-${statType}-${i}`}
+                              className="hover:bg-[var(--paper-quiet)] transition-colors">
+                              <td className={td}>
+                                <div className="flex items-center gap-2 min-w-0">
+                                  {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  <Link href={`/player/${playerSlug}`}
+                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                    style={SERIF}>
+                                    {p.player_name as string}
+                                  </Link>
+                                </div>
+                              </td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
+                                {p.season != null ? fmtSeason(p.season as number) : '—'}
+                              </td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] hidden md:table-cell')}>
+                                {statType}
+                              </td>
+                              <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                                {yds != null ? yds.toLocaleString() : '—'}
+                              </td>
+                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)] hidden sm:table-cell')} style={MONO}>
+                                {tds != null ? String(tds) : '—'}
+                              </td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </section>
               </RevealFx>
               )}
