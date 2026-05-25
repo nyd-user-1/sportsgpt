@@ -419,11 +419,11 @@ export function TeamShell({
 
             <ContentsNav items={navItems} />
 
-            <main className="min-w-0 space-y-20">
+            <main className="min-w-0">
 
               {/* ── Season History ─────────────────────────────────── */}
               <RevealFx delay={0.2} translateY={8}>
-              <section id="history">
+              <section id="history" className="mb-20 scroll-mt-24">
                 <SectionHead
                   title="Season History"
                   blurb={`${historyRows.length}-season record — click any row to jump to that season's games`}
@@ -478,7 +478,7 @@ export function TeamShell({
 
               {/* ── Schedule ──────────────────────────────────────── */}
               <RevealFx delay={0.25} translateY={8}>
-              <section id="schedule">
+              <section id="schedule" className="mb-20 scroll-mt-24">
                 <SectionHead
                   title={activeSeason !== null ? `${fmtSeason(activeSeason)} Schedule` : 'Schedule'}
                   blurb={`Game-by-game results${activeSeason !== null ? ` · ${fmtSeason(activeSeason)} season` : ' · all seasons'}`}
@@ -560,7 +560,7 @@ export function TeamShell({
               {/* ── Leaders ───────────────────────────────────────── */}
               {playerRows.length > 0 && (
                 <RevealFx delay={0.3} translateY={8}>
-                <section id="leaders">
+                <section id="leaders" className="mb-20 scroll-mt-24">
                   <SectionHead
                     title="Leaders"
                     blurb="Top statistical performers — all-time leaders by category"
@@ -587,7 +587,7 @@ export function TeamShell({
               {/* ── Division Standings ─────────────────────────────── */}
               {divTeams.length > 0 && (
                 <RevealFx delay={0.35} translateY={8}>
-                <section id="standings">
+                <section id="standings" className="mb-20 scroll-mt-24">
                   <SectionHead
                     title={`Division ${division} Standings`}
                     blurb={`All teams in Division ${division} ranked by all-time win percentage`}
