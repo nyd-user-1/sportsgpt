@@ -108,7 +108,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       JOIN games g ON g.id = pgs.game_id
       LEFT JOIN teams ht  ON ht.slug  = g.home_team_slug
       LEFT JOIN teams at2 ON at2.slug = g.away_team_slug
-      WHERE g.home_team_slug = ${slug} OR g.away_team_slug = ${slug}
+      WHERE pgs.school_slug = ${team.school_slug}
       ORDER BY g.season DESC, g.game_date ASC, pgs.player_name ASC`,
     sql`
       SELECT

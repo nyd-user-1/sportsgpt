@@ -358,6 +358,13 @@ export function TeamShell({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typedLogs])
 
+  const gameWeekMap = useMemo(() => {
+    const map: Record<number, number | null> = {}
+    gameRows.forEach(g => { map[g.id] = g.game_number })
+    return map
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameRows])
+
   const matchedPlayerLogs = q
     ? typedLogs.filter(log =>
         (gameOpponentMap[log.game_id] ?? '').includes(q) ||
@@ -556,16 +563,16 @@ export function TeamShell({
                   <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
                 ) : (
                   <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="min-w-[500px] w-full">
+                    <table className="min-w-[560px] w-full">
                       <thead>
                         <tr>
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
-                          <SortTh col="overall" label="W-L"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" />
-                          <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" right />
+                          <th className={th}>Team</th>
                           <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf" right />
                           <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa" right />
                           <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff" right />
-                          <SortTh col="sos"     label="SoS"     sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="sos" right />
+                          <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" right />
+                          <SortTh col="overall" label="Result"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" right />
                         </tr>
                       </thead>
                       <tbody>
@@ -579,16 +586,22 @@ export function TeamShell({
                                 document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                               }}>
                               <td className={cn(td, 'text-[var(--paper-muted)]')} style={MONO}>{row.season}</td>
-                              <td className={cn(td, 'font-semibold text-[var(--paper-text)]')} style={SERIF}>{row.overall}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.conf}</td>
+                              <td className={td}>
+                                <div className="flex items-center gap-2 min-w-0">
+                                  {heroLogo && <Image src={heroLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  <span className="truncate text-[var(--paper-text)]" style={SERIF}>{cleanName}</span>
+                                </div>
+                              </td>
                               <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pf ?? '—'}</td>
                               <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pa ?? '—'}</td>
                               <td className={cn(td, 'text-right font-semibold')}
                                 style={{ ...MONO, color: row.diff == null ? 'var(--paper-muted)' : row.diff >= 0 ? '#15803d' : '#b91c1c' }}>
                                 {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
                               </td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>
-                                {row.sos != null ? row.sos.toFixed(3).replace(/^0/, '') : '—'}
+                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.conf}</td>
+                              <td className={cn(td, 'text-right font-semibold')}
+                                style={{ ...MONO, color: row._winPct == null ? 'var(--paper-muted)' : row._winPct > 0.5 ? '#15803d' : row._winPct < 0.5 ? '#b91c1c' : 'var(--paper-muted)' }}>
+                                {row.overall}
                               </td>
                             </tr>
                           )
@@ -708,9 +721,10 @@ export function TeamShell({
                     <table className="w-full text-sm">
                       <thead>
                         <tr>
+                          <th className={cn(th, 'hidden sm:table-cell')}>Season</th>
                           <th className={th}>Player</th>
+                          <th className={cn(th, 'hidden sm:table-cell')}>Week</th>
                           <th className={th}>Game</th>
-                          <th className={cn(th, 'hidden sm:table-cell')}>Date</th>
                           <th className={cn(th, 'hidden md:table-cell')}>Type</th>
                           <th className={cn(th, 'text-right')}>Stat</th>
                         </tr>
@@ -731,6 +745,9 @@ export function TeamShell({
                           return (
                             <tr key={`${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`}
                               className="hover:bg-[var(--paper-quiet)] transition-colors">
+                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
+                                {log.season != null ? fmtSeason(log.season) : '—'}
+                              </td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
                                   {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
@@ -740,6 +757,9 @@ export function TeamShell({
                                     {log.player_name}
                                   </Link>
                                 </div>
+                              </td>
+                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums whitespace-nowrap hidden sm:table-cell')} style={MONO}>
+                                {gameWeekMap[log.game_id] != null ? `Week ${gameWeekMap[log.game_id]}` : fmtFullDate(log.game_date)}
                               </td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
@@ -751,9 +771,6 @@ export function TeamShell({
                                     {opName}
                                   </Link>
                                 </div>
-                              </td>
-                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums whitespace-nowrap hidden sm:table-cell')} style={MONO}>
-                                {fmtFullDate(log.game_date)}
                               </td>
                               <td className={cn(td, 'text-[var(--paper-muted)] hidden md:table-cell')}>
                                 {log.stat_type ?? '—'}
