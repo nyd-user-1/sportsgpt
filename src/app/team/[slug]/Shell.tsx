@@ -523,9 +523,7 @@ export function TeamShell({
                   <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--paper-text)] transition-colors">Division {division}</Link>
                 </span>
               }
-              subhead={historyRows[0]
-                ? `${historyRows[0].overall} · ${historyRows[0].season}`
-                : 'Varsity Football'}
+              subhead={`Section XI varsity football — game results, season records, and player statistics for Division ${division}.`}
               meta={[
                 <a key="seasons" href="#seasons" className="hover:text-[var(--paper-text)] transition-colors">{seasonRows.length} Season{seasonRows.length !== 1 ? 's' : ''}</a>,
                 <a key="games" href="#schedule" className="hover:text-[var(--paper-text)] transition-colors">{gameRows.length} Game{gameRows.length !== 1 ? 's' : ''}</a>,

@@ -18,6 +18,38 @@ import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
 
 /* ── Shared type constants ───────────────────────────────────────────────── */
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+
+/* ── Grain overlay — subtle SVG noise, classic editorial depth ───────────── */
+const GRAIN_STYLE: React.CSSProperties = {
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+  backgroundSize: '180px 180px',
+  opacity: 0.035,
+  mixBlendMode: 'overlay' as const,
+}
+
+/* ── Dateline — newspaper header above thread ────────────────────────────── */
+function Dateline() {
+  const [label, setLabel] = useState('')
+  useEffect(() => {
+    const d = new Date()
+    const day = d.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()
+    const date = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase()
+    setLabel(`${day}, ${date}`)
+  }, [])
+  if (!label) return null
+  return (
+    <div className="flex items-center gap-4 mb-12">
+      <div className="flex-1 border-t border-[var(--paper-rule)]" />
+      <span
+        className="shrink-0 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        {label}
+      </span>
+      <div className="flex-1 border-t border-[var(--paper-rule)]" />
+    </div>
+  )
+}
 const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
 
 const STARTERS = [
@@ -271,10 +303,19 @@ function ChatInput2({
 function UserMessage({ content }: { content: string }) {
   return (
     <div className="flex justify-end mb-10">
-      <div className="max-w-[62%] pl-5 border-l-2 border-[#033882]">
-        <p className="text-[18px] leading-[1.75] text-[var(--paper-text)]" style={SERIF}>
-          {content}
-        </p>
+      <div className="max-w-[62%] flex items-start gap-3">
+        {/* Q. prefix — newspaper Q&A convention */}
+        <span
+          className="shrink-0 mt-[4px] text-[var(--paper-faint)]"
+          style={{ ...MONO, fontSize: 11, letterSpacing: '0.05em' }}
+        >
+          Q.
+        </span>
+        <div className="pl-4 border-l-2 border-[#033882]">
+          <p className="text-[18px] leading-[1.75] text-[var(--paper-text)]" style={SERIF}>
+            {content}
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -467,7 +508,9 @@ export default function Chat2Page() {
   /* ── Empty state ──────────────────────────────────────────────────────── */
   if (!hasMessages) {
     return (
-      <AppLayout>
+      <AppLayout paperMode>
+        {/* Grain overlay */}
+        <div className="fixed inset-0 pointer-events-none z-[999]" style={GRAIN_STYLE} />
         <div className="flex-1 overflow-y-auto" style={PAPER_BRIDGE}>
           <div className="flex flex-col justify-center min-h-full px-6 sm:px-12 md:px-20">
             <div className="max-w-[620px] w-full mx-auto py-20">
@@ -562,7 +605,9 @@ export default function Chat2Page() {
 
   /* ── Active state — message thread ───────────────────────────────────── */
   return (
-    <AppLayout>
+    <AppLayout paperMode>
+      {/* Grain overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[999]" style={GRAIN_STYLE} />
       <div className="flex flex-1 flex-col overflow-hidden" style={PAPER_BRIDGE}>
 
         {/* Scrollable message thread */}
@@ -572,6 +617,7 @@ export default function Chat2Page() {
           className="flex-1 overflow-y-auto"
         >
           <div className="mx-auto max-w-[660px] px-6 sm:px-8 pt-16 pb-8">
+            <Dateline />
             {messages.map((msg, i) => {
               const isLastUser = msg.role === 'user' && i === messages.length - 1
               return (
