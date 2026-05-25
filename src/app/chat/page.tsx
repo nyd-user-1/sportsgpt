@@ -9,7 +9,18 @@ import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
 import { CardCarousel } from '@/components/CardCarousel'
 import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
 import { useChat } from '@/hooks/useChat'
+import { PAPER_BRIDGE } from '@/components/editorial'
 import { ArrowDown } from 'lucide-react'
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
+
+const GRAIN_STYLE: React.CSSProperties = {
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+  backgroundSize: '180px 180px',
+  opacity: 0.035,
+  mixBlendMode: 'overlay' as const,
+}
 
 export default function ChatPage() {
   const { messages, isStreaming, sendMessage, stopStreaming } = useChat()
@@ -73,16 +84,31 @@ export default function ChatPage() {
 
   if (!hasMessages) {
     return (
-      <AppLayout>
-        <div className="flex-1 overflow-y-auto">
+      <AppLayout paperMode>
+        {/* Grain overlay */}
+        <div className="fixed inset-0 pointer-events-none z-[999]" style={GRAIN_STYLE} />
+        <div className="flex-1 overflow-y-auto" style={PAPER_BRIDGE}>
           <div className="flex flex-col items-center justify-center min-h-full px-4 py-8">
             <div className="w-full max-w-[773px] flex flex-col gap-6">
 
-              <div className="flex justify-center">
-                <div className="flex items-center gap-2">
+              {/* Brand block — eyebrow + logo + name + rule */}
+              <div className="flex flex-col items-center gap-3">
+                <p
+                  className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]"
+                  style={SANS}
+                >
+                  Section XI · Football
+                </p>
+                <div className="flex items-center gap-2.5">
                   <AppLogo className="h-9 w-9" />
-                  <h1 className="text-3xl font-bold text-[var(--txt)]">{APP_NAME}</h1>
+                  <h1
+                    className="text-[var(--paper-text)]"
+                    style={{ ...SERIF, fontSize: 30, fontWeight: 500, letterSpacing: '-0.02em' }}
+                  >
+                    {APP_NAME}
+                  </h1>
                 </div>
+                <div className="w-full max-w-[480px] border-t border-[var(--paper-rule)] mt-1" />
               </div>
 
               <div className="relative">
@@ -94,7 +120,10 @@ export default function ChatPage() {
                   selectedModel={selectedModel}
                   onModelChange={setSelectedModel}
                 />
-                <p className="text-center text-[10px] text-[var(--muted2)] mt-2">
+                <p
+                  className="text-center text-[13px] text-[var(--paper-muted)] mt-3"
+                  style={{ ...SERIF, fontStyle: 'italic' }}
+                >
                   {APP_TAGLINE} · Design &amp; Development by NYSgpt
                 </p>
               </div>
@@ -111,8 +140,10 @@ export default function ChatPage() {
   }
 
   return (
-    <AppLayout>
-      <div className="flex flex-1 flex-col overflow-hidden">
+    <AppLayout paperMode>
+      {/* Grain overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[999]" style={GRAIN_STYLE} />
+      <div className="flex flex-1 flex-col overflow-hidden" style={PAPER_BRIDGE}>
         {/* Messages */}
         <div ref={scrollRef} onScroll={handleScroll} className="flex-1 overflow-y-auto">
           <div className="mx-auto max-w-3xl px-4 py-4">
@@ -144,13 +175,13 @@ export default function ChatPage() {
                   isNearBottomRef.current = true
                   setShowScrollBtn(false)
                 }}
-                className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg hover:shadow-xl transition-shadow"
+                className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-[var(--paper)] border border-[var(--paper-rule)] shadow-lg hover:shadow-xl transition-shadow"
               >
-                <ArrowDown className="h-4 w-4 text-[var(--txt2)]" />
+                <ArrowDown className="h-4 w-4 text-[var(--paper-muted)]" />
               </button>
             </div>
           )}
-          <div className="px-4 py-3">
+          <div className="px-4 py-3 border-t border-[var(--paper-rule)]" style={{ background: 'var(--paper)' }}>
             <div className="mx-auto max-w-3xl">
               <ChatInput
                 onSend={(msg, model) => sendMessage(msg, model)}

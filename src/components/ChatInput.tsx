@@ -83,7 +83,10 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
   const currentModel = CHAT_MODELS.find(m => m.id === selectedModel) ?? CHAT_MODELS[0]
 
   return (
-    <div className="flex flex-col rounded-2xl border border-[var(--border)] bg-[var(--inp-bg)] px-4 pt-3 pb-3 transition-all gap-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+    <div
+      className="flex flex-col border border-[var(--paper-rule)] bg-[var(--paper-quiet)] px-4 pt-3 pb-3 transition-all gap-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+      style={{ borderRadius: 3 }}
+    >
 
       {/* Textarea */}
       <div className="flex items-start">
@@ -94,18 +97,18 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
           onChange={e => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={CHAT_PLACEHOLDER}
-          className="flex-1 resize-none bg-transparent py-1 text-[17px] text-[var(--txt)] placeholder:text-[var(--muted2)] outline-none leading-relaxed"
-          style={{ minHeight: '40px' }}
+          className="flex-1 resize-none bg-transparent py-1 text-[17px] text-[var(--paper-text)] placeholder:text-[var(--paper-faint)] outline-none leading-relaxed"
+          style={{ minHeight: '40px', fontFamily: 'var(--font-display), Georgia, serif' }}
         />
       </div>
 
       {/* Toolbar */}
       <div className="flex items-center pt-1">
         <PlusMenu onSelect={t => { setInput(t); textareaRef.current?.focus() }} />
-        <button type="button" className="ml-2 flex h-8 w-8 items-center justify-center rounded-full text-[var(--muted)] hover:bg-black/7 hover:text-[var(--txt)] transition-colors">
+        <button type="button" className="ml-2 flex h-8 w-8 items-center justify-center rounded-full text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)] transition-colors">
           <MapPin className="h-4 w-4" />
         </button>
-        <button type="button" className="ml-2 flex h-8 w-8 items-center justify-center rounded-full text-[var(--muted)] hover:bg-black/7 hover:text-[var(--txt)] transition-colors">
+        <button type="button" className="ml-2 flex h-8 w-8 items-center justify-center rounded-full text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)] transition-colors">
           <Mic className="h-4 w-4" />
         </button>
         <div className="flex-1" />
@@ -113,16 +116,19 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
         {/* Model selector */}
         <div className="relative mr-2" ref={menuRef}>
           {menuOpen && (
-            <div className="absolute bottom-full right-0 mb-2 w-56 rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-xl overflow-hidden py-1 z-50">
+            <div
+              className="absolute bottom-full right-0 mb-2 w-56 border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden py-1 z-50"
+              style={{ borderRadius: 3 }}
+            >
               {CHAT_MODELS.map((m, i) => (
                 <button
                   key={m.id}
                   onClick={() => { setSelectedModel(m.id); setMenuOpen(false) }}
-                  className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--inp-bg)] ${i > 0 ? 'border-t border-[var(--border)]' : ''}`}
+                  className={`flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors hover:bg-[var(--paper-quiet)] ${i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}`}
                 >
                   <img src={m.logo} alt={m.provider} width={18} height={18} className="rounded-sm object-contain shrink-0" />
-                  <span className="flex-1 text-left font-medium text-[var(--txt)]">{m.label}</span>
-                  {m.id === selectedModel && <Check className="h-3.5 w-3.5 text-[#033882] shrink-0" />}
+                  <span className="flex-1 text-left font-medium text-[var(--paper-text)]">{m.label}</span>
+                  {m.id === selectedModel && <Check className="h-3.5 w-3.5 text-[var(--paper-strong)] shrink-0" />}
                 </button>
               ))}
             </div>
@@ -132,8 +138,8 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
             onClick={() => setMenuOpen(o => !o)}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
               menuOpen
-                ? 'ring-2 ring-[#033882] text-[var(--txt)]'
-                : 'text-[var(--muted)] hover:bg-black/7 hover:text-[var(--txt)]'
+                ? 'ring-2 ring-[var(--paper-strong)] text-[var(--paper-text)]'
+                : 'text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)]'
             }`}
             title={currentModel.label}
           >
@@ -146,11 +152,11 @@ export const ChatInput = forwardRef<ChatInputHandle, Props>(function ChatInput(
           type="button"
           onClick={isStreaming ? onStop : handleSubmit}
           disabled={!isStreaming && !input.trim()}
-          className={`flex h-9 w-9 items-center justify-center rounded-xl transition-colors disabled:opacity-25 ${
-            isStreaming
-              ? 'bg-red-600 hover:bg-red-700 text-white'
-              : 'bg-[#1a1a1a] hover:opacity-80 text-white'
-          }`}
+          className="flex h-9 w-9 items-center justify-center transition-opacity disabled:opacity-25 text-white"
+          style={{
+            borderRadius: 3,
+            background: isStreaming ? '#dc2626' : 'var(--paper-strong)',
+          }}
         >
           {isStreaming ? <Square className="h-4 w-4" fill="currentColor" /> : <ArrowUp className="h-4 w-4" />}
         </button>
