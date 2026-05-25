@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, recordsCount] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT s.*,
@@ -91,6 +91,13 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       SELECT team_slug, season, overall_wins, overall_losses
       FROM team_season_stats
       ORDER BY season, overall_wins DESC`,
+    sql`
+      SELECT
+        (SELECT COUNT(*) FROM games
+          WHERE home_team_slug = ${slug} OR away_team_slug = ${slug}) +
+        (SELECT COUNT(*) FROM player_season_stats WHERE school_slug = ${team.school_slug}) +
+        (SELECT COUNT(*) FROM player_game_stats WHERE school_slug = ${team.school_slug})
+        AS total`,
   ])
 
   // Prev/next by name order
@@ -100,9 +107,12 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const prevSlug = namesSorted[(idx - 1 + n) % n]?.slug ?? slug
   const nextSlug = namesSorted[(idx + 1) % n]?.slug ?? slug
 
+  const totalRecords = Number((recordsCount as { total: number }[])[0]?.total ?? 0)
+
   return (
     <TeamShell
       team={team as Record<string, unknown>}
+      totalRecords={totalRecords}
       prevSlug={prevSlug}
       nextSlug={nextSlug}
       seasonRows={seasonRows as Record<string, unknown>[]}

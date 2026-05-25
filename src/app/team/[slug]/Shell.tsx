@@ -132,7 +132,7 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 /* ══════════════════════════════════════════════════════════════════ */
 export function TeamShell({
   team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows, allSeasonStats = [],
-  panelMode = false,
+  totalRecords = 0, panelMode = false,
 }: {
   team: Record<string, unknown>
   prevSlug: string; nextSlug: string
@@ -142,6 +142,7 @@ export function TeamShell({
   rosterRows?: Record<string, unknown>[]
   gameRows: GameRow[]
   allSeasonStats?: { team_slug: string; season: number; overall_wins: number; overall_losses: number }[]
+  totalRecords?: number
   panelMode?: boolean
 }) {
   const [chartsOpen,  setChartsOpen]  = useState(false)
@@ -318,7 +319,7 @@ export function TeamShell({
                 </span>
               }
               subhead="Varsity Football"
-              meta={[`${gameRows.length} Games`, `${playerRows.length} Players`, `${historyRows.length} Records`]}
+              meta={[`${gameRows.length} Games`, `${playerRows.length} Players`, `${totalRecords.toLocaleString()} Records`]}
               rightSlot={
                 <EditorialButtonGroup
                   prevHref={`/team/${prevSlug}`}
