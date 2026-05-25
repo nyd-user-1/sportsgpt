@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { TEAM_PHOTOS, SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
+import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 import { SCHOOL_COLORS } from '@/lib/school-colors'
 import { MONO } from '@/components/editorial'
 
@@ -29,21 +29,21 @@ const TEAMS: { slug: string; name: string }[] = [
 
 /* ── Suggested prompts shown in the editorial card carousel ─────────────── */
 type PromptCard = {
-  /** Either a school slug (for team prompts) or a division number 1-4 (for division prompts) */
-  logoKey: { kind: 'school'; slug: string } | { kind: 'division'; num: 1 | 2 | 3 | 4 }
+  /** Short label in the blue LHS column — team name or division code */
+  label: string
   /** The actual prompt sent to the chat when clicked */
   prompt: string
 }
 
 const PROMPTS: PromptCard[] = [
-  { logoKey: { kind: 'division', num: 1 },                prompt: 'Who led Division I in rushing yards this 2025-26 season?' },
-  { logoKey: { kind: 'division', num: 2 },                prompt: 'Who led Division II in passing yards this 2025-26 season?' },
-  { logoKey: { kind: 'school',   slug: 'floyd' },         prompt: "How has William Floyd's record trended over the past 5 seasons?" },
-  { logoKey: { kind: 'school',   slug: 'ward-melville' }, prompt: "Who are Ward Melville's top offensive playmakers in the 2025-26 season?" },
-  { logoKey: { kind: 'division', num: 3 },                prompt: 'Show me the current Division III standings and the hottest teams.' },
-  { logoKey: { kind: 'school',   slug: 'sachem-east' },   prompt: "What is Sachem East's season-by-season record and playoff history?" },
-  { logoKey: { kind: 'division', num: 4 },                prompt: 'Which Division IV teams have the longest winning streaks?' },
-  { logoKey: { kind: 'school',   slug: 'longwood' },      prompt: "Tell me about Longwood's top offensive playmakers this 2025-26 season." },
+  { label: 'D1',            prompt: 'Who led Division I in rushing yards this 2025-26 season?' },
+  { label: 'D2',            prompt: 'Who led Division II in passing yards this 2025-26 season?' },
+  { label: 'Floyd',         prompt: "How has William Floyd's record trended over the past 5 seasons?" },
+  { label: 'Ward Melville', prompt: "Who are Ward Melville's top offensive playmakers in the 2025-26 season?" },
+  { label: 'D3',            prompt: 'Show me the current Division III standings and the hottest teams.' },
+  { label: 'Sachem East',   prompt: "What is Sachem East's season-by-season record and playoff history?" },
+  { label: 'D4',            prompt: 'Which Division IV teams have the longest winning streaks?' },
+  { label: 'Longwood',      prompt: "Tell me about Longwood's top offensive playmakers this 2025-26 season." },
 ]
 
 /* ── Team photo card inner content ───────────────────────────────────────── */
@@ -99,7 +99,7 @@ function CardInner({ slug, name }: { slug: string; name: string }) {
   )
 }
 
-/* ── Suggested-prompt card — logo + question, editorial frame ───────────── */
+/* ── Suggested-prompt card — FormulaTablet design language ──────────────── */
 function PromptCardButton({
   prompt,
   onClick,
@@ -107,33 +107,30 @@ function PromptCardButton({
   prompt: PromptCard
   onClick: () => void
 }) {
-  const logoSrc =
-    prompt.logoKey.kind === 'division'
-      ? DIVISION_LOGOS[prompt.logoKey.num]
-      : SCHOOL_LOGOS[prompt.logoKey.slug]
-
   return (
     <button
       onClick={onClick}
-      className="group shrink-0 w-[220px] h-[130px] snap-start border border-[var(--paper-rule)] bg-[var(--paper)] flex flex-col justify-between px-4 py-4 hover:bg-[var(--paper-quiet)] hover:border-[var(--paper-strong)] transition-colors text-left"
+      className="group shrink-0 w-[260px] h-[170px] snap-start border border-[var(--paper-rule)] bg-[var(--paper-quiet)] flex items-stretch hover:border-[var(--paper-strong)] transition-colors text-left overflow-hidden"
       style={{ borderRadius: 3 }}
     >
-      {logoSrc && (
-        <Image
-          src={logoSrc}
-          alt=""
-          width={32}
-          height={32}
-          className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-          unoptimized
-        />
-      )}
-      <p
-        className="text-[12px] text-[var(--paper-strong)] font-medium leading-snug"
-        style={MONO}
+      {/* LHS — team / division label in blue mono */}
+      <div
+        className="shrink-0 w-[88px] flex items-center justify-center px-3 text-center text-[var(--paper-strong)] tracking-wide leading-tight"
+        style={{ ...MONO, fontSize: 13, fontWeight: 600 }}
+      >
+        {prompt.label}
+      </div>
+
+      {/* Vertical divider */}
+      <div className="w-px bg-[var(--paper-rule)] shrink-0" />
+
+      {/* RHS — question in paper-text mono */}
+      <div
+        className="flex-1 flex items-center px-4 py-4 text-[var(--paper-text)] leading-relaxed"
+        style={{ ...MONO, fontSize: 12.5 }}
       >
         {prompt.prompt}
-      </p>
+      </div>
     </button>
   )
 }
