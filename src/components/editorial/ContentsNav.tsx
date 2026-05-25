@@ -56,7 +56,7 @@ export function ContentsNav({
                 ? 'text-[var(--paper-faint)]'
                 : isActive
                   ? 'text-[var(--paper-text)]'
-                  : 'text-[var(--paper-muted)] hover:text-[var(--paper-text)]'
+                  : 'text-[var(--paper-muted)] hover:text-[var(--paper-strong)]'
             )
             const inner = (
               <>
@@ -93,7 +93,7 @@ export function ContentsNav({
                       <li key={sub.id}>
                         <a
                           href={`#${sub.id}`}
-                          className="flex items-baseline gap-2 pl-9 py-1 text-[11px] text-[var(--paper-faint)] hover:text-[var(--paper-muted)] transition-colors leading-tight"
+                          className="flex items-baseline gap-2 pl-9 py-1 text-[11px] text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors leading-tight"
                         >
                           <span className="shrink-0 opacity-50">–</span>
                           <span className="truncate">{sub.label}</span>

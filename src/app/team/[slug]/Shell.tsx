@@ -630,7 +630,27 @@ export function TeamShell({
           {/* ── Body: sidebar + sections ─────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
 
-            <ContentsNav items={navItems} activeId={activeSection} />
+            <ContentsNav items={navItems} activeId={activeSection} label="Page Contents">
+              <div className="mt-8">
+                <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Site</p>
+                <ul className="flex flex-col">
+                  {[
+                    { label: 'Division',  href: `/division/division-${(division as string).toLowerCase()}` },
+                    { label: 'Teams',    href: '/team' },
+                    { label: 'Players',  href: '/player' },
+                  ].map(link => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="flex items-center py-1.5 text-[13px] leading-tight text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ContentsNav>
 
             <main className="min-w-0">
 
