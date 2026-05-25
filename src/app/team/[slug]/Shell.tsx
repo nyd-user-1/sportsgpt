@@ -635,10 +635,10 @@ export function TeamShell({
                         <tr>
                           <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Season</th>
                           <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Opponent</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] hidden sm:table-cell">Opp %</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PF</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PA</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Diff</th>
+                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] hidden sm:table-cell">Opp %</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Result</th>
                         </tr>
                       </thead>
@@ -676,15 +676,15 @@ export function TeamShell({
                                   </Link>
                                 </div>
                               </td>
-                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)] hidden sm:table-cell')} style={MONO}>
-                                {oppStatMap[g.season]?.[opSlug] != null
-                                  ? oppStatMap[g.season][opSlug].pct.toFixed(3).replace(/^0/, '')
-                                  : '—'}
-                              </td>
                               <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{myScore ?? '—'}</td>
                               <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{opScore ?? '—'}</td>
                               <td className={cn(td, 'text-right tabular-nums font-semibold')} style={{ ...MONO, color: diff == null || diff === 0 ? 'var(--paper-muted)' : diff > 0 ? '#15803d' : '#b91c1c' }}>
                                 {diff == null ? '—' : diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : '0'}
+                              </td>
+                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)] hidden sm:table-cell')} style={MONO}>
+                                {oppStatMap[g.season]?.[opSlug] != null
+                                  ? oppStatMap[g.season][opSlug].pct.toFixed(3).replace(/^0/, '')
+                                  : '—'}
                               </td>
                               <td className={cn(td, 'text-right font-semibold')} style={{ ...MONO, color: resultColor }}>
                                 {g.id ? (
