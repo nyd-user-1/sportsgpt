@@ -523,11 +523,13 @@ export function TeamShell({
                   <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--paper-text)] transition-colors">Division {division}</Link>
                 </span>
               }
-              subhead="Varsity Football"
+              subhead={historyRows[0]
+                ? `${historyRows[0].overall} · ${historyRows[0].season}`
+                : 'Varsity Football'}
               meta={[
-                '1 Team',
                 <a key="seasons" href="#seasons" className="hover:text-[var(--paper-text)] transition-colors">{seasonRows.length} Season{seasonRows.length !== 1 ? 's' : ''}</a>,
                 <a key="games" href="#schedule" className="hover:text-[var(--paper-text)] transition-colors">{gameRows.length} Game{gameRows.length !== 1 ? 's' : ''}</a>,
+                <a key="logs" href="#player-logs" className="hover:text-[var(--paper-text)] transition-colors">{typedLogs.length} Player Log{typedLogs.length !== 1 ? 's' : ''}</a>,
               ]}
               rightSlot={
                 <EditorialButtonGroup
