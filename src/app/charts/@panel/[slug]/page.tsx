@@ -831,8 +831,8 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
   return (
     <ChartDetailPage
       config={config}
-      prevSlug={prevSlug}
-      nextSlug={nextSlug}
+      prevHref={`/charts/${prevSlug}`}
+      nextHref={`/charts/${nextSlug}`}
       kpiValue={kpiValue}
       tableRows={tableRows}
       multiPoints={multiPoints}
@@ -844,7 +844,6 @@ export default async function ChartPanelSlot({ params }: { params: Promise<{ slu
       nameLabel={NAME_LABELS[slug]}
       valueLabel={VALUE_LABELS[slug]}
       showRank
-      panelMode
     >
       {chartChild}
     </ChartDetailPage>

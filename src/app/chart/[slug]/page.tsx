@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { AppLayout } from '@/components/AppLayout'
 import { getChartConfig, getAdjacentSlugs } from '@/lib/chart-configs'
 import { fetchPassingYardsLeaders, fetchPassingTdsLeaders, fetchSingleGamePassing, fetchPassingYardsByTeam } from '@/lib/chart-data/passing'
 import { fetchRushingYardsLeaders, fetchRushingTdsLeaders, fetchSingleGameRushing, fetchRushingYardsByTeam } from '@/lib/chart-data/rushing'
@@ -834,23 +835,25 @@ export default async function ChartPage({ params }: { params: Promise<{ slug: st
   }
 
   return (
-    <ChartDetailPage
-      config={config}
-      prevSlug={prevSlug}
-      nextSlug={nextSlug}
-      kpiValue={kpiValue}
-      tableRows={tableRows}
-      multiPoints={multiPoints}
-      subRows={subRows}
-      rowLinks={rowLinks}
-      rowPlayerSlugs={rowPlayerSlugs}
-      seasonFilters={seasonFilters}
-      seasonRows={seasonRows}
-      nameLabel={NAME_LABELS[slug]}
-      valueLabel={VALUE_LABELS[slug]}
-      showRank
-    >
-      {chartChild}
-    </ChartDetailPage>
+    <AppLayout hideHeader>
+      <ChartDetailPage
+        config={config}
+        prevHref={`/chart/${prevSlug}`}
+        nextHref={`/chart/${nextSlug}`}
+        kpiValue={kpiValue}
+        tableRows={tableRows}
+        multiPoints={multiPoints}
+        subRows={subRows}
+        rowLinks={rowLinks}
+        rowPlayerSlugs={rowPlayerSlugs}
+        seasonFilters={seasonFilters}
+        seasonRows={seasonRows}
+        nameLabel={NAME_LABELS[slug]}
+        valueLabel={VALUE_LABELS[slug]}
+        showRank
+      >
+        {chartChild}
+      </ChartDetailPage>
+    </AppLayout>
   )
 }

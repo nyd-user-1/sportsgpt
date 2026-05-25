@@ -310,7 +310,13 @@ export function TeamShell({
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
             <EditorialHead
               size="xl"
-              eyebrow={`Section XI · Division ${division}`}
+              eyebrow={
+                <span className="inline-flex items-center gap-2">
+                  <Link href="/section/section-xi" className="hover:text-[var(--paper-text)] transition-colors">Section XI</Link>
+                  <span className="opacity-40">·</span>
+                  <Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--paper-text)] transition-colors">Division {division}</Link>
+                </span>
+              }
               subhead="Varsity Football"
               meta={[`${gameRows.length} Games`, `${playerRows.length} Players`, `${historyRows.length} Records`]}
               rightSlot={

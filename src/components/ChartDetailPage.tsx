@@ -9,7 +9,6 @@ import {
   Tooltip as RechartsTip, CartesianGrid, Cell,
 } from 'recharts'
 import { ChevronRight, ChartSpline, AlignLeft, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
-import { AppLayout } from '@/components/AppLayout'
 import { InfoTable } from '@/components/InfoTable'
 import { RevealFx } from '@/components/RevealFx'
 import {
@@ -33,7 +32,7 @@ import {
   type ChartConfig, type Period,
   applyPeriod, fmtPeriodLabel,
 } from '@/lib/chart-configs'
-import { CHART_NAV_EVENT, SEASON_CHANGE_EVENT } from '@/lib/app-config'
+import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
 
@@ -85,8 +84,8 @@ export type SubRowMap = Record<string, SubRow[]>
 
 interface Props {
   config: ChartConfig
-  prevSlug: string
-  nextSlug: string
+  prevHref: string
+  nextHref: string
   kpiValue: number
   tableRows?: StdRow[]
   chartPoints?: StdRow[]
@@ -101,14 +100,13 @@ interface Props {
   nameLabel?: string
   valueLabel?: string
   showRank?: boolean
-  panelMode?: boolean
 }
 
 const PREVIEW_ROWS = 3
 
 /* ── Component ───────────────────────────────────────────────────── */
 export function ChartDetailPage({
-  config, prevSlug, nextSlug, kpiValue,
+  config, prevHref, nextHref, kpiValue,
   tableRows = [], chartPoints = [], multiPoints = [], scatterPoints = [],
   subRows,
   children,
@@ -119,7 +117,6 @@ export function ChartDetailPage({
   nameLabel,
   valueLabel,
   showRank,
-  panelMode,
 }: Props) {
   const router   = useRouter()
   const pathname = usePathname()
@@ -152,20 +149,6 @@ export function ChartDetailPage({
   const base = config.periodBase ?? 'weekly'
   const scaledKpi = config.periodToggle ? applyPeriod(kpiValue, base, period) : kpiValue
 
-  // Only broadcast chart nav event in panelMode (detail page has its own header nav)
-  useEffect(() => {
-    if (!panelMode) return
-    const detail = {
-      prevHref: `/charts/${prevSlug}`,
-      nextHref: `/charts/${nextSlug}`,
-      color: config.color,
-      pageTitle: config.title,
-    }
-    window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail }))
-    return () => {
-      window.dispatchEvent(new CustomEvent(CHART_NAV_EVENT, { detail: null }))
-    }
-  }, [prevSlug, nextSlug, config, panelMode])
 
   const scaledChart: StdRow[] = useMemo(() => {
     if (!config.periodToggle) return chartPoints
@@ -265,8 +248,8 @@ export function ChartDetailPage({
 
   /* ── Shared table body (panel + detail share the same JSX) ───────── */
   const tableBody = (() => {
-    const isDetail      = !panelMode
-    const showHeader    = !isDetail  // no column headers in detail; SectionHead handles labelling
+    const isDetail      = true
+    const showHeader    = false  // SectionHead handles labelling
     const displayScatter = [...scaledScatter].sort((a, b) => (b.y / b.x) - (a.y / a.x))
     // In detail mode, always show all rows (no expand/collapse)
     const visibleScatter = (!isDetail && !tableExpanded) ? displayScatter.slice(0, PREVIEW_ROWS) : displayScatter
@@ -352,7 +335,7 @@ export function ChartDetailPage({
           const delta        = rankChanges[row.name]
           const handleClick  = hasRowSubRows
             ? () => toggleRow(row.name)
-            : panelMode
+            : pathname.startsWith('/charts/')
               ? (() => {
                   const chartSlug = pathname.split('/').filter(Boolean)[1]
                   if (!chartSlug) return undefined
@@ -361,14 +344,14 @@ export function ChartDetailPage({
                   if (teamLink?.startsWith('/team/')) return () => router.push(`/charts/${chartSlug}/team/${teamLink.replace('/team/', '')}`, { scroll: false })
                   return undefined
                 })()
-              : undefined  // detail page: Link handles navigation; panels come later
+              : undefined
 
           return (
             <React.Fragment key={`${row.name}-${idx}`}>
               <div
                 className={cn(
                   'group/row grid gap-3 px-5 py-3.5 items-center hover:bg-[var(--inp-bg)] transition-colors',
-                  (hasRowSubRows || (panelMode && (rowPlayerSlugs?.[row.name] || rowLinks?.[row.name]))) ? 'cursor-pointer' : 'cursor-default',
+                  (hasRowSubRows || (pathname.startsWith('/charts/') && (rowPlayerSlugs?.[row.name] || rowLinks?.[row.name]))) ? 'cursor-pointer' : 'cursor-default',
                 )}
                 style={{ gridTemplateColumns: colTemplate }}
                 onClick={handleClick ?? undefined}
@@ -517,85 +500,7 @@ export function ChartDetailPage({
     )
   })() : null
 
-  /* ── PANEL MODE layout (unchanged from original) ──────────────── */
-  if (panelMode) {
-    return (
-      <div className="flex flex-col">
-        {(!children || config.filters?.length || config.periodToggle) && (
-          <div className="shrink-0 bg-[var(--surface)] px-5 pt-3 pb-0">
-            {children ? null : (
-              <div className="h-40 md:h-52 -mx-1 mb-3">
-                <ResponsiveContainer width="100%" height="100%">
-                  {config.chartType === 'area' ? (
-                    <AreaChart data={scaledChart} margin={{ top: 4, right: 8, bottom: 0, left: 8 }}>
-                      <defs>
-                        <linearGradient id={`g-${config.slug}`} x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor={config.color} stopOpacity={0.35} />
-                          <stop offset="95%" stopColor={config.color} stopOpacity={0.03} />
-                        </linearGradient>
-                      </defs>
-                      <Area type="monotone" dataKey="value" stroke={config.color} strokeWidth={1.5}
-                        fill={`url(#g-${config.slug})`} dot={false} animationDuration={400} />
-                      <XAxis dataKey="name" hide />
-                      <RechartsTip contentStyle={tipStyle}
-                        formatter={(v) => [fmtVal(Number(v), config, config.periodToggle ? period : undefined), config.title]}
-                        labelFormatter={(l) => String(l)} />
-                    </AreaChart>
-                  ) : config.chartType === 'line' ? (
-                    <LineChart data={scaledMulti} margin={{ top: 4, right: 8, bottom: 0, left: 8 }}>
-                      <CartesianGrid vertical={false} stroke="var(--border)" strokeOpacity={0.5} />
-                      <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false} />
-                      {config.series?.map(s => (
-                        <Line key={s.key} type="monotone" dataKey={s.key} stroke={s.color}
-                          strokeWidth={1.5} dot={false} animationDuration={400} name={s.label} />
-                      ))}
-                      <RechartsTip contentStyle={tipStyle}
-                        formatter={(v, name) => [fmtVal(Number(v), config, config.periodToggle ? period : undefined), name]} />
-                    </LineChart>
-                  ) : config.chartType === 'scatter' ? (
-                    <ScatterChart margin={{ top: 4, right: 16, bottom: 0, left: 16 }}>
-                      <CartesianGrid stroke="var(--border)" strokeOpacity={0.4} />
-                      <XAxis dataKey="x" type="number" name="Annual Income" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false}
-                        tickFormatter={(v) => `$${Math.round(v/1000)}K`} />
-                      <YAxis dataKey="y" type="number" name="Annual Care Cost" tick={{ fontSize: 10, fill: '#9ca3af' }} tickLine={false} axisLine={false}
-                        tickFormatter={(v) => `$${Math.round(v/1000)}K`} width={48} />
-                      <Scatter data={scaledScatter} fill={config.color} fillOpacity={0.7} />
-                      <RechartsTip contentStyle={tipStyle} cursor={{ strokeDasharray: '3 3' }}
-                        formatter={(v, name) => [`$${Math.round(Number(v)).toLocaleString()}`, name]} />
-                    </ScatterChart>
-                  ) : (
-                    <BarChart data={scaledChart} margin={{ top: 4, right: 8, bottom: 0, left: 8 }}>
-                      <Bar dataKey="value" radius={[2, 2, 0, 0]} animationDuration={400}>
-                        {scaledChart.map((_, i) => (
-                          <Cell key={i} fill={config.color} opacity={Math.max(0.3, 1 - i * 0.015)} />
-                        ))}
-                      </Bar>
-                      <XAxis dataKey="name" hide />
-                      <RechartsTip contentStyle={tipStyle}
-                        formatter={(v) => [fmtVal(Number(v), config, config.periodToggle ? period : undefined), config.title]}
-                        labelFormatter={(l) => String(l)} />
-                    </BarChart>
-                  )}
-                </ResponsiveContainer>
-              </div>
-            )}
-            {filterBar && <div className="pb-3">{filterBar}</div>}
-          </div>
-        )}
-        {children && <div className="shrink-0 px-5 pt-2 pb-2">{children}</div>}
-        {seasonToggle && (
-          <div className="shrink-0 flex items-center px-5 py-3 border-b border-[var(--border)]">
-            {seasonToggle}
-          </div>
-        )}
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          {tableBody}
-        </div>
-      </div>
-    )
-  }
-
-  /* ── Detail-mode season cycle (mirrors Division Shell) ──────── */
+  /* ── Season cycle (mirrors Division Shell) ──────── */
   const seasonCycleOptions: string[] = seasonFilters
     ? [
         ...(seasonFilters.includes('all') ? ['all'] : []),
@@ -637,22 +542,12 @@ export function ChartDetailPage({
   }
 
   /* ── DETAIL PAGE layout (editorial) ─────────────────────────── */
-  const mobileHeader = (
-    <div className="flex items-center gap-2 w-full">
-      <div className="flex-1 min-w-0">
-        <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{config.title}</p>
-        <p className="text-[11px] text-[var(--muted)] leading-tight">Section XI · Charts</p>
-      </div>
-    </div>
-  )
-
   return (
     <>
-      <AppLayout mobileHeader={mobileHeader}>
-        <div
-          className="flex-1 overflow-y-auto no-scrollbar"
-          style={{ backgroundColor: 'var(--paper)', ...PAPER_BRIDGE }}
-        >
+      <div
+        className="flex-1 overflow-y-auto no-scrollbar"
+        style={{ backgroundColor: 'var(--paper)', ...PAPER_BRIDGE }}
+      >
 
           {/* ── Masthead ────────────────────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
@@ -667,8 +562,8 @@ export function ChartDetailPage({
               ]}
               rightSlot={
                 <EditorialButtonGroup
-                  prevHref={`/chart/${prevSlug}`}
-                  nextHref={`/chart/${nextSlug}`}
+                  prevHref={prevHref}
+                  nextHref={nextHref}
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                     { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
@@ -786,8 +681,7 @@ export function ChartDetailPage({
 
           </div>
 
-        </div>
-      </AppLayout>
+      </div>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
