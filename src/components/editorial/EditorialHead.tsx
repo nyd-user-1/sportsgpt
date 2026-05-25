@@ -16,6 +16,8 @@ type Props = {
   subhead?: ReactNode
   meta?: ReactNode[]
   rightSlot?: ReactNode
+  /** Replaces the decorative `——` line before the eyebrow text. */
+  leadingSlot?: ReactNode
   tier?: Tier
   size?: Size
   className?: string
@@ -28,6 +30,7 @@ export function EditorialHead({
   subhead,
   meta,
   rightSlot,
+  leadingSlot,
   tier,
   size = 'xl',
   className = '',
@@ -40,7 +43,7 @@ export function EditorialHead({
       {showEyebrowRow && (
         <div className="w-full mb-6 sm:mb-8 flex items-center justify-between gap-4 min-h-[28px]">
           <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)] min-w-0 flex-1">
-            <span aria-hidden className="inline-block w-6 h-px bg-[var(--paper-rule)] shrink-0" />
+            {leadingSlot ?? <span aria-hidden className="inline-block w-6 h-px bg-[var(--paper-rule)] shrink-0" />}
             {tier && (
               <span className="text-[var(--paper-strong)] shrink-0">
                 <TierIndicator tier={tier} size={4} />
