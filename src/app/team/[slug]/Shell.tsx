@@ -34,14 +34,14 @@ const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
 
 /* ── Sort header ─────────────────────────────────────────────────── */
-function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort }: {
-  col: string; label: string; right?: boolean; glossaryId?: string
+function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort, className }: {
+  col: string; label: string; right?: boolean; glossaryId?: string; className?: string
   sortCol: string | null; sortDir: 'asc' | 'desc'; onSort: (col: string) => void
 }) {
   const active = sortCol === col
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
   return (
-    <th className={cn('px-3 py-3 border-b border-[var(--paper-rule)]', right ? 'text-right' : 'text-left')}>
+    <th className={cn('px-3 py-3 border-b border-[var(--paper-rule)]', right ? 'text-right' : 'text-left', className)}>
       <div className={cn('relative group/th', right ? 'inline-flex justify-end w-full' : 'inline-block')}>
         <button onClick={e => { e.stopPropagation(); onSort(col) }}
           className={cn(
@@ -191,6 +191,8 @@ export function TeamShell({
   const [playersOpen, setPlayersOpen] = useState(false)
   const [sortCol, setSortCol]         = useState<string | null>(null)
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
+  const [schedSortCol, setSchedSortCol] = useState<string | null>(null)
+  const [schedSortDir, setSchedSortDir] = useState<'asc' | 'desc'>('desc')
   const [slideIdx, setSlideIdx]       = useState(0)
   const [query,   setQuery]           = useState('')
   const [activeSection, setActiveSection] = useState<string>('seasons')
@@ -320,6 +322,11 @@ export function TeamShell({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [historyRows, sortCol, sortDir])
 
+  function handleSchedSort(col: string) {
+    if (schedSortCol === col) setSchedSortDir(d => d === 'asc' ? 'desc' : 'asc')
+    else { setSchedSortCol(col); setSchedSortDir('desc') }
+  }
+
   /* ── Search query ────────────────────────────────────────────── */
   const q = query.trim().toLowerCase()
 
@@ -341,6 +348,38 @@ export function TeamShell({
   }
 
   const filteredGames  = q ? seasonGames.filter(gameMatchesQ) : seasonGames
+
+  const sortedFilteredGames = useMemo(() => {
+    if (!schedSortCol) return filteredGames
+    const teamSlug = team.slug as string
+    const key = (g: GameRow): number | string => {
+      const isHome  = g.home_team_slug === teamSlug
+      const my      = isHome ? g.home_score : g.away_score
+      const op      = isHome ? g.away_score : g.home_score
+      const opSlug  = isHome ? g.away_team_slug : g.home_team_slug
+      const opName  = ((isHome ? g.away_team_name : g.home_team_name) ?? '').replace(/\s+Varsity\s+Football$/i, '')
+      switch (schedSortCol) {
+        case 'season':   return g.season
+        case 'opponent': return opName.toLowerCase()
+        case 'pf':       return my ?? -Infinity
+        case 'pa':       return op ?? -Infinity
+        case 'diff':     return (my != null && op != null) ? my - op : -Infinity
+        case 'opp_pct':  return oppStatMap[g.season]?.[opSlug]?.pct ?? -Infinity
+        case 'result':   return (my != null && op != null) ? my - op : -Infinity
+        default:         return 0
+      }
+    }
+    return [...filteredGames].sort((a, b) => {
+      const ka = key(a), kb = key(b)
+      if (typeof ka === 'string' && typeof kb === 'string')
+        return schedSortDir === 'asc' ? ka.localeCompare(kb) : kb.localeCompare(ka)
+      return schedSortDir === 'asc'
+        ? (ka as number) - (kb as number)
+        : (kb as number) - (ka as number)
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredGames, schedSortCol, schedSortDir, oppStatMap])
+
   const matchedPlayers = q
     ? playerRows.filter(p => (p.player_name as string).toLowerCase().includes(q))
     : playerRows
@@ -633,17 +672,17 @@ export function TeamShell({
                     <table className="w-full text-sm">
                       <thead>
                         <tr>
-                          <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Season</th>
-                          <th className="px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Opponent</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PF</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PA</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Diff</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] hidden sm:table-cell">Opp %</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Result</th>
+                          <SortTh col="season"   label="Season"   sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} />
+                          <SortTh col="opponent" label="Opponent" sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} />
+                          <SortTh col="pf"       label="PF"       sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="pf"   right />
+                          <SortTh col="pa"       label="PA"       sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="pa"   right />
+                          <SortTh col="diff"     label="Diff"     sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="diff" right />
+                          <SortTh col="opp_pct"  label="Opp %"    sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="opp-rank" right className="hidden sm:table-cell" />
+                          <SortTh col="result"   label="Result"   sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="overall" right />
                         </tr>
                       </thead>
                       <tbody>
-                        {filteredGames.map(g => {
+                        {sortedFilteredGames.map(g => {
                           const isHome   = g.home_team_slug === team.slug
                           const opSlug   = isHome ? g.away_team_slug : g.home_team_slug
                           const opName   = isHome ? g.away_team_name : g.home_team_name
