@@ -53,6 +53,8 @@ export function PlayerRankedList({
       {rows.map((p, i) => {
         const photo = PLAYER_PHOTOS[p.slug]
         const logo  = p.schoolSlug ? SCHOOL_LOGOS[p.schoolSlug] : undefined
+        // Prefer team logo; fall back to player photo when no logo available
+        const avatar = logo ?? photo
         return (
           <li
             key={`${p.slug}-${i}`}
@@ -67,18 +69,10 @@ export function PlayerRankedList({
               style={{ borderRadius: TABLET_RADIUS }}
             >
               <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
-                {photo
+                {avatar
                   ? (
                     <Image
-                      src={photo} alt="" width={44} height={44}
-                      className="w-full h-full object-cover"
-                      unoptimized
-                    />
-                  )
-                  : logo
-                  ? (
-                    <Image
-                      src={logo} alt="" width={28} height={28}
+                      src={avatar} alt="" width={28} height={28}
                       className="object-contain"
                       unoptimized
                     />

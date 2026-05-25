@@ -34,7 +34,7 @@ const DIV_COLORS: Record<string, string> = {
 }
 
 function buildBarsWithRecord(
-  rows: { name: unknown; value: unknown; season: unknown; school_slug?: unknown; overall_wins?: unknown; overall_losses?: unknown }[],
+  rows: { name: unknown; value: unknown; season: unknown; school_slug?: unknown; school_name?: unknown; overall_wins?: unknown; overall_losses?: unknown }[],
   seasons: string[],
   limit = 50
 ): SeasonBars[] {
@@ -48,7 +48,7 @@ function buildBarsWithRecord(
         value: Number(r.value),
         logoUrl: r.school_slug ? (SCHOOL_LOGOS[String(r.school_slug)] ?? '') : '',
         record: r.overall_wins != null ? `${r.overall_wins}–${r.overall_losses ?? 0}` : undefined,
-        subtitle: formatSeason(yr),
+        subtitle: r.school_name ? `${String(r.school_name)} · ${formatSeason(yr)}` : formatSeason(yr),
       }))
     return { season: yr, topValue: yrows[0]?.value ?? 0, bars: yrows }
   })

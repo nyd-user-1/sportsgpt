@@ -671,7 +671,7 @@ export function ChartDetailPage({
                           primary:   fmtVal(row.value, config, config.periodToggle ? period : undefined),
                           secondary: row.winPct !== undefined
                             ? `${row.winPct.toFixed(1)}% WIN`
-                            : row.record ?? undefined,
+                            : undefined,
                           href:      rowLinks?.[row.name]
                             ?? (playerSlug ? `/player/${playerSlug}` : undefined),
                         }

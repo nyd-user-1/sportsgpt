@@ -18,22 +18,24 @@ interface TooltipPayload {
   payload?: { name: string; points: number; median: number; logoUrl?: string }
 }
 
-function CustomTooltip({ active, payload }: { active?: boolean; payload?: TooltipPayload[] }) {
-  if (!active || !payload?.length) return null
-  const item = payload[0]?.payload
-  if (!item) return null
-  return (
-    <ChartTooltipShell minWidth={160}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-        {item.logoUrl && (
-          <img src={item.logoUrl} alt="" width={20} height={20} style={{ objectFit: 'contain', flexShrink: 0 }} />
-        )}
-        <span style={{ fontWeight: 700, color: 'var(--paper-text)' }}>{item.name}</span>
-      </div>
-      <p style={{ color: ACCENT }}><span style={{ fontWeight: 600 }}>{item.points}</span> pts</p>
-      <p style={{ color: MEDIAN_COLOR }}>Median: {item.median}</p>
-    </ChartTooltipShell>
-  )
+function makeTooltip(valueLabel: string) {
+  return function CustomTooltip({ active, payload }: { active?: boolean; payload?: TooltipPayload[] }) {
+    if (!active || !payload?.length) return null
+    const item = payload[0]?.payload
+    if (!item) return null
+    return (
+      <ChartTooltipShell minWidth={160}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+          {item.logoUrl && (
+            <img src={item.logoUrl} alt="" width={20} height={20} style={{ objectFit: 'contain', flexShrink: 0 }} />
+          )}
+          <span style={{ fontWeight: 700, color: 'var(--paper-text)' }}>{item.name}</span>
+        </div>
+        <p style={{ color: ACCENT }}><span style={{ fontWeight: 600 }}>{item.points}</span> {valueLabel}</p>
+        <p style={{ color: MEDIAN_COLOR }}>Median: {item.median}</p>
+      </ChartTooltipShell>
+    )
+  }
 }
 
 interface Props {
@@ -49,6 +51,7 @@ function calcMedian(vals: number[]): number {
 }
 
 export function SportsAreaGradient({ seasons, valueLabel = 'Points' }: Props) {
+  const CustomTooltip = React.useMemo(() => makeTooltip(valueLabel), [valueLabel])
   const [activeSeason, setActiveSeason] = React.useState(seasons[0]?.season ?? '')
 
   React.useEffect(() => {
