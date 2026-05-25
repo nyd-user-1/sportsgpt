@@ -20,7 +20,7 @@ type ChartNavDetail = {
   pageTitle?: string
 } | null
 
-export function AppLayout({ children, mobileHeader, hideHeader }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean }) {
+export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean; paperMode?: boolean }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
   const [dark, setDark] = useState(false)
@@ -163,24 +163,24 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
         </div>
       </div>
 
-      <div className="relative flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl bg-[var(--surface)] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border sm:border-[var(--border)]">
+      <div className={`relative flex flex-1 flex-col min-w-0 rounded-none sm:rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.07)] sm:border ${paperMode ? 'bg-[var(--paper)] sm:border-[var(--paper-rule)]' : 'bg-[var(--surface)] sm:border-[var(--border)]'}`}>
 
         {hideHeader ? (
           <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-            className="hidden sm:flex absolute top-5 left-5 z-20 h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
+            className={`hidden sm:flex absolute top-5 left-5 z-20 h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors ${paperMode ? 'hover:bg-[var(--paper-quiet)]' : 'hover:bg-[var(--inp-bg)]'}`}>
             {sidebarOpen
-              ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
-              : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+              ? <PanelLeftClose className={`h-5 w-5 ${paperMode ? 'text-[var(--paper-faint)]' : 'text-[var(--txt)]'}`} />
+              : <PanelLeftOpen  className={`h-5 w-5 ${paperMode ? 'text-[var(--paper-faint)]' : 'text-[var(--txt)]'}`} />
             }
           </button>
         ) : (
         <div className="flex items-center px-5 pt-5 pb-5">
 
           <button onClick={() => setSidebarOpen(v => !v)} aria-label="Toggle sidebar"
-            className="hidden sm:flex h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors hover:bg-[var(--inp-bg)]">
+            className={`hidden sm:flex h-9 w-9 items-center justify-center rounded-xl border-0 outline-none transition-colors ${paperMode ? 'hover:bg-[var(--paper-quiet)]' : 'hover:bg-[var(--inp-bg)]'}`}>
             {sidebarOpen
-              ? <PanelLeftClose className="h-5 w-5 text-[var(--txt)]" />
-              : <PanelLeftOpen  className="h-5 w-5 text-[var(--txt)]" />
+              ? <PanelLeftClose className={`h-5 w-5 ${paperMode ? 'text-[var(--paper-faint)]' : 'text-[var(--txt)]'}`} />
+              : <PanelLeftOpen  className={`h-5 w-5 ${paperMode ? 'text-[var(--paper-faint)]' : 'text-[var(--txt)]'}`} />
             }
           </button>
 
@@ -189,7 +189,7 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           )}
 
           {title && (
-            <div className="ml-4 flex items-center gap-2 text-[var(--txt)]">
+            <div className={`ml-4 flex items-center gap-2 ${paperMode ? 'text-[var(--paper-text)]' : 'text-[var(--txt)]'}`}>
               <span className="text-xl font-bold">{chartNav?.pageTitle ?? title}</span>
             </div>
           )}
@@ -199,7 +199,10 @@ export function AppLayout({ children, mobileHeader, hideHeader }: { children: Re
           <button
             onClick={e => toggleTheme(e)}
             aria-label="Toggle dark mode"
-            className="hidden sm:flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)] transition-colors mr-2"
+            className={`hidden sm:flex h-8 w-8 items-center justify-center rounded-full transition-colors mr-2 ${paperMode
+              ? 'border border-[var(--paper-rule)] bg-transparent text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)]'
+              : 'border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
+            }`}
           >
             {dark ? <Sun className="h-4 w-4 fill-amber-400 text-amber-400" /> : <Moon className="h-4 w-4" />}
           </button>

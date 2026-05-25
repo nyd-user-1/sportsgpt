@@ -7,6 +7,8 @@ export type ContentsItem = {
   id: string
   label: string
   count: number
+  /** Optional sub-items shown indented below when this item is active. */
+  subItems?: { id: string; label: string }[]
 }
 
 /**
@@ -84,6 +86,21 @@ export function ContentsNav({
                   <a href={`#${item.id}`} className={sharedClass}>
                     {inner}
                   </a>
+                )}
+                {isActive && item.subItems && item.subItems.length > 0 && (
+                  <ol className="flex flex-col mt-0.5 mb-1">
+                    {item.subItems.map(sub => (
+                      <li key={sub.id}>
+                        <a
+                          href={`#${sub.id}`}
+                          className="flex items-baseline gap-2 pl-9 py-1 text-[11px] text-[var(--paper-faint)] hover:text-[var(--paper-muted)] transition-colors leading-tight"
+                        >
+                          <span className="shrink-0 opacity-50">–</span>
+                          <span className="truncate">{sub.label}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
                 )}
               </li>
             )

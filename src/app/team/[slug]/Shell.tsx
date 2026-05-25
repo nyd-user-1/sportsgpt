@@ -5,6 +5,7 @@ import Link from 'next/link'
 import {
   ChevronLeft, ChevronRight, ChevronUp, ChevronDown,
   ChartSpline, Info, ArrowUpRight, ArrowLeft, ArrowRight, FileUser, MessageCircle,
+  Search, X,
 } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
@@ -41,11 +42,11 @@ function SortTh({ col, label, right, glossaryId, sortCol, sortDir, onSort, class
   const active = sortCol === col
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
   return (
-    <th className={cn('px-3 py-3 border-b border-[var(--paper-rule)]', right ? 'text-right' : 'text-left', className)}>
+    <th className={cn('px-3 py-3 border-b border-[var(--paper-rule)] sticky top-0 bg-[var(--paper)] z-10', right ? 'text-right' : 'text-left', className)}>
       <div className={cn('relative group/th', right ? 'inline-flex justify-end w-full' : 'inline-block')}>
         <button onClick={e => { e.stopPropagation(); onSort(col) }}
           className={cn(
-            'inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors whitespace-nowrap',
+            'inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors whitespace-nowrap cursor-pointer',
             active ? 'text-[var(--paper-text)]' : 'text-[var(--paper-faint)] hover:text-[var(--paper-muted)]',
           )}>
           {label}
@@ -146,7 +147,7 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 }) {
   if (panelMode) return <>{children}</>
   return (
-    <AppLayout mobileHeader={mobileHeader}>
+    <AppLayout mobileHeader={mobileHeader} paperMode>
       <div className="flex-1 overflow-y-auto no-scrollbar">{children}</div>
     </AppLayout>
   )
@@ -155,9 +156,9 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 /* ══════════════════════════════════════════════════════════════════ */
 function topGameStat(log: PlayerGameLog): { label: string; value: string } {
   const s = log.stat_type ?? ''
-  if (s === 'Passing')   return { label: 'Pass Yds', value: log.pass_yds != null ? String(log.pass_yds) : '—' }
-  if (s === 'Rushing')   return { label: 'Rush Yds', value: log.rush_yds != null ? String(log.rush_yds) : '—' }
-  if (s === 'Receiving') return { label: 'Recv Yds', value: log.rec_yds  != null ? String(log.rec_yds)  : '—' }
+  if (s === 'Passing')   return { label: 'Yds', value: log.pass_yds != null ? String(log.pass_yds) : '—' }
+  if (s === 'Rushing')   return { label: 'Yds', value: log.rush_yds != null ? String(log.rush_yds) : '—' }
+  if (s === 'Receiving') return { label: 'Yds', value: log.rec_yds  != null ? String(log.rec_yds)  : '—' }
   if (s === 'Kicking')   return { label: 'Points',   value: log.kick_points != null ? String(log.kick_points) : '—' }
   if (s === 'Defense') {
     const parts = [
@@ -189,6 +190,9 @@ export function TeamShell({
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [chatOpen,    setChatOpen]    = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
+  const [rosterQuery, setRosterQuery] = useState('')
+
+  useEffect(() => { if (!playersOpen) setRosterQuery('') }, [playersOpen])
   const [sortCol, setSortCol]         = useState<string | null>(null)
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
   const [schedSortCol, setSchedSortCol] = useState<string | null>(null)
@@ -402,8 +406,21 @@ export function TeamShell({
   }, [typedLogs])
 
   const gameWeekMap = useMemo(() => {
-    const map: Record<number, number | null> = {}
-    gameRows.forEach(g => { map[g.id] = g.game_number })
+    const map: Record<number, number> = {}
+    // Group by season, sort by date, assign 1-based week index
+    const bySeason: Record<number, GameRow[]> = {}
+    gameRows.forEach(g => {
+      if (!bySeason[g.season]) bySeason[g.season] = []
+      bySeason[g.season].push(g)
+    })
+    Object.values(bySeason).forEach(games => {
+      const sorted = [...games].sort((a, b) =>
+        (a.game_date ?? '').localeCompare(b.game_date ?? '')
+      )
+      sorted.forEach((g, i) => {
+        map[g.id] = g.game_number != null ? g.game_number : i + 1
+      })
+    })
     return map
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameRows])
@@ -498,11 +515,18 @@ export function TeamShell({
   const totalRanked  = seasonGames.length + typedLogs.length + playerRows.length
 
   /* ── ContentsNav items ───────────────────────────────────────── */
+  const logSubTypes   = ['Passing', 'Rushing', 'Receiving', 'Defense', 'Kicking']
+    .filter(st => typedLogs.some(l => l.stat_type === st))
+  const plyrSubTypes  = ['Passing', 'Rushing', 'Receiving']
+    .filter(st => playerRows.some(p => p.stat_type === st))
+
   const navItems = [
     { id: 'seasons',     label: 'Seasons',       count: q ? 0 : sectionCounts.seasons },
     { id: 'schedule',    label: 'Schedule',      count: sectionCounts.schedule },
-    { id: 'player-logs', label: 'Player Logs',   count: sectionCounts['player-logs'] },
-    { id: 'players',     label: 'Player Totals', count: sectionCounts.players },
+    { id: 'player-logs', label: 'Player Logs',   count: sectionCounts['player-logs'],
+      subItems: logSubTypes.map(st => ({ id: `player-logs-${st.toLowerCase()}`, label: st })) },
+    { id: 'players',     label: 'Player Totals', count: sectionCounts.players,
+      subItems: plyrSubTypes.map(st => ({ id: `players-${st.toLowerCase()}`, label: st })) },
   ]
 
   /* ── Mobile header ───────────────────────────────────────────── */
@@ -522,7 +546,7 @@ export function TeamShell({
 
   /* ── Table cell styles ───────────────────────────────────────── */
   const td = 'px-3 py-4 border-b border-[var(--paper-rule)] text-[13px]'
-  const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]'
+  const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] sticky top-0 bg-[var(--paper)] z-10'
 
   /* ════════════════════════════════════════════════════════════════ */
   return (
@@ -542,7 +566,11 @@ export function TeamShell({
                 </span>
               }
               subhead="Varsity Football"
-              meta={[`${gameRows.length} Games`, `${playerRows.length} Players`, `${totalRecords.toLocaleString()} Records`]}
+              meta={[
+                '1 Team',
+                <a key="seasons" href="#seasons" className="hover:text-[var(--paper-text)] transition-colors">{seasonRows.length} Season{seasonRows.length !== 1 ? 's' : ''}</a>,
+                <a key="games" href="#schedule" className="hover:text-[var(--paper-text)] transition-colors">{gameRows.length} Game{gameRows.length !== 1 ? 's' : ''}</a>,
+              ]}
               rightSlot={
                 <EditorialButtonGroup
                   prevHref={`/team/${prevSlug}`}
@@ -562,54 +590,49 @@ export function TeamShell({
           {/* ── Hero slider ─────────────────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12">
             <RevealFx delay={0.1} translateY={8}>
-              <div className="relative overflow-hidden w-full h-[520px] border border-[var(--paper-rule)]"
-                style={{ borderRadius: TABLET_RADIUS }}>
-                {heroSlides.map((slide, i) => (
-                  <div key={i}
-                    className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-                    style={{ opacity: i === slideIdx ? 1 : 0 }}>
-                    {slide.kind === 'placeholder' ? (
-                      <div className="absolute inset-0 flex items-center justify-center"
-                        style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? '#033882' }}>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        {heroLogo && (
-                          <Image src={heroLogo} alt="" width={96} height={96}
-                            className="object-contain relative z-10"
-                            style={{ filter: 'drop-shadow(0 0 14px rgba(255,255,255,0.45))' }}
-                            unoptimized />
-                        )}
-                      </div>
-                    ) : (
-                      <>
+              <div className="w-full border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+                style={{ padding: 8, borderRadius: TABLET_RADIUS }}>
+                <div className="relative overflow-hidden w-full" style={{ height: 504, borderRadius: 1 }}>
+                  {heroSlides.map((slide, i) => (
+                    <div key={i}
+                      className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                      style={{ opacity: i === slideIdx ? 1 : 0 }}>
+                      {slide.kind === 'placeholder' ? (
+                        <div className="absolute inset-0 flex items-center justify-center"
+                          style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? '#033882' }}>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          {heroLogo && (
+                            <Image src={heroLogo} alt="" width={96} height={96}
+                              className="object-contain relative z-10"
+                              style={{ filter: 'drop-shadow(0 0 14px rgba(255,255,255,0.45))' }}
+                              unoptimized />
+                          )}
+                        </div>
+                      ) : (
                         <Image src={slide.url} alt="" fill className="object-cover object-top" unoptimized />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                      </>
-                    )}
-                  </div>
-                ))}
-                <div className="absolute bottom-0 left-0 p-6 pointer-events-none">
-                  <p className="text-lg font-bold text-white leading-snug" style={SERIF}>{cleanName}</p>
-                  <p className="text-sm text-white/60 mt-0.5">Section XI · Division {division}</p>
-                </div>
-                {heroSlides.length > 1 && (
-                  <>
-                    <button onClick={() => setSlideIdx(i => (i - 1 + heroSlides.length) % heroSlides.length)}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
-                      <ChevronLeft className="h-5 w-5" />
-                    </button>
-                    <button onClick={() => setSlideIdx(i => (i + 1) % heroSlides.length)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-black/30 hover:bg-black/50 flex items-center justify-center text-white transition-colors">
-                      <ChevronRight className="h-5 w-5" />
-                    </button>
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-                      {heroSlides.map((_, i) => (
-                        <button key={i} onClick={() => setSlideIdx(i)}
-                          className="h-2 rounded-full bg-white transition-all duration-500 ease-in-out"
-                          style={{ width: i === slideIdx ? 28 : 8, opacity: i === slideIdx ? 1 : 0.45 }} />
-                      ))}
+                      )}
                     </div>
-                  </>
-                )}
+                  ))}
+                  {heroSlides.length > 1 && (
+                    <>
+                      <button onClick={() => setSlideIdx(i => (i - 1 + heroSlides.length) % heroSlides.length)}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-white/30 bg-black/25 hover:bg-black/45 flex items-center justify-center text-white/95 transition-colors">
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+                      <button onClick={() => setSlideIdx(i => (i + 1) % heroSlides.length)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-white/30 bg-black/25 hover:bg-black/45 flex items-center justify-center text-white/95 transition-colors">
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                        {heroSlides.map((_, i) => (
+                          <button key={i} onClick={() => setSlideIdx(i)}
+                            className="h-1.5 rounded-full bg-white transition-all duration-500 ease-in-out"
+                            style={{ width: i === slideIdx ? 24 : 8, opacity: i === slideIdx ? 0.95 : 0.55 }} />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
             </RevealFx>
           </div>
@@ -666,13 +689,11 @@ export function TeamShell({
                 {historyRows.length === 0 ? (
                   <p className="py-10 text-center text-sm text-[var(--paper-muted)] italic" style={SERIF}>No season data recorded.</p>
                 ) : (
-                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="min-w-[560px] w-full table-fixed">
+                  <div className="border border-[var(--paper-rule)] overflow-x-auto overflow-y-auto max-h-[500px]" style={{ borderRadius: TABLET_RADIUS }}>
+                    <table className="min-w-[380px] w-full table-fixed">
                       <colgroup>
                         <col style={{ width: '120px' }} />
                         <col style={{ width: 'auto' }} />
-                        <col style={{ width: '80px' }} />
-                        <col style={{ width: '80px' }} />
                         <col style={{ width: '100px' }} />
                         <col style={{ width: '100px' }} />
                         <col style={{ width: '110px' }} />
@@ -681,8 +702,6 @@ export function TeamShell({
                         <tr>
                           <SortTh col="season"  label="Season"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
                           <th className={th}>Team</th>
-                          <SortTh col="pf"      label="PF"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pf" right />
-                          <SortTh col="pa"      label="PA"      sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="pa" right />
                           <SortTh col="diff"    label="Diff"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="diff" right />
                           <SortTh col="conf"    label="Conf"    sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="conf" right />
                           <SortTh col="overall" label="Result"  sortCol={sortCol} sortDir={sortDir} onSort={handleSort} glossaryId="overall" right />
@@ -705,8 +724,6 @@ export function TeamShell({
                                   <span className="truncate text-[var(--paper-text)]" style={SERIF}>{cleanName}</span>
                                 </div>
                               </td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pf ?? '—'}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-muted)]')} style={MONO}>{row.pa ?? '—'}</td>
                               <td className={cn(td, 'text-right font-semibold')}
                                 style={{ ...MONO, color: row.diff == null ? 'var(--paper-muted)' : row.diff >= 0 ? '#15803d' : '#b91c1c' }}>
                                 {row.diff == null ? '—' : row.diff >= 0 ? `+${row.diff}` : String(row.diff)}
@@ -734,7 +751,7 @@ export function TeamShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.schedule = el }}>
                 <SectionHead
                   title={activeSeason !== null ? `${fmtSeason(activeSeason)} Schedule` : 'Schedule'}
-                  blurb={`Game-by-game results${activeSeason !== null ? ` · ${fmtSeason(activeSeason)} season` : ' · all seasons'}`}
+                  blurb="Game-by-game results"
                   meta={metaCount(filteredGames.length, seasonGames.length, 'game')}
                 />
                 {filteredGames.length === 0 ? (
@@ -742,13 +759,11 @@ export function TeamShell({
                     No game data recorded.
                   </p>
                 ) : (
-                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm table-fixed">
+                  <div className="border border-[var(--paper-rule)] overflow-x-auto overflow-y-auto max-h-[500px]" style={{ borderRadius: TABLET_RADIUS }}>
+                    <table className="w-full text-sm table-fixed min-w-[380px]">
                       <colgroup>
                         <col style={{ width: '120px' }} />
                         <col style={{ width: 'auto' }} />
-                        <col style={{ width: '80px' }} />
-                        <col style={{ width: '80px' }} />
                         <col style={{ width: '100px' }} />
                         <col style={{ width: '100px' }} />
                         <col style={{ width: '110px' }} />
@@ -757,8 +772,6 @@ export function TeamShell({
                         <tr>
                           <SortTh col="season"   label="Season"   sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} />
                           <SortTh col="opponent" label="Opponent" sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} />
-                          <SortTh col="pf"       label="PF"       sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="pf"   right />
-                          <SortTh col="pa"       label="PA"       sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="pa"   right />
                           <SortTh col="diff"     label="Diff"     sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="diff" right />
                           <SortTh col="opp_pct"  label="Opp %"    sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="opp-rank" right className="hidden sm:table-cell" />
                           <SortTh col="result"   label="Result"   sortCol={schedSortCol} sortDir={schedSortDir} onSort={handleSchedSort} glossaryId="overall" right />
@@ -798,8 +811,6 @@ export function TeamShell({
                                   </Link>
                                 </div>
                               </td>
-                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{myScore ?? '—'}</td>
-                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{opScore ?? '—'}</td>
                               <td className={cn(td, 'text-right tabular-nums font-semibold')} style={{ ...MONO, color: diff == null || diff === 0 ? 'var(--paper-muted)' : diff > 0 ? '#15803d' : '#b91c1c' }}>
                                 {diff == null ? '—' : diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : '0'}
                               </td>
@@ -831,7 +842,7 @@ export function TeamShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current['player-logs'] = el }}>
                 <SectionHead
                   title="Player Logs"
-                  blurb="Individual game stat lines — search by opponent or player name"
+                  blurb="Individual game stat lines"
                   meta={metaCount(matchedPlayerLogs.length, typedLogs.length, 'log')}
                 />
                 {matchedPlayerLogs.length === 0 ? (
@@ -839,82 +850,102 @@ export function TeamShell({
                     {q ? `No player logs match "${query}".` : 'No player game data recorded.'}
                   </p>
                 ) : (
-                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm table-fixed">
-                      <colgroup>
-                        <col style={{ width: '100px' }} className="hidden sm:table-column" />
-                        <col style={{ width: '180px' }} />
-                        <col style={{ width: '100px' }} className="hidden sm:table-column" />
-                        <col style={{ width: 'auto' }} />
-                        <col style={{ width: '110px' }} className="hidden md:table-column" />
-                        <col style={{ width: '130px' }} />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <SortTh col="season"   label="Season"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
-                          <SortTh col="player"   label="Player"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
-                          <SortTh col="week"     label="Week"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
-                          <SortTh col="opponent" label="Opponent" sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
-                          <SortTh col="type"     label="Type"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden md:table-cell" />
-                          <SortTh col="stat"     label="Stat"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} right />
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sortedPlayerLogs.map((log, i) => {
-                          // Perspective = player's own school, not the page team
-                          const playerTeamSlug = `${log.school_slug}-varsity-football`
-                          const playerIsHome = log.home_team_slug === playerTeamSlug
-                          const opName = ((playerIsHome ? log.away_team_name : log.home_team_name) ?? '')
-                            .replace(/\s+Varsity\s+Football$/i, '')
-                            .replace(/-varsity-football$/, '')
-                          const opSlug = playerIsHome ? log.away_team_slug : log.home_team_slug
-                          const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
-                          const opLogo = SCHOOL_LOGOS[opSchoolSlug]
-                          const playerLogo = SCHOOL_LOGOS[log.school_slug]
-                          const stat = topGameStat(log)
-                          return (
-                            <tr key={`${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`}
-                              className="hover:bg-[var(--paper-quiet)] transition-colors">
-                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
-                                {log.season != null ? fmtSeason(log.season) : '—'}
-                              </td>
-                              <td className={td}>
-                                <div className="flex items-center gap-2 min-w-0">
-                                  {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
-                                  <Link href={`/player/${log.player_slug}`}
-                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
-                                    style={SERIF}>
-                                    {log.player_name}
-                                  </Link>
-                                </div>
-                              </td>
-                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums whitespace-nowrap hidden sm:table-cell')} style={MONO}>
-                                {gameWeekMap[log.game_id] != null ? `Week ${gameWeekMap[log.game_id]}` : fmtFullDate(log.game_date)}
-                              </td>
-                              <td className={td}>
-                                <div className="flex items-center gap-2 min-w-0">
-                                  <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{playerIsHome ? 'vs' : 'at'}</span>
-                                  {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
-                                  <Link href={`/game/${log.game_id}`}
-                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
-                                    style={SERIF}>
-                                    {opName}
-                                  </Link>
-                                </div>
-                              </td>
-                              <td className={cn(td, 'text-[var(--paper-muted)] hidden md:table-cell')}>
-                                {log.stat_type ?? '—'}
-                              </td>
-                              <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
-                                {stat.value}
-                                <span className="ml-1.5 text-[11px] font-normal text-[var(--paper-muted)]">{stat.label}</span>
-                              </td>
-                            </tr>
-                          )
-                        })}
-                      </tbody>
-                    </table>
-                  </div>
+                  <>
+                    {(['Passing', 'Rushing', 'Receiving', 'Defense', 'Kicking'] as const).map(statType => {
+                      const rows = sortedPlayerLogs.filter(l => l.stat_type === statType)
+                      if (rows.length === 0) return null
+                      const subId = `player-logs-${statType.toLowerCase()}`
+                      return (
+                        <div key={statType} id={subId} className="mb-10 scroll-mt-24">
+                          <h3 className="mb-4 text-[18px] text-[var(--paper-text)]"
+                            style={{ ...SERIF, fontStyle: 'italic', fontWeight: 400 }}>
+                            {statType}
+                          </h3>
+                          <div className="border border-[var(--paper-rule)] overflow-x-auto overflow-y-auto max-h-[500px]" style={{ borderRadius: TABLET_RADIUS }}>
+                            <table className="w-full text-sm min-w-[600px]">
+                              <colgroup>
+                                <col className="hidden sm:table-column" style={{ width: '90px' }} />
+                                <col style={{ width: '190px' }} />
+                                <col />
+                                <col className="hidden sm:table-column" style={{ width: '90px' }} />
+                                <col style={{ width: '110px' }} />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <SortTh col="season"   label="Season"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
+                                  <SortTh col="player"   label="Player"   sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
+                                  <SortTh col="opponent" label="Opponent" sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} />
+                                  <SortTh col="week"     label="Week"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} className="hidden sm:table-cell" />
+                                  <SortTh col="stat"     label="Stat"     sortCol={logSortCol} sortDir={logSortDir} onSort={handleLogSort} right />
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {rows.flatMap((log, i) => {
+                                  const playerTeamSlug = `${log.school_slug}-varsity-football`
+                                  const playerIsHome = log.home_team_slug === playerTeamSlug
+                                  const opName = ((playerIsHome ? log.away_team_name : log.home_team_name) ?? '')
+                                    .replace(/\s+Varsity\s+Football$/i, '')
+                                    .replace(/-varsity-football$/, '')
+                                  const opSlug = playerIsHome ? log.away_team_slug : log.home_team_slug
+                                  const opSchoolSlug = opSlug.replace(/-varsity-football$/, '')
+                                  const opLogo = SCHOOL_LOGOS[opSchoolSlug]
+                                  const playerLogo = SCHOOL_LOGOS[log.school_slug]
+
+                                  const makeRow = (statLabel: string, statValue: string, key: string) => (
+                                    <tr key={key} className="hover:bg-[var(--paper-quiet)] transition-colors">
+                                      <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
+                                        {log.season != null ? fmtSeason(log.season) : '—'}
+                                      </td>
+                                      <td className={td}>
+                                        <div className="flex items-center gap-2 min-w-0">
+                                          {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          <Link href={`/player/${log.player_slug}`}
+                                            className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                            style={SERIF}>
+                                            {log.player_name}
+                                          </Link>
+                                        </div>
+                                      </td>
+                                      <td className={td}>
+                                        <div className="flex items-center gap-2 min-w-0">
+                                          <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{playerIsHome ? 'vs' : 'at'}</span>
+                                          {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          <Link href={`/game/${log.game_id}`}
+                                            className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                            style={SERIF}>
+                                            {opName}
+                                          </Link>
+                                        </div>
+                                      </td>
+                                      <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums whitespace-nowrap hidden sm:table-cell')} style={MONO}>
+                                        {gameWeekMap[log.game_id] != null ? `Week ${gameWeekMap[log.game_id]}` : '—'}
+                                      </td>
+                                      <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                                        {statValue}
+                                        <span className="ml-1.5 text-[11px] font-normal text-[var(--paper-muted)]">{statLabel}</span>
+                                      </td>
+                                    </tr>
+                                  )
+
+                                  if (statType === 'Defense') {
+                                    const defStats = [
+                                      log.def_int     ? { label: 'INT', value: String(log.def_int) }     : null,
+                                      log.def_sacks   ? { label: 'SCK', value: String(log.def_sacks) }   : null,
+                                      log.def_fumbles ? { label: 'FR',  value: String(log.def_fumbles) } : null,
+                                    ].filter((x): x is { label: string; value: string } => x !== null)
+                                    if (defStats.length === 0) return []
+                                    return defStats.map(ds => makeRow(ds.label, ds.value, `${log.game_id}-${log.player_slug}-${ds.label}`))
+                                  }
+                                  const stat = topGameStat(log)
+                                  return [makeRow(stat.label, stat.value, `${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`)]
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </>
                 )}
               </section>
               </RevealFx>
@@ -935,68 +966,75 @@ export function TeamShell({
                     {q ? `No players match "${query}".` : 'No player data recorded.'}
                   </p>
                 ) : (
-                  <div className="border border-[var(--paper-rule)] overflow-x-auto" style={{ borderRadius: TABLET_RADIUS }}>
-                    <table className="w-full text-sm table-fixed">
-                      <colgroup>
-                        <col style={{ width: 'auto' }} />
-                        <col style={{ width: '110px' }} className="hidden sm:table-column" />
-                        <col style={{ width: '120px' }} className="hidden md:table-column" />
-                        <col style={{ width: '110px' }} />
-                        <col style={{ width: '90px' }} className="hidden sm:table-column" />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <SortTh col="player" label="Player" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} />
-                          <SortTh col="season" label="Season" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} className="hidden sm:table-cell" />
-                          <SortTh col="type"   label="Type"   sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} className="hidden md:table-cell" />
-                          <SortTh col="yards"  label="Yards"  sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right />
-                          <SortTh col="tds"    label="TDs"    sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right className="hidden sm:table-cell" />
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sortedPlayers.map((p, i) => {
-                          const playerSlug = p.player_slug as string
-                          const statType   = p.stat_type as string
-                          const playerLogo = SCHOOL_LOGOS[schoolSlug]
-                          const yds = statType === 'Passing'   ? p.pass_yards as number | null
-                                    : statType === 'Rushing'   ? p.rush_yards as number | null
-                                    : statType === 'Receiving' ? p.recv_yards as number | null
-                                    : null
-                          const tds = statType === 'Passing'   ? p.pass_tds as number | null
-                                    : statType === 'Rushing'   ? p.rush_tds as number | null
-                                    : statType === 'Receiving' ? p.recv_tds as number | null
-                                    : null
-                          return (
-                            <tr key={`${playerSlug}-${statType}-${i}`}
-                              className="hover:bg-[var(--paper-quiet)] transition-colors">
-                              <td className={td}>
-                                <div className="flex items-center gap-2 min-w-0">
-                                  {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
-                                  <Link href={`/player/${playerSlug}`}
-                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
-                                    style={SERIF}>
-                                    {p.player_name as string}
-                                  </Link>
-                                </div>
-                              </td>
-                              <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
-                                {p.season != null ? fmtSeason(p.season as number) : '—'}
-                              </td>
-                              <td className={cn(td, 'text-[var(--paper-muted)] hidden md:table-cell')}>
-                                {statType}
-                              </td>
-                              <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
-                                {yds != null ? yds.toLocaleString() : '—'}
-                              </td>
-                              <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)] hidden sm:table-cell')} style={MONO}>
-                                {tds != null ? String(tds) : '—'}
-                              </td>
-                            </tr>
-                          )
-                        })}
-                      </tbody>
-                    </table>
-                  </div>
+                  <>
+                    {(['Passing', 'Rushing', 'Receiving'] as const).map(statType => {
+                      const rows = sortedPlayers.filter(p => p.stat_type === statType)
+                      if (rows.length === 0) return null
+                      const subId = `players-${statType.toLowerCase()}`
+                      return (
+                        <div key={statType} id={subId} className="mb-10 scroll-mt-24">
+                          <h3 className="mb-4 text-[18px] text-[var(--paper-text)]"
+                            style={{ ...SERIF, fontStyle: 'italic', fontWeight: 400 }}>
+                            {statType}
+                          </h3>
+                          <div className="border border-[var(--paper-rule)] overflow-x-auto overflow-y-auto max-h-[500px]" style={{ borderRadius: TABLET_RADIUS }}>
+                            <table className="w-full text-sm min-w-[400px]">
+                              <colgroup>
+                                <col className="hidden sm:table-column" style={{ width: '90px' }} />
+                                <col />
+                                <col style={{ width: '100px' }} />
+                                <col className="hidden sm:table-column" style={{ width: '80px' }} />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <SortTh col="season" label="Season" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} className="hidden sm:table-cell" />
+                                  <SortTh col="player" label="Player" sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} />
+                                  <SortTh col="yards"  label="Yards"  sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right />
+                                  <SortTh col="tds"    label="TDs"    sortCol={plyrSortCol} sortDir={plyrSortDir} onSort={handlePlyrSort} right className="hidden sm:table-cell" />
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {rows.map((p, i) => {
+                                  const playerSlug = p.player_slug as string
+                                  const playerLogo = SCHOOL_LOGOS[schoolSlug]
+                                  const yds = statType === 'Passing'   ? p.pass_yards as number | null
+                                            : statType === 'Rushing'   ? p.rush_yards as number | null
+                                            : p.recv_yards as number | null
+                                  const tds = statType === 'Passing'   ? p.pass_tds as number | null
+                                            : statType === 'Rushing'   ? p.rush_tds as number | null
+                                            : p.recv_tds as number | null
+                                  return (
+                                    <tr key={`${playerSlug}-${statType}-${i}`}
+                                      className="hover:bg-[var(--paper-quiet)] transition-colors">
+                                      <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
+                                        {p.season != null ? fmtSeason(p.season as number) : '—'}
+                                      </td>
+                                      <td className={td}>
+                                        <div className="flex items-center gap-2 min-w-0">
+                                          {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          <Link href={`/player/${playerSlug}`}
+                                            className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                            style={SERIF}>
+                                            {p.player_name as string}
+                                          </Link>
+                                        </div>
+                                      </td>
+                                      <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                                        {yds != null ? yds.toLocaleString() : '—'}
+                                      </td>
+                                      <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)] hidden sm:table-cell')} style={MONO}>
+                                        {tds != null ? String(tds) : '—'}
+                                      </td>
+                                    </tr>
+                                  )
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </>
                 )}
               </section>
               </RevealFx>
@@ -1010,39 +1048,54 @@ export function TeamShell({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={teamName} />
-      <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players">
+      <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" searchable onSearchChange={q => setRosterQuery(q)}>
         {(() => {
           const teamLogo = SCHOOL_LOGOS[schoolSlug]
+          const rq = rosterQuery.trim().toLowerCase()
           const seasons = [...new Set((rosterRows as Record<string, unknown>[]).map(r => Number(r.season)))].sort((a, b) => b - a)
           if (seasons.length === 0) return (
-            <div className="flex items-center justify-center h-32 text-sm text-[var(--muted)]">No roster data</div>
+            <div className="flex items-center justify-center h-32 text-sm text-[var(--paper-muted)] italic" style={SERIF}>No roster data</div>
           )
           return (
-            <div className="pb-4">
+            <div className="pb-6" style={PAPER_BRIDGE}>
               {seasons.map(season => {
-                const players = (rosterRows as Record<string, unknown>[]).filter(r => Number(r.season) === season)
+                const players = (rosterRows as Record<string, unknown>[])
+                  .filter(r => Number(r.season) === season)
+                  .filter(p => !rq ||
+                    (p.player_name as string).toLowerCase().includes(rq) ||
+                    (p.position as string ?? '').toLowerCase().includes(rq) ||
+                    (p.class as string ?? '').toLowerCase().includes(rq) ||
+                    String(p.jersey_number ?? '').includes(rq)
+                  )
                 if (players.length === 0) return null
                 return (
                   <div key={season}>
-                    <div className="px-4 pt-5 pb-1.5">
-                      <span className="text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)]">{fmtSeason(season)}</span>
+                    <div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
+                      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]">{fmtSeason(season)}</span>
                     </div>
-                    <div className="divide-y divide-[var(--border)]">
+                    <div className="divide-y divide-[var(--paper-rule)]">
                       {players.map((p, i) => {
-                        const photo = PLAYER_PHOTOS[p.player_slug as string]
-                        const img = photo ?? (teamLogo ?? null)
+                        const img = teamLogo ?? null
                         const slug = p.player_slug as string
+                        const jerseyNum = p.jersey_number != null ? `#${p.jersey_number}` : null
+                        const meta = [p.position ?? null, p.class ?? null].filter(Boolean).join(' · ')
                         return (
                           <Link key={i} href={`/player/${slug}`}
-                            className="flex items-center gap-3 px-4 py-3 hover:bg-[var(--inp-bg)] transition-colors">
+                            className="group flex items-center gap-3 px-5 py-3 hover:bg-[var(--paper-quiet)] transition-colors">
                             {img
-                              ? <Image src={img} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
-                              : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
+                              ? <Image src={img} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain bg-white border border-[var(--paper-rule)]" unoptimized />
+                              : <div className="shrink-0 h-7 w-7 rounded-full border border-[var(--paper-rule)]" />}
                             <div className="flex-1 min-w-0">
-                              <span className="text-sm font-semibold truncate block hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name as string}</span>
-                              <p className="text-xs text-[var(--muted)] truncate">
-                                {[p.jersey_number != null ? `#${p.jersey_number}` : null, p.position ?? null, p.class ?? null].filter(Boolean).join(' · ')}
-                              </p>
+                              <span className="text-[13px] text-[var(--paper-text)] group-hover:text-[var(--paper-strong)] transition-colors block truncate" style={SERIF}>
+                                {p.player_name as string}
+                              </span>
+                              {(jerseyNum || meta) && (
+                                <p className="text-[11px] text-[var(--paper-muted)] truncate mt-0.5">
+                                  <span style={MONO}>{jerseyNum}</span>
+                                  {jerseyNum && meta ? <span className="opacity-40 mx-1">·</span> : null}
+                                  {meta}
+                                </p>
+                              )}
                             </div>
                           </Link>
                         )

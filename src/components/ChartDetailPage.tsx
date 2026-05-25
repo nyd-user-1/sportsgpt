@@ -581,7 +581,7 @@ export function ChartDetailPage({
           )}
 
           {/* ── Chart — matted hero frame ────────────────────────── */}
-          <div className={isPanel ? 'px-5 mb-8' : 'mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12'}>
+          <div className={isPanel ? 'px-5 mt-8 mb-8' : 'mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12'}>
             <RevealFx delay={0.1} translateY={8}>
               <div
                 className="border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
@@ -646,14 +646,16 @@ export function ChartDetailPage({
             <main className="min-w-0">
               <RevealFx delay={0.3} translateY={8}>
                 <section id="rankings">
-                  <SectionHead
-                    title={
-                      divisionFilter
-                        ? `Division ${divisionFilter}`
-                        : config.valueLabel ?? 'Rankings'
-                    }
-                    blurb={config.description}
-                  />
+                  {!isPanel && (
+                    <SectionHead
+                      title={
+                        divisionFilter
+                          ? `Division ${divisionFilter}`
+                          : config.valueLabel ?? 'Rankings'
+                      }
+                      blurb={config.description}
+                    />
+                  )}
 
                   {/* Standard bar/area charts → editorial PlayerRankedList */}
                   {config.chartType !== 'scatter' && !config.series ? (
