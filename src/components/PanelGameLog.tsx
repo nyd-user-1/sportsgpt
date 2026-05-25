@@ -1,0 +1,286 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { AppPanel } from '@/components/AppPanel'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
+
+// ── Style constants ───────────────────────────────────────────────────────────
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
+const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+
+// ── Types ─────────────────────────────────────────────────────────────────────
+
+type PlayerStat = {
+  player_name: string; player_slug: string | null; school_slug: string; team_name: string; stat_type: string
+  rush_att: number | null; rush_yds: number | null; rush_tds: number | null
+  pass_comp: number | null; pass_att: number | null; pass_yds: number | null; pass_tds: number | null; pass_int: number | null
+  rec_rec: number | null; rec_yds: number | null; rec_tds: number | null
+}
+
+type GameSummary = {
+  game: {
+    id: number; season: number; game_number: number | null; game_date: string | null
+    home_team_slug: string; away_team_slug: string
+    home_score: number | null; away_score: number | null
+    home_name: string; home_school: string; away_name: string; away_school: string
+  } | null
+  quarterScores: Record<string, unknown> | null
+  playerStats: PlayerStat[]
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function fmtDate(raw: string | null): string | null {
+  if (!raw) return null
+  const d = new Date(raw)
+  if (isNaN(d.getTime())) return null
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' })
+}
+
+function stripVarsity(name: string): string {
+  return name.replace(/\s+Varsity Football$/i, '')
+}
+
+// ── Shared sub-components ─────────────────────────────────────────────────────
+
+function SchoolLogo({ slug, size = 28 }: { slug: string; size?: number }) {
+  const src = SCHOOL_LOGOS[slug]
+  if (!src) {
+    return (
+      <div style={{ width: size, height: size }}
+        className="rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />
+    )
+  }
+  return (
+    <div style={{ width: size, height: size }}
+      className="shrink-0 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
+      <Image src={src} alt="" width={Math.round(size * 0.78)} height={Math.round(size * 0.78)}
+        className="object-contain" unoptimized />
+    </div>
+  )
+}
+
+function SectionHeader({ label }: { label: string }) {
+  return (
+    <div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
+      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+        {label}
+      </span>
+    </div>
+  )
+}
+
+type StatRowData = { name: string; slug: string | null; school: string; value: string; unit: string; meta: string }
+
+function StatRows({ rows }: { rows: StatRowData[] }) {
+  return (
+    <ol className="flex flex-col">
+      {rows.map((r, i) => {
+        const Row = (
+          <div className="group/row flex items-center gap-3 px-5 py-3 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]">
+            <span className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right" style={{ ...MONO, fontSize: 11 }}>
+              {i + 1}.
+            </span>
+            <SchoolLogo slug={r.school} size={26} />
+            <div className="flex-1 min-w-0">
+              <p className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
+                style={{ ...SERIF, fontSize: 15, fontWeight: 500 }}>
+                {r.name}
+              </p>
+              <p className="mt-0.5 text-[12px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>
+                {r.meta}
+              </p>
+            </div>
+            <div className="shrink-0 flex items-baseline gap-1">
+              <span className="text-[13.5px] tabular-nums text-[var(--paper-text)] font-medium" style={MONO}>{r.value}</span>
+              <span className="text-[10px] text-[var(--paper-muted)]" style={SANS}>{r.unit}</span>
+            </div>
+          </div>
+        )
+        return (
+          <li key={i} className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}>
+            {r.slug ? <Link href={`/player/${r.slug}`}>{Row}</Link> : Row}
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// ── Game content (exported for reuse in PanelSchedule / PanelSeason) ──────────
+
+export function GameContent({ gameId }: { gameId: number }) {
+  const [data, setData] = useState<GameSummary | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(true)
+    setData(null)
+    fetch(`/api/game/${gameId}/summary`)
+      .then(r => r.json())
+      .then(d => { setData(d); setLoading(false) })
+      .catch(() => setLoading(false))
+  }, [gameId])
+
+  if (loading) return (
+    <div className="px-5 py-6 space-y-3">
+      <div className="h-20 bg-[var(--paper-quiet)] animate-pulse rounded" />
+      <div className="h-32 bg-[var(--paper-quiet)] animate-pulse rounded" />
+      <div className="h-32 bg-[var(--paper-quiet)] animate-pulse rounded" />
+    </div>
+  )
+
+  if (!data?.game) return (
+    <p className="px-5 py-10 text-center text-sm text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+      Game data not available.
+    </p>
+  )
+
+  const { game, playerStats } = data
+  const homeWon = (game.home_score ?? 0) > (game.away_score ?? 0)
+
+  const qs = data.quarterScores as Record<string, { q1?: number; q2?: number; q3?: number; q4?: number; ot1?: number }[]> | null
+  const homeRow = qs?.home?.[0]
+  const awayRow = qs?.away?.[0]
+
+  const rushers   = playerStats.filter(p => p.stat_type === 'Rushing'   && (p.rush_yds ?? 0) > 0)
+    .sort((a, b) => (b.rush_yds ?? 0) - (a.rush_yds ?? 0)).slice(0, 4)
+  const passers   = playerStats.filter(p => p.stat_type === 'Passing'   && (p.pass_yds ?? 0) > 0)
+    .sort((a, b) => (b.pass_yds ?? 0) - (a.pass_yds ?? 0)).slice(0, 3)
+  const receivers = playerStats.filter(p => p.stat_type === 'Receiving' && (p.rec_yds ?? 0) > 0)
+    .sort((a, b) => (b.rec_yds ?? 0) - (a.rec_yds ?? 0)).slice(0, 4)
+
+  return (
+    <div className="pb-6">
+      {/* Final score — editorial split */}
+      <div className="px-5 pt-6">
+        <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)] mb-3" style={SANS}>
+          Final · Week {game.game_number ?? '?'}{game.game_date ? ` · ${fmtDate(game.game_date)}` : ''}
+        </p>
+        <div className="flex flex-col">
+          {[
+            { name: game.away_name, school: game.away_school, score: game.away_score, row: awayRow, won: !homeWon },
+            { name: game.home_name, school: game.home_school, score: game.home_score, row: homeRow, won: homeWon },
+          ].map((t, idx) => (
+            <div key={t.school}
+              className={`flex items-center gap-3 py-3 ${idx === 0 ? '' : 'border-t border-[var(--paper-rule-soft)]'}`}>
+              <SchoolLogo slug={t.school} size={32} />
+              <div className="flex-1 min-w-0">
+                <p className={`truncate ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
+                  style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}>
+                  {stripVarsity(t.name)}
+                </p>
+                {(homeRow || awayRow) && (
+                  <div className="mt-1 flex gap-3 text-[11px] tabular-nums text-[var(--paper-muted)]" style={MONO}>
+                    {[t.row?.q1, t.row?.q2, t.row?.q3, t.row?.q4].map((q, i) => (
+                      <span key={i}>{q ?? 0}</span>
+                    ))}
+                    {t.row?.ot1 != null && t.row.ot1 > 0 && <span>{t.row.ot1}</span>}
+                  </div>
+                )}
+              </div>
+              <span className={`text-[22px] font-medium tabular-nums shrink-0 ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
+                style={MONO}>
+                {t.score ?? '—'}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Stat sections */}
+      {passers.length > 0 && (
+        <>
+          <SectionHeader label="Passing" />
+          <StatRows rows={passers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.pass_yds ?? 0), unit: 'yds',
+            meta: `${p.pass_comp ?? 0}/${p.pass_att ?? 0}${p.pass_tds ? ` · ${p.pass_tds} TD` : ''}`,
+          }))} />
+        </>
+      )}
+      {rushers.length > 0 && (
+        <>
+          <SectionHeader label="Rushing" />
+          <StatRows rows={rushers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.rush_yds ?? 0), unit: 'yds',
+            meta: `${p.rush_att ?? 0} att${p.rush_tds ? ` · ${p.rush_tds} TD` : ''}`,
+          }))} />
+        </>
+      )}
+      {receivers.length > 0 && (
+        <>
+          <SectionHeader label="Receiving" />
+          <StatRows rows={receivers.map(p => ({
+            name: p.player_name, slug: p.player_slug, school: p.school_slug,
+            value: String(p.rec_yds ?? 0), unit: 'yds',
+            meta: `${p.rec_rec ?? 0} rec${p.rec_tds ? ` · ${p.rec_tds} TD` : ''}`,
+          }))} />
+        </>
+      )}
+
+      {/* Full page link */}
+      <div className="px-5 mt-8 pt-6 border-t border-[var(--paper-rule)]">
+        <Link
+          href={`/game/${gameId}`}
+          className="group/link inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
+          style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>
+          View full game page
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+// ── Main export ───────────────────────────────────────────────────────────────
+
+export function PanelGameLog({
+  open,
+  onClose,
+  gameId,
+  title = 'Game Log',
+  onBack,
+}: {
+  open: boolean
+  onClose: () => void
+  gameId: number | null
+  /** Panel header title — e.g. "vs Ward Melville". Defaults to "Game Log". */
+  title?: string
+  /** When provided, shows a back arrow before the title. */
+  onBack?: () => void
+}) {
+  const panelTitle = (
+    <div className="flex items-center gap-2 min-w-0">
+      {onBack && (
+        <button
+          onClick={onBack}
+          className="shrink-0 p-1 rounded-lg text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
+          aria-label="Back"
+        >
+          <ArrowLeft className="h-4 w-4" />
+        </button>
+      )}
+      <span className="truncate" style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}>
+        {title}
+      </span>
+    </div>
+  )
+
+  return (
+    <AppPanel
+      open={open}
+      onClose={onClose}
+      title={panelTitle}
+      detailHref={gameId != null ? `/game/${gameId}` : undefined}
+    >
+      {gameId != null && <GameContent gameId={gameId} />}
+    </AppPanel>
+  )
+}

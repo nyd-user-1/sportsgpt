@@ -100,7 +100,7 @@ export function AppPanel({
                 {detailHref && (
                   <Link
                     href={detailHref}
-                    className="shrink-0 p-1.5 rounded-lg text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
+                    className="shrink-0 p-1.5 rounded-lg text-[var(--paper-faint)] hover:text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
                     aria-label="Open detail page"
                   >
                     <ArrowUpRight className="h-4 w-4" />

@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useMemo, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import {
   ResponsiveContainer, AreaChart, Area, BarChart, Bar,
@@ -379,7 +378,7 @@ export function ChartDetailPage({
                       row.logoUrl && <img src={row.logoUrl} alt="" width={22} height={22} className="rounded-full object-cover shrink-0" />
                     )}
                     <span className="flex flex-col min-w-0">
-                      <Link href={rowLinks[row.name]} onClick={e => e.stopPropagation()} className="text-sm truncate transition-colors text-[var(--txt)] group-hover/row:text-[var(--paper-strong)] hover:underline" style={SERIF}>{row.name}</Link>
+                      <span className="text-sm truncate transition-colors text-[var(--txt)] group-hover/row:text-[var(--paper-strong)]" style={SERIF}>{row.name}</span>
                       {row.subtitle && <span className="text-[11px] text-[var(--muted)] truncate">{row.subtitle}</span>}
                     </span>
                     {delta > 0 && <span className="text-[11px] font-semibold text-emerald-500 shrink-0">↑{delta}</span>}
@@ -676,8 +675,18 @@ export function ChartDetailPage({
                           secondary: row.winPct !== undefined
                             ? `${row.winPct.toFixed(1)}% WIN`
                             : undefined,
-                          href:      rowLinks?.[row.name]
-                            ?? (playerSlug ? `/player/${playerSlug}` : undefined),
+                          href:      (() => {
+                            if (pathname.startsWith('/charts/')) {
+                              const chartSlug = pathname.split('/').filter(Boolean)[1]
+                              if (chartSlug) {
+                                const teamLink = rowLinks?.[row.name]
+                                if (teamLink?.startsWith('/team/')) return `/charts/${chartSlug}/team/${teamLink.replace('/team/', '')}`
+                                if (playerSlug) return `/charts/${chartSlug}/${playerSlug}`
+                              }
+                            }
+                            const teamLink = rowLinks?.[row.name]
+                            return teamLink ?? (playerSlug ? `/player/${playerSlug}` : undefined)
+                          })(),
                         }
                       })}
                       emptyLabel={q ? `No results for "${query}".` : 'No data recorded.'}
