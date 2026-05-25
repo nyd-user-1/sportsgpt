@@ -505,6 +505,7 @@ export function TeamShell({
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PF</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PA</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Result</th>
+                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Diff</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -552,7 +553,9 @@ export function TeamShell({
                                 {g.id ? (
                                   <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline">{scoreStr}</Link>
                                 ) : scoreStr}
-                                {diff !== null && <span className="ml-1 text-[11px] opacity-60">{diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : ''}</span>}
+                              </td>
+                              <td className={cn(td, 'text-right tabular-nums font-semibold')} style={{ ...MONO, color: diff == null || diff === 0 ? 'var(--paper-muted)' : diff > 0 ? '#15803d' : '#b91c1c' }}>
+                                {diff == null ? '—' : diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : '0'}
                               </td>
                             </tr>
                           )
