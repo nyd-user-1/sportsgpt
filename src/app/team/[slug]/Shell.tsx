@@ -654,9 +654,9 @@ export function TeamShell({
                     const opDisplay = opName || opSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
                     return {
                       slug:       String(g.id),
-                      name:       opDisplay,
+                      name:       `${isHome ? 'vs' : 'at'} ${opDisplay}`,
                       schoolSlug: opSchoolSlug,
-                      school:     `${isHome ? 'vs' : 'at'} · ${fmtSeason(g.season)}`,
+                      school:     fmtSeason(g.season),
                       rank:       i + 1,
                       primary:    `${result} ${scoreStr}`,
                       secondary:  fmtGameDate(g.game_date) ?? undefined,
