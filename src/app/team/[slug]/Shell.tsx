@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import {
   ChevronLeft, ChevronRight, ChevronUp, ChevronDown,
   ChartSpline, Info, ArrowUpRight, ArrowLeft, ArrowRight, FileUser, MessageCircle,
@@ -145,7 +144,6 @@ export function TeamShell({
   allSeasonStats?: { team_slug: string; season: number; overall_wins: number; overall_losses: number }[]
   panelMode?: boolean
 }) {
-  const router = useRouter()
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [chatOpen,    setChatOpen]    = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
@@ -312,15 +310,6 @@ export function TeamShell({
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
             <EditorialHead
               size="xl"
-              leadingSlot={
-                <button
-                  onClick={() => router.back()}
-                  aria-label="Go back"
-                  className="shrink-0 flex items-center justify-center text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                </button>
-              }
               eyebrow={
                 <span className="inline-flex items-center gap-2">
                   <Link href="/section/section-xi" className="hover:text-[var(--paper-text)] transition-colors">Section XI</Link>
