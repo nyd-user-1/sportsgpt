@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, recordsCount, playerGameLogs] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, playerGameLogs, recordsCount] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT s.*,

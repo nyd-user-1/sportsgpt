@@ -666,6 +666,8 @@ export function ChartDetailPage({
                           slug:      playerSlug ?? schoolSlug ?? row.name,
                           name:      row.name.replace(/\s+Varsity\s+Football$/i, ''),
                           schoolSlug,
+                          // Pass the blob URL directly — avoids regex-based slug extraction from blob URLs
+                          logoUrl:   row.logoUrl || undefined,
                           school:    row.subtitle,
                           rank:      idx + 1,
                           primary:   fmtVal(row.value, config, config.periodToggle ? period : undefined),

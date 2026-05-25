@@ -12,6 +12,8 @@ export type RankedPlayer = {
   /** Italic subtitle. Hidden if absent. (Players pass school name; teams pass conference record.) */
   school?: string
   schoolSlug?: string
+  /** Pre-resolved logo/photo URL. When set, skips the SCHOOL_LOGOS/PLAYER_PHOTOS lookups. */
+  logoUrl?: string
   /** Explicit rank — pass `i + 1` for unfiltered top-N, or the precomputed rank for search-filtered views. */
   rank: number
   /** Primary stat string, e.g. "2,400 YDS". Rendered in mono accent. */
@@ -51,9 +53,9 @@ export function PlayerRankedList({
   return (
     <ol className="flex flex-col">
       {rows.map((p, i) => {
-        const photo = PLAYER_PHOTOS[p.slug]
-        const logo  = p.schoolSlug ? SCHOOL_LOGOS[p.schoolSlug] : undefined
-        // Prefer team logo; fall back to player photo when no logo available
+        // Pre-resolved URL wins; otherwise look up SCHOOL_LOGOS then fall back to player photo
+        const logo   = p.logoUrl ?? (p.schoolSlug ? SCHOOL_LOGOS[p.schoolSlug] : undefined)
+        const photo  = PLAYER_PHOTOS[p.slug]
         const avatar = logo ?? photo
         return (
           <li
