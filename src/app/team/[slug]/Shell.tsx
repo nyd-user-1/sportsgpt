@@ -109,6 +109,20 @@ function fmtGameDate(raw: string | null) {
 function fmtSeason(y: number) { return `${y}-${String(y + 1).slice(2)}` }
 
 /* ── Types ───────────────────────────────────────────────────────── */
+type PlayerGameLog = {
+  game_id: number; player_slug: string; player_name: string; school_slug: string
+  team_name: string | null; stat_type: string | null; season: number
+  rush_att: number | null; rush_yds: number | null; rush_tds: number | null
+  pass_comp: number | null; pass_att: number | null; pass_yds: number | null
+  pass_tds: number | null; pass_int: number | null
+  rec_rec: number | null; rec_yds: number | null; rec_tds: number | null
+  kick_pat: number | null; kick_fg: number | null; kick_points: number | null
+  def_int: number | null; def_sacks: number | null; def_fumbles: number | null
+  home_team_slug: string; away_team_slug: string
+  home_score: number | null; away_score: number | null; game_date: string | null
+  home_team_name: string | null; away_team_name: string | null
+}
+
 type GameRow = {
   id: number; game_date: string | null; season: number
   home_team_slug: string; away_team_slug: string
@@ -130,9 +144,26 @@ function MaybeLayout({ panelMode, mobileHeader, children }: {
 }
 
 /* ══════════════════════════════════════════════════════════════════ */
+function topGameStat(log: PlayerGameLog): { label: string; value: string } {
+  const s = log.stat_type ?? ''
+  if (s === 'Passing')   return { label: 'Pass Yds', value: log.pass_yds != null ? String(log.pass_yds) : '—' }
+  if (s === 'Rushing')   return { label: 'Rush Yds', value: log.rush_yds != null ? String(log.rush_yds) : '—' }
+  if (s === 'Receiving') return { label: 'Recv Yds', value: log.rec_yds  != null ? String(log.rec_yds)  : '—' }
+  if (s === 'Kicking')   return { label: 'Points',   value: log.kick_points != null ? String(log.kick_points) : '—' }
+  if (s === 'Defense') {
+    const parts = [
+      log.def_int    ? `${log.def_int} INT`   : '',
+      log.def_sacks  ? `${log.def_sacks} SCK` : '',
+      log.def_fumbles? `${log.def_fumbles} FR` : '',
+    ].filter(Boolean)
+    return { label: 'Defense', value: parts.join(' ') || '—' }
+  }
+  return { label: s || 'Stat', value: '—' }
+}
+
 export function TeamShell({
-  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows, allSeasonStats = [],
-  totalRecords = 0, panelMode = false,
+  team, prevSlug, nextSlug, seasonRows, divTeams, playerRows, rosterRows = [], gameRows,
+  allSeasonStats = [], totalRecords = 0, playerGameLogs = [], panelMode = false,
 }: {
   team: Record<string, unknown>
   prevSlug: string; nextSlug: string
@@ -143,6 +174,7 @@ export function TeamShell({
   gameRows: GameRow[]
   allSeasonStats?: { team_slug: string; season: number; overall_wins: number; overall_losses: number }[]
   totalRecords?: number
+  playerGameLogs?: Record<string, unknown>[]
   panelMode?: boolean
 }) {
   const [chartsOpen,  setChartsOpen]  = useState(false)
@@ -154,9 +186,9 @@ export function TeamShell({
   const [query,   setQuery]           = useState('')
   const [activeSection, setActiveSection] = useState<string>('seasons')
 
-  type TeamSectionId = 'seasons' | 'schedule' | 'games' | 'players' | 'standings'
+  type TeamSectionId = 'seasons' | 'schedule' | 'games' | 'player-logs' | 'players' | 'standings'
   const sectionRefs = useRef<Record<TeamSectionId, HTMLElement | null>>({
-    seasons: null, schedule: null, games: null, players: null, standings: null,
+    seasons: null, schedule: null, games: null, 'player-logs': null, players: null, standings: null,
   })
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
@@ -308,13 +340,35 @@ export function TeamShell({
     ? divTeams.filter(t => (t.name as string).toLowerCase().includes(q))
     : divTeams
 
+  /* ── Player game logs ────────────────────────────────────────── */
+  const typedLogs = playerGameLogs as unknown as PlayerGameLog[]
+  const gameOpponentMap = useMemo(() => {
+    const map: Record<number, string> = {}
+    typedLogs.forEach(log => {
+      if (map[log.game_id] != null) return
+      const isHome = log.home_team_slug === (team.slug as string)
+      map[log.game_id] = ((isHome ? log.away_team_name : log.home_team_name) ?? '').toLowerCase()
+    })
+    return map
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typedLogs])
+
+  const matchedPlayerLogs = q
+    ? typedLogs.filter(log =>
+        (gameOpponentMap[log.game_id] ?? '').includes(q) ||
+        log.player_name.toLowerCase().includes(q) ||
+        (log.team_name ?? '').toLowerCase().includes(q)
+      )
+    : typedLogs
+
   /* ── Section counts ──────────────────────────────────────────── */
   const sectionCounts = {
-    seasons:   historyRows.length,
-    schedule:  filteredGames.length,
-    games:     matchedGames.length,
-    players:   matchedPlayers.length,
-    standings: matchedStandings.length,
+    seasons:      historyRows.length,
+    schedule:     filteredGames.length,
+    games:        matchedGames.length,
+    'player-logs': matchedPlayerLogs.length,
+    players:      matchedPlayers.length,
+    standings:    matchedStandings.length,
   }
 
   function metaCount(count: number, total: number, noun: string): React.ReactNode {
@@ -326,16 +380,17 @@ export function TeamShell({
     )
   }
 
-  const totalVisible = sectionCounts.schedule + sectionCounts.games + sectionCounts.players + sectionCounts.standings
-  const totalRanked  = seasonGames.length + gameRows.length + playerRows.length + divTeams.length
+  const totalVisible = sectionCounts.schedule + sectionCounts.games + sectionCounts['player-logs'] + sectionCounts.players + sectionCounts.standings
+  const totalRanked  = seasonGames.length + gameRows.length + typedLogs.length + playerRows.length + divTeams.length
 
   /* ── ContentsNav items ───────────────────────────────────────── */
   const navItems = [
-    { id: 'seasons',   label: 'Seasons',   count: q ? 0 : sectionCounts.seasons },
-    { id: 'schedule',  label: 'Schedule',  count: sectionCounts.schedule },
-    { id: 'games',     label: 'Games',     count: sectionCounts.games },
-    { id: 'players',   label: 'Players',   count: sectionCounts.players },
-    { id: 'standings', label: 'Standings', count: sectionCounts.standings },
+    { id: 'seasons',     label: 'Seasons',     count: q ? 0 : sectionCounts.seasons },
+    { id: 'schedule',    label: 'Schedule',    count: sectionCounts.schedule },
+    { id: 'games',       label: 'Games',       count: sectionCounts.games },
+    { id: 'player-logs', label: 'Player Logs', count: sectionCounts['player-logs'] },
+    { id: 'players',     label: 'Players',     count: sectionCounts.players },
+    { id: 'standings',   label: 'Standings',   count: sectionCounts.standings },
   ]
 
   /* ── Mobile header ───────────────────────────────────────────── */
@@ -656,14 +711,47 @@ export function TeamShell({
                       slug:       String(g.id),
                       name:       `${isHome ? 'vs' : 'at'} ${opDisplay}`,
                       schoolSlug: opSchoolSlug,
-                      school:     fmtSeason(g.season),
+                      school:     `${fmtSeason(g.season)} · ${fmtGameDate(g.game_date) ?? ''}`,
                       rank:       i + 1,
                       primary:    `${result} ${scoreStr}`,
-                      secondary:  fmtGameDate(g.game_date) ?? undefined,
                       href:       `/game/${g.id}`,
                     }
                   })}
                   emptyLabel={q ? `No games match "${query}".` : 'No games recorded.'}
+                />
+              </section>
+              </RevealFx>
+              )}
+
+              {/* ── Player Logs ───────────────────────────────────── */}
+              {(!q || matchedPlayerLogs.length > 0) && (
+              <RevealFx delay={0.35} translateY={8}>
+              <section id="player-logs" className="mb-20 scroll-mt-24"
+                ref={(el: HTMLElement | null) => { sectionRefs.current['player-logs'] = el }}>
+                <SectionHead
+                  title="Player Logs"
+                  blurb="Individual game stat lines — search by opponent or player name"
+                  meta={metaCount(matchedPlayerLogs.length, typedLogs.length, 'log')}
+                />
+                <PlayerRankedList
+                  query={q}
+                  rows={matchedPlayerLogs.map((log, i) => {
+                    const isHome = log.home_team_slug === (team.slug as string)
+                    const opName = ((isHome ? log.away_team_name : log.home_team_name) ?? '')
+                      .replace(/\s+Varsity\s+Football$/i, '')
+                    const stat = topGameStat(log)
+                    return {
+                      slug:       `${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`,
+                      name:       log.player_name,
+                      schoolSlug: log.school_slug,
+                      school:     `${opName} · ${fmtSeason(log.season)} · ${fmtGameDate(log.game_date) ?? ''}`,
+                      rank:       i + 1,
+                      primary:    stat.value,
+                      secondary:  stat.label,
+                      href:       `/player/${log.player_slug}`,
+                    }
+                  })}
+                  emptyLabel={q ? `No player logs match "${query}".` : 'No player game data recorded.'}
                 />
               </section>
               </RevealFx>

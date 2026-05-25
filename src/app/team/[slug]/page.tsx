@@ -11,7 +11,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const team = teamRows[0]
   if (!team) notFound()
 
-  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, recordsCount] = await Promise.all([
+  const [allTeams, seasonRows, divTeams, playerRows, gameRows, rosterRows, allSeasonStats, recordsCount, playerGameLogs] = await Promise.all([
     sql`SELECT slug, name FROM teams ORDER BY name`,
     sql`
       SELECT s.*,
@@ -93,6 +93,25 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       ORDER BY season, overall_wins DESC`,
     sql`
       SELECT
+        pgs.game_id, pgs.player_slug, pgs.player_name, pgs.school_slug,
+        pgs.team_name, pgs.stat_type, pgs.season,
+        pgs.rush_att, pgs.rush_yds, pgs.rush_tds,
+        pgs.pass_comp, pgs.pass_att, pgs.pass_yds, pgs.pass_tds, pgs.pass_int,
+        pgs.rec_rec, pgs.rec_yds, pgs.rec_tds,
+        pgs.kick_pat, pgs.kick_fg, pgs.kick_points,
+        pgs.def_int, pgs.def_sacks, pgs.def_fumbles,
+        g.home_team_slug, g.away_team_slug,
+        g.home_score, g.away_score, g.game_date,
+        ht.name AS home_team_name,
+        at2.name AS away_team_name
+      FROM player_game_stats pgs
+      JOIN games g ON g.id = pgs.game_id
+      LEFT JOIN teams ht  ON ht.slug  = g.home_team_slug
+      LEFT JOIN teams at2 ON at2.slug = g.away_team_slug
+      WHERE g.home_team_slug = ${slug} OR g.away_team_slug = ${slug}
+      ORDER BY g.season DESC, g.game_date ASC, pgs.player_name ASC`,
+    sql`
+      SELECT
         (SELECT COUNT(*) FROM games
           WHERE home_team_slug = ${slug} OR away_team_slug = ${slug}) +
         (SELECT COUNT(*) FROM player_season_stats WHERE school_slug = ${team.school_slug}) +
@@ -113,6 +132,7 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
     <TeamShell
       team={team as Record<string, unknown>}
       totalRecords={totalRecords}
+      playerGameLogs={playerGameLogs as Record<string, unknown>[]}
       prevSlug={prevSlug}
       nextSlug={nextSlug}
       seasonRows={seasonRows as Record<string, unknown>[]}
