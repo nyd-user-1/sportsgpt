@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, LabelList } from 'recharts'
-import { ChartTooltipShell } from './ChartTooltip'
+import { ChartTooltipShell, ChartTooltipName, ChartTooltipRow, ChartTooltipDivider } from './ChartTooltip'
 import { Chart } from '@/components/Chart'
 import { type ChartConfig } from '@/components/ui/chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
@@ -40,39 +40,15 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Toolti
   if (!bar) return null
   const total = bar.yr1 + bar.yr2 + bar.yr3
   const winPct = bar.totalGames > 0 ? ((total / bar.totalGames) * 100).toFixed(1) : '—'
-
   return (
     <ChartTooltipShell minWidth={160}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600, color: 'var(--paper-text)' }}>
-        {bar.logoUrl && (
-          <img src={bar.logoUrl} alt="" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-        )}
-        <span>{bar.name}</span>
-      </div>
-      {[
-        { label: formatSeason(bar.yr3Label), value: bar.yr3, color: COLORS.yr3 },
-        { label: formatSeason(bar.yr2Label), value: bar.yr2, color: COLORS.yr2 },
-        { label: formatSeason(bar.yr1Label), value: bar.yr1, color: COLORS.yr1 },
-      ].map(row => (
-        <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
-          <span style={{
-            display: 'inline-block', width: '10px', height: '10px',
-            borderRadius: '2px', backgroundColor: row.color, flexShrink: 0,
-          }} />
-          <span style={{ color: 'var(--paper-muted)' }}>{row.label}</span>
-          <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px', color: 'var(--paper-text)' }}>{row.value}</span>
-        </div>
-      ))}
-      <div style={{ borderTop: '1px solid var(--paper-rule)', marginTop: '6px', paddingTop: '6px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span style={{ color: 'var(--paper-muted)' }}>Total</span>
-          <span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{total}</span>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '2px' }}>
-          <span style={{ color: 'var(--paper-muted)' }}>3yr Win %</span>
-          <span style={{ fontWeight: 600, color: 'var(--paper-text)' }}>{winPct}%</span>
-        </div>
-      </div>
+      <ChartTooltipName name={bar.name} logoUrl={bar.logoUrl} />
+      <ChartTooltipRow color={COLORS.yr3} label={formatSeason(bar.yr3Label)} value={bar.yr3} />
+      <ChartTooltipRow color={COLORS.yr2} label={formatSeason(bar.yr2Label)} value={bar.yr2} />
+      <ChartTooltipRow color={COLORS.yr1} label={formatSeason(bar.yr1Label)} value={bar.yr1} />
+      <ChartTooltipDivider />
+      <ChartTooltipRow label="Total"     value={total} />
+      <ChartTooltipRow label="3yr Win %" value={`${winPct}%`} />
     </ChartTooltipShell>
   )
 }

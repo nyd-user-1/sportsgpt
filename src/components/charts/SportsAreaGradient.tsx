@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
-import { ChartTooltipShell } from './ChartTooltip'
+import { ChartTooltipShell, ChartTooltipName, ChartTooltipRow } from './ChartTooltip'
 import { Chart } from '@/components/Chart'
 import { type ChartConfig } from '@/components/ui/chart'
 import { type SeasonBars } from './SportsBarChartInteractive'
@@ -25,14 +25,9 @@ function makeTooltip(valueLabel: string) {
     if (!item) return null
     return (
       <ChartTooltipShell minWidth={160}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
-          {item.logoUrl && (
-            <img src={item.logoUrl} alt="" width={20} height={20} style={{ objectFit: 'contain', flexShrink: 0 }} />
-          )}
-          <span style={{ fontWeight: 700, color: 'var(--paper-text)' }}>{item.name}</span>
-        </div>
-        <p style={{ color: ACCENT }}><span style={{ fontWeight: 600 }}>{item.points}</span> {valueLabel}</p>
-        <p style={{ color: MEDIAN_COLOR }}>Median: {item.median}</p>
+        <ChartTooltipName name={item.name} logoUrl={item.logoUrl} />
+        <ChartTooltipRow label={valueLabel} value={item.points}  valueColor={ACCENT} />
+        <ChartTooltipRow label="Median"    value={item.median}  valueColor={MEDIAN_COLOR} />
       </ChartTooltipShell>
     )
   }

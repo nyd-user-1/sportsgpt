@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
-import { ChartTooltipShell } from './ChartTooltip'
+import { ChartTooltipShell, ChartTooltipName, ChartTooltipRow } from './ChartTooltip'
 import { Chart } from '@/components/Chart'
 import { SEASON_CHANGE_EVENT } from '@/lib/app-config'
 
@@ -24,35 +24,20 @@ interface TooltipPayloadEntry {
   payload?: { name: string; wins: number; losses: number; logoUrl?: string }
 }
 
-function CustomTooltip({
-  active,
-  payload,
-}: {
-  active?: boolean
-  payload?: TooltipPayloadEntry[]
-}) {
+function CustomTooltip({ active, payload }: { active?: boolean; payload?: TooltipPayloadEntry[] }) {
   if (!active || !payload?.length) return null
   const item = payload[0]?.payload
   if (!item) return null
   return (
     <ChartTooltipShell>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontWeight: 600, color: 'var(--paper-text)' }}>
-        {item.logoUrl && (
-          <img src={item.logoUrl} alt="" width={30} height={30} style={{ borderRadius: '50%', objectFit: 'cover' }} />
-        )}
-        <span>{item.name}</span>
-      </div>
+      <ChartTooltipName name={item.name} logoUrl={item.logoUrl} />
       {[...payload].reverse().map((entry) => (
-        <div key={entry.dataKey} style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '2px' }}>
-          <span style={{
-            display: 'inline-block', width: '10px', height: '10px',
-            borderRadius: '2px', backgroundColor: entry.color ?? '#033882', flexShrink: 0,
-          }} />
-          <span style={{ color: 'var(--paper-muted)', textTransform: 'capitalize' }}>{entry.name}</span>
-          <span style={{ marginLeft: 'auto', fontWeight: 600, paddingLeft: '8px', color: 'var(--paper-text)' }}>
-            {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
-          </span>
-        </div>
+        <ChartTooltipRow
+          key={entry.dataKey}
+          color={entry.color ?? '#033882'}
+          label={String(entry.name ?? '').replace(/^./, c => c.toUpperCase())}
+          value={entry.value ?? 0}
+        />
       ))}
     </ChartTooltipShell>
   )
