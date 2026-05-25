@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import {
   ChevronLeft, ChevronRight, ChevronUp, ChevronDown,
@@ -25,6 +25,7 @@ import {
   ContentsNav,
   PlayerRankedList,
   SearchInput,
+  useSearchHotkey,
   PAPER_BRIDGE,
   MONO,
   TABLET_RADIUS,
@@ -150,6 +151,8 @@ export function TeamShell({
   const [sortDir, setSortDir]         = useState<'asc' | 'desc'>('desc')
   const [slideIdx, setSlideIdx]       = useState(0)
   const [search, setSearch]           = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
+  useSearchHotkey(searchRef, () => setSearch(''))
 
   const teamName   = team.name as string
   const division   = team.division as string
@@ -383,12 +386,6 @@ export function TeamShell({
 
           {/* ── Sticky control bar ──────────────────────────────── */}
           <StickyControlBar>
-            <SearchInput
-              value={search}
-              onChange={setSearch}
-              placeholder="Search opponent…"
-              className="w-48"
-            />
             {hasSeasonControl && (
               <div className="flex items-center gap-3 shrink-0">
                 <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Season</span>
@@ -406,6 +403,12 @@ export function TeamShell({
                 </button>
               </div>
             )}
+            <SearchInput
+              value={search}
+              onChange={setSearch}
+              inputRef={searchRef}
+              placeholder="Search opponents…"
+            />
             <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
               {filteredGames.length > 0 ? `${filteredGames.length} games` : ''}
             </div>
