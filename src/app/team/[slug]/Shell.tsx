@@ -504,8 +504,8 @@ export function TeamShell({
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] hidden sm:table-cell">Opp %</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PF</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">PA</th>
-                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Result</th>
                           <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Diff</th>
+                          <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]">Result</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -549,13 +549,13 @@ export function TeamShell({
                               </td>
                               <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{myScore ?? '—'}</td>
                               <td className={cn(td, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{opScore ?? '—'}</td>
+                              <td className={cn(td, 'text-right tabular-nums font-semibold')} style={{ ...MONO, color: diff == null || diff === 0 ? 'var(--paper-muted)' : diff > 0 ? '#15803d' : '#b91c1c' }}>
+                                {diff == null ? '—' : diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : '0'}
+                              </td>
                               <td className={cn(td, 'text-right font-semibold')} style={{ ...MONO, color: resultColor }}>
                                 {g.id ? (
                                   <Link href={`/game/${g.id}?ref=${team.slug}`} className="hover:underline">{scoreStr}</Link>
                                 ) : scoreStr}
-                              </td>
-                              <td className={cn(td, 'text-right tabular-nums font-semibold')} style={{ ...MONO, color: diff == null || diff === 0 ? 'var(--paper-muted)' : diff > 0 ? '#15803d' : '#b91c1c' }}>
-                                {diff == null ? '—' : diff > 0 ? `+${diff}` : diff < 0 ? String(diff) : '0'}
                               </td>
                             </tr>
                           )

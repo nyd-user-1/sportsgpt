@@ -133,6 +133,8 @@ export function ChartDetailPage({
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
 
+  const isPanel = pathname.startsWith('/charts/')
+
   const emitSeason = (yr: string) => {
     setActiveSeason(yr)
     window.dispatchEvent(new CustomEvent(SEASON_CHANGE_EVENT, { detail: yr }))
@@ -550,34 +552,36 @@ export function ChartDetailPage({
       >
 
           {/* ── Masthead ────────────────────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
-            <EditorialHead
-              size="xl"
-              eyebrow="Section XI · Charts"
-              subhead={config.description}
-              meta={[
-                `${entryCount} ${entryCount === 1 ? entityNoun : `${entityNoun}s`}`,
-                ...(seasonFilters ? [`${seasonFilters.filter(s => s !== 'all').length} seasons of record`] : []),
-                seasonLabel,
-              ]}
-              rightSlot={
-                <EditorialButtonGroup
-                  prevHref={prevHref}
-                  nextHref={nextHref}
-                  buttons={[
-                    { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                    { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
-                  ]}
-                />
-              }
-            >
-              {config.title}
-            </EditorialHead>
-          </div>
+          {!isPanel && (
+            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
+              <EditorialHead
+                size="xl"
+                eyebrow="Section XI · Charts"
+                subhead={config.description}
+                meta={[
+                  `${entryCount} ${entryCount === 1 ? entityNoun : `${entityNoun}s`}`,
+                  ...(seasonFilters ? [`${seasonFilters.filter(s => s !== 'all').length} seasons of record`] : []),
+                  seasonLabel,
+                ]}
+                rightSlot={
+                  <EditorialButtonGroup
+                    prevHref={prevHref}
+                    nextHref={nextHref}
+                    buttons={[
+                      { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
+                      { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    ]}
+                  />
+                }
+              >
+                {config.title}
+              </EditorialHead>
+            </div>
+          )}
 
           {/* ── Chart — matted hero frame ────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12">
+          <div className={isPanel ? 'px-5 mb-8' : 'mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12'}>
             <RevealFx delay={0.1} translateY={8}>
               <div
                 className="border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
@@ -626,13 +630,18 @@ export function ChartDetailPage({
           </StickyControlBar>
 
           {/* ── Body: sidebar + rankings ─────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
+          <div className={isPanel
+            ? 'px-5 pt-8 pb-24'
+            : 'mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20'
+          }>
 
-            <ContentsNav
-              items={chartSections}
-              activeId={config.entity === 'team' ? (divisionFilter ?? undefined) : 'rankings'}
-              onSelect={config.entity === 'team' ? handleDivisionSelect : undefined}
-            />
+            {!isPanel && (
+              <ContentsNav
+                items={chartSections}
+                activeId={config.entity === 'team' ? (divisionFilter ?? undefined) : 'rankings'}
+                onSelect={config.entity === 'team' ? handleDivisionSelect : undefined}
+              />
+            )}
 
             <main className="min-w-0">
               <RevealFx delay={0.3} translateY={8}>
