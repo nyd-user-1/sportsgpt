@@ -456,7 +456,7 @@ export function TeamShell({
   )
 
   /* ── Table cell styles ───────────────────────────────────────── */
-  const td = 'px-3 py-4 border-b border-[var(--paper-rule)] text-[13px]'
+  const td = 'px-3 py-2.5 border-b border-[var(--paper-rule)] text-[13px]'
   const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]'
 
   /* ════════════════════════════════════════════════════════════════ */
