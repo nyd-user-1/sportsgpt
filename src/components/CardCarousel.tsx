@@ -36,13 +36,13 @@ type PromptCard = {
 }
 
 const PROMPTS: PromptCard[] = [
-  { label: 'D1',            prompt: 'Who led Division I in rushing yards this 2025-26 season?' },
-  { label: 'D2',            prompt: 'Who led Division II in passing yards this 2025-26 season?' },
+  { label: 'Division I',    prompt: 'Who led Division I in rushing yards this 2025-26 season?' },
+  { label: 'Division II',   prompt: 'Who led Division II in passing yards this 2025-26 season?' },
   { label: 'Floyd',         prompt: "How has William Floyd's record trended over the past 5 seasons?" },
   { label: 'Ward Melville', prompt: "Who are Ward Melville's top offensive playmakers in the 2025-26 season?" },
-  { label: 'D3',            prompt: 'Show me the current Division III standings and the hottest teams.' },
+  { label: 'Division III',  prompt: 'Show me the current Division III standings and the hottest teams.' },
   { label: 'Sachem East',   prompt: "What is Sachem East's season-by-season record and playoff history?" },
-  { label: 'D4',            prompt: 'Which Division IV teams have the longest winning streaks?' },
+  { label: 'Division IV',   prompt: 'Which Division IV teams have the longest winning streaks?' },
   { label: 'Longwood',      prompt: "Tell me about Longwood's top offensive playmakers this 2025-26 season." },
 ]
 
@@ -110,23 +110,23 @@ function PromptCardButton({
   return (
     <button
       onClick={onClick}
-      className="group shrink-0 w-[260px] h-[170px] snap-start border border-[var(--paper-rule)] bg-[var(--paper-quiet)] flex items-stretch hover:border-[var(--paper-strong)] transition-colors text-left overflow-hidden"
+      className="group shrink-0 w-[260px] h-[170px] snap-start border border-[var(--paper-rule)] bg-[var(--paper-quiet)] flex flex-col hover:border-[var(--paper-strong)] transition-colors text-left overflow-hidden"
       style={{ borderRadius: 3 }}
     >
-      {/* LHS — team / division label in blue mono */}
+      {/* TOP — team / division label in blue mono */}
       <div
-        className="shrink-0 w-[88px] flex items-center justify-center px-3 text-center text-[var(--paper-strong)] tracking-wide leading-tight"
+        className="shrink-0 flex items-center px-4 py-3 text-[var(--paper-strong)] tracking-wide leading-tight"
         style={{ ...MONO, fontSize: 13, fontWeight: 600 }}
       >
         {prompt.label}
       </div>
 
-      {/* Vertical divider */}
-      <div className="w-px bg-[var(--paper-rule)] shrink-0" />
+      {/* Horizontal divider */}
+      <div className="h-px bg-[var(--paper-rule)] shrink-0" />
 
-      {/* RHS — question in paper-text mono */}
+      {/* BOTTOM — question in paper-text mono */}
       <div
-        className="flex-1 flex items-center px-4 py-4 text-[var(--paper-text)] leading-relaxed"
+        className="flex-1 flex items-center px-4 py-3 text-[var(--paper-text)] leading-relaxed"
         style={{ ...MONO, fontSize: 12.5 }}
       >
         {prompt.prompt}
