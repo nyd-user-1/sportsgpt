@@ -205,6 +205,7 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/leaderboard` | `LeaderboardTable.tsx` | Top 25/season (2020–2024), Passing/Rushing/Receiving tabs, + season filter popover |
 | `/school` | `src/app/school/` | School index |
 | `/gallery` | `src/app/gallery/` | Blob-backed masonry grid + lightbox; dark/light toggle with View Transition ripple |
+| `/chat` | `src/app/chat/page.tsx` | AI chat — paperMode + grain overlay. Empty: `SECTION XI · FOOTBALL` eyebrow, Fraunces APP_NAME, ruled line, ChatInput, italic serif tagline, CardCarousel. Active: scrollable thread + bottom-pinned input. Uses `useChat`, `ChatInput`, `ChatMessage`, `CardCarousel`, `ChatSeasonsPanel`. **`/chat-2` is a deprecated duplicate — safe to delete.** |
 
 ### Detail pages
 
@@ -252,6 +253,21 @@ Parallel routes (`@detail` slot): standings left, team photo or game split-scree
 **Standings table:** Team, W, L, PCT, Conf, PF, PA, DIFF. Selected row = blue-50 + inset left accent.
 
 **ProviderSection cards:** Horizontal scroll, `w-[400px]`, split-screen photos, black Week badge, long date. `?team={slug}` param preserves team filter when navigating from team context to a game card.
+
+### Chat (`/chat`)
+Editorial AI chat page. `useChat()` hook (`src/hooks/useChat.ts`) handles streaming, tool loops, meta-tracking. Backend at `src/app/api/chat/route.ts` — Anthropic primary, OpenAI/Gemini/Grok fallbacks, `TOOLS` from `src/lib/chat-tools.ts`. Stream emissions are joined with `\n\n` so multi-block responses don't run together.
+
+**System prompt** does NOT hard-code division membership — model is instructed to call `get_standings({season, division})` instead. Also instructed: headers on own line, space after colons, prefer short team names (Pat-Med, SWR, GSMHS).
+
+**`chat-tools.ts`** runs every query result through `normalizeRows` → `formatTeamName`, which strips `" Varsity Football"` and applies preferred abbreviations (Patchogue-Medford → Pat-Med, Shoreham-Wading River → SWR, Greenport-Southold-Mattituck → GSMHS, East Hampton-Bridgehampton-Pierson → East Hampton).
+
+**Chat components** (all in `src/components/`):
+- `ChatInput.tsx` — paper-rule frame on paper-quiet (3px radius), Fraunces serif textarea, paper-strong send button, model dropdown w/ paper palette
+- `ChatMessage.tsx` — user bubble re-framed as paper-rule on paper-quiet; assistant markdown via `mdComponents` (10px uppercase ruled-line headers, Fraunces 17px paragraphs, paper-palette tables, paper-strong code/links, italic paper-muted em). Tables use `whitespace-nowrap` on `th` and `word-break: keep-all` on `td` so numbers like "10-1" don't break at the hyphen. Action bar uses 10px uppercase text links (`Copy / Charts / Explore seasons`). Follow-ups use ranked-list hover pattern (`px-4 -mx-4`, paper-text 4% color-mix bg, 3px radius, ↳ + italic Fraunces → paper-strong)
+- `CardCarousel.tsx` — chevron arrows toggle between Teams mode (260×170 photo cards w/ matted hero treatment) and Suggested Prompts mode (220×130 cards w/ 32px logo + mono paper-strong question). Both horizontal-scroll with snap. Prompts seeded as `PromptCard[]` with `logoKey` (school slug or division number).
+- `ChatSeasonsPanel.tsx` — paper-palette AppPanel with three-level drill-down: SeasonsView → ScheduleView → GameView (editorial section headers + ranked rows + `View full game page` link)
+
+**Matted hero treatment** (used by team cards in CardCarousel + team/division hero sliders): outer `border-paper-rule` + `bg-paper-quiet` + inner 4–8px padding + inner `overflow-hidden` div with radius 1. Gives the editorial "photo in a frame" look.
 
 ---
 
@@ -418,10 +434,11 @@ node --env-file=.env.local scripts/ingest-boxscores.mjs scripts/scraped/longwood
 | 2021-22 | 197/203 ✅ Complete (6 Nassau/date-mismatch gaps) |
 
 ### **NEXT SESSION — resume here:**
-1. Naming conventions audit (see below)
-2. Component extraction (see below)
-3. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
-4. Season card vs. game card width differences on the Section XI page (deferred — "we'll go over the differences tomorrow")
+1. Delete `/chat-2` (deprecated duplicate — superseded by `/chat` editorial pass on 2026-05-25)
+2. Naming conventions audit (see below)
+3. Remaining component extraction (see below — `PanelGameLog/Schedule/Season` done; still TODO: AccordionStatTable, HeroSlider, BreadcrumbNav, DownloadMenu, finish InfoTable family)
+4. Explode `game_box_scores.player_stats` JSONB into relational table (see below)
+5. Season card vs. game card width differences on the Section XI page (deferred — "we'll go over the differences tomorrow")
 
 ### Naming conventions audit — NEXT
 The codebase has grown organically and needs a naming pass before it gets harder to navigate.
@@ -439,7 +456,12 @@ The codebase has grown organically and needs a naming pass before it gets harder
 ### Component extraction — NEXT
 Several components are defined inline inside page/shell files and should be extracted to `src/components/` for reuse.
 
-**Priority extractions:**
+**Done (2026-05-25):**
+- ✅ `PanelGameLog` — extracted from inline `AppPanel` render in `TeamShell.tsx`
+- ✅ `PanelSchedule` — extracted alongside PanelGameLog
+- ✅ `PanelSeason` — extracted alongside PanelGameLog
+
+**Still TODO:**
 - `AccordionStatTable` + `StatRow` — defined in `PanelPlayer.tsx`, duplicated in `PanelTeam.tsx`. Extract to `src/components/AccordionStatTable.tsx`.
 - `HeroSlider` — defined inside `Shell.tsx` for teams and divisions. Extract to `src/components/HeroSlider.tsx`.
 - `BreadcrumbNav` — appears in player Shell. Extract.
