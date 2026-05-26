@@ -38,14 +38,17 @@ function fmtDate(raw: string | null) {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+
 function LogoOrDiv({ slug, div, size = 40 }: { slug: string; div: string; size?: number }) {
   const schoolSlug = slug.replace(/-varsity-football$/, '')
   const logo = SCHOOL_LOGOS[schoolSlug]
-  const cls = `shrink-0 rounded-full object-contain bg-white border border-[var(--border)]`
+  const cls = `shrink-0 rounded-full object-contain bg-white border border-white/40`
   return logo ? (
     <Image src={logo} alt="" width={size} height={size} className={cls} unoptimized />
   ) : (
-    <span className="shrink-0 inline-flex items-center justify-center rounded-full bg-[var(--inp-bg)] border border-[var(--border)] text-xs font-bold text-[var(--muted)]"
+    <span className="shrink-0 inline-flex items-center justify-center rounded-full bg-black/40 border border-white/30 text-xs font-bold text-white"
       style={{ width: size, height: size, fontSize: size * 0.28 }}>
       {div}
     </span>
@@ -120,19 +123,25 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
 
   return (
     <RevealFx delay={0.15} translateY={8}>
-      {/* Season tabs */}
-      <div className="sticky top-0 z-10 bg-[var(--surface)] -mx-4 px-4 flex items-center gap-1 border-b border-[var(--border)] mb-4">
-        {SEASONS.map((s, i) => (
-          <button key={s} onClick={() => handleSeason(i)}
-            className={cn(
-              'px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap',
-              seasonIdx === i
-                ? 'border-[#033882] text-[var(--txt)]'
-                : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
-            )}>
-            {formatSeason(Number(s))}
-          </button>
-        ))}
+      {/* Season tabs — editorial underline row */}
+      <div className="sticky top-0 z-10 flex items-center border-b border-[var(--paper-rule)] mb-4"
+        style={{ background: 'color-mix(in srgb, var(--paper) 92%, transparent)', backdropFilter: 'blur(8px)' }}>
+        {SEASONS.map((s, i) => {
+          const on = seasonIdx === i
+          return (
+            <button key={s} onClick={() => handleSeason(i)}
+              className={cn(
+                'px-4 py-3 text-[11px] uppercase tracking-[0.22em] whitespace-nowrap border-b-2 -mb-px transition-colors first:pl-0',
+                on
+                  ? 'border-[var(--paper-strong)] text-[var(--paper-strong)]'
+                  : 'border-transparent text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
+              )}
+              style={SANS}
+            >
+              {formatSeason(Number(s))}
+            </button>
+          )
+        })}
       </div>
 
       <div className="overflow-hidden">
@@ -147,19 +156,21 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
             transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
           >
       {filtered.length === 0 ? (
-        <p className="text-sm text-[var(--muted)] py-8 text-center">
+        <p
+          className="text-[14px] text-[var(--paper-muted)] py-8 text-center"
+          style={{ ...SERIF, fontStyle: 'italic' }}
+        >
           No games found for {activeSeason}{activeDivision ? ` · Division ${activeDivision}` : ''}.
         </p>
       ) : (
-        <div ref={scrollRef} className="flex gap-4 py-3 px-4 overflow-x-auto no-scrollbar">
+        <div ref={scrollRef} className="flex gap-4 py-3 overflow-x-auto no-scrollbar">
           {filtered.map(g => {
-            const homeWon = g.home_score != null && g.away_score != null && g.home_score > g.away_score
-            const awayWon = g.home_score != null && g.away_score != null && g.away_score > g.home_score
             const scored  = g.home_score != null && g.away_score != null
             const homeSchool = g.home_team_slug.replace(/-varsity-football$/, '')
             const awaySchool = g.away_team_slug.replace(/-varsity-football$/, '')
             const homePhoto  = TEAM_PHOTOS[homeSchool]?.[0]
             const awayPhoto  = TEAM_PHOTOS[awaySchool]?.[0]
+            const onSel      = selectedGameId === g.id
             return (
               <div key={g.id}
                 data-game-id={g.id}
@@ -175,45 +186,65 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                     router.push(`/launchpad/game/${g.id}${selectedTeam ? `?team=${selectedTeam}` : ''}`, { scroll: false })
                   }
                 }}
-                className={cn("group rounded-2xl overflow-hidden relative min-h-[292px] w-[400px] shrink-0 flex flex-col justify-between cursor-pointer transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.35)]", selectedGameId === g.id ? "outline outline-2 outline-[#033882] outline-offset-2 shadow-[inset_0_0_16px_rgba(3,56,130,0.18)]" : "shadow-sm")}>
+                className={cn(
+                  "group w-[400px] shrink-0 cursor-pointer transition-all border bg-[var(--paper-quiet)]",
+                  onSel ? "border-[var(--paper-strong)]" : "border-[var(--paper-rule)] hover:border-[var(--paper-text)]"
+                )}
+                style={{ padding: 6, borderRadius: 3 }}
+              >
+                <div className="relative overflow-hidden min-h-[280px] flex flex-col justify-between"
+                  style={{ borderRadius: 1 }}>
 
-                {/* Split photo background */}
-                <div className="absolute inset-0 flex">
-                  <div className="relative flex-1">
-                    {homePhoto
-                      ? <Image src={homePhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
-                      : <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />}
+                  {/* Split photo background */}
+                  <div className="absolute inset-0 flex">
+                    <div className="relative flex-1">
+                      {homePhoto
+                        ? <Image src={homePhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                        : <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />}
+                    </div>
+                    <div className="relative flex-1">
+                      {awayPhoto
+                        ? <Image src={awayPhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                        : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
+                    </div>
                   </div>
-                  <div className="relative flex-1">
-                    {awayPhoto
-                      ? <Image src={awayPhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
-                      : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
+
+                  {/* Gradient overlays */}
+                  <div className="absolute inset-0 bg-black/35" />
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
+
+                  {/* Top: week badge left, score right */}
+                  <div className="relative z-10 px-3 pt-3 flex items-start justify-between">
+                    {g.game_number != null ? (
+                      <span
+                        className="text-[10px] uppercase tracking-[0.22em] px-2 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white/95"
+                        style={{ ...SANS, borderRadius: 2 }}
+                      >
+                        Week {g.game_number}
+                      </span>
+                    ) : <span />}
+                    {scored && (
+                      <span
+                        className="text-[13px] tabular-nums px-2 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white"
+                        style={{ ...SANS, borderRadius: 2 }}
+                      >
+                        {g.home_score}–{g.away_score}
+                      </span>
+                    )}
+                  </div>
+
+                  <div />
+
+                  {/* Bottom: logos in corners */}
+                  <div className="relative z-10 flex items-end justify-between px-3 pb-3">
+                    <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
+                      <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
+                    </div>
+                    <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
+                      <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
+                    </div>
                   </div>
                 </div>
-
-                {/* Gradient overlays */}
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/75 to-transparent" />
-
-                {/* Top: week badge left */}
-                <div className="relative z-10 px-3 pt-3">
-                  {g.game_number != null && (
-                    <span className="text-[11px] font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {g.game_number}</span>
-                  )}
-                </div>
-
-                <div />
-
-                {/* Bottom: logos in corners */}
-                <div className="relative z-10 flex items-end justify-between px-3 pb-3">
-                  <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.home_team_slug}`) }}>
-                    <LogoOrDiv slug={g.home_team_slug} div={g.home_div} size={32} />
-                  </div>
-                  <div onClick={e => { e.stopPropagation(); router.push(`/team/${g.away_team_slug}`) }}>
-                    <LogoOrDiv slug={g.away_team_slug} div={g.away_div} size={32} />
-                  </div>
-                </div>
-
               </div>
             )
           })}

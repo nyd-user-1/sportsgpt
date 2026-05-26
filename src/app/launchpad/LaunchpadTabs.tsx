@@ -3,7 +3,15 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 
-const TABS = ['All', 'Division I', 'Division II', 'Division III', 'Division IV']
+const SANS: React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+
+const TABS: { label: string; key: string }[] = [
+  { label: 'All',          key: 'All' },
+  { label: 'Division I',   key: 'Division I' },
+  { label: 'Division II',  key: 'Division II' },
+  { label: 'Division III', key: 'Division III' },
+  { label: 'Division IV',  key: 'Division IV' },
+]
 
 export function LaunchpadTabs() {
   const router       = useRouter()
@@ -19,21 +27,33 @@ export function LaunchpadTabs() {
   }
 
   return (
-    <div className="flex items-center gap-0 border-b border-[var(--border)]">
-      {TABS.map(tab => (
-        <button
-          key={tab}
-          onClick={() => handleTab(tab)}
-          className={cn(
-            'px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px',
-            activeTab === tab
-              ? 'border-[#033882] text-[var(--txt)]'
-              : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
-          )}
-        >
-          {tab}
-        </button>
-      ))}
+    <div className="flex items-center justify-between gap-3 border-b border-[var(--paper-rule)]">
+      <div className="flex items-center">
+        {TABS.map(({ label, key }) => {
+          const on = activeTab === key
+          return (
+            <button
+              key={key}
+              onClick={() => handleTab(key)}
+              className={cn(
+                'px-4 py-3 text-[11px] uppercase tracking-[0.22em] whitespace-nowrap border-b-2 -mb-px transition-colors first:pl-0',
+                on
+                  ? 'border-[var(--paper-strong)] text-[var(--paper-strong)]'
+                  : 'border-transparent text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
+              )}
+              style={SANS}
+            >
+              {label}
+            </button>
+          )
+        })}
+      </div>
+      <span
+        className="hidden sm:inline pr-1 text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        Launchpad
+      </span>
     </div>
   )
 }

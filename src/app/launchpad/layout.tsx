@@ -45,23 +45,26 @@ export default async function LaunchpadLayout({
   }))
 
   return (
-    <AppLayout showNavArrows>
+    <AppLayout showNavArrows paperMode>
       <LaunchpadGameWrapper game={game} />
-      <div className="flex-1 overflow-y-auto no-scrollbar">
-        <div className="pt-1 px-4 pb-4 flex flex-col gap-5">
+      <div className="flex-1 overflow-y-auto no-scrollbar" style={{ backgroundColor: 'var(--paper)' }}>
+        <div className="pt-2 px-6 sm:px-10 md:px-14 pb-8 flex flex-col gap-6">
 
           {/* Division tabs — full width above both slots */}
-          <Suspense fallback={<div className="h-9 border-b border-[var(--border)]" />}>
+          <Suspense fallback={<div className="h-9 border-b border-[var(--paper-rule)]" />}>
             <LaunchpadTabs />
           </Suspense>
 
           {/* Two-slot row */}
-          <div className="h-[380px] shrink-0 flex gap-4">
+          <div className="h-[380px] shrink-0 flex gap-5">
             <Suspense fallback={null}>
               {children}
             </Suspense>
             <Suspense fallback={null}>
-              <div className="flex-1 min-w-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden transition-all duration-200 hover:ring-1 hover:ring-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)]">
+              <div
+                className="flex-1 min-w-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] overflow-hidden transition-all duration-200"
+                style={{ borderRadius: 3 }}
+              >
                 {detail}
               </div>
             </Suspense>

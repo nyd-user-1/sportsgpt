@@ -8,6 +8,10 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
+import { Tablet, MONO } from '@/components/editorial'
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
 
 export type StandingsRow = {
   slug: string
@@ -38,10 +42,12 @@ function cleanName(name: string): string {
   return name.replace(/\s+Varsity\s+Football$/i, '')
 }
 
-// Maps the outer tab ?div param → division column value
 const SEARCH_DIV_MAP: Record<string, string> = {
   'Division I': 'I', 'Division II': 'II', 'Division III': 'III', 'Division IV': 'IV',
 }
+
+const th = 'px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] text-left whitespace-nowrap'
+const td = 'px-4 py-3 text-[13px] border-t border-[var(--paper-rule-soft)]'
 
 export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   const router       = useRouter()
@@ -78,7 +84,6 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
       const qs = searchParams.toString()
       router.push(`/launchpad/${next.slug}${qs ? `?${qs}` : ''}`, { scroll: false })
 
-      // Scroll row into view within the table container
       requestAnimationFrame(() => {
         const el = tableRef.current?.querySelector(`[data-slug="${next.slug}"]`)
         el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
@@ -90,63 +95,89 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   }, [selectedSlug, filtered, router, searchParams])
 
   return (
-    <RevealFx translateY={4} className="w-[55%] min-w-0 shrink-0 rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden flex flex-col">
-      {/* Table */}
-      <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
-        <table className="w-full text-sm">
-          <thead className="sticky top-0 z-10 bg-[var(--surface)]">
-            <tr className="border-b border-[var(--border)]">
-              {['#', 'Team', 'W', 'L', 'PCT', 'Conf', 'PF', 'PA', 'DIFF'].map(h => (
-                <th key={h} className="text-left text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] px-4 py-3 whitespace-nowrap">{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((t, i) => (
-              <tr
-                key={t.slug}
-                data-slug={t.slug}
-                onClick={() => { const qs = searchParams.toString(); router.push(`/launchpad/${t.slug}${qs ? `?${qs}` : ''}`, { scroll: false }) }}
-                className={cn(
-                  'border-b border-[var(--border)] hover:bg-[var(--row-hover)] cursor-pointer transition-colors',
-                  selectedSlug === t.slug ? 'bg-blue-50 dark:bg-blue-950/40 shadow-[inset_3px_0_0_#033882]' : ''
-                )}
-              >
-                <td className="px-4 py-3 text-[var(--muted)] text-xs tabular-nums w-8">{i + 1}</td>
-                <td className="px-4 py-3 font-medium text-[var(--txt)] w-[180px]">
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    {(() => {
-                      const schoolSlug = t.slug.replace(/-varsity-football$/, '')
-                      const logo = SCHOOL_LOGOS[schoolSlug]
-                      return logo ? (
-                        <Image src={logo} alt="" width={24} height={24} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
-                      ) : (
-                        <div className="shrink-0 h-6 w-6 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />
-                      )
-                    })()}
-                    <span className="truncate">{cleanName(t.name)}</span>
-                    <Link href={`/team/${t.slug}`}
-                      onClick={e => e.stopPropagation()}
-                      className="group/arrow shrink-0 ml-1 relative inline-flex items-center justify-center w-5 h-5 text-[var(--muted)] hover:text-[var(--txt)] transition-colors duration-150">
-                      <ArrowUpRight className="h-4 w-4 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
-                      <ArrowRight className="h-4 w-4 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
-                    </Link>
-                  </div>
-                </td>
-                <td className="px-4 py-3 text-[var(--txt)]">{t.overall_wins ?? '—'}</td>
-                <td className="px-4 py-3 text-[var(--txt2)]">{t.overall_losses ?? '—'}</td>
-                <td className="px-4 py-3 text-[var(--txt2)]">{fmtPct(t.overall_wins, t.overall_losses)}</td>
-                <td className="px-4 py-3 text-[var(--txt2)]">{fmtRecord(t.conference_wins, t.conference_losses)}</td>
-                <td className="px-4 py-3 text-[var(--txt2)]">{t.points_for ?? '—'}</td>
-                <td className="px-4 py-3 text-[var(--txt2)]">{t.points_against ?? '—'}</td>
-                <td className="px-4 py-3 text-[var(--txt2)] font-medium" style={{ color: t.points_for != null && t.points_against != null ? (t.points_for - t.points_against > 0 ? '#15803d' : t.points_for - t.points_against < 0 ? '#b91c1c' : undefined) : undefined }}>
-                  {t.points_for != null && t.points_against != null ? (t.points_for - t.points_against > 0 ? `+${t.points_for - t.points_against}` : t.points_for - t.points_against) : '—'}
-                </td>
+    <RevealFx translateY={4} className="w-[55%] min-w-0 shrink-0 flex flex-col">
+      <Tablet className="flex flex-col h-full">
+        <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
+          <table className="w-full" style={{ borderSpacing: 0 }}>
+            <thead className="sticky top-0 z-10" style={{ background: 'var(--paper-quiet)' }}>
+              <tr className="border-b border-[var(--paper-rule)]">
+                {['#', 'Team', 'W', 'L', 'PCT', 'Conf', 'PF', 'PA', 'Diff'].map(h => (
+                  <th key={h} className={th} style={SANS}>{h}</th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {filtered.map((t, i) => {
+                const diff = t.points_for != null && t.points_against != null ? t.points_for - t.points_against : null
+                const on = selectedSlug === t.slug
+                const schoolSlug = t.slug.replace(/-varsity-football$/, '')
+                const logo = SCHOOL_LOGOS[schoolSlug]
+                return (
+                  <tr
+                    key={t.slug}
+                    data-slug={t.slug}
+                    onClick={() => { const qs = searchParams.toString(); router.push(`/launchpad/${t.slug}${qs ? `?${qs}` : ''}`, { scroll: false }) }}
+                    className={cn(
+                      'group/row cursor-pointer transition-colors',
+                      on
+                        ? 'bg-[var(--paper-quiet)] shadow-[inset_2px_0_0_var(--paper-strong)]'
+                        : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]'
+                    )}
+                  >
+                    <td className={cn(td, 'text-[var(--paper-faint)] tabular-nums w-10')} style={MONO}>{i + 1}</td>
+                    <td className={cn(td, 'w-[200px]')}>
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        {logo ? (
+                          <Image src={logo} alt="" width={22} height={22} className="shrink-0 object-contain" unoptimized />
+                        ) : (
+                          <div className="shrink-0 h-[22px] w-[22px] rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />
+                        )}
+                        <span
+                          className={cn(
+                            'truncate transition-colors',
+                            on ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'
+                          )}
+                          style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+                        >
+                          {cleanName(t.name)}
+                        </span>
+                        <Link
+                          href={`/team/${t.slug}`}
+                          onClick={e => e.stopPropagation()}
+                          aria-label={`${cleanName(t.name)} team page`}
+                          className="group/arrow shrink-0 ml-1 relative inline-flex items-center justify-center w-5 h-5 text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors duration-150"
+                        >
+                          <ArrowUpRight className="h-3.5 w-3.5 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
+                          <ArrowRight className="h-3.5 w-3.5 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
+                        </Link>
+                      </div>
+                    </td>
+                    <td className={cn(td, 'text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{t.overall_wins ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{t.overall_losses ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--paper-text)] tabular-nums')} style={MONO}>{fmtPct(t.overall_wins, t.overall_losses)}</td>
+                    <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtRecord(t.conference_wins, t.conference_losses)}</td>
+                    <td className={cn(td, 'text-[var(--paper-text)] tabular-nums')} style={MONO}>{t.points_for ?? '—'}</td>
+                    <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{t.points_against ?? '—'}</td>
+                    <td className={cn(td, 'tabular-nums font-medium')} style={MONO}>
+                      {diff == null ? (
+                        <span className="text-[var(--paper-faint)]">—</span>
+                      ) : (
+                        <span className={cn(
+                          diff > 0 && 'text-emerald-500',
+                          diff < 0 && 'text-rose-500',
+                          diff === 0 && 'text-[var(--paper-faint)]',
+                        )}>
+                          {diff >= 0 ? `+${diff}` : diff}
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Tablet>
     </RevealFx>
   )
 }
