@@ -4,12 +4,11 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  ArrowLeft, ArrowRight, ChartSpline, MessageCircle, FileUser, Sparkles,
+  ArrowLeft, ArrowRight, ChartSpline, FileUser, Sparkles,
 } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead, EditorialButtonGroup,
@@ -624,7 +623,7 @@ export function PlayerShell({
   // ── Panels ──────────────────────────────────────────────────────────────
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
-  const [chatOpen,    setChatOpen]    = useState(false)
+  const [profilePanelOpen, setProfilePanelOpen] = useState(false)
 
   // ── Sticky bar ──────────────────────────────────────────────────────────
   const [query, setQuery] = useState('')
@@ -931,9 +930,9 @@ export function PlayerShell({
                     prevLabel="Previous player"
                     nextLabel="Next player"
                     buttons={[
-                      { icon: ChartSpline,   tooltip: 'Charts',         active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
-                      { icon: FileUser,      tooltip: 'Players',        active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                      { icon: MessageCircle, tooltip: 'Ask SportsGPT',  active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                      { icon: ChartSpline, tooltip: 'Charts',     active: chartsOpen,      onClick: () => setChartsOpen(v => !v) },
+                      { icon: FileUser,    tooltip: 'Players',    active: playersOpen,     onClick: () => setPlayersOpen(v => !v) },
+                      { icon: Sparkles,    tooltip: 'AI Profile', active: profilePanelOpen, onClick: () => { setProfilePanelOpen(v => !v); triggerRecap() } },
                     ]}
                   />
                 }
@@ -1266,7 +1265,106 @@ export function PlayerShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
         <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)} countyName={player.name} />
+
+        <AppPanel
+          open={profilePanelOpen}
+          onClose={() => setProfilePanelOpen(false)}
+          defaultExpanded
+          title={
+            <span className="flex items-center gap-2 min-w-0">
+              {player.school_slug && SCHOOL_LOGOS[player.school_slug] && (
+                <span
+                  className="shrink-0 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center"
+                  style={{ width: 22, height: 22 }}
+                >
+                  <Image
+                    src={SCHOOL_LOGOS[player.school_slug]}
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="object-contain"
+                    unoptimized
+                  />
+                </span>
+              )}
+              <span className="truncate" style={SERIF}>{school?.name ?? player.name}</span>
+            </span>
+          }
+          footer={
+            <div className="px-5 py-3.5 bg-[var(--paper)]">
+              <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+                AI Profile Panel
+              </span>
+            </div>
+          }
+        >
+          <div className="px-6 sm:px-10 md:px-14 pt-8 pb-10">
+            <SectionHead
+              title={recapBody && recapTitle ? recapTitle : 'AI Profile'}
+              eyebrow="Recap"
+              blurb={recapBody
+                ? 'Filed by NYSgpt — AI career profile drawn from this player\'s stat lines.'
+                : undefined}
+            />
+
+            {!recapTriggered ? (
+              <Tablet>
+                <div className="px-6 py-10 text-center">
+                  <p
+                    className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto"
+                    style={{ ...SERIF, fontStyle: 'italic' }}
+                  >
+                    The recap hasn&apos;t been written yet. Generate an AI career profile
+                    from this player&apos;s stat lines.
+                  </p>
+                  <button
+                    onClick={triggerRecap}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
+                    style={{ ...SANS, borderRadius: TABLET_RADIUS }}
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Generate AI Profile
+                  </button>
+                </div>
+              </Tablet>
+            ) : loadingRecap ? (
+              <div className="space-y-3 animate-pulse">
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
+              </div>
+            ) : recapBody ? (
+              <div className="space-y-5 max-w-[68ch]">
+                {recapBody.split('\n\n').filter(Boolean).map((para, i) => {
+                  const parts = para.split(/(\*\*[^*]+\*\*)/g)
+                  return (
+                    <p
+                      key={i}
+                      className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                      style={SERIF}
+                    >
+                      {parts.map((part, j) =>
+                        part.startsWith('**') && part.endsWith('**')
+                          ? <strong key={j} className="text-[var(--paper-text)] font-medium">{part.slice(2, -2)}</strong>
+                          : <span key={j}>{part}</span>
+                      )}
+                    </p>
+                  )
+                })}
+              </div>
+            ) : (
+              <p
+                className="text-[16px] leading-[1.75] text-[var(--paper-muted)] max-w-[68ch]"
+                style={{ ...SERIF, fontStyle: 'italic' }}
+              >
+                No stat lines on file — recap unavailable.
+              </p>
+            )}
+          </div>
+        </AppPanel>
       </div>
     </>
   )
