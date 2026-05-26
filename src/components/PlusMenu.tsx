@@ -33,13 +33,15 @@ const GROK_ICON = (
 /* ── Dummy data ──────────────────────────────────────────────────────── */
 
 const MODELS = [
-  { id: 'gpt-4o',         label: 'GPT-4o',           icon: OPENAI_ICON  },
-  { id: 'gpt-4o-mini',    label: 'GPT-4o Mini',      icon: OPENAI_ICON  },
-  { id: 'gpt-4-turbo',    label: 'GPT-4 Turbo',      icon: OPENAI_ICON  },
-  { id: 'claude-sonnet',  label: 'Claude Sonnet',    icon: ANTHROPIC_ICON },
-  { id: 'claude-haiku',   label: 'Claude Haiku',     icon: ANTHROPIC_ICON },
-  { id: 'gemini-2.5',     label: 'Gemini 2.5 Flash', icon: GEMINI_ICON  },
-  { id: 'grok-fast',      label: 'Grok Fast',        icon: GROK_ICON    },
+  { id: 'gpt-4o',                  label: 'GPT-4o',                icon: OPENAI_ICON    },
+  { id: 'gpt-4o-mini',             label: 'GPT-4o Mini',           icon: OPENAI_ICON    },
+  { id: 'gpt-4-turbo',             label: 'GPT-4 Turbo',           icon: OPENAI_ICON    },
+  { id: 'claude-sonnet',           label: 'Claude Sonnet',         icon: ANTHROPIC_ICON },
+  { id: 'claude-haiku',            label: 'Claude Haiku',          icon: ANTHROPIC_ICON },
+  { id: 'gemini-3-flash-preview',  label: 'Gemini 3 Flash',        icon: GEMINI_ICON    },
+  { id: 'gemini-2.5-flash',        label: 'Gemini 2.5 Flash',      icon: GEMINI_ICON    },
+  { id: 'gemini-2.5-flash-lite',   label: 'Gemini 2.5 Flash Lite', icon: GEMINI_ICON    },
+  { id: 'grok-fast',               label: 'Grok Fast',             icon: GROK_ICON      },
 ]
 
 const SAMPLE_QUESTIONS = [

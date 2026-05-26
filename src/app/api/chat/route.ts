@@ -200,7 +200,10 @@ export async function POST(req: NextRequest) {
       // ── 3. Gemini ─────────────────────────────────────────────────────────
       if ((isGemini || isAnthropic || isOpenAI) && geminiKey) {
         try {
-          const geminiModel = isGemini ? model : 'gemini-2.0-flash'
+          // Free-tier fallback. Pro models came off the free tier 2026-04-01,
+          // so we route through the Flash line when another provider's model
+          // is selected but only the Gemini key is available.
+          const geminiModel = isGemini ? model : 'gemini-2.5-flash'
           await tryOAIProvider(
             new OpenAI({ apiKey: geminiKey, baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/' }),
             geminiModel,

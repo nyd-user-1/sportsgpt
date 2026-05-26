@@ -7,13 +7,18 @@ import { CHAT_PLACEHOLDER } from '@/lib/app-config'
 
 const BLOB = 'https://tmdolblsg0vd3laa.public.blob.vercel-storage.com/gallery/logos/ai'
 
+// NOTE: Gemini entries are restricted to free-tier Flash models. Pro
+// models (gemini-2.5-pro, gemini-3-pro) came off the free tier on
+// April 1, 2026 and would 4xx with the current free key.
 export const CHAT_MODELS = [
-  { id: 'claude-haiku-4-5-20251001', label: 'Haiku',         provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
-  { id: 'claude-sonnet-4-6',         label: 'Sonnet',        provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
-  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',   provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
-  { id: 'gpt-4o',                    label: 'GPT-4o',        provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
-  { id: 'gemini-2.0-flash',          label: 'Gemini 2.0',    provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
-  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',   provider: 'xAI',       logo: `${BLOB}/grok-logo.svg`       },
+  { id: 'claude-haiku-4-5-20251001', label: 'Haiku',                 provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'claude-sonnet-4-6',         label: 'Sonnet',                provider: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
+  { id: 'gpt-4o-mini',               label: 'GPT-4o Mini',           provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
+  { id: 'gpt-4o',                    label: 'GPT-4o',                provider: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
+  { id: 'gemini-3-flash-preview',    label: 'Gemini 3 Flash',        provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
+  { id: 'gemini-2.5-flash',          label: 'Gemini 2.5 Flash',      provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
+  { id: 'gemini-2.5-flash-lite',     label: 'Gemini 2.5 Flash Lite', provider: 'Gemini',    logo: `${BLOB}/gemini-icon.webp`    },
+  { id: 'grok-3-mini-fast',          label: 'Grok 3 Mini',           provider: 'xAI',       logo: `${BLOB}/grok-logo.svg`       },
 ] as const
 
 export type ChatModelId = typeof CHAT_MODELS[number]['id']
