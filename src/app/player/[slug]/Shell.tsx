@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useSearchParams } from 'next/navigation'
 import {
   ArrowLeft, ArrowRight, ChartSpline, FileUser, Sparkles,
 } from 'lucide-react'
@@ -11,12 +12,13 @@ import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { RevealFx } from '@/components/RevealFx'
 import {
-  EditorialHead, EditorialButtonGroup,
+  EditorialHead, EditorialAccent, EditorialButtonGroup,
   SectionHead, ContentsNav,
   PAPER_BRIDGE, TABLET_RADIUS,
   Tablet, EmptyTablet, ScrollTable,
   StickyControlBar, SearchInput, useSearchHotkey,
   CmdKButton,
+  AIButton,
   MONO, tabletTd,
 } from '@/components/editorial'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
@@ -203,6 +205,67 @@ const STAT_BLURBS: Record<StatTypeName, string> = {
   Touchdowns: 'Total scoring plays, by category.',
   Defense:    'Sacks, fumbles recovered, and defensive plays.',
   Scoring:    'Points, touchdowns, field goals, and PATs.',
+}
+
+// ── Recap parser — wraps **bold**, player names, team names ──────────────────
+
+function escapeRegex(s: string) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function parseRecapPara(
+  text: string,
+  playerMap: Record<string, string>,
+  teamMap: Record<string, string>,
+): React.ReactNode[] {
+  // Build name patterns — longest first so multi-word names match before single
+  const playerNames = Object.keys(playerMap).sort((a, b) => b.length - a.length)
+  const teamNames   = Object.keys(teamMap).sort((a, b) => b.length - a.length)
+  const allNames    = [...playerNames, ...teamNames].map(escapeRegex)
+
+  const pattern = allNames.length > 0
+    ? `\\*\\*([^*]+)\\*\\*|(${allNames.join('|')})`
+    : `\\*\\*([^*]+)\\*\\*`
+  const regex = new RegExp(pattern, 'gi')
+
+  const nodes: React.ReactNode[] = []
+  let last = 0
+  let match: RegExpExecArray | null
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) nodes.push(text.slice(last, match.index))
+
+    if (match[1]) {
+      // **bold** — career stat line
+      nodes.push(<strong key={match.index} className="text-[var(--paper-text)] font-medium">{match[1]}</strong>)
+    } else if (match[2]) {
+      const raw = match[0]
+      const key = raw.toLowerCase()
+      const playerSlug = playerMap[key]
+      const teamSlug   = teamMap[key]
+      if (playerSlug) {
+        nodes.push(
+          <Link key={match.index} href={`/player/${playerSlug}?profile=open`} scroll={false}
+            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">
+            {raw}
+          </Link>
+        )
+      } else if (teamSlug) {
+        nodes.push(
+          <Link key={match.index} href={`/team/${teamSlug}`}
+            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">
+            {raw}
+          </Link>
+        )
+      } else {
+        nodes.push(raw)
+      }
+    }
+
+    last = match.index + match[0].length
+  }
+  if (last < text.length) nodes.push(text.slice(last))
+  return nodes
 }
 
 // ── Stat table for the Stats section ─────────────────────────────────────────
@@ -603,6 +666,8 @@ export function PlayerShell({
   school,
   prevSlug,
   nextSlug,
+  allPlayers = [],
+  allTeams = [],
   divTeams,
   divPlayers,
   gameLogSeasonStats,
@@ -614,16 +679,22 @@ export function PlayerShell({
   school: SchoolInfo | null
   prevSlug: string
   nextSlug: string
+  allPlayers?: { player_slug: string; player_name: string }[]
+  allTeams?: { slug: string; name: string }[]
   divTeams: DivTeamRow[]
   divPlayers: DivPlayerRow[]
   gameLogSeasonStats: GameLogStat[]
   gameLog: GameLogRow[]
   teamRecords: Record<number, string>
 }) {
+  // ── URL state: profile=open keeps the panel persistent across prev/next nav
+  const searchParams = useSearchParams()
+  const initialPanelOpen = searchParams.get('profile') === 'open'
+
   // ── Panels ──────────────────────────────────────────────────────────────
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
-  const [profilePanelOpen, setProfilePanelOpen] = useState(false)
+  const [profilePanelOpen, setProfilePanelOpen] = useState(initialPanelOpen)
 
   // ── Sticky bar ──────────────────────────────────────────────────────────
   const [query, setQuery] = useState('')
@@ -669,6 +740,36 @@ export function PlayerShell({
       .catch(() => {})
       .finally(() => setLoadingRecap(false))
   }
+
+  // Auto-trigger when the panel opens (or arrives open via ?profile=open)
+  useEffect(() => {
+    if (profilePanelOpen) triggerRecap()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profilePanelOpen])
+
+  // ── Inline-link maps for the recap text ─────────────────────────────────
+  // Map name → slug. Lowercased keys. Drop the current player so the recap
+  // doesn't link the subject to themselves. Skip very short names (1-3 chars)
+  // to avoid noisy false matches on common words.
+  const playerNameMap = useMemo(() => {
+    const m: Record<string, string> = {}
+    for (const p of allPlayers) {
+      if (p.player_slug === player.slug) continue
+      if (!p.player_name || p.player_name.length < 4) continue
+      m[p.player_name.toLowerCase()] = p.player_slug
+    }
+    return m
+  }, [allPlayers, player.slug])
+
+  const teamNameMap = useMemo(() => {
+    const m: Record<string, string> = {}
+    for (const t of allTeams) {
+      const display = t.name.replace(/\s+Varsity\s+Football$/i, '').trim()
+      if (display.length < 4) continue
+      m[display.toLowerCase()] = t.slug
+    }
+    return m
+  }, [allTeams])
 
   // ── Merge stats (preserve original logic) ───────────────────────────────
   const mergedStats: StatRow[] = useMemo(() => {
@@ -925,8 +1026,8 @@ export function PlayerShell({
                 ].filter(Boolean) as string[]}
                 rightSlot={
                   <EditorialButtonGroup
-                    prevHref={`/player/${prevSlug}`}
-                    nextHref={`/player/${nextSlug}`}
+                    prevHref={`/player/${prevSlug}${profilePanelOpen ? '?profile=open' : ''}`}
+                    nextHref={`/player/${nextSlug}${profilePanelOpen ? '?profile=open' : ''}`}
                     prevLabel="Previous player"
                     nextLabel="Next player"
                     buttons={[
@@ -938,6 +1039,12 @@ export function PlayerShell({
                 }
               >
                 {player.name}
+                {(() => {
+                  const gpTotal = [...new Set(gameLog.map(r => r.game_id))].length
+                  return gpTotal > 0
+                    ? <EditorialAccent>{gpTotal} Games Played.</EditorialAccent>
+                    : null
+                })()}
               </EditorialHead>
             </RevealFx>
           </div>
@@ -973,7 +1080,7 @@ export function PlayerShell({
               placeholder="Search opponents & seasons…"
             />
 
-            <CmdKButton />
+            <CmdKButton /><AIButton />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ─────────────────────────────── */}
@@ -1128,23 +1235,15 @@ export function PlayerShell({
                   </div>
                 ) : recapBody ? (
                   <div className="space-y-5 max-w-[68ch]">
-                    {recapBody.split('\n\n').filter(Boolean).map((para, i) => {
-                      // Render **bold** runs inline
-                      const parts = para.split(/(\*\*[^*]+\*\*)/g)
-                      return (
-                        <p
-                          key={i}
-                          className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
-                          style={SERIF}
-                        >
-                          {parts.map((part, j) =>
-                            part.startsWith('**') && part.endsWith('**')
-                              ? <strong key={j} className="text-[var(--paper-text)] font-medium">{part.slice(2, -2)}</strong>
-                              : <span key={j}>{part}</span>
-                          )}
-                        </p>
-                      )
-                    })}
+                    {recapBody.split('\n\n').filter(Boolean).map((para, i) => (
+                      <p
+                        key={i}
+                        className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                        style={SERIF}
+                      >
+                        {parseRecapPara(para, playerNameMap, teamNameMap)}
+                      </p>
+                    ))}
                   </div>
                 ) : (
                   <EmptyTablet label="No stat lines on file — recap unavailable." />
@@ -1338,22 +1437,15 @@ export function PlayerShell({
               </div>
             ) : recapBody ? (
               <div className="space-y-5 max-w-[68ch]">
-                {recapBody.split('\n\n').filter(Boolean).map((para, i) => {
-                  const parts = para.split(/(\*\*[^*]+\*\*)/g)
-                  return (
-                    <p
-                      key={i}
-                      className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
-                      style={SERIF}
-                    >
-                      {parts.map((part, j) =>
-                        part.startsWith('**') && part.endsWith('**')
-                          ? <strong key={j} className="text-[var(--paper-text)] font-medium">{part.slice(2, -2)}</strong>
-                          : <span key={j}>{part}</span>
-                      )}
-                    </p>
-                  )
-                })}
+                {recapBody.split('\n\n').filter(Boolean).map((para, i) => (
+                  <p
+                    key={i}
+                    className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                    style={SERIF}
+                  >
+                    {parseRecapPara(para, playerNameMap, teamNameMap)}
+                  </p>
+                ))}
               </div>
             ) : (
               <p

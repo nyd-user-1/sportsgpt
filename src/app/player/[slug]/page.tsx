@@ -19,7 +19,7 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
     ? { name: schoolRows[0].name as string, division: schoolRows[0].division as string }
     : null
 
-  const [stats, allPlayerRows, divTeams, divPlayers, gameLogSeasonStats, gameLog, teamSeasonStats] = await Promise.all([
+  const [stats, allPlayerRows, divTeams, divPlayers, gameLogSeasonStats, gameLog, teamSeasonStats, allTeamRows] = await Promise.all([
     sql`
       SELECT * FROM player_season_stats
       WHERE player_slug = ${slug}
@@ -102,7 +102,10 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
     player.school_slug
       ? sql`SELECT season, overall_wins, overall_losses FROM team_season_stats WHERE team_slug = ${`${player.school_slug}-varsity-football`} ORDER BY season DESC`
       : Promise.resolve([]),
+    sql`SELECT slug, name FROM teams ORDER BY name`,
   ])
+
+  const allTeams = (allTeamRows as { slug: string; name: string }[])
 
   const teamRecords: Record<number, string> = Object.fromEntries(
     (teamSeasonStats as { season: number; overall_wins: number; overall_losses: number }[])
@@ -166,6 +169,8 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
       school={school}
       prevSlug={prev?.player_slug ?? slug}
       nextSlug={next?.player_slug ?? slug}
+      allPlayers={allPlayers}
+      allTeams={allTeams}
       divTeams={divTeams.map(r => ({
         slug:           r.slug as string,
         name:           r.name as string,
