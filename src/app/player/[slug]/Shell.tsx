@@ -1121,12 +1121,12 @@ export function PlayerShell({
                   />
                   <div className="overflow-x-auto no-scrollbar">
                     <div className="flex gap-3 pb-2">
-                      {divPlayers.map(p => {
+                      {divPlayers.map((p, i) => {
                         const stat = topStat(p)
                         const logoSrc = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
                         return (
                           <Link
-                            key={p.player_slug}
+                            key={`${p.player_slug}-${p.stat_type}-${i}`}
                             href={`/player/${p.player_slug}`}
                             className="group/c shrink-0 w-[260px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-2 hover:bg-[var(--paper-quiet)] transition-colors"
                             style={{ borderRadius: TABLET_RADIUS }}
