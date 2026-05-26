@@ -40,6 +40,14 @@ export type GamePanelData = {
   narrative: string | null
 }
 
+// ── Style tokens ──────────────────────────────────────────────────────────────
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+
+const TABLET_R = 3
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function fmt(v: number | null): string { return v == null ? '—' : String(v) }
@@ -50,21 +58,35 @@ function fmtDate(raw: string | null) {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
-// ── AccordionStatTable (same pattern as PanelPlayer/PanelTeam) ────────────────
+function cleanName(name: string) {
+  return name.replace(/\s+Varsity\s+Football$/i, '')
+}
+
+// ── AccordionStatTable ───────────────────────────────────────────────────────
 
 function AccordionStatTable({ title, defaultOpen = true, children }: { title: string; defaultOpen?: boolean; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(defaultOpen)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+    <div
+      className="mx-5 mb-3 mt-2 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] overflow-hidden"
+      style={{ borderRadius: TABLET_R }}
+    >
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors bg-[var(--surface)] hover:bg-[var(--inp-bg)]"
+        className="w-full flex items-center justify-between px-5 py-3 transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]"
       >
-        <span className="text-sm font-bold text-[var(--txt)]">{title}</span>
-        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-200', open && 'rotate-180')} />
+        <span
+          className="text-[var(--paper-text)]"
+          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {title}
+        </span>
+        <ChevronDown
+          className={cn('h-3.5 w-3.5 text-[var(--paper-faint)] transition-transform duration-200', open && 'rotate-180')}
+        />
       </button>
       {open && (
-        <div className="divide-y divide-[var(--border)] border-t border-[var(--border)]">
+        <div className="border-t border-[var(--paper-rule)]">
           {children}
         </div>
       )}
@@ -74,9 +96,19 @@ function AccordionStatTable({ title, defaultOpen = true, children }: { title: st
 
 function StatRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between px-4 py-2.5">
-      <span className="text-sm text-[var(--muted)]">{label}</span>
-      <span className="text-sm tabular-nums font-medium text-[var(--txt)]">{value}</span>
+    <div className="flex items-baseline justify-between px-5 py-2.5">
+      <span
+        className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        {label}
+      </span>
+      <span
+        className="text-[14px] tabular-nums text-[var(--paper-text)]"
+        style={MONO}
+      >
+        {value}
+      </span>
     </div>
   )
 }
@@ -89,59 +121,52 @@ function GameHero({ game }: { game: GamePanelData['game'] }) {
   const scored = game.home_score != null && game.away_score != null
 
   return (
-    <div className="relative mx-3 mt-3 mb-1 h-[180px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
-      <div className="absolute inset-0 flex">
-        <div className="relative flex-1">
-          {homePhoto
-            ? <><Image src={homePhoto} alt={game.home_name} fill className="object-cover" unoptimized /><div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/60" /></>
-            : <div className="h-full" style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}28, ${ACCENT_COLOR}55)` }} />}
+    <div
+      className="mx-5 mt-5 mb-2 border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+      style={{ padding: 6, borderRadius: TABLET_R }}
+    >
+      <div
+        className="relative w-full h-[180px] overflow-hidden"
+        style={{ borderRadius: 1 }}
+      >
+        <div className="absolute inset-0 flex">
+          <div className="relative flex-1">
+            {homePhoto
+              ? <><Image src={homePhoto} alt={game.home_name} fill className="object-cover object-top" unoptimized /><div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/60" /></>
+              : <div className="h-full" style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}28, ${ACCENT_COLOR}55)` }} />}
+          </div>
+          <div className="relative flex-1">
+            {awayPhoto
+              ? <><Image src={awayPhoto} alt={game.away_name} fill className="object-cover object-top" unoptimized /><div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/60" /></>
+              : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
+          </div>
         </div>
-        <div className="relative flex-1">
-          {awayPhoto
-            ? <><Image src={awayPhoto} alt={game.away_name} fill className="object-cover" unoptimized /><div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/60" /></>
-            : <div className="h-full bg-[var(--bg2)]" />}
+        <div className="absolute inset-0 bg-black/35" />
+        {game.game_number != null && (
+          <div className="absolute top-3 left-3 z-10">
+            <span
+              className="text-[10px] uppercase tracking-[0.22em] px-2 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white/95"
+              style={{ ...SANS, borderRadius: 2 }}
+            >
+              Week {game.game_number}
+            </span>
+          </div>
+        )}
+        {fmtDate(game.game_date) && (
+          <div className="absolute top-3 right-3 z-10">
+            <span
+              className="text-[10px] uppercase tracking-[0.22em] text-white/70"
+              style={SANS}
+            >
+              {fmtDate(game.game_date)}
+            </span>
+          </div>
+        )}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          {scored
+            ? <p className="text-5xl font-black text-white tabular-nums leading-none drop-shadow-lg" style={MONO}>{game.home_score} – {game.away_score}</p>
+            : <p className="text-lg text-white/50" style={{ ...SERIF, fontStyle: 'italic' }}>vs</p>}
         </div>
-      </div>
-      <div className="absolute inset-0 bg-black/35" />
-      {game.game_number != null && (
-        <div className="absolute top-2.5 left-3 z-10">
-          <span className="text-xs font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {game.game_number}</span>
-        </div>
-      )}
-      {fmtDate(game.game_date) && (
-        <div className="absolute top-2.5 right-3 z-10">
-          <span className="text-xs text-white/60">{fmtDate(game.game_date)}</span>
-        </div>
-      )}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        {scored
-          ? <p className="text-5xl font-black text-white tabular-nums leading-none drop-shadow-lg">{game.home_score} – {game.away_score}</p>
-          : <p className="text-lg text-white/50">vs</p>}
-      </div>
-    </div>
-  )
-}
-
-// ── GameInfoBar (sticky) ──────────────────────────────────────────────────────
-
-function GameInfoBar({ game }: { game: GamePanelData['game'] }) {
-  const homeLogo = SCHOOL_LOGOS[game.home_school]
-  const awayLogo = SCHOOL_LOGOS[game.away_school]
-  const scored   = game.home_score != null && game.away_score != null
-  const homeWon  = scored && game.home_score! > game.away_score!
-
-  return (
-    <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2 px-3 py-2.5 bg-[var(--surface)]">
-      <div className="flex items-center gap-1.5 min-w-0 flex-1">
-        {homeLogo && <Image src={homeLogo} alt={game.home_name} width={28} height={28} className="rounded-full object-contain bg-white border border-[var(--border)] shrink-0" unoptimized />}
-        <span className={cn('text-sm font-semibold truncate', homeWon ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>{game.home_name}</span>
-      </div>
-      {scored && (
-        <span className="text-sm font-black tabular-nums text-[var(--txt)] shrink-0 px-2">{game.home_score} – {game.away_score}</span>
-      )}
-      <div className="flex items-center gap-1.5 min-w-0 flex-1 justify-end">
-        <span className={cn('text-sm font-semibold truncate', !homeWon && scored ? 'text-[var(--txt)]' : 'text-[var(--muted)]')}>{game.away_name}</span>
-        {awayLogo && <Image src={awayLogo} alt={game.away_name} width={28} height={28} className="rounded-full object-contain bg-white border border-[var(--border)] shrink-0" unoptimized />}
       </div>
     </div>
   )
@@ -153,31 +178,37 @@ function BoxScore({ game, quarterRows }: { game: GamePanelData['game']; quarterR
   if (!quarterRows.length) return null
   return (
     <AccordionStatTable title="Box Score">
-      <div className="px-4 py-2">
-        <div className="grid grid-cols-7 text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)] mb-1">
-          <span className="col-span-2">Team</span>
-          <span className="text-center">Q1</span>
-          <span className="text-center">Q2</span>
-          <span className="text-center">Q3</span>
-          <span className="text-center">Q4</span>
-          <span className="text-center">F</span>
+      <div className="px-5 py-3">
+        <div className="grid grid-cols-7 items-baseline pb-2 border-b border-[var(--paper-rule-soft)]">
+          <span className="col-span-2 text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)]" style={SANS}>Team</span>
+          {(['Q1','Q2','Q3','Q4','F'] as const).map(h => (
+            <span key={h} className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)] text-center" style={SANS}>{h}</span>
+          ))}
         </div>
-        {[...quarterRows].sort((a, b) => a.team_slug === game.home_team_slug ? -1 : 1).map(r => {
+        {[...quarterRows].sort((a, b) => a.team_slug === game.home_team_slug ? -1 : 1).map((r, i) => {
           const isHome = r.team_slug === game.home_team_slug
           const name   = isHome ? game.home_name : game.away_name
           const logo   = SCHOOL_LOGOS[isHome ? game.home_school : game.away_school]
           const final  = isHome ? game.home_score : game.away_score
           return (
-            <div key={r.team_slug} className="grid grid-cols-7 items-center py-1.5">
-              <div className="col-span-2 flex items-center gap-1.5 min-w-0">
-                {logo && <Image src={logo} alt={name} width={18} height={18} className="rounded-full object-contain bg-white shrink-0" unoptimized />}
-                <span className="text-xs font-medium text-[var(--txt)] truncate">{name}</span>
+            <div
+              key={r.team_slug}
+              className={cn('grid grid-cols-7 items-center py-2.5', i > 0 && 'border-t border-[var(--paper-rule-soft)]')}
+            >
+              <div className="col-span-2 flex items-center gap-2 min-w-0">
+                {logo && <Image src={logo} alt={name} width={20} height={20} className="shrink-0 object-contain" unoptimized />}
+                <span
+                  className="text-[var(--paper-text)] truncate"
+                  style={{ ...SERIF, fontSize: 13, fontWeight: 500, letterSpacing: '-0.005em' }}
+                >
+                  {cleanName(name)}
+                </span>
               </div>
-              <span className="text-xs tabular-nums text-center text-[var(--muted)]">{r.q1}</span>
-              <span className="text-xs tabular-nums text-center text-[var(--muted)]">{r.q2}</span>
-              <span className="text-xs tabular-nums text-center text-[var(--muted)]">{r.q3}</span>
-              <span className="text-xs tabular-nums text-center text-[var(--muted)]">{r.q4}</span>
-              <span className="text-xs tabular-nums text-center font-semibold text-[var(--txt)]">{final ?? '—'}</span>
+              <span className="text-[13px] tabular-nums text-center text-[var(--paper-muted)]" style={MONO}>{r.q1}</span>
+              <span className="text-[13px] tabular-nums text-center text-[var(--paper-muted)]" style={MONO}>{r.q2}</span>
+              <span className="text-[13px] tabular-nums text-center text-[var(--paper-muted)]" style={MONO}>{r.q3}</span>
+              <span className="text-[13px] tabular-nums text-center text-[var(--paper-muted)]" style={MONO}>{r.q4}</span>
+              <span className="text-[13px] tabular-nums text-center font-medium text-[var(--paper-text)]" style={MONO}>{final ?? '—'}</span>
             </div>
           )
         })}
@@ -193,77 +224,116 @@ function PlayerGameCard({ p }: { p: GamePanelData['playerStats'][0] }) {
   const teamPhoto = TEAM_PHOTOS[p.school_slug]?.[0]
   const logo      = SCHOOL_LOGOS[p.school_slug]
   const heroSrc   = photo || teamPhoto
-  const shortTeam = p.team_name.replace(/\s+Varsity\s+Football$/i, '')
+  const shortTeam = cleanName(p.team_name)
 
   return (
     <div className="flex-1 overflow-y-auto no-scrollbar">
-      <div className="relative mx-3 mt-3 mb-1 h-[200px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
-        {heroSrc
-          ? <Image src={heroSrc} alt={p.player_name} fill className="object-cover object-top" unoptimized />
-          : <div className="h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
-              {logo && <Image src={logo} alt="" width={56} height={56} className="object-contain opacity-50" unoptimized />}
-            </div>}
-      </div>
-      <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2.5 px-3 py-2.5 bg-[var(--surface)]">
-        {logo && <Image src={logo} alt={shortTeam} width={34} height={34} className="rounded-full object-contain bg-white border border-[var(--border)] shrink-0" unoptimized />}
-        <div className="flex-1 min-w-0">
-          <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{p.player_name}</p>
-          <p className="text-xs text-[var(--muted)] mt-0.5">{shortTeam} · {p.stat_type}</p>
+      <div
+        className="mx-5 mt-5 mb-2 border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+        style={{ padding: 6, borderRadius: TABLET_R }}
+      >
+        <div className="relative w-full h-[200px] overflow-hidden" style={{ borderRadius: 1 }}>
+          {heroSrc
+            ? <Image src={heroSrc} alt={p.player_name} fill className="object-cover object-top" unoptimized />
+            : <div className="h-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
+                {logo && <Image src={logo} alt="" width={56} height={56} className="object-contain opacity-50" unoptimized />}
+              </div>}
         </div>
       </div>
-      <div className="mx-3 my-3 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
-        <div className="px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[var(--muted)] border-b border-[var(--border)] bg-[var(--surface)]">This Game</div>
-        <div className="divide-y divide-[var(--border)]">
+      <div className="px-5 pt-3 pb-5 flex items-center gap-3 border-b border-[var(--paper-rule)]">
+        <Link
+          href={`/team/${p.school_slug}-varsity-football`}
+          aria-label={`${shortTeam} team page`}
+          className="shrink-0 w-12 h-12 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity"
+        >
+          {logo && <Image src={logo} alt={shortTeam} width={32} height={32} className="object-contain" unoptimized />}
+        </Link>
+        <div className="flex-1 min-w-0">
+          <p
+            className="text-[var(--paper-text)] leading-tight truncate"
+            style={{ ...SERIF, fontSize: 20, fontWeight: 500, letterSpacing: '-0.005em' }}
+          >
+            {p.player_name}
+          </p>
+          <p
+            className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
+            style={{ ...SERIF, fontStyle: 'italic' }}
+          >
+            {shortTeam} · {p.stat_type}
+          </p>
+        </div>
+      </div>
+      <div
+        className="mx-5 my-3 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] overflow-hidden"
+        style={{ borderRadius: TABLET_R }}
+      >
+        <div
+          className="px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)]"
+          style={SANS}
+        >
+          This Game
+        </div>
+        <div>
           {p.stat_type === 'Passing' && <>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_yds)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">COMP/ATT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_comp)}/{fmt(p.pass_att)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_tds)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">INT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.pass_int)}</span></div>
+            <StatRow label="YDS"      value={fmt(p.pass_yds)} />
+            <StatRow label="COMP/ATT" value={`${fmt(p.pass_comp)}/${fmt(p.pass_att)}`} />
+            <StatRow label="TD"       value={fmt(p.pass_tds)} />
+            <StatRow label="INT"      value={fmt(p.pass_int)} />
           </>}
           {p.stat_type === 'Rushing' && <>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_yds)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">ATT</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_att)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rush_tds)}</span></div>
+            <StatRow label="YDS" value={fmt(p.rush_yds)} />
+            <StatRow label="ATT" value={fmt(p.rush_att)} />
+            <StatRow label="TD"  value={fmt(p.rush_tds)} />
           </>}
           {p.stat_type === 'Receiving' && <>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">YDS</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_yds)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">REC</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_rec)}</span></div>
-            <div className="flex justify-between px-4 py-2.5"><span className="text-sm text-[var(--muted)]">TD</span><span className="text-sm tabular-nums font-medium text-[var(--txt)]">{fmt(p.rec_tds)}</span></div>
+            <StatRow label="YDS" value={fmt(p.rec_yds)} />
+            <StatRow label="REC" value={fmt(p.rec_rec)} />
+            <StatRow label="TD"  value={fmt(p.rec_tds)} />
           </>}
         </div>
       </div>
-      {p.player_slug && (
-        <div className="px-4 py-3 border-t border-[var(--border)]">
-          <Link href={`/player/${p.player_slug}`} className="flex items-center justify-between text-sm font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>
-            <span>View full profile</span>
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
-      )}
     </div>
   )
 }
 
 // ── PlayerStats ───────────────────────────────────────────────────────────────
 
-function PlayerStatRow({ p, onRowClick }: { p: GamePanelData['playerStats'][0]; onRowClick: (p: GamePanelData['playerStats'][0]) => void }) {
+function PlayerStatRow({ p, onRowClick, first }: { p: GamePanelData['playerStats'][0]; onRowClick: (p: GamePanelData['playerStats'][0]) => void; first?: boolean }) {
   const logo = SCHOOL_LOGOS[p.school_slug]
+  const statSummary =
+    p.stat_type === 'Passing'   ? `${fmt(p.pass_yds)} yds · ${fmt(p.pass_tds)} TD` :
+    p.stat_type === 'Rushing'   ? `${fmt(p.rush_yds)} yds · ${fmt(p.rush_tds)} TD` :
+    p.stat_type === 'Receiving' ? `${fmt(p.rec_yds)} yds · ${fmt(p.rec_tds)} TD` : ''
   return (
     <div
-      className="flex items-center gap-2 px-4 py-2.5 cursor-pointer hover:bg-[var(--inp-bg)] transition-colors"
+      className={cn(
+        'group/row flex items-center gap-3 px-5 py-2.5 cursor-pointer transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_4%,transparent)]',
+        !first && 'border-t border-[var(--paper-rule-soft)]',
+      )}
       onClick={() => onRowClick(p)}
     >
-      {logo && <Image src={logo} alt="" width={20} height={20} className="rounded-full object-contain bg-white shrink-0" unoptimized />}
+      {logo
+        ? <Image src={logo} alt="" width={22} height={22} className="shrink-0 object-contain" unoptimized />
+        : <div className="shrink-0 h-[22px] w-[22px] rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />}
       <div className="flex-1 min-w-0">
-        {p.player_slug
-          ? <Link href={`/player/${p.player_slug}`} onClick={e => e.stopPropagation()} className="text-sm font-medium text-[var(--txt)] hover:text-sky-500 transition-colors truncate">{p.player_name}</Link>
-          : <p className="text-sm font-medium text-[var(--txt)] truncate">{p.player_name}</p>}
-        <p className="text-xs text-[var(--muted)] truncate">{p.team_name.replace(/\s+Varsity\s+Football$/i, '')}</p>
+        <p
+          className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors truncate"
+          style={{ ...SERIF, fontSize: 13.5, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {p.player_name}
+        </p>
+        <p
+          className="text-[11.5px] text-[var(--paper-muted)] truncate"
+          style={{ ...SERIF, fontStyle: 'italic' }}
+        >
+          {cleanName(p.team_name)}
+        </p>
       </div>
-      <span className="text-xs tabular-nums text-[var(--muted)] shrink-0">
-        {p.stat_type === 'Passing'   && `${fmt(p.pass_yds)} yds · ${fmt(p.pass_tds)} TD`}
-        {p.stat_type === 'Rushing'   && `${fmt(p.rush_yds)} yds · ${fmt(p.rush_tds)} TD`}
-        {p.stat_type === 'Receiving' && `${fmt(p.rec_yds)} yds · ${fmt(p.rec_tds)} TD`}
+      <span
+        className="text-[12px] tabular-nums text-[var(--paper-muted)] shrink-0"
+        style={MONO}
+      >
+        {statSummary}
       </span>
     </div>
   )
@@ -280,17 +350,17 @@ function PlayerStats({ playerStats, onRowClick }: { playerStats: GamePanelData['
     <>
       {passing.length > 0 && (
         <AccordionStatTable title="Passing">
-          {passing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
+          {passing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} first={i === 0} />)}
         </AccordionStatTable>
       )}
       {rushing.length > 0 && (
         <AccordionStatTable title="Rushing">
-          {rushing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
+          {rushing.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} first={i === 0} />)}
         </AccordionStatTable>
       )}
       {receiving.length > 0 && (
         <AccordionStatTable title="Receiving">
-          {receiving.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} />)}
+          {receiving.map((p, i) => <PlayerStatRow key={i} p={p} onRowClick={onRowClick} first={i === 0} />)}
         </AccordionStatTable>
       )}
     </>
@@ -303,9 +373,15 @@ function Narrative({ text }: { text: string }) {
   const paragraphs = text.split(/\n+/).filter(Boolean)
   return (
     <AccordionStatTable title="Game Recap" defaultOpen={true}>
-      <div className="px-4 py-3 space-y-2">
+      <div className="px-5 py-4 space-y-3">
         {paragraphs.map((p, i) => (
-          <p key={i} className="text-sm text-[var(--muted)] leading-relaxed">{p.replace(/\*\*(.*?)\*\*/g, '$1')}</p>
+          <p
+            key={i}
+            className="text-[14px] leading-[1.7] text-[var(--paper-muted)]"
+            style={SERIF}
+          >
+            {p.replace(/\*\*(.*?)\*\*/g, '$1')}
+          </p>
         ))}
       </div>
     </AccordionStatTable>
@@ -314,22 +390,12 @@ function Narrative({ text }: { text: string }) {
 
 // ── GameDetailFooter (sticky footer for launchpad game panel) ─────────────────
 
-const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
-const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
-
-export function GameDetailFooter({ gameId }: { gameId: number }) {
+export function GameDetailFooter() {
   return (
-    <div className="flex items-center justify-between px-5 py-3.5 bg-[var(--paper)]">
+    <div className="px-5 py-3.5 bg-[var(--paper)]">
       <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
         Game Detail Panel
       </span>
-      <Link
-        href={`/game/${gameId}`}
-        className="inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
-        style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>
-        View full game page
-        <ArrowUpRight className="h-3.5 w-3.5" />
-      </Link>
     </div>
   )
 }
@@ -344,20 +410,31 @@ export function GamePanelContent({ game, quarterRows, playerStats, narrative }: 
       <AppPanel
         open={!!selectedPlayer}
         onClose={() => setSelectedPlayer(null)}
-        title={selectedPlayer?.player_name ?? ''}
-        detailHref={selectedPlayer?.player_slug ? `/player/${selectedPlayer.player_slug}` : undefined}
+        title={
+          <span className="truncate" style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}>
+            {selectedPlayer?.player_name ?? ''}
+          </span>
+        }
+        footer={
+          <div className="px-5 py-3.5 bg-[var(--paper)]">
+            <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+              Player Panel
+            </span>
+          </div>
+        }
         bodyClass="flex flex-col"
       >
         {selectedPlayer && <PlayerGameCard p={selectedPlayer} />}
       </AppPanel>
 
-      <div className="flex-1 overflow-y-auto no-scrollbar">
-      <div className="pt-2 pb-4">
-        <BoxScore game={game} quarterRows={quarterRows} />
-        <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
-        {narrative && <Narrative text={narrative} />}
+      <div className="flex-1 overflow-y-auto no-scrollbar" style={{ backgroundColor: 'var(--paper)' }}>
+        <div className="pt-1 pb-6">
+          <GameHero game={game} />
+          <BoxScore game={game} quarterRows={quarterRows} />
+          <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
+          {narrative && <Narrative text={narrative} />}
+        </div>
       </div>
-    </div>
     </>
   )
 }
