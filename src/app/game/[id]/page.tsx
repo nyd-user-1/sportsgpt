@@ -16,7 +16,7 @@ export default async function GamePage({
   const gameId = parseInt(id, 10)
   if (isNaN(gameId)) notFound()
 
-  const [gameRows, boxRows, playerGameStatRows] = await Promise.all([
+  const [gameRows, boxRows, playerGameStatRows, teamCountRows, playerCountRows] = await Promise.all([
     sql`
       SELECT g.*,
              ht.name  AS home_team_name,  ht.school_slug AS home_school_slug,  ht.division,
@@ -44,6 +44,8 @@ export default async function GamePage({
       WHERE game_id = ${gameId}
       ORDER BY stat_type, team_name, player_name
     `,
+    sql`SELECT COUNT(DISTINCT slug)::int AS total FROM teams`,
+    sql`SELECT COUNT(DISTINCT slug)::int AS total FROM players`,
   ])
 
   if (!gameRows[0]) notFound()
@@ -77,6 +79,9 @@ export default async function GamePage({
     playerSlugs[(p.name as string).toLowerCase()] = p.slug as string
   }
 
+  const totalTeams   = Number((teamCountRows   as { total: number }[])[0]?.total ?? 0)
+  const totalPlayers = Number((playerCountRows as { total: number }[])[0]?.total ?? 0)
+
   return (
     <GameShell
       game={game as Record<string, unknown>}
@@ -86,6 +91,8 @@ export default async function GamePage({
       nextGameId={nextGameId ?? null}
       refSlug={refSlug}
       playerSlugs={playerSlugs}
+      totalTeams={totalTeams}
+      totalPlayers={totalPlayers}
     />
   )
 }

@@ -32,6 +32,12 @@ export type AnyPlayerRow = PlayerPasser | PlayerRusher | PlayerReceiver
 
 type StatTab = 'Passing' | 'Rushing' | 'Receiving'
 
+// ── Style tokens ──────────────────────────────────────────────────────────────
+
+const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
+const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
+const MONO  = { fontFamily: 'var(--font-mono), ui-monospace, monospace' } as const
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function fmt(v: number | null, decimals = 0, suffix = ''): string {
@@ -51,16 +57,26 @@ function fmtSigned(v: number | null): string {
 function AccordionStatTable({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]">
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors bg-[var(--surface)] hover:bg-[var(--inp-bg)]"
+        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]"
       >
-        <span className="text-sm font-bold text-[var(--txt)]">{title}</span>
-        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-200', open && 'rotate-180')} />
+        <span
+          className="text-[14px] text-[var(--paper-text)]"
+          style={{ ...SERIF, fontWeight: 600, letterSpacing: '-0.005em' }}
+        >
+          {title}
+        </span>
+        <ChevronDown
+          className={cn(
+            'h-3.5 w-3.5 text-[var(--paper-muted)] transition-transform duration-200',
+            open && 'rotate-180',
+          )}
+        />
       </button>
       {open && (
-        <div className="divide-y divide-[var(--border)] border-t border-[var(--border)]">
+        <div className="divide-y divide-[var(--paper-rule-soft)] border-t border-[var(--paper-rule)]">
           {children}
         </div>
       )}
@@ -71,33 +87,23 @@ function AccordionStatTable({ title, children }: { title: string; children: Reac
 function StatRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between px-4 py-2.5">
-      <span className="text-sm text-[var(--muted)]">{label}</span>
-      <span className="text-sm tabular-nums font-medium text-[var(--txt)]">{value}</span>
+      <span
+        className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        {label}
+      </span>
+      <span
+        className="text-[14px] tabular-nums font-medium text-[var(--paper-text)]"
+        style={MONO}
+      >
+        {value}
+      </span>
     </div>
   )
 }
 
-// ── PlayerInfoBar (fixed) + PlayerPhoto (scrolls) ────────────────────────────
-
-function PlayerInfoBar({ player }: { player: AnyPlayerRow }) {
-  const logo = SCHOOL_LOGOS[player.school_slug]
-  return (
-    <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2.5 px-3 py-2.5 bg-[var(--surface)]">
-      {logo ? (
-        <Link href={`/team/${player.school_slug}-varsity-football`} className="shrink-0">
-          <Image src={logo} alt={player.school_name} width={38} height={38}
-            className="rounded-full object-contain bg-white border border-[var(--border)] hover:opacity-80 transition-opacity" unoptimized />
-        </Link>
-      ) : (
-        <div className="shrink-0 w-[38px] h-[38px] rounded-full bg-[var(--inp-bg)]" />
-      )}
-      <div className="flex-1 min-w-0">
-        <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{player.player_name}</p>
-        <p className="text-xs text-[var(--muted)] mt-0.5">{player.school_name} · {formatSeason(player.season)}</p>
-      </div>
-    </div>
-  )
-}
+// ── PlayerPhoto — matted hero ────────────────────────────────────────────────
 
 function PlayerPhoto({ player }: { player: AnyPlayerRow }) {
   const photo     = PLAYER_PHOTOS[player.player_slug]
@@ -105,20 +111,85 @@ function PlayerPhoto({ player }: { player: AnyPlayerRow }) {
   const logo      = SCHOOL_LOGOS[player.school_slug]
   const heroSrc   = photo || teamPhoto
   return (
-    <div className="relative mx-3 mt-3 mb-1 h-[225px] sm:h-[280px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
-      {heroSrc ? (
-        <Image src={heroSrc} alt={player.player_name} fill className="object-cover object-top" unoptimized />
-      ) : (
-        <div className="h-full flex items-center justify-center"
-          style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
-          {logo && <Image src={logo} alt="" width={64} height={64} className="object-contain opacity-50" unoptimized />}
-        </div>
-      )}
+    <div
+      className="mx-5 mt-5 mb-4 border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+      style={{ padding: 6, borderRadius: 3 }}
+    >
+      <div
+        className="relative w-full h-[225px] sm:h-[260px] overflow-hidden"
+        style={{ borderRadius: 1 }}
+      >
+        {heroSrc ? (
+          <Image
+            src={heroSrc}
+            alt={player.player_name}
+            fill
+            className="object-cover object-top"
+            unoptimized
+          />
+        ) : (
+          <div
+            className="h-full flex items-center justify-center"
+            style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}
+          >
+            {logo && (
+              <Image
+                src={logo}
+                alt=""
+                width={84}
+                height={84}
+                className="object-contain opacity-70"
+                unoptimized
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
 
-// ── Stat blocks ───────────────────────────────────────────────────────────────
+// ── PlayerInfoBar — identity row ─────────────────────────────────────────────
+
+function PlayerInfoBar({ player }: { player: AnyPlayerRow }) {
+  const logo = SCHOOL_LOGOS[player.school_slug]
+  return (
+    <div className="px-5 pb-5 flex items-center gap-3 border-b border-[var(--paper-rule)]">
+      <Link
+        href={`/team/${player.school_slug}-varsity-football`}
+        aria-label={`${player.school_name} team page`}
+        className="shrink-0 w-12 h-12 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity"
+      >
+        {logo && (
+          <Image
+            src={logo}
+            alt={player.school_name}
+            width={32}
+            height={32}
+            className="object-contain"
+            unoptimized
+          />
+        )}
+      </Link>
+      <div className="flex-1 min-w-0">
+        <p
+          className="text-[var(--paper-text)] leading-tight truncate"
+          style={{ ...SERIF, fontSize: 20, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {player.player_name}
+        </p>
+        <p
+          className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
+          style={{ ...SERIF, fontStyle: 'italic' }}
+        >
+          {player.school_name} · {formatSeason(player.season)}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+// ── Stat blocks — accordion-organized for the full player profile ─────────────
 
 function PassingStats({ player }: { player: PlayerPasser }) {
   return (
@@ -149,18 +220,20 @@ function PassingStats({ player }: { player: PlayerPasser }) {
 }
 
 function RushingStats({ player }: { player: PlayerRusher }) {
-  const ypc = player.rush_attempts ? (player.rush_yards ?? 0) / player.rush_attempts : null
-  const tdPct = player.rush_attempts ? ((player.rush_tds ?? 0) / player.rush_attempts) * 100 : null
-  const tdsPerG = player.games_played ? (player.rush_tds ?? 0) / player.games_played : null
-  const ypg = player.yards_per_game != null ? Number(player.yards_per_game) : null
-  const rExp = (ypc != null && player.rush_attempts) ? (ypc * ((player.rush_tds ?? 0) / player.rush_attempts)) * 100 : null
+  const ypc     = player.rush_attempts ? (player.rush_yards ?? 0) / player.rush_attempts : null
+  const tdPct   = player.rush_attempts ? ((player.rush_tds ?? 0) / player.rush_attempts) * 100 : null
+  const tdsPerG = player.games_played  ? (player.rush_tds ?? 0) / player.games_played : null
+  const ypg     = player.yards_per_game != null ? Number(player.yards_per_game) : null
+  const rExp    = (ypc != null && player.rush_attempts)
+    ? (ypc * ((player.rush_tds ?? 0) / player.rush_attempts)) * 100
+    : null
   return (
     <div className="pt-2">
       <AccordionStatTable title="Rushing">
-        <StatRow label="YDS"   value={fmt(player.rush_yards)} />
-        <StatRow label="ATT"   value={fmt(player.rush_attempts)} />
-        <StatRow label="YPC"   value={ypc != null ? ypc.toFixed(1) : '—'} />
-        <StatRow label="TDs"   value={fmt(player.rush_tds)} />
+        <StatRow label="YDS" value={fmt(player.rush_yards)} />
+        <StatRow label="ATT" value={fmt(player.rush_attempts)} />
+        <StatRow label="YPC" value={ypc != null ? ypc.toFixed(1) : '—'} />
+        <StatRow label="TDs" value={fmt(player.rush_tds)} />
       </AccordionStatTable>
       <AccordionStatTable title="Per Game">
         <StatRow label="YPG"   value={ypg != null ? ypg.toFixed(1) : '—'} />
@@ -188,16 +261,30 @@ function ReceivingStats({ player }: { player: PlayerReceiver }) {
   )
 }
 
-// ── Shared body (used by PanelPlayer + @panel parallel route) ─────────────────
+// ── PlayerPanelContent ────────────────────────────────────────────────────────
 
 export function PlayerPanelContent({ player, statTab }: { player: AnyPlayerRow; statTab: StatTab }) {
   return (
-    <div className="flex-1 overflow-y-auto no-scrollbar">
+    <div
+      className="flex-1 overflow-y-auto no-scrollbar"
+      style={{ backgroundColor: 'var(--paper)', color: 'var(--paper-text)' }}
+    >
       <PlayerPhoto player={player} />
       <PlayerInfoBar player={player} />
       {statTab === 'Passing'   && <PassingStats   player={player as PlayerPasser} />}
       {statTab === 'Rushing'   && <RushingStats   player={player as PlayerRusher} />}
       {statTab === 'Receiving' && <ReceivingStats player={player as PlayerReceiver} />}
+
+      <div className="px-5 py-5 border-t border-[var(--paper-rule)] mt-2">
+        <Link
+          href={`/player/${player.player_slug}`}
+          className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:opacity-70 transition-opacity"
+          style={SANS}
+        >
+          <span>View full profile</span>
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
     </div>
   )
 }
@@ -212,15 +299,13 @@ export function PanelPlayer({
   onClose: () => void
 }) {
   const footer = player ? (
-    <div className="px-4 py-3">
-      <Link
-        href={`/player/${player.player_slug}`}
-        className="flex items-center justify-between text-sm font-semibold hover:underline"
-        style={{ color: ACCENT_COLOR }}
+    <div className="px-5 py-3.5 bg-[var(--paper)]">
+      <span
+        className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
+        style={SANS}
       >
-        <span>View full profile</span>
-        <ArrowUpRight className="h-4 w-4" />
-      </Link>
+        Player Panel
+      </span>
     </div>
   ) : undefined
 

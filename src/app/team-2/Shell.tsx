@@ -548,13 +548,13 @@ export function TeamMagazineShell({
                         <SortTh col="name"    label="Team"     sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} />
                         <SortTh col="gp"      label="GP"       sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-14" />
                         <SortTh col="ppg"     label="PPG"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-16" />
-                        <SortTh col="passYpg" label="Pass YPG" sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-24" />
-                        <SortTh col="rushYpg" label="Rush YPG" sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-24" />
+                        <SortTh col="passYpg" label="PYPG"     sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-20" />
+                        <SortTh col="rushYpg" label="RYPG"     sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-20" />
                         <SortTh col="ypg"     label="YPG"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-20" />
                         <SortTh col="tds"     label="TDs"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-16" />
                         <SortTh col="ypp"     label="YPP"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-16" />
                         <SortTh col="mov"     label="MoV"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-16" />
-                        <SortTh col="offIdx"  label="Off Idx"  sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-20 pr-5" />
+                        <SortTh col="offIdx"  label="OFF"      sortCol={offSortCol} sortDir={offSortDir} onSort={handleOffSort} right className="w-20 pr-5" />
                       </tr>
                     </thead>
                     <tbody>
@@ -619,8 +619,8 @@ export function TeamMagazineShell({
                           </td>
                           <td className={cn(tabletTd, 'text-right tabular-nums')} style={MONO}>
                             <span className={cn(
-                              t.mov > 0 && 'text-[var(--paper-text)]',
-                              t.mov < 0 && 'text-[var(--paper-muted)]',
+                              t.mov > 0 && 'text-emerald-500',
+                              t.mov < 0 && 'text-rose-500',
                               t.mov === 0 && 'text-[var(--paper-faint)]',
                             )}>
                               {fmtSign(t.mov)}

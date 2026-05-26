@@ -4,12 +4,12 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChartSpline, FileUser, MessageCircle, Sparkles } from 'lucide-react'
+import { ChartSpline, FileUser, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
+import { ChatSeasonsPanel } from '@/components/ChatSeasonsPanel'
 import {
   EditorialHead,
   EditorialButtonGroup,
@@ -20,6 +20,9 @@ import {
   Tablet,
   EmptyTablet,
   ScrollTable,
+  StickyControlBar,
+  SearchInput,
+  useSearchHotkey,
   MONO,
   tabletTd,
 } from '@/components/editorial'
@@ -273,9 +276,11 @@ function statCells(p: FlatPlayerStat, statType: string): (number | null)[] {
 function StatTable({
   statType,
   players,
+  onPlayerSelect,
 }: {
   statType: string
   players: FlatPlayerStat[]
+  onPlayerSelect?: (slug: string) => void
 }) {
   if (players.length === 0) {
     return <EmptyTablet label={`No ${statType.toLowerCase()} data recorded for this game.`} />
@@ -300,7 +305,12 @@ function StatTable({
             return (
               <tr
                 key={`${p.player_slug ?? p.player_name}-${i}`}
-                className="border-t border-[var(--paper-rule-soft)] hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
+                onClick={p.player_slug && onPlayerSelect ? () => onPlayerSelect(p.player_slug!) : undefined}
+                className={cn(
+                  'group/row border-t border-[var(--paper-rule-soft)] transition-colors',
+                  'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
+                  p.player_slug && onPlayerSelect && 'cursor-pointer',
+                )}
               >
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-3 min-w-0">
@@ -308,27 +318,27 @@ function StatTable({
                       {i + 1}.
                     </span>
                     {logo && teamSlug && (
-                      <Link href={`/team/${teamSlug}`} aria-label={`${cleanName(p.team_name)} team page`} className="shrink-0">
+                      <Link
+                        href={`/team/${teamSlug}`}
+                        onClick={e => e.stopPropagation()}
+                        aria-label={`${cleanName(p.team_name)} team page`}
+                        className="shrink-0"
+                      >
                         <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
                       </Link>
                     )}
                     <div className="min-w-0">
-                      {p.player_slug ? (
-                        <Link
-                          href={`/player/${p.player_slug}`}
-                          className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors leading-tight truncate block"
-                          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
-                        >
-                          {p.player_name}
-                        </Link>
-                      ) : (
-                        <span
-                          className="text-[var(--paper-text)] leading-tight truncate block"
-                          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
-                        >
-                          {p.player_name}
-                        </span>
-                      )}
+                      <span
+                        className={cn(
+                          'leading-tight truncate block transition-colors',
+                          p.player_slug && onPlayerSelect
+                            ? 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'
+                            : 'text-[var(--paper-text)]',
+                        )}
+                        style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+                      >
+                        {p.player_name}
+                      </span>
                       <p className="text-[11.5px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>
                         {cleanName(p.team_name)}
                       </p>
@@ -483,6 +493,7 @@ function renderHighlights(text: string, playerSlugs: Record<string, string>, gam
 
 export function GameShell({
   game, box, playerGameStats, prevGameId, nextGameId, refSlug, playerSlugs,
+  totalTeams = 52, totalPlayers = 0,
 }: {
   game: Record<string, unknown>
   box: Record<string, unknown> | null
@@ -491,12 +502,18 @@ export function GameShell({
   nextGameId: number | null
   refSlug: string
   playerSlugs: Record<string, string>
+  totalTeams?: number
+  totalPlayers?: number
 }) {
   const router = useRouter()
 
-  const [chartsOpen, setChartsOpen] = useState(false)
-  const [playerOpen, setPlayerOpen] = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
+  const [chartsOpen,         setChartsOpen]         = useState(false)
+  const [playerOpen,         setPlayerOpen]         = useState(false)
+  const [highlightsPanelOpen, setHighlightsPanelOpen] = useState(false)
+
+  const [query, setQuery] = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
+  useSearchHotkey(searchRef, () => setQuery(''))
 
   const [aiTitle,      setAiTitle]      = useState<string | null>(null)
   const [aiHighlights, setAiHighlights] = useState<string | null>(null)
@@ -521,6 +538,7 @@ export function GameShell({
   const refName    = refIsHome ? homeName : awayName
   const otherName  = refIsHome ? awayName : homeName
   const otherSlug  = refIsHome ? awaySlug : homeSlug
+  const refSchool  = refIsHome ? homeSchool : awaySchool
   const connector  = refIsHome ? 'vs.' : 'at'
 
   const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
@@ -591,6 +609,29 @@ export function GameShell({
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
   const [activeSection, setActiveSection] = useState<SectionId>('box-score')
 
+  // ── Stat-type cycle (sticky bar) ─────────────────────────────────────────
+  const [selectedStat, setSelectedStat] = useState<PlayerStat['stat_type']>(
+    () => availableStatSections[0] ?? 'Passing',
+  )
+  useEffect(() => {
+    if (availableStatSections.length && !availableStatSections.includes(selectedStat)) {
+      setSelectedStat(availableStatSections[0])
+    }
+  }, [availableStatSections, selectedStat])
+  function shiftStat(delta: 1 | -1) {
+    if (availableStatSections.length === 0) return
+    const idx  = availableStatSections.indexOf(selectedStat)
+    const next = (idx + delta + availableStatSections.length) % availableStatSections.length
+    const nextStat = availableStatSections[next]
+    setSelectedStat(nextStat)
+    const el = document.getElementById(nextStat.toLowerCase())
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+  const statPlayerCount = useMemo(
+    () => flatStats.filter(p => p.stat_type === selectedStat).length,
+    [flatStats, selectedStat],
+  )
+
   // ── Scroll-spy ───────────────────────────────────────────────────────────
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -656,12 +697,7 @@ export function GameShell({
                     {division ? `Division ${division}` : 'Section XI football'}.
                   </>
                 }
-                meta={[
-                  homeScore != null && awayScore != null
-                    ? `${homeName} ${homeScore}–${awayScore} ${awayName}`
-                    : `${awayName} at ${homeName}`,
-                  game.is_division_game ? 'Conference game' : 'Non-conference',
-                ]}
+                meta={[game.is_division_game ? 'Conference Game' : 'Non-Conference Game']}
                 rightSlot={
                   <EditorialButtonGroup
                     prevHref={prevGameId ? `/game/${prevGameId}?ref=${refSlug}` : undefined}
@@ -669,9 +705,9 @@ export function GameShell({
                     prevLabel="Previous game"
                     nextLabel="Next game"
                     buttons={[
-                      { icon: ChartSpline,   tooltip: 'Charts',         active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                      { icon: FileUser,      tooltip: 'Game log',       active: playerOpen, onClick: () => setPlayerOpen(v => !v) },
-                      { icon: MessageCircle, tooltip: 'Ask SportsGPT',  active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                      { icon: ChartSpline, tooltip: 'Charts',          active: chartsOpen,          onClick: () => setChartsOpen(v => !v) },
+                      { icon: FileUser,    tooltip: 'Game log',        active: playerOpen,          onClick: () => setPlayerOpen(v => !v) },
+                      { icon: Sparkles,    tooltip: 'Game Highlights', active: highlightsPanelOpen, onClick: () => { setHighlightsPanelOpen(v => !v); triggerHighlights() } },
                     ]}
                   />
                 }
@@ -705,13 +741,94 @@ export function GameShell({
             </RevealFx>
           </div>
 
+          {/* ── Sticky control bar ─────────────────────────────────── */}
+          <StickyControlBar>
+            {availableStatSections.length > 0 && (
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]" style={SANS}>
+                  Stats
+                </span>
+                <button
+                  onClick={() => shiftStat(-1)}
+                  aria-label="Previous stat type"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
+                <span
+                  className="text-[var(--paper-text)] min-w-[6rem] text-center"
+                  style={{ ...SERIF, fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}
+                >
+                  {selectedStat}
+                </span>
+                <button
+                  onClick={() => shiftStat(1)}
+                  aria-label="Next stat type"
+                  className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            )}
+
+            <SearchInput
+              value={query}
+              onChange={setQuery}
+              inputRef={searchRef}
+              placeholder="Search players & stats…"
+            />
+
+            <div
+              className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block"
+              style={SANS}
+            >
+              {statPlayerCount} {statPlayerCount === 1 ? 'player' : 'players'}
+            </div>
+          </StickyControlBar>
+
           {/* ── Body: sidebar + main ──────────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
 
             <ContentsNav
               items={sections}
               activeId={activeSection}
               onSelect={handleNavSelect}
+              label="Page"
+              topChildren={
+                <div className="mb-8">
+                  <p className="mb-4 text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]">Site</p>
+                  <ol className="flex flex-col">
+                    {([
+                      {
+                        roman: 'I',
+                        label: 'Division',
+                        count: 4,
+                        href: division
+                          ? `/division/division-${division.toLowerCase()}`
+                          : '/section/section-xi',
+                      },
+                      { roman: 'II',  label: 'Teams',   count: totalTeams,   href: '/team' },
+                      { roman: 'III', label: 'Players', count: totalPlayers, href: '/player' },
+                    ] as const).map(link => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="group flex items-baseline gap-3 py-1.5 text-[13px] leading-tight text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors"
+                        >
+                          <span
+                            className="shrink-0 w-6 text-right italic"
+                            style={{ fontFamily: 'var(--font-display), Georgia, serif', fontSize: 12 }}
+                          >
+                            {link.roman}
+                          </span>
+                          <span className="flex-1 truncate">{link.label}</span>
+                          <span className="text-[10px] tabular-nums opacity-60">{link.count}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              }
             />
 
             <main className="min-w-0">
@@ -756,6 +873,10 @@ export function GameShell({
                   <StatTable
                     statType={stat}
                     players={flatStats.filter(p => p.stat_type === stat)}
+                    onPlayerSelect={(slug) => router.push(
+                      `/game/${gameIdNum}/player/${slug}?stat=${stat}`,
+                      { scroll: false },
+                    )}
                   />
                 </section>
               ))}
@@ -838,15 +959,95 @@ export function GameShell({
 
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Game Log">
-          <PanelPlayers
-            stats={allStats}
-            schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
-            playerSlugs={playerSlugs}
-            onPlayerSelect={(slug) => router.push(`/game/${gameIdNum}/player/${slug}`, { scroll: false })}
-          />
+        <ChatSeasonsPanel
+          open={playerOpen}
+          onClose={() => setPlayerOpen(false)}
+          teams={[{ slug: refSchool, name: refName }]}
+          initialGameId={gameIdNum}
+          initialGameSeason={season}
+        />
+        <AppPanel
+          open={highlightsPanelOpen}
+          onClose={() => setHighlightsPanelOpen(false)}
+          defaultExpanded
+          title={
+            <span className="flex items-center gap-2 min-w-0">
+              {SCHOOL_LOGOS[refSchool] && (
+                <span
+                  className="shrink-0 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center"
+                  style={{ width: 22, height: 22 }}
+                >
+                  <Image
+                    src={SCHOOL_LOGOS[refSchool]}
+                    alt=""
+                    width={17}
+                    height={17}
+                    className="object-contain"
+                    unoptimized
+                  />
+                </span>
+              )}
+              <span className="truncate" style={SERIF}>{refName}</span>
+            </span>
+          }
+          footer={
+            <div className="px-5 py-3.5 bg-[var(--paper)]">
+              <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+                Game Highlights Panel
+              </span>
+            </div>
+          }
+        >
+          <div className="px-6 sm:px-10 md:px-14 pt-8 pb-10">
+            <SectionHead
+              title={aiTitle ?? 'Game Highlights'}
+              eyebrow="Recap"
+              blurb={aiHighlights ? 'Filed by NYSgpt — AI rewrite of the Newsday box score notes.' : undefined}
+            />
+
+            {!highlightsTriggered ? (
+              <Tablet>
+                <div className="px-6 py-10 text-center">
+                  <p
+                    className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto"
+                    style={{ ...SERIF, fontStyle: 'italic' }}
+                  >
+                    The recap hasn&apos;t been written yet. Generate the AI rewrite of
+                    the Newsday box-score notes.
+                  </p>
+                  <button
+                    onClick={triggerHighlights}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
+                    style={{ ...SANS, borderRadius: TABLET_RADIUS }}
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Generate Game Highlights
+                  </button>
+                </div>
+              </Tablet>
+            ) : loadingHighlights ? (
+              <div className="space-y-3 animate-pulse">
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
+                <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
+              </div>
+            ) : aiHighlights ? (
+              <div className="space-y-5 max-w-[68ch]">
+                {renderHighlights(aiHighlights, playerSlugs, gameIdNum)}
+              </div>
+            ) : (
+              <p
+                className="text-[16px] leading-[1.75] text-[var(--paper-muted)] max-w-[68ch]"
+                style={SERIF}
+              >
+                {rawHighlights}
+              </p>
+            )}
+          </div>
         </AppPanel>
-        <PanelChat open={chatOpen} onClose={() => setChatOpen(false)} countyName={`${awayName} at ${homeName}`} />
       </div>
     </>
   )

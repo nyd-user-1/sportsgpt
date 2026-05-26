@@ -516,25 +516,37 @@ export function ChatSeasonsPanel({
   onClose,
   teams,
   initialSeason,
+  initialGameId,
+  initialGameSeason,
 }: {
   open: boolean
   onClose: () => void
   teams: TeamMeta[]
   /** When provided, panel opens directly at the Schedule view for that season (skipping Seasons). */
   initialSeason?: number | null
+  /** When provided with `initialGameSeason`, panel opens directly at the Game view with the
+   *  Seasons → Schedule history pre-populated so the user can press Back to reach them. */
+  initialGameId?: number | null
+  initialGameSeason?: number | null
 }) {
   const [viewStack, setViewStack] = useState<PanelView[]>([])
 
-  // Reset stack when panel opens with new teams / season
+  // Reset stack when panel opens with new teams / season / game
   useEffect(() => {
     if (open && teams.length > 0) {
-      if (initialSeason != null) {
+      if (initialGameId != null && initialGameSeason != null) {
+        setViewStack([
+          { type: 'seasons', team: teams[0] },
+          { type: 'schedule', team: teams[0], season: initialGameSeason },
+          { type: 'game', gameId: initialGameId, team: teams[0], season: initialGameSeason },
+        ])
+      } else if (initialSeason != null) {
         setViewStack([{ type: 'schedule', team: teams[0], season: initialSeason }])
       } else {
         setViewStack([{ type: 'seasons', team: teams[0] }])
       }
     }
-  }, [open, teams, initialSeason])
+  }, [open, teams, initialSeason, initialGameId, initialGameSeason])
 
   const currentView = viewStack[viewStack.length - 1] ?? null
   const canGoBack = viewStack.length > 1

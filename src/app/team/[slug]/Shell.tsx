@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
-import { PanelGameLog } from '@/components/PanelGameLog'
+import { ChatSeasonsPanel } from '@/components/ChatSeasonsPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
@@ -150,8 +150,8 @@ export function TeamShell({
   const [chatOpen,       setChatOpen]       = useState(false)
   const [playersOpen,    setPlayersOpen]    = useState(false)
   const [rosterQuery,    setRosterQuery]    = useState('')
-  const [gameLogOpen,    setGameLogOpen]    = useState(false)
-  const [selectedGameId, setSelectedGameId] = useState<number | null>(null)
+  const [selectedGameId,     setSelectedGameId]     = useState<number | null>(null)
+  const [selectedGameSeason, setSelectedGameSeason] = useState<number | null>(null)
 
   useEffect(() => { if (!playersOpen) setRosterQuery('') }, [playersOpen])
   const [sortCol, setSortCol]         = useState<string | null>(null)
@@ -475,19 +475,6 @@ export function TeamShell({
       subItems: plyrSubTypes.map(st => ({ id: `players-${st.toLowerCase()}`, label: st })) },
   ]
 
-  /* ── Game log panel data ─────────────────────────────────────── */
-  const selectedGameRow  = selectedGameId != null ? gameRows.find(g => g.id === selectedGameId) ?? null : null
-  const gamePanelTitle   = (() => {
-    if (!selectedGameRow) return 'Game Log'
-    const isHome  = selectedGameRow.home_team_slug === (team.slug as string)
-    const rawName = isHome ? selectedGameRow.away_team_name : selectedGameRow.home_team_name
-    const rawSlug = isHome ? selectedGameRow.away_team_slug : selectedGameRow.home_team_slug
-    const n = rawName
-      ? rawName.replace(/\s+Varsity\s+Football$/i, '').trim()
-      : rawSlug.replace(/-varsity-football$/, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-    return `${isHome ? 'vs' : 'at'} ${n}`
-  })()
-
   /* ── Mobile header ───────────────────────────────────────────── */
   const heroLogo = SCHOOL_LOGOS[schoolSlug]
   const mobileHeader = (
@@ -747,7 +734,7 @@ export function TeamShell({
                           return (
                             <tr key={g.id}
                               className="hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors cursor-pointer"
-                              onClick={() => { setSelectedGameId(g.id); setGameLogOpen(true) }}>
+                              onClick={() => { setSelectedGameId(g.id); setSelectedGameSeason(g.season) }}>
                               <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtSeason(g.season)}</td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
@@ -1092,11 +1079,12 @@ export function TeamShell({
         })()}
       </AppPanel>
 
-      <PanelGameLog
-        open={gameLogOpen}
-        onClose={() => { setGameLogOpen(false); setSelectedGameId(null) }}
-        gameId={selectedGameId}
-        title={gamePanelTitle}
+      <ChatSeasonsPanel
+        open={selectedGameId != null}
+        onClose={() => { setSelectedGameId(null); setSelectedGameSeason(null) }}
+        teams={[{ slug: schoolSlug, name: cleanName }]}
+        initialGameId={selectedGameId}
+        initialGameSeason={selectedGameSeason}
       />
     </>
   )
