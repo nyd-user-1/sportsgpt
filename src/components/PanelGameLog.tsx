@@ -224,17 +224,25 @@ export function GameContent({ gameId }: { gameId: number }) {
           }))} />
         </>
       )}
+    </div>
+  )
+}
 
-      {/* Full page link */}
-      <div className="px-5 mt-8 pt-6 border-t border-[var(--paper-rule)]">
-        <Link
-          href={`/game/${gameId}`}
-          className="group/link inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
-          style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>
-          View full game page
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
+// ── Sticky footer (panel identifier + full-page link) ─────────────────────────
+
+export function GameLogFooter({ gameId }: { gameId: number }) {
+  return (
+    <div className="flex items-center justify-between px-5 py-3.5 bg-[var(--paper)]">
+      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+        Game Log Panel
+      </span>
+      <Link
+        href={`/game/${gameId}`}
+        className="inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
+        style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>
+        View full game page
+        <ArrowUpRight className="h-3.5 w-3.5" />
+      </Link>
     </div>
   )
 }
@@ -279,6 +287,7 @@ export function PanelGameLog({
       onClose={onClose}
       title={panelTitle}
       detailHref={gameId != null ? `/game/${gameId}` : undefined}
+      footer={gameId != null ? <GameLogFooter gameId={gameId} /> : undefined}
     >
       {gameId != null && <GameContent gameId={gameId} />}
     </AppPanel>

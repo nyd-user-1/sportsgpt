@@ -312,6 +312,28 @@ function Narrative({ text }: { text: string }) {
   )
 }
 
+// ── GameDetailFooter (sticky footer for launchpad game panel) ─────────────────
+
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans), system-ui, sans-serif' }
+
+export function GameDetailFooter({ gameId }: { gameId: number }) {
+  return (
+    <div className="flex items-center justify-between px-5 py-3.5 bg-[var(--paper)]">
+      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+        Game Detail Panel
+      </span>
+      <Link
+        href={`/game/${gameId}`}
+        className="inline-flex items-center gap-1.5 text-[var(--paper-strong)] hover:opacity-80 transition-opacity"
+        style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>
+        View full game page
+        <ArrowUpRight className="h-3.5 w-3.5" />
+      </Link>
+    </div>
+  )
+}
+
 // ── GamePanelContent ──────────────────────────────────────────────────────────
 
 export function GamePanelContent({ game, quarterRows, playerStats, narrative }: GamePanelData) {
@@ -330,20 +352,10 @@ export function GamePanelContent({ game, quarterRows, playerStats, narrative }: 
       </AppPanel>
 
       <div className="flex-1 overflow-y-auto no-scrollbar">
-      <div className="pt-2">
+      <div className="pt-2 pb-4">
         <BoxScore game={game} quarterRows={quarterRows} />
         <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
         {narrative && <Narrative text={narrative} />}
-      </div>
-      <div className="px-4 py-3 border-t border-[var(--border)] mt-1">
-        <Link
-          href={`/game/${game.id}`}
-          className="flex items-center justify-between text-sm font-semibold hover:underline"
-          style={{ color: ACCENT_COLOR }}
-        >
-          <span>View full game</span>
-          <ArrowUpRight className="h-4 w-4" />
-        </Link>
       </div>
     </div>
     </>

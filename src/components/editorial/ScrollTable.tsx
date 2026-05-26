@@ -25,7 +25,7 @@ export function ScrollTable({
 }) {
   return (
     <div
-      className={cn('border border-[var(--paper-rule)] overflow-x-auto overflow-y-auto', className)}
+      className={cn('border border-[var(--paper-rule)] bg-[var(--paper-quiet)] overflow-x-auto overflow-y-auto [&_thead_th]:!bg-[color:color-mix(in_srgb,var(--paper-text)_3.5%,var(--paper))]', className)}
       style={{ borderRadius: TABLET_RADIUS, maxHeight: maxH > 0 ? maxH : undefined }}
     >
       {children}

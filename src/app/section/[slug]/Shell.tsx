@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ChartSpline, MessageCircle, FileUser, ArrowLeft, ArrowRight } from 'lucide-react'
@@ -153,7 +154,12 @@ export function SectionShell({
   const [chartsOpen,     setChartsOpen]    = useState(false)
   const [playersOpen,    setPlayersOpen]   = useState(false)
   const [chatOpen,       setChatOpen]      = useState(false)
-  const [selectedSeason, setSelectedSeason] = useState<number | null>(null)
+  const searchParams = useSearchParams()
+  const initialSeasonParam = searchParams.get('season')
+  const initialSeason = initialSeasonParam && /^\d+$/.test(initialSeasonParam)
+    ? Number(initialSeasonParam)
+    : null
+  const [selectedSeason, setSelectedSeason] = useState<number | null>(initialSeason)
   const [query,          setQuery]          = useState('')
   const [activeSection,  setActiveSection]  = useState<SectionId>('division-i')
 

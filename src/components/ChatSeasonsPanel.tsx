@@ -447,6 +447,18 @@ function GameView({ gameId }: { gameId: number }) {
   )
 }
 
+// ── Footer ────────────────────────────────────────────────────────────────────
+
+function ChatPanelFooter({ label }: { label: string }) {
+  return (
+    <div className="px-5 py-3.5 bg-[var(--paper)]">
+      <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+        {label}
+      </span>
+    </div>
+  )
+}
+
 function StatRows({
   rows,
 }: {
@@ -503,19 +515,26 @@ export function ChatSeasonsPanel({
   open,
   onClose,
   teams,
+  initialSeason,
 }: {
   open: boolean
   onClose: () => void
   teams: TeamMeta[]
+  /** When provided, panel opens directly at the Schedule view for that season (skipping Seasons). */
+  initialSeason?: number | null
 }) {
   const [viewStack, setViewStack] = useState<PanelView[]>([])
 
-  // Reset to seasons view when panel opens with new teams
+  // Reset stack when panel opens with new teams / season
   useEffect(() => {
     if (open && teams.length > 0) {
-      setViewStack([{ type: 'seasons', team: teams[0] }])
+      if (initialSeason != null) {
+        setViewStack([{ type: 'schedule', team: teams[0], season: initialSeason }])
+      } else {
+        setViewStack([{ type: 'seasons', team: teams[0] }])
+      }
     }
-  }, [open, teams])
+  }, [open, teams, initialSeason])
 
   const currentView = viewStack[viewStack.length - 1] ?? null
   const canGoBack = viewStack.length > 1
@@ -523,14 +542,8 @@ export function ChatSeasonsPanel({
   const pushView = (v: PanelView) => setViewStack(s => [...s, v])
   const popView  = () => setViewStack(s => s.slice(0, -1))
 
-  // Build title
-  const titleText = (() => {
-    if (!currentView) return 'Seasons'
-    if (currentView.type === 'seasons')  return stripVarsity(currentView.team.name)
-    if (currentView.type === 'schedule') return `${formatSeason(currentView.season)} Season`
-    if (currentView.type === 'game')     return 'Game Log'
-    return ''
-  })()
+  // Standard team-name title across all three views
+  const titleText = currentView ? stripVarsity(currentView.team.name) : ''
 
   const title = (
     <div className="flex items-center gap-2 min-w-0">
@@ -543,34 +556,37 @@ export function ChatSeasonsPanel({
           <ArrowLeft className="h-4 w-4" />
         </button>
       )}
-      {currentView?.type === 'seasons' && (
+      {!canGoBack && (
         <SchoolLogo slug={teams[0]?.slug ?? ''} size={22} />
       )}
-      <span
-        className="text-[var(--paper-text)] truncate"
-        style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
-      >
-        {titleText}
-      </span>
-      {currentView?.type === 'schedule' && (
-        <span
-          className="text-[12px] text-[var(--paper-muted)] truncate"
-          style={{ ...SERIF, fontStyle: 'italic' }}
+      {currentView ? (
+        <Link
+          href={`/team/${currentView.team.slug}-varsity-football`}
+          className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors truncate"
+          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
         >
-          · {stripVarsity(currentView.team.name)}
+          {titleText}
+        </Link>
+      ) : (
+        <span
+          className="text-[var(--paper-text)] truncate"
+          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {titleText}
         </span>
       )}
     </div>
   )
 
-  const detailHref = currentView?.type === 'seasons'
-    ? `/team/${currentView.team.slug}-varsity-football`
-    : currentView?.type === 'game'
-    ? `/game/${currentView.gameId}`
-    : undefined
+  const footerLabel = currentView?.type === 'seasons'  ? 'Seasons Panel'
+    : currentView?.type === 'schedule' ? 'Schedule Panel'
+    : currentView?.type === 'game'     ? 'Game Log Panel'
+    : null
+
+  const footer = footerLabel ? <ChatPanelFooter label={footerLabel} /> : undefined
 
   return (
-    <AppPanel open={open} onClose={onClose} title={title} detailHref={detailHref}>
+    <AppPanel open={open} onClose={onClose} title={title} footer={footer}>
       {currentView?.type === 'seasons' && (
         <SeasonsView
           team={currentView.team}

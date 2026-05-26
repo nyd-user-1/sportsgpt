@@ -6,7 +6,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { AppPanel } from '@/components/AppPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
-import { GameContent } from '@/components/PanelGameLog'
+import { GameContent, GameLogFooter } from '@/components/PanelGameLog'
 
 // ── Style constants ───────────────────────────────────────────────────────────
 
@@ -285,8 +285,12 @@ export function PanelSeason({
     ? `/game/${currentView.gameId}`
     : undefined
 
+  const footer = currentView.type === 'game'
+    ? <GameLogFooter gameId={currentView.gameId} />
+    : undefined
+
   return (
-    <AppPanel open={open} onClose={onClose} title={panelTitle} detailHref={detailHref}>
+    <AppPanel open={open} onClose={onClose} title={panelTitle} detailHref={detailHref} footer={footer}>
       {currentView.type === 'seasons' && (
         <SeasonsContent
           slug={slug}

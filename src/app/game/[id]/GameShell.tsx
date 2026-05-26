@@ -1,18 +1,28 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ArrowRight, ChartSpline, FileUser, MessageCircle } from 'lucide-react'
-import { ButtonGroup } from '@/components/ButtonGroup'
+import { ChartSpline, FileUser, MessageCircle, Sparkles } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { AppPanel } from '@/components/AppPanel'
-import { InfoTable } from '@/components/InfoTable'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelChat } from '@/components/PanelChat'
+import {
+  EditorialHead,
+  EditorialButtonGroup,
+  SectionHead,
+  ContentsNav,
+  PAPER_BRIDGE,
+  TABLET_RADIUS,
+  Tablet,
+  EmptyTablet,
+  ScrollTable,
+  MONO,
+  tabletTd,
+} from '@/components/editorial'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
 import { cn } from '@/lib/utils'
@@ -35,7 +45,33 @@ type PlayerStat = {
   sacks?: number; fumbles?: number
 }
 
-type GameTabType = 'Box Score' | PlayerStat['stat_type']
+type FlatPlayerStat = {
+  player_slug: string | null
+  player_name: string
+  school_slug: string | null
+  team_name: string
+  stat_type: string
+  rush_att: number | null; rush_yds: number | null; rush_tds: number | null
+  pass_comp: number | null; pass_att: number | null; pass_yds: number | null; pass_tds: number | null; pass_int: number | null
+  rec_rec: number | null; rec_yds: number | null; rec_tds: number | null
+  kick_pat: number | null; kick_fg: number | null; kick_points: number | null
+  def_int: number | null; def_sacks: number | null; def_fumbles: number | null
+}
+
+// ── Style tokens ──────────────────────────────────────────────────────────────
+
+const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
+const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
+
+const STAT_ORDER: PlayerStat['stat_type'][] = ['Passing', 'Rushing', 'Receiving', 'Kicking', 'Defense']
+
+const STAT_BLURB: Record<string, string> = {
+  Passing:   'Attempts, completions, yardage, touchdowns, and interceptions for every quarterback who threw.',
+  Rushing:   'Carries, yardage, and touchdowns on the ground.',
+  Receiving: 'Receptions, yardage, touchdowns, and extra points.',
+  Kicking:   'Field goals, extra points, and total kicking points.',
+  Defense:   'Interceptions, sacks, and fumble recoveries on the defensive side.',
+}
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -49,213 +85,271 @@ function fmtDate(raw: string | Date | null): string {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
-// ── Split-screen hero (ported from launchpad) ─────────────────────────────────
+function fmtSeason(y: number) { return `${y}-${String(y + 1).slice(2)}` }
 
-function GameHero({ homeSlug, awaySlug, homeName, awayName, homeSchool, awaySchool,
-  homeScore, awayScore, gameNumber, division, awayDivision, gameDate }: {
-  homeSlug: string; awaySlug: string; homeName: string; awayName: string
+// ── Hero — split-screen photos inside the matted editorial frame ─────────────
+
+function GameHero({
+  homeName, awayName, homeSchool, awaySchool,
+  homeScore, awayScore, gameNumber,
+}: {
+  homeName: string; awayName: string
   homeSchool: string; awaySchool: string
-  homeScore: number | null; awayScore: number | null; gameNumber: number | null
-  division: string | null; awayDivision: string | null; gameDate: string | Date | null
+  homeScore: number | null; awayScore: number | null
+  gameNumber: number | null
 }) {
   const homePhoto = TEAM_PHOTOS[homeSchool]?.[0]
   const awayPhoto = TEAM_PHOTOS[awaySchool]?.[0]
-  const homeLogo  = SCHOOL_LOGOS[homeSchool]
-  const awayLogo  = SCHOOL_LOGOS[awaySchool]
   const scored    = homeScore != null && awayScore != null
-  const homeWon   = scored && homeScore! > awayScore!
-  const awayWon   = scored && awayScore! > homeScore!
 
   return (
-    <div className="hidden sm:block mb-8 h-[400px] w-full rounded-2xl overflow-hidden relative">
-      {/* Split photo background — heavier darken for readability */}
-      <div className="absolute inset-0 flex">
-        <div className="relative flex-1">
-          {homePhoto
-            ? <><Image src={homePhoto} alt={homeName} fill className="object-cover" unoptimized />
-</>
-            : <div className="h-full" style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}55,${ACCENT_COLOR}99)` }} />}
+    <div
+      className="w-full border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
+      style={{ padding: 8, borderRadius: TABLET_RADIUS }}
+    >
+      <div
+        className="relative overflow-hidden w-full"
+        style={{ height: 460, borderRadius: 1 }}
+      >
+        {/* Split photo background */}
+        <div className="absolute inset-0 flex">
+          <div className="relative flex-1">
+            {homePhoto
+              ? <Image src={homePhoto} alt={homeName} fill className="object-cover object-top" unoptimized />
+              : <div className="h-full" style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}55,${ACCENT_COLOR}99)` }} />}
+          </div>
+          <div className="relative flex-1">
+            {awayPhoto
+              ? <Image src={awayPhoto} alt={awayName} fill className="object-cover object-top" unoptimized />
+              : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
+          </div>
         </div>
-        <div className="relative flex-1">
-          {awayPhoto
-            ? <><Image src={awayPhoto} alt={awayName} fill className="object-cover" unoptimized />
-</>
-            : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
-        </div>
-      </div>
 
-      {/* Bottom gradient for text legibility */}
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/65 to-transparent z-[5]" />
+        {/* Bottom darken for legibility */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent z-[5]" />
 
-      {/* Week badge — top left */}
-      {gameNumber != null && (
-        <div className="absolute top-3 left-4 z-10">
-          <span className="text-xs font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {gameNumber}</span>
-        </div>
-      )}
+        {/* Week badge */}
+        {gameNumber != null && (
+          <div className="absolute top-4 left-4 z-10">
+            <span
+              className="text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white/95"
+              style={{ ...SANS, borderRadius: TABLET_RADIUS }}
+            >
+              Week {gameNumber}
+            </span>
+          </div>
+        )}
 
-
-      {/* Scoreboard — centered, three-column */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="flex items-center w-full max-w-xl px-8 gap-6">
-
-          <div className="flex-1" />
-
-          {/* Score badge */}
-          <div className="shrink-0 text-center bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 border border-white/10 shadow-xl">
+        {/* Scoreboard */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div
+            className="text-center px-7 py-5 backdrop-blur-md border border-white/15 shadow-xl"
+            style={{ background: 'rgba(0,0,0,0.55)', borderRadius: TABLET_RADIUS }}
+          >
             {scored ? (
-              <>
-                <div className="flex items-center justify-center gap-3">
-                  <span className="text-8xl font-black tabular-nums leading-none text-white">{homeScore}</span>
-                  <span className="text-8xl font-black tabular-nums leading-none text-white">–</span>
-                  <span className="text-8xl font-black tabular-nums leading-none text-white">{awayScore}</span>
-                </div>
-              </>
+              <div className="flex items-center justify-center gap-3">
+                <span className="text-8xl font-black tabular-nums leading-none text-white">{homeScore}</span>
+                <span className="text-8xl font-black tabular-nums leading-none text-white">–</span>
+                <span className="text-8xl font-black tabular-nums leading-none text-white">{awayScore}</span>
+              </div>
             ) : (
               <p className="text-2xl font-bold text-white/40">vs</p>
             )}
           </div>
-
-          <div className="flex-1" />
-
         </div>
       </div>
     </div>
   )
 }
 
-// ── Score table ───────────────────────────────────────────────────────────────
+// ── Box Score table — editorial palette ──────────────────────────────────────
 
-function ScoreTable({ rows, homeSlug, gameNumber, gameDate, onToggle }: {
-  rows: QuarterRow[]; homeSlug: string; gameNumber: number | null
-  gameDate: string | Date | null; onToggle?: () => void
+function BoxScoreTable({
+  rows,
+  homeSlug,
+}: {
+  rows: QuarterRow[]
+  homeSlug: string
 }) {
-  const hasOT = rows.some(r => r.ot1 > 0 || r.ot2 > 0 || r.ot3 > 0)
+  const hasOT   = rows.some(r => r.ot1 > 0 || r.ot2 > 0 || r.ot3 > 0)
   const ordered = [...rows].sort((a, b) => (a.team_slug === homeSlug ? -1 : 1))
   const maxFinal = Math.max(...ordered.map(r => r.final))
-  const th = 'px-3 py-3 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right first:text-left'
-  const td = 'px-3 py-3 text-sm tabular-nums text-right text-[var(--muted)]'
+
   return (
-    <div className="overflow-x-auto no-scrollbar">
-      <table className="w-full text-sm">
-        <thead className="bg-[var(--inp-bg)] border-b border-[var(--border)]">
+    <ScrollTable maxH={0}>
+      <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
+        <thead>
           <tr>
-            <th className={cn(th, 'normal-case tracking-normal')}>{gameNumber != null ? `Week ${gameNumber}${gameDate ? ` · ${fmtDate(gameDate)}` : ''}` : 'Team'}</th>
-            <th className={th}>Q1</th><th className={th}>Q2</th>
-            <th className={th}>Q3</th><th className={th}>Q4</th>
-            {hasOT && <th className={th}>OT</th>}
-            <th className={cn(th, 'font-black text-[var(--txt)]')}>F</th>
-            <th className="px-2 py-3 w-9 text-right">
-              {onToggle && (
-                <button onClick={onToggle} className="inline-flex items-center justify-center p-1 rounded-md text-[var(--muted)] hover:text-[var(--txt)] transition-colors" aria-label="View player stats">
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              )}
-            </th>
+            <th className={cn('px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] text-left')} style={SANS}>Team</th>
+            {(['Q1','Q2','Q3','Q4'] as const).map(q => (
+              <th key={q} className={cn('px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] text-right w-16')} style={SANS}>{q}</th>
+            ))}
+            {hasOT && (
+              <th className={cn('px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] text-right w-16')} style={SANS}>OT</th>
+            )}
+            <th className={cn('px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-text)] border-b border-[var(--paper-rule)] text-right w-20')} style={SANS}>Final</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-[var(--border)]">
+        <tbody>
           {ordered.map((r, i) => {
             const isHome = r.team_slug === homeSlug
             const schoolSlug = r.team_slug.replace(/-varsity-football$/, '')
             const logo = SCHOOL_LOGOS[schoolSlug]
+            const won  = r.final === maxFinal
             return (
-              <tr key={i}>
-                <td className="px-3 py-3 text-sm font-semibold">
-                  <div className="flex items-center gap-2">
-                    {logo
-                      ? <Image src={logo} alt="" width={22} height={22} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
-                      : <div className="shrink-0 h-[22px] w-[22px] rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
-                    <Link href={`/team/${r.team_slug}`} className="hover:underline" style={{ color: ACCENT_COLOR }}>{r.team_name}</Link>
-                    <span className="text-[10px] font-normal text-[var(--muted)]">{isHome ? '(H)' : '(A)'}</span>
-                    {r.final === maxFinal
-                      ? <span className="text-[10px] font-bold" style={{ color: '#16a34a' }}>W</span>
-                      : <span className="text-[10px] font-bold" style={{ color: '#dc2626' }}>L</span>}
+              <tr
+                key={i}
+                className="border-t border-[var(--paper-rule-soft)] hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
+              >
+                <td className="px-5 py-4">
+                  <div className="flex items-center gap-3 min-w-0">
+                    {logo && (
+                      <Link href={`/team/${r.team_slug}`} aria-label={`${cleanName(r.team_name)} team page`} className="shrink-0">
+                        <Image src={logo} alt="" width={26} height={26} className="object-contain" unoptimized />
+                      </Link>
+                    )}
+                    <Link
+                      href={`/team/${r.team_slug}`}
+                      className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors truncate"
+                      style={{ ...SERIF, fontSize: 17, fontWeight: 500, letterSpacing: '-0.005em' }}
+                    >
+                      {cleanName(r.team_name)}
+                    </Link>
+                    <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]" style={SANS}>
+                      {isHome ? 'Home' : 'Away'}
+                    </span>
                   </div>
                 </td>
-                <td className={td}>{r.q1}</td><td className={td}>{r.q2}</td>
-                <td className={td}>{r.q3}</td><td className={td}>{r.q4}</td>
-                {hasOT && <td className={td}>{r.ot1 || r.ot2 || r.ot3}</td>}
-                <td className={cn(td, 'font-black text-[var(--txt)]')}>{r.final}</td>
-                <td className="px-2 py-3 w-9" />
+                <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.q1}</td>
+                <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.q2}</td>
+                <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.q3}</td>
+                <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.q4}</td>
+                {hasOT && (
+                  <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>
+                    {r.ot1 || r.ot2 || r.ot3}
+                  </td>
+                )}
+                <td className={cn(tabletTd, 'pr-5 text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>
+                  <span className="inline-flex items-baseline gap-2 justify-end">
+                    <span>{r.final}</span>
+                    <span
+                      className={cn(
+                        'text-[10px] uppercase tracking-[0.18em] tabular-nums',
+                        won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-faint)]',
+                      )}
+                      style={SANS}
+                    >
+                      {won ? 'W' : 'L'}
+                    </span>
+                  </span>
+                </td>
               </tr>
             )
           })}
         </tbody>
       </table>
-    </div>
+    </ScrollTable>
   )
 }
 
-// ── Player stat table ─────────────────────────────────────────────────────────
+// ── Per-stat-type table ──────────────────────────────────────────────────────
 
-function StatTable({ players, statType, schoolSlugs, playerSlugs, expanded }: {
-  players: PlayerStat[]
-  statType: PlayerStat['stat_type']
-  schoolSlugs: Record<string, string>
-  playerSlugs: Record<string, string>
-  expanded: boolean
+const STAT_COLS: Record<string, string[]> = {
+  Passing:   ['ATT', 'COMP', 'YDS', 'TDS', 'INT'],
+  Rushing:   ['ATT', 'YDS', 'TDS'],
+  Receiving: ['REC', 'YDS', 'TDS', 'PAT'],
+  Kicking:   ['FG', 'PAT', 'PTS'],
+  Defense:   ['INT', 'SACKS', 'FUM'],
+}
+
+function statCells(p: FlatPlayerStat, statType: string): (number | null)[] {
+  if (statType === 'Passing')   return [p.pass_att, p.pass_comp, p.pass_yds, p.pass_tds, p.pass_int]
+  if (statType === 'Rushing')   return [p.rush_att, p.rush_yds, p.rush_tds]
+  if (statType === 'Receiving') return [p.rec_rec, p.rec_yds, p.rec_tds, p.kick_pat]
+  if (statType === 'Kicking')   return [p.kick_fg, p.kick_pat, p.kick_points]
+  return [p.def_int, p.def_sacks, p.def_fumbles]
+}
+
+function StatTable({
+  statType,
+  players,
+}: {
+  statType: string
+  players: FlatPlayerStat[]
 }) {
-  const visible = expanded ? players : players.slice(0, 2)
-  const colHeaders: Record<string, string[]> = {
-    Rushing:   ['ATT', 'YDS', 'TDS'],
-    Passing:   ['ATT', 'COMP', 'YDS', 'TDS', 'INT'],
-    Receiving: ['REC', 'YDS', 'TDS'],
-    Kicking:   ['FG', 'PAT', 'PTS'],
-    Defense:   ['INT', 'SACKS', 'FUM'],
+  if (players.length === 0) {
+    return <EmptyTablet label={`No ${statType.toLowerCase()} data recorded for this game.`} />
   }
-  function statCells(p: PlayerStat): (string | number)[] {
-    if (statType === 'Rushing')   return [p.att ?? 0, p.yds ?? 0, p.tds ?? 0]
-    if (statType === 'Passing')   return [p.att ?? 0, p.comp ?? 0, p.yds ?? 0, p.tds ?? 0, p.int ?? 0]
-    if (statType === 'Receiving') return [p.rec ?? 0, p.yds ?? 0, p.tds ?? 0]
-    if (statType === 'Kicking')   return [p.fg ?? 0, p.pat ?? 0, p.points ?? 0]
-    return [p.int ?? 0, p.sacks ?? 0, p.fumbles ?? 0]
-  }
-  const th = 'px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right border-b border-[var(--border)]'
-  const td = 'px-3 py-2.5 text-sm tabular-nums text-right text-[var(--muted)]'
-  if (players.length === 0) return null
+  const cols = STAT_COLS[statType] ?? []
+
   return (
-    <div className="border-t border-[var(--border)]">
-      <table className="w-full text-sm">
+    <ScrollTable maxH={0}>
+      <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
         <thead>
           <tr>
-            <th className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-left border-b border-[var(--border)]">Player</th>
-            {colHeaders[statType].map(h => <th key={h} className={th}>{h}</th>)}
+            <th className="px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] text-left" style={SANS}>Player</th>
+            {cols.map(c => (
+              <th key={c} className="px-3 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] text-right w-16" style={SANS}>{c}</th>
+            ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[var(--border)]">
-          {visible.map((p, i) => {
-            const normTeam2 = cleanName(p.team_name).toLowerCase()
-            const schoolSlug = (p.team_slug ? p.team_slug.replace(/-varsity-football$/, '') : null)
-              ?? Object.entries(schoolSlugs).find(([k]) => normTeam2.includes(k.toLowerCase()) || k.toLowerCase().includes(normTeam2))?.[1]
-              ?? ''
-            const logo = schoolSlug ? SCHOOL_LOGOS[schoolSlug] : null
-            const playerSlug = playerSlugs[p.player.toLowerCase()]
+        <tbody>
+          {players.map((p, i) => {
+            const logo = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
+            const teamSlug = p.school_slug ? `${p.school_slug}-varsity-football` : null
             return (
-              <tr key={i}>
-                <td className="px-3 py-2.5 text-sm text-[var(--txt)]">
-                  <div className="flex items-center gap-2">
-                    {logo
-                      ? <Image src={logo} alt="" width={20} height={20} className="shrink-0 rounded-full object-contain bg-white border border-[var(--border)]" unoptimized />
-                      : <div className="shrink-0 h-5 w-5 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
-                    {playerSlug
-                      ? <Link href={`/player/${playerSlug}`} className="font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>{p.player}</Link>
-                      : <span className="font-semibold">{p.player}</span>}
+              <tr
+                key={`${p.player_slug ?? p.player_name}-${i}`}
+                className="border-t border-[var(--paper-rule-soft)] hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
+              >
+                <td className="px-5 py-3.5">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right" style={{ ...MONO, fontSize: 11 }}>
+                      {i + 1}.
+                    </span>
+                    {logo && teamSlug && (
+                      <Link href={`/team/${teamSlug}`} aria-label={`${cleanName(p.team_name)} team page`} className="shrink-0">
+                        <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
+                      </Link>
+                    )}
+                    <div className="min-w-0">
+                      {p.player_slug ? (
+                        <Link
+                          href={`/player/${p.player_slug}`}
+                          className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors leading-tight truncate block"
+                          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+                        >
+                          {p.player_name}
+                        </Link>
+                      ) : (
+                        <span
+                          className="text-[var(--paper-text)] leading-tight truncate block"
+                          style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+                        >
+                          {p.player_name}
+                        </span>
+                      )}
+                      <p className="text-[11.5px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>
+                        {cleanName(p.team_name)}
+                      </p>
+                    </div>
                   </div>
                 </td>
-                {statCells(p).map((v, j) => <td key={j} className={td}>{v}</td>)}
+                {statCells(p, statType).map((v, j) => (
+                  <td key={j} className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                    {v ?? 0}
+                  </td>
+                ))}
               </tr>
             )
           })}
         </tbody>
       </table>
-    </div>
+    </ScrollTable>
   )
 }
 
-// ── Player panel list ─────────────────────────────────────────────────────────
-
-const STAT_ORDER: PlayerStat['stat_type'][] = ['Rushing', 'Passing', 'Receiving', 'Kicking', 'Defense']
+// ── PanelPlayers (existing — used inside Game Log AppPanel) ───────────────────
 
 function mainStatParts(p: PlayerStat): { value: string; unit: string } {
   if (p.stat_type === 'Rushing')   return { value: String(p.yds ?? 0),    unit: 'yds'  }
@@ -272,13 +366,9 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
   playerSlugs: Record<string, string>
   onPlayerSelect: (slug: string) => void
 }) {
-  const SANS = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
-  const SERIF_S = { fontFamily: 'var(--font-display), Georgia, serif' }
-  const MONO_S = { fontFamily: 'var(--font-mono, ui-monospace), monospace' }
-
   if (stats.length === 0) return (
     <div className="flex items-center justify-center h-32">
-      <p className="text-sm text-[var(--paper-muted)]" style={{ ...SERIF_S, fontStyle: 'italic' }}>
+      <p className="text-sm text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
         No player data available.
       </p>
     </div>
@@ -291,17 +381,11 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
         if (group.length === 0) return null
         return (
           <div key={type}>
-            {/* Section header */}
             <div className="px-5 pt-6 pb-2 border-t border-[var(--paper-rule)] first:border-t-0">
-              <span
-                className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
-                style={SANS}
-              >
+              <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
                 {type}
               </span>
             </div>
-
-            {/* Player rows */}
             <div className="divide-y divide-[var(--paper-rule-soft)]">
               {group.map((p, i) => {
                 const normTeam = cleanName(p.team_name).toLowerCase()
@@ -318,65 +402,27 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
                     style={{ cursor: playerSlug ? 'pointer' : 'default' }}
                     onClick={() => { if (playerSlug) onPlayerSelect(playerSlug) }}
                   >
-                    {/* Rank */}
-                    <span
-                      className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right leading-none"
-                      style={{ ...MONO_S, fontSize: 11 }}
-                    >
+                    <span className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right leading-none" style={{ ...MONO, fontSize: 11 }}>
                       {i + 1}.
                     </span>
-
-                    {/* Logo */}
                     {logo
-                      ? <Image
-                          src={logo}
-                          alt=""
-                          width={28}
-                          height={28}
-                          className="shrink-0 rounded-full object-contain border border-[var(--paper-rule)]"
-                          style={{ background: 'var(--paper-quiet)' }}
-                          unoptimized
-                        />
+                      ? <Image src={logo} alt="" width={28} height={28} className="shrink-0 rounded-full object-contain border border-[var(--paper-rule)]" style={{ background: 'var(--paper-quiet)' }} unoptimized />
                       : <div className="shrink-0 h-7 w-7 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)]" />
                     }
-
-                    {/* Name + team */}
                     <div className="flex-1 min-w-0">
                       <span
                         className={`truncate block leading-snug transition-colors ${playerSlug ? 'text-[var(--paper-text)] group-hover:text-[var(--paper-strong)]' : 'text-[var(--paper-text)]'}`}
-                        style={{
-                          ...SERIF_S,
-                          fontSize: 13.5,
-                          fontWeight: 500,
-                          letterSpacing: '-0.005em',
-                        }}
+                        style={{ ...SERIF, fontSize: 13.5, fontWeight: 500, letterSpacing: '-0.005em' }}
                       >
                         {p.player}
                       </span>
-                      <p
-                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
-                        style={{ ...SERIF_S, fontStyle: 'italic' }}
-                      >
+                      <p className="text-[11.5px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>
                         {cleanName(p.team_name)}
                       </p>
                     </div>
-
-                    {/* Stat: value + unit separate */}
                     <div className="shrink-0 flex items-baseline gap-1">
-                      <span
-                        className="text-[13px] tabular-nums font-medium text-[var(--paper-text)]"
-                        style={MONO_S}
-                      >
-                        {value}
-                      </span>
-                      {unit && (
-                        <span
-                          className="text-[10px] text-[var(--paper-muted)]"
-                          style={SANS}
-                        >
-                          {unit}
-                        </span>
-                      )}
+                      <span className="text-[13px] tabular-nums font-medium text-[var(--paper-text)]" style={MONO}>{value}</span>
+                      {unit && <span className="text-[10px] text-[var(--paper-muted)]" style={SANS}>{unit}</span>}
                     </div>
                   </div>
                 )
@@ -389,70 +435,7 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
   )
 }
 
-// ── Per-stat-type two-team block ──────────────────────────────────────────────
-
-function GameStatSection({ statType, players }: {
-  statType: string
-  players: FlatPlayerStat[]
-}) {
-  const colsByType: Record<string, string[]> = {
-    Passing:   ['ATT', 'COMP', 'YDS', 'TDS', 'INT'],
-    Rushing:   ['ATT', 'YDS', 'TDS'],
-    Receiving: ['REC', 'YDS', 'TDS', 'PAT'],
-    Kicking:   ['FG', 'PAT', 'PTS'],
-    Defense:   ['INT', 'SACKS', 'FUM'],
-  }
-  const cols = colsByType[statType] ?? []
-  const TH = 'px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-right border-b border-[var(--border)]'
-  const TD = 'px-3 py-2.5 text-sm tabular-nums text-right text-[var(--muted)]'
-
-  function statCells(p: FlatPlayerStat): (number | null)[] {
-    if (statType === 'Passing')   return [p.pass_att, p.pass_comp, p.pass_yds, p.pass_tds, p.pass_int]
-    if (statType === 'Rushing')   return [p.rush_att, p.rush_yds, p.rush_tds]
-    if (statType === 'Receiving') return [p.rec_rec, p.rec_yds, p.rec_tds, p.kick_pat]
-    if (statType === 'Kicking')   return [p.kick_fg, p.kick_pat, p.kick_points]
-    return [p.def_int, p.def_sacks, p.def_fumbles]
-  }
-
-  if (players.length === 0) return (
-    <div className="rounded-xl border border-[var(--border)] px-4 py-8 text-center text-sm text-[var(--muted)]">No {statType.toLowerCase()} data</div>
-  )
-
-  return (
-    <div className="rounded-xl border border-[var(--border)] overflow-hidden shadow-sm">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="bg-[var(--surface)]">
-            <th className="px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-[var(--muted)] text-left border-b border-[var(--border)]" style={{ width: '30%' }}>Player</th>
-            {cols.map(c => <th key={c} className={TH}>{c}</th>)}
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-[var(--border)]">
-          {players.map((p, i) => {
-            const logo = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
-            return (
-              <tr key={i} className="hover:bg-[var(--inp-bg)]">
-                <td className="px-3 py-2.5 text-sm">
-                  <div className="flex items-center gap-2">
-                    {logo
-                      ? <Image src={logo} alt="" width={20} height={20} className="shrink-0 object-contain" unoptimized />
-                      : <div className="shrink-0 h-5 w-5 rounded-full bg-[var(--inp-bg)] border border-[var(--border)]" />}
-                    {p.player_slug
-                      ? <Link href={`/player/${p.player_slug}`} className="font-semibold hover:underline" style={{ color: ACCENT_COLOR }}>{p.player_name}</Link>
-                      : <span className="font-semibold text-[var(--txt)]">{p.player_name}</span>}
-                  </div>
-                </td>
-                {statCells(p).map((v, j) => <td key={j} className={TD}>{v ?? 0}</td>)}
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
-  )
-}
-
-// ── Main shell ────────────────────────────────────────────────────────────────
+// ── Highlights renderer (paper palette) ──────────────────────────────────────
 
 function parseInline(text: string, playerSlugs: Record<string, string>, gameId: number): React.ReactNode[] {
   const names = Object.keys(playerSlugs).sort((a, b) => b.length - a.length)
@@ -467,15 +450,15 @@ function parseInline(text: string, playerSlugs: Record<string, string>, gameId: 
   while ((match = regex.exec(text)) !== null) {
     if (match.index > last) nodes.push(text.slice(last, match.index))
     if (match[1]) {
-      nodes.push(<strong key={match.index}>{match[1]}</strong>)
+      nodes.push(<strong key={match.index} className="text-[var(--paper-text)]">{match[1]}</strong>)
     } else if (match[2]) {
-      nodes.push(<em key={match.index}>{match[2]}</em>)
+      nodes.push(<em key={match.index} className="text-[var(--paper-muted)]">{match[2]}</em>)
     } else {
       const raw = match[0]
       const slug = playerSlugs[raw.toLowerCase()]
       nodes.push(slug
-        ? <Link key={match.index} href={`/game/${gameId}/player/${slug}`} className="font-semibold text-[var(--txt)] hover:underline">{raw}</Link>
-        : <span key={match.index} className="font-semibold text-[var(--txt)]">{raw}</span>
+        ? <Link key={match.index} href={`/game/${gameId}/player/${slug}`} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">{raw}</Link>
+        : <span key={match.index} className="text-[var(--paper-text)] font-medium">{raw}</span>
       )
     }
     last = match.index + match[0].length
@@ -486,24 +469,17 @@ function parseInline(text: string, playerSlugs: Record<string, string>, gameId: 
 
 function renderHighlights(text: string, playerSlugs: Record<string, string>, gameId: number) {
   return text.split('\n\n').filter(Boolean).map((para, i) => (
-    <p key={i} className="text-sm text-[var(--txt2)] leading-relaxed">
+    <p
+      key={i}
+      className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+      style={SERIF}
+    >
       {parseInline(para, playerSlugs, gameId)}
     </p>
   ))
 }
 
-type FlatPlayerStat = {
-  player_slug: string | null
-  player_name: string
-  school_slug: string | null
-  team_name: string
-  stat_type: string
-  rush_att: number | null; rush_yds: number | null; rush_tds: number | null
-  pass_comp: number | null; pass_att: number | null; pass_yds: number | null; pass_tds: number | null; pass_int: number | null
-  rec_rec: number | null; rec_yds: number | null; rec_tds: number | null
-  kick_pat: number | null; kick_fg: number | null; kick_points: number | null
-  def_int: number | null; def_sacks: number | null; def_fumbles: number | null
-}
+// ── Main shell ───────────────────────────────────────────────────────────────
 
 export function GameShell({
   game, box, playerGameStats, prevGameId, nextGameId, refSlug, playerSlugs,
@@ -517,30 +493,60 @@ export function GameShell({
   playerSlugs: Record<string, string>
 }) {
   const router = useRouter()
-  const [gameTab, setGameTab] = useState<GameTabType>('Box Score')
-  const [aiTitle, setAiTitle] = useState<string | null>(null)
+
+  const [chartsOpen, setChartsOpen] = useState(false)
+  const [playerOpen, setPlayerOpen] = useState(false)
+  const [chatOpen,   setChatOpen]   = useState(false)
+
+  const [aiTitle,      setAiTitle]      = useState<string | null>(null)
   const [aiHighlights, setAiHighlights] = useState<string | null>(null)
   const [loadingHighlights, setLoadingHighlights] = useState(false)
+  const [highlightsTriggered, setHighlightsTriggered] = useState(false)
 
   const gameIdNum = game.id as number
+  const homeSlug   = game.home_team_slug as string
+  const awaySlug   = game.away_team_slug as string
+  const homeSchool = (game.home_school_slug as string) ?? homeSlug.replace(/-varsity-football$/, '')
+  const awaySchool = (game.away_school_slug as string) ?? awaySlug.replace(/-varsity-football$/, '')
+  const homeName   = cleanName(game.home_team_name as string)
+  const awayName   = cleanName(game.away_team_name as string)
+  const homeScore  = game.home_score as number | null
+  const awayScore  = game.away_score as number | null
+  const division   = game.division   as string | null
+  const gameNumber = game.game_number as number | null
+  const season     = game.season as number
 
+  // Ref-team perspective — drives the title's lead team and at/vs connector.
+  const refIsHome  = refSlug === homeSlug
+  const refName    = refIsHome ? homeName : awayName
+  const otherName  = refIsHome ? awayName : homeName
+  const otherSlug  = refIsHome ? awaySlug : homeSlug
+  const connector  = refIsHome ? 'vs.' : 'at'
+
+  const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
+  const rawHighlights = box?.highlights as string | null
+
+  const flatStats = playerGameStats as unknown as FlatPlayerStat[]
+  const allStats  = (box?.player_stats as PlayerStat[] | null) ?? []
+
+  // ── On-mount: hydrate any cached highlights so we don't re-fetch ─────────
   useEffect(() => {
-    const rawHighlights = box?.highlights as string | null
     if (!rawHighlights) return
-
-    const cacheKey = `hl-${gameIdNum}`
     try {
-      const cached = sessionStorage.getItem(cacheKey)
+      const cached = sessionStorage.getItem(`hl-${gameIdNum}`)
       if (cached) {
         const p = JSON.parse(cached)
         setAiTitle(p.title ?? null)
         setAiHighlights(p.text ?? null)
-        return
+        setHighlightsTriggered(true)
       }
     } catch {}
+  }, [gameIdNum, rawHighlights])
 
+  function triggerHighlights() {
+    if (!rawHighlights || highlightsTriggered || loadingHighlights) return
+    setHighlightsTriggered(true)
     setLoadingHighlights(true)
-
     fetch(`/api/game/${gameIdNum}/highlights`)
       .then(async res => {
         const text = await res.text()
@@ -550,181 +556,298 @@ export function GameShell({
           const body  = text.slice(nl + 1).trimStart()
           setAiTitle(title)
           setAiHighlights(body)
-          try { sessionStorage.setItem(cacheKey, JSON.stringify({ title, text: body })) } catch {}
+          try { sessionStorage.setItem(`hl-${gameIdNum}`, JSON.stringify({ title, text: body })) } catch {}
         } else {
           setAiHighlights(text.trim())
         }
       })
       .catch(() => {})
       .finally(() => setLoadingHighlights(false))
-  }, [gameIdNum, box])
-  const [chartsOpen, setChartsOpen]   = useState(false)
-  const [playerOpen, setPlayerOpen]   = useState(false)
-  const [chatOpen,   setChatOpen]     = useState(false)
+  }
 
-  const homeSlug   = game.home_team_slug as string
-  const awaySlug   = game.away_team_slug as string
-  const homeSchool = (game.home_school_slug as string) ?? homeSlug.replace(/-varsity-football$/, '')
-  const awaySchool = (game.away_school_slug as string) ?? awaySlug.replace(/-varsity-football$/, '')
-  const homeName   = cleanName(game.home_team_name as string)
-  const awayName   = cleanName(game.away_team_name as string)
-  const homeScore  = game.home_score as number | null
-  const awayScore  = game.away_score as number | null
-  const division      = game.division      as string | null
-  const awayDivision  = game.away_division as string | null
-  const gameNumber = game.game_number as number | null
-
-  const quarterRows = (box?.quarter_scores as QuarterRow[] | null) ?? []
-  const highlights  = box?.highlights as string | null
-
-  // Use player_game_stats flat table (school_slug + player_slug on every row)
-  const flatStats = (playerGameStats as unknown as FlatPlayerStat[])
-  const allStats  = (box?.player_stats as PlayerStat[] | null) ?? [] // for PanelPlayers fallback
-
-  const STAT_STAT_TYPES = ['Passing', 'Rushing', 'Receiving', 'Kicking', 'Defense'] as const
-  const availableStats = STAT_STAT_TYPES.filter(t =>
-    flatStats.some(p => p.stat_type === t) || allStats.some(p => p.stat_type === t)
+  // ── Section structure ────────────────────────────────────────────────────
+  const availableStatSections = useMemo(
+    () => STAT_ORDER.filter(t => flatStats.some(p => p.stat_type === t)),
+    [flatStats],
   )
 
-  function getFlatStats(statType: string) {
-    return flatStats.filter(p => p.stat_type === statType)
-  }
-  function getTeamStats(statType: PlayerStat['stat_type'], teamSlug: string) {
-    const bySlug = allStats.filter(p => p.stat_type === statType && p.team_slug === teamSlug)
-    if (bySlug.length > 0) return bySlug
-    const schoolName = teamSlug.replace(/-varsity-football$/, '').replace(/-/g, ' ')
-    return allStats.filter(p => p.stat_type === statType && cleanName(p.team_name).toLowerCase() === schoolName)
+  type SectionId = 'box-score' | 'passing' | 'rushing' | 'receiving' | 'kicking' | 'defense' | 'highlights'
+
+  const sections = useMemo(() => {
+    const list: { id: SectionId; label: string; count: number }[] = [
+      { id: 'box-score', label: 'Box Score', count: quarterRows.length > 0 ? 1 : 0 },
+    ]
+    for (const t of availableStatSections) {
+      list.push({
+        id: t.toLowerCase() as SectionId,
+        label: t,
+        count: flatStats.filter(p => p.stat_type === t).length,
+      })
+    }
+    list.push({ id: 'highlights', label: 'Game Highlights', count: rawHighlights ? 1 : 0 })
+    return list
+  }, [availableStatSections, flatStats, quarterRows.length, rawHighlights])
+
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
+  const [activeSection, setActiveSection] = useState<SectionId>('box-score')
+
+  // ── Scroll-spy ───────────────────────────────────────────────────────────
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries.filter(e => e.isIntersecting)
+        if (!visible.length) return
+        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        setActiveSection(visible[0].target.id as SectionId)
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: [0, 0.4] },
+    )
+    Object.values(sectionRefs.current).forEach(el => el && observer.observe(el))
+    return () => observer.disconnect()
+  }, [sections])
+
+  function handleNavSelect(id: string) {
+    if (id === 'highlights') triggerHighlights()
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  const homeLogo = SCHOOL_LOGOS[homeSchool]
-
+  // ── Mobile header ────────────────────────────────────────────────────────
   const mobileHeader = (
-    <span className="text-[15px] font-bold text-[var(--txt)] truncate">{awayName} at {homeName}</span>
+    <span className="text-[15px] font-bold text-[var(--paper-text)] truncate" style={SERIF}>
+      {awayName} at {homeName}
+    </span>
   )
 
+  // ── Render ───────────────────────────────────────────────────────────────
   return (
     <>
-      <AppLayout mobileHeader={mobileHeader}>
-        <div className="flex-1 overflow-y-auto no-scrollbar">
-          <div className="mx-auto max-w-4xl px-5 pt-2 pb-8 sm:py-8">
+      <AppLayout mobileHeader={mobileHeader} paperMode>
+        <div
+          className="flex-1 overflow-y-auto no-scrollbar"
+          style={{ backgroundColor: 'var(--paper)', ...PAPER_BRIDGE }}
+        >
 
-            {/* Header */}
-            <RevealFx delay={0} translateY={4} className="pt-8 -mt-8">
-            <div className="hidden sm:flex mb-8 items-center justify-between gap-2">
-              <div className="flex flex-col gap-1">
-                <div className="flex items-center gap-3">
-                  <h1 className="text-2xl font-bold text-[var(--txt)]">{awayName} at {homeName}</h1>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs text-[var(--muted)]">
-                  {division && (
-                    <><Link href={`/division/division-${division.toLowerCase()}`} className="hover:text-[var(--txt)] transition-colors">Division {division}</Link>
-                    <span>/</span></>
-                  )}
-                  <Link href={`/team/${homeSlug}`} className="hover:text-[var(--txt)] transition-colors">{homeName}</Link>
-                  <span>/</span>
-                  <span className="font-medium" style={{ color: ACCENT_COLOR }}>{fmtDate(game.game_date as string | Date)}</span>
-                </div>
-              </div>
-              <ButtonGroup
-                onPrev={() => prevGameId && router.push(`/game/${prevGameId}?ref=${refSlug}`)}
-                onNext={() => nextGameId && router.push(`/game/${nextGameId}?ref=${refSlug}`)}
-                buttons={[
-                  { icon: ChartSpline,   tooltip: 'Charts',         active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
-                  { icon: FileUser,      tooltip: 'Players',        active: playerOpen, onClick: () => setPlayerOpen(v => !v) },
-                  { icon: MessageCircle, tooltip: 'Ask SportsGPT',  active: chatOpen,   onClick: () => setChatOpen(v => !v) },
-                ]}
-              />
-            </div>
-            </RevealFx>
-
-            {/* Hero */}
-            <RevealFx delay={0.15} translateY={16}>
-            <GameHero
-              homeSlug={homeSlug} awaySlug={awaySlug}
-              homeName={homeName} awayName={awayName}
-              homeSchool={homeSchool} awaySchool={awaySchool}
-              homeScore={homeScore} awayScore={awayScore}
-              gameNumber={gameNumber}
-              division={division} awayDivision={awayDivision}
-              gameDate={game.game_date as string | Date | null}
-            />
-            </RevealFx>
-
-            {/* Box Score / Stats tabs */}
-            <RevealFx delay={0.3} translateY={8}>
-            {(quarterRows.length > 0 || allStats.length > 0) && (
-              <div className="mb-8">
-                <div className="flex items-center gap-0 border-b border-[var(--border)] mb-5">
-                  {(['Box Score', ...availableStats] as GameTabType[]).map(tab => (
-                    <button key={tab}
-                      onClick={() => setGameTab(tab)}
-                      className={cn('px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors border-b-2 -mb-px',
-                        gameTab === tab ? 'border-[#033882] text-[var(--txt)]' : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
-                      )}
-                    >{tab}</button>
-                  ))}
-                </div>
-
-                {gameTab === 'Box Score' && quarterRows.length > 0 && (
-                  <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
-                    <ScoreTable rows={quarterRows} homeSlug={homeSlug} gameNumber={gameNumber} gameDate={game.game_date as string | Date | null} />
-                  </div>
-                )}
-
-                {gameTab !== 'Box Score' && (
-                  <GameStatSection
-                    statType={gameTab}
-                    players={getFlatStats(gameTab)}
-                  />
-                )}
-              </div>
-            )}
-            </RevealFx>
-
-            {/* Highlights */}
-            <RevealFx delay={0.42} translateY={8}>
-            {highlights && (
-              <div className="mb-6">
-                {loadingHighlights ? (
-                  <div className="animate-pulse mb-3 h-6 bg-[var(--inp-bg)] rounded w-2/3" />
-                ) : (
+          {/* ── Masthead ───────────────────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
+            <RevealFx delay={0} translateY={4}>
+              <EditorialHead
+                size="lg"
+                eyebrow={
                   <>
-                    <h2 className="text-lg font-semibold text-[var(--txt)] mb-1">{aiTitle ?? 'Game Highlights'}</h2>
-                    <p className="text-xs text-[var(--muted)] mb-3">By NYSgpt</p>
+                    <Link
+                      href="/section/section-xi"
+                      className="hover:text-[var(--paper-strong)] transition-colors"
+                    >
+                      Section XI
+                    </Link>
+                    {' · '}Week {gameNumber ?? '—'} · {fmtSeason(season)}
                   </>
-                )}
-                {loadingHighlights ? (
-                  <div className="space-y-2 animate-pulse">
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-full" />
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[95%]" />
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[88%]" />
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-full mt-3" />
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[92%]" />
-                    <div className="h-4 bg-[var(--inp-bg)] rounded w-[75%]" />
-                  </div>
-                ) : aiHighlights ? (
-                  <div className="space-y-3">{renderHighlights(aiHighlights, playerSlugs, gameIdNum)}</div>
-                ) : (
-                  <p className="text-sm text-[var(--txt)] leading-relaxed">{highlights}</p>
-                )}
-              </div>
-            )}
+                }
+                subhead={
+                  <>
+                    <Link
+                      href={`/section/section-xi?season=${season}`}
+                      className="hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline"
+                    >
+                      {fmtDate(game.game_date as string | Date)}
+                    </Link>
+                    {' — '}
+                    {division ? `Division ${division}` : 'Section XI football'}.
+                  </>
+                }
+                meta={[
+                  homeScore != null && awayScore != null
+                    ? `${homeName} ${homeScore}–${awayScore} ${awayName}`
+                    : `${awayName} at ${homeName}`,
+                  game.is_division_game ? 'Conference game' : 'Non-conference',
+                ]}
+                rightSlot={
+                  <EditorialButtonGroup
+                    prevHref={prevGameId ? `/game/${prevGameId}?ref=${refSlug}` : undefined}
+                    nextHref={nextGameId ? `/game/${nextGameId}?ref=${refSlug}` : undefined}
+                    prevLabel="Previous game"
+                    nextLabel="Next game"
+                    buttons={[
+                      { icon: ChartSpline,   tooltip: 'Charts',         active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
+                      { icon: FileUser,      tooltip: 'Game log',       active: playerOpen, onClick: () => setPlayerOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'Ask SportsGPT',  active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    ]}
+                  />
+                }
+              >
+                <Link
+                  href={`/team/${refSlug}`}
+                  className="hover:text-[var(--paper-strong)] transition-colors"
+                >
+                  {refName}
+                </Link>{' '}
+                <em style={{ fontStyle: 'italic', color: 'var(--paper-muted)' }}>{connector}</em>{' '}
+                <Link
+                  href={`/team/${otherSlug}`}
+                  className="hover:text-[var(--paper-strong)] transition-colors"
+                >
+                  {otherName}
+                </Link>
+              </EditorialHead>
             </RevealFx>
+          </div>
 
+          {/* ── Hero ───────────────────────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
+            <RevealFx delay={0.15} translateY={12}>
+              <GameHero
+                homeName={homeName} awayName={awayName}
+                homeSchool={homeSchool} awaySchool={awaySchool}
+                homeScore={homeScore} awayScore={awayScore}
+                gameNumber={gameNumber}
+              />
+            </RevealFx>
+          </div>
+
+          {/* ── Body: sidebar + main ──────────────────────────────── */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
+
+            <ContentsNav
+              items={sections}
+              activeId={activeSection}
+              onSelect={handleNavSelect}
+            />
+
+            <main className="min-w-0">
+
+              {/* ── Box Score ──────────────────────────────────────── */}
+              {quarterRows.length > 0 && (
+                <section
+                  id="box-score"
+                  ref={(el: HTMLElement | null) => { sectionRefs.current['box-score'] = el }}
+                  className="mb-20 scroll-mt-24"
+                >
+                  <SectionHead
+                    title="Box Score"
+                    eyebrow={gameNumber != null ? `Week ${gameNumber}` : undefined}
+                    blurb="Quarter-by-quarter scoring, final result, home vs. away."
+                  />
+                  <BoxScoreTable rows={quarterRows} homeSlug={homeSlug} />
+                </section>
+              )}
+
+              {/* ── Stat sections ──────────────────────────────────── */}
+              {availableStatSections.map(stat => (
+                <section
+                  key={stat}
+                  id={stat.toLowerCase()}
+                  ref={(el: HTMLElement | null) => { sectionRefs.current[stat.toLowerCase()] = el }}
+                  className="mb-20 scroll-mt-24"
+                >
+                  <SectionHead
+                    title={stat}
+                    eyebrow="Player stats"
+                    blurb={STAT_BLURB[stat]}
+                    meta={
+                      <span
+                        className="text-[11px] uppercase tracking-[0.22em] text-[var(--paper-faint)] tabular-nums"
+                        style={SANS}
+                      >
+                        {flatStats.filter(p => p.stat_type === stat).length} players
+                      </span>
+                    }
+                  />
+                  <StatTable
+                    statType={stat}
+                    players={flatStats.filter(p => p.stat_type === stat)}
+                  />
+                </section>
+              ))}
+
+              {/* ── Game Highlights ────────────────────────────────── */}
+              {rawHighlights && (
+                <section
+                  id="highlights"
+                  ref={(el: HTMLElement | null) => { sectionRefs.current['highlights'] = el }}
+                  className="mb-12 scroll-mt-24"
+                >
+                  <SectionHead
+                    title={aiTitle ?? 'Game Highlights'}
+                    eyebrow="Recap"
+                    blurb={aiHighlights ? 'Filed by NYSgpt — AI rewrite of the Newsday box score notes.' : undefined}
+                  />
+
+                  {!highlightsTriggered ? (
+                    <Tablet>
+                      <div className="px-6 py-10 text-center">
+                        <p
+                          className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto"
+                          style={{ ...SERIF, fontStyle: 'italic' }}
+                        >
+                          The recap hasn't been written yet. Generate the AI rewrite of
+                          the Newsday box-score notes.
+                        </p>
+                        <button
+                          onClick={triggerHighlights}
+                          className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
+                          style={{ ...SANS, borderRadius: TABLET_RADIUS }}
+                        >
+                          <Sparkles className="h-3.5 w-3.5" />
+                          Generate Game Highlights
+                        </button>
+                      </div>
+                    </Tablet>
+                  ) : loadingHighlights ? (
+                    <div className="space-y-3 animate-pulse">
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
+                      <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
+                    </div>
+                  ) : aiHighlights ? (
+                    <div className="space-y-5 max-w-[68ch]">
+                      {renderHighlights(aiHighlights, playerSlugs, gameIdNum)}
+                    </div>
+                  ) : (
+                    <div className="max-w-[68ch]">
+                      <p
+                        className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                        style={SERIF}
+                      >
+                        {rawHighlights}
+                      </p>
+                    </div>
+                  )}
+                </section>
+              )}
+
+              {/* ── Colophon ───────────────────────────────────────── */}
+              <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">
+                <p
+                  className="text-[12.5px] leading-[1.75] text-[var(--paper-faint)]"
+                  style={{ ...SERIF, fontStyle: 'italic' }}
+                >
+                  Quarter scores and player stat lines are drawn from Newsday box scores
+                  for the {fmtSeason(season)} season. Game Highlights are an AI rewrite of
+                  the Newsday recap; click in the sidebar to generate when ready.
+                </p>
+              </div>
+
+            </main>
           </div>
         </div>
       </AppLayout>
 
-      <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Game Log">
-        <PanelPlayers
-          stats={allStats}
-          schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
-          playerSlugs={playerSlugs}
-          onPlayerSelect={(slug) => router.push(`/game/${gameIdNum}/player/${slug}`, { scroll: false })}
-        />
-      </AppPanel>
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)} countyName={`${awayName} at ${homeName}`} />
+      <div style={PAPER_BRIDGE}>
+        <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
+        <AppPanel open={playerOpen} onClose={() => setPlayerOpen(false)} title="Game Log">
+          <PanelPlayers
+            stats={allStats}
+            schoolSlugs={{ [homeName]: homeSchool, [awayName]: awaySchool }}
+            playerSlugs={playerSlugs}
+            onPlayerSelect={(slug) => router.push(`/game/${gameIdNum}/player/${slug}`, { scroll: false })}
+          />
+        </AppPanel>
+        <PanelChat open={chatOpen} onClose={() => setChatOpen(false)} countyName={`${awayName} at ${homeName}`} />
+      </div>
     </>
   )
 }

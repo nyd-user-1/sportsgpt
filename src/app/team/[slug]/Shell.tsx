@@ -3,15 +3,13 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import {
-  ChevronLeft, ChevronRight,
   ChartSpline, ArrowLeft, ArrowRight, FileUser, MessageCircle,
   Search, X,
 } from 'lucide-react'
 import Image from 'next/image'
 import { AppLayout } from '@/components/AppLayout'
 import { PanelGameLog } from '@/components/PanelGameLog'
-import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
-import { SCHOOL_COLORS } from '@/lib/school-colors'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelChat } from '@/components/PanelChat'
@@ -26,7 +24,6 @@ import {
   SearchInput,
   useSearchHotkey,
   PAPER_BRIDGE,
-  TABLET_RADIUS,
   MONO,
   SortTh,
   ScrollTable,
@@ -165,7 +162,6 @@ export function TeamShell({
   const [logSortDir,   setLogSortDir]   = useState<'asc' | 'desc'>('desc')
   const [plyrSortCol,  setPlyrSortCol]  = useState<string | null>(null)
   const [plyrSortDir,  setPlyrSortDir]  = useState<'asc' | 'desc'>('desc')
-  const [slideIdx, setSlideIdx]       = useState(0)
   const [query,   setQuery]           = useState('')
   const [activeSection, setActiveSection] = useState<string>('seasons')
 
@@ -180,20 +176,6 @@ export function TeamShell({
   const division   = team.division as string
   const schoolSlug = team.school_slug as string
   const cleanName  = teamName.replace(/\s+Varsity\s+Football$/i, '').trim()
-
-  const heroPhotos = TEAM_PHOTOS[schoolSlug] ?? []
-  type HeroSlide = { kind: 'photo'; url: string } | { kind: 'placeholder' }
-  const heroSlides: HeroSlide[] = [
-    { kind: 'placeholder' },
-    ...heroPhotos.map(url => ({ kind: 'photo' as const, url })),
-  ]
-
-  useEffect(() => {
-    if (heroSlides.length < 2) return
-    const t = setInterval(() => setSlideIdx(i => (i + 1) % heroSlides.length), 4000)
-    return () => clearInterval(t)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [heroSlides.length])
 
   /* ── Scroll-spy ──────────────────────────────────────────────── */
   useEffect(() => {
@@ -486,7 +468,7 @@ export function TeamShell({
 
   const navItems = [
     { id: 'seasons',     label: 'Seasons',       count: q ? 0 : sectionCounts.seasons },
-    { id: 'schedule',    label: 'Schedule',      count: sectionCounts.schedule },
+    { id: 'schedule',    label: 'Games',         count: sectionCounts.schedule },
     { id: 'player-logs', label: 'Player Logs',   count: sectionCounts['player-logs'],
       subItems: logSubTypes.map(st => ({ id: `player-logs-${st.toLowerCase()}`, label: st })) },
     { id: 'players',     label: 'Player Totals', count: sectionCounts.players,
@@ -523,7 +505,7 @@ export function TeamShell({
 
   /* ── Table cell styles ───────────────────────────────────────── */
   const td = 'px-3 py-4 border-b border-[var(--paper-rule)] text-[13px]'
-  const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] sticky top-0 bg-[var(--paper)] z-10'
+  const th = 'px-3 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--paper-faint)] border-b border-[var(--paper-rule)] sticky top-0 bg-[color:color-mix(in_srgb,var(--paper-text)_3.5%,var(--paper))] z-10'
 
   /* ════════════════════════════════════════════════════════════════ */
   return (
@@ -562,56 +544,6 @@ export function TeamShell({
             >
               {cleanName}
             </EditorialHead>
-          </div>
-
-          {/* ── Hero slider ─────────────────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-12">
-            <RevealFx delay={0.1} translateY={8}>
-              <div className="w-full border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
-                style={{ padding: 8, borderRadius: TABLET_RADIUS }}>
-                <div className="relative overflow-hidden w-full" style={{ height: 504, borderRadius: 1 }}>
-                  {heroSlides.map((slide, i) => (
-                    <div key={i}
-                      className="absolute inset-0 transition-opacity duration-700 ease-in-out"
-                      style={{ opacity: i === slideIdx ? 1 : 0 }}>
-                      {slide.kind === 'placeholder' ? (
-                        <div className="absolute inset-0 flex items-center justify-center"
-                          style={{ background: SCHOOL_COLORS[schoolSlug]?.primary ?? '#033882' }}>
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                          {heroLogo && (
-                            <Image src={heroLogo} alt="" width={96} height={96}
-                              className="object-contain relative z-10"
-                              style={{ filter: 'drop-shadow(0 0 14px rgba(255,255,255,0.45))' }}
-                              unoptimized />
-                          )}
-                        </div>
-                      ) : (
-                        <Image src={slide.url} alt="" fill className="object-cover object-top" unoptimized />
-                      )}
-                    </div>
-                  ))}
-                  {heroSlides.length > 1 && (
-                    <>
-                      <button onClick={() => setSlideIdx(i => (i - 1 + heroSlides.length) % heroSlides.length)}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-white/30 bg-black/25 hover:bg-black/45 flex items-center justify-center text-white/95 transition-colors">
-                        <ChevronLeft className="h-5 w-5" />
-                      </button>
-                      <button onClick={() => setSlideIdx(i => (i + 1) % heroSlides.length)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full border border-white/30 bg-black/25 hover:bg-black/45 flex items-center justify-center text-white/95 transition-colors">
-                        <ChevronRight className="h-5 w-5" />
-                      </button>
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
-                        {heroSlides.map((_, i) => (
-                          <button key={i} onClick={() => setSlideIdx(i)}
-                            className="h-1.5 rounded-full bg-white transition-all duration-500 ease-in-out"
-                            style={{ width: i === slideIdx ? 24 : 8, opacity: i === slideIdx ? 0.95 : 0.55 }} />
-                        ))}
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-            </RevealFx>
           </div>
 
           {/* ── Sticky control bar ──────────────────────────────── */}
@@ -719,7 +651,7 @@ export function TeamShell({
                           const seasonIdx = gameSeasons.indexOf(row.seasonKey)
                           return (
                             <tr key={row.season}
-                              className="hover:bg-[var(--paper-quiet)] cursor-pointer transition-colors"
+                              className="hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] cursor-pointer transition-colors"
                               onClick={() => {
                                 if (seasonIdx !== -1) setActiveSeason(row.seasonKey)
                                 document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -727,7 +659,16 @@ export function TeamShell({
                               <td className={cn(td, 'text-[var(--paper-muted)]')} style={MONO}>{row.season}</td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
-                                  {heroLogo && <Image src={heroLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  {heroLogo && (
+                                    <Link
+                                      href={`/team/${team.slug as string}`}
+                                      onClick={e => e.stopPropagation()}
+                                      aria-label={`${cleanName} team page`}
+                                      className="shrink-0"
+                                    >
+                                      <Image src={heroLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
+                                    </Link>
+                                  )}
                                   <span className="truncate text-[var(--paper-text)]" style={SERIF}>{cleanName}</span>
                                 </div>
                               </td>
@@ -757,7 +698,7 @@ export function TeamShell({
               <section id="schedule" className="mb-20 scroll-mt-24"
                 ref={(el: HTMLElement | null) => { sectionRefs.current.schedule = el }}>
                 <SectionHead
-                  title={activeSeason !== null ? `${fmtSeason(activeSeason)} Schedule` : 'Schedule'}
+                  title={activeSeason !== null ? `${fmtSeason(activeSeason)} Games` : 'Games'}
                   blurb="Game-by-game results"
                   meta={metaCount(filteredGames.length, seasonGames.length, 'game')}
                 />
@@ -805,13 +746,22 @@ export function TeamShell({
                           const resultColor = result === 'W' ? '#15803d' : result === 'L' ? '#b91c1c' : 'var(--paper-muted)'
                           return (
                             <tr key={g.id}
-                              className="hover:bg-[var(--paper-quiet)] transition-colors cursor-pointer"
+                              className="hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors cursor-pointer"
                               onClick={() => { setSelectedGameId(g.id); setGameLogOpen(true) }}>
                               <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums')} style={MONO}>{fmtSeason(g.season)}</td>
                               <td className={td}>
                                 <div className="flex items-center gap-2 min-w-0">
                                   <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{isHome ? 'vs' : 'at'}</span>
-                                  {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                  {opLogo && (
+                                    <Link
+                                      href={`/team/${opSlug}`}
+                                      onClick={e => e.stopPropagation()}
+                                      aria-label={`${opDisplay} team page`}
+                                      className="shrink-0"
+                                    >
+                                      <Image src={opLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
+                                    </Link>
+                                  )}
                                   <Link href={`/team/${opSlug}`}
                                     onClick={e => e.stopPropagation()}
                                     className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
@@ -904,13 +854,21 @@ export function TeamShell({
                                   const playerLogo = SCHOOL_LOGOS[log.school_slug]
 
                                   const makeRow = (statLabel: string, statValue: string, key: string) => (
-                                    <tr key={key} className="hover:bg-[var(--paper-quiet)] transition-colors">
+                                    <tr key={key} className="hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors">
                                       <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
                                         {log.season != null ? fmtSeason(log.season) : '—'}
                                       </td>
                                       <td className={td}>
                                         <div className="flex items-center gap-2 min-w-0">
-                                          {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          {playerLogo && (
+                                            <Link
+                                              href={`/team/${log.school_slug}-varsity-football`}
+                                              aria-label="Team page"
+                                              className="shrink-0"
+                                            >
+                                              <Image src={playerLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
+                                            </Link>
+                                          )}
                                           <Link href={`/player/${log.player_slug}`}
                                             className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
                                             style={SERIF}>
@@ -921,7 +879,15 @@ export function TeamShell({
                                       <td className={td}>
                                         <div className="flex items-center gap-2 min-w-0">
                                           <span className="text-[11px] text-[var(--paper-faint)] shrink-0">{playerIsHome ? 'vs' : 'at'}</span>
-                                          {opLogo && <Image src={opLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          {opLogo && (
+                                            <Link
+                                              href={`/team/${opSlug}`}
+                                              aria-label={`${opName} team page`}
+                                              className="shrink-0"
+                                            >
+                                              <Image src={opLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
+                                            </Link>
+                                          )}
                                           <Link href={`/game/${log.game_id}`}
                                             className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
                                             style={SERIF}>
@@ -1014,13 +980,21 @@ export function TeamShell({
                                             : p.recv_tds as number | null
                                   return (
                                     <tr key={`${playerSlug}-${statType}-${i}`}
-                                      className="hover:bg-[var(--paper-quiet)] transition-colors">
+                                      className="hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors">
                                       <td className={cn(td, 'text-[var(--paper-muted)] tabular-nums hidden sm:table-cell')} style={MONO}>
                                         {p.season != null ? fmtSeason(p.season as number) : '—'}
                                       </td>
                                       <td className={td}>
                                         <div className="flex items-center gap-2 min-w-0">
-                                          {playerLogo && <Image src={playerLogo} alt="" width={18} height={18} className="shrink-0 object-contain" unoptimized />}
+                                          {playerLogo && (
+                                            <Link
+                                              href={`/team/${team.slug as string}`}
+                                              aria-label="Team page"
+                                              className="shrink-0"
+                                            >
+                                              <Image src={playerLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
+                                            </Link>
+                                          )}
                                           <Link href={`/player/${playerSlug}`}
                                             className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
                                             style={SERIF}>

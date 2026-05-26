@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { AppPanel } from '@/components/AppPanel'
+import { GameDetailFooter } from '@/components/PanelGame'
 
 export function LaunchpadGameWrapper({ game }: { game: React.ReactNode }) {
   const pathname     = usePathname()
@@ -22,6 +23,7 @@ export function LaunchpadGameWrapper({ game }: { game: React.ReactNode }) {
       title={title}
       detailHref={gameId ? `/game/${gameId}` : undefined}
       bodyClass="flex flex-col"
+      footer={gameId ? <GameDetailFooter gameId={Number(gameId)} /> : undefined}
     >
       {game}
     </AppPanel>
