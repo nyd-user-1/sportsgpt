@@ -18,6 +18,10 @@
 - Always `npm run build` before pushing — never `tsc --noEmit`.
 - Every DB page must export `export const dynamic = 'force-dynamic'`.
 
+## Vocabulary Rules
+
+- **Never call a button a "pill."** A *pill* is a filter chip (e.g. division/season selectors that toggle a view). A *button* triggers an action (open a panel, navigate, submit). Even when a button is rounded and looks pill-shaped, it is still a button — describe it as a button, button group, or chip if it really is filter UI.
+
 ---
 
 ## Editorial Design System (Paper Palette)
