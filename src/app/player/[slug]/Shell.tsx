@@ -12,7 +12,7 @@ import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { RevealFx } from '@/components/RevealFx'
 import {
-  EditorialHead, EditorialAccent, EditorialButtonGroup,
+  EditorialHead, EditorialButtonGroup,
   SectionHead, ContentsNav,
   PAPER_BRIDGE, TABLET_RADIUS,
   Tablet, EmptyTablet, ScrollTable,
@@ -709,7 +709,7 @@ export function PlayerShell({
 
   useEffect(() => {
     try {
-      const cached = sessionStorage.getItem(`recap-${player.slug}`)
+      const cached = sessionStorage.getItem(`recap-v2-${player.slug}`)
       if (cached) {
         const p = JSON.parse(cached)
         setRecapTitle(p.title ?? null)
@@ -732,7 +732,7 @@ export function PlayerShell({
           const body  = text.slice(nl + 1).trimStart()
           setRecapTitle(title)
           setRecapBody(body)
-          try { sessionStorage.setItem(`recap-${player.slug}`, JSON.stringify({ title, body })) } catch {}
+          try { sessionStorage.setItem(`recap-v2-${player.slug}`, JSON.stringify({ title, body })) } catch {}
         } else {
           setRecapBody(text.trim())
         }
@@ -982,7 +982,7 @@ export function PlayerShell({
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
             <RevealFx delay={0} translateY={4}>
               <EditorialHead
-                size="xl"
+                size="lg"
                 eyebrow={
                   <>
                     <Link href="/section/section-xi" className="hover:text-[var(--paper-strong)] transition-colors">
@@ -1039,12 +1039,6 @@ export function PlayerShell({
                 }
               >
                 {player.name}
-                {(() => {
-                  const gpTotal = [...new Set(gameLog.map(r => r.game_id))].length
-                  return gpTotal > 0
-                    ? <EditorialAccent>{gpTotal} Games Played.</EditorialAccent>
-                    : null
-                })()}
               </EditorialHead>
             </RevealFx>
           </div>
@@ -1080,7 +1074,7 @@ export function PlayerShell({
               placeholder="Search opponents & seasons…"
             />
 
-            <CmdKButton /><AIButton />
+            <AIButton /><CmdKButton />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ─────────────────────────────── */}
