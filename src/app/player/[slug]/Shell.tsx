@@ -17,6 +17,7 @@ import {
   PAPER_BRIDGE, TABLET_RADIUS,
   Tablet, EmptyTablet, ScrollTable,
   StickyControlBar, SearchInput, useSearchHotkey,
+  CmdKButton,
   MONO, tabletTd,
 } from '@/components/editorial'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
@@ -614,7 +615,43 @@ export function PlayerShell({
 
   // ── Recap section trigger (matches Game Highlights pattern) ─────────────
   const [recapTriggered, setRecapTriggered] = useState(false)
-  function triggerRecap() { setRecapTriggered(true) }
+  const [recapTitle,     setRecapTitle]     = useState<string | null>(null)
+  const [recapBody,      setRecapBody]      = useState<string | null>(null)
+  const [loadingRecap,   setLoadingRecap]   = useState(false)
+
+  useEffect(() => {
+    try {
+      const cached = sessionStorage.getItem(`recap-${player.slug}`)
+      if (cached) {
+        const p = JSON.parse(cached)
+        setRecapTitle(p.title ?? null)
+        setRecapBody(p.body ?? null)
+        setRecapTriggered(true)
+      }
+    } catch {}
+  }, [player.slug])
+
+  function triggerRecap() {
+    if (recapTriggered || loadingRecap) return
+    setRecapTriggered(true)
+    setLoadingRecap(true)
+    fetch(`/api/player/${player.slug}/recap`)
+      .then(async res => {
+        const text = await res.text()
+        const nl = text.indexOf('\n')
+        if (nl !== -1) {
+          const title = text.slice(0, nl).trim()
+          const body  = text.slice(nl + 1).trimStart()
+          setRecapTitle(title)
+          setRecapBody(body)
+          try { sessionStorage.setItem(`recap-${player.slug}`, JSON.stringify({ title, body })) } catch {}
+        } else {
+          setRecapBody(text.trim())
+        }
+      })
+      .catch(() => {})
+      .finally(() => setLoadingRecap(false))
+  }
 
   // ── Merge stats (preserve original logic) ───────────────────────────────
   const mergedStats: StatRow[] = useMemo(() => {
@@ -750,18 +787,18 @@ export function PlayerShell({
   const { yards: bestYards, label: bestLabel, season: bestSeason } = getBestYards(stats)
 
   // ── ContentsNav items ───────────────────────────────────────────────────
-  const summaries = useMemo(() => stats.filter(s => s.ai_summary).sort((a, b) => b.season - a.season), [stats])
+  const hasStatsForRecap = stats.length > 0
 
   const sections = useMemo(() => {
     const list: { id: SectionId; label: string; count: number }[] = []
     list.push({ id: 'stats',       label: 'Stats',         count: tableRows.length })
     if (selectedSeason !== null) list.push({ id: 'game-log', label: 'Game Log', count: gameLog.filter(r => r.season === selectedSeason).length })
-    list.push({ id: 'recap',       label: 'Recap',         count: summaries.length })
+    list.push({ id: 'recap',       label: 'Recap',         count: hasStatsForRecap ? 1 : 0 })
     list.push({ id: 'top-players', label: 'Top Players',   count: divPlayers.length })
     list.push({ id: 'standings',   label: 'Standings',     count: divTeams.length })
     list.push({ id: 'best-season', label: 'Best Season',   count: bestYards > 0 ? 1 : 0 })
     return list
-  }, [tableRows, selectedSeason, gameLog, summaries, divPlayers, divTeams, bestYards])
+  }, [tableRows, selectedSeason, gameLog, hasStatsForRecap, divPlayers, divTeams, bestYards])
 
   const [activeSection, setActiveSection] = useState<SectionId>('stats')
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -914,11 +951,7 @@ export function PlayerShell({
               placeholder="Search opponents & seasons…"
             />
 
-            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block" style={SANS}>
-              {selectedSeason === null
-                ? `${availableSeasons.length} ${availableSeasons.length === 1 ? 'season' : 'seasons'} on file`
-                : `${formatSeason(selectedSeason)} season`}
-            </div>
+            <CmdKButton />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ─────────────────────────────── */}
@@ -1010,26 +1043,25 @@ export function PlayerShell({
                 </section>
               )}
 
-              {/* ── Recap (AI Summaries) ───────────────────────── */}
+              {/* ── Recap (AI career profile) ───────────────────── */}
               <section
                 id="recap"
                 ref={(el) => { sectionRefs.current.recap = el }}
                 className="mb-20 scroll-mt-24"
               >
                 <SectionHead
-                  title="Recap"
-                  eyebrow="AI Summaries"
-                  blurb={summaries.length
-                    ? `Filed by NYSgpt — narrative passes over ${summaries.length} ${summaries.length === 1 ? 'season' : 'seasons'} of stat lines.`
-                    : 'No AI summaries on file yet for this player.'}
+                  title={recapBody && recapTitle ? recapTitle : 'Recap'}
+                  eyebrow="AI Profile"
+                  blurb={recapBody
+                    ? 'Filed by NYSgpt — AI career profile drawn from this player\'s stat lines.'
+                    : 'A career retrospective generated from this player\'s season-by-season totals.'}
                 />
 
-                {!recapTriggered && summaries.length > 0 ? (
+                {!recapTriggered ? (
                   <Tablet>
                     <div className="px-6 py-10 text-center">
                       <p className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto" style={{ ...SERIF, fontStyle: 'italic' }}>
-                        The recap is filed but folded away. Open it to read AI narrative passes over {summaries.length}{' '}
-                        {summaries.length === 1 ? 'season' : 'seasons'} of stat lines.
+                        The recap hasn&apos;t been written yet. Generate an AI career profile from this player&apos;s stat lines.
                       </p>
                       <button
                         onClick={triggerRecap}
@@ -1037,25 +1069,41 @@ export function PlayerShell({
                         style={{ ...SANS, borderRadius: TABLET_RADIUS }}
                       >
                         <Sparkles className="h-3.5 w-3.5" />
-                        Open Recap
+                        Generate Recap
                       </button>
                     </div>
                   </Tablet>
-                ) : summaries.length > 0 ? (
-                  <div className="space-y-6 max-w-[68ch]">
-                    {summaries.map((s, i) => (
-                      <article key={i}>
-                        <p className="mb-2 text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
-                          {formatSeason(s.season)} · {s.stat_type}
+                ) : loadingRecap ? (
+                  <div className="space-y-3 animate-pulse max-w-[68ch]">
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
+                  </div>
+                ) : recapBody ? (
+                  <div className="space-y-5 max-w-[68ch]">
+                    {recapBody.split('\n\n').filter(Boolean).map((para, i) => {
+                      // Render **bold** runs inline
+                      const parts = para.split(/(\*\*[^*]+\*\*)/g)
+                      return (
+                        <p
+                          key={i}
+                          className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                          style={SERIF}
+                        >
+                          {parts.map((part, j) =>
+                            part.startsWith('**') && part.endsWith('**')
+                              ? <strong key={j} className="text-[var(--paper-text)] font-medium">{part.slice(2, -2)}</strong>
+                              : <span key={j}>{part}</span>
+                          )}
                         </p>
-                        <p className="text-[16px] leading-[1.75] text-[var(--paper-muted)]" style={SERIF}>
-                          {s.ai_summary}
-                        </p>
-                      </article>
-                    ))}
+                      )
+                    })}
                   </div>
                 ) : (
-                  <EmptyTablet label="No AI summaries on file for this player yet." />
+                  <EmptyTablet label="No stat lines on file — recap unavailable." />
                 )}
               </section>
 
