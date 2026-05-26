@@ -199,12 +199,12 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                   <div className="absolute inset-0 flex">
                     <div className="relative flex-1">
                       {homePhoto
-                        ? <Image src={homePhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                        ? <Image src={homePhoto} alt="" fill className="object-cover object-top" unoptimized />
                         : <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />}
                     </div>
                     <div className="relative flex-1">
                       {awayPhoto
-                        ? <Image src={awayPhoto} alt="" fill className="object-cover transition-transform duration-500 group-hover:scale-105" unoptimized />
+                        ? <Image src={awayPhoto} alt="" fill className="object-cover object-top" unoptimized />
                         : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
                     </div>
                   </div>

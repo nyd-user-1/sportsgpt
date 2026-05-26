@@ -5,16 +5,14 @@ import {
   ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight, FileUser,
 } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { TEAM_PHOTOS } from '@/lib/team-images'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
-import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
+  SearchButtonGroup,
   EditorialButtonGroup,
-  HeroStrip,
   PAPER_BRIDGE,
   PlayerRankedList,
   SectionHead,
@@ -158,20 +156,6 @@ export function DivisionShell({
   })
   const searchRef = useRef<HTMLInputElement>(null)
 
-  // Hero slides: use all teams with photos — not affected by season or search.
-  const slides = useMemo(() => {
-    const seen = new Set<string>()
-    return standings
-      .filter(s => {
-        const slug = s.school_slug
-        if (!slug || seen.has(slug) || !TEAM_PHOTOS[slug]?.[0]) return false
-        seen.add(slug)
-        return true
-      })
-      .map(s => TEAM_PHOTOS[s.school_slug!]![0])
-      .slice(0, 6)
-  }, [standings])
-
   const availableSeasons = useMemo(
     () => [...new Set(standings.map(s => s.season).filter(Boolean) as number[])].sort((a, b) => b - a),
     [standings]
@@ -308,15 +292,6 @@ export function DivisionShell({
             </EditorialHead>
           </div>
 
-          {/* ── Hero photo strip ──────────────────────────────────── */}
-          {slides.length > 0 && (
-            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
-              <RevealFx delay={0.1} translateY={8}>
-                <HeroStrip slides={slides} />
-              </RevealFx>
-            </div>
-          )}
-
           {/* ── Sticky control bar ────────────────────────────────── */}
           <StickyControlBar>
             <div className="flex items-center gap-3 shrink-0">
@@ -354,11 +329,7 @@ export function DivisionShell({
               placeholder="Search teams & players…"
             />
 
-            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-              {q
-                ? `${totalVisible} / ${totalRanked} ranked`
-                : `${totalRanked} ranked entries`}
-            </div>
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + content ────────────────────────────── */}

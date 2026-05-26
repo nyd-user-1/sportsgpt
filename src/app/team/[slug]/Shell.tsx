@@ -23,6 +23,7 @@ import {
   ContentsNav,
   SearchInput,
   useSearchHotkey,
+  SearchButtonGroup,
   PAPER_BRIDGE,
   MONO,
   SortTh,
@@ -558,11 +559,7 @@ export function TeamShell({
               inputRef={searchRef}
               placeholder="Search opponents & players…"
             />
-            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-              {q
-                ? `${totalVisible} / ${totalRanked} entries`
-                : filteredGames.length > 0 ? `${filteredGames.length} games` : ''}
-            </div>
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + sections ─────────────────────────── */}

@@ -32,6 +32,7 @@ import {
   ContentsNav,
   SearchInput,
   useSearchHotkey,
+  SearchButtonGroup,
 } from '@/components/editorial'
 
 // ──────────────────────────────────────────────────────────────────────────────
@@ -552,13 +553,7 @@ export function PositionShell({
               />
             )}
 
-            {!isRosterOnly && (
-              <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-                {query
-                  ? `${totalVisible} / ${totalRanked} ranked`
-                  : `${totalRanked} ranked entries`}
-              </div>
-            )}
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body ────────────────────────────────────────── */}

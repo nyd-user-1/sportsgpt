@@ -431,8 +431,8 @@ export function GamePanelContent({ game, quarterRows, playerStats, narrative }: 
         <div className="pt-1 pb-6">
           <GameHero game={game} />
           <BoxScore game={game} quarterRows={quarterRows} />
-          <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
           {narrative && <Narrative text={narrative} />}
+          <PlayerStats playerStats={playerStats} onRowClick={setSelectedPlayer} />
         </div>
       </div>
     </>

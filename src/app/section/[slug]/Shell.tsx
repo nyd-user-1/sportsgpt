@@ -12,6 +12,7 @@ import { PanelChat } from '@/components/PanelChat'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
+  SearchButtonGroup,
   EditorialButtonGroup,
   PAPER_BRIDGE,
   PlayerRankedList,
@@ -411,11 +412,7 @@ export function SectionShell({
               placeholder="Search teams & games…"
             />
 
-            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-              {q
-                ? `${totalVisible} / ${totalRanked} ranked`
-                : `${totalRanked} ranked entries`}
-            </div>
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ───────────────────────────────── */}

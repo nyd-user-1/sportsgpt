@@ -3,15 +3,15 @@
 import { useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, ChartSpline, FileUser, MessageCircle } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
-  EditorialButtonGroup,
   SectionHead,
   StickyControlBar,
   SearchInput,
   useSearchHotkey,
+  SearchButtonGroup,
   Tablet,
   EmptyTablet,
   SortTh,
@@ -19,8 +19,6 @@ import {
   tabletTd,
 } from '@/components/editorial'
 import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
-import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 import { cn } from '@/lib/utils'
@@ -165,11 +163,6 @@ export function TeamMagazineShell({
   // Seasons panel state
   const [panelTeam,   setPanelTeam]   = useState<TeamMeta | null>(null)
   const [panelSeason, setPanelSeason] = useState<number | null>(null)
-
-  // Toolbar panel state
-  const [chartsOpen,  setChartsOpen]  = useState(false)
-  const [playersOpen, setPlayersOpen] = useState(false)
-  const [chatOpen,    setChatOpen]    = useState(false)
 
   // Season nav — sort newest first, prepend 'all', wrap around
   const sortedSeasons = useMemo(
@@ -376,15 +369,7 @@ export function TeamMagazineShell({
             placeholder="Search opponents & players…"
           />
 
-          <div className="ml-auto">
-            <EditorialButtonGroup
-              buttons={[
-                { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
-                { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
-              ]}
-            />
-          </div>
+          <SearchButtonGroup />
         </StickyControlBar>
 
         {/* ── Standings Index — full sortable table ──────────────────────── */}
@@ -659,8 +644,6 @@ export function TeamMagazineShell({
           teams={panelTeam ? [panelTeam] : []}
           initialSeason={panelSeason}
         />
-        <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)} countyName="Section XI Teams" />
       </div>
   )
 }

@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { TEAM_PHOTOS, SCHOOL_LOGOS } from '@/lib/team-images'
 
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+
 function cleanName(name: string) {
   return name.replace(/\s+Varsity\s+Football$/i, '')
 }
@@ -44,16 +48,18 @@ export async function GameDetailSlotContent({
   const homeLogo   = SCHOOL_LOGOS[homeSchool]
   const awayLogo   = SCHOOL_LOGOS[awaySchool]
 
-  return (
-    <div className="group/card h-full relative overflow-hidden">
+  const href = `/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`
 
-      {/* Split photo background */}
+  return (
+    <div className="group/card h-full relative overflow-hidden" style={{ borderRadius: 1 }}>
+
+      {/* Split photo background — no zoom */}
       <div className="absolute inset-0 flex">
         <div className="relative flex-1 overflow-hidden">
           {homePhoto ? (
             <>
-              <Image src={homePhoto} alt={homeName} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/60" />
+              <Image src={homePhoto} alt={homeName} fill className="object-cover object-top" unoptimized />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/55" />
             </>
           ) : (
             <div className="h-full bg-gradient-to-br from-[#023882] to-[#0a52c7]" />
@@ -62,8 +68,8 @@ export async function GameDetailSlotContent({
         <div className="relative flex-1 overflow-hidden">
           {awayPhoto ? (
             <>
-              <Image src={awayPhoto} alt={awayName} fill className="object-cover transition-transform duration-500 group-hover/card:scale-105" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/60" />
+              <Image src={awayPhoto} alt={awayName} fill className="object-cover object-top" unoptimized />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/10 to-black/55" />
             </>
           ) : (
             <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />
@@ -72,62 +78,120 @@ export async function GameDetailSlotContent({
       </div>
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 z-[1]" />
+      <div className="absolute inset-0 bg-black/35 z-[1]" />
 
       {/* Full-image link to game page */}
-      <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="absolute inset-0 z-[5]" aria-label={`View game: ${homeName} vs ${awayName}`} />
+      <Link
+        href={href}
+        className="absolute inset-0 z-[5]"
+        aria-label={`View game: ${homeName} vs ${awayName}`}
+      />
 
-      {/* Top bar — week badge */}
+      {/* Top corners — week badge + date */}
       {gameNum != null && (
-        <div className="absolute top-3 left-4 z-10">
-          <span className="text-xs font-semibold text-black bg-white rounded-full px-2.5 py-0.5">Week {gameNum}</span>
+        <div className="absolute top-4 left-4 z-10">
+          <span
+            className="text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white/95"
+            style={{ ...SANS, borderRadius: 2 }}
+          >
+            Week {gameNum}
+          </span>
+        </div>
+      )}
+      {scored && (
+        <div className="absolute top-4 right-4 z-10">
+          <span
+            className="text-[12px] tabular-nums px-2.5 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white"
+            style={{ ...SANS, borderRadius: 2 }}
+          >
+            {homeScore}–{awayScore}
+          </span>
         </div>
       )}
 
       {/* Score badge — centered */}
       <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-        <Link href={`/game/${gameId}?h=${encodeURIComponent(homeName)}&v=${encodeURIComponent(awayName)}${teamParam ? `&team=${teamParam}` : ''}`} className="pointer-events-auto bg-black/65 backdrop-blur-md rounded-2xl px-6 py-5 text-center border border-white/10 min-w-[380px] hover:border-white/30 hover:shadow-[0_0_24px_rgba(255,255,255,0.1)] transition-all duration-200 cursor-pointer">
+        <Link
+          href={href}
+          className="pointer-events-auto bg-black/60 backdrop-blur-md text-center border border-white/15 px-7 py-5 min-w-[360px] hover:border-white/30 transition-colors duration-200 cursor-pointer"
+          style={{ borderRadius: 3 }}
+        >
           {scored ? (
-            <p className="text-8xl font-black text-white tabular-nums leading-none">
+            <p
+              className="text-7xl font-black text-white tabular-nums leading-none"
+              style={MONO}
+            >
               <span>{homeScore}</span>
               <span className="mx-3">–</span>
               <span>{awayScore}</span>
             </p>
           ) : (
-            <p className="text-sm text-white/40">vs</p>
+            <p className="text-base text-white/40" style={{ ...SERIF, fontStyle: 'italic' }}>vs</p>
           )}
         </Link>
       </div>
 
-      {/* Home team overlay — bottom left, revealed on hover */}
-      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/card:pointer-events-auto">
-        <Link href={`/team/${homeSlug}`} className="shrink-0">
+      {/* Home team — bottom left, always visible */}
+      <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2.5 pointer-events-none">
+        <Link href={`/team/${homeSlug}`} className="shrink-0 pointer-events-auto">
           {homeLogo ? (
-            <Image src={homeLogo} alt={homeName} width={32} height={32}
-              className="rounded-full bg-white/90 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all" unoptimized />
+            <Image
+              src={homeLogo}
+              alt={homeName}
+              width={32}
+              height={32}
+              className="rounded-full bg-white/95 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all"
+              unoptimized
+            />
           ) : (
             <div className="h-8 w-8 rounded-full bg-white/20 border border-white/30" />
           )}
         </Link>
         <div>
-          <p className="text-[10px] uppercase tracking-wider text-white/50">Home</p>
-          <p className="text-xs font-bold text-white leading-snug">{homeName}</p>
+          <p
+            className="text-[10px] uppercase tracking-[0.22em] text-white/55"
+            style={SANS}
+          >
+            Home
+          </p>
+          <p
+            className="text-white leading-snug"
+            style={{ ...SERIF, fontSize: 13.5, fontWeight: 500, letterSpacing: '-0.005em' }}
+          >
+            {homeName}
+          </p>
         </div>
       </div>
 
-      {/* Away team overlay — bottom right, revealed on hover */}
-      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 flex-row-reverse opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none group-hover/card:pointer-events-auto">
-        <Link href={`/team/${awaySlug}`} className="shrink-0">
+      {/* Away team — bottom right, always visible */}
+      <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2.5 flex-row-reverse pointer-events-none">
+        <Link href={`/team/${awaySlug}`} className="shrink-0 pointer-events-auto">
           {awayLogo ? (
-            <Image src={awayLogo} alt={awayName} width={32} height={32}
-              className="rounded-full bg-white/90 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all" unoptimized />
+            <Image
+              src={awayLogo}
+              alt={awayName}
+              width={32}
+              height={32}
+              className="rounded-full bg-white/95 p-0.5 object-contain hover:ring-2 hover:ring-white/60 transition-all"
+              unoptimized
+            />
           ) : (
             <div className="h-8 w-8 rounded-full bg-white/20 border border-white/30" />
           )}
         </Link>
         <div className="text-right">
-          <p className="text-[10px] uppercase tracking-wider text-white/50">Away</p>
-          <p className="text-xs font-bold text-white leading-snug">{awayName}</p>
+          <p
+            className="text-[10px] uppercase tracking-[0.22em] text-white/55"
+            style={SANS}
+          >
+            Away
+          </p>
+          <p
+            className="text-white leading-snug"
+            style={{ ...SERIF, fontSize: 13.5, fontWeight: 500, letterSpacing: '-0.005em' }}
+          >
+            {awayName}
+          </p>
         </div>
       </div>
 

@@ -23,7 +23,7 @@ export function LaunchpadGameWrapper({ game }: { game: React.ReactNode }) {
       title={title}
       detailHref={gameId ? `/game/${gameId}` : undefined}
       bodyClass="flex flex-col"
-      footer={gameId ? <GameDetailFooter gameId={Number(gameId)} /> : undefined}
+      footer={gameId ? <GameDetailFooter /> : undefined}
     >
       {game}
     </AppPanel>

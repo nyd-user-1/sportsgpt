@@ -46,7 +46,7 @@ const SEARCH_DIV_MAP: Record<string, string> = {
   'Division I': 'I', 'Division II': 'II', 'Division III': 'III', 'Division IV': 'IV',
 }
 
-const th = 'px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] text-left whitespace-nowrap'
+const th = 'px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] text-left whitespace-nowrap bg-[var(--paper-quiet)] border-b border-[var(--paper-rule)]'
 const td = 'px-4 py-3 text-[13px] border-t border-[var(--paper-rule-soft)]'
 
 export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
@@ -99,8 +99,8 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
       <Tablet className="flex flex-col h-full">
         <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
           <table className="w-full" style={{ borderSpacing: 0 }}>
-            <thead className="sticky top-0 z-10" style={{ background: 'var(--paper-quiet)' }}>
-              <tr className="border-b border-[var(--paper-rule)]">
+            <thead className="sticky top-0 z-10">
+              <tr>
                 {['#', 'Team', 'W', 'L', 'PCT', 'Conf', 'PF', 'PA', 'Diff'].map(h => (
                   <th key={h} className={th} style={SANS}>{h}</th>
                 ))}

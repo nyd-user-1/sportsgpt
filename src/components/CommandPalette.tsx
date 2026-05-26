@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Search, X, ChevronRight, Users, Building2, School, Trophy, Images, LayoutGrid, BarChart2, LayoutDashboard, Map, MessageSquare } from 'lucide-react'
+import { Search, X, ChevronRight, Users, Building2, School, BarChart2, LayoutDashboard, MessageSquare } from 'lucide-react'
 import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
@@ -25,8 +25,6 @@ const QUICK_NAV = [
   { key: 'nav-charts',     displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',      Icon: BarChart2       },
   { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',      Icon: Users           },
   { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',        Icon: Building2       },
-  { key: 'nav-gallery',    displayName: 'Gallery',     subtitle: 'Team & player photos',            href: '/gallery',     Icon: Images          },
-  { key: 'nav-leaderboard',displayName: 'Leaderboard', subtitle: 'Top passers, rushers, receivers', href: '/leaderboard', Icon: Trophy          },
 ]
 
 type PlayerRow  = { slug: string; name: string; position: string | null; school_slug: string; team_name: string | null }
