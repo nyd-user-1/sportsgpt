@@ -358,12 +358,6 @@ function Palette() {
                       >
                         {displayName}
                       </p>
-                      <p
-                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
-                        style={{ ...SERIF, fontStyle: 'italic' }}
-                      >
-                        {subtitle}
-                      </p>
                     </div>
                     <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
                   </button>

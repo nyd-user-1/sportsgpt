@@ -6,6 +6,7 @@ import {
   CheckCircle2, XCircle, AlertCircle,
   Database, Map, BarChart2, BookOpen, Rocket,
   Trophy, Globe, Zap, Star, Flame, Shield, Target, Award,
+  Layers,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -71,6 +72,7 @@ export default function AdminPage() {
   const [saving, setSaving]     = useState(false)
   const [saved, setSaved]       = useState(false)
   const [saveErr, setSaveErr]   = useState<string | null>(null)
+  const [templateTab, setTemplateTab] = useState<'editorial' | 'basic'>('editorial')
 
   useEffect(() => {
     fetch('/api/admin/status').then(r => r.json()).then((s: Status) => {
@@ -205,6 +207,42 @@ export default function AdminPage() {
             </div>
           </Section>
 
+          {/* Template */}
+          <Section id="template" title="Template">
+            <div className="flex items-center gap-6 border-b border-[var(--border)] -mt-1 mb-5">
+              {[
+                { id: 'editorial' as const, label: 'Editorial design', badge: 'Current' },
+                { id: 'basic'     as const, label: 'Basic design',     badge: 'Legacy'  },
+              ].map(t => {
+                const active = templateTab === t.id
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => setTemplateTab(t.id)}
+                    className={cn(
+                      'flex items-center gap-2 -mb-px pb-3 pt-1 border-b-2 transition-colors text-[13px] font-medium',
+                      active
+                        ? 'border-[var(--txt)] text-[var(--txt)]'
+                        : 'border-transparent text-[var(--muted)] hover:text-[var(--txt)]'
+                    )}
+                  >
+                    <Layers className="h-3.5 w-3.5" />
+                    {t.label}
+                    <span className={cn(
+                      'text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded',
+                      t.id === 'editorial'
+                        ? 'bg-emerald-500/10 text-emerald-500'
+                        : 'bg-[var(--inp-bg)] text-[var(--muted)]'
+                    )}>{t.badge}</span>
+                  </button>
+                )
+              })}
+            </div>
+
+            {templateTab === 'editorial' && <EditorialTemplate />}
+            {templateTab === 'basic'     && <BasicTemplate />}
+          </Section>
+
           {/* Content */}
           <Section id="content" title="Content">
             <div className="grid grid-cols-3 gap-4 mb-6">
@@ -278,6 +316,140 @@ export default function AdminPage() {
         </div>
       </div>
     </AppLayout>
+  )
+}
+
+function TemplateBlock({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)] mb-2.5">{title}</p>
+      <div className="text-[13px] text-[var(--txt)] leading-relaxed space-y-1.5">{children}</div>
+    </div>
+  )
+}
+
+function Token({ name, role, swatch }: { name: string; role: string; swatch?: string }) {
+  return (
+    <div className="flex items-center gap-2.5 text-[12px]">
+      {swatch && <span className="h-3.5 w-3.5 rounded-sm border border-[var(--border)] shrink-0" style={{ background: swatch }} />}
+      <code className="font-mono text-[var(--txt)]">{name}</code>
+      <span className="text-[var(--muted)]">— {role}</span>
+    </div>
+  )
+}
+
+function Chip({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-[var(--inp-bg)] text-[11px] font-mono text-[var(--txt)] border border-[var(--border)]">
+      {children}
+    </span>
+  )
+}
+
+function EditorialTemplate() {
+  return (
+    <div className="space-y-6">
+      <p className="text-[13px] text-[var(--muted)] leading-relaxed">
+        Magazine-grade dark template. Paper palette on near-black, serif display type, ruled section heads, ranked rows.
+        Used for all reader-facing surfaces — teams, players, games, sections, chat.
+      </p>
+
+      <div className="grid grid-cols-2 gap-6">
+        <TemplateBlock title="Palette">
+          <Token name="--paper"           role="panel background"        swatch="#0e0e0e" />
+          <Token name="--paper-text"      role="primary text"            swatch="#ece6d8" />
+          <Token name="--paper-strong"    role="accent — links only"     swatch="#033882" />
+          <Token name="--paper-muted"     role="secondary text"          swatch="#9b9489" />
+          <Token name="--paper-faint"     role="tertiary / labels"       swatch="#6c655b" />
+          <Token name="--paper-quiet"     role="hover wash"              swatch="#1a1a1a" />
+          <Token name="--paper-rule"      role="primary divider"         swatch="#2a2a2a" />
+          <Token name="--paper-rule-soft" role="row divider"             swatch="#1f1f1f" />
+        </TemplateBlock>
+
+        <TemplateBlock title="Typography">
+          <p><Chip>Fraunces</Chip> <span className="text-[var(--muted)]">— display, names, paragraphs</span></p>
+          <p><Chip>DM Sans</Chip> <span className="text-[var(--muted)]">— UI, labels, buttons</span></p>
+          <p><Chip>JetBrains Mono</Chip> <span className="text-[var(--muted)]">— stats, scores, ranks (tabular-nums)</span></p>
+          <p className="text-[12px] text-[var(--muted)] pt-1">Section heads: 10px uppercase tracking-[0.24em] in <code className="font-mono">--paper-faint</code></p>
+        </TemplateBlock>
+      </div>
+
+      <TemplateBlock title="Signature components">
+        <div className="flex flex-wrap gap-1.5 pt-0.5">
+          {['EditorialHead','SectionHead','Tablet','EmptyTablet','ScrollTable','HeroStrip','ContentsNav','StickyControlBar','EditorialButtonGroup','SearchInput','PanelTeam','PanelPlayer','CardCarousel'].map(c => <Chip key={c}>{c}</Chip>)}
+        </div>
+      </TemplateBlock>
+
+      <div className="grid grid-cols-2 gap-6">
+        <TemplateBlock title="Voice & tone">
+          <p>Editorial, sportswriter cadence. Names italicized in serif, stats neutral in mono. Blue is reserved exclusively for interactive elements — never decoration.</p>
+        </TemplateBlock>
+        <TemplateBlock title="Surfaces live">
+          <div className="flex flex-wrap gap-1.5 pt-0.5">
+            {['/chat','/launchpad','/team-2','/team/[slug]','/player/[slug]','/game/[id]','/section/section-xi','/division/[slug]'].map(p => <Chip key={p}>{p}</Chip>)}
+          </div>
+        </TemplateBlock>
+      </div>
+
+      <div className="rounded-xl bg-[var(--inp-bg)] px-4 py-3.5 text-[12px] text-[var(--muted)] space-y-1">
+        <p className="font-semibold text-[var(--txt)]">Reference</p>
+        <p>Full rule set: <code className="bg-[var(--border)] px-1 rounded">CLAUDE.md → Editorial Design System (Paper Palette)</code></p>
+        <p>CSS variables defined in <code className="bg-[var(--border)] px-1 rounded">src/app/globals.css</code></p>
+      </div>
+    </div>
+  )
+}
+
+function BasicTemplate() {
+  return (
+    <div className="space-y-6">
+      <p className="text-[13px] text-[var(--muted)] leading-relaxed">
+        The original light-mode dashboard template. Rounded cards, neutral sans, utilitarian forms. Being phased out as
+        each surface is rebuilt in the editorial template.
+      </p>
+
+      <div className="grid grid-cols-2 gap-6">
+        <TemplateBlock title="Palette">
+          <Token name="--surface" role="card / panel background" swatch="#ffffff" />
+          <Token name="--border"  role="dividers, card edges"    swatch="#e5e5e5" />
+          <Token name="--txt"     role="primary text"            swatch="#0a0a0a" />
+          <Token name="--muted"   role="secondary text"          swatch="#737373" />
+          <Token name="--muted2"  role="tertiary / placeholder"  swatch="#a3a3a3" />
+          <Token name="--inp-bg"  role="input / chip background" swatch="#f5f5f5" />
+          <Token name="--row-hover" role="table row hover"       swatch="#f5f5f5" />
+        </TemplateBlock>
+
+        <TemplateBlock title="Typography">
+          <p><Chip>system sans</Chip> <span className="text-[var(--muted)]">— all text</span></p>
+          <p><Chip>Geist Mono</Chip> <span className="text-[var(--muted)]">— code, hrefs, hints</span></p>
+          <p className="text-[12px] text-[var(--muted)] pt-1">Section heads: 15px font-semibold in <code className="font-mono">--txt</code></p>
+        </TemplateBlock>
+      </div>
+
+      <TemplateBlock title="Signature components">
+        <div className="flex flex-wrap gap-1.5 pt-0.5">
+          {['Section','Field','InfraRow','StatusDot','rounded-2xl cards','rounded-xl inputs','TeamTable','LeaderboardTable','PlayerIndexTable','PanelChart'].map(c => <Chip key={c}>{c}</Chip>)}
+        </div>
+      </TemplateBlock>
+
+      <div className="grid grid-cols-2 gap-6">
+        <TemplateBlock title="Voice & tone">
+          <p>Direct, utilitarian. Form-first. Labels left, controls right. Status dots and progress bars over prose.</p>
+        </TemplateBlock>
+        <TemplateBlock title="Surfaces live">
+          <div className="flex flex-wrap gap-1.5 pt-0.5">
+            {['/admin','/charts','/leaderboard','/player','/team','/school','/maps','/glossary'].map(p => <Chip key={p}>{p}</Chip>)}
+          </div>
+          <p className="text-[12px] text-[var(--muted)] pt-1.5">Migration target: every surface above will move to the editorial template.</p>
+        </TemplateBlock>
+      </div>
+
+      <div className="rounded-xl bg-[var(--inp-bg)] px-4 py-3.5 text-[12px] text-[var(--muted)] space-y-1">
+        <p className="font-semibold text-[var(--txt)]">Reference</p>
+        <p>Variables defined in <code className="bg-[var(--border)] px-1 rounded">src/app/globals.css</code> (:root scope)</p>
+        <p>This <code className="bg-[var(--border)] px-1 rounded">/admin</code> page is itself a basic-template surface.</p>
+      </div>
+    </div>
   )
 }
 
