@@ -13,12 +13,11 @@ import { PanelChart } from '@/components/PanelChart'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead, EditorialButtonGroup,
-  SectionHead, ContentsNav,
+  SectionHead, SubSectionHead, ContentsNav,
   PAPER_BRIDGE, TABLET_RADIUS,
   Tablet, EmptyTablet, ScrollTable,
   StickyControlBar, SearchInput, useSearchHotkey,
-  CmdKButton,
-  AIButton,
+  SearchButtonGroup,
   MONO, tabletTd,
 } from '@/components/editorial'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
@@ -874,12 +873,16 @@ export function PlayerShell({
   }
   const seasonLabel = selectedSeason === null ? 'All-Time' : formatSeason(selectedSeason)
 
-  // ── Stat type cycle (within Stats section) ──────────────────────────────
-  const [statTypeIdx, setStatTypeIdx] = useState(0)
-  const selectedType: StatTypeName = STAT_TYPES[statTypeIdx]
-  const statTitle = STAT_LABELS[selectedType] ?? selectedType
-  function shiftStat(delta: 1 | -1) {
-    setStatTypeIdx(i => (i + delta + STAT_TYPES.length) % STAT_TYPES.length)
+  // ── Stat types this player has data for (drives the exploded Stats list) ─
+  const availableStatTypes = useMemo<StatTypeName[]>(() => {
+    const present = new Set(mergedStats.map(s => s.stat_type))
+    return STAT_TYPES.filter(t => present.has(t))
+  }, [mergedStats])
+
+  function rowsForType(type: StatTypeName): StatRow[] {
+    const all = mergedStats.filter(s => s.stat_type === type)
+    if (selectedSeason !== null) return all.filter(s => s.season === selectedSeason)
+    return all
   }
 
   // ── Rollup record across all seasons ────────────────────────────────────
@@ -894,12 +897,13 @@ export function PlayerShell({
     return `${w}–${l}`
   }, [teamRecords])
 
-  // ── Stat rows for the Stats table ───────────────────────────────────────
-  const tableRows = useMemo(() => {
-    const all = mergedStats.filter(s => s.stat_type === selectedType)
-    if (selectedSeason !== null) return all.filter(s => s.season === selectedSeason)
-    return all
-  }, [mergedStats, selectedType, selectedSeason])
+  // Total stat rows count for the Stats nav entry
+  const statRowsCount = useMemo(() => {
+    const all = selectedSeason !== null
+      ? mergedStats.filter(s => s.season === selectedSeason)
+      : mergedStats
+    return all.length
+  }, [mergedStats, selectedSeason])
 
   // ── Best season ─────────────────────────────────────────────────────────
   const { yards: bestYards, label: bestLabel, season: bestSeason } = getBestYards(stats)
@@ -913,17 +917,20 @@ export function PlayerShell({
       : [...new Set(gameLog.map(r => r.game_id))].length
     const seasonsCount = availableSeasons.length
 
-    const list: { id: SectionId; label: string; count: number }[] = [
-      { id: 'best-season', label: 'Best Season', count: bestYards > 0 ? 1 : 0 },
-      { id: 'stats',       label: 'Stats',       count: tableRows.length },
-      { id: 'recap',       label: 'Recap',       count: hasStatsForRecap ? 1 : 0 },
-      { id: 'games',       label: 'Games',       count: gamesCount },
+    const list: { id: SectionId; label: string; count: number; subItems?: { id: string; label: string }[] }[] = [
       { id: 'seasons',     label: 'Seasons',     count: seasonsCount },
+      { id: 'games',       label: 'Games',       count: gamesCount },
+      { id: 'best-season', label: 'Best Season', count: bestYards > 0 ? 1 : 0 },
+      {
+        id: 'stats', label: 'Stats', count: statRowsCount,
+        subItems: availableStatTypes.map(t => ({ id: `stats-${t.toLowerCase().replace(/\s+/g, '-')}`, label: STAT_LABELS[t] ?? t })),
+      },
+      { id: 'recap',       label: 'Recap',       count: hasStatsForRecap ? 1 : 0 },
     ]
     return list
-  }, [tableRows, selectedSeason, gameLog, hasStatsForRecap, availableSeasons.length, bestYards])
+  }, [statRowsCount, selectedSeason, gameLog, hasStatsForRecap, availableSeasons.length, bestYards, availableStatTypes])
 
-  const [activeSection, setActiveSection] = useState<SectionId>('best-season')
+  const [activeSection, setActiveSection] = useState<SectionId>('seasons')
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
@@ -1074,7 +1081,7 @@ export function PlayerShell({
               placeholder="Search opponents & seasons…"
             />
 
-            <AIButton /><CmdKButton />
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ─────────────────────────────── */}
@@ -1112,153 +1119,7 @@ export function PlayerShell({
 
             <main className="min-w-0">
 
-              {/* ── Best Season (1st) ──────────────────────────── */}
-              {bestYards > 0 && (
-                <section
-                  id="best-season"
-                  ref={(el) => { sectionRefs.current['best-season'] = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title="Best Season"
-                    eyebrow={formatSeason(bestSeason)}
-                    blurb="The peak — single-season yardage high water mark on file."
-                  />
-                  <Tablet>
-                    <div className="px-6 py-8 flex items-baseline justify-between gap-6">
-                      <div className="min-w-0">
-                        <p
-                          className="text-[var(--paper-text)] tabular-nums leading-none"
-                          style={{ ...MONO, fontSize: 56, fontWeight: 500 }}
-                        >
-                          {bestYards.toLocaleString()}
-                        </p>
-                        <p
-                          className="mt-2 text-[14px] text-[var(--paper-muted)]"
-                          style={{ ...SERIF, fontStyle: 'italic' }}
-                        >
-                          {bestLabel.toLowerCase()} · {formatSeason(bestSeason)}
-                        </p>
-                      </div>
-                      <div className="shrink-0 hidden sm:block">
-                        <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
-                          Career best
-                        </p>
-                      </div>
-                    </div>
-                  </Tablet>
-                </section>
-              )}
-
-              {/* ── Stats (2nd) ────────────────────────────────── */}
-              <section
-                id="stats"
-                ref={(el) => { sectionRefs.current.stats = el }}
-                className="mb-20 scroll-mt-24"
-              >
-                <SectionHead
-                  title={statTitle}
-                  eyebrow={selectedSeason === null ? 'Career · All Seasons' : `Season · ${formatSeason(selectedSeason)}`}
-                  blurb={STAT_BLURBS[selectedType]}
-                  meta={
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => shiftStat(-1)}
-                        aria-label="Previous stat"
-                        className="h-7 w-7 rounded-full border border-[var(--paper-rule)] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] flex items-center justify-center transition-colors"
-                      >
-                        <ArrowLeft className="h-3.5 w-3.5" />
-                      </button>
-                      <button
-                        onClick={() => shiftStat(1)}
-                        aria-label="Next stat"
-                        className="h-7 w-7 rounded-full border border-[var(--paper-rule)] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] flex items-center justify-center transition-colors"
-                      >
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </button>
-                    </div>
-                  }
-                />
-                <StatTable
-                  type={selectedType}
-                  rows={tableRows}
-                  teamRecords={teamRecords}
-                  showRollup={selectedSeason === null && tableRows.length > 1}
-                  rollupRecord={rollupRecord}
-                />
-              </section>
-
-              {/* ── Recap (3rd) — AI career profile ─────────────── */}
-              <section
-                id="recap"
-                ref={(el) => { sectionRefs.current.recap = el }}
-                className="mb-20 scroll-mt-24"
-              >
-                <SectionHead
-                  title={recapBody && recapTitle ? recapTitle : 'Recap'}
-                  eyebrow="AI Profile"
-                  blurb={recapBody
-                    ? 'Filed by NYSgpt — AI career profile drawn from this player\'s stat lines.'
-                    : 'A career retrospective generated from this player\'s season-by-season totals.'}
-                />
-
-                {!recapTriggered ? (
-                  <Tablet>
-                    <div className="px-6 py-10 text-center">
-                      <p className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto" style={{ ...SERIF, fontStyle: 'italic' }}>
-                        The recap hasn&apos;t been written yet. Generate an AI career profile from this player&apos;s stat lines.
-                      </p>
-                      <button
-                        onClick={triggerRecap}
-                        className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
-                        style={{ ...SANS, borderRadius: TABLET_RADIUS }}
-                      >
-                        <Sparkles className="h-3.5 w-3.5" />
-                        Generate Recap
-                      </button>
-                    </div>
-                  </Tablet>
-                ) : loadingRecap ? (
-                  <div className="space-y-3 animate-pulse max-w-[68ch]">
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
-                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
-                  </div>
-                ) : recapBody ? (
-                  <div className="space-y-5 max-w-[68ch]">
-                    {recapBody.split('\n\n').filter(Boolean).map((para, i) => (
-                      <p
-                        key={i}
-                        className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
-                        style={SERIF}
-                      >
-                        {parseRecapPara(para, playerNameMap, teamNameMap)}
-                      </p>
-                    ))}
-                  </div>
-                ) : (
-                  <EmptyTablet label="No stat lines on file — recap unavailable." />
-                )}
-              </section>
-
-              {/* ── Games (4th) ────────────────────────────────── */}
-              <section
-                id="games"
-                ref={(el) => { sectionRefs.current.games = el }}
-                className="mb-20 scroll-mt-24"
-              >
-                <SectionHead
-                  title="Games"
-                  eyebrow={selectedSeason === null ? 'Career · all seasons' : `Season · ${formatSeason(selectedSeason)}`}
-                  blurb="Game-by-game results — click any opponent to open the game page."
-                />
-                <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} />
-              </section>
-
-              {/* ── Seasons (5th) ──────────────────────────────── */}
+              {/* ── Seasons (1st) ──────────────────────────────── */}
               <section
                 id="seasons"
                 ref={(el) => { sectionRefs.current.seasons = el }}
@@ -1338,6 +1199,148 @@ export function PlayerShell({
                 )}
               </section>
 
+              {/* ── Games (2nd) ────────────────────────────────── */}
+              <section
+                id="games"
+                ref={(el) => { sectionRefs.current.games = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Games"
+                  eyebrow={selectedSeason === null ? 'Career · all seasons' : `Season · ${formatSeason(selectedSeason)}`}
+                  blurb="Game-by-game results — click any opponent to open the game page."
+                />
+                <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} />
+              </section>
+
+              {/* ── Best Season (3rd) ──────────────────────────── */}
+              {bestYards > 0 && (
+                <section
+                  id="best-season"
+                  ref={(el) => { sectionRefs.current['best-season'] = el }}
+                  className="mb-20 scroll-mt-24"
+                >
+                  <SectionHead
+                    title="Best Season"
+                    eyebrow={formatSeason(bestSeason)}
+                    blurb="The peak — single-season yardage high water mark on file."
+                  />
+                  <Tablet>
+                    <div className="px-6 py-8 flex items-baseline justify-between gap-6">
+                      <div className="min-w-0">
+                        <p
+                          className="text-[var(--paper-text)] tabular-nums leading-none"
+                          style={{ ...MONO, fontSize: 56, fontWeight: 500 }}
+                        >
+                          {bestYards.toLocaleString()}
+                        </p>
+                        <p
+                          className="mt-2 text-[14px] text-[var(--paper-muted)]"
+                          style={{ ...SERIF, fontStyle: 'italic' }}
+                        >
+                          {bestLabel.toLowerCase()} · {formatSeason(bestSeason)}
+                        </p>
+                      </div>
+                      <div className="shrink-0 hidden sm:block">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+                          Career best
+                        </p>
+                      </div>
+                    </div>
+                  </Tablet>
+                </section>
+              )}
+
+              {/* ── Stats (4th — exploded) ─────────────────────── */}
+              <section
+                id="stats"
+                ref={(el) => { sectionRefs.current.stats = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Stats"
+                  eyebrow={selectedSeason === null ? 'Career · All Seasons' : `Season · ${formatSeason(selectedSeason)}`}
+                  blurb="Every stat line on file, broken out by category."
+                />
+
+                {availableStatTypes.length === 0 ? (
+                  <EmptyTablet label="No stat lines on file." />
+                ) : (
+                  availableStatTypes.map(type => {
+                    const subId = `stats-${type.toLowerCase().replace(/\s+/g, '-')}`
+                    const rows  = rowsForType(type)
+                    return (
+                      <div key={type} id={subId} className="mb-10 scroll-mt-24">
+                        <SubSectionHead>{STAT_LABELS[type] ?? type}</SubSectionHead>
+                        <StatTable
+                          type={type}
+                          rows={rows}
+                          teamRecords={teamRecords}
+                          showRollup={selectedSeason === null && rows.length > 1}
+                          rollupRecord={rollupRecord}
+                        />
+                      </div>
+                    )
+                  })
+                )}
+              </section>
+
+              {/* ── Recap (5th) — AI career profile ─────────────── */}
+              <section
+                id="recap"
+                ref={(el) => { sectionRefs.current.recap = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title={recapBody && recapTitle ? recapTitle : 'Recap'}
+                  eyebrow="AI Profile"
+                  blurb={recapBody
+                    ? 'Filed by NYSgpt — AI career profile drawn from this player\'s stat lines.'
+                    : 'A career retrospective generated from this player\'s season-by-season totals.'}
+                />
+
+                {!recapTriggered ? (
+                  <Tablet>
+                    <div className="px-6 py-10 text-center">
+                      <p className="mb-5 text-[15px] text-[var(--paper-muted)] max-w-md mx-auto" style={{ ...SERIF, fontStyle: 'italic' }}>
+                        The recap hasn&apos;t been written yet. Generate an AI career profile from this player&apos;s stat lines.
+                      </p>
+                      <button
+                        onClick={triggerRecap}
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
+                        style={{ ...SANS, borderRadius: TABLET_RADIUS }}
+                      >
+                        <Sparkles className="h-3.5 w-3.5" />
+                        Generate Recap
+                      </button>
+                    </div>
+                  </Tablet>
+                ) : loadingRecap ? (
+                  <div className="space-y-3 animate-pulse max-w-[68ch]">
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[96%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[88%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-full mt-4" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[92%]" />
+                    <div className="h-4 bg-[var(--paper-quiet)] rounded w-[75%]" />
+                  </div>
+                ) : recapBody ? (
+                  <div className="space-y-5 max-w-[68ch]">
+                    {recapBody.split('\n\n').filter(Boolean).map((para, i) => (
+                      <p
+                        key={i}
+                        className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
+                        style={SERIF}
+                      >
+                        {parseRecapPara(para, playerNameMap, teamNameMap)}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <EmptyTablet label="No stat lines on file — recap unavailable." />
+                )}
+              </section>
+
               {/* ── Colophon ───────────────────────────────────── */}
               <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">
                 <p
@@ -1362,7 +1365,6 @@ export function PlayerShell({
         <AppPanel
           open={profilePanelOpen}
           onClose={() => setProfilePanelOpen(false)}
-          defaultExpanded
           title={
             <span className="flex items-center gap-2 min-w-0">
               {player.school_slug && SCHOOL_LOGOS[player.school_slug] && (
