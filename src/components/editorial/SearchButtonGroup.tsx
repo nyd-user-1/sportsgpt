@@ -13,7 +13,6 @@ const MODELS = [
   { key: 'anthropic', label: 'Anthropic', logo: `${BLOB}/anthropic-icon.webp` },
   { key: 'openai',    label: 'OpenAI',    logo: `${BLOB}/openai-logo.avif`    },
   { key: 'gemini',    label: 'Google',    logo: `${BLOB}/gemini-icon-bw.webp` },
-  { key: 'grok',      label: 'Grok',      logo: `${BLOB}/grok-logo.svg`       },
 ] as const
 
 /**
@@ -62,7 +61,7 @@ export function SearchButtonGroup() {
               alt=""
               width={16}
               height={16}
-              className="object-contain opacity-70"
+              className="object-contain opacity-70 dark:invert"
               unoptimized
             />
           </button>
