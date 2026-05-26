@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
 
   const anthropicKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
   const openaiKey    = process.env.OPENAI_API_KEY_SPORTSGPT
-  const geminiKey    = process.env.Gemini_API_Key
+  const geminiKey    = process.env.GEMINI_FLASH_API_KEY ?? process.env.Gemini_API_Key
   const grokKey      = process.env.GROK_API_KEY
 
   const encoder = new TextEncoder()
