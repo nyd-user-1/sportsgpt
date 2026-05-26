@@ -533,7 +533,6 @@ function GameLogTable({
   gameLog: GameLogRow[]
 }) {
   const rows = useMemo(() => gameLog.filter(r => r.season === season), [gameLog, season])
-  if (rows.length === 0) return <EmptyTablet label={`No game log recorded for ${formatSeason(season)}.`} />
 
   // Aggregate per game (rows from JSONB can have multiple stat_types per game)
   const byGame = useMemo(() => {
@@ -546,6 +545,8 @@ function GameLogTable({
       (a[0].game_date ?? '').localeCompare(b[0].game_date ?? '')
     )
   }, [rows])
+
+  if (rows.length === 0) return <EmptyTablet label={`No game log recorded for ${formatSeason(season)}.`} />
 
   return (
     <ScrollTable maxH={0}>

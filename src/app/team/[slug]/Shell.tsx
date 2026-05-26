@@ -899,10 +899,10 @@ export function TeamShell({
                                       log.def_fumbles ? { label: 'FR',  value: String(log.def_fumbles) } : null,
                                     ].filter((x): x is { label: string; value: string } => x !== null)
                                     if (defStats.length === 0) return []
-                                    return defStats.map(ds => makeRow(ds.label, ds.value, `${log.game_id}-${log.player_slug}-${ds.label}`))
+                                    return defStats.map(ds => makeRow(ds.label, ds.value, `${log.game_id}-${log.player_slug ?? 'np'}-${i}-${ds.label}`))
                                   }
                                   const stat = topGameStat(log)
-                                  return [makeRow(stat.label, stat.value, `${log.game_id}-${log.player_slug}-${log.stat_type ?? i}`)]
+                                  return [makeRow(stat.label, stat.value, `${log.game_id}-${log.player_slug ?? 'np'}-${i}-${log.stat_type ?? 'nt'}`)]
                                 })}
                               </tbody>
                             </table>
