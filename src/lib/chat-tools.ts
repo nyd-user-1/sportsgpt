@@ -106,6 +106,29 @@ export const TOOLS = [
       required: ['player_name'],
     },
   },
+  {
+    name: 'web_search',
+    description: 'Search the web (Exa neural search) for Section XI / Long Island high school football content the DB does not have — recent games, news articles, Newsday recaps, MaxPreps box scores, coach interviews, player commits. Use ONLY when the user asks about something the SportsGPT database does not cover (recent week, this Friday\'s game, a player not on file, a college commit news). Do NOT use for stats — those come from the database tools above.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        query: { type: 'string', description: 'Search query, e.g. "Floyd vs Sachem North recap October 2025" or "Section XI football week 8 scores"' },
+        site:  { type: 'string', description: 'Optional: restrict to a single domain, e.g. "newsday.com" or "maxpreps.com"' },
+      },
+      required: ['query'],
+    },
+  },
+  {
+    name: 'read_url',
+    description: 'Fetch and read the text content of a specific URL the user has provided (or that web_search surfaced). Use when the user pastes a link, or when web_search returned a high-signal result you want to consume the body of.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        url: { type: 'string', description: 'Full http(s) URL to fetch' },
+      },
+      required: ['url'],
+    },
+  },
 ]
 
 // ── Tool execution (tagged template literals only — neon requires this) ────────
@@ -256,6 +279,110 @@ export async function executeToolCall(
           ORDER BY season DESC, stat_type`
         return rows.length > 0 ? normalizeRows(rows)
           : { message: `No player found matching "${input.player_name}". Try a shorter name.` }
+      }
+
+      case 'web_search': {
+        const apiKey = process.env.EXA_API_KEY
+        if (!apiKey) return { error: 'Web search not configured (EXA_API_KEY missing).' }
+
+        const query = String(input.query ?? '').trim()
+        if (!query) return { error: 'web_search requires a non-empty query.' }
+
+        const site = typeof input.site === 'string' && input.site ? input.site : null
+        const finalQuery = site ? `${query} site:${site}` : query
+
+        const res = await fetch('https://api.exa.ai/search', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey },
+          body: JSON.stringify({
+            query:        finalQuery,
+            type:         'auto',         // let Exa pick neural vs keyword
+            numResults:   8,
+            useAutoprompt: true,
+            contents: {
+              text:    { maxCharacters: 600 },
+              summary: { query: 'High school football game recap, scores, players, dates.' },
+            },
+          }),
+        })
+        if (!res.ok) {
+          const msg = await res.text().catch(() => res.statusText)
+          return { error: `Exa search failed (${res.status}): ${msg.slice(0, 200)}` }
+        }
+        const data = await res.json() as {
+          results?: { title?: string; url?: string; publishedDate?: string; author?: string; text?: string; summary?: string }[]
+        }
+        const results = (data.results ?? []).map(r => ({
+          title:    r.title    ?? '',
+          url:      r.url      ?? '',
+          date:     r.publishedDate ?? null,
+          source:   r.author   ?? null,
+          summary:  r.summary  ?? null,
+          excerpt:  r.text     ?? null,
+        }))
+        return results.length > 0
+          ? { results }
+          : { results: [], message: `No results for "${finalQuery}".` }
+      }
+
+      case 'read_url': {
+        const url = String(input.url ?? '').trim()
+        if (!/^https?:\/\//i.test(url)) return { error: 'read_url requires a full http(s) URL.' }
+
+        // Prefer Exa /contents when EXA_API_KEY is set — handles paywalls, JS-rendered pages,
+        // and returns clean text. Falls back to a plain fetch otherwise.
+        const apiKey = process.env.EXA_API_KEY
+        if (apiKey) {
+          try {
+            const res = await fetch('https://api.exa.ai/contents', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey },
+              body: JSON.stringify({
+                ids: [url],
+                text: { maxCharacters: 8000 },
+              }),
+            })
+            if (res.ok) {
+              const data = await res.json() as {
+                results?: { title?: string; url?: string; publishedDate?: string; text?: string }[]
+              }
+              const r = data.results?.[0]
+              if (r?.text) {
+                return {
+                  title:   r.title   ?? null,
+                  url:     r.url     ?? url,
+                  date:    r.publishedDate ?? null,
+                  content: r.text,
+                  source:  'exa',
+                }
+              }
+            }
+          } catch (err) {
+            console.warn('[read_url] exa fetch failed:', (err as Error).message)
+          }
+        }
+
+        // Plain fetch fallback (works for most public pages; paywalled / JS-only sites will be short)
+        try {
+          const res = await fetch(url, {
+            headers: { 'User-Agent': 'SportsGPT/1.0 (+https://sports.nysgpt.com)' },
+            signal: AbortSignal.timeout(10_000),
+          })
+          if (!res.ok) return { error: `Fetch failed (${res.status}) for ${url}` }
+          const html = await res.text()
+          // Naive text extraction — strip tags + collapse whitespace, cap at 8k chars
+          const text = html
+            .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ' ')
+            .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ' ')
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/&nbsp;/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .slice(0, 8000)
+          return { url, content: text, source: 'fetch' }
+        } catch (err) {
+          return { error: `Could not fetch ${url}: ${(err as Error).message}` }
+        }
       }
 
       default:
