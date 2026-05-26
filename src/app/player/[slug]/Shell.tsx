@@ -19,8 +19,7 @@ import {
   StickyControlBar, SearchInput, useSearchHotkey,
   MONO, tabletTd,
 } from '@/components/editorial'
-import { PLAYER_PHOTOS, SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
-import { ACCENT_COLOR } from '@/lib/app-config'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason, cn } from '@/lib/utils'
 import { primaryPositionSlug } from '@/lib/positions'
 
@@ -204,46 +203,6 @@ const STAT_BLURBS: Record<StatTypeName, string> = {
   Touchdowns: 'Total scoring plays, by category.',
   Defense:    'Sacks, fumbles recovered, and defensive plays.',
   Scoring:    'Points, touchdowns, field goals, and PATs.',
-}
-
-// ── Hero — matted single photo ───────────────────────────────────────────────
-
-function PlayerHero({
-  player, school,
-}: {
-  player: PlayerRow
-  school: SchoolInfo | null
-}) {
-  const photo     = PLAYER_PHOTOS[player.slug]
-  const teamPhoto = player.school_slug ? TEAM_PHOTOS[player.school_slug]?.[0] : null
-  const heroSrc   = photo || teamPhoto
-  const logo      = player.school_slug ? SCHOOL_LOGOS[player.school_slug] : null
-
-  return (
-    <div
-      className="w-full border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
-      style={{ padding: 8, borderRadius: TABLET_RADIUS }}
-    >
-      <div
-        className="relative overflow-hidden w-full"
-        style={{ height: 460, borderRadius: 1 }}
-      >
-        {heroSrc ? (
-          <Image src={heroSrc} alt={player.name} fill className="object-cover object-top" unoptimized />
-        ) : (
-          <div
-            className="h-full flex flex-col items-center justify-center gap-4"
-            style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}22 0%,${ACCENT_COLOR}55 100%)` }}
-          >
-            {logo && <Image src={logo} alt="" width={96} height={96} className="object-contain opacity-80" unoptimized />}
-            <p className="text-white/85" style={{ ...SERIF, fontSize: 18 }}>
-              {player.name}{player.position ? ` · ${player.position}` : ''}{school?.name ? ` — ${school.name}` : ''}
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
-  )
 }
 
 // ── Stat table for the Stats section ─────────────────────────────────────────
@@ -921,13 +880,6 @@ export function PlayerShell({
               >
                 {player.name}
               </EditorialHead>
-            </RevealFx>
-          </div>
-
-          {/* ── Hero ─────────────────────────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
-            <RevealFx delay={0.15} translateY={12}>
-              <PlayerHero player={player} school={school} />
             </RevealFx>
           </div>
 
