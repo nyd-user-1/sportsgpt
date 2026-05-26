@@ -375,11 +375,7 @@ function GameView({ gameId }: { gameId: number }) {
                   <Link
                     href={`/team/${t.school}-varsity-football`}
                     aria-label={`${stripVarsity(t.name)} team page`}
-                    className={`group/arrow flex items-center gap-1.5 min-w-0 truncate transition-colors ${
-                      t.won
-                        ? 'text-[var(--paper-text)] hover:text-[var(--paper-strong)]'
-                        : 'text-[var(--paper-muted)] hover:text-[var(--paper-strong)]'
-                    }`}
+                    className="group/arrow flex items-center gap-1.5 min-w-0 truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors"
                     style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
                   >
                     <span className="truncate">{stripVarsity(t.name)}</span>
@@ -399,10 +395,15 @@ function GameView({ gameId }: { gameId: number }) {
                 )}
               </div>
               <span
-                className={`text-[22px] font-medium tabular-nums shrink-0 ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
+                className={`shrink-0 flex items-baseline gap-1.5 tabular-nums ${t.won ? 'text-emerald-500' : 'text-rose-500'}`}
                 style={MONO}
               >
-                {t.score ?? '—'}
+                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]">
+                  {t.won ? 'W' : 'L'}
+                </span>
+                <span className="text-[22px] font-medium">
+                  {t.score ?? '—'}
+                </span>
               </span>
             </div>
           ))}
