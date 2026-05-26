@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Search, X, ChevronRight, Users, Building2, School, BarChart2, LayoutDashboard, MessageSquare } from 'lucide-react'
+import { Search, X, ChevronRight, Users, Building2, School, BarChart2, Rocket, MessageCircle } from 'lucide-react'
 import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
@@ -20,8 +20,8 @@ function saveRecent(r: RecentEntry) {
 }
 
 const QUICK_NAV = [
-  { key: 'nav-launchpad',  displayName: 'Launchpad',   subtitle: 'Standings, scores & game cards',  href: '/launchpad',   Icon: LayoutDashboard },
-  { key: 'nav-chat',       displayName: 'Chat',        subtitle: 'Ask about Section XI football',   href: '/chat',        Icon: MessageSquare   },
+  { key: 'nav-launchpad',  displayName: 'Launchpad',   subtitle: 'Standings, scores & game cards',  href: '/launchpad',   Icon: Rocket          },
+  { key: 'nav-chat',       displayName: 'Chat',        subtitle: 'Ask about Section XI football',   href: '/chat',        Icon: MessageCircle   },
   { key: 'nav-charts',     displayName: 'Charts',      subtitle: 'Stats, leaders & records',        href: '/charts',      Icon: BarChart2       },
   { key: 'nav-players',    displayName: 'Players',     subtitle: 'Section XI players, all seasons', href: '/player',      Icon: Users           },
   { key: 'nav-teams',      displayName: 'Teams',       subtitle: 'All Section XI varsity teams',    href: '/team',        Icon: Building2       },
@@ -249,8 +249,8 @@ function Palette() {
     ...(schools.length   ? schools.slice(0, 4)   : []),
   ]
   const emptyNavItems = !query.trim() ? [
-    ...recents.map(r => ({ ...r, score: 0, name: r.displayName })),
     ...QUICK_NAV.map(n => ({ key: n.key, type: 'team' as const, name: n.displayName, displayName: n.displayName, subtitle: n.subtitle, href: n.href, score: 0 })),
+    ...recents.map(r => ({ ...r, score: 0, name: r.displayName })),
   ] : []
   const navLength = query.trim() ? allResults.length : emptyNavItems.length
 
@@ -339,16 +339,47 @@ function Palette() {
           )}
           {data && !query.trim() && (
             <>
+              <SectionHeader label="Quick Nav" />
+              {QUICK_NAV.map(({ key, displayName, subtitle, href, Icon }, i) => {
+                const idx = i
+                const active = idx === activeIdx
+                return (
+                  <button key={key}
+                    className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
+                    onMouseEnter={() => setActiveIdx(idx)}
+                    onClick={() => { router.push(href) }}>
+                    <div className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
+                      <Icon className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <p
+                        className={`truncate transition-colors ${active ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'}`}
+                        style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+                      >
+                        {displayName}
+                      </p>
+                      <p
+                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
+                        style={{ ...SERIF, fontStyle: 'italic' }}
+                      >
+                        {subtitle}
+                      </p>
+                    </div>
+                    <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
+                  </button>
+                )
+              })}
               {recents.length > 0 && (
                 <>
                   <SectionHeader label="Recent" />
                   {recents.map((r, i) => {
                     const logo = r.logoUrl ?? (r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined)
-                    const active = i === activeIdx
+                    const idx = QUICK_NAV.length + i
+                    const active = idx === activeIdx
                     return (
                       <button key={r.key}
                         className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
-                        onMouseEnter={() => setActiveIdx(i)}
+                        onMouseEnter={() => setActiveIdx(idx)}
                         onClick={() => { router.push(r.href) }}>
                         <div className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden">
                           {logo
@@ -379,36 +410,6 @@ function Palette() {
                   })}
                 </>
               )}
-              <SectionHeader label="Quick Nav" />
-              {QUICK_NAV.map(({ key, displayName, subtitle, href, Icon }, i) => {
-                const idx = recents.length + i
-                const active = idx === activeIdx
-                return (
-                  <button key={key}
-                    className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
-                    onMouseEnter={() => setActiveIdx(idx)}
-                    onClick={() => { router.push(href) }}>
-                    <div className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
-                      <Icon className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p
-                        className={`truncate transition-colors ${active ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'}`}
-                        style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
-                      >
-                        {displayName}
-                      </p>
-                      <p
-                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
-                        style={{ ...SERIF, fontStyle: 'italic' }}
-                      >
-                        {subtitle}
-                      </p>
-                    </div>
-                    <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
-                  </button>
-                )
-              })}
             </>
           )}
           {isEmpty && (
