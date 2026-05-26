@@ -489,10 +489,13 @@ function GameLogTable({
   player, season, gameLog,
 }: {
   player: PlayerRow
-  season: number
+  season: number | null
   gameLog: GameLogRow[]
 }) {
-  const rows = useMemo(() => gameLog.filter(r => r.season === season), [gameLog, season])
+  const rows = useMemo(
+    () => season === null ? gameLog : gameLog.filter(r => r.season === season),
+    [gameLog, season],
+  )
 
   // Aggregate per game (rows from JSONB can have multiple stat_types per game)
   const byGame = useMemo(() => {
@@ -502,18 +505,28 @@ function GameLogTable({
       map[r.game_id].push(r)
     }
     return Object.values(map).sort((a, b) =>
-      (a[0].game_date ?? '').localeCompare(b[0].game_date ?? '')
+      // Newest first when all-time, oldest first when season-scoped
+      season === null
+        ? (b[0].game_date ?? '').localeCompare(a[0].game_date ?? '')
+        : (a[0].game_date ?? '').localeCompare(b[0].game_date ?? ''),
     )
-  }, [rows])
+  }, [rows, season])
 
-  if (rows.length === 0) return <EmptyTablet label={`No game log recorded for ${formatSeason(season)}.`} />
+  if (rows.length === 0) return <EmptyTablet label={season === null
+    ? 'No game log recorded for this player.'
+    : `No game log recorded for ${formatSeason(season)}.`} />
+
+  const showSeason = season === null
 
   return (
     <ScrollTable maxH={0}>
       <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
         <thead>
           <tr>
-            <th className={cn(TH_CLS, 'pl-5 text-left')} style={SANS}>Opponent</th>
+            {showSeason && (
+              <th className={cn(TH_CLS, 'pl-5 text-left')} style={SANS}>Season</th>
+            )}
+            <th className={cn(TH_CLS, showSeason ? 'text-left' : 'pl-5 text-left')} style={SANS}>Opponent</th>
             <th className={cn(TH_CLS, 'text-right')} style={SANS}>Pass</th>
             <th className={cn(TH_CLS, 'text-right')} style={SANS}>Rush</th>
             <th className={cn(TH_CLS, 'text-right')} style={SANS}>Rec</th>
@@ -551,7 +564,12 @@ function GameLogTable({
                 key={i}
                 className="border-t border-[var(--paper-rule-soft)] hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
               >
-                <td className="px-5 py-3.5">
+                {showSeason && (
+                  <td className={cn(tabletTd, 'pl-5 text-[var(--paper-muted)] tabular-nums')} style={MONO}>
+                    {formatSeason(ref.season)}
+                  </td>
+                )}
+                <td className={showSeason ? tabletTd : 'px-5 py-3.5'}>
                   <Link href={`/game/${ref.game_id}?ref=${player.school_slug}-varsity-football`} className="flex items-center gap-3 min-w-0 text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors group/g">
                     <span className="text-[11px] text-[var(--paper-faint)] shrink-0" style={SANS}>
                       {isHome ? 'vs' : 'at'}
@@ -578,7 +596,7 @@ function GameLogTable({
 
 // ── Main shell ────────────────────────────────────────────────────────────────
 
-type SectionId = 'stats' | 'game-log' | 'recap' | 'top-players' | 'standings' | 'best-season'
+type SectionId = 'best-season' | 'stats' | 'recap' | 'games' | 'seasons'
 
 export function PlayerShell({
   player,
@@ -790,17 +808,22 @@ export function PlayerShell({
   const hasStatsForRecap = stats.length > 0
 
   const sections = useMemo(() => {
-    const list: { id: SectionId; label: string; count: number }[] = []
-    list.push({ id: 'stats',       label: 'Stats',         count: tableRows.length })
-    if (selectedSeason !== null) list.push({ id: 'game-log', label: 'Game Log', count: gameLog.filter(r => r.season === selectedSeason).length })
-    list.push({ id: 'recap',       label: 'Recap',         count: hasStatsForRecap ? 1 : 0 })
-    list.push({ id: 'top-players', label: 'Top Players',   count: divPlayers.length })
-    list.push({ id: 'standings',   label: 'Standings',     count: divTeams.length })
-    list.push({ id: 'best-season', label: 'Best Season',   count: bestYards > 0 ? 1 : 0 })
-    return list
-  }, [tableRows, selectedSeason, gameLog, hasStatsForRecap, divPlayers, divTeams, bestYards])
+    const gamesCount = selectedSeason !== null
+      ? gameLog.filter(r => r.season === selectedSeason).length
+      : [...new Set(gameLog.map(r => r.game_id))].length
+    const seasonsCount = availableSeasons.length
 
-  const [activeSection, setActiveSection] = useState<SectionId>('stats')
+    const list: { id: SectionId; label: string; count: number }[] = [
+      { id: 'best-season', label: 'Best Season', count: bestYards > 0 ? 1 : 0 },
+      { id: 'stats',       label: 'Stats',       count: tableRows.length },
+      { id: 'recap',       label: 'Recap',       count: hasStatsForRecap ? 1 : 0 },
+      { id: 'games',       label: 'Games',       count: gamesCount },
+      { id: 'seasons',     label: 'Seasons',     count: seasonsCount },
+    ]
+    return list
+  }, [tableRows, selectedSeason, gameLog, hasStatsForRecap, availableSeasons.length, bestYards])
+
+  const [activeSection, setActiveSection] = useState<SectionId>('best-season')
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
@@ -989,7 +1012,45 @@ export function PlayerShell({
 
             <main className="min-w-0">
 
-              {/* ── Stats ──────────────────────────────────────── */}
+              {/* ── Best Season (1st) ──────────────────────────── */}
+              {bestYards > 0 && (
+                <section
+                  id="best-season"
+                  ref={(el) => { sectionRefs.current['best-season'] = el }}
+                  className="mb-20 scroll-mt-24"
+                >
+                  <SectionHead
+                    title="Best Season"
+                    eyebrow={formatSeason(bestSeason)}
+                    blurb="The peak — single-season yardage high water mark on file."
+                  />
+                  <Tablet>
+                    <div className="px-6 py-8 flex items-baseline justify-between gap-6">
+                      <div className="min-w-0">
+                        <p
+                          className="text-[var(--paper-text)] tabular-nums leading-none"
+                          style={{ ...MONO, fontSize: 56, fontWeight: 500 }}
+                        >
+                          {bestYards.toLocaleString()}
+                        </p>
+                        <p
+                          className="mt-2 text-[14px] text-[var(--paper-muted)]"
+                          style={{ ...SERIF, fontStyle: 'italic' }}
+                        >
+                          {bestLabel.toLowerCase()} · {formatSeason(bestSeason)}
+                        </p>
+                      </div>
+                      <div className="shrink-0 hidden sm:block">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+                          Career best
+                        </p>
+                      </div>
+                    </div>
+                  </Tablet>
+                </section>
+              )}
+
+              {/* ── Stats (2nd) ────────────────────────────────── */}
               <section
                 id="stats"
                 ref={(el) => { sectionRefs.current.stats = el }}
@@ -1027,23 +1088,7 @@ export function PlayerShell({
                 />
               </section>
 
-              {/* ── Game Log ───────────────────────────────────── */}
-              {selectedSeason !== null && (
-                <section
-                  id="game-log"
-                  ref={(el) => { sectionRefs.current['game-log'] = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title="Game Log"
-                    eyebrow={`Season · ${formatSeason(selectedSeason)}`}
-                    blurb="Game-by-game results — click any opponent to open the game page."
-                  />
-                  <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} />
-                </section>
-              )}
-
-              {/* ── Recap (AI career profile) ───────────────────── */}
+              {/* ── Recap (3rd) — AI career profile ─────────────── */}
               <section
                 id="recap"
                 ref={(el) => { sectionRefs.current.recap = el }}
@@ -1107,93 +1152,90 @@ export function PlayerShell({
                 )}
               </section>
 
-              {/* ── Top Players ────────────────────────────────── */}
-              {divPlayers.length > 0 && (
-                <section
-                  id="top-players"
-                  ref={(el) => { sectionRefs.current['top-players'] = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title="Top Players"
-                    eyebrow={school ? `Division ${school.division}` : undefined}
-                    blurb="Other top performers in the same division — click to open a player."
-                  />
-                  <div className="overflow-x-auto no-scrollbar">
-                    <div className="flex gap-3 pb-2">
-                      {divPlayers.map((p, i) => {
-                        const stat = topStat(p)
-                        const logoSrc = p.school_slug ? SCHOOL_LOGOS[p.school_slug] : null
-                        return (
-                          <Link
-                            key={`${p.player_slug}-${p.stat_type}-${i}`}
-                            href={`/player/${p.player_slug}`}
-                            className="group/c shrink-0 w-[260px] border border-[var(--paper-rule)] bg-[var(--paper)] px-4 py-3.5 flex flex-col gap-2 hover:bg-[var(--paper-quiet)] transition-colors"
-                            style={{ borderRadius: TABLET_RADIUS }}
-                          >
-                            <div className="flex items-center gap-2 min-w-0">
-                              {logoSrc && <Image src={logoSrc} alt="" width={22} height={22} className="shrink-0 object-contain" unoptimized />}
-                              <span
-                                className="truncate text-[var(--paper-text)] group-hover/c:text-[var(--paper-strong)] transition-colors"
-                                style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
-                              >
-                                {p.player_name}
-                              </span>
-                            </div>
-                            <p className="text-[11.5px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>
-                              {p.position ? `${p.position} · ${p.school_name}` : p.school_name}
-                            </p>
-                            <div className="flex items-baseline gap-1 mt-1">
-                              <span className="text-[16px] tabular-nums font-medium text-[var(--paper-text)]" style={MONO}>{stat.value}</span>
-                              <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-muted)]" style={SANS}>{stat.label}</span>
-                            </div>
-                          </Link>
-                        )
-                      })}
-                    </div>
-                  </div>
-                </section>
-              )}
+              {/* ── Games (4th) ────────────────────────────────── */}
+              <section
+                id="games"
+                ref={(el) => { sectionRefs.current.games = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Games"
+                  eyebrow={selectedSeason === null ? 'Career · all seasons' : `Season · ${formatSeason(selectedSeason)}`}
+                  blurb="Game-by-game results — click any opponent to open the game page."
+                />
+                <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} />
+              </section>
 
-              {/* ── Standings ──────────────────────────────────── */}
-              {divTeams.length > 0 && school && (
-                <section
-                  id="standings"
-                  ref={(el) => { sectionRefs.current.standings = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title={`Division ${school.division} Standings`}
-                    eyebrow="2024-25"
-                    blurb="Conference standings the week the season was logged."
-                  />
+              {/* ── Seasons (5th) ──────────────────────────────── */}
+              <section
+                id="seasons"
+                ref={(el) => { sectionRefs.current.seasons = el }}
+                className="mb-20 scroll-mt-24"
+              >
+                <SectionHead
+                  title="Seasons"
+                  eyebrow="Career timeline"
+                  blurb="One row per season — click a year to filter the page."
+                />
+                {availableSeasons.length === 0 ? (
+                  <EmptyTablet label="No seasons on file." />
+                ) : (
                   <ScrollTable maxH={0}>
                     <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
                       <thead>
                         <tr>
-                          <th className={cn(TH_CLS, 'pl-5 text-left')} style={SANS}>Team</th>
-                          <th className={cn(TH_CLS, 'text-right')} style={SANS}>Record</th>
-                          <th className={cn(TH_CLS, 'text-right pr-5')} style={SANS}>Win %</th>
+                          <th className={cn(TH_CLS, 'pl-5 text-left')} style={SANS}>Season</th>
+                          <th className={cn(TH_CLS, 'text-right')} style={SANS}>Best Stat</th>
+                          <th className={cn(TH_CLS, 'text-right')} style={SANS}>Games</th>
+                          <th className={cn(TH_CLS, 'text-right pr-5')} style={SANS}>Team Record</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {divTeams.map((t, i) => {
-                          const tSchool = t.slug.replace(/-varsity-football$/, '')
-                          const tLogo = SCHOOL_LOGOS[tSchool]
+                        {availableSeasons.map(yr => {
+                          const seasonStats = mergedStats.filter(s => s.season === yr)
+                          const passYds = seasonStats.find(s => s.stat_type === 'Passing')?.pass_yards   ?? 0
+                          const rushYds = seasonStats.find(s => s.stat_type === 'Rushing')?.rush_yards   ?? 0
+                          const recvYds = seasonStats.find(s => s.stat_type === 'Receiving')?.recv_yards ?? 0
+                          let bestSeasonStat: string
+                          if (passYds >= rushYds && passYds >= recvYds && passYds > 0) {
+                            bestSeasonStat = `${passYds.toLocaleString()} pass`
+                          } else if (rushYds >= recvYds && rushYds > 0) {
+                            bestSeasonStat = `${rushYds.toLocaleString()} rush`
+                          } else if (recvYds > 0) {
+                            bestSeasonStat = `${recvYds.toLocaleString()} rec`
+                          } else {
+                            bestSeasonStat = '—'
+                          }
+                          const games = [...new Set(gameLog.filter(r => r.season === yr).map(r => r.game_id))].length
+                          const rec = teamRecords[yr]
+                          const isActive = selectedSeason === yr
                           return (
-                            <tr key={t.slug} className="border-t border-[var(--paper-rule-soft)] hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors">
+                            <tr
+                              key={yr}
+                              onClick={() => setSelectedSeason(yr)}
+                              className={cn(
+                                'group/row border-t border-[var(--paper-rule-soft)] cursor-pointer transition-colors',
+                                isActive
+                                  ? 'bg-[color:color-mix(in_srgb,var(--paper-text)_6%,transparent)]'
+                                  : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
+                              )}
+                            >
                               <td className="px-5 py-3.5">
-                                <Link href={`/team/${t.slug}`} className="flex items-center gap-3 min-w-0 text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors">
-                                  <span className="shrink-0 tabular-nums text-[var(--paper-faint)] w-5 text-right" style={{ ...MONO, fontSize: 11 }}>{i + 1}.</span>
-                                  {tLogo && <Image src={tLogo} alt="" width={22} height={22} className="shrink-0 object-contain" unoptimized />}
-                                  <span className="truncate" style={{ ...SERIF, fontSize: 15, fontWeight: 500 }}>{stripVarsity(t.name)}</span>
-                                </Link>
+                                <span
+                                  className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors"
+                                  style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
+                                >
+                                  {formatSeason(yr)}
+                                </span>
                               </td>
-                              <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)] font-medium')} style={MONO}>
-                                {fmtRecord(t.overall_wins, t.overall_losses)}
+                              <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>
+                                {bestSeasonStat}
                               </td>
-                              <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)] pr-5')} style={MONO}>
-                                {fmtWinPct(t.overall_wins, t.overall_losses)}
+                              <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>
+                                {games || '—'}
+                              </td>
+                              <td className={cn(tabletTd, 'text-right pr-5 tabular-nums font-medium', recordColor(rec))} style={MONO}>
+                                {rec ?? '—'}
                               </td>
                             </tr>
                           )
@@ -1201,46 +1243,8 @@ export function PlayerShell({
                       </tbody>
                     </table>
                   </ScrollTable>
-                </section>
-              )}
-
-              {/* ── Best Season ────────────────────────────────── */}
-              {bestYards > 0 && (
-                <section
-                  id="best-season"
-                  ref={(el) => { sectionRefs.current['best-season'] = el }}
-                  className="mb-20 scroll-mt-24"
-                >
-                  <SectionHead
-                    title="Best Season"
-                    eyebrow={formatSeason(bestSeason)}
-                    blurb="The peak — single-season yardage high water mark on file."
-                  />
-                  <Tablet>
-                    <div className="px-6 py-8 flex items-baseline justify-between gap-6">
-                      <div className="min-w-0">
-                        <p
-                          className="text-[var(--paper-text)] tabular-nums leading-none"
-                          style={{ ...MONO, fontSize: 56, fontWeight: 500 }}
-                        >
-                          {bestYards.toLocaleString()}
-                        </p>
-                        <p
-                          className="mt-2 text-[14px] text-[var(--paper-muted)]"
-                          style={{ ...SERIF, fontStyle: 'italic' }}
-                        >
-                          {bestLabel.toLowerCase()} · {formatSeason(bestSeason)}
-                        </p>
-                      </div>
-                      <div className="shrink-0 hidden sm:block">
-                        <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
-                          Career best
-                        </p>
-                      </div>
-                    </div>
-                  </Tablet>
-                </section>
-              )}
+                )}
+              </section>
 
               {/* ── Colophon ───────────────────────────────────── */}
               <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">
