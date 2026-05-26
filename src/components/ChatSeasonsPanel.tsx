@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, ArrowUpRight, ChevronRight } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, ArrowRight, ChevronRight } from 'lucide-react'
 import { AppPanel } from '@/components/AppPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
@@ -371,12 +371,24 @@ function GameView({ gameId }: { gameId: number }) {
             >
               <SchoolLogo slug={t.school} size={32} />
               <div className="flex-1 min-w-0">
-                <p
-                  className={`truncate ${t.won ? 'text-[var(--paper-text)]' : 'text-[var(--paper-muted)]'}`}
-                  style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
-                >
-                  {stripVarsity(t.name)}
-                </p>
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <Link
+                    href={`/team/${t.school}-varsity-football`}
+                    aria-label={`${stripVarsity(t.name)} team page`}
+                    className={`group/arrow flex items-center gap-1.5 min-w-0 truncate transition-colors ${
+                      t.won
+                        ? 'text-[var(--paper-text)] hover:text-[var(--paper-strong)]'
+                        : 'text-[var(--paper-muted)] hover:text-[var(--paper-strong)]'
+                    }`}
+                    style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
+                  >
+                    <span className="truncate">{stripVarsity(t.name)}</span>
+                    <span className="relative inline-flex items-center justify-center w-5 h-5 shrink-0 text-[var(--paper-faint)] group-hover/arrow:text-[var(--paper-strong)] transition-colors duration-150">
+                      <ArrowUpRight className="h-3.5 w-3.5 absolute transition-all duration-200 group-hover/arrow:opacity-0 group-hover/arrow:scale-75" />
+                      <ArrowRight  className="h-3.5 w-3.5 absolute transition-all duration-200 opacity-0 group-hover/arrow:opacity-100 group-hover/arrow:translate-x-0.5" />
+                    </span>
+                  </Link>
+                </div>
                 {(homeRow || awayRow) && (
                   <div className="mt-1 flex gap-3 text-[11px] tabular-nums text-[var(--paper-muted)]" style={MONO}>
                     {[t.row?.q1, t.row?.q2, t.row?.q3, t.row?.q4].map((q, i) => (
