@@ -1,8 +1,6 @@
 import { NextRequest } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
 import { sql } from '@/lib/db'
-
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY_SPORTSGPT2 })
+import { streamChatResponse } from '@/lib/ai-stream'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,31 +16,10 @@ export async function GET(
   const raw = rows[0]?.highlights as string | null
   if (!raw) return new Response('', { status: 204 })
 
-  const stream = anthropic.messages.stream({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
+  const readable = streamChatResponse({
     system: 'You are a high school sports beat reporter. First, write a punchy newspaper-style article headline (one line, no quotes, no period). Then a blank line. Then rewrite the game summary in a vivid, engaging voice — active verbs, player-first storytelling, sense of atmosphere. 2-3 short paragraphs. End with the final score in bold. Keep all stats accurate. Do not use markdown headings (#). Use **bold** only for the final score line.',
-    messages: [{ role: 'user', content: raw }],
-  })
-
-  const encoder = new TextEncoder()
-  const readable = new ReadableStream({
-    async start(controller) {
-      stream.on('text', (text) => {
-        controller.enqueue(encoder.encode(text))
-      })
-      stream.on('error', (err) => {
-        console.error('[highlights] stream error:', err.message)
-        controller.enqueue(encoder.encode(`\n\n*Unable to generate highlights: ${err.message}*`))
-        controller.close()
-      })
-      try {
-        await stream.finalMessage()
-      } catch (err) {
-        console.error('[highlights] finalMessage error:', (err as Error).message)
-      }
-      try { controller.close() } catch { /* already closed */ }
-    },
+    user: raw,
+    errorPrefix: 'Unable to generate highlights',
   })
 
   return new Response(readable, {

@@ -1,8 +1,6 @@
 import { NextRequest } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
 import { sql } from '@/lib/db'
-
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY_SPORTSGPT2 })
+import { streamChatResponse } from '@/lib/ai-stream'
 
 export const dynamic = 'force-dynamic'
 
@@ -99,9 +97,7 @@ export async function GET(
 
   const payload = lines.join('\n')
 
-  const stream = anthropic.messages.stream({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
+  const readable = streamChatResponse({
     system: `You are a beat reporter writing a career retrospective of a single New York State (Suffolk County · Section XI) high school football player. Your job is to arrange the provided stat lines into vivid prose. You have NO other information about this player and you MUST NOT invent any.
 
 CONTEXT — READ THIS CAREFULLY:
@@ -126,27 +122,8 @@ FORMAT:
 2. Blank line.
 3. 2-3 short paragraphs of player-first prose. Every claim must trace to a number on the stat lines.
 4. End with the career-defining stat line in **bold** — e.g. "**4,231 career passing yards, 38 TDs**". Use **bold** ONLY on that final line. No markdown headings.`,
-    messages: [{ role: 'user', content: payload }],
-  })
-
-  const encoder = new TextEncoder()
-  const readable = new ReadableStream({
-    async start(controller) {
-      stream.on('text', (text) => {
-        controller.enqueue(encoder.encode(text))
-      })
-      stream.on('error', (err) => {
-        console.error('[player-recap] stream error:', err.message)
-        controller.enqueue(encoder.encode(`\n\n*Unable to generate recap: ${err.message}*`))
-        controller.close()
-      })
-      try {
-        await stream.finalMessage()
-      } catch (err) {
-        console.error('[player-recap] finalMessage error:', (err as Error).message)
-      }
-      try { controller.close() } catch { /* already closed */ }
-    },
+    user: payload,
+    errorPrefix: 'Unable to generate recap',
   })
 
   return new Response(readable, {

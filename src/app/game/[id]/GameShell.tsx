@@ -23,11 +23,11 @@ import {
   StickyControlBar,
   SearchInput,
   useSearchHotkey,
+  SearchButtonGroup,
   MONO,
   tabletTd,
 } from '@/components/editorial'
-import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
-import { ACCENT_COLOR } from '@/lib/app-config'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { cn } from '@/lib/utils'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -90,80 +90,6 @@ function fmtDate(raw: string | Date | null): string {
 
 function fmtSeason(y: number) { return `${y}-${String(y + 1).slice(2)}` }
 
-// ── Hero — split-screen photos inside the matted editorial frame ─────────────
-
-function GameHero({
-  homeName, awayName, homeSchool, awaySchool,
-  homeScore, awayScore, gameNumber,
-}: {
-  homeName: string; awayName: string
-  homeSchool: string; awaySchool: string
-  homeScore: number | null; awayScore: number | null
-  gameNumber: number | null
-}) {
-  const homePhoto = TEAM_PHOTOS[homeSchool]?.[0]
-  const awayPhoto = TEAM_PHOTOS[awaySchool]?.[0]
-  const scored    = homeScore != null && awayScore != null
-
-  return (
-    <div
-      className="w-full border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
-      style={{ padding: 8, borderRadius: TABLET_RADIUS }}
-    >
-      <div
-        className="relative overflow-hidden w-full"
-        style={{ height: 460, borderRadius: 1 }}
-      >
-        {/* Split photo background */}
-        <div className="absolute inset-0 flex">
-          <div className="relative flex-1">
-            {homePhoto
-              ? <Image src={homePhoto} alt={homeName} fill className="object-cover object-top" unoptimized />
-              : <div className="h-full" style={{ background: `linear-gradient(135deg,${ACCENT_COLOR}55,${ACCENT_COLOR}99)` }} />}
-          </div>
-          <div className="relative flex-1">
-            {awayPhoto
-              ? <Image src={awayPhoto} alt={awayName} fill className="object-cover object-top" unoptimized />
-              : <div className="h-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />}
-          </div>
-        </div>
-
-        {/* Bottom darken for legibility */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent z-[5]" />
-
-        {/* Week badge */}
-        {gameNumber != null && (
-          <div className="absolute top-4 left-4 z-10">
-            <span
-              className="text-[10px] uppercase tracking-[0.22em] px-2.5 py-1 border border-white/30 bg-black/45 backdrop-blur-sm text-white/95"
-              style={{ ...SANS, borderRadius: TABLET_RADIUS }}
-            >
-              Week {gameNumber}
-            </span>
-          </div>
-        )}
-
-        {/* Scoreboard */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div
-            className="text-center px-7 py-5 backdrop-blur-md border border-white/15 shadow-xl"
-            style={{ background: 'rgba(0,0,0,0.55)', borderRadius: TABLET_RADIUS }}
-          >
-            {scored ? (
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-8xl font-black tabular-nums leading-none text-white">{homeScore}</span>
-                <span className="text-8xl font-black tabular-nums leading-none text-white">–</span>
-                <span className="text-8xl font-black tabular-nums leading-none text-white">{awayScore}</span>
-              </div>
-            ) : (
-              <p className="text-2xl font-bold text-white/40">vs</p>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 // ── Box Score table — editorial palette ──────────────────────────────────────
 
@@ -602,7 +528,7 @@ export function GameShell({
         const text = await res.text()
         const nl = text.indexOf('\n')
         if (nl !== -1) {
-          const title = text.slice(0, nl).trim()
+          const title = text.slice(0, nl).trim().replace(/^#+\s*/, '')
           const body  = text.slice(nl + 1).trimStart()
           setAiTitle(title)
           setAiHighlights(body)
@@ -761,18 +687,6 @@ export function GameShell({
             </RevealFx>
           </div>
 
-          {/* ── Hero ───────────────────────────────────────────────── */}
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
-            <RevealFx delay={0.15} translateY={12}>
-              <GameHero
-                homeName={homeName} awayName={awayName}
-                homeSchool={homeSchool} awaySchool={awaySchool}
-                homeScore={homeScore} awayScore={awayScore}
-                gameNumber={gameNumber}
-              />
-            </RevealFx>
-          </div>
-
           {/* ── Sticky control bar ─────────────────────────────────── */}
           <StickyControlBar>
             {availableStatSections.length > 0 && (
@@ -810,12 +724,7 @@ export function GameShell({
               placeholder="Search players & stats…"
             />
 
-            <div
-              className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block"
-              style={SANS}
-            >
-              {statPlayerCount} {statPlayerCount === 1 ? 'player' : 'players'}
-            </div>
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + main ──────────────────────────────── */}

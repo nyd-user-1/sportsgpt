@@ -727,7 +727,7 @@ export function PlayerShell({
         const text = await res.text()
         const nl = text.indexOf('\n')
         if (nl !== -1) {
-          const title = text.slice(0, nl).trim()
+          const title = text.slice(0, nl).trim().replace(/^#+\s*/, '')
           const body  = text.slice(nl + 1).trimStart()
           setRecapTitle(title)
           setRecapBody(body)
