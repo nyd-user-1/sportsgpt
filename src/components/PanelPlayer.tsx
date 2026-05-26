@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ArrowUpRight } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { AppPanel } from './AppPanel'
 import { SCHOOL_LOGOS, PLAYER_PHOTOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { ACCENT_COLOR } from '@/lib/app-config'
@@ -57,7 +57,10 @@ function fmtSigned(v: number | null): string {
 function AccordionStatTable({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]">
+    <div
+      className="mx-3 mb-3 mt-2 border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]"
+      style={{ borderRadius: 3 }}
+    >
       <button
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between px-4 h-[46px] transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]"
@@ -274,17 +277,6 @@ export function PlayerPanelContent({ player, statTab }: { player: AnyPlayerRow; 
       {statTab === 'Passing'   && <PassingStats   player={player as PlayerPasser} />}
       {statTab === 'Rushing'   && <RushingStats   player={player as PlayerRusher} />}
       {statTab === 'Receiving' && <ReceivingStats player={player as PlayerReceiver} />}
-
-      <div className="px-5 py-5 border-t border-[var(--paper-rule)] mt-2">
-        <Link
-          href={`/player/${player.player_slug}`}
-          className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:opacity-70 transition-opacity"
-          style={SANS}
-        >
-          <span>View full profile</span>
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
     </div>
   )
 }

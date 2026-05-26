@@ -120,39 +120,60 @@ function buildResults(data: SearchData, query: string): { divisions: Result[]; c
   return { divisions, charts, teams, players, schools }
 }
 
+const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
+const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
+const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace, monospace' }
+
 function ResultItem({ r, active, onHover, onClick }: { r: Result; active: boolean; onHover: () => void; onClick: () => void }) {
   const logo = r.logoUrl ?? (r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined)
   return (
     <button
-      className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${active ? 'bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
+      className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
       onMouseEnter={onHover}
       onClick={onClick}
     >
-      <div className="w-7 h-7 shrink-0 flex items-center justify-center">
+      <div
+        className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden"
+      >
         {logo ? (
-          <Image src={logo} alt="" width={28} height={28} className="object-contain" unoptimized />
+          <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
         ) : r.type === 'player' ? (
-          <Users className="h-4 w-4 text-[var(--muted)]" />
+          <Users className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         ) : r.type === 'chart' ? (
-          <BarChart2 className="h-4 w-4 text-[var(--muted)]" />
+          <BarChart2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         ) : r.type === 'team' ? (
-          <Building2 className="h-4 w-4 text-[var(--muted)]" />
+          <Building2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         ) : (
-          <School className="h-4 w-4 text-[var(--muted)]" />
+          <School className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-[var(--txt)] truncate">{r.displayName}</p>
-        {r.subtitle && <p className="text-xs text-[var(--muted)] truncate">{r.subtitle}</p>}
+        <p
+          className={`truncate transition-colors ${active ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'}`}
+          style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {r.displayName}
+        </p>
+        {r.subtitle && (
+          <p
+            className="text-[11.5px] text-[var(--paper-muted)] truncate"
+            style={{ ...SERIF, fontStyle: 'italic' }}
+          >
+            {r.subtitle}
+          </p>
+        )}
       </div>
-      <ChevronRight className="h-3.5 w-3.5 text-[var(--muted)] shrink-0" />
+      <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
     </button>
   )
 }
 
 function SectionHeader({ label }: { label: string }) {
   return (
-    <div className="px-4 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-[var(--muted)] bg-[var(--bg)]">
+    <div
+      className="px-5 pt-4 pb-2 text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)] border-t border-[var(--paper-rule)] first:border-t-0"
+      style={SANS}
+    >
       {label}
     </div>
   )
@@ -270,43 +291,53 @@ function Palette() {
   // Map result key → flat index
   const idxMap = Object.fromEntries(allResults.map((r, i) => [r.key, i]))
 
+  const kbdCls = 'inline-flex items-center px-1.5 py-0.5 text-[10px] text-[var(--paper-faint)] border border-[var(--paper-rule)]'
+  const kbdStyle: React.CSSProperties = { ...MONO, borderRadius: 2 }
+
   return (
     <div
       className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] px-4"
-      style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)' }}
+      style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)' }}
       onClick={close}
     >
       <div
-        className="w-full max-w-lg bg-[var(--surface)] rounded-2xl shadow-2xl overflow-hidden border border-[var(--border)]"
+        className="w-full max-w-lg bg-[var(--paper)] shadow-2xl overflow-hidden border border-[var(--paper-rule)]"
+        style={{ borderRadius: 3 }}
         onClick={e => e.stopPropagation()}
       >
         {/* Input row */}
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-[var(--border)]">
-          <Search className="h-4 w-4 text-[var(--muted)] shrink-0" />
+        <div className="flex items-center gap-3 px-5 py-3.5 border-b border-[var(--paper-rule)]">
+          <Search className="h-4 w-4 text-[var(--paper-faint)] shrink-0" />
           <input
             ref={inputRef}
             value={query}
             onChange={e => updateQuery(e.target.value)}
             placeholder="Search teams, players, schools…"
-            className="flex-1 bg-transparent text-[var(--txt)] placeholder:text-[var(--muted)] text-sm outline-none"
+            className="flex-1 bg-transparent text-[var(--paper-text)] placeholder:text-[var(--paper-faint)] outline-none"
+            style={{ ...SERIF, fontSize: 15, letterSpacing: '-0.005em' }}
             autoComplete="off"
           />
           {query ? (
-            <button onClick={() => updateQuery('')} className="text-[var(--muted)] hover:text-[var(--txt)] transition-colors">
+            <button
+              onClick={() => updateQuery('')}
+              className="text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors"
+            >
               <X className="h-4 w-4" />
             </button>
           ) : (
-            <div className="flex items-center gap-1">
-              <kbd className="hidden sm:inline-flex text-[10px] text-[var(--muted)] bg-[var(--inp-bg)] px-1.5 py-0.5 rounded">⌘K</kbd>
-              <kbd className="hidden sm:inline-flex text-[10px] text-[var(--muted)] bg-[var(--inp-bg)] px-1.5 py-0.5 rounded">esc</kbd>
+            <div className="hidden sm:flex items-center gap-1">
+              <kbd className={kbdCls} style={kbdStyle}>⌘K</kbd>
+              <kbd className={kbdCls} style={kbdStyle}>esc</kbd>
             </div>
           )}
         </div>
 
         {/* Results */}
-        <div ref={listRef} className="max-h-[55vh] overflow-y-auto">
+        <div ref={listRef} className="max-h-[55vh] overflow-y-auto pb-2">
           {!data && (
-            <div className="py-10 text-center text-sm text-[var(--muted)]">Loading…</div>
+            <div className="py-10 text-center text-[13px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+              Loading…
+            </div>
           )}
           {data && !query.trim() && (
             <>
@@ -315,23 +346,36 @@ function Palette() {
                   <SectionHeader label="Recent" />
                   {recents.map((r, i) => {
                     const logo = r.logoUrl ?? (r.schoolSlug ? SCHOOL_LOGOS[r.schoolSlug] : undefined)
+                    const active = i === activeIdx
                     return (
                       <button key={r.key}
-                        className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${i === activeIdx ? 'bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
+                        className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
                         onMouseEnter={() => setActiveIdx(i)}
                         onClick={() => { router.push(r.href) }}>
-                        <div className="w-7 h-7 shrink-0 flex items-center justify-center">
+                        <div className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden">
                           {logo
-                            ? <Image src={logo} alt="" width={28} height={28} className="object-contain" unoptimized />
-                            : r.type === 'player' ? <Users className="h-4 w-4 text-[var(--muted)]" />
-                            : r.type === 'team'   ? <Building2 className="h-4 w-4 text-[var(--muted)]" />
-                            : <School className="h-4 w-4 text-[var(--muted)]" />}
+                            ? <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
+                            : r.type === 'player' ? <Users className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
+                            : r.type === 'team'   ? <Building2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
+                            : <School className="h-3.5 w-3.5 text-[var(--paper-faint)]" />}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm font-medium text-[var(--txt)] truncate">{r.displayName}</p>
-                          {r.subtitle && <p className="text-xs text-[var(--muted)] truncate">{r.subtitle}</p>}
+                          <p
+                            className={`truncate transition-colors ${active ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'}`}
+                            style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+                          >
+                            {r.displayName}
+                          </p>
+                          {r.subtitle && (
+                            <p
+                              className="text-[11.5px] text-[var(--paper-muted)] truncate"
+                              style={{ ...SERIF, fontStyle: 'italic' }}
+                            >
+                              {r.subtitle}
+                            </p>
+                          )}
                         </div>
-                        <ChevronRight className="h-3.5 w-3.5 text-[var(--muted)] shrink-0" />
+                        <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
                       </button>
                     )
                   })}
@@ -340,26 +384,39 @@ function Palette() {
               <SectionHeader label="Quick Nav" />
               {QUICK_NAV.map(({ key, displayName, subtitle, href, Icon }, i) => {
                 const idx = recents.length + i
+                const active = idx === activeIdx
                 return (
                   <button key={key}
-                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors ${idx === activeIdx ? 'bg-[var(--inp-bg)]' : 'hover:bg-[var(--inp-bg)]'}`}
+                    className={`group/row w-full flex items-center gap-3 px-5 py-2.5 text-left transition-colors ${active ? 'bg-[var(--paper-quiet)]' : 'hover:bg-[var(--paper-quiet)]'}`}
                     onMouseEnter={() => setActiveIdx(idx)}
                     onClick={() => { router.push(href) }}>
-                    <div className="w-7 h-7 shrink-0 flex items-center justify-center">
-                      <Icon className="h-4 w-4 text-[var(--muted)]" />
+                    <div className="w-7 h-7 shrink-0 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
+                      <Icon className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-[var(--txt)] truncate">{displayName}</p>
-                      <p className="text-xs text-[var(--muted)] truncate">{subtitle}</p>
+                      <p
+                        className={`truncate transition-colors ${active ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)]'}`}
+                        style={{ ...SERIF, fontSize: 14, fontWeight: 500, letterSpacing: '-0.005em' }}
+                      >
+                        {displayName}
+                      </p>
+                      <p
+                        className="text-[11.5px] text-[var(--paper-muted)] truncate"
+                        style={{ ...SERIF, fontStyle: 'italic' }}
+                      >
+                        {subtitle}
+                      </p>
                     </div>
-                    <ChevronRight className="h-3.5 w-3.5 text-[var(--muted)] shrink-0" />
+                    <ChevronRight className="h-3.5 w-3.5 text-[var(--paper-faint)] shrink-0" />
                   </button>
                 )
               })}
             </>
           )}
           {isEmpty && (
-            <div className="py-10 text-center text-sm text-[var(--muted)]">No results for &ldquo;{query}&rdquo;</div>
+            <div className="py-10 text-center text-[13px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+              No results for &ldquo;{query}&rdquo;
+            </div>
           )}
 
           {divisions.length > 0 && (
@@ -423,10 +480,19 @@ function Palette() {
           )}
 
           {hasResults && (
-            <div className="px-4 py-2 border-t border-[var(--border)] flex items-center gap-3 text-[10px] text-[var(--muted)]">
-              <span><kbd className="bg-[var(--inp-bg)] px-1 py-0.5 rounded">↑↓</kbd> navigate</span>
-              <span><kbd className="bg-[var(--inp-bg)] px-1 py-0.5 rounded">↵</kbd> open</span>
-              <span><kbd className="bg-[var(--inp-bg)] px-1 py-0.5 rounded">esc</kbd> close</span>
+            <div
+              className="mt-2 px-5 py-2.5 border-t border-[var(--paper-rule)] flex items-center gap-4 text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)]"
+              style={SANS}
+            >
+              <span className="inline-flex items-center gap-1.5">
+                <kbd className={kbdCls} style={kbdStyle}>↑↓</kbd> navigate
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <kbd className={kbdCls} style={kbdStyle}>↵</kbd> open
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <kbd className={kbdCls} style={kbdStyle}>esc</kbd> close
+              </span>
             </div>
           )}
         </div>

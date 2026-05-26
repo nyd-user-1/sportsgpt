@@ -1,12 +1,8 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { ChevronDown, ArrowUpRight } from 'lucide-react'
-import { SCHOOL_LOGOS, PLAYER_PHOTOS, TEAM_PHOTOS } from '@/lib/team-images'
-import { ACCENT_COLOR } from '@/lib/app-config'
-import { formatSeason, cn } from '@/lib/utils'
+import { ChevronDown } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 // ── Style tokens ──────────────────────────────────────────────────────────────
 
@@ -45,7 +41,10 @@ type Stats = {
 function AccordionStatTable({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]">
+    <div
+      className="mx-3 mb-3 mt-2 border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]"
+      style={{ borderRadius: 3 }}
+    >
       <button
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center justify-between px-4 h-[46px] transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]"
@@ -85,74 +84,37 @@ function StatRow({ label, value }: { label: string; value: string | number }) {
   )
 }
 
-// ── Hero + identity ──────────────────────────────────────────────────────────
-
-function PlayerHero({ player }: { player: PlayerMeta }) {
-  const photo     = PLAYER_PHOTOS[player.slug]
-  const teamPhoto = TEAM_PHOTOS[player.school_slug]?.[0]
-  const logo      = SCHOOL_LOGOS[player.school_slug]
-  const heroSrc   = photo || teamPhoto
-  return (
-    <div
-      className="mx-5 mt-5 mb-4 border border-[var(--paper-rule)] bg-[var(--paper-quiet)]"
-      style={{ padding: 6, borderRadius: 3 }}
-    >
-      <div
-        className="relative w-full h-[225px] sm:h-[260px] overflow-hidden"
-        style={{ borderRadius: 1 }}
-      >
-        {heroSrc ? (
-          <Image src={heroSrc} alt={player.name} fill className="object-cover object-top" unoptimized />
-        ) : (
-          <div
-            className="h-full flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}
-          >
-            {logo && (
-              <Image src={logo} alt="" width={84} height={84} className="object-contain opacity-70" unoptimized />
-            )}
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
+// ── Identity ────────────────────────────────────────────────────────────────
 
 function PlayerIdentity({ player, game }: { player: PlayerMeta; game: GameMeta }) {
-  const logo = SCHOOL_LOGOS[player.school_slug]
   const subtitleParts = [
-    player.team_name,
     game.gameNumber != null ? `Week ${game.gameNumber}` : null,
     game.gameDate,
   ].filter(Boolean)
   return (
-    <div className="px-5 pb-5 flex items-center gap-3 border-b border-[var(--paper-rule)]">
-      <Link
-        href={`/team/${player.school_slug}-varsity-football`}
-        aria-label={`${player.team_name} team page`}
-        className="shrink-0 w-12 h-12 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity"
+    <div className="px-5 py-5 border-b border-[var(--paper-rule)]">
+      <p
+        className="text-[var(--paper-text)] leading-tight truncate"
+        style={{ ...SERIF, fontSize: 22, fontWeight: 500, letterSpacing: '-0.005em' }}
       >
-        {logo && (
-          <Image src={logo} alt={player.team_name} width={32} height={32} className="object-contain" unoptimized />
+        {player.name}
+        {player.position && (
+          <span
+            className="ml-2 text-[var(--paper-muted)]"
+            style={{ ...SERIF, fontStyle: 'italic', fontSize: 16, fontWeight: 400 }}
+          >
+            · {player.position}
+          </span>
         )}
-      </Link>
-      <div className="flex-1 min-w-0">
+      </p>
+      {subtitleParts.length > 0 && (
         <p
-          className="text-[var(--paper-text)] leading-tight truncate"
-          style={{ ...SERIF, fontSize: 20, fontWeight: 500, letterSpacing: '-0.005em' }}
-        >
-          {player.name}
-        </p>
-        <p
-          className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
+          className="mt-1 text-[12.5px] text-[var(--paper-muted)] truncate"
           style={{ ...SERIF, fontStyle: 'italic' }}
         >
           {subtitleParts.join(' · ')}
-          {player.position && (
-            <> {' · '}{player.position}</>
-          )}
         </p>
-      </div>
+      )}
     </div>
   )
 }
@@ -244,20 +206,8 @@ export function PlayerGameLogContent({
       className="flex-1 overflow-y-auto no-scrollbar"
       style={{ backgroundColor: 'var(--paper)', color: 'var(--paper-text)' }}
     >
-      <PlayerHero player={player} />
       <PlayerIdentity player={player} game={game} />
       <StatSections stats={stats} statTypes={statTypes} />
-
-      <div className="px-5 py-5 border-t border-[var(--paper-rule)] mt-2">
-        <Link
-          href={`/player/${player.slug}`}
-          className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-[var(--paper-strong)] hover:opacity-70 transition-opacity"
-          style={SANS}
-        >
-          <span>View full profile · {formatSeason(game.season)}</span>
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
     </div>
   )
 }

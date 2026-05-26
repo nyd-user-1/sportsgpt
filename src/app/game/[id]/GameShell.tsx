@@ -280,7 +280,7 @@ function StatTable({
 }: {
   statType: string
   players: FlatPlayerStat[]
-  onPlayerSelect?: (slug: string) => void
+  onPlayerSelect?: (p: FlatPlayerStat) => void
 }) {
   if (players.length === 0) {
     return <EmptyTablet label={`No ${statType.toLowerCase()} data recorded for this game.`} />
@@ -305,7 +305,7 @@ function StatTable({
             return (
               <tr
                 key={`${p.player_slug ?? p.player_name}-${i}`}
-                onClick={p.player_slug && onPlayerSelect ? () => onPlayerSelect(p.player_slug!) : undefined}
+                onClick={p.player_slug && onPlayerSelect ? () => onPlayerSelect(p) : undefined}
                 className={cn(
                   'group/row border-t border-[var(--paper-rule-soft)] transition-colors',
                   'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
@@ -447,7 +447,23 @@ function PanelPlayers({ stats, schoolSlugs, playerSlugs, onPlayerSelect }: {
 
 // ── Highlights renderer (paper palette) ──────────────────────────────────────
 
-function parseInline(text: string, playerSlugs: Record<string, string>, gameId: number): React.ReactNode[] {
+type PlayerMeta = { school: string; team: string }
+
+function buildPlayerHref(gameId: number, slug: string, meta?: PlayerMeta) {
+  const parts = [`/game/${gameId}/player/${slug}`]
+  const qs: string[] = []
+  if (meta?.school) qs.push(`school=${meta.school}`)
+  if (meta?.team)   qs.push(`team=${encodeURIComponent(meta.team)}`)
+  if (qs.length) parts.push('?' + qs.join('&'))
+  return parts.join('')
+}
+
+function parseInline(
+  text: string,
+  playerSlugs: Record<string, string>,
+  playerMeta: Record<string, PlayerMeta>,
+  gameId: number,
+): React.ReactNode[] {
   const names = Object.keys(playerSlugs).sort((a, b) => b.length - a.length)
   const escaped = names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
   const pattern = escaped.length > 0
@@ -467,7 +483,7 @@ function parseInline(text: string, playerSlugs: Record<string, string>, gameId: 
       const raw = match[0]
       const slug = playerSlugs[raw.toLowerCase()]
       nodes.push(slug
-        ? <Link key={match.index} href={`/game/${gameId}/player/${slug}`} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">{raw}</Link>
+        ? <Link key={match.index} href={buildPlayerHref(gameId, slug, playerMeta[slug])} scroll={false} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">{raw}</Link>
         : <span key={match.index} className="text-[var(--paper-text)] font-medium">{raw}</span>
       )
     }
@@ -477,14 +493,19 @@ function parseInline(text: string, playerSlugs: Record<string, string>, gameId: 
   return nodes
 }
 
-function renderHighlights(text: string, playerSlugs: Record<string, string>, gameId: number) {
+function renderHighlights(
+  text: string,
+  playerSlugs: Record<string, string>,
+  playerMeta: Record<string, PlayerMeta>,
+  gameId: number,
+) {
   return text.split('\n\n').filter(Boolean).map((para, i) => (
     <p
       key={i}
       className="text-[16px] leading-[1.75] text-[var(--paper-muted)]"
       style={SERIF}
     >
-      {parseInline(para, playerSlugs, gameId)}
+      {parseInline(para, playerSlugs, playerMeta, gameId)}
     </p>
   ))
 }
@@ -546,6 +567,17 @@ export function GameShell({
 
   const flatStats = playerGameStats as unknown as FlatPlayerStat[]
   const allStats  = (box?.player_stats as PlayerStat[] | null) ?? []
+
+  // slug → { school, team } map for inline recap links + row clicks
+  const playerMeta = useMemo(() => {
+    const m: Record<string, PlayerMeta> = {}
+    for (const p of flatStats) {
+      if (p.player_slug && p.school_slug && !m[p.player_slug]) {
+        m[p.player_slug] = { school: p.school_slug, team: cleanName(p.team_name) }
+      }
+    }
+    return m
+  }, [flatStats])
 
   // ── On-mount: hydrate any cached highlights so we don't re-fetch ─────────
   useEffect(() => {
@@ -873,8 +905,10 @@ export function GameShell({
                   <StatTable
                     statType={stat}
                     players={flatStats.filter(p => p.stat_type === stat)}
-                    onPlayerSelect={(slug) => router.push(
-                      `/game/${gameIdNum}/player/${slug}?stat=${stat}`,
+                    onPlayerSelect={(p) => router.push(
+                      `/game/${gameIdNum}/player/${p.player_slug}?stat=${stat}`
+                        + (p.school_slug ? `&school=${p.school_slug}` : '')
+                        + `&team=${encodeURIComponent(cleanName(p.team_name))}`,
                       { scroll: false },
                     )}
                   />
@@ -925,7 +959,7 @@ export function GameShell({
                     </div>
                   ) : aiHighlights ? (
                     <div className="space-y-5 max-w-[68ch]">
-                      {renderHighlights(aiHighlights, playerSlugs, gameIdNum)}
+                      {renderHighlights(aiHighlights, playerSlugs, playerMeta, gameIdNum)}
                     </div>
                   ) : (
                     <div className="max-w-[68ch]">
@@ -1036,7 +1070,7 @@ export function GameShell({
               </div>
             ) : aiHighlights ? (
               <div className="space-y-5 max-w-[68ch]">
-                {renderHighlights(aiHighlights, playerSlugs, gameIdNum)}
+                {renderHighlights(aiHighlights, playerSlugs, playerMeta, gameIdNum)}
               </div>
             ) : (
               <p
