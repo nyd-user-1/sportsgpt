@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { flushSync } from 'react-dom'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, ChevronLeft, ChevronRight, Sun, Moon } from 'lucide-react'
+import { PanelLeftOpen, PanelLeftClose, Sun, Moon } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
   APP_NAME, ACCENT_COLOR, CHART_NAV_EVENT,
-  NAV_CYCLE, PATH_NAV, PATH_TITLE,
+  PATH_NAV, PATH_TITLE,
 } from '@/lib/app-config'
 
 type ChartNavDetail = {
@@ -25,7 +25,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
   const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
   const [dark, setDark] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')
@@ -84,14 +83,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
     pathname.startsWith('/launchpad') ? 'Launchpad' :
     pathname.startsWith('/position/') ? 'Positions' : undefined
   )
-
-  const isChartDetail = pathname.startsWith('/chart/')
-  const navIdx  = isChartDetail ? -1 : NAV_CYCLE.indexOf(pathname)
-  const n       = NAV_CYCLE.length
-  const prevNav = navIdx >= 0 ? NAV_CYCLE[(navIdx - 1 + n) % n] : null
-  const nextNav = navIdx >= 0 ? NAV_CYCLE[(navIdx + 1) % n]     : null
-
-  const navBtnCls = 'flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] transition-colors'
 
   // Mobile floating sidebar toggle — draggable, snaps to right edge on release.
   const FAB_SIZE = 48
@@ -213,26 +204,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
           </button>
 
           <AuthButtons />
-
-          {chartNav ? (
-            <div className="hidden sm:flex items-center gap-1.5">
-              <button onClick={() => router.push(chartNav.prevHref)} className={navBtnCls}>
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button onClick={() => router.push(chartNav.nextHref)} className={navBtnCls}>
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          ) : navIdx >= 0 ? (
-            <div className="hidden sm:flex items-center gap-1.5">
-              <button onClick={() => prevNav && router.push(prevNav)} className={navBtnCls}>
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button onClick={() => nextNav && router.push(nextNav)} className={navBtnCls}>
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          ) : null}
 
         </div>
         )}
