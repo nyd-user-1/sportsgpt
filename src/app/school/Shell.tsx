@@ -3,6 +3,7 @@
 import { useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import {
@@ -22,7 +23,7 @@ import {
 import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { cn } from '@/lib/utils'
-import type { SchoolIndexRow } from './page'
+import type { SchoolIndexRow, YearStatRow } from './page'
 
 const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
 const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
@@ -224,11 +225,80 @@ function fmtSignedPct(n: number | null) {
 
 // ── Shell ───────────────────────────────────────────────────────────────────
 
-export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) {
+export function SchoolMagazineShell({
+  schools,
+  yearStats,
+}: {
+  schools: SchoolIndexRow[]
+  yearStats: YearStatRow[]
+}) {
   const [activeDiv, setActiveDiv] = useState<'All' | 'I' | 'II' | 'III' | 'IV'>('All')
   const [query,     setQuery]     = useState('')
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
+
+  // ── Season state + navigation ──────────────────────────────────────────
+  const availableSeasons = useMemo(
+    () => [...new Set(yearStats.map(s => s.year))].sort((a, b) => b - a),
+    [yearStats],
+  )
+  const defaultSeason = availableSeasons[0] ?? 2025
+  const [selectedSeason, setSelectedSeason] = useState<number>(defaultSeason)
+
+  function shiftSeason(delta: 1 | -1) {
+    const idx = availableSeasons.indexOf(selectedSeason)
+    const next = (idx + delta + availableSeasons.length) % availableSeasons.length
+    setSelectedSeason(availableSeasons[next])
+  }
+
+  function fmtSeason(y: number) { return `${y - 1}-${String(y).slice(-2)}` }
+  const seasonLabel = fmtSeason(selectedSeason)
+
+  // ── Year-keyed data overlay ────────────────────────────────────────────
+  const yearMap = useMemo(() => {
+    const m = new Map<string, YearStatRow>()
+    for (const s of yearStats) {
+      if (s.year === selectedSeason) m.set(s.school_slug, s)
+    }
+    return m
+  }, [yearStats, selectedSeason])
+
+  const effectiveSchools = useMemo<SchoolIndexRow[]>(() => {
+    return schools.map(s => {
+      const ys = yearMap?.get(s.slug)
+      if (!ys) return s
+      return {
+        ...s,
+        enrollment: ys.g9_12,
+        k12: ys.k12,
+        num_white: ys.num_white,
+        num_black: ys.num_black,
+        num_hisp: ys.num_hisp,
+        num_asian: ys.num_asian,
+        num_multi: ys.num_multi,
+        num_am_ind: ys.num_am_ind,
+        num_ell: ys.num_ell,
+        num_swd: ys.num_swd,
+        num_ecdis: ys.num_ecdis,
+        num_homeless: ys.num_homeless,
+        needs_index: ys.needs_index,
+        needs_index_desc: ys.needs_index_desc,
+        grad_pct: ys.grad_pct ?? s.grad_pct,
+        ap_pct: ys.ap_pct ?? s.ap_pct,
+      }
+    })
+  }, [schools, yearMap])
+
+  // Section cycling — one table visible at a time, arrow advances
+  type SectionTab = 'academic' | 'demographic' | 'need' | 'trend'
+  const SECTION_ORDER: SectionTab[] = ['academic', 'demographic', 'need', 'trend']
+  const SECTION_TITLE: Record<SectionTab, string> = {
+    academic: 'Academic Index', demographic: 'Demographic Index', need: 'Need Index', trend: 'Trend Index',
+  }
+  const [sectionTab, setSectionTab] = useState<SectionTab>('academic')
+  function nextSection() {
+    setSectionTab(t => SECTION_ORDER[(SECTION_ORDER.indexOf(t) + 1) % SECTION_ORDER.length])
+  }
 
   // Per-table sort state
   const [acadCol,  setAcadCol]  = useState<AcadCol>('rank')
@@ -263,11 +333,11 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
   const handleTrendSort = makeSortHandler<TrendCol>(trendCol, setTrendCol, trendDir, setTrendDir, c => c === 'name' || c === 'division')
 
   const q = query.trim().toLowerCase()
-  const filtered = useMemo(() => schools.filter(s => {
+  const filtered = useMemo(() => effectiveSchools.filter(s => {
     if (activeDiv !== 'All' && s.division !== activeDiv) return false
     if (q && !s.name.toLowerCase().includes(q)) return false
     return true
-  }), [schools, activeDiv, q])
+  }), [effectiveSchools, activeDiv, q])
 
   // ── Academic Index ─────────────────────────────────────────────────────
   const acadRows = useMemo(() => buildAcadRows(filtered), [filtered])
@@ -374,8 +444,8 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
   }, [schools])
 
   const totalEnrollment = useMemo(
-    () => schools.reduce((s, sch) => s + (sch.enrollment ?? 0), 0),
-    [schools],
+    () => effectiveSchools.reduce((s, sch) => s + (sch.enrollment ?? 0), 0),
+    [effectiveSchools],
   )
 
   // ── Render helpers for tabular cells ───────────────────────────────────
@@ -395,7 +465,7 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
           <RevealFx delay={0} translateY={4}>
             <EditorialHead
               size="xl"
-              eyebrow="Section XI · Suffolk County"
+              eyebrow={`Section XI · Suffolk County · ${seasonLabel}`}
               subhead={
                 <>
                   Fifty-two Suffolk County high schools — academic profile,
@@ -420,14 +490,32 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
               className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]"
               style={SANS}
             >
-              Index
+              School Year
             </span>
+            {availableSeasons.length > 1 && (
+              <button
+                onClick={() => shiftSeason(-1)}
+                aria-label="Previous"
+                className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
+            )}
             <span
               className="text-[var(--paper-text)] tabular-nums min-w-[5.5rem] text-center"
               style={{ ...SERIF, fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}
             >
-              Suffolk
+              {seasonLabel}
             </span>
+            {availableSeasons.length > 1 && (
+              <button
+                onClick={() => shiftSeason(1)}
+                aria-label="Next"
+                className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            )}
           </div>
 
           <SearchInput
@@ -440,14 +528,31 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
           <SearchButtonGroup />
         </StickyControlBar>
 
-        {/* ── Academic Index ──────────────────────────────────────────────── */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-12" id="academic-index">
-          <RevealFx delay={0.15} translateY={8}>
-            <SectionHead title="Academic Index" eyebrow={<DivisionDots active={activeDiv} />} noRule />
+        {/* ── Single section — cycles Academic → Demographic → Need → Trend ── */}
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-12" id="index-section">
+          <RevealFx delay={0.15} translateY={8} key={sectionTab}>
+            <SectionHead
+              eyebrow={<DivisionDots active={activeDiv} />}
+              noRule
+              title={
+                <span className="inline-flex items-center gap-4">
+                  <span>{SECTION_TITLE[sectionTab]}</span>
+                  <button
+                    onClick={nextSection}
+                    aria-label="Next index"
+                    className="inline-flex items-center justify-center text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors duration-150"
+                  >
+                    <ArrowRight className="h-8 w-8" />
+                  </button>
+                </span>
+              }
+            />
+
             <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
 
-            {sortedAcad.length === 0 ? (
-              <EmptyTablet label={q ? `No schools match “${query}” in ${DIV_LABEL[activeDiv]}.` : `No schools recorded in ${DIV_LABEL[activeDiv]}.`} />
+            {/* ── Academic Index table ───────────────────────────────── */}
+            {sectionTab === 'academic' && (sortedAcad.length === 0 ? (
+              <EmptyTablet label={q ? `No schools match "${query}" in ${DIV_LABEL[activeDiv]}.` : `No schools recorded in ${DIV_LABEL[activeDiv]}.`} />
             ) : (
               <Tablet>
                 <div className="overflow-x-auto [&_thead_th]:!bg-transparent">
@@ -484,18 +589,11 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
                   </table>
                 </div>
               </Tablet>
-            )}
-          </RevealFx>
-        </div>
+            ))}
 
-        {/* ── Demographic Index ───────────────────────────────────────────── */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-2 pb-12" id="demographic-index">
-          <RevealFx delay={0.22} translateY={8}>
-            <SectionHead title="Demographic Index" eyebrow={<DivisionDots active={activeDiv} />} noRule />
-            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
-
-            {sortedDem.length === 0 ? (
-              <EmptyTablet label={q ? `No schools match “${query}” in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
+            {/* ── Demographic Index table ────────────────────────────── */}
+            {sectionTab === 'demographic' && (sortedDem.length === 0 ? (
+              <EmptyTablet label={q ? `No schools match "${query}" in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
             ) : (
               <Tablet>
                 <div className="overflow-x-auto [&_thead_th]:!bg-transparent">
@@ -532,18 +630,11 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
                   </table>
                 </div>
               </Tablet>
-            )}
-          </RevealFx>
-        </div>
+            ))}
 
-        {/* ── Need Index ─────────────────────────────────────────────────── */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-2 pb-12" id="need-index">
-          <RevealFx delay={0.28} translateY={8}>
-            <SectionHead title="Need Index" eyebrow={<DivisionDots active={activeDiv} />} noRule />
-            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
-
-            {sortedNeed.length === 0 ? (
-              <EmptyTablet label={q ? `No schools match “${query}” in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
+            {/* ── Need Index table ───────────────────────────────────── */}
+            {sectionTab === 'need' && (sortedNeed.length === 0 ? (
+              <EmptyTablet label={q ? `No schools match "${query}" in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
             ) : (
               <Tablet>
                 <div className="overflow-x-auto [&_thead_th]:!bg-transparent">
@@ -585,18 +676,11 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
                   </table>
                 </div>
               </Tablet>
-            )}
-          </RevealFx>
-        </div>
+            ))}
 
-        {/* ── Trend Index ────────────────────────────────────────────────── */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-2 pb-12" id="trend-index">
-          <RevealFx delay={0.34} translateY={8}>
-            <SectionHead title="Trend Index" eyebrow={<DivisionDots active={activeDiv} />} noRule />
-            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
-
-            {sortedTrend.length === 0 ? (
-              <EmptyTablet label={q ? `No schools match “${query}” in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
+            {/* ── Trend Index table ──────────────────────────────────── */}
+            {sectionTab === 'trend' && (sortedTrend.length === 0 ? (
+              <EmptyTablet label={q ? `No schools match "${query}" in ${DIV_LABEL[activeDiv]}.` : `No schools recorded.`} />
             ) : (
               <Tablet>
                 <div className="overflow-x-auto [&_thead_th]:!bg-transparent">
@@ -647,7 +731,7 @@ export function SchoolMagazineShell({ schools }: { schools: SchoolIndexRow[] }) 
                   </table>
                 </div>
               </Tablet>
-            )}
+            ))}
           </RevealFx>
 
           {/* ── Colophon ──────────────────────────────────────────────── */}

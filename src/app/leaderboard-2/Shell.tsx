@@ -547,16 +547,14 @@ function PlayerNameCell({
           <button
             onClick={e => { e.preventDefault(); e.stopPropagation(); onAssign() }}
             className={cn(
-              'shrink-0 ml-auto px-3 py-0.5 rounded-full text-[10px] uppercase tracking-[0.18em] border transition-all',
+              'shrink-0 ml-auto w-[82px] text-center py-1 text-[10px] uppercase tracking-[0.22em] border transition-all',
               active
-                ? 'opacity-100 text-[var(--paper)]'
-                : 'opacity-0 group-hover/row:opacity-100',
+                ? isSlot2
+                  ? 'opacity-100 border-transparent bg-[#dc2626] text-white'
+                  : 'opacity-100 border-transparent bg-[var(--paper-strong)] text-white'
+                : 'opacity-0 group-hover/row:opacity-100 border-[var(--paper-rule)] text-[var(--paper-text)] bg-[var(--paper-quiet)]',
             )}
-            style={
-              active
-                ? { background: isSlot2 ? '#b91c1c' : 'var(--paper-strong)', borderColor: 'transparent' }
-                : { color: isSlot2 ? '#dc2626' : 'var(--paper-strong)', borderColor: isSlot2 ? '#dc2626' : 'var(--paper-strong)' }
-            }
+            style={{ borderRadius: 2, ...SANS }}
             aria-label={isA ? 'Remove Player 1' : isB ? 'Remove Player 2' : `Assign as ${chipLabel}`}
           >
             {chipLabel}

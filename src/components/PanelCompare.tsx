@@ -36,6 +36,15 @@ export type AnyPlayer = ComparePasser | CompareRusher | CompareReceiver
 
 type StatTab = 'Passing' | 'Rushing' | 'Receiving'
 
+// ── Style tokens (editorial) ─────────────────────────────────────────────────
+
+const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
+const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
+const MONO  = { fontFamily: 'var(--font-mono), ui-monospace, monospace' } as const
+
+const P1_BLUE = 'var(--paper-strong)'
+const P2_RED  = '#dc2626'
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function fmt(v: number | null, decimals = 0, suffix = ''): string {
@@ -59,7 +68,7 @@ function winFor(mine: number | null, theirs: number | null, higherBetter = true)
   return (higherBetter ? m > t : m < t) ? 'win' : 'lose'
 }
 
-// ── PlayerInfoBar (fixed) + PlayerPhoto (scrolls) ────────────────────────────
+// ── PlayerInfoBar + PlayerPhoto ──────────────────────────────────────────────
 
 function PlayerInfoBar({ player, slot, onClear }: { player: AnyPlayer | null; slot: '1' | '2'; onClear: () => void }) {
   const logo = player ? SCHOOL_LOGOS[player.school_slug] : undefined
@@ -68,31 +77,47 @@ function PlayerInfoBar({ player, slot, onClear }: { player: AnyPlayer | null; sl
     : null
 
   return (
-    <div className="sticky top-0 z-10 border-b border-[var(--border)] flex items-center gap-2.5 px-3 py-2.5 bg-[var(--surface)]">
+    <div className="sticky top-0 z-10 border-b border-[var(--paper-rule)] flex items-center gap-3 px-4 py-3" style={{ backgroundColor: 'var(--paper)' }}>
       {player && logo ? (
-        <Link href={`/team/${player.school_slug}-varsity-football`} className="shrink-0">
-          <Image src={logo} alt={player.school_name} width={38} height={38}
-            className="rounded-full object-contain bg-white border border-[var(--border)] hover:opacity-80 transition-opacity" unoptimized />
+        <Link
+          href={`/team/${player.school_slug}-varsity-football`}
+          className="shrink-0 w-10 h-10 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity"
+        >
+          <Image src={logo} alt={player.school_name} width={34} height={34} className="object-contain" unoptimized />
         </Link>
       ) : (
-        <div className="shrink-0 w-[38px] h-[38px] rounded-full bg-[var(--inp-bg)] flex items-center justify-center">
-          <span className="text-xs font-bold text-[var(--muted)]">{slot}</span>
+        <div className="shrink-0 w-10 h-10 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center">
+          <span className="text-xs tabular-nums text-[var(--paper-faint)]" style={SANS}>{slot}</span>
         </div>
       )}
       <div className="flex-1 min-w-0">
         {player ? (
           <>
-            <p className="text-[15px] font-bold text-[var(--txt)] leading-snug truncate">{nameWithPosition}</p>
-            <p className="text-xs text-[var(--muted)] mt-0.5">{player.school_name} · {formatSeason(player.season)}</p>
+            <p
+              className="text-[var(--paper-text)] leading-tight truncate"
+              style={{ ...SERIF, fontSize: 16, fontWeight: 500, letterSpacing: '-0.005em' }}
+            >
+              {nameWithPosition}
+            </p>
+            <p
+              className="mt-0.5 text-[12px] text-[var(--paper-muted)] truncate"
+              style={{ ...SERIF, fontStyle: 'italic' }}
+            >
+              {player.school_name} · {formatSeason(player.season)}
+            </p>
           </>
         ) : (
-          <span className="text-xs text-[var(--muted)]">Select from table</span>
+          <span className="text-xs text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+            Select from table
+          </span>
         )}
       </div>
       {player && (
-        <button onClick={onClear}
-          className="shrink-0 p-0.5 self-start rounded text-[var(--muted)] hover:text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors"
-          aria-label={`Remove player ${slot}`}>
+        <button
+          onClick={onClear}
+          className="shrink-0 p-1 self-start rounded text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
+          aria-label={`Remove player ${slot}`}
+        >
           <X className="h-3.5 w-3.5" />
         </button>
       )}
@@ -105,27 +130,44 @@ function PlayerPhoto({ player, slot }: { player: AnyPlayer | null; slot: '1' | '
   const teamPhoto = player ? TEAM_PHOTOS[player.school_slug]?.[0] : undefined
   const logo      = player ? SCHOOL_LOGOS[player.school_slug] : undefined
   const heroSrc   = photo || teamPhoto
-  const label     = `Player ${slot}`
+  const badgeColor = slot === '1' ? P1_BLUE : P2_RED
 
   return (
-    <div className="relative mx-3 mt-3 mb-1 h-[225px] sm:h-[280px] rounded-xl overflow-hidden bg-[var(--inp-bg)]">
-      {player ? (
-        heroSrc ? (
-          <Image src={heroSrc} alt={player.player_name} fill className="object-cover object-top" unoptimized />
+    <div
+      className="mx-4 mt-4 mb-3 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] relative"
+      style={{ padding: 6, borderRadius: 3 }}
+    >
+      <div
+        className="relative w-full h-[225px] sm:h-[260px] overflow-hidden"
+        style={{ borderRadius: 1 }}
+      >
+        {player ? (
+          heroSrc ? (
+            <Image src={heroSrc} alt={player.player_name} fill className="object-cover object-top" unoptimized />
+          ) : (
+            <div
+              className="h-full flex items-center justify-center"
+              style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}
+            >
+              {logo && <Image src={logo} alt="" width={84} height={84} className="object-contain opacity-70" unoptimized />}
+            </div>
+          )
         ) : (
-          <div className="h-full flex items-center justify-center"
-            style={{ background: `linear-gradient(135deg, ${ACCENT_COLOR}18, ${ACCENT_COLOR}40)` }}>
-            {logo && <Image src={logo} alt="" width={64} height={64} className="object-contain opacity-50" unoptimized />}
+          <div className="h-full flex items-center justify-center bg-[var(--paper-quiet)]">
+            <span
+              className="text-[80px] leading-none text-[var(--paper-faint)] tabular-nums"
+              style={MONO}
+            >
+              {slot}
+            </span>
           </div>
-        )
-      ) : (
-        <div className="h-full flex items-center justify-center">
-          <span className="text-5xl font-black text-[var(--border)]">{slot}</span>
-        </div>
-      )}
-      <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-[11px] font-bold text-white shadow-sm"
-        style={{ background: slot === '1' ? ACCENT_COLOR : P2_BADGE_COLOR }}>
-        {label}
+        )}
+      </div>
+      <span
+        className="absolute top-3 left-3 z-10 px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-white"
+        style={{ ...SANS, borderRadius: 2, backgroundColor: slot === '1' ? P1_BLUE : P2_RED }}
+      >
+        Player {slot}
       </span>
     </div>
   )
@@ -136,16 +178,29 @@ function PlayerPhoto({ player, slot }: { player: AnyPlayer | null; slot: '1' | '
 function AccordionStatTable({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = React.useState(true)
   return (
-    <div className="mx-3 mb-3 mt-2 rounded-xl border border-[var(--border)] overflow-hidden bg-[var(--surface)]">
+    <div
+      className="mx-3 mb-3 mt-2 border border-[var(--paper-rule)] overflow-hidden bg-[var(--paper-quiet)]"
+      style={{ borderRadius: 3 }}
+    >
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors bg-[var(--surface)] hover:bg-[var(--inp-bg)]"
+        className="w-full flex items-center justify-between px-4 h-[46px] transition-colors hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]"
       >
-        <span className="text-sm font-bold text-[var(--txt)]">{title}</span>
-        <ChevronDown className={cn('h-3.5 w-3.5 text-[var(--muted)] transition-transform duration-200', open && 'rotate-180')} />
+        <span
+          className="text-[14px] text-[var(--paper-text)]"
+          style={{ ...SERIF, fontWeight: 600, letterSpacing: '-0.005em' }}
+        >
+          {title}
+        </span>
+        <ChevronDown
+          className={cn(
+            'h-3.5 w-3.5 text-[var(--paper-muted)] transition-transform duration-200',
+            open && 'rotate-180',
+          )}
+        />
       </button>
       {open && (
-        <div className="divide-y divide-[var(--border)] border-t border-[var(--border)]">
+        <div className="divide-y divide-[var(--paper-rule-soft)] border-t border-[var(--paper-rule)]">
           {children}
         </div>
       )}
@@ -153,19 +208,24 @@ function AccordionStatTable({ title, children }: { title: string; children: Reac
   )
 }
 
-const WIN_TEXT  = '#16a34a'  // green-600
-const WIN_BG    = 'bg-[#f0fdf4]'  // green-50
-
 function StatRow({ label, value, win }: { label: string; value: string; win: Winner }) {
   const isWin = win === 'win'
   return (
     <div className="flex items-center justify-between px-4 py-2.5">
-      <span className="text-sm text-[var(--muted)]">{label}</span>
-      <div className="flex items-center gap-1">
-        {isWin && <Check className="h-3.5 w-3.5 shrink-0" style={{ color: WIN_TEXT }} />}
+      <span
+        className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        {label}
+      </span>
+      <div className="flex items-center gap-1.5">
+        {isWin && <Check className="h-3.5 w-3.5 shrink-0 text-emerald-500" strokeWidth={2.5} />}
         <span
-          className={cn('text-sm tabular-nums', isWin ? 'font-bold' : 'font-medium text-[var(--muted)]')}
-          style={isWin ? { color: WIN_TEXT } : undefined}
+          className={cn(
+            'text-[14px] tabular-nums',
+            isWin ? 'font-medium text-emerald-500' : 'text-[var(--paper-muted)]',
+          )}
+          style={MONO}
         >
           {value}
         </span>
@@ -178,8 +238,13 @@ function StatRow({ label, value, win }: { label: string; value: string; win: Win
 
 function EmptyBlock() {
   return (
-    <div className="mx-3 mt-2 flex items-center justify-center h-20 rounded-xl border border-dashed border-[var(--border)]">
-      <span className="text-xs text-[var(--muted)]">Select a player</span>
+    <div
+      className="mx-3 mt-2 flex items-center justify-center h-20 border border-dashed border-[var(--paper-rule)]"
+      style={{ borderRadius: 3 }}
+    >
+      <span className="text-xs text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+        Select a player
+      </span>
     </div>
   )
 }
@@ -267,12 +332,7 @@ function ReceivingStatBlock({ player, opponent }: { player: AnyPlayer | null; op
   )
 }
 
-// ── DiffStrip ─────────────────────────────────────────────────────────────────
-
-const P1_COLOR = WIN_TEXT     // green for player 1 leads
-const P2_COLOR = '#f97316'    // orange for player 2 leads
-
-const P2_BADGE_COLOR = '#dc2626'  // red for player 2 badge
+// ── DiffStrip footer ─────────────────────────────────────────────────────────
 
 function DiffCell({ label, delta }: { label: string; delta: number | null }) {
   const p1Wins = delta != null && delta > 0
@@ -280,15 +340,23 @@ function DiffCell({ label, delta }: { label: string; delta: number | null }) {
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-1.5 py-3">
-      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold">{label}</span>
+      <span className="text-[9px] uppercase tracking-[0.22em] text-[var(--paper-faint)]" style={SANS}>{label}</span>
       {p1Wins ? (
-        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white whitespace-nowrap border-2"
-          style={{ color: ACCENT_COLOR, borderColor: ACCENT_COLOR }}>Player 1</span>
+        <span
+          className="px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-white"
+          style={{ ...SANS, borderRadius: 2, backgroundColor: P1_BLUE }}
+        >
+          Player 1
+        </span>
       ) : p2Wins ? (
-        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-white whitespace-nowrap border-2"
-          style={{ color: P2_BADGE_COLOR, borderColor: P2_BADGE_COLOR }}>Player 2</span>
+        <span
+          className="px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-white"
+          style={{ ...SANS, borderRadius: 2, backgroundColor: P2_RED }}
+        >
+          Player 2
+        </span>
       ) : (
-        <span className="text-xs text-[var(--muted)]">—</span>
+        <span className="text-xs text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic' }}>—</span>
       )}
     </div>
   )
@@ -299,7 +367,6 @@ type DiffItem = { label: string; delta: number | null; format: (n: number) => st
 function buildDiffs(playerA: AnyPlayer, playerB: AnyPlayer, statTab: StatTab): DiffItem[] {
   const fmtInt = (n: number) => (n > 0 ? '+' : '') + Math.round(n)
   const fmtDp1 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1)
-  const fmtDp2 = (n: number) => (n > 0 ? '+' : '') + n.toFixed(2)
   const fmtPp  = (n: number) => (n > 0 ? '+' : '') + n.toFixed(1) + 'pp'
   const d = <T extends number | null>(a: T, b: T) => (a != null && b != null ? (a as number) - (b as number) : null)
 
@@ -330,6 +397,7 @@ function buildDiffs(playerA: AnyPlayer, playerB: AnyPlayer, statTab: StatTab): D
       { label: 'YPC',   delta: aYpc != null && bYpc != null ? aYpc - bYpc : null,         format: fmtDp1 },
       { label: 'TDs',   delta: d(a.rush_tds,       b.rush_tds),      format: fmtInt },
       { label: 'YPG',   delta: aYpg != null && bYpg != null ? aYpg - bYpg : null,         format: fmtDp1 },
+      { label: 'TD%',   delta: aTdPct != null && bTdPct != null ? aTdPct - bTdPct : null, format: fmtPp  },
       { label: 'R-EXP', delta: aRExp != null && bRExp != null ? aRExp - bRExp : null,     format: fmtDp1 },
     ]
   }
@@ -344,22 +412,21 @@ function buildDiffs(playerA: AnyPlayer, playerB: AnyPlayer, statTab: StatTab): D
   ]
 }
 
-function WinnerCell({ playerA, playerB, p1Wins, p2Wins }: { playerA: AnyPlayer; playerB: AnyPlayer; p1Wins: number; p2Wins: number }) {
-  const p1Last = playerA.player_name.split(' ').pop()!
-  const p2Last = playerB.player_name.split(' ').pop()!
+function WinnerCell({ p1Wins, p2Wins }: { p1Wins: number; p2Wins: number }) {
   const tie = p1Wins === p2Wins
-
+  const p1 = p1Wins > p2Wins
   return (
     <div className="flex-1 flex flex-col items-center justify-center gap-1.5 py-3 px-1">
-      <span className="text-[9px] uppercase tracking-wider text-[var(--muted)] font-semibold">Winner</span>
+      <span className="text-[9px] uppercase tracking-[0.22em] text-[var(--paper-faint)]" style={SANS}>Winner</span>
       {tie ? (
-        <span className="text-xs text-[var(--muted)]">—</span>
-      ) : p1Wins > p2Wins ? (
-        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold text-white whitespace-nowrap"
-          style={{ background: ACCENT_COLOR }}>Player 1</span>
+        <span className="text-xs text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic' }}>—</span>
       ) : (
-        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold text-white whitespace-nowrap"
-          style={{ background: P2_BADGE_COLOR }}>Player 2</span>
+        <span
+          className="px-2 py-1 text-[10px] uppercase tracking-[0.22em] text-white"
+          style={{ ...SANS, borderRadius: 2, backgroundColor: p1 ? P1_BLUE : P2_RED }}
+        >
+          Player {p1 ? '1' : '2'}
+        </span>
       )}
     </div>
   )
@@ -371,20 +438,51 @@ function DiffStrip({ playerA, playerB, statTab }: { playerA: AnyPlayer; playerB:
   const p2Wins = diffs.filter(d => d.delta != null && d.delta < 0).length
 
   return (
-    <div className="flex items-stretch divide-x divide-[var(--border)]">
+    <div className="flex items-stretch divide-x divide-[var(--paper-rule)] bg-[var(--paper)]">
       {diffs.map(item => <DiffCell key={item.label} label={item.label} delta={item.delta} />)}
-      <WinnerCell playerA={playerA} playerB={playerB} p1Wins={p1Wins} p2Wins={p2Wins} />
+      <WinnerCell p1Wins={p1Wins} p2Wins={p2Wins} />
     </div>
   )
 }
 
-// ── Panel title ───────────────────────────────────────────────────────────────
+// ── Panel title — stacked avatars + serif italic "X vs. Y" ──────────────────
 
-function panelTitle(a: AnyPlayer | null, b: AnyPlayer | null): string {
-  if (a && b) return `${a.player_name.split(' ').pop()} vs. ${b.player_name.split(' ').pop()}`
-  if (a) return a.player_name
-  if (b) return b.player_name
-  return 'Compare Players'
+function avatarSrc(p: AnyPlayer | null): string | undefined {
+  if (!p) return undefined
+  return SCHOOL_LOGOS[p.school_slug] || PLAYER_PHOTOS[p.player_slug] || TEAM_PHOTOS[p.school_slug]?.[0]
+}
+
+function PanelCompareTitle({ playerA, playerB }: { playerA: AnyPlayer | null; playerB: AnyPlayer | null }) {
+  const aLast = playerA?.player_name.split(' ').pop() ?? null
+  const bLast = playerB?.player_name.split(' ').pop() ?? null
+  const aSrc  = avatarSrc(playerA)
+  const bSrc  = avatarSrc(playerB)
+
+  const title = aLast && bLast
+    ? <>{aLast}<span className="mx-1.5 italic text-[var(--paper-muted)]">vs.</span>{bLast}</>
+    : aLast || bLast || 'Compare Players'
+
+  return (
+    <div className="flex items-center gap-3 min-w-0">
+      <span
+        className="text-[var(--paper-text)] truncate"
+        style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+      >
+        {title}
+      </span>
+    </div>
+  )
+}
+
+function StackedLogo({ src, shadow }: { src: string | undefined; shadow?: boolean }) {
+  return (
+    <div
+      className="shrink-0 w-10 h-10 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden"
+      style={{ outline: '2px solid var(--paper)', boxShadow: shadow ? '-2px 0 6px rgba(0,0,0,0.35)' : undefined }}
+    >
+      {src && <Image src={src} alt="" width={34} height={34} className="object-contain" unoptimized />}
+    </div>
+  )
 }
 
 // ── Main component ────────────────────────────────────────────────────────────
@@ -398,25 +496,29 @@ export function PanelCompare({
 }) {
   const router = useRouter()
 
+  function basePath() {
+    return window.location.pathname.replace(/\/+$/, '') || '/leaderboard'
+  }
+
   function clearA() {
     const params = new URLSearchParams(window.location.search)
     params.delete('a')
     const curB = params.get('b')
     if (curB) { params.set('a', curB); params.delete('b') }
-    router.replace('/leaderboard?' + params.toString(), { scroll: false })
+    router.replace(`${basePath()}?${params.toString()}`, { scroll: false })
   }
 
   function clearB() {
     const params = new URLSearchParams(window.location.search)
     params.delete('b')
-    router.replace('/leaderboard?' + params.toString(), { scroll: false })
+    router.replace(`${basePath()}?${params.toString()}`, { scroll: false })
   }
 
   function closeAll() {
     const params = new URLSearchParams(window.location.search)
     params.delete('a')
     params.delete('b')
-    router.replace('/leaderboard?' + params.toString(), { scroll: false })
+    router.replace(`${basePath()}?${params.toString()}`, { scroll: false })
   }
 
   const footer = (playerA && playerB) ? (
@@ -427,14 +529,14 @@ export function PanelCompare({
     <AppPanel
       open={!!(playerA || playerB)}
       onClose={closeAll}
-      title={panelTitle(playerA, playerB)}
+      title={<PanelCompareTitle playerA={playerA} playerB={playerB} />}
       defaultExpanded={true}
       bodyClass="overflow-hidden"
       footer={footer}
     >
-      <div className="h-full flex">
+      <div className="h-full flex" style={{ backgroundColor: 'var(--paper)', color: 'var(--paper-text)' }}>
         {/* Column 1 */}
-        <div className="flex flex-col flex-1 min-w-0 border-r border-[var(--border)]">
+        <div className="flex flex-col flex-1 min-w-0 border-r border-[var(--paper-rule)]">
           <div className="flex-1 overflow-y-auto no-scrollbar">
             <PlayerPhoto player={playerA} slot="1" />
             <PlayerInfoBar player={playerA} slot="1" onClear={clearA} />

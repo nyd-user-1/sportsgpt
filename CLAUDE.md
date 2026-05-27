@@ -31,8 +31,8 @@
 
 - **This project has a design system, even if loosely defined.** The paper palette, editorial components in `src/components/editorial/`, the SortTh / Tablet / DivisionTabs / SectionHead primitives, the `paper-link` utility, and the CSS variables in `globals.css` are the design system. Use them.
 - Reach for the existing token before introducing a one-off. Need muted text? `--paper-muted`, not `text-[var(--paper-text)]/75`. Need a divider? `--paper-rule` / `--paper-rule-soft`, not a custom `border-zinc-700/40`. Need a tab bar? `DivisionTabs`, not a hand-rolled `<div>` with custom borders.
-- When the design system is missing a primitive a page actually needs, extract a new one to `src/components/editorial/` rather than inlining a snowflake. Future pages will reuse it; that's the whole point.
-- This rule exists to reduce churn — every snowflake we ship today is rework when the next page wants the same effect.
+- When the design system is missing a primitive a page actually needs, extract a new shared component into `src/components/editorial/` rather than writing one-off styling inline. Future pages will reuse it.
+- One-off styling we ship today is rework tomorrow when the next page wants the same effect.
 
 ## Link Standard
 
