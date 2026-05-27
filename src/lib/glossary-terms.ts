@@ -1,7 +1,7 @@
 export type GlossaryTerm = {
   id: string
   name: string
-  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics' | 'Data Architecture'
+  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics' | 'Academic' | 'Data Architecture'
   definition: string
   formula?: string
   source: string
@@ -389,6 +389,59 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     formula: 'New ELO = Old ELO + K × (Result − Expected Result)',
     source: 'Football Data Hub — Official Metric Definitions',
     caveats: 'Available for 2021–2024. K-factor and full implementation details not yet recovered — displayed values are from the original computation and cannot currently be reproduced.',
+  },
+
+  // ── Academic ─────────────────────────────────────────────────────────────
+
+  {
+    id: 'enroll',
+    name: 'Enrollment',
+    category: 'Academic',
+    definition: 'Total student enrollment at the high school across all four grades. Used as a rough proxy for program size and the talent pool a football team can draw from. Section XI divisions are loosely aligned to enrollment, though placement also reflects competitive history.',
+    source: 'Public school district reports',
+    caveats: 'Enrollment figures are reported by the district and may lag the current school year by one cycle.',
+  },
+  {
+    id: 'sat',
+    name: 'Avg SAT',
+    category: 'Academic',
+    definition: 'Average combined SAT score (Math + Evidence-Based Reading and Writing) for the school. A composite indicator of academic performance, used here as one of four inputs to the ACAD index.',
+    formula: 'SAT = Math (200–800) + EBRW (200–800), range 400–1600',
+    source: 'Public school district reports; College Board summary data',
+    caveats: 'Reported as a school-wide average; participation rate varies between schools and is not normalized for here.',
+  },
+  {
+    id: 'ap',
+    name: 'AP Pass %',
+    category: 'Academic',
+    definition: 'Percentage of Advanced Placement exam takers at the school who earned a score of 3 or higher (the standard threshold for college credit). A signal of academic depth in upper-level coursework.',
+    source: 'Public school district reports; College Board summary data',
+    caveats: 'Pass rate is a function of both instruction quality and which students opt into AP exams; schools with more selective AP enrollment may post higher rates without a stronger overall program.',
+  },
+  {
+    id: 'grad',
+    name: 'Graduation Rate',
+    category: 'Academic',
+    definition: 'Percentage of the entering freshman cohort that earned a diploma within four years. The standard high school outcome measure used by the New York State Education Department.',
+    source: 'NYSED four-year cohort graduation reports',
+    caveats: 'Cohort tracking excludes transfer students who leave the district before graduation; small numerator/denominator swings can move the rate noticeably year-to-year for smaller schools.',
+  },
+  {
+    id: 'coll',
+    name: 'College Acceptance %',
+    category: 'Academic',
+    definition: 'Percentage of the graduating class accepted to at least one two- or four-year college. Captures post-secondary intent and access at the school level.',
+    source: 'Public school district reports',
+    caveats: 'Acceptance is self-reported by districts and is not the same as enrollment or completion. Three Section XI schools currently have no figure on record.',
+  },
+  {
+    id: 'acad',
+    name: 'Academic Index (ACAD)',
+    category: 'Academic',
+    definition: 'A composite signature stat that blends SAT, AP pass rate, graduation rate, and college acceptance rate into a single 0–100 score. Each input is converted to a z-score on the visible set, the four z-scores are averaged with equal weight, and the result is rescaled to 0–100. Higher is stronger relative to the cohort currently in view; the score is recomputed whenever the division filter changes, so it always answers "how does this school compare to the schools alongside it on this page."',
+    formula: 'ACAD = rescale₀₋₁₀₀( mean( z(SAT), z(AP%), z(Grad%), z(Coll%) ) )',
+    source: 'Derived in src/app/school/Shell.tsx from public school district reports',
+    caveats: 'Schools missing any input are imputed at the cohort mean (z=0) for that input, which gives them an average rather than a missing contribution. ACAD is a within-set comparison and is not directly comparable across different filter selections.',
   },
 
   // ── Data Architecture ────────────────────────────────────────────────────

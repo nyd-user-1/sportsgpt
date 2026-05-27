@@ -565,7 +565,7 @@ function VersusSlot({ label, row }: { label: string; row: (Passer | Rusher | Rec
   )
 }
 
-// ── Passing Tablet ──────────────────────────────────────────────────────────
+// ── Shared player cell — rank + logo + Name/School stacked ─────────────────
 
 type SharedRowProps<R extends { player_slug: string; player_name: string; school_slug: string; school_name: string; season: number }> = {
   rows: R[]
@@ -575,6 +575,59 @@ type SharedRowProps<R extends { player_slug: string; player_name: string; school
   compareAKey: string | null
   compareBKey: string | null
 }
+
+function LeaderboardPlayerCell({
+  rank, player, versusMode, versusLabel,
+}: {
+  rank: number
+  player: { player_slug: string; player_name: string; school_slug: string; school_name: string }
+  versusMode: boolean
+  versusLabel: string | null
+}) {
+  const logo     = SCHOOL_LOGOS[player.school_slug]
+  const teamSlug = `${player.school_slug}-varsity-football`
+  return (
+    <td className="pl-5 py-3.5">
+      <div className="flex items-center gap-3 min-w-0">
+        <span className="shrink-0 w-6 text-right">
+          {versusMode && versusLabel ? (
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px]" style={SANS}>{versusLabel}</span>
+          ) : (
+            <span className="text-[var(--paper-faint)] tabular-nums" style={{ ...MONO, fontSize: 11 }}>{rank}.</span>
+          )}
+        </span>
+        {logo && (
+          <Link
+            href={`/team/${teamSlug}`}
+            onClick={e => e.stopPropagation()}
+            aria-label={stripSuffix(player.school_name)}
+            className="shrink-0"
+          >
+            <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
+          </Link>
+        )}
+        <div className="min-w-0">
+          <Link
+            href={`/player/${player.player_slug}`}
+            onClick={e => e.stopPropagation()}
+            className="block text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
+            style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+          >
+            {player.player_name}
+          </Link>
+          <p
+            className="text-[11.5px] text-[var(--paper-muted)] truncate"
+            style={{ ...SERIF, fontStyle: 'italic' }}
+          >
+            {stripSuffix(player.school_name)}
+          </p>
+        </div>
+      </div>
+    </td>
+  )
+}
+
+// ── Passing Tablet ──────────────────────────────────────────────────────────
 
 function PassingTablet({
   rows, sortCol, sortDir, onSort, onRowClick, selectedPlayer, versusMode, compareAKey, compareBKey,
@@ -587,11 +640,11 @@ function PassingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr className="border-b border-[var(--paper-rule)]">
-              <th colSpan={4} className="pl-5 pr-3 pt-3 pb-1.5 text-left" />
+              <th colSpan={2} className="pl-5 pr-3 pt-3 pb-1.5 text-left" />
               <th colSpan={6} className="px-3 pt-3 pb-1.5 text-left">
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>Standard</span>
               </th>
-              <th colSpan={5} className="px-3 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
+              <th colSpan={4} className="px-3 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>Foundational QB</span>
               </th>
               <th colSpan={3} className="px-3 pr-5 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
@@ -599,10 +652,8 @@ function PassingTablet({
               </th>
             </tr>
             <tr>
-              <SortTh col="rank"         label="#"     sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
-              <SortTh col="player_name"  label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="school_name"  label="Team"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="season"       label="Yr"    sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-16" />
+              <SortTh col="player_name"  label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="season"       label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="pass_yards"   label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" glossaryId="pass-yds" />
               <SortTh col="attempts"     label="ATT"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="att-pass" />
               <SortTh col="completions"  label="CMP"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="comp" />
@@ -658,36 +709,8 @@ function PassingRow({ rank, p, onClick, active, versusMode, versusLabel }: {
         versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
       )}
     >
-      <td className={cn(tabletTd, 'pl-5 tabular-nums')} style={MONO}>
-        {versusMode && versusLabel ? (
-          <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px]" style={SANS}>{versusLabel}</span>
-        ) : (
-          <span className="text-[var(--paper-faint)]">{String(rank).padStart(2, ' ')}.</span>
-        )}
-      </td>
-      <td className={tabletTd}>
-        <Link
-          href={`/player/${p.player_slug}`}
-          onClick={e => e.stopPropagation()}
-          className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] hover:underline underline-offset-4 decoration-[var(--paper-rule)] transition-colors text-[15px] leading-tight"
-          style={{ ...SERIF, fontWeight: 500 }}
-        >
-          {p.player_name}
-        </Link>
-      </td>
-      <td className={tabletTd}>
-        <Link
-          href={`/team/${p.school_slug}-varsity-football`}
-          onClick={e => e.stopPropagation()}
-          className="flex items-center gap-2 text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors min-w-0"
-        >
-          {SCHOOL_LOGOS[p.school_slug] && (
-            <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain shrink-0" unoptimized />
-          )}
-          <span className="truncate" style={{ ...SERIF, fontStyle: 'italic', fontSize: 13.5 }}>{stripSuffix(p.school_name)}</span>
-        </Link>
-      </td>
-      <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)]')} style={MONO}>{formatSeason(p.season)}</td>
+      <LeaderboardPlayerCell rank={rank} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+      <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.pass_yards)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.attempts)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.completions)}</td>
@@ -718,10 +741,8 @@ function RushingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr>
-              <SortTh col="rank"          label="#"     sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
-              <SortTh col="player_name"   label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="school_name"   label="Team"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="season"        label="Yr"    sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-16" />
+              <SortTh col="player_name"   label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="season"        label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="rush_yards"    label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" />
               <SortTh col="rush_attempts" label="ATT"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
               <SortTh col="ypc"           label="YPC"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
@@ -751,36 +772,8 @@ function RushingTablet({
                     versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
                   )}
                 >
-                  <td className={cn(tabletTd, 'pl-5 tabular-nums')} style={MONO}>
-                    {versusMode && versusLabel ? (
-                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px]" style={SANS}>{versusLabel}</span>
-                    ) : (
-                      <span className="text-[var(--paper-faint)]">{String(i + 1).padStart(2, ' ')}.</span>
-                    )}
-                  </td>
-                  <td className={tabletTd}>
-                    <Link
-                      href={`/player/${p.player_slug}`}
-                      onClick={e => e.stopPropagation()}
-                      className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] hover:underline underline-offset-4 decoration-[var(--paper-rule)] transition-colors text-[15px] leading-tight"
-                      style={{ ...SERIF, fontWeight: 500 }}
-                    >
-                      {p.player_name}
-                    </Link>
-                  </td>
-                  <td className={tabletTd}>
-                    <Link
-                      href={`/team/${p.school_slug}-varsity-football`}
-                      onClick={e => e.stopPropagation()}
-                      className="flex items-center gap-2 text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors min-w-0"
-                    >
-                      {SCHOOL_LOGOS[p.school_slug] && (
-                        <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain shrink-0" unoptimized />
-                      )}
-                      <span className="truncate" style={{ ...SERIF, fontStyle: 'italic', fontSize: 13.5 }}>{stripSuffix(p.school_name)}</span>
-                    </Link>
-                  </td>
-                  <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)]')} style={MONO}>{formatSeason(p.season)}</td>
+                  <LeaderboardPlayerCell rank={i + 1} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+                  <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.rush_yards)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.rush_attempts)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(ypc)}</td>
@@ -810,10 +803,8 @@ function ReceivingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr>
-              <SortTh col="rank"        label="#"     sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
-              <SortTh col="player_name" label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="school_name" label="Team"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
-              <SortTh col="season"      label="Yr"    sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-16" />
+              <SortTh col="player_name" label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="season"      label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="recv_yards"  label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" />
               <SortTh col="receptions"  label="REC"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
               <SortTh col="ypr"         label="YPR"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
@@ -840,36 +831,8 @@ function ReceivingTablet({
                     versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
                   )}
                 >
-                  <td className={cn(tabletTd, 'pl-5 tabular-nums')} style={MONO}>
-                    {versusMode && versusLabel ? (
-                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px]" style={SANS}>{versusLabel}</span>
-                    ) : (
-                      <span className="text-[var(--paper-faint)]">{String(i + 1).padStart(2, ' ')}.</span>
-                    )}
-                  </td>
-                  <td className={tabletTd}>
-                    <Link
-                      href={`/player/${p.player_slug}`}
-                      onClick={e => e.stopPropagation()}
-                      className="text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] hover:underline underline-offset-4 decoration-[var(--paper-rule)] transition-colors text-[15px] leading-tight"
-                      style={{ ...SERIF, fontWeight: 500 }}
-                    >
-                      {p.player_name}
-                    </Link>
-                  </td>
-                  <td className={tabletTd}>
-                    <Link
-                      href={`/team/${p.school_slug}-varsity-football`}
-                      onClick={e => e.stopPropagation()}
-                      className="flex items-center gap-2 text-[var(--paper-muted)] hover:text-[var(--paper-strong)] transition-colors min-w-0"
-                    >
-                      {SCHOOL_LOGOS[p.school_slug] && (
-                        <Image src={SCHOOL_LOGOS[p.school_slug]} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain shrink-0" unoptimized />
-                      )}
-                      <span className="truncate" style={{ ...SERIF, fontStyle: 'italic', fontSize: 13.5 }}>{stripSuffix(p.school_name)}</span>
-                    </Link>
-                  </td>
-                  <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)]')} style={MONO}>{formatSeason(p.season)}</td>
+                  <LeaderboardPlayerCell rank={i + 1} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+                  <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.recv_yards)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.receptions)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(ypr)}</td>

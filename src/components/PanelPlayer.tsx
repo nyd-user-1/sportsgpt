@@ -154,40 +154,27 @@ function PlayerPhoto({ player }: { player: AnyPlayerRow }) {
 
 // ── PlayerInfoBar — identity row ─────────────────────────────────────────────
 
-function PlayerInfoBar({ player }: { player: AnyPlayerRow }) {
-  const logo = SCHOOL_LOGOS[player.school_slug]
+const POSITION_LABEL: Record<StatTab, string> = {
+  Passing:   'Quarterback',
+  Rushing:   'Running Back',
+  Receiving: 'Wide Receiver',
+}
+
+function PlayerInfoBar({ player, statTab }: { player: AnyPlayerRow; statTab: StatTab }) {
   return (
-    <div className="px-5 pb-5 flex items-center gap-3 border-b border-[var(--paper-rule)]">
-      <Link
-        href={`/team/${player.school_slug}-varsity-football`}
-        aria-label={`${player.school_name} team page`}
-        className="shrink-0 w-12 h-12 rounded-full bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity"
+    <div className="px-5 pb-5 border-b border-[var(--paper-rule)]">
+      <p
+        className="text-[var(--paper-text)] leading-tight truncate"
+        style={{ ...SERIF, fontSize: 20, fontWeight: 500, letterSpacing: '-0.005em' }}
       >
-        {logo && (
-          <Image
-            src={logo}
-            alt={player.school_name}
-            width={32}
-            height={32}
-            className="object-contain"
-            unoptimized
-          />
-        )}
-      </Link>
-      <div className="flex-1 min-w-0">
-        <p
-          className="text-[var(--paper-text)] leading-tight truncate"
-          style={{ ...SERIF, fontSize: 20, fontWeight: 500, letterSpacing: '-0.005em' }}
-        >
-          {player.player_name}
-        </p>
-        <p
-          className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
-          style={{ ...SERIF, fontStyle: 'italic' }}
-        >
-          {player.school_name} · {formatSeason(player.season)}
-        </p>
-      </div>
+        {player.player_name}
+      </p>
+      <p
+        className="mt-0.5 text-[12.5px] text-[var(--paper-muted)] truncate"
+        style={{ ...SERIF, fontStyle: 'italic' }}
+      >
+        {POSITION_LABEL[statTab]} · {formatSeason(player.season)}
+      </p>
     </div>
   )
 }
@@ -273,7 +260,7 @@ export function PlayerPanelContent({ player, statTab }: { player: AnyPlayerRow; 
       style={{ backgroundColor: 'var(--paper)', color: 'var(--paper-text)' }}
     >
       <PlayerPhoto player={player} />
-      <PlayerInfoBar player={player} />
+      <PlayerInfoBar player={player} statTab={statTab} />
       {statTab === 'Passing'   && <PassingStats   player={player as PlayerPasser} />}
       {statTab === 'Rushing'   && <RushingStats   player={player as PlayerRusher} />}
       {statTab === 'Receiving' && <ReceivingStats player={player as PlayerReceiver} />}
@@ -301,11 +288,32 @@ export function PanelPlayer({
     </div>
   ) : undefined
 
+  const headerLogo = player ? SCHOOL_LOGOS[player.school_slug] : undefined
+  const title = player ? (
+    <div className="flex items-center gap-2 min-w-0">
+      {headerLogo && (
+        <div
+          style={{ width: 22, height: 22 }}
+          className="shrink-0 rounded-full overflow-hidden bg-[var(--paper-quiet)] border border-[var(--paper-rule)] flex items-center justify-center"
+        >
+          <Image src={headerLogo} alt="" width={17} height={17} className="object-contain" unoptimized />
+        </div>
+      )}
+      <Link
+        href={`/team/${player.school_slug}-varsity-football`}
+        className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors truncate"
+        style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
+      >
+        {player.school_name}
+      </Link>
+    </div>
+  ) : 'Player'
+
   return (
     <AppPanel
       open={!!player}
       onClose={onClose}
-      title={player?.player_name ?? 'Player'}
+      title={title}
       footer={footer}
     >
       {player && <PlayerPanelContent player={player} statTab={statTab} />}

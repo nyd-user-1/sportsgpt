@@ -1,5 +1,5 @@
 import { sql } from '@/lib/db'
-import SchoolTable from './SchoolTable'
+import { SchoolMagazineShell } from './Shell'
 
 export const dynamic = 'force-dynamic'
 
@@ -7,30 +7,41 @@ export type SchoolIndexRow = {
   slug: string
   name: string
   division: string
+  section: string | null
+  address: string | null
   enrollment: number | null
-  wins_2024: number
-  losses_2024: number
+  grad_pct: number | null
+  avg_sat: number | null
+  ap_pct: number | null
+  coll_pct: number | null
+}
+
+const parsePct = (s: unknown): number | null => {
+  if (s == null) return null
+  const n = parseFloat(String(s).replace('%', '').trim())
+  return Number.isFinite(n) ? n : null
 }
 
 export default async function SchoolPage() {
   const rows = await sql`
-    SELECT sch.slug, sch.name, sch.division, sch.enrollment,
-      COALESCE(SUM(CASE WHEN tss.season = 2024 THEN tss.overall_wins ELSE 0 END), 0)::int AS wins_2024,
-      COALESCE(SUM(CASE WHEN tss.season = 2024 THEN tss.overall_losses ELSE 0 END), 0)::int AS losses_2024
-    FROM schools sch
-    LEFT JOIN teams t ON t.school_slug = sch.slug
-    LEFT JOIN team_season_stats tss ON tss.team_slug = t.slug
-    GROUP BY sch.slug, sch.name, sch.division, sch.enrollment
-    ORDER BY sch.division, sch.name`
+    SELECT slug, name, division, section, address,
+      enrollment, graduation_rate, avg_sat,
+      ap_pass_rate, college_acceptance_rate
+    FROM schools
+    ORDER BY name`
 
   const schools: SchoolIndexRow[] = rows.map(r => ({
-    slug: r.slug as string,
-    name: r.name as string,
-    division: r.division as string,
+    slug:       r.slug    as string,
+    name:       r.name    as string,
+    division:   r.division as string,
+    section:    (r.section as string | null) ?? null,
+    address:    (r.address as string | null) ?? null,
     enrollment: r.enrollment != null ? Number(r.enrollment) : null,
-    wins_2024: Number(r.wins_2024),
-    losses_2024: Number(r.losses_2024),
+    grad_pct:   parsePct(r.graduation_rate),
+    avg_sat:    r.avg_sat != null ? Number(r.avg_sat) : null,
+    ap_pct:     parsePct(r.ap_pass_rate),
+    coll_pct:   parsePct(r.college_acceptance_rate),
   }))
 
-  return <SchoolTable schools={schools} />
+  return <SchoolMagazineShell schools={schools} />
 }

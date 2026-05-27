@@ -18,6 +18,7 @@ const CATEGORIES = [
   'Foundational QB',
   'Advanced QB',
   'Team Analytics',
+  'Academic',
   'Data Architecture',
 ] as const
 
@@ -33,6 +34,7 @@ const CHAPTER_BLURB: Record<Category, string> = {
   'Foundational QB':      'Rates and ratios — where comparison begins.',
   'Advanced QB':          'Composites that try to read the position whole.',
   'Team Analytics':       'Team dominance composites.',
+  'Academic':             'Enrollment, SAT, AP, graduation and college acceptance — the school context behind the football.',
   'Data Architecture':    'Where the numbers come from — and how the system is built.',
 }
 
@@ -44,6 +46,7 @@ const TIER: Record<Category, Tier> = {
   'Foundational QB':      2,
   'Advanced QB':          3,
   'Team Analytics':       3,
+  'Academic':             1,
   'Data Architecture':    1,
 }
 
@@ -55,6 +58,7 @@ const CATEGORY_SHORT: Record<Category, string> = {
   'Foundational QB':      'Foundational QB',
   'Advanced QB':          'Advanced QB',
   'Team Analytics':       'Team Analytics',
+  'Academic':             'Academic',
   'Data Architecture':    'Data Architecture',
 }
 

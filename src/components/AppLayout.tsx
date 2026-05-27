@@ -9,20 +9,12 @@ import { useSession } from 'next-auth/react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
-  APP_NAME, ACCENT_COLOR, CHART_NAV_EVENT,
-  PATH_NAV, PATH_TITLE,
+  APP_NAME, ACCENT_COLOR,
+  PATH_NAV,
 } from '@/lib/app-config'
-
-type ChartNavDetail = {
-  prevHref: string
-  nextHref: string
-  color: string
-  pageTitle?: string
-} | null
 
 export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { children: React.ReactNode; showNavArrows?: boolean; mobileHeader?: React.ReactNode; hideHeader?: boolean; paperMode?: boolean }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [chartNav, setChartNav] = useState<ChartNavDetail>(null)
   const [dark, setDark] = useState(false)
   const pathname = usePathname()
 
@@ -59,16 +51,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
     })
   }
 
-  useEffect(() => {
-    const handle = (e: Event) => setChartNav((e as CustomEvent<ChartNavDetail>).detail)
-    window.addEventListener(CHART_NAV_EVENT, handle)
-    return () => window.removeEventListener(CHART_NAV_EVENT, handle)
-  }, [])
-
-  useEffect(() => {
-    if (!pathname.startsWith('/chart/')) setChartNav(null)
-  }, [pathname])
-
   const activeNav = PATH_NAV[pathname] ?? (
     pathname.startsWith('/county')    ? 'County'    :
     pathname.startsWith('/facility')  ? 'Facility'  :
@@ -77,10 +59,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
     pathname.startsWith('/city')      ? 'City'      :
     pathname.startsWith('/launchpad') ? 'Launchpad' :
     pathname.startsWith('/chart/')    ? 'Charts'    :
-    pathname.startsWith('/position/') ? 'Positions' : undefined
-  )
-  const title = PATH_TITLE[pathname] ?? (
-    pathname.startsWith('/launchpad') ? 'Launchpad' :
     pathname.startsWith('/position/') ? 'Positions' : undefined
   )
 
@@ -177,17 +155,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
 
           {mobileHeader && (
             <div className="flex sm:hidden flex-1 min-w-0">{mobileHeader}</div>
-          )}
-
-          {title && (
-            <div className={`ml-4 flex items-center gap-2 ${paperMode ? 'text-[var(--paper-text)]' : 'text-[var(--txt)]'}`}>
-              <span
-                className="text-[22px] leading-none tracking-[-0.01em]"
-                style={{ fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 500 }}
-              >
-                {chartNav?.pageTitle ?? title}
-              </span>
-            </div>
           )}
 
           <div className="flex-1" />

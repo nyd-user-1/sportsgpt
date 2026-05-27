@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect, useRef, useMemo } from 'react'
+import Link from 'next/link'
+import { RevealFx } from '@/components/RevealFx'
 import {
   ChartSpline, Map, MessageCircle, ArrowLeft, ArrowRight, FileUser,
 } from 'lucide-react'
@@ -266,15 +268,25 @@ export function DivisionShell({
         >
           {/* ── Masthead ──────────────────────────────────────────── */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-12 sm:pt-16 pb-10">
+            <RevealFx delay={0} translateY={4}>
             <EditorialHead
               size="xl"
               eyebrow="Section XI · Long Island"
               subhead={DIVISION_BLURB[division]}
-              meta={[
-                `${filteredStandings.length} teams`,
-                `${availableSeasons.length} seasons of record`,
-                fmtSeasonLabel(selectedSeason),
-              ]}
+              meta={(['I', 'II', 'III', 'IV'] as const).map(d => {
+                const active = d === division
+                return (
+                  <Link
+                    key={d}
+                    href={`/division/division-${d.toLowerCase()}`}
+                    className={active
+                      ? 'text-[var(--paper-strong)]'
+                      : 'hover:text-[var(--paper-strong)] transition-colors'}
+                  >
+                    Division {d}
+                  </Link>
+                )
+              })}
               rightSlot={
                 <EditorialButtonGroup
                   prevHref={`/division/${prevDiv}`}
@@ -291,6 +303,7 @@ export function DivisionShell({
             >
               Division {division}
             </EditorialHead>
+            </RevealFx>
           </div>
 
           {/* ── Sticky control bar ────────────────────────────────── */}
@@ -351,6 +364,7 @@ export function DivisionShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.standings = el }}
                 className="mb-20 scroll-mt-24 first:mt-0"
               >
+                <RevealFx delay={0.15} translateY={8}>
                 <SectionHead
                   title="Standings"
                   blurb="The order of finish, by overall record."
@@ -374,6 +388,7 @@ export function DivisionShell({
                     ? `No teams match "${query}".`
                     : 'No standings recorded.'}
                 />
+                </RevealFx>
               </section>}
 
               {/* Section: Passing */}
@@ -382,6 +397,7 @@ export function DivisionShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.passing = el }}
                 className="mb-20 scroll-mt-24"
               >
+                <RevealFx delay={0.22} translateY={8}>
                 <SectionHead
                   title="Passing"
                   blurb="Quarterbacks, ranked by yards thrown."
@@ -400,6 +416,7 @@ export function DivisionShell({
                   }))}
                   emptyLabel={q ? `No passers match "${query}".` : 'No passing leaders recorded.'}
                 />
+                </RevealFx>
               </section>
 
               {/* Section: Rushing */}
@@ -408,6 +425,7 @@ export function DivisionShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.rushing = el }}
                 className="mb-20 scroll-mt-24"
               >
+                <RevealFx delay={0.29} translateY={8}>
                 <SectionHead
                   title="Rushing"
                   blurb="Ball carriers, ranked by yards gained."
@@ -426,6 +444,7 @@ export function DivisionShell({
                   }))}
                   emptyLabel={q ? `No rushers match "${query}".` : 'No rushing leaders recorded.'}
                 />
+                </RevealFx>
               </section>
 
               {/* Section: Receiving */}
@@ -434,6 +453,7 @@ export function DivisionShell({
                 ref={(el: HTMLElement | null) => { sectionRefs.current.receiving = el }}
                 className="mb-8 scroll-mt-24"
               >
+                <RevealFx delay={0.36} translateY={8}>
                 <SectionHead
                   title="Receiving"
                   blurb="Pass catchers, ranked by yards gained."
@@ -452,6 +472,7 @@ export function DivisionShell({
                   }))}
                   emptyLabel={q ? `No receivers match "${query}".` : 'No receiving leaders recorded.'}
                 />
+                </RevealFx>
               </section>
 
               {q && totalVisible === 0 && (
