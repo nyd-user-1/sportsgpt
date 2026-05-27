@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ChevronUp, ChevronDown, Info, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -5,6 +8,11 @@ import { ACCENT_COLOR } from '@/lib/app-config'
 import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
 
 const GLOSSARY_MAP = Object.fromEntries(GLOSSARY_TERMS.map(t => [t.id, t]))
+
+// Delay before the glossary tooltip closes after the mouse leaves the
+// header / tooltip — gives the user time to travel across the visual gap
+// without losing the hover state.
+const HOVER_CLOSE_MS = 80
 
 /**
  * Sortable table header cell — paper palette, sticky, with optional
@@ -35,13 +43,30 @@ export function SortTh({
   const active = sortCol === col
   const term = glossaryId ? GLOSSARY_MAP[glossaryId] : undefined
 
+  const [open, setOpen] = useState(false)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  function enter() {
+    if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null }
+    setOpen(true)
+  }
+  function leave() {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    closeTimer.current = setTimeout(() => setOpen(false), HOVER_CLOSE_MS)
+  }
+  useEffect(() => () => { if (closeTimer.current) clearTimeout(closeTimer.current) }, [])
+
   return (
     <th className={cn(
       'px-3 py-3 border-b border-[var(--paper-rule)] sticky top-0 bg-[var(--paper)] z-10',
       right ? 'text-right' : 'text-left',
       className,
     )}>
-      <div className={cn('relative group/th', right ? 'inline-flex justify-end w-full' : 'inline-block')}>
+      <div
+        className={cn('relative', right ? 'inline-flex justify-end w-full' : 'inline-block')}
+        onMouseEnter={term ? enter : undefined}
+        onMouseLeave={term ? leave : undefined}
+      >
         <button
           onClick={e => { e.stopPropagation(); onSort(col) }}
           className={cn(
@@ -55,11 +80,15 @@ export function SortTh({
             : <ChevronDown className="h-3 w-3 opacity-40" />}
         </button>
 
-        {term && (
-          <div className={cn(
-            'pointer-events-none group-hover/th:pointer-events-auto absolute top-full z-50 mt-2 hidden group-hover/th:block w-64 rounded-xl border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
-            right ? 'right-0' : 'left-0',
-          )}>
+        {term && open && (
+          <div
+            onMouseEnter={enter}
+            onMouseLeave={leave}
+            className={cn(
+              'absolute top-full z-50 mt-2 w-64 rounded-xl border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl text-left normal-case tracking-normal whitespace-normal overflow-hidden',
+              right ? 'right-0' : 'left-0',
+            )}
+          >
             <div className="px-3.5 pt-3 pb-2.5">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)] mb-2">{term.name}</p>
               <p className="text-[13px] text-[var(--paper-muted)] leading-relaxed"
@@ -70,7 +99,7 @@ export function SortTh({
             <Link
               href={`/glossary#${glossaryId}`}
               onClick={e => e.stopPropagation()}
-              className="pointer-events-auto flex items-center justify-between gap-2 border-t border-[var(--paper-rule)] px-3.5 py-2.5 text-[11px] hover:bg-[var(--paper-quiet)] transition-colors"
+              className="flex items-center justify-between gap-2 border-t border-[var(--paper-rule)] px-3.5 py-2.5 text-[11px] hover:bg-[var(--paper-quiet)] transition-colors"
               style={{ color: ACCENT_COLOR }}
             >
               <span className="inline-flex items-center gap-1.5"><Info className="h-3 w-3" />Learn more</span>

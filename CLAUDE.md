@@ -22,6 +22,28 @@
 
 - **Never call a button a "pill."** A *pill* is a filter chip (e.g. division/season selectors that toggle a view). A *button* triggers an action (open a panel, navigate, submit). Even when a button is rounded and looks pill-shaped, it is still a button — describe it as a button, button group, or chip if it really is filter UI.
 
+## Accurate Explanations
+
+- **No rationalizing mistakes as design intent.** When a visual issue (wrong color, broken layout, off contrast) shows up, the explanation must be the actual cause — usually a bug in the code I just wrote (Tailwind syntax that doesn't compose, opacity on a CSS-var color that produces an unexpected cast, a missed token, a typo). Do not retroactively frame a bug as a deliberate styling choice. If I'm not sure of the cause, say "I'm not sure why that's happening — let me investigate" before guessing.
+- **Own it, then fix it.** "I shipped the wrong color because X — switching to the proper token Y" beats "the muted treatment was on purpose" every time.
+
+## Design System Discipline
+
+- **This project has a design system, even if loosely defined.** The paper palette, editorial components in `src/components/editorial/`, the SortTh / Tablet / DivisionTabs / SectionHead primitives, the `paper-link` utility, and the CSS variables in `globals.css` are the design system. Use them.
+- Reach for the existing token before introducing a one-off. Need muted text? `--paper-muted`, not `text-[var(--paper-text)]/75`. Need a divider? `--paper-rule` / `--paper-rule-soft`, not a custom `border-zinc-700/40`. Need a tab bar? `DivisionTabs`, not a hand-rolled `<div>` with custom borders.
+- When the design system is missing a primitive a page actually needs, extract a new one to `src/components/editorial/` rather than inlining a snowflake. Future pages will reuse it; that's the whole point.
+- This rule exists to reduce churn — every snowflake we ship today is rework when the next page wants the same effect.
+
+## Link Standard
+
+Every in-content link on a paper-palette surface uses this className:
+
+```tsx
+<Link href="..." className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors">…</Link>
+```
+
+Base color is `--paper-text` (cream in dark mode), hover flips to `--paper-strong` (blue) and adds an underline. The underline inherits the current text color so it stays blue on hover. Combine freely with layout classes (`truncate`, `whitespace-nowrap`, `block`, etc.). Do not introduce alternate underline color schemes for in-content links.
+
 ## Editorial Migration Pattern
 
 Pages are being rebuilt in the editorial voice via parallel `/foo-2` routes that ship side-by-side with the legacy `/foo`, then retire the legacy once approved. **Active migrations:**

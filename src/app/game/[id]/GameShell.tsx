@@ -409,7 +409,7 @@ function parseInline(
       const raw = match[0]
       const slug = playerSlugs[raw.toLowerCase()]
       nodes.push(slug
-        ? <Link key={match.index} href={buildPlayerHref(gameId, slug, playerMeta[slug])} scroll={false} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">{raw}</Link>
+        ? <Link key={match.index} href={buildPlayerHref(gameId, slug, playerMeta[slug])} scroll={false} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors">{raw}</Link>
         : <span key={match.index} className="text-[var(--paper-text)] font-medium">{raw}</span>
       )
     }
@@ -647,7 +647,7 @@ export function GameShell({
                   <>
                     <Link
                       href={`/section/section-xi?season=${season}`}
-                      className="hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline"
+                      className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
                     >
                       {fmtDate(game.game_date as string | Date)}
                     </Link>

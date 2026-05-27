@@ -19,6 +19,7 @@ const CATEGORIES = [
   'Advanced QB',
   'Team Analytics',
   'Academic',
+  'Demographic',
   'Data Architecture',
 ] as const
 
@@ -35,6 +36,7 @@ const CHAPTER_BLURB: Record<Category, string> = {
   'Advanced QB':          'Composites that try to read the position whole.',
   'Team Analytics':       'Team dominance composites.',
   'Academic':             'Enrollment, SAT, AP, graduation and college acceptance — the school context behind the football.',
+  'Demographic':          'Race mix, need indicators, and the multi-year enrollment trend behind every district.',
   'Data Architecture':    'Where the numbers come from — and how the system is built.',
 }
 
@@ -47,6 +49,7 @@ const TIER: Record<Category, Tier> = {
   'Advanced QB':          3,
   'Team Analytics':       3,
   'Academic':             1,
+  'Demographic':          1,
   'Data Architecture':    1,
 }
 
@@ -59,6 +62,7 @@ const CATEGORY_SHORT: Record<Category, string> = {
   'Advanced QB':          'Advanced QB',
   'Team Analytics':       'Team Analytics',
   'Academic':             'Academic',
+  'Demographic':          'Demographic',
   'Data Architecture':    'Data Architecture',
 }
 
@@ -88,7 +92,7 @@ export function AlmanacClient() {
       const cat = t.category as Category
       if (tierFilter !== 0 && TIER[cat] !== tierFilter) continue
       if (q) {
-        const hay = `${t.name} ${t.definition} ${t.formula ?? ''} ${t.source} ${t.caveats}`.toLowerCase()
+        const hay = `${t.name} ${t.definition} ${t.body ?? ''} ${t.formula ?? ''} ${t.source} ${t.caveats}`.toLowerCase()
         if (!hay.includes(q)) continue
       }
       map.get(cat)?.push(t)
@@ -306,6 +310,12 @@ export function AlmanacClient() {
                         <Highlight text={t.definition} query={query} />
                       </p>
 
+                      {t.body && (
+                        <p className="mt-4 max-w-[68ch] text-[15px] sm:text-[15.5px] leading-[1.72] text-[var(--paper-muted)]">
+                          <Highlight text={t.body} query={query} />
+                        </p>
+                      )}
+
                       {t.formula && <FormulaTablet text={t.formula} className="mt-6" />}
 
                       <EditorialNote
@@ -315,6 +325,19 @@ export function AlmanacClient() {
                           { label: 'Note',   body: t.caveats },
                         ]}
                       />
+
+                      {t.link && (
+                        <a
+                          href={t.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-flex items-center gap-1.5 text-[12px] uppercase tracking-[0.18em] text-[var(--paper-strong)] hover:underline underline-offset-4"
+                          style={{ fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }}
+                        >
+                          {t.link.label}
+                          <ArrowUpRight className="h-3 w-3" />
+                        </a>
+                      )}
                     </article>
                   ))}
                 </div>

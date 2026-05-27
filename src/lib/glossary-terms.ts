@@ -1,10 +1,17 @@
 export type GlossaryTerm = {
   id: string
   name: string
-  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics' | 'Academic' | 'Data Architecture'
+  category: 'Standard — Passing' | 'Standard — Rushing' | 'Standard — Receiving' | 'Standard — Team' | 'Foundational QB' | 'Advanced QB' | 'Team Analytics' | 'Academic' | 'Demographic' | 'Data Architecture'
+  // Short summary — shown in column-header tooltips AND on the glossary page.
+  // Keep this to one or two sentences.
   definition: string
+  // Longer explainer — shown only on the glossary page, beneath `definition`.
+  // Use this when the full story would be too long for a tooltip.
+  body?: string
   formula?: string
   source: string
+  // Optional external reference link rendered on the glossary page.
+  link?: { url: string; label: string }
   caveats: string
 }
 
@@ -442,6 +449,122 @@ export const GLOSSARY_TERMS: GlossaryTerm[] = [
     formula: 'ACAD = rescale₀₋₁₀₀( mean( z(SAT), z(AP%), z(Grad%), z(Coll%) ) )',
     source: 'Derived in src/app/school/Shell.tsx from public school district reports',
     caveats: 'Schools missing any input are imputed at the cohort mean (z=0) for that input, which gives them an average rather than a missing contribution. ACAD is a within-set comparison and is not directly comparable across different filter selections.',
+  },
+
+  // ── Demographic ──────────────────────────────────────────────────────────
+
+  {
+    id: 'dem-white',
+    name: 'White %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school reported as White. Sourced from NYSED Demographic Factors (NUM_WHITE / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed by NYSED and treated as zero here.',
+  },
+  {
+    id: 'dem-black',
+    name: 'Black %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school reported as Black or African American (NUM_BLACK / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed by NYSED and treated as zero here.',
+  },
+  {
+    id: 'dem-hisp',
+    name: 'Hispanic %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school reported as Hispanic or Latino (NUM_HISP / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed by NYSED and treated as zero here.',
+  },
+  {
+    id: 'dem-asian',
+    name: 'Asian %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school reported as Asian or Native Hawaiian / Other Pacific Islander (NUM_ASIAN / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed by NYSED and treated as zero here.',
+  },
+  {
+    id: 'dem-multi',
+    name: 'Multiracial %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school reported as Multiracial (NUM_Multi / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed by NYSED and treated as zero here.',
+  },
+  {
+    id: 'diversity',
+    name: 'Diversity Index (Blau)',
+    category: 'Demographic',
+    definition: 'A composite signature stat for racial heterogeneity at the school, using Blau\'s index — also known in the education and demography literature as the Gini-Simpson index.',
+    body: 'The formula is 1 minus the sum of squared population shares across all six race groups (American Indian, Asian, Black, Hispanic, Multiracial, White). It answers a single intuitive question: pick two students at random — what is the probability they belong to different race groups? The raw Blau value is rescaled 0–100 within the currently visible set, matching the ACAD pattern. Higher = a more even distribution across groups; lower = a more concentrated single group. The score is recomputed whenever the division filter changes.',
+    formula: 'DIVERSITY = rescale₀₋₁₀₀( 1 − Σ (NUMᵢ / K-12)² )',
+    source: 'Derived in src/app/school/Shell.tsx from NYSED Demographic Factors',
+    link: {
+      url: 'https://www.census.gov/library/stories/2021/08/2020-united-states-population-more-racially-ethnically-diverse-than-2010.html',
+      label: 'U.S. Census Bureau — 2020 Census Diversity Index',
+    },
+    caveats: 'Blau\'s index, Gini-Simpson, and Simpson\'s index of diversity are the same formula under different names; the antitrust-world HHI (Σpᵢ²) is its mirror image. American Indian counts are included in the formula even though that column is hidden from the table (suppression makes the cell uninformative). DIVERSITY is a within-set comparison and is not directly comparable across different filter selections.',
+  },
+  {
+    id: 'ecdis',
+    name: 'Economically Disadvantaged %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school flagged as economically disadvantaged — typically eligible for free or reduced-price lunch, public assistance, or comparable supports (NUM_ECDIS / K-12). One of NYSED\'s primary need indicators.',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Eligibility criteria vary by program and reporting year; comparisons across districts and years should be treated as directional.',
+  },
+  {
+    id: 'ell',
+    name: 'ELL %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school classified as English Language Learners (NUM_ELL / K-12). High values indicate a district serving a substantial multilingual population.',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Identification practices differ between districts; counts below five are suppressed and treated as zero.',
+  },
+  {
+    id: 'swd',
+    name: 'SWD %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students with disabilities — students who have an Individualized Education Program (IEP) or a 504 plan on file (NUM_SWD / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'A higher SWD% is not directionally good or bad — it can reflect identification thoroughness as much as underlying need. Sort and read with that in mind.',
+  },
+  {
+    id: 'homeless',
+    name: 'Homeless %',
+    category: 'Demographic',
+    definition: 'Share of K-12 students at the school identified as homeless under the McKinney-Vento Homeless Assistance Act — includes students in shelters, doubled-up with other families, and unaccompanied youth (NUM_HOMELESS / K-12).',
+    source: 'NYSED Demographic Factors table — ENROLL{year}.mdb',
+    caveats: 'Counts below five are suppressed. Identification depends on each district\'s reporting practices.',
+  },
+  {
+    id: 'nrc',
+    name: 'Need / Resource Capacity (N/RC) Tier',
+    category: 'Demographic',
+    definition: 'NYSED\'s district-level classification of need relative to local resource capacity. Tier 3 = High-Need Urban-Suburban district (highest need among Suffolk). Tier 5 = Average need. Tier 6 = Low-need district. The index is the ratio of estimated district poverty to the Combined Wealth Ratio (district wealth per pupil ÷ state average wealth per pupil). Every building inside a district shares the same tier.',
+    formula: 'N/RC = poverty score ÷ combined wealth score',
+    source: 'NYSED BOCES and N/RC table — ENROLL{year}.mdb',
+    caveats: 'Only tiers 3, 5, and 6 appear in Suffolk County. The full state taxonomy has seven categories including New York City (1), Big 5 districts (2), Rural High Need (4), and Charter Schools (7).',
+  },
+  {
+    id: 'trend-delta',
+    name: 'Enrollment Δ',
+    category: 'Demographic',
+    definition: 'Absolute change in grade 9-12 enrollment between the earliest and latest school year on file (currently 2019-20 through 2024-25, a five-year window). Positive = the high school grew; negative = it shrank.',
+    formula: 'Δ = enrollment(latest year) − enrollment(earliest year)',
+    source: 'Derived from school_year_stats in Neon Postgres',
+    caveats: 'Multi-building districts (Brentwood, Ward Melville coop) include all rolled-up buildings in both endpoints, so a building that opened mid-window can inflate the gain.',
+  },
+  {
+    id: 'trend-delta-pct',
+    name: 'Enrollment Δ %',
+    category: 'Demographic',
+    definition: 'Percentage change in grade 9-12 enrollment between the earliest and latest school year on file. Smaller schools swing more on equal student counts; use alongside the absolute Δ when comparing across the cohort.',
+    formula: 'Δ% = (latest − earliest) ÷ earliest × 100',
+    source: 'Derived from school_year_stats in Neon Postgres',
+    caveats: 'Same multi-building caveat as Enrollment Δ. Schools with missing earliest-year data render as “—”.',
   },
 
   // ── Data Architecture ────────────────────────────────────────────────────

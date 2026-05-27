@@ -18,6 +18,7 @@ import {
   SortTh,
   MONO,
   tabletTd,
+  DivisionTabs,
 } from '@/components/editorial'
 import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
@@ -324,7 +325,7 @@ export function TeamMagazineShell({
                 seasonMeta,
               ]}
             >
-              Teams
+              Team
             </EditorialHead>
           </RevealFx>
         </div>
@@ -380,13 +381,10 @@ export function TeamMagazineShell({
             <SectionHead
               title="Standings Index"
               eyebrow={<DivisionDots active={activeDiv} />}
-              blurb={
-                activeDiv === 'All'
-                  ? 'Every team on file — sort by any column.'
-                  : `${DIV_LABEL[activeDiv]} — sort by any column.`
-              }
-              meta={<DivisionPills active={activeDiv} onChange={setActiveDiv} />}
+              noRule
             />
+
+            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
 
             {sortedTeams.length === 0 ? (
               <EmptyTablet
@@ -515,9 +513,10 @@ export function TeamMagazineShell({
             <SectionHead
               title="Offensive Index"
               eyebrow={<DivisionDots active={activeDiv} />}
-              blurb="Per-game KPIs and a composite signature stat — sort by any column."
-              meta={<DivisionPills active={activeDiv} onChange={setActiveDiv} />}
+              noRule
             />
+
+            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
 
             {sortedOffRows.length === 0 ? (
               <EmptyTablet
@@ -651,35 +650,3 @@ export function TeamMagazineShell({
   )
 }
 
-// ── Division pills — sits in the Standings Index section-head meta slot ─────
-function DivisionPills({
-  active,
-  onChange,
-}: {
-  active: 'All' | 'I' | 'II' | 'III' | 'IV'
-  onChange: (d: 'All' | 'I' | 'II' | 'III' | 'IV') => void
-}) {
-  const opts = ['All', 'I', 'II', 'III', 'IV'] as const
-  return (
-    <div className="flex items-center gap-1.5 flex-wrap">
-      {opts.map(d => {
-        const on = active === d
-        return (
-          <button
-            key={d}
-            onClick={() => onChange(d)}
-            className={cn(
-              'px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] rounded-full border transition-colors',
-              on
-                ? 'border-[var(--paper-text)] bg-[var(--paper-text)] text-[var(--paper)]'
-                : 'border-[var(--paper-rule)] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)]',
-            )}
-            style={SANS}
-          >
-            {d === 'All' ? 'All' : `Div ${d}`}
-          </button>
-        )
-      })}
-    </div>
-  )
-}

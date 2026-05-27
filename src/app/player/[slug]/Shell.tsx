@@ -245,14 +245,14 @@ function parseRecapPara(
       if (playerSlug) {
         nodes.push(
           <Link key={match.index} href={`/player/${playerSlug}?profile=open`} scroll={false}
-            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">
+            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors">
             {raw}
           </Link>
         )
       } else if (teamSlug) {
         nodes.push(
           <Link key={match.index} href={`/team/${teamSlug}`}
-            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">
+            className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors">
             {raw}
           </Link>
         )
@@ -636,7 +636,7 @@ function GameLogTable({
                       {isHome ? 'vs' : 'at'}
                     </span>
                     {oppLogo && <Image src={oppLogo} alt="" width={22} height={22} className="shrink-0 object-contain" unoptimized />}
-                    <span className="truncate" style={{ ...SERIF, fontSize: 15, fontWeight: 500 }}>{oppName}</span>
+                    <span className="truncate group-hover/g:underline" style={{ ...SERIF, fontSize: 15, fontWeight: 500 }}>{oppName}</span>
                   </Link>
                 </td>
                 <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{passYds || '—'}</td>
@@ -1016,7 +1016,7 @@ export function PlayerShell({
                 subhead={
                   <>
                     {player.position && primaryPositionSlug(player.position) ? (
-                      <Link href={`/position/${primaryPositionSlug(player.position)}`} className="hover:text-[var(--paper-strong)] transition-colors underline-offset-4 decoration-[var(--paper-rule)] hover:underline">
+                      <Link href={`/position/${primaryPositionSlug(player.position)}`} className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors">
                         {player.position}
                       </Link>
                     ) : (

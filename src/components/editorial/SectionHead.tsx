@@ -9,14 +9,16 @@ export function SectionHead({
   blurb,
   meta,
   eyebrow,
+  noRule,
 }: {
   title: ReactNode
   blurb?: ReactNode
   meta?: ReactNode
   eyebrow?: ReactNode
+  noRule?: boolean
 }) {
   return (
-    <div className="mb-7 border-b border-[var(--paper-rule)] pb-4">
+    <div className={noRule ? 'mb-8' : 'mb-7 border-b border-[var(--paper-rule)] pb-4'}>
       {eyebrow && (
         <p className="mb-2 text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]">
           {eyebrow}

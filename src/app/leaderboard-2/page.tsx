@@ -15,36 +15,60 @@ export default async function LeaderboardMagazinePage() {
   try {
     const results = await Promise.all([
       sql`
-        WITH ranked AS (
-          SELECT player_slug, player_name, school_slug, school_name, completions, attempts,
-                 pass_yards, pass_tds, interceptions, season,
-                 comp_pct, ypa, ypc, td_rate, int_rate, td_int_ratio, yva,
-                 cmd_score, gbi_score, ies_score,
-                 ROW_NUMBER() OVER (PARTITION BY season ORDER BY pass_yards DESC NULLS LAST) AS rn
-          FROM player_season_stats
-          WHERE stat_type = 'Passing' AND season = ANY(${[2020, ...AVAILABLE_SEASONS]})
+        WITH varsity AS (
+          SELECT DISTINCT ON (school_slug) school_slug, division
+          FROM teams
+          WHERE name ILIKE '%varsity%'
+          ORDER BY school_slug, name
+        ),
+        ranked AS (
+          SELECT pss.player_slug, pss.player_name, pss.school_slug, pss.school_name, pss.completions, pss.attempts,
+                 pss.pass_yards, pss.pass_tds, pss.interceptions, pss.season,
+                 pss.comp_pct, pss.ypa, pss.ypc, pss.td_rate, pss.int_rate, pss.td_int_ratio, pss.yva,
+                 pss.cmd_score, pss.gbi_score, pss.ies_score,
+                 v.division,
+                 ROW_NUMBER() OVER (PARTITION BY pss.season ORDER BY pss.pass_yards DESC NULLS LAST) AS rn
+          FROM player_season_stats pss
+          LEFT JOIN varsity v ON v.school_slug = pss.school_slug
+          WHERE pss.stat_type = 'Passing' AND pss.season = ANY(${[2020, ...AVAILABLE_SEASONS]})
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, pass_yards DESC NULLS LAST
       `,
       sql`
-        WITH ranked AS (
-          SELECT player_slug, player_name, school_slug, school_name, rush_attempts,
-                 rush_yards, rush_tds, games_played, yards_per_game, season,
-                 ROW_NUMBER() OVER (PARTITION BY season ORDER BY rush_yards DESC NULLS LAST) AS rn
-          FROM player_season_stats
-          WHERE stat_type = 'Rushing' AND season = ANY(${[2020, ...AVAILABLE_SEASONS]})
+        WITH varsity AS (
+          SELECT DISTINCT ON (school_slug) school_slug, division
+          FROM teams
+          WHERE name ILIKE '%varsity%'
+          ORDER BY school_slug, name
+        ),
+        ranked AS (
+          SELECT pss.player_slug, pss.player_name, pss.school_slug, pss.school_name, pss.rush_attempts,
+                 pss.rush_yards, pss.rush_tds, pss.games_played, pss.yards_per_game, pss.season,
+                 v.division,
+                 ROW_NUMBER() OVER (PARTITION BY pss.season ORDER BY pss.rush_yards DESC NULLS LAST) AS rn
+          FROM player_season_stats pss
+          LEFT JOIN varsity v ON v.school_slug = pss.school_slug
+          WHERE pss.stat_type = 'Rushing' AND pss.season = ANY(${[2020, ...AVAILABLE_SEASONS]})
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, rush_yards DESC NULLS LAST
       `,
       sql`
-        WITH ranked AS (
-          SELECT player_slug, player_name, school_slug, school_name, receptions,
-                 recv_yards, recv_tds, season,
-                 ROW_NUMBER() OVER (PARTITION BY season ORDER BY recv_yards DESC NULLS LAST) AS rn
-          FROM player_season_stats
-          WHERE stat_type = 'Receiving' AND season = ANY(${[2020, ...AVAILABLE_SEASONS]})
+        WITH varsity AS (
+          SELECT DISTINCT ON (school_slug) school_slug, division
+          FROM teams
+          WHERE name ILIKE '%varsity%'
+          ORDER BY school_slug, name
+        ),
+        ranked AS (
+          SELECT pss.player_slug, pss.player_name, pss.school_slug, pss.school_name, pss.receptions,
+                 pss.recv_yards, pss.recv_tds, pss.season,
+                 v.division,
+                 ROW_NUMBER() OVER (PARTITION BY pss.season ORDER BY pss.recv_yards DESC NULLS LAST) AS rn
+          FROM player_season_stats pss
+          LEFT JOIN varsity v ON v.school_slug = pss.school_slug
+          WHERE pss.stat_type = 'Receiving' AND pss.season = ANY(${[2020, ...AVAILABLE_SEASONS]})
         )
         SELECT * FROM ranked WHERE rn <= 25
         ORDER BY season DESC, recv_yards DESC NULLS LAST

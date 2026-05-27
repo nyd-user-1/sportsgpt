@@ -653,7 +653,14 @@ export function TeamShell({
                                       <Image src={heroLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
                                     </Link>
                                   )}
-                                  <span className="truncate text-[var(--paper-text)]" style={SERIF}>{cleanName}</span>
+                                  <Link
+                                    href={`/team/${team.slug as string}`}
+                                    onClick={e => e.stopPropagation()}
+                                    className="truncate text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                    style={SERIF}
+                                  >
+                                    {cleanName}
+                                  </Link>
                                 </div>
                               </td>
                               <td className={cn(td, 'text-right font-semibold')}

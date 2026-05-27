@@ -4,10 +4,12 @@ import { useState, useRef, useMemo, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
-import { ArrowLeft, ArrowRight, X } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelPlayer, type AnyPlayerRow } from '@/components/PanelPlayer'
+import { Switch } from '@/components/ui/switch'
+import { Label } from '@/components/ui/label'
 import {
   EditorialHead,
   SectionHead,
@@ -20,8 +22,8 @@ import {
   SortTh,
   MONO,
   tabletTd,
-  ContentsNav,
-  SiteContentsTop,
+  DivisionTabs,
+  type DivisionKey,
 } from '@/components/editorial'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason, cn } from '@/lib/utils'
@@ -39,17 +41,20 @@ type Passer = {
   comp_pct: number | null; ypa: number | null; ypc: number | null
   td_rate: number | null; int_rate: number | null; td_int_ratio: number | null
   yva: number | null; cmd_score: number | null; gbi_score: number | null; ies_score: number | null
+  division: string | null
 }
 type Rusher = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   rush_attempts: number | null; rush_yards: number | null
   rush_tds: number | null; games_played: number | null; yards_per_game: number | null
   season: number
+  division: string | null
 }
 type Receiver = {
   player_slug: string; player_name: string; school_slug: string; school_name: string
   receptions: number | null; recv_yards: number | null
   recv_tds: number | null; season: number
+  division: string | null
 }
 type StatTab = 'Passing' | 'Rushing' | 'Receiving'
 
@@ -95,6 +100,7 @@ export function LeaderboardYearbook({
   const [versusMode,     setVersusMode]     = useState(false)
   const [query,          setQuery]          = useState('')
   const [selectedPlayer, setSelectedPlayer] = useState<AnyPlayerRow | null>(null)
+  const [activeDiv,      setActiveDiv]      = useState<DivisionKey>('All')
 
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
@@ -163,17 +169,8 @@ export function LeaderboardYearbook({
     router.replace(`/leaderboard-2?${params.toString()}`, { scroll: false })
   }
 
-  function clearVersus() {
-    const params = new URLSearchParams(searchParams.toString())
-    params.delete('a'); params.delete('b')
-    router.replace(`/leaderboard-2?${params.toString()}`, { scroll: false })
-  }
-
   function handleRowClick(p: Passer | Rusher | Receiver) {
-    if (versusMode) {
-      handleAssign(`${p.player_slug}__${p.season}`)
-      return
-    }
+    if (versusMode) return
     const key = `${p.player_slug}__${p.season}`
     const curKey = selectedPlayer ? `${selectedPlayer.player_slug}__${selectedPlayer.season}` : null
     setSelectedPlayer(curKey === key ? null : p as AnyPlayerRow)
@@ -182,8 +179,9 @@ export function LeaderboardYearbook({
   // ── Filter + sort ─────────────────────────────────────────────────────────
   const q = query.trim().toLowerCase()
 
-  function matchPlayer(p: { player_name: string; school_name: string; season: number }) {
+  function matchPlayer(p: { player_name: string; school_name: string; season: number; division: string | null }) {
     if (selectedSeason !== 'all' && p.season !== selectedSeason) return false
+    if (activeDiv !== 'All' && p.division !== activeDiv) return false
     if (!q) return true
     return (
       p.player_name.toLowerCase().includes(q) ||
@@ -191,9 +189,9 @@ export function LeaderboardYearbook({
     )
   }
 
-  const filteredPassers   = useMemo(() => passers.filter(matchPlayer),   [passers,   selectedSeason, q])
-  const filteredRushers   = useMemo(() => rushers.filter(matchPlayer),   [rushers,   selectedSeason, q])
-  const filteredReceivers = useMemo(() => receivers.filter(matchPlayer), [receivers, selectedSeason, q])
+  const filteredPassers   = useMemo(() => passers.filter(matchPlayer),   [passers,   selectedSeason, activeDiv, q])
+  const filteredRushers   = useMemo(() => rushers.filter(matchPlayer),   [rushers,   selectedSeason, activeDiv, q])
+  const filteredReceivers = useMemo(() => receivers.filter(matchPlayer), [receivers, selectedSeason, activeDiv, q])
 
   function handlePassSort(c: string) {
     const col = c as PassCol
@@ -304,18 +302,6 @@ export function LeaderboardYearbook({
   }, [versusMode, selectedPlayer, statTab, sortedPassers, sortedRushers, sortedReceivers])
 
   // ── Counts for masthead meta ─────────────────────────────────────────────
-  const totalLeaders = passers.length + rushers.length + receivers.length
-
-  // ── Versus dock data ─────────────────────────────────────────────────────
-  const allRows = useMemo(() => [...passers, ...rushers, ...receivers] as (Passer | Rusher | Receiver)[], [passers, rushers, receivers])
-  function rowByKey(key: string | null) {
-    if (!key) return null
-    return allRows.find(r => `${r.player_slug}__${r.season}` === key) ?? null
-  }
-  const versusA = rowByKey(compareAKey)
-  const versusB = rowByKey(compareBKey)
-  const versusOpen = versusMode && (!!versusA || !!versusB)
-  const canCompare = !!compareAKey && !!compareBKey
 
   return (
     <AppLayout paperMode>
@@ -334,12 +320,12 @@ export function LeaderboardYearbook({
                 </>
               }
               meta={[
-                `${totalLeaders.toLocaleString()} leaders`,
-                '3 categories',
-                `${availableSeasons.length} seasons`,
+                <Link key="division" href="/division/division-i" className="hover:text-[var(--paper-strong)] transition-colors">Division</Link>,
+                <Link key="team"     href="/team"               className="hover:text-[var(--paper-strong)] transition-colors">Team</Link>,
+                <Link key="player"   href="/player"             className="hover:text-[var(--paper-strong)] transition-colors">Player</Link>,
               ]}
             >
-              Leaderboards
+              Leaderboard
             </EditorialHead>
           </RevealFx>
         </div>
@@ -379,55 +365,62 @@ export function LeaderboardYearbook({
         </StickyControlBar>
 
         {/* ── Body ───────────────────────────────────────────────────── */}
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-x-12 lg:gap-x-20">
-
-          <ContentsNav
-            label="Page"
-            items={[
-              { id: 'passing',   label: 'Passing',   count: passers.length   },
-              { id: 'rushing',   label: 'Rushing',   count: rushers.length   },
-              { id: 'receiving', label: 'Receiving', count: receivers.length },
-            ]}
-            activeId={statTab.toLowerCase()}
-            onSelect={(id) => {
-              if (id === 'passing')   handleTabChange('Passing')
-              if (id === 'rushing')   handleTabChange('Rushing')
-              if (id === 'receiving') handleTabChange('Receiving')
-            }}
-            topChildren={<SiteContentsTop />}
-          />
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-24">
 
           <main className="min-w-0">
           <RevealFx delay={0.15} translateY={8}>
             <SectionHead
+              noRule
               title={
-                statTab === 'Passing'   ? 'Passing Leaders'
-                : statTab === 'Rushing' ? 'Rushing Leaders'
-                : 'Receiving Leaders'
+                <span className="inline-flex items-center gap-4">
+                  <span>{
+                    statTab === 'Passing'   ? 'Passing Leaderboard'
+                    : statTab === 'Rushing' ? 'Rushing Leaderboard'
+                    : 'Receiving Leaderboard'
+                  }</span>
+                  <button
+                    onClick={() => {
+                      const order: StatTab[] = ['Passing', 'Rushing', 'Receiving']
+                      const next = order[(order.indexOf(statTab) + 1) % order.length]
+                      handleTabChange(next)
+                    }}
+                    aria-label="Next leaderboard"
+                    className="inline-flex items-center justify-center text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors duration-150"
+                  >
+                    <ArrowRight className="h-8 w-8" />
+                  </button>
+                </span>
               }
-              blurb={
-                versusMode
-                  ? 'Click any two rows to set the matchup. Open the comparison from the dock below.'
-                  : statTab === 'Passing'
-                    ? 'Top 25 per season — standard line plus our Foundational and Advanced QB metrics.'
-                    : statTab === 'Rushing'
-                      ? 'Top 25 per season — rushing volume, efficiency, and scoring rate.'
-                      : 'Top 25 per season — receiving volume, efficiency, and scoring.'
-              }
-              meta={
-                <button
-                  onClick={toggleVersus}
-                  className={cn(
-                    'h-9 px-4 inline-flex items-center gap-2 border transition-colors text-[11px] uppercase tracking-[0.22em] rounded-full shrink-0',
-                    versusMode
-                      ? 'border-[var(--paper-text)] bg-[var(--paper-text)] text-[var(--paper)]'
-                      : 'border-[var(--paper-rule)] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)]',
-                  )}
-                  style={SANS}
-                >
-                  Versus
-                  {versusMode && <span className="tabular-nums opacity-80" style={MONO}>● On</span>}
-                </button>
+            />
+
+            <DivisionTabs
+              active={activeDiv}
+              onChange={setActiveDiv}
+              rightSlot={
+                <div className="flex items-center gap-2.5">
+                  <Label
+                    htmlFor="versus-switch"
+                    className={cn(
+                      'cursor-pointer select-none transition-colors',
+                      versusMode ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
+                    )}
+                    style={{ ...SERIF, fontStyle: 'italic', fontSize: 15 }}
+                  >
+                    Vs.
+                  </Label>
+                  <Switch
+                    id="versus-switch"
+                    checked={versusMode}
+                    onCheckedChange={toggleVersus}
+                    className={cn(
+                      'border border-[var(--paper-rule)]',
+                      'data-[state=unchecked]:bg-[var(--paper-quiet)]',
+                      'data-[state=checked]:!bg-[var(--paper-strong)]',
+                      '[&_span]:bg-[var(--paper-text)] [&_span]:shadow-none',
+                      'data-[state=checked]:[&_span]:bg-[var(--paper)]',
+                    )}
+                  />
+                </div>
               }
             />
 
@@ -438,6 +431,7 @@ export function LeaderboardYearbook({
                 sortDir={passDir}
                 onSort={handlePassSort}
                 onRowClick={handleRowClick}
+                onAssign={handleAssign}
                 selectedPlayer={selectedPlayer}
                 versusMode={versusMode}
                 compareAKey={compareAKey}
@@ -452,6 +446,7 @@ export function LeaderboardYearbook({
                 sortDir={rushDir}
                 onSort={handleRushSort}
                 onRowClick={handleRowClick}
+                onAssign={handleAssign}
                 selectedPlayer={selectedPlayer}
                 versusMode={versusMode}
                 compareAKey={compareAKey}
@@ -466,6 +461,7 @@ export function LeaderboardYearbook({
                 sortDir={recvDir}
                 onSort={handleRecvSort}
                 onRowClick={handleRowClick}
+                onAssign={handleAssign}
                 selectedPlayer={selectedPlayer}
                 versusMode={versusMode}
                 compareAKey={compareAKey}
@@ -491,46 +487,6 @@ export function LeaderboardYearbook({
           </main>
         </div>
 
-        {/* ── Versus dock (bottom) ─────────────────────────────────── */}
-        {versusOpen && (
-          <div className="sticky bottom-0 z-30 border-t border-[var(--paper-rule)] backdrop-blur-md"
-            style={{ backgroundColor: 'color-mix(in srgb, var(--paper) 92%, transparent)' }}>
-            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 py-4 flex items-center gap-4 flex-wrap">
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)] shrink-0" style={SANS}>
-                Versus
-              </span>
-              <VersusSlot label="1" row={versusA} />
-              <span className="text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic', fontSize: 14 }}>vs</span>
-              <VersusSlot label="2" row={versusB} />
-              <div className="ml-auto flex items-center gap-3">
-                <button
-                  onClick={clearVersus}
-                  className="text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors inline-flex items-center gap-1"
-                  style={SANS}
-                >
-                  <X className="h-3 w-3" /> Clear
-                </button>
-                <Link
-                  href={canCompare
-                    ? `/leaderboard-2?a=${compareAKey}&b=${compareBKey}&tab=${statTab}`
-                    : '#'}
-                  scroll={false}
-                  className={cn(
-                    'h-9 px-4 inline-flex items-center text-[11px] uppercase tracking-[0.22em] rounded-full transition-colors',
-                    canCompare
-                      ? 'bg-[var(--paper-text)] text-[var(--paper)] hover:opacity-85'
-                      : 'border border-[var(--paper-rule)] text-[var(--paper-faint)] pointer-events-none',
-                  )}
-                  style={SANS}
-                  aria-disabled={!canCompare}
-                >
-                  {canCompare ? 'Open comparison →' : 'Pick two to compare'}
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* ── Player panel (non-versus row click) ──────────────────── */}
         <PanelPlayer
           player={selectedPlayer}
@@ -542,87 +498,89 @@ export function LeaderboardYearbook({
   )
 }
 
-// ── Versus dock slot ────────────────────────────────────────────────────────
-
-function VersusSlot({ label, row }: { label: string; row: (Passer | Rusher | Receiver) | null }) {
-  if (!row) {
-    return (
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-dashed border-[var(--paper-rule)] rounded-full text-[12px] text-[var(--paper-faint)]"
-        style={{ ...SERIF, fontStyle: 'italic' }}>
-        <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-quiet)] text-[10px] tabular-nums" style={SANS}>{label}</span>
-        Pick a leader
-      </div>
-    )
-  }
-  const logo = SCHOOL_LOGOS[row.school_slug]
-  return (
-    <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[var(--paper-rule)] rounded-full">
-      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px] tabular-nums" style={SANS}>{label}</span>
-      {logo && <Image src={logo} alt="" width={18} height={18} className="object-contain shrink-0" unoptimized />}
-      <span className="text-[13px] text-[var(--paper-text)]" style={{ ...SERIF, fontWeight: 500 }}>{row.player_name}</span>
-      <span className="text-[11px] tabular-nums text-[var(--paper-faint)]" style={MONO}>{formatSeason(row.season)}</span>
-    </div>
-  )
-}
-
 // ── Shared player cell — rank + logo + Name/School stacked ─────────────────
 
 type SharedRowProps<R extends { player_slug: string; player_name: string; school_slug: string; school_name: string; season: number }> = {
   rows: R[]
   onRowClick: (r: R) => void
+  onAssign: (rowKey: string) => void
   selectedPlayer: AnyPlayerRow | null
   versusMode: boolean
   compareAKey: string | null
   compareBKey: string | null
 }
 
-function LeaderboardPlayerCell({
-  rank, player, versusMode, versusLabel,
-}: {
-  rank: number
-  player: { player_slug: string; player_name: string; school_slug: string; school_name: string }
-  versusMode: boolean
-  versusLabel: string | null
-}) {
-  const logo     = SCHOOL_LOGOS[player.school_slug]
-  const teamSlug = `${player.school_slug}-varsity-football`
+function RankCell({ rank }: { rank: number }) {
   return (
-    <td className="pl-5 py-3.5">
-      <div className="flex items-center gap-3 min-w-0">
-        <span className="shrink-0 w-6 text-right">
-          {versusMode && versusLabel ? (
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--paper-text)] text-[var(--paper)] text-[10px]" style={SANS}>{versusLabel}</span>
-          ) : (
-            <span className="text-[var(--paper-faint)] tabular-nums" style={{ ...MONO, fontSize: 11 }}>{rank}.</span>
-          )}
-        </span>
-        {logo && (
-          <Link
-            href={`/team/${teamSlug}`}
-            onClick={e => e.stopPropagation()}
-            aria-label={stripSuffix(player.school_name)}
-            className="shrink-0"
+    <td className={cn(tabletTd, 'pl-5 tabular-nums w-14 text-[var(--paper-faint)]')} style={MONO}>
+      {rank}.
+    </td>
+  )
+}
+
+function PlayerNameCell({
+  slug, name, versusMode, isA, isB, hasA, onAssign,
+}: {
+  slug: string
+  name: string
+  versusMode: boolean
+  isA: boolean
+  isB: boolean
+  hasA: boolean
+  onAssign: () => void
+}) {
+  const active = isA || isB
+  const chipLabel = isA ? 'Player 1' : isB ? 'Player 2' : (hasA ? 'Player 2' : 'Player 1')
+  const isSlot2 = isB || (!isA && hasA)
+  return (
+    <td className={tabletTd}>
+      <div className="flex items-center gap-2 min-w-0">
+        <Link
+          href={`/player/${slug}`}
+          onClick={e => e.stopPropagation()}
+          className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors text-[15px] leading-tight whitespace-nowrap"
+          style={{ ...SERIF, fontWeight: 500, letterSpacing: '-0.005em' }}
+        >
+          {name}
+        </Link>
+        {versusMode && (
+          <button
+            onClick={e => { e.preventDefault(); e.stopPropagation(); onAssign() }}
+            className={cn(
+              'shrink-0 ml-auto px-3 py-0.5 rounded-full text-[10px] uppercase tracking-[0.18em] border transition-all',
+              active
+                ? 'opacity-100 text-[var(--paper)]'
+                : 'opacity-0 group-hover/row:opacity-100',
+            )}
+            style={
+              active
+                ? { background: isSlot2 ? '#b91c1c' : 'var(--paper-strong)', borderColor: 'transparent' }
+                : { color: isSlot2 ? '#dc2626' : 'var(--paper-strong)', borderColor: isSlot2 ? '#dc2626' : 'var(--paper-strong)' }
+            }
+            aria-label={isA ? 'Remove Player 1' : isB ? 'Remove Player 2' : `Assign as ${chipLabel}`}
           >
-            <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
-          </Link>
+            {chipLabel}
+          </button>
         )}
-        <div className="min-w-0">
-          <Link
-            href={`/player/${player.player_slug}`}
-            onClick={e => e.stopPropagation()}
-            className="block text-[var(--paper-text)] group-hover/row:text-[var(--paper-strong)] transition-colors leading-tight truncate"
-            style={{ ...SERIF, fontSize: 15, fontWeight: 500, letterSpacing: '-0.005em' }}
-          >
-            {player.player_name}
-          </Link>
-          <p
-            className="text-[11.5px] text-[var(--paper-muted)] truncate"
-            style={{ ...SERIF, fontStyle: 'italic' }}
-          >
-            {stripSuffix(player.school_name)}
-          </p>
-        </div>
       </div>
+    </td>
+  )
+}
+
+function TeamCell({ schoolSlug, schoolName }: { schoolSlug: string; schoolName: string }) {
+  const logo = SCHOOL_LOGOS[schoolSlug]
+  return (
+    <td className={tabletTd}>
+      <Link
+        href={`/team/${schoolSlug}-varsity-football`}
+        onClick={e => e.stopPropagation()}
+        className="flex items-center gap-2 text-[var(--paper-muted)] hover:text-[var(--paper-strong)] hover:underline transition-colors min-w-0"
+      >
+        {logo && (
+          <Image src={logo} alt="" width={18} height={18} className="h-[18px] w-[18px] object-contain shrink-0" unoptimized />
+        )}
+        <span className="truncate" style={{ ...SERIF, fontStyle: 'italic', fontSize: 13.5 }}>{stripSuffix(schoolName)}</span>
+      </Link>
     </td>
   )
 }
@@ -630,7 +588,7 @@ function LeaderboardPlayerCell({
 // ── Passing Tablet ──────────────────────────────────────────────────────────
 
 function PassingTablet({
-  rows, sortCol, sortDir, onSort, onRowClick, selectedPlayer, versusMode, compareAKey, compareBKey,
+  rows, sortCol, sortDir, onSort, onRowClick, onAssign, selectedPlayer, versusMode, compareAKey, compareBKey,
 }: SharedRowProps<Passer> & { sortCol: PassCol; sortDir: SortDir; onSort: (c: string) => void }) {
   if (rows.length === 0) return <EmptyTablet label="No passing leaders for this filter." />
 
@@ -640,7 +598,7 @@ function PassingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr className="border-b border-[var(--paper-rule)]">
-              <th colSpan={2} className="pl-5 pr-3 pt-3 pb-1.5 text-left" />
+              <th colSpan={4} className="pl-5 pr-3 pt-3 pb-1.5 text-left" />
               <th colSpan={6} className="px-3 pt-3 pb-1.5 text-left">
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>Standard</span>
               </th>
@@ -652,7 +610,9 @@ function PassingTablet({
               </th>
             </tr>
             <tr>
-              <SortTh col="player_name"  label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="rank"         label="#"     sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
+              <SortTh col="player_name"  label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
+              <SortTh col="school_name"  label="Team"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
               <SortTh col="season"       label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="pass_yards"   label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" glossaryId="pass-yds" />
               <SortTh col="attempts"     label="ATT"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="att-pass" />
@@ -683,7 +643,10 @@ function PassingTablet({
                   onClick={() => onRowClick(p)}
                   active={!!onPanel}
                   versusMode={versusMode}
-                  versusLabel={isA ? '1' : isB ? '2' : null}
+                  isA={isA}
+                  isB={isB}
+                  hasA={!!compareAKey}
+                  onAssign={() => onAssign(rowKey)}
                 />
               )
             })}
@@ -694,22 +657,27 @@ function PassingTablet({
   )
 }
 
-function PassingRow({ rank, p, onClick, active, versusMode, versusLabel }: {
+function PassingRow({ rank, p, onClick, active, versusMode, isA, isB, hasA, onAssign }: {
   rank: number; p: Passer; onClick: () => void
-  active: boolean; versusMode: boolean; versusLabel: string | null
+  active: boolean; versusMode: boolean
+  isA: boolean; isB: boolean; hasA: boolean; onAssign: () => void
 }) {
+  const compareActive = isA || isB
   return (
     <tr
       onClick={onClick}
       className={cn(
-        'group/row border-t border-[var(--paper-rule-soft)] cursor-pointer transition-colors',
+        'group/row border-t border-[var(--paper-rule-soft)] transition-colors',
+        !versusMode && 'cursor-pointer',
         active
           ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_10%,transparent)]'
           : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
-        versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
+        compareActive && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_12%,transparent)]',
       )}
     >
-      <LeaderboardPlayerCell rank={rank} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+      <RankCell rank={rank} />
+      <PlayerNameCell slug={p.player_slug} name={p.player_name} versusMode={versusMode} isA={isA} isB={isB} hasA={hasA} onAssign={onAssign} />
+      <TeamCell schoolSlug={p.school_slug} schoolName={p.school_name} />
       <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.pass_yards)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.attempts)}</td>
@@ -731,7 +699,7 @@ function PassingRow({ rank, p, onClick, active, versusMode, versusLabel }: {
 // ── Rushing Tablet ─────────────────────────────────────────────────────────
 
 function RushingTablet({
-  rows, sortCol, sortDir, onSort, onRowClick, selectedPlayer, versusMode, compareAKey, compareBKey,
+  rows, sortCol, sortDir, onSort, onRowClick, onAssign, selectedPlayer, versusMode, compareAKey, compareBKey,
 }: SharedRowProps<Rusher> & { sortCol: RushCol; sortDir: SortDir; onSort: (c: string) => void }) {
   if (rows.length === 0) return <EmptyTablet label="No rushing leaders for this filter." />
 
@@ -741,7 +709,9 @@ function RushingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr>
-              <SortTh col="player_name"   label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="rank"          label="#"      sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
+              <SortTh col="player_name"   label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
+              <SortTh col="school_name"   label="Team"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
               <SortTh col="season"        label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="rush_yards"    label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" />
               <SortTh col="rush_attempts" label="ATT"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
@@ -756,7 +726,7 @@ function RushingTablet({
               const rowKey = `${p.player_slug}__${p.season}`
               const isA = compareAKey === rowKey
               const isB = compareBKey === rowKey
-              const versusLabel = isA ? '1' : isB ? '2' : null
+              const compareActive = isA || isB
               const active = !!selectedPlayer && `${selectedPlayer.player_slug}__${selectedPlayer.season}` === rowKey
               const ypc = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
               const tdPct = p.rush_attempts ? (p.rush_tds ?? 0) / p.rush_attempts : null
@@ -765,14 +735,17 @@ function RushingTablet({
                   key={rowKey}
                   onClick={() => onRowClick(p)}
                   className={cn(
-                    'group/row border-t border-[var(--paper-rule-soft)] cursor-pointer transition-colors',
+                    'group/row border-t border-[var(--paper-rule-soft)] transition-colors',
+                    !versusMode && 'cursor-pointer',
                     active
                       ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_10%,transparent)]'
                       : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
-                    versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
+                    compareActive && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_12%,transparent)]',
                   )}
                 >
-                  <LeaderboardPlayerCell rank={i + 1} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+                  <RankCell rank={i + 1} />
+                  <PlayerNameCell slug={p.player_slug} name={p.player_name} versusMode={versusMode} isA={isA} isB={isB} hasA={!!compareAKey} onAssign={() => onAssign(rowKey)} />
+                  <TeamCell schoolSlug={p.school_slug} schoolName={p.school_name} />
                   <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.rush_yards)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.rush_attempts)}</td>
@@ -793,7 +766,7 @@ function RushingTablet({
 // ── Receiving Tablet ───────────────────────────────────────────────────────
 
 function ReceivingTablet({
-  rows, sortCol, sortDir, onSort, onRowClick, selectedPlayer, versusMode, compareAKey, compareBKey,
+  rows, sortCol, sortDir, onSort, onRowClick, onAssign, selectedPlayer, versusMode, compareAKey, compareBKey,
 }: SharedRowProps<Receiver> & { sortCol: RecvCol; sortDir: SortDir; onSort: (c: string) => void }) {
   if (rows.length === 0) return <EmptyTablet label="No receiving leaders for this filter." />
 
@@ -803,7 +776,9 @@ function ReceivingTablet({
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr>
-              <SortTh col="player_name" label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5" />
+              <SortTh col="rank"        label="#"      sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="pl-5 w-14" />
+              <SortTh col="player_name" label="Player" sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
+              <SortTh col="school_name" label="Team"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} />
               <SortTh col="season"      label="Season" sortCol={sortCol} sortDir={sortDir} onSort={onSort} className="w-24" />
               <SortTh col="recv_yards"  label="YDS"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" />
               <SortTh col="receptions"  label="REC"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
@@ -816,7 +791,7 @@ function ReceivingTablet({
               const rowKey = `${p.player_slug}__${p.season}`
               const isA = compareAKey === rowKey
               const isB = compareBKey === rowKey
-              const versusLabel = isA ? '1' : isB ? '2' : null
+              const compareActive = isA || isB
               const active = !!selectedPlayer && `${selectedPlayer.player_slug}__${selectedPlayer.season}` === rowKey
               const ypr = p.receptions ? (p.recv_yards ?? 0) / p.receptions : null
               return (
@@ -824,14 +799,17 @@ function ReceivingTablet({
                   key={rowKey}
                   onClick={() => onRowClick(p)}
                   className={cn(
-                    'group/row border-t border-[var(--paper-rule-soft)] cursor-pointer transition-colors',
+                    'group/row border-t border-[var(--paper-rule-soft)] transition-colors',
+                    !versusMode && 'cursor-pointer',
                     active
                       ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_10%,transparent)]'
                       : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
-                    versusLabel && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]',
+                    compareActive && 'bg-[color:color-mix(in_srgb,var(--paper-strong)_12%,transparent)]',
                   )}
                 >
-                  <LeaderboardPlayerCell rank={i + 1} player={p} versusMode={versusMode} versusLabel={versusLabel} />
+                  <RankCell rank={i + 1} />
+                  <PlayerNameCell slug={p.player_slug} name={p.player_name} versusMode={versusMode} isA={isA} isB={isB} hasA={!!compareAKey} onAssign={() => onAssign(rowKey)} />
+                  <TeamCell schoolSlug={p.school_slug} schoolName={p.school_name} />
                   <td className={cn(tabletTd, 'tabular-nums text-[var(--paper-muted)] whitespace-nowrap')} style={MONO}>{formatSeason(p.season)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums font-medium text-[var(--paper-text)]')} style={MONO}>{fmt(p.recv_yards)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.receptions)}</td>
