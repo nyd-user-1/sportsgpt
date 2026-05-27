@@ -22,6 +22,38 @@
 
 - **Never call a button a "pill."** A *pill* is a filter chip (e.g. division/season selectors that toggle a view). A *button* triggers an action (open a panel, navigate, submit). Even when a button is rounded and looks pill-shaped, it is still a button — describe it as a button, button group, or chip if it really is filter UI.
 
+## Editorial Migration Pattern
+
+Pages are being rebuilt in the editorial voice via parallel `/foo-2` routes that ship side-by-side with the legacy `/foo`, then retire the legacy once approved. **Active migrations:**
+
+- `/team-2` (Teams index) — editorial, ships next to legacy `/team`; old `TeamTable.tsx` will retire.
+- `/charts-2` (`ChartsAlmanac.tsx`) — editorial "table of figures" treatment of `/charts`. Three chapter sections (Team & Season / Player & Position / Game Records), 4-col card grid (no 6-col breakpoint per user feedback), full-color photos with subtle `brightness-110` hover. Re-exports the chart detail parallel routes from `/charts/@panel`, `/charts/@player`, `/charts/@team` so the detail panel tree isn't duplicated.
+
+Shared SQL between `/charts` and `/charts-2`: `src/lib/chart-leaders.ts` exposes `fetchChartLeaders()` returning `Record<chartSlug, top3SchoolSlugs>`.
+
+## Shared Editorial Components (`src/components/editorial/`)
+
+Component additions beyond the original system:
+
+- **`SearchButtonGroup`** — five-cell connected pill that sits in every sticky toolbar. Cells: `[Search → ⌘K palette]` + Anthropic + OpenAI + Google + Grok (Grok is sometimes removed, see git history). Logos pulled from `gallery/logos/ai/` blob CDN with `dark:invert` filter so dark icons render visible in dark mode. Cells 2-5 are model-provider placeholders (no click handlers wired). Replaces the old right-side counter chip on every editorial sticky bar.
+- **`CmdKButton`**, **`AIButton`** — earlier solo-button versions, superseded by `SearchButtonGroup`. Still exported in case a page needs them individually.
+- **`CmdKAIGroup`** — alternate two-cell `[AI │ ⌘K]` variant, also superseded.
+
+## Editorial Panel Conventions
+
+Every `AppPanel` rendered in editorial mode follows two rules:
+
+1. **Sticky footer identifier.** Every panel has a footer slot with a 10px DM Sans uppercase `tracking-[0.24em]` `--paper-faint` label identifying the panel type — `GAME LOG PANEL`, `GAME DETAIL PANEL`, `SEASONS PANEL`, `SCHEDULE PANEL`, `GAME HIGHLIGHTS PANEL`, `TEAM PANEL`, `PLAYER PANEL`. No trailing "View full X page ↗" link in the footer — the link, if present, lives inline in the panel body.
+2. **Header structure.** When `canGoBack === false` (top-level view): `[logo] {team name as link to /team/{slug}}`. When `canGoBack === true` (drill-down view): `[← back] {team name as link}`. The team name is *always* a `Link` to `/team/{slug}-varsity-football` with `hover:text-[var(--paper-strong)]`.
+
+## Charts Almanac (`/charts-2`)
+
+- `ChartsAlmanac.tsx` is the editorial component.
+- Standard `EditorialButtonGroup` lives in the masthead `rightSlot` (Charts / Players / Ask SportsGPT) with prev/next chevrons wired to last/first chart slug.
+- `SearchInput` is wired and filters chart titles by query (`useSearchHotkey` listens for `⌘/`).
+- Chapter filter tabs (All / Team & Season / Player & Position / Game Records) above the grid.
+- Card click → `/charts-2/[slug]` opens chart detail via the `@panel` parallel route.
+
 ---
 
 ## Editorial Design System (Paper Palette)

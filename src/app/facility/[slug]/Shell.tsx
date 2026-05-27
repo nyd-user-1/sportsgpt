@@ -234,7 +234,7 @@ export function FacilityShell({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={facility.facility_name} />
+      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={facility.facility_name} />
     </>
   )
 }

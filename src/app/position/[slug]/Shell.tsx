@@ -8,17 +8,15 @@ import {
   ChartSpline, Map as MapIcon, MessageCircle, ArrowLeft, ArrowRight,
 } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
-import { PLAYER_PHOTOS, SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
+import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
 import { PanelChat } from '@/components/PanelChat'
-import { RevealFx } from '@/components/RevealFx'
 import { cn, formatSeason } from '@/lib/utils'
 import { POSITIONS, type PositionConfig } from '@/lib/positions'
 import {
   EditorialHead,
   EditorialButtonGroup,
-  HeroStrip,
   PAPER_BRIDGE,
   PlayerRankedList,
   SectionHead,
@@ -30,6 +28,7 @@ import {
   tabletTd,
   StickyControlBar,
   ContentsNav,
+  SiteContentsTop,
   SearchInput,
   useSearchHotkey,
   SearchButtonGroup,
@@ -432,29 +431,6 @@ export function PositionShell({
 
   useSearchHotkey(searchRef, () => setQuery(''))
 
-  // Hero slides — top players from the first chapter, NOT query-filtered so the
-  // slider stays stable while the user is searching.
-  const slidePlayers = useMemo(() => {
-    if (chapters.length === 0) return players.slice(0, 8)
-    return [...playerStatMap.entries()]
-      .filter(([slug, s]) => chapters[0].qualifies(s) && playerMap.has(slug))
-      .sort((a, b) => chapters[0].rankBy(b[1]) - chapters[0].rankBy(a[1]))
-      .slice(0, 8)
-      .map(([slug]) => playerMap.get(slug)!)
-  }, [chapters, playerStatMap, playerMap, players])
-
-  const slides = useMemo(() => {
-    const seen = new Set<string>()
-    return slidePlayers
-      .map(p => PLAYER_PHOTOS[p.slug] ?? (p.school_slug ? TEAM_PHOTOS[p.school_slug]?.[0] : null))
-      .filter((s): s is string => {
-        if (!s || seen.has(s)) return false
-        seen.add(s)
-        return true
-      })
-      .slice(0, 6)
-  }, [slidePlayers])
-
   const mobileHeader = (
     <div className="flex items-center gap-2 w-full">
       <div className="flex-1 min-w-0">
@@ -502,15 +478,6 @@ export function PositionShell({
               {config.fullName}
             </EditorialHead>
           </div>
-
-          {/* ── Hero photo strip ──────────────────────────────── */}
-          {slides.length > 0 && (
-            <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 mb-14">
-              <RevealFx delay={0.1} translateY={8}>
-                <HeroStrip slides={slides} />
-              </RevealFx>
-            </div>
-          )}
 
           {/* ── Sticky control bar ──────────────────────────── */}
           <StickyControlBar>
@@ -583,6 +550,7 @@ export function PositionShell({
                 label="Metrics"
                 items={chapterData.map(c => ({ id: c.id, label: c.chapter.label, count: c.rows.length }))}
                 activeId={activeChapter}
+                topChildren={<SiteContentsTop />}
               />
 
               {/* Main content */}
@@ -660,7 +628,7 @@ export function PositionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={config.fullName} />
+        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={config.fullName} />
       </div>
     </>
   )

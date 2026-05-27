@@ -16,9 +16,11 @@ import {
   SectionHead,
   StickyControlBar,
   ContentsNav,
+  SiteContentsTop,
   PlayerRankedList,
   SearchInput,
   useSearchHotkey,
+  SearchButtonGroup,
   PAPER_BRIDGE,
   MONO,
   TABLET_RADIUS,
@@ -619,13 +621,7 @@ export function ChartDetailPage({
               placeholder={`Search ${entityNoun}s…`}
             />
 
-            <div className="ml-auto text-[11px] uppercase tracking-[0.18em] text-[var(--paper-faint)] tabular-nums hidden md:block">
-              {totalCount > 0
-                ? q
-                  ? `${entryCount} / ${totalCount} ranked`
-                  : `${totalCount} ranked entries`
-                : ''}
-            </div>
+            <SearchButtonGroup />
           </StickyControlBar>
 
           {/* ── Body: sidebar + rankings ─────────────────────────── */}
@@ -639,6 +635,7 @@ export function ChartDetailPage({
                 items={chartSections}
                 activeId={config.entity === 'team' ? (divisionFilter ?? undefined) : 'rankings'}
                 onSelect={config.entity === 'team' ? handleDivisionSelect : undefined}
+                topChildren={<SiteContentsTop />}
               />
             )}
 
@@ -707,7 +704,7 @@ export function ChartDetailPage({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={config.title} />
+      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={config.title} />
     </>
   )
 }

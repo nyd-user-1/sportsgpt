@@ -62,10 +62,12 @@ export default async function LaunchpadLayout({
             </Suspense>
             <Suspense fallback={null}>
               <div
-                className="flex-1 min-w-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] overflow-hidden transition-all duration-200"
-                style={{ borderRadius: 3 }}
+                className="flex-1 min-w-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] transition-all duration-200"
+                style={{ padding: 6, borderRadius: 3 }}
               >
-                {detail}
+                <div className="relative h-full w-full overflow-hidden" style={{ borderRadius: 1 }}>
+                  {detail}
+                </div>
               </div>
             </Suspense>
           </div>

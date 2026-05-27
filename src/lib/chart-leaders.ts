@@ -1,8 +1,8 @@
 import { sql } from '@/lib/db'
 
 /**
- * Fetch the top-3 school slugs for each chart's leaderboard. Used by both
- * `/charts` and `/charts-2` to populate card photos.
+ * Fetch the top-3 school slugs for each chart's leaderboard. Used by
+ * `/charts` to populate card photos.
  */
 export async function fetchChartLeaders(): Promise<Record<string, string[]>> {
   const [

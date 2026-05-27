@@ -75,12 +75,21 @@ export function useChat() {
   const [isStreaming, setIsStreaming] = useState(false)
   const abortRef = useRef<AbortController | null>(null)
 
-  const sendMessage = useCallback(async (content: string, model = 'claude-haiku-4-5-20251001') => {
+  const sendMessage = useCallback(async (
+    content: string,
+    model = 'claude-haiku-4-5-20251001',
+    contextPrefix?: string,
+  ) => {
     const userMsg: Message = { id: generateId(), role: 'user', content }
     setMessages(prev => [...prev, userMsg])
     setIsStreaming(true)
 
-    const prevMessages = [...messages.slice(-6), { role: 'user' as const, content }]
+    // Optionally scope the conversation (e.g. panel chat tied to a team/division).
+    // The prefix is only sent to the API — it isn't stored in the visible message log.
+    const apiContent = contextPrefix
+      ? `[Currently viewing: ${contextPrefix}]\n\n${content}`
+      : content
+    const prevMessages = [...messages.slice(-6), { role: 'user' as const, content: apiContent }]
 
     const assistantId = generateId()
     setMessages(prev => [...prev, { id: assistantId, role: 'assistant' as const, content: '' }])

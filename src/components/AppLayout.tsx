@@ -190,7 +190,12 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
 
           {title && (
             <div className={`ml-4 flex items-center gap-2 ${paperMode ? 'text-[var(--paper-text)]' : 'text-[var(--txt)]'}`}>
-              <span className="text-xl font-bold">{chartNav?.pageTitle ?? title}</span>
+              <span
+                className="text-[22px] leading-none tracking-[-0.01em]"
+                style={{ fontFamily: 'var(--font-display), Georgia, serif', fontWeight: 500 }}
+              >
+                {chartNav?.pageTitle ?? title}
+              </span>
             </div>
           )}
 
@@ -264,11 +269,19 @@ function AuthButtons() {
   if (status === 'loading' || session?.user) return null
 
   return (
-    <div className="flex items-center gap-2">
-      <Link href="/sign-in" className="h-9 px-4 rounded-full border border-[var(--border)] text-sm font-medium text-[var(--txt)] hover:bg-[var(--inp-bg)] transition-colors flex items-center">
+    <div className="flex items-center gap-1.5">
+      <Link
+        href="/sign-in"
+        className="h-8 px-3.5 border border-[var(--paper-rule)] dark:border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.18em] font-medium text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors flex items-center"
+        style={{ borderRadius: 3, fontFamily: 'var(--font-sans), system-ui, sans-serif' }}
+      >
         Sign in
       </Link>
-      <Link href="/sign-up" className="h-9 px-4 rounded-full bg-[var(--txt)] text-sm font-medium text-[var(--surface)] hover:opacity-80 transition-opacity flex items-center">
+      <Link
+        href="/sign-up"
+        className="h-8 px-3.5 bg-[var(--paper-text)] text-[var(--paper)] text-[11px] uppercase tracking-[0.18em] font-medium hover:opacity-85 transition-opacity flex items-center"
+        style={{ borderRadius: 3, fontFamily: 'var(--font-sans), system-ui, sans-serif' }}
+      >
         Sign up
       </Link>
     </div>

@@ -190,7 +190,7 @@ export function ZipShell({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={`${stats.zip_code} ${stats.city}`} />
+      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={`${stats.zip_code} ${stats.city}`} />
     </>
   )
 }

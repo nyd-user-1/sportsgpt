@@ -1014,7 +1014,7 @@ export function TeamShell({
       </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={teamName} />
+      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={teamName} />
       <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" searchable onSearchChange={q => setRosterQuery(q)}>
         {(() => {
           const teamLogo = SCHOOL_LOGOS[schoolSlug]

@@ -18,6 +18,7 @@ import {
   SectionHead,
   StickyControlBar,
   ContentsNav,
+  SiteContentsTop,
   SearchInput,
   useSearchHotkey,
 } from '@/components/editorial'
@@ -339,6 +340,7 @@ export function DivisionShell({
             <ContentsNav
               items={SECTIONS.map(s => ({ id: s.id, label: s.label, count: sectionCounts[s.id] }))}
               activeId={activeSection}
+              topChildren={<SiteContentsTop divisionHref={`/division/${divSlug}`} />}
             />
 
             <main className="min-w-0">
@@ -490,7 +492,7 @@ export function DivisionShell({
         <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}    onClose={() => setMapsOpen(false)}   />
         <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)}   countyName={`Division ${division}`} />
+        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)}   context={`Division ${division}`} />
       </div>
     </>
   )

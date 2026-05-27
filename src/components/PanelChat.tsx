@@ -1,109 +1,197 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { ArrowUp, MapPin } from 'lucide-react'
+import { useRef, useEffect, useState } from 'react'
+import { ArrowUp, Square } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { AppLogo } from '@/components/AppLogo'
 import { AppPanel } from './AppPanel'
-import { APP_NAME, ACCENT_COLOR, CHAT_PLACEHOLDER_PANEL, CHAT_PANEL_INTRO } from '@/lib/app-config'
+import { useChat } from '@/hooks/useChat'
+import { APP_NAME, CHAT_PLACEHOLDER_PANEL, CHAT_PANEL_INTRO } from '@/lib/app-config'
 
-type Message = { id: string; role: 'user' | 'assistant'; content: string }
+const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
+const SANS  = { fontFamily: 'var(--font-sans), system-ui, sans-serif' } as const
+const MONO  = { fontFamily: 'var(--font-mono), ui-monospace, monospace' } as const
+
+const PANEL_MODEL = 'gemini-2.5-flash'
+
+// Lightweight markdown components tuned for a narrow panel.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const md: any = {
+  p: ({ children }: { children: React.ReactNode }) => (
+    <p className="mb-2 last:mb-0 leading-[1.6]" style={{ ...SERIF, fontSize: 14, color: 'var(--paper-text)' }}>
+      {children}
+    </p>
+  ),
+  strong: ({ children }: { children: React.ReactNode }) => (
+    <strong className="font-semibold text-[var(--paper-text)]">{children}</strong>
+  ),
+  em: ({ children }: { children: React.ReactNode }) => (
+    <em className="italic text-[var(--paper-muted)]">{children}</em>
+  ),
+  code: ({ children }: { children: React.ReactNode }) => (
+    <code className="px-1 py-0.5 rounded-[2px] bg-[var(--paper)] border border-[var(--paper-rule)] text-[12px] text-[var(--paper-text)]" style={MONO}>
+      {children}
+    </code>
+  ),
+  ul: ({ children }: { children: React.ReactNode }) => (
+    <ul className="list-disc pl-5 mb-2 space-y-0.5" style={{ ...SERIF, fontSize: 14, color: 'var(--paper-text)' }}>
+      {children}
+    </ul>
+  ),
+  ol: ({ children }: { children: React.ReactNode }) => (
+    <ol className="list-decimal pl-5 mb-2 space-y-0.5" style={{ ...SERIF, fontSize: 14, color: 'var(--paper-text)' }}>
+      {children}
+    </ol>
+  ),
+  a: ({ children, href }: { children: React.ReactNode; href?: string }) => (
+    <a href={href} className="text-[var(--paper-strong)] underline-offset-2 hover:underline">{children}</a>
+  ),
+}
 
 export function PanelChat({
   open,
   onClose,
+  context,
   countyName,
 }: {
   open: boolean
   onClose: () => void
-  countyName: string
+  /** Free-form context label (team, division, section, etc.). */
+  context?: string
+  /** @deprecated Use `context`. Retained temporarily for legacy callers. */
+  countyName?: string
 }) {
-  const [messages, setMessages] = useState<Message[]>([])
+  const label = context ?? countyName ?? ''
+  const { messages, isStreaming, sendMessage, stopStreaming, clearMessages } = useChat()
   const [input, setInput] = useState('')
-  const [loading, setLoading] = useState(false)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const bottomRef   = useRef<HTMLDivElement>(null)
 
-  useEffect(() => { if (open) setMessages([]) }, [open, countyName])
-  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages])
+  // Reset the conversation when the panel opens or the context changes.
+  useEffect(() => {
+    if (open) clearMessages()
+  }, [open, label, clearMessages])
 
-  const submit = async (text: string) => {
-    const trimmed = text.trim()
-    if (!trimmed || loading) return
-    setMessages(prev => [...prev, { id: crypto.randomUUID(), role: 'user', content: trimmed }])
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages])
+
+  // Auto-grow textarea, capped at ~120px.
+  useEffect(() => {
+    const el = textareaRef.current
+    if (!el) return
+    el.style.height = 'auto'
+    el.style.height = `${Math.min(el.scrollHeight, 120)}px`
+  }, [input])
+
+  const submit = () => {
+    const trimmed = input.trim()
+    if (!trimmed || isStreaming) return
+    sendMessage(trimmed, PANEL_MODEL, label)
     setInput('')
-    setLoading(true)
-    await new Promise(r => setTimeout(r, 900))
-    setMessages(prev => [...prev, {
-      id: crypto.randomUUID(),
-      role: 'assistant',
-      content: `AI integration coming soon. Explore ${APP_NAME} data for ${countyName} using the panels and map.`,
-    }])
-    setLoading(false)
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      submit()
+    }
   }
 
   const footer = (
-    <div className="px-4 py-3 space-y-2">
-      {/* County context chip */}
-      <div className="flex items-center gap-1.5 text-xs text-sky-500 font-medium">
-        <MapPin className="h-3 w-3 shrink-0" />
-        <span>{countyName} County, New York</span>
+    <div className="px-5 pt-3 pb-4 space-y-2.5 border-t border-[var(--paper-rule)]">
+      {/* Context label */}
+      <div
+        className="flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] text-[var(--paper-faint)]"
+        style={SANS}
+      >
+        <span aria-hidden className="inline-block w-4 h-px bg-[var(--paper-rule)]" />
+        <span>{label}</span>
       </div>
-      {/* Input */}
-      <div className="flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--inp-bg)] px-3 py-2">
-        <input
-          type="text"
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          onKeyDown={e => { if (e.key === 'Enter') submit(input) }}
-          placeholder={CHAT_PLACEHOLDER_PANEL}
-          className="flex-1 bg-transparent text-sm text-[var(--txt)] placeholder:text-[var(--muted2)] outline-none"
-        />
-        <button
-          onClick={() => submit(input)}
-          disabled={!input.trim() || loading}
-          className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1a1a1a] text-white disabled:opacity-25 hover:opacity-80 transition-opacity"
-        >
-          <ArrowUp className="h-3.5 w-3.5" />
-        </button>
+
+      {/* Input — variant of ChatInput from /chat (textarea + send, no toolbar) */}
+      <div
+        className="flex flex-col border border-[var(--paper-rule)] bg-[var(--paper-quiet)] px-4 pt-3 pb-3 gap-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+        style={{ borderRadius: 3 }}
+      >
+        <div className="flex items-end gap-2">
+          <textarea
+            ref={textareaRef}
+            rows={1}
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder={CHAT_PLACEHOLDER_PANEL}
+            className="flex-1 resize-none bg-transparent py-1 text-[15px] text-[var(--paper-text)] placeholder:text-[var(--paper-faint)] outline-none leading-relaxed"
+            style={{ minHeight: '32px', ...SERIF }}
+          />
+          <button
+            onClick={isStreaming ? stopStreaming : submit}
+            disabled={!isStreaming && !input.trim()}
+            className="flex h-9 w-9 shrink-0 items-center justify-center text-white transition-opacity disabled:opacity-25 hover:opacity-85"
+            style={{
+              borderRadius: 3,
+              background: isStreaming ? '#dc2626' : 'var(--paper-strong)',
+            }}
+            aria-label={isStreaming ? 'Stop' : 'Send'}
+          >
+            {isStreaming
+              ? <Square className="h-3.5 w-3.5" fill="currentColor" />
+              : <ArrowUp className="h-4 w-4" />}
+          </button>
+        </div>
       </div>
-      <p className="text-[10px] text-[var(--muted2)] text-center">GPT-4o mini</p>
+
+      <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
+        Chat Panel
+      </p>
     </div>
   )
 
   return (
     <AppPanel open={open} onClose={onClose} title={APP_NAME} footer={footer}>
-      <div className="px-4 py-4">
+      <div className="px-5 py-5">
         {messages.length === 0 ? (
-          <div className="flex flex-col items-center justify-center gap-3 pt-12 text-center">
+          <div className="flex flex-col items-center justify-center gap-4 pt-14 text-center">
             <AppLogo className="h-10 w-10" />
-            <p className="text-sm text-[var(--muted)] max-w-[200px]">
+            <p className="text-[15px] italic text-[var(--paper-muted)] max-w-[260px] leading-relaxed" style={SERIF}>
               {CHAT_PANEL_INTRO}
             </p>
           </div>
         ) : (
           <div className="flex flex-col gap-3">
-            {messages.map(msg => (
-              <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                {msg.role === 'assistant' && (
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full mr-2 mt-0.5" style={{ background: ACCENT_COLOR }}>
-                    <AppLogo className="h-3 w-3" />
+            {messages.map(msg => {
+              const isUser = msg.role === 'user'
+              const empty  = !isUser && msg.content.length === 0
+              return (
+                <div key={msg.id} className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
+                  {!isUser && (
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full mr-2 mt-0.5 border border-[var(--paper-rule)] bg-[var(--paper-quiet)]">
+                      <AppLogo className="h-3 w-3" />
+                    </div>
+                  )}
+                  <div
+                    className={`max-w-[85%] px-3.5 py-2.5 ${
+                      isUser
+                        ? 'border border-[var(--paper-rule)] bg-[var(--paper-quiet)] text-[var(--paper-text)] text-[14px] leading-relaxed'
+                        : 'bg-[var(--paper-quiet)] text-[var(--paper-text)]'
+                    }`}
+                    style={{ ...SERIF, borderRadius: 3 }}
+                  >
+                    {isUser ? (
+                      msg.content
+                    ) : empty ? (
+                      <span className="inline-block w-1.5 h-3.5 bg-[var(--paper-faint)] animate-pulse" />
+                    ) : (
+                      <ReactMarkdown remarkPlugins={[remarkGfm]} components={md}>
+                        {msg.content}
+                      </ReactMarkdown>
+                    )}
                   </div>
-                )}
-                <div className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
-                  msg.role === 'user'
-                    ? 'bg-[var(--txt)] text-[var(--bg)] rounded-br-sm'
-                    : 'bg-[var(--inp-bg)] text-[var(--txt)] rounded-bl-sm'
-                }`}>
-                  {msg.content}
                 </div>
-              </div>
-            ))}
-            {loading && (
-              <div className="flex justify-start">
-                <div className="bg-[var(--inp-bg)] rounded-2xl rounded-bl-sm px-3 py-2">
-                  <span className="inline-block w-1.5 h-3.5 bg-[var(--muted)] animate-pulse" />
-                </div>
-              </div>
-            )}
+              )
+            })}
             <div ref={bottomRef} />
           </div>
         )}
@@ -111,3 +199,4 @@ export function PanelChat({
     </AppPanel>
   )
 }
+

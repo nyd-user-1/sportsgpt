@@ -15,7 +15,7 @@ export default function ChartsLayout({
   team: React.ReactNode
 }) {
   return (
-    <AppLayout showNavArrows>
+    <AppLayout paperMode showNavArrows>
       {children}
       <ChartsPanelWrapper panel={panel} />
       <ChartsPlayerWrapper player={player} />

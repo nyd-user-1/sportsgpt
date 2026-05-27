@@ -1,13 +1,18 @@
 'use client'
 
-import { useState, useEffect, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
+import { ChartSpline, FileUser, MessageCircle } from 'lucide-react'
 import { CHART_CONFIGS, CHART_SLUGS_AZ } from '@/lib/chart-configs'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
+import { AppPanel } from '@/components/AppPanel'
+import { PanelChart } from '@/components/PanelChart'
+import { PanelChat } from '@/components/PanelChat'
 import {
-  EditorialHead, SectionHead, StickyControlBar,
+  EditorialHead, EditorialButtonGroup,
+  SectionHead, StickyControlBar,
   SearchInput, useSearchHotkey, SearchButtonGroup,
   PAPER_BRIDGE,
 } from '@/components/editorial'
@@ -62,13 +67,18 @@ function schoolDisplay(slug: string): string {
 export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, string[]> }) {
   const router     = useRouter()
   const pathname   = usePathname()
-  const match      = pathname.match(/^\/charts-2\/([^/]+)/)
+  const match      = pathname.match(/^\/charts\/([^/]+)/)
   const activeSlug = match ? match[1] : null
 
   const [active, setActive] = useState<CategoryId>('all')
   const [query, setQuery]   = useState('')
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
+
+  // Toolbar panels (mirrors team/division/player/game pattern)
+  const [chartsOpen,  setChartsOpen]  = useState(false)
+  const [playersOpen, setPlayersOpen] = useState(false)
+  const [chatOpen,    setChatOpen]    = useState(false)
 
   const q = query.trim().toLowerCase()
 
@@ -95,6 +105,7 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
   }, [visibleCharts])
 
   return (
+    <>
     <div
       className="flex-1 overflow-y-auto no-scrollbar"
       style={{ backgroundColor: 'var(--paper)', ...PAPER_BRIDGE }}
@@ -115,6 +126,19 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
               `${CATEGORIES.length} chapters`,
               'all-time totals',
             ]}
+            rightSlot={
+              <EditorialButtonGroup
+                prevHref={`/charts/${CHART_SLUGS_AZ[CHART_SLUGS_AZ.length - 1]}`}
+                nextHref={`/charts/${CHART_SLUGS_AZ[0]}`}
+                prevLabel="Last chart"
+                nextLabel="First chart"
+                buttons={[
+                  { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
+                  { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
+                  { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                ]}
+              />
+            }
           >
             Charts
           </EditorialHead>
@@ -203,7 +227,7 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
                 return (
                   <button
                     key={slug}
-                    onClick={() => router.push(`/charts-2/${slug}`, { scroll: false })}
+                    onClick={() => router.push(`/charts/${slug}`, { scroll: false })}
                     className={cn(
                       'group/card flex flex-col text-left transition-all',
                     )}
@@ -289,5 +313,12 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
         </div>
       </div>
     </div>
+
+    <div style={PAPER_BRIDGE}>
+      <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
+      <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
+      <PanelChat open={chatOpen} onClose={() => setChatOpen(false)} countyName="Section XI Charts" />
+    </div>
+    </>
   )
 }

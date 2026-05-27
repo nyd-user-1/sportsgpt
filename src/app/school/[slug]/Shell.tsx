@@ -201,7 +201,7 @@ export function SchoolShell({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   countyName={schoolName} />
+      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={schoolName} />
     </>
   )
 }

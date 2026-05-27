@@ -4,6 +4,7 @@ import { useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
@@ -302,6 +303,7 @@ export function TeamMagazineShell({
   }, [offRows, offSortCol, offSortDir])
 
   return (
+    <AppLayout paperMode>
     <div className="flex-1 overflow-y-auto no-scrollbar" style={{ backgroundColor: 'var(--paper)' }}>
 
         {/* ── Masthead ───────────────────────────────────────────────────── */}
@@ -645,6 +647,7 @@ export function TeamMagazineShell({
           initialSeason={panelSeason}
         />
       </div>
+    </AppLayout>
   )
 }
 

@@ -35,6 +35,12 @@ export async function GET() {
   return Response.json({
     db: { connected: dbConnected, error: dbError },
     mapsKey: { set: !!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY },
+    aiKeys: {
+      vercelGateway: !!process.env.SPORTSGPT_VERCEL_API,
+      openai:        !!process.env.OPENAI_API_KEY,
+      anthropic:     !!(process.env.ANTHROPIC_API_KEY_SPORTSGPT2 || process.env.ANTHROPIC_API_KEY),
+      gemini:        !!(process.env.GEMINI_FLASH_API_KEY || process.env.Gemini_API_Key),
+    },
     config,
     content: {
       charts: CHART_CONFIGS.length,
