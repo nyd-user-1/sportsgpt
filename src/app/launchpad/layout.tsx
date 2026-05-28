@@ -3,7 +3,9 @@ import { AppLayout } from '@/components/AppLayout'
 import { ProviderSection } from './ProviderSection'
 import { LaunchpadTabs } from './LaunchpadTabs'
 import { LaunchpadGameWrapper } from './LaunchpadGameWrapper'
+import { LaunchpadDeck } from './LaunchpadDeck'
 import { fetchLaunchpadGames } from '@/lib/launchpad-games'
+import { fetchSectionSchools } from '@/lib/section-schools'
 import { CURRENT_SEASON } from '@/lib/season'
 
 export default async function LaunchpadLayout({
@@ -18,6 +20,7 @@ export default async function LaunchpadLayout({
   // Only the current season is fetched server-side for the initial render.
   // Older seasons load on demand (see ProviderSection) when their tab is opened.
   const games = await fetchLaunchpadGames([CURRENT_SEASON])
+  const honeycombSchools = await fetchSectionSchools().catch(() => [])
 
   return (
     <AppLayout showNavArrows paperMode>
@@ -30,25 +33,30 @@ export default async function LaunchpadLayout({
             <LaunchpadTabs />
           </Suspense>
 
-          {/* Two-slot row — stacks vertically on mobile */}
-          <div className="shrink-0 flex flex-col gap-5 sm:h-[380px] sm:flex-row">
-            <Suspense fallback={null}>
-              {children}
-            </Suspense>
-            <Suspense fallback={null}>
-              <div
-                className="flex-1 min-w-0 h-[280px] sm:h-auto border border-[var(--paper-rule)] bg-[var(--paper-quiet)] transition-all duration-200"
-                style={{ padding: 6, borderRadius: 3 }}
-              >
-                <div className="relative h-full w-full overflow-hidden" style={{ borderRadius: 1 }}>
-                  {detail}
-                </div>
+          {/* Deck: body swaps between Launchpad and Honeycomb via ?view */}
+          <LaunchpadDeck honeycombSchools={honeycombSchools}>
+            <div className="flex flex-col gap-6">
+              {/* Two-slot row — stacks vertically on mobile */}
+              <div className="shrink-0 flex flex-col gap-5 sm:h-[380px] sm:flex-row">
+                <Suspense fallback={null}>
+                  {children}
+                </Suspense>
+                <Suspense fallback={null}>
+                  <div
+                    className="flex-1 min-w-0 h-[280px] sm:h-auto border border-[var(--paper-rule)] bg-[var(--paper-quiet)] transition-all duration-200"
+                    style={{ padding: 6, borderRadius: 3 }}
+                  >
+                    <div className="relative h-full w-full overflow-hidden" style={{ borderRadius: 1 }}>
+                      {detail}
+                    </div>
+                  </div>
+                </Suspense>
               </div>
-            </Suspense>
-          </div>
 
-          {/* Game cards section */}
-          <ProviderSection games={games} />
+              {/* Game cards section */}
+              <ProviderSection games={games} />
+            </div>
+          </LaunchpadDeck>
 
         </div>
       </div>

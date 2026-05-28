@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const SANS: React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
@@ -13,15 +14,33 @@ const TABS: { label: string; key: string }[] = [
   { label: 'Division IV',  key: 'Division IV' },
 ]
 
+// Views the deck cycles through (room for more slides later).
+const VIEWS: { key: string; label: string }[] = [
+  { key: 'launchpad', label: 'Launchpad' },
+  { key: 'honeycomb', label: 'Honeycomb' },
+]
+
 export function LaunchpadTabs() {
   const router       = useRouter()
   const searchParams = useSearchParams()
   const activeTab    = searchParams.get('div') ?? 'All'
 
+  const viewKey  = searchParams.get('view') === 'honeycomb' ? 'honeycomb' : 'launchpad'
+  const viewIdx  = Math.max(0, VIEWS.findIndex(v => v.key === viewKey))
+
   function handleTab(tab: string) {
     const params = new URLSearchParams(searchParams.toString())
     if (tab === 'All') params.delete('div')
     else params.set('div', tab)
+    const qs = params.toString()
+    router.push(`/launchpad${qs ? `?${qs}` : ''}`, { scroll: false })
+  }
+
+  function cycleView(dir: 1 | -1) {
+    const next = VIEWS[(viewIdx + dir + VIEWS.length) % VIEWS.length]
+    const params = new URLSearchParams(searchParams.toString())
+    if (next.key === 'launchpad') params.delete('view')
+    else params.set('view', next.key)
     const qs = params.toString()
     router.push(`/launchpad${qs ? `?${qs}` : ''}`, { scroll: false })
   }
@@ -48,12 +67,30 @@ export function LaunchpadTabs() {
           )
         })}
       </div>
-      <span
-        className="hidden sm:inline pr-1 text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]"
-        style={SANS}
-      >
-        Launchpad
-      </span>
+
+      {/* View cycle — Launchpad ‹ › Honeycomb */}
+      <div className="hidden sm:flex items-center gap-1.5 pr-1 shrink-0">
+        <button
+          onClick={() => cycleView(-1)}
+          aria-label="Previous view"
+          className="p-0.5 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+        >
+          <ChevronLeft className="h-3.5 w-3.5" />
+        </button>
+        <span
+          className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-strong)] min-w-[5.5rem] text-center"
+          style={SANS}
+        >
+          {VIEWS[viewIdx].label}
+        </span>
+        <button
+          onClick={() => cycleView(1)}
+          aria-label="Next view"
+          className="p-0.5 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+        >
+          <ChevronRight className="h-3.5 w-3.5" />
+        </button>
+      </div>
     </div>
   )
 }
