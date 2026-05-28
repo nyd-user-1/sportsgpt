@@ -548,13 +548,13 @@ function StatTable({
 
 // Opponent display name for a game-log row (mirrors the row-render logic).
 // Shared by the table render and the search matcher so they never drift.
-function gameOppName(ref: GameLogRow, schoolSlug: string): string {
+function gameOppName(ref: GameLogRow, schoolSlug: string | null): string {
   const isHome = ref.home_team_slug === `${schoolSlug}-varsity-football`
   const rawOpp = isHome ? ref.away_team_slug : ref.home_team_slug
   return stripVarsity(isHome ? ref.away_team_name : ref.home_team_name) || GAME_SLUG_TO_NAME[rawOpp] || ''
 }
 
-function gameMatchesQuery(ref: GameLogRow, schoolSlug: string, q: string): boolean {
+function gameMatchesQuery(ref: GameLogRow, schoolSlug: string | null, q: string): boolean {
   if (!q) return true
   return gameOppName(ref, schoolSlug).toLowerCase().includes(q) || formatSeason(ref.season).toLowerCase().includes(q)
 }
