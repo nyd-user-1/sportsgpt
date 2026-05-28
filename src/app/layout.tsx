@@ -4,6 +4,7 @@ import './globals.css'
 import { APP_NAME, APP_DESCRIPTION, SITE_URL } from '@/lib/app-config'
 import { CommandPalette } from '@/components/CommandPalette'
 import { AuthProvider } from '@/components/AuthProvider'
+import { SidelineChat } from '@/components/SidelineChat'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthProvider>
           {children}
           <CommandPalette />
+          <SidelineChat />
         </AuthProvider>
       </body>
     </html>
