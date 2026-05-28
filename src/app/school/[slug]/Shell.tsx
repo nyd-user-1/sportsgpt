@@ -10,6 +10,7 @@ import { PanelChart } from '@/components/PanelChart'
 import { PanelChat } from '@/components/PanelChat'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { cn } from '@/lib/utils'
+import { districtName } from '@/lib/school-districts'
 import {
   EditorialHead,
   EditorialButtonGroup,
@@ -253,6 +254,7 @@ export function SchoolDetailShell({
   const totalWins   = teamSeasons.reduce((s, r) => s + (r.overall_wins ?? 0), 0)
   const totalLosses = teamSeasons.reduce((s, r) => s + (r.overall_losses ?? 0), 0)
   const teamSlug    = teamSeasons[0]?.slug ?? null
+  const district    = districtName(school.slug)
 
   const divRef = useRef<HTMLDivElement>(null)
   const td = tabletTd
@@ -327,7 +329,13 @@ export function SchoolDetailShell({
               <EditorialHead
                 size="xl"
                 eyebrow={
-                  <span className="inline-flex items-center gap-2">
+                  <span className="inline-flex flex-wrap items-center gap-2">
+                    {district && (
+                      <>
+                        <span className="text-[var(--paper-muted)]">{district}</span>
+                        <span className="opacity-40">·</span>
+                      </>
+                    )}
                     <Link href="/section/section-xi" className="hover:text-[var(--paper-text)] transition-colors">Section XI</Link>
                     <span className="opacity-40">·</span>
                     <Link href={`/division/division-${school.division.toLowerCase()}`} className="hover:text-[var(--paper-text)] transition-colors">Division {school.division}</Link>
