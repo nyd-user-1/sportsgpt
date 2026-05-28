@@ -19,8 +19,10 @@ import {
   MONO,
   tabletTd,
   DivisionTabs,
+  EditorialToggle,
 } from '@/components/editorial'
 import { ChatSeasonsPanel, type TeamMeta } from '@/components/ChatSeasonsPanel'
+import { PanelCompareTeam } from '@/components/PanelCompareTeam'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 import { cn } from '@/lib/utils'
@@ -145,11 +147,10 @@ function fmtSign(n: number) { return (n >= 0 ? '+' : '') + n.toFixed(1) }
 
 export function TeamMagazineShell({
   teams,
-  defaultSeason,
   availableSeasons,
 }: {
   teams: TeamMagazineRow[]
-  defaultSeason: number
+  defaultSeason?: number
   availableSeasons: readonly number[]
 }) {
   const [activeDiv,      setActiveDiv]      = useState<'All' | 'I' | 'II' | 'III' | 'IV'>('All')
@@ -163,7 +164,7 @@ export function TeamMagazineShell({
   type TeamSection = 'standings' | 'offensive'
   const TEAM_SECTIONS: TeamSection[] = ['standings', 'offensive']
   const TEAM_SECTION_TITLE: Record<TeamSection, string> = {
-    standings: 'Standings Index', offensive: 'Offensive Index',
+    standings: 'Season Index', offensive: 'Offensive Index',
   }
   const TEAM_SECTION_BLURB: Record<TeamSection, string> = {
     standings: 'Every program ranked by record — wins, losses, point differential, and conference standing.',
@@ -173,13 +174,32 @@ export function TeamMagazineShell({
   function nextTeamSection() {
     setTeamSection(t => TEAM_SECTIONS[(TEAM_SECTIONS.indexOf(t) + 1) % TEAM_SECTIONS.length])
   }
-  const [selectedSeason, setSelectedSeason] = useState<SeasonFilter>(defaultSeason)
+  const [selectedSeason, setSelectedSeason] = useState<SeasonFilter>('all')
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
 
   // Seasons panel state
   const [panelTeam,   setPanelTeam]   = useState<TeamMeta | null>(null)
   const [panelSeason, setPanelSeason] = useState<number | null>(null)
+
+  // Versus mode — compare two team-seasons head to head (mirrors /leaderboard)
+  const [versusMode, setVersusMode] = useState(false)
+  const [cmpA, setCmpA] = useState<string | null>(null)
+  const [cmpB, setCmpB] = useState<string | null>(null)
+  const teamKey = (t: TeamMagazineRow) => `${t.slug}__${t.season}`
+  function toggleVersus() {
+    setVersusMode(v => !v)
+    setCmpA(null); setCmpB(null)
+  }
+  function assignVersus(key: string) {
+    if (cmpA === key) { setCmpA(cmpB); setCmpB(null); return }
+    if (cmpB === key) { setCmpB(null); return }
+    if (!cmpA) { setCmpA(key); return }
+    if (!cmpB) { setCmpB(key); return }
+    setCmpA(cmpB); setCmpB(key)
+  }
+  const cmpTeamA = useMemo(() => teams.find(t => `${t.slug}__${t.season}` === cmpA) ?? null, [teams, cmpA])
+  const cmpTeamB = useMemo(() => teams.find(t => `${t.slug}__${t.season}` === cmpB) ?? null, [teams, cmpB])
 
   // Season nav — sort newest first, prepend 'all', wrap around
   const sortedSeasons = useMemo(
@@ -406,7 +426,13 @@ export function TeamMagazineShell({
               blurb={TEAM_SECTION_BLURB[teamSection]}
             />
 
-            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
+            <DivisionTabs
+              active={activeDiv}
+              onChange={setActiveDiv}
+              rightSlot={teamSection === 'standings'
+                ? <EditorialToggle id="team-versus" label="Vs." checked={versusMode} onCheckedChange={toggleVersus} />
+                : undefined}
+            />
 
             {teamSection === 'standings' && (sortedTeams.length === 0 ? (
               <EmptyTablet
@@ -439,11 +465,20 @@ export function TeamMagazineShell({
                       {sortedTeams.map((t, i) => {
                         const d = diffOf(t)
                         const hasDiff = t.points_for != null && t.points_against != null
+                        const k = teamKey(t)
+                        const isA = cmpA === k
+                        const isB = cmpB === k
+                        const cmpActive = isA || isB
                         return (
                           <tr
                             key={`${t.slug}-${t.season}`}
-                            onClick={() => handleRowClick(t)}
-                            className="group/row border-t border-[var(--paper-rule-soft)] cursor-pointer hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)] transition-colors"
+                            onClick={() => versusMode ? assignVersus(k) : handleRowClick(t)}
+                            className={cn(
+                              'group/row border-t border-[var(--paper-rule-soft)] cursor-pointer transition-colors',
+                              cmpActive
+                                ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_12%,transparent)]'
+                                : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
+                            )}
                           >
                             <td className={cn(tabletTd, 'pl-5 text-[var(--paper-faint)] tabular-nums')} style={MONO}>
                               {String(i + 1).padStart(2, ' ')}.
@@ -480,6 +515,22 @@ export function TeamMagazineShell({
                                 >
                                   {stripSuffix(t.name)}
                                 </Link>
+                                {versusMode && (
+                                  <button
+                                    onClick={e => { e.preventDefault(); e.stopPropagation(); assignVersus(k) }}
+                                    className={cn(
+                                      'shrink-0 ml-auto w-[78px] text-center py-1 text-[10px] uppercase tracking-[0.18em] border transition-all',
+                                      cmpActive
+                                        ? isB
+                                          ? 'opacity-100 border-transparent bg-[#dc2626] text-white'
+                                          : 'opacity-100 border-transparent bg-[var(--paper-strong)] text-white'
+                                        : 'opacity-0 group-hover/row:opacity-100 border-[var(--paper-rule)] text-[var(--paper-text)] bg-[var(--paper-quiet)]',
+                                    )}
+                                    style={{ borderRadius: 2, ...SANS }}
+                                  >
+                                    {isA ? 'Team 1' : isB ? 'Team 2' : (cmpA ? 'Team 2' : 'Team 1')}
+                                  </button>
+                                )}
                               </div>
                             </td>
                             <td className={cn(tabletTd, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>
@@ -653,6 +704,13 @@ export function TeamMagazineShell({
           onClose={() => setPanelTeam(null)}
           teams={panelTeam ? [panelTeam] : []}
           initialSeason={panelSeason}
+        />
+        <PanelCompareTeam
+          teamA={cmpTeamA}
+          teamB={cmpTeamB}
+          onClearA={() => setCmpA(null)}
+          onClearB={() => setCmpB(null)}
+          onClose={() => { setCmpA(null); setCmpB(null) }}
         />
       </div>
     </AppLayout>
