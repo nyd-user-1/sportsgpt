@@ -44,13 +44,85 @@ type Result = {
   score: number
 }
 
+// Damerau-Levenshtein distance, capped: returns early once distance exceeds `max`.
+function editDistance(a: string, b: string, max: number): number {
+  const al = a.length, bl = b.length
+  if (Math.abs(al - bl) > max) return max + 1
+  let prevPrev: number[] = []
+  let prev = Array.from({ length: bl + 1 }, (_, j) => j)
+  let curr: number[] = []
+  for (let i = 1; i <= al; i++) {
+    curr = [i]
+    let rowMin = i
+    for (let j = 1; j <= bl; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1
+      let d = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+      // transposition (Damerau)
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) {
+        d = Math.min(d, prevPrev[j - 2] + 1)
+      }
+      curr[j] = d
+      if (d < rowMin) rowMin = d
+    }
+    if (rowMin > max) return max + 1
+    prevPrev = prev
+    prev = curr
+  }
+  return prev[bl]
+}
+
+// Does `token` match any whitespace-separated word in `text` within 1 typo?
+// Exact match required for short tokens (<4 chars) to avoid junk matches.
+function fuzzyTokenHit(token: string, words: string[]): boolean {
+  if (token.length < 4) return false
+  for (const w of words) {
+    if (Math.abs(w.length - token.length) > 1) continue
+    if (editDistance(token, w, 1) <= 1) return true
+  }
+  return false
+}
+
+// Connector words ignored when matching multi-entity queries ("X vs Y").
+const STOPWORDS = new Set(['vs', 'v', 'and', 'the', 'at', 'or'])
+
+// Token-based match with typo tolerance.
+//   -1 exact · 0 prefix · whole-query substring (index) · token tiers · Infinity
+// Multi-word queries match per token: connector words are dropped, then a row
+// scores by how many remaining tokens it covers (substring first, ≤1-typo
+// fallback). A row surfaces if it covers at least one meaningful token, so
+// "floyd vs ward melville" surfaces both Floyd and Ward Melville separately.
 function matchScore(query: string, text: string): number {
-  const q = query.toLowerCase()
+  const q = query.trim().toLowerCase()
   const t = text.toLowerCase()
+  if (!q) return Infinity
   if (t === q) return -1
   if (t.startsWith(q)) return 0
-  const i = t.indexOf(q)
-  return i >= 0 ? i : Infinity
+  const whole = t.indexOf(q)
+  if (whole >= 0) return whole
+
+  const allTokens = q.split(/\s+/).filter(Boolean)
+  const tokens = allTokens.filter(tok => !STOPWORDS.has(tok))
+  if (tokens.length === 0) return Infinity
+  const words = t.split(/\s+/).filter(Boolean)
+
+  let cleanHits = 0
+  let fuzzyHits = 0
+  for (const tok of tokens) {
+    if (t.includes(tok)) { cleanHits++; continue }
+    if (fuzzyTokenHit(tok, words)) { fuzzyHits++; continue }
+  }
+  const covered = cleanHits + fuzzyHits
+  if (covered === 0) return Infinity
+  // Anchor rule: a fuzzy-only match qualifies only if the query is a single
+  // token or at least one token is a clean substring hit. Prevents common
+  // words (e.g. "best" → "West") from surfacing unrelated rows.
+  if (cleanHits === 0 && tokens.length > 1) return Infinity
+
+  // Reward covering more of the query; penalize uncovered tokens and typos so
+  // cleaner / more complete matches rank first. Always > substring tier (which
+  // returns small indices), so single-entity exact substrings still win.
+  const uncovered = tokens.length - covered
+  return 100 + uncovered * 40 + fuzzyHits * 20
 }
 
 const DIVISIONS = [
