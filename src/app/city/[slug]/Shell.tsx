@@ -67,7 +67,7 @@ export function CityShell({
 
   return (
     <>
-      <AppLayout>
+      <AppLayout paperMode>
         <div className="flex-1 overflow-y-auto no-scrollbar">
           <div className="mx-auto max-w-4xl px-5 py-8">
 

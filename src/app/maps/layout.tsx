@@ -9,7 +9,7 @@ export default function MapsLayout({
   panel: React.ReactNode
 }) {
   return (
-    <AppLayout>
+    <AppLayout paperMode>
       {children}
       <MapsPanelWrapper panel={panel} />
     </AppLayout>

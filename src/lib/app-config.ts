@@ -41,9 +41,9 @@ export const PATH_NAV: Record<string, string> = {
   '/chat':                'Chat',
   '/charts':              'Charts',
   '/maps':                'Maps',
-  '/team':                'Teams',
-  '/school':              'Schools',
-  '/player':              'Players',
+  '/team':                'Team',
+  '/school':              'School',
+  '/player':              'Player',
   '/leaderboard':         'Leaderboard',
   '/division':            'Divisions',
   '/division/division-i':   'Divisions',
@@ -62,9 +62,9 @@ export const PATH_NAV: Record<string, string> = {
 export const PATH_TITLE: Record<string, string> = {
   '/charts':              'Charts',
   '/maps':                'Maps',
-  '/team':                'Teams',
-  '/school':              'Schools',
-  '/player':              'Players',
+  '/team':                'Team',
+  '/school':              'School',
+  '/player':              'Player',
   '/leaderboard':         'Leaderboard',
   '/division':            'Divisions',
   '/division/division-i': 'Division I',
@@ -83,8 +83,8 @@ export const SIDEBAR_NAV_TOP: NavItem[] = [
   { label: 'Launchpad', icon: Rocket,          href: '/launchpad'           },
   { label: 'Chat',      icon: MessageCircle,   href: '/chat'                },
   { label: 'Charts',    icon: LayoutDashboard, href: '/charts'              },
-  { label: 'Players',   icon: User,            href: '/player'              },
-  { label: 'Teams',     icon: Building2,       href: '/team'                },
+  { label: 'Player',   icon: User,            href: '/player'              },
+  { label: 'Team',     icon: Building2,       href: '/team'                },
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
@@ -94,7 +94,7 @@ export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
 
 export const SIDEBAR_NAV_MORE: NavItem[] = [
   { label: 'Maps',       icon: Map,         href: '/maps'                },
-  { label: 'Schools',    icon: School,      href: '/school'              },
+  { label: 'School',    icon: School,      href: '/school'              },
   { label: 'Divisions',  icon: LayoutGrid,  href: '/division/division-i' },
   { label: 'Positions',  icon: Users,       href: '/position/qb'         },
   { label: 'Section XI', icon: Trophy,      href: '/section/section-xi'  },

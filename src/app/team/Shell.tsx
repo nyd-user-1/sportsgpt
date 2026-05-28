@@ -158,6 +158,17 @@ export function TeamMagazineShell({
   const [sortDir,        setSortDir]        = useState<'asc' | 'desc'>('asc')
   const [offSortCol,     setOffSortCol]     = useState<OffCol>('rank')
   const [offSortDir,     setOffSortDir]     = useState<'asc' | 'desc'>('asc')
+
+  // Section cycling — one table visible at a time
+  type TeamSection = 'standings' | 'offensive'
+  const TEAM_SECTIONS: TeamSection[] = ['standings', 'offensive']
+  const TEAM_SECTION_TITLE: Record<TeamSection, string> = {
+    standings: 'Standings Index', offensive: 'Offensive Index',
+  }
+  const [teamSection, setTeamSection] = useState<TeamSection>('standings')
+  function nextTeamSection() {
+    setTeamSection(t => TEAM_SECTIONS[(TEAM_SECTIONS.indexOf(t) + 1) % TEAM_SECTIONS.length])
+  }
   const [selectedSeason, setSelectedSeason] = useState<SeasonFilter>(defaultSeason)
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
@@ -375,18 +386,29 @@ export function TeamMagazineShell({
           <SearchButtonGroup />
         </StickyControlBar>
 
-        {/* ── Standings Index — full sortable table ──────────────────────── */}
+        {/* ── Single section — cycles Standings / Offensive ────────────── */}
         <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-12" id="standings">
-          <RevealFx delay={0.15} translateY={8}>
+          <RevealFx delay={0.15} translateY={8} key={teamSection}>
             <SectionHead
-              title="Standings Index"
               eyebrow={<DivisionDots active={activeDiv} />}
               noRule
+              title={
+                <span className="inline-flex items-center gap-4">
+                  <span>{TEAM_SECTION_TITLE[teamSection]}</span>
+                  <button
+                    onClick={nextTeamSection}
+                    aria-label="Next index"
+                    className="inline-flex items-center justify-center text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors duration-150"
+                  >
+                    <ArrowRight className="h-8 w-8" />
+                  </button>
+                </span>
+              }
             />
 
             <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
 
-            {sortedTeams.length === 0 ? (
+            {teamSection === 'standings' && (sortedTeams.length === 0 ? (
               <EmptyTablet
                 label={q
                   ? `No teams match “${query}” in ${DIV_LABEL[activeDiv]} for ${seasonLabel}.`
@@ -504,21 +526,9 @@ export function TeamMagazineShell({
                   </table>
                 </div>
               </Tablet>
-            )}
-          </RevealFx>
+            ))}
 
-          {/* ── Offensive Index ───────────────────────────────────────── */}
-          <div id="offensive-index" className="mt-16">
-          <RevealFx delay={0.22} translateY={8}>
-            <SectionHead
-              title="Offensive Index"
-              eyebrow={<DivisionDots active={activeDiv} />}
-              noRule
-            />
-
-            <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
-
-            {sortedOffRows.length === 0 ? (
+            {teamSection === 'offensive' && (sortedOffRows.length === 0 ? (
               <EmptyTablet
                 label={q
                   ? `No teams match “${query}” in ${DIV_LABEL[activeDiv]} for ${seasonLabel}.`
@@ -621,9 +631,8 @@ export function TeamMagazineShell({
                   </table>
                 </div>
               </Tablet>
-            )}
+            ))}
           </RevealFx>
-          </div>
 
           {/* ── Colophon ──────────────────────────────────────────────── */}
           <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">

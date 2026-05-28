@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef } from 'react'
 import Image from 'next/image'
 import { useRouter, usePathname } from 'next/navigation'
-import { ChartSpline, FileUser, MessageCircle } from 'lucide-react'
+import { ChartSpline, FileUser, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react'
 import { CHART_CONFIGS, CHART_SLUGS_AZ } from '@/lib/chart-configs'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
@@ -50,10 +50,10 @@ const CHART_CATEGORY: Record<string, Exclude<CategoryId, 'all'>> = {
 }
 
 const FILTER_TABS: { id: CategoryId; label: string }[] = [
-  { id: 'all',    label: 'All' },
-  { id: 'team',   label: 'Team & Season' },
-  { id: 'player', label: 'Player & Position' },
-  { id: 'game',   label: 'Game Records' },
+  { id: 'all',    label: 'All Charts' },
+  { id: 'team',   label: 'Team' },
+  { id: 'player', label: 'Player' },
+  { id: 'game',   label: 'Game' },
 ]
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -145,27 +145,44 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
         </RevealFx>
       </div>
 
-      {/* ── Sticky control bar: filter tabs + search + Cmd/AI ───── */}
+      {/* ── Sticky control bar ─────────────────────────────────── */}
       <StickyControlBar>
-        <div className="flex items-center">
-          {FILTER_TABS.map(tab => {
-            const on = active === tab.id
-            return (
-              <button
-                key={tab.id}
-                onClick={() => setActive(tab.id)}
-                className={cn(
-                  'px-4 py-3 text-[11px] uppercase tracking-[0.22em] whitespace-nowrap border-b-2 -mb-px transition-colors first:pl-0',
-                  on
-                    ? 'border-[var(--paper-strong)] text-[var(--paper-strong)]'
-                    : 'border-transparent text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
-                )}
-                style={SANS}
-              >
-                {tab.label}
-              </button>
-            )
-          })}
+        <div className="flex items-center gap-3 shrink-0">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--paper-faint)]" style={SANS}>
+            Charts
+          </span>
+          {FILTER_TABS.length > 1 && (
+            <button
+              onClick={() => {
+                const idx = FILTER_TABS.findIndex(t => t.id === active)
+                const prev = (idx - 1 + FILTER_TABS.length) % FILTER_TABS.length
+                setActive(FILTER_TABS[prev].id)
+              }}
+              aria-label="Previous"
+              className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+          )}
+          <span
+            className="text-[var(--paper-text)] tabular-nums min-w-[5.5rem] text-center"
+            style={{ ...SERIF, fontSize: 17, fontStyle: 'italic', fontWeight: 400 }}
+          >
+            {FILTER_TABS.find(t => t.id === active)?.label ?? 'All Charts'}
+          </span>
+          {FILTER_TABS.length > 1 && (
+            <button
+              onClick={() => {
+                const idx = FILTER_TABS.findIndex(t => t.id === active)
+                const next = (idx + 1) % FILTER_TABS.length
+                setActive(FILTER_TABS[next].id)
+              }}
+              aria-label="Next"
+              className="p-1 text-[var(--paper-faint)] hover:text-[var(--paper-text)] transition-colors"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          )}
         </div>
 
         <SearchInput

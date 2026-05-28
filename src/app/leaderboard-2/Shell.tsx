@@ -8,8 +8,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelPlayer, type AnyPlayerRow } from '@/components/PanelPlayer'
-import { Switch } from '@/components/ui/switch'
-import { Label } from '@/components/ui/label'
 import {
   EditorialHead,
   SectionHead,
@@ -23,6 +21,7 @@ import {
   MONO,
   tabletTd,
   DivisionTabs,
+  EditorialToggle,
   type DivisionKey,
 } from '@/components/editorial'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
@@ -397,30 +396,7 @@ export function LeaderboardYearbook({
               active={activeDiv}
               onChange={setActiveDiv}
               rightSlot={
-                <div className="flex items-center gap-2.5">
-                  <Label
-                    htmlFor="versus-switch"
-                    className={cn(
-                      'cursor-pointer select-none transition-colors',
-                      versusMode ? 'text-[var(--paper-strong)]' : 'text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
-                    )}
-                    style={{ ...SERIF, fontStyle: 'italic', fontSize: 15 }}
-                  >
-                    Vs.
-                  </Label>
-                  <Switch
-                    id="versus-switch"
-                    checked={versusMode}
-                    onCheckedChange={toggleVersus}
-                    className={cn(
-                      'border border-[var(--paper-rule)]',
-                      'data-[state=unchecked]:bg-[var(--paper-quiet)]',
-                      'data-[state=checked]:!bg-[var(--paper-strong)]',
-                      '[&_span]:bg-[var(--paper-text)] [&_span]:shadow-none',
-                      'data-[state=checked]:[&_span]:bg-[var(--paper)]',
-                    )}
-                  />
-                </div>
+                <EditorialToggle id="versus-switch" label="Vs." checked={versusMode} onCheckedChange={toggleVersus} />
               }
             />
 

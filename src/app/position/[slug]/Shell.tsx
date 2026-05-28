@@ -445,7 +445,7 @@ export function PositionShell({
 
   return (
     <>
-      <AppLayout mobileHeader={mobileHeader}>
+      <AppLayout mobileHeader={mobileHeader} paperMode>
         <div
           className="flex-1 overflow-y-auto no-scrollbar"
           style={{ backgroundColor: 'var(--paper)' }}
