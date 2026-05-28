@@ -1,9 +1,21 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { SectionShell } from './Shell'
 import { CURRENT_SEASON, AVAILABLE_SEASONS } from '@/lib/season'
+import { pageMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  if (slug !== 'section-xi') return {}
+  return pageMetadata({
+    title: 'Section XI',
+    description: 'Section XI high school football — Long Island (Nassau & Suffolk). Divisions I–IV, season records, champions, games, and statistical leaders.',
+    path: '/section/section-xi',
+  })
+}
 
 export default async function SectionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params

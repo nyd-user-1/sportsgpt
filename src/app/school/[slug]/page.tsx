@@ -1,8 +1,23 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { SchoolDetailShell } from './Shell'
+import { pageMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const rows = await sql`SELECT name FROM schools WHERE slug = ${slug} LIMIT 1`
+  const school = rows[0]
+  if (!school) return {}
+  const name = school.name as string
+  return pageMetadata({
+    title: name,
+    description: `${name} — enrollment, graduation rates, Regents results, demographics, and football program profile for this Section XI school.`,
+    path: `/school/${slug}`,
+  })
+}
 
 export type SchoolDetail = {
   slug: string

@@ -1,8 +1,25 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { TeamShell } from './Shell'
+import { cleanTeamName, pageMetadata } from '@/lib/seo'
+import { jsonLdScriptProps, sportsTeamLd } from '@/lib/jsonld'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const rows = await sql`SELECT name, division FROM teams WHERE slug = ${slug} LIMIT 1`
+  const team = rows[0]
+  if (!team) return {}
+  const name = cleanTeamName(team.name as string)
+  const div = team.division ? ` Division ${team.division}` : ''
+  return pageMetadata({
+    title: `${name} Football`,
+    description: `${name} varsity football —${div} Section XI records, season standings, schedule, results, and roster.`,
+    path: `/team/${slug}`,
+  })
+}
 
 export default async function TeamDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -145,6 +162,12 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
   const totalTeams    = namesSorted.length
 
   return (
+    <>
+      <script {...jsonLdScriptProps(sportsTeamLd({
+        name: cleanTeamName(team.name as string),
+        slug: slug,
+        division: team.division as string | null,
+      }))} />
     <TeamShell
       team={team as Record<string, unknown>}
       totalRecords={totalRecords}
@@ -177,5 +200,6 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
         away_team_name: r.away_team_name as string | null,
       }))}
     />
+    </>
   )
 }

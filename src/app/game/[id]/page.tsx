@@ -1,8 +1,39 @@
+import type { Metadata } from 'next'
 import { sql } from '@/lib/db'
 import { notFound } from 'next/navigation'
 import { GameShell } from './GameShell'
+import { cleanTeamName, pageMetadata } from '@/lib/seo'
+import { jsonLdScriptProps, sportsEventLd } from '@/lib/jsonld'
+import { formatSeason } from '@/lib/utils'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const gameId = parseInt(id, 10)
+  if (isNaN(gameId)) return {}
+  const rows = await sql`
+    SELECT ht.name AS home_name, at2.name AS away_name,
+           g.home_score, g.away_score, g.season
+    FROM games g
+    LEFT JOIN teams ht  ON ht.slug  = g.home_team_slug
+    LEFT JOIN teams at2 ON at2.slug = g.away_team_slug
+    WHERE g.id = ${gameId}
+    LIMIT 1`
+  const game = rows[0]
+  if (!game) return {}
+  const home = cleanTeamName((game.home_name as string) ?? 'Home')
+  const away = cleanTeamName((game.away_name as string) ?? 'Away')
+  const season = game.season != null ? formatSeason(game.season as number) : ''
+  const score = game.home_score != null && game.away_score != null
+    ? ` Final: ${home} ${game.home_score}, ${away} ${game.away_score}.`
+    : ''
+  return pageMetadata({
+    title: `${away} at ${home}${season ? ` (${season})` : ''}`,
+    description: `${away} vs ${home} Section XI football${season ? `, ${season} season` : ''}.${score} Box score, player stats, and game highlights.`,
+    path: `/game/${gameId}`,
+  })
+}
 
 export default async function GamePage({
   params,
@@ -83,6 +114,15 @@ export default async function GamePage({
   const totalPlayers = Number((playerCountRows as { total: number }[])[0]?.total ?? 0)
 
   return (
+    <>
+      <script {...jsonLdScriptProps(sportsEventLd({
+        id: gameId,
+        homeName: cleanTeamName((game.home_team_name as string | null) ?? homeSlug),
+        awayName: cleanTeamName((game.away_team_name as string | null) ?? awaySlug),
+        homeScore: game.home_score != null ? Number(game.home_score) : null,
+        awayScore: game.away_score != null ? Number(game.away_score) : null,
+        date: game.game_date ? new Date(game.game_date as unknown as string).toISOString().slice(0, 10) : null,
+      }))} />
     <GameShell
       game={game as Record<string, unknown>}
       box={(boxRows[0] ?? null) as Record<string, unknown> | null}
@@ -94,5 +134,6 @@ export default async function GamePage({
       totalTeams={totalTeams}
       totalPlayers={totalPlayers}
     />
+    </>
   )
 }

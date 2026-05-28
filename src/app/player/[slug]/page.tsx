@@ -1,8 +1,31 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { PlayerShell } from './Shell'
+import { pageMetadata } from '@/lib/seo'
+import { jsonLdScriptProps, personAthleteLd } from '@/lib/jsonld'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const rows = await sql`
+    SELECT p.name, p.position, s.name AS school_name
+    FROM players p
+    LEFT JOIN schools s ON s.slug = p.school_slug
+    WHERE p.slug = ${slug}
+    LIMIT 1`
+  const player = rows[0]
+  if (!player) return {}
+  const name = player.name as string
+  const pos = player.position ? `${player.position}` : 'football player'
+  const school = player.school_name ? ` for ${player.school_name}` : ''
+  return pageMetadata({
+    title: name,
+    description: `${name} — ${pos}${school}. Section XI career and per-season stats, game logs, and totals.`,
+    path: `/player/${slug}`,
+  })
+}
 
 export default async function PlayerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -119,6 +142,13 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
   const next = n > 0 ? allPlayers[(idx + 1) % n] : null
 
   return (
+    <>
+      <script {...jsonLdScriptProps(personAthleteLd({
+        name: player.name as string,
+        slug: player.slug as string,
+        position: player.position as string | null,
+        schoolName: school?.name ?? null,
+      }))} />
     <PlayerShell
       player={{
         id:          Number(player.id),
@@ -226,5 +256,6 @@ export default async function PlayerDetailPage({ params }: { params: Promise<{ s
         position:    r.position as string | null,
       }))}
     />
+    </>
   )
 }

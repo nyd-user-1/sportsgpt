@@ -1,7 +1,9 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { sql } from '@/lib/db'
 import { DivisionShell } from './Shell'
 import { AVAILABLE_SEASONS } from '@/lib/season'
+import { pageMetadata } from '@/lib/seo'
 
 export const dynamic = 'force-dynamic'
 
@@ -10,6 +12,17 @@ const divMap: Record<string, string> = {
   'division-ii':  'II',
   'division-iii': 'III',
   'division-iv':  'IV',
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const division = divMap[slug]
+  if (!division) return {}
+  return pageMetadata({
+    title: `Division ${division}`,
+    description: `Section XI Division ${division} football — team standings, season records, and passing, rushing, and receiving leaders.`,
+    path: `/division/${slug}`,
+  })
 }
 
 export default async function DivisionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
