@@ -1,8 +1,9 @@
 'use client'
 
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
@@ -210,6 +211,20 @@ export function TeamMagazineShell({
     () => ['all', ...sortedSeasons],
     [sortedSeasons],
   )
+
+  // Deep-link support: /team?season=2023 opens the Season Index on that year
+  // (used by search "Seasons" results). Guard against missing/invalid params.
+  const searchParams = useSearchParams()
+  useEffect(() => {
+    const raw = searchParams.get('season')
+    if (!raw) return
+    const yr = Number(raw)
+    if (Number.isInteger(yr) && sortedSeasons.includes(yr)) {
+      setSelectedSeason(yr)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   function shiftSeason(delta: 1 | -1) {
     const idx = seasonOptions.indexOf(selectedSeason)
     const next = (idx + delta + seasonOptions.length) % seasonOptions.length

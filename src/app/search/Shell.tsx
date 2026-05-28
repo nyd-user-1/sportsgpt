@@ -4,7 +4,7 @@ import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Search, X, ArrowUpRight, Users, Building2, School, BarChart2, Swords, Clock, Rocket, MessageCircle } from 'lucide-react'
+import { Search, X, ArrowUpRight, Users, Building2, School, BarChart2, Swords, Clock, Rocket, MessageCircle, CalendarDays } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { EditorialHead } from '@/components/editorial'
@@ -45,17 +45,24 @@ const QUICK_NAV = [
 
 // ── Category metadata for grouped rendering ──────────────────────────────────
 type CategoryKey = keyof GroupedResults
-const CATEGORY_ORDER: CategoryKey[] = ['teams', 'players', 'schools', 'games', 'divisions', 'charts']
+// Stable order for the scope pills (muscle memory — does NOT reorder per query).
+const CATEGORY_ORDER: CategoryKey[] = ['teams', 'players', 'schools', 'games', 'seasons', 'divisions', 'charts']
 const CATEGORY_LABEL: Record<CategoryKey, string> = {
-  teams: 'Teams', players: 'Players', schools: 'Schools', games: 'Games', divisions: 'Divisions', charts: 'Charts',
+  teams: 'Teams', players: 'Players', schools: 'Schools', games: 'Games', seasons: 'Seasons', divisions: 'Divisions', charts: 'Charts',
 }
 const TYPE_ICON: Record<ResultType, typeof Users> = {
-  player: Users, team: Building2, school: School, game: Swords, chart: BarChart2,
+  player: Users, team: Building2, school: School, game: Swords, chart: BarChart2, season: CalendarDays,
 }
 
 // Per-category caps so a broad query doesn't render thousands of rows.
 const CAPS: Record<CategoryKey, number> = {
-  teams: 24, players: 60, schools: 24, games: 30, divisions: 4, charts: 12,
+  teams: 24, players: 60, schools: 24, games: 30, seasons: 5, divisions: 4, charts: 12,
+}
+
+// Best (lowest) score in a category — used to order the rendered sections by
+// relevance so e.g. Players outranks Teams when the query is a player name.
+function bestScore(rows: Result[]): number {
+  return rows.length ? rows[0].score : Infinity
 }
 
 function ResultCard({ r, onPick }: { r: Result; onPick: (r: Result) => void }) {
@@ -151,10 +158,11 @@ export function SearchShell({
     saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, logoUrl: r.logoUrl, type: r.type })
   }
 
-  // Categories that actually have results, honoring the active scope filter.
-  const visibleCategories = CATEGORY_ORDER.filter(k =>
-    grouped[k].length > 0 && (scope === 'all' || scope === k),
-  )
+  // Categories with results, honoring the scope filter — ordered by best match
+  // so the most relevant category (e.g. Players for a player name) renders first.
+  const visibleCategories = CATEGORY_ORDER
+    .filter(k => grouped[k].length > 0 && (scope === 'all' || scope === k))
+    .sort((a, b) => bestScore(grouped[a]) - bestScore(grouped[b]))
 
   return (
     <AppLayout paperMode>

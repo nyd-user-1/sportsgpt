@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Search, X, ArrowUpRight, Users, Building2, School, BarChart2, Swords, Rocket, MessageCircle, ListOrdered, ArrowDown } from 'lucide-react'
+import { Search, X, ArrowUpRight, Users, Building2, School, BarChart2, Swords, Rocket, MessageCircle, ListOrdered, ArrowDown, CalendarDays } from 'lucide-react'
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { EditorialHead, PAPER_BRIDGE } from '@/components/editorial'
@@ -44,6 +44,7 @@ function promptFor(r: Result): string {
     case 'school': return `Profile ${r.displayName} — enrollment, academics, and the football program.`
     case 'game':   return `Recap this game: ${r.name}. Who were the standout performers?`
     case 'chart':  return `Walk me through the ${r.displayName} leaders and what the numbers say.`
+    case 'season': return `Recap the ${r.displayName.replace(/ Season$/, '')} Section XI season — the top teams, biggest games, and standout players.`
     default:       return `Show me the ${r.displayName} standings and statistical leaders.`
   }
 }
@@ -69,15 +70,20 @@ const BRIEFINGS: Briefing[] = [
 ]
 
 type CategoryKey = keyof GroupedResults
-const CATEGORY_ORDER: CategoryKey[] = ['teams', 'players', 'schools', 'games', 'divisions', 'charts']
+const CATEGORY_ORDER: CategoryKey[] = ['teams', 'players', 'schools', 'games', 'seasons', 'divisions', 'charts']
 const CATEGORY_LABEL: Record<CategoryKey, string> = {
-  teams: 'Teams', players: 'Players', schools: 'Schools', games: 'Games', divisions: 'Divisions', charts: 'Charts',
+  teams: 'Teams', players: 'Players', schools: 'Schools', games: 'Games', seasons: 'Seasons', divisions: 'Divisions', charts: 'Charts',
 }
 const TYPE_ICON: Record<ResultType, typeof Users> = {
-  player: Users, team: Building2, school: School, game: Swords, chart: BarChart2,
+  player: Users, team: Building2, school: School, game: Swords, chart: BarChart2, season: CalendarDays,
 }
 const CAPS: Record<CategoryKey, number> = {
-  teams: 24, players: 60, schools: 24, games: 30, divisions: 4, charts: 12,
+  teams: 24, players: 60, schools: 24, games: 30, seasons: 5, divisions: 4, charts: 12,
+}
+
+// Best (lowest) score in a category — orders rendered sections by relevance.
+function bestScore(rows: Result[]): number {
+  return rows.length ? rows[0].score : Infinity
 }
 
 // A clickable result that, instead of navigating, fires a chat prompt.
@@ -194,9 +200,9 @@ export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeam
     [grouped],
   )
   const hasQuery = query.trim().length > 0
-  const visibleCategories = CATEGORY_ORDER.filter(k =>
-    grouped[k].length > 0 && (scope === 'all' || scope === k),
-  )
+  const visibleCategories = CATEGORY_ORDER
+    .filter(k => grouped[k].length > 0 && (scope === 'all' || scope === k))
+    .sort((a, b) => bestScore(grouped[a]) - bestScore(grouped[b]))
 
   // Click a result → send its tailored prompt; the page transitions to chat.
   const pickResult = useCallback((r: Result) => {
