@@ -171,6 +171,8 @@ Client: `@neondatabase/serverless` — `import { sql } from '@/lib/db'`
 | `game_box_scores` | `game_id` (UNIQUE), `newsday_id`, `highlights`, `quarter_scores` (JSONB), `player_stats` (JSONB — raw scrape, avoid for stat rendering) |
 | `player_game_stats` | `game_id`, `season`, `player_slug`, `player_name`, `school_slug`, `team_name`, `stat_type`, `rush_att/yds/tds`, `pass_comp/att/yds/tds/int`, `rec_rec/yds/tds`, `kick_pat/fg/points`, `def_int/sacks/fumbles` |
 | `player_rosters` | `school_slug`, `season`, `player_name`, `player_slug`, `position`, `jersey_number`, `class` |
+| `school_year_stats` | `school_slug`, `year` (NYSED year, e.g. 2025 = 2024-25), per-grade enrollment, demographics, grad-rate/diploma cols, **Report Card cols:** `attendance_level`, `chronic_abs_rate`, `cccr_index/level`, `perf_ela/math/sci_idx`, `exp_per_pupil`, `inexp_teach_pct`, `out_of_cert_pct`, `grad_4yr/5yr/6yr_rate` |
+| `school_regents_results` | `school_slug`, `year`, `subject` (canonical), `sort_order`, `tested`, `num_prof`, `pct_prof`, `pct_l1..pct_l5`. PK `(school_slug, year, subject)`. One row per school/year/subject; main HS building only, deduped by max `tested`. |
 
 ### Slug formats
 - Team slug: `{school-slug}-varsity-football`
@@ -271,7 +273,7 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 |-------|------|-------|
 | `/team/[slug]` | `Shell.tsx` | Hero photo SLIDER (auto-advance 4s, color placeholder slide 0, arrows), RevealFx stagger animation, Profiles carousel, Division Standings |
 | `/player/[slug]` | `Shell.tsx` | Season tabs (Total + per-season) with ← → arrow key nav; Total tab = career StatTable with All Seasons rollup; season tab = game log InfoTable (from `games`+`game_box_scores` JSONB matched by player name); breadcrumbs: Team / Position / Player below H1; RevealFx animations |
-| `/school/[slug]` | — | Enrollment, academics |
+| `/school/[slug]` | `Shell.tsx` + `page.tsx` | Enrollment, Grad Rate (+ Cohort Completion sub-table), **Report Card chapter** (4 themed sub-tables), Academic, Demographic, Need, Trend, Football, Division. Year-row tables share a `selectedYear` (click a row to select); see "School Detail — Report Card" below. |
 | `/division/[slug]` | `Shell.tsx` | Hero photo slider (auto-advance, arrows), Standings + season carousel |
 | `/gallery/p/[id]` | `page.tsx` | Fullscreen lightbox; stable hash IDs; filmstrip centered on active photo |
 | `/maps` | `page.tsx` + parallel route | Suffolk district choropleth colored by school identity; click → team detail in AppPanel |
@@ -431,6 +433,33 @@ src/app/charts/
 
 ---
 
+## School Detail — Report Card (`/school/[slug]/Shell.tsx`)
+
+The Report Card chapter follows the **player Stats chapter pattern**: one
+`<section>` + `SectionHead`, then per-theme `SubSectionHead` + table. Two
+module-scope helpers in `Shell.tsx` keep the tables DRY:
+
+- **`RcYearTable`** — chronological year-rows; takes `RcCol[]` column defs
+  (`{ label, get, fmt?, strong? }`). Rows are clickable and call `onSelectYear`,
+  sharing the page's `selectedYear` (same active-row highlight as Enrollment/Grad Rate).
+- **`RegentsTable`** — subject-rows for one year (Subject | Tested | L1–L5 | Prof %).
+  Reflects (does **not** set) `selectedYear` via the `regentsForYear` memo.
+
+**Four Report Card sub-tables:** Academic Performance (ELA/Math/Sci core index,
+Perf Avg, CCCR Index/Level) · Regents Exams (selected year) · Attendance &
+Absenteeism · Spending & Staffing. CCCR + attendance_level are **2024-25-only**
+in source → sparse columns by design.
+
+**Grad Rate section** has its own "Cohort Completion · 4/5/6-Year" sub-table.
+⚠ **Two grad sources, do not reconcile:** `grad_pct` (diploma table) is the
+August-final 4-yr outcome from the earlier enrollment/grad ingest; the Cohort
+Completion 4/5/6-yr rates come from the Report Card source. Different methodologies —
+keep them in separate sub-tables. The 4/5/6 within one reporting year are
+*different entering cohorts*, so non-monotonic rows (6-Yr < 5-Yr) are correct.
+Data provenance + `.mdb` source location: see the Report Card ingest scripts above.
+
+---
+
 ## Home Page (`/`)
 
 - `CardCarouselPortrait` — 12 team cards with Blob action photos, links to `/team/[slug]`
@@ -458,6 +487,8 @@ Used in: Top Players + Division Standings carousels on `/team/[slug]`.
 | `scripts/ingest-blob-photos.mjs` | Upload to Blob `gallery/` prefix (now legacy — `/public` is empty) |
 | `scripts/scrape-boxscores.mjs` | **Generalized Newsday box score scraper.** Args: `<newsday-slug> <db-season>` |
 | `scripts/ingest-boxscores.mjs` | **Generalized box score ingest.** Args: `<json-file> <db-team-slug> <season>` |
+| `scripts/extract-suffolk-reportcard.py` | Reads NYSED Report Card `.mdb` files (via `mdb-tools`) → `scripts/data/enrollment/suffolk-report-card.csv` (wide accountability + grad cohorts) + `suffolk-regents.csv` (per-subject). Source `.mdb`s live OUTSIDE the repo at `/code/education/Report Card/`. Run: `python3 scripts/extract-suffolk-reportcard.py` |
+| `scripts/ingest-reportcard.mjs` | Ingests both CSVs → adds Report Card cols to `school_year_stats` + populates `school_regents_results` (subject normalization + dedupe by max tested). Run: `node --env-file=.env.local scripts/ingest-reportcard.mjs` |
 
 Run with: `node --env-file=.env.local scripts/<name>.mjs`
 
