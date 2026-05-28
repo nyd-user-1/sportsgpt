@@ -330,6 +330,7 @@ export function LeaderboardYearbook({
                 </>
               }
               meta={[
+                <Link key="school"   href="/school"             className="hover:text-[var(--paper-strong)] transition-colors">School</Link>,
                 <Link key="division" href="/division/division-i" className="hover:text-[var(--paper-strong)] transition-colors">Division</Link>,
                 <Link key="team"     href="/team"               className="hover:text-[var(--paper-strong)] transition-colors">Team</Link>,
                 <Link key="player"   href="/player"             className="hover:text-[var(--paper-strong)] transition-colors">Player</Link>,
