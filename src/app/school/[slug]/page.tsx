@@ -67,6 +67,34 @@ export type SchoolYearStat = {
   non_diploma_credential_pct: number | null
   still_enr_pct: number | null
   dropout_pct: number | null
+  // Report Card
+  attendance_level: number | null
+  chronic_abs_rate: number | null
+  cccr_index: number | null
+  cccr_level: number | null
+  perf_ela_idx: number | null
+  perf_math_idx: number | null
+  perf_sci_idx: number | null
+  exp_per_pupil: number | null
+  inexp_teach_pct: number | null
+  out_of_cert_pct: number | null
+  // Graduation cohort completion (Report Card source — self-consistent 4≤5≤6)
+  grad_4yr_rate: number | null
+  grad_5yr_rate: number | null
+  grad_6yr_rate: number | null
+}
+
+export type RegentsRow = {
+  year: number
+  subject: string
+  sort_order: number | null
+  tested: number | null
+  pct_prof: number | null
+  pct_l1: number | null
+  pct_l2: number | null
+  pct_l3: number | null
+  pct_l4: number | null
+  pct_l5: number | null
 }
 
 export type TeamSeasonRow = {
@@ -99,7 +127,7 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
   const school = schoolRows[0]
   if (!school) notFound()
 
-  const [allSchools, yearStatsRows, teamSeasonRows, divPeerRows] = await Promise.all([
+  const [allSchools, yearStatsRows, teamSeasonRows, divPeerRows, regentsRows] = await Promise.all([
     sql`SELECT slug, name FROM schools ORDER BY name`,
 
     sql`SELECT year, g9_12, k12,
@@ -109,7 +137,11 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
           num_ell, num_swd, num_ecdis, num_homeless,
           needs_index, needs_index_desc, grad_pct, ap_pct,
           enroll_cnt, grad_cnt, reg_pct, reg_adv_pct, local_pct,
-          non_diploma_credential_pct, still_enr_pct, dropout_pct
+          non_diploma_credential_pct, still_enr_pct, dropout_pct,
+          attendance_level, chronic_abs_rate, cccr_index, cccr_level,
+          perf_ela_idx, perf_math_idx, perf_sci_idx,
+          exp_per_pupil, inexp_teach_pct, out_of_cert_pct,
+          grad_4yr_rate, grad_5yr_rate, grad_6yr_rate
         FROM school_year_stats
         WHERE school_slug = ${slug}
         ORDER BY year DESC`,
@@ -125,6 +157,12 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
         FROM schools sch
         WHERE sch.division = ${school.division} AND sch.slug != ${slug}
         ORDER BY sch.name`,
+
+    sql`SELECT year, subject, sort_order, tested, pct_prof,
+          pct_l1, pct_l2, pct_l3, pct_l4, pct_l5
+        FROM school_regents_results
+        WHERE school_slug = ${slug}
+        ORDER BY year DESC, sort_order, subject`,
   ])
 
   const namesSorted = allSchools as { slug: string; name: string }[]
@@ -193,6 +231,32 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
     non_diploma_credential_pct: toNum(r.non_diploma_credential_pct),
     still_enr_pct:  toNum(r.still_enr_pct),
     dropout_pct:    toNum(r.dropout_pct),
+    attendance_level: toNum(r.attendance_level),
+    chronic_abs_rate: toNum(r.chronic_abs_rate),
+    cccr_index:       toNum(r.cccr_index),
+    cccr_level:       toNum(r.cccr_level),
+    perf_ela_idx:     toNum(r.perf_ela_idx),
+    perf_math_idx:    toNum(r.perf_math_idx),
+    perf_sci_idx:     toNum(r.perf_sci_idx),
+    exp_per_pupil:    toNum(r.exp_per_pupil),
+    inexp_teach_pct:  toNum(r.inexp_teach_pct),
+    out_of_cert_pct:  toNum(r.out_of_cert_pct),
+    grad_4yr_rate:    toNum(r.grad_4yr_rate),
+    grad_5yr_rate:    toNum(r.grad_5yr_rate),
+    grad_6yr_rate:    toNum(r.grad_6yr_rate),
+  }))
+
+  const regentsResults: RegentsRow[] = regentsRows.map(r => ({
+    year:       Number(r.year),
+    subject:    r.subject as string,
+    sort_order: toNum(r.sort_order),
+    tested:     toNum(r.tested),
+    pct_prof:   toNum(r.pct_prof),
+    pct_l1:     toNum(r.pct_l1),
+    pct_l2:     toNum(r.pct_l2),
+    pct_l3:     toNum(r.pct_l3),
+    pct_l4:     toNum(r.pct_l4),
+    pct_l5:     toNum(r.pct_l5),
   }))
 
   const teamSeasons: TeamSeasonRow[] = teamSeasonRows.map(r => ({
@@ -217,6 +281,7 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
       prevSlug={prevSlug}
       nextSlug={nextSlug}
       yearStats={yearStats}
+      regentsResults={regentsResults}
       teamSeasons={teamSeasons}
       divPeers={divPeers}
     />

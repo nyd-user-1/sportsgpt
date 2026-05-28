@@ -14,6 +14,7 @@ import {
   EditorialHead,
   EditorialButtonGroup,
   SectionHead,
+  SubSectionHead,
   StickyControlBar,
   ContentsNav,
   SiteContentsTop,
@@ -21,13 +22,14 @@ import {
   useSearchHotkey,
   SearchButtonGroup,
   Tablet,
+  EmptyTablet,
   MONO,
   tabletTd,
   SortTh,
   PAPER_BRIDGE,
 } from '@/components/editorial'
 import type {
-  SchoolDetail, SchoolYearStat, TeamSeasonRow, DivisionPeer,
+  SchoolDetail, SchoolYearStat, RegentsRow, TeamSeasonRow, DivisionPeer,
 } from './page'
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
@@ -53,15 +55,132 @@ function fmtPctWin(w: number | null, l: number | null) {
   return g === 0 ? '--' : (ww / g).toFixed(3).replace(/^0/, '')
 }
 
-type SectionId = 'enrollment' | 'academic' | 'gradrate' | 'demographic' | 'need' | 'trend' | 'football' | 'division'
+// ── Report Card sub-table helpers ─────────────────────────────────────────────
+const thBase = 'py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]'
+const fmtPct = (v: number) => `${v}%`
+const fmtUSD = (v: number) => `$${v.toLocaleString()}`
+
+type RcCol = {
+  label: string
+  get: (yr: SchoolYearStat) => number | null
+  fmt?: (v: number) => string
+  strong?: boolean   // primary value (paper-text) vs secondary (paper-muted)
+}
+
+// Year-row sub-table: chronological rows, click selects the year (shared selector).
+function RcYearTable({
+  rows, cols, selectedYear, onSelectYear,
+}: {
+  rows: SchoolYearStat[]
+  cols: RcCol[]
+  selectedYear: number
+  onSelectYear: (y: number) => void
+}) {
+  if (!rows.length) return <EmptyTablet label="No data on file." />
+  return (
+    <Tablet>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
+          <thead>
+            <tr>
+              <th className={cn('px-5 text-left', thBase)}>Year</th>
+              {cols.map((c, ci) => (
+                <th key={c.label} className={cn(ci === cols.length - 1 ? 'px-5' : 'px-3', 'text-right', thBase)}>{c.label}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((yr, i) => {
+              const isActive = yr.year === selectedYear
+              return (
+                <tr key={yr.year}
+                  onClick={() => onSelectYear(yr.year)}
+                  className={cn(
+                    'cursor-pointer transition-colors',
+                    i > 0 && 'border-t border-[var(--paper-rule-soft)]',
+                    isActive
+                      ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]'
+                      : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
+                  )}>
+                  <td className={cn(tabletTd, 'pl-5 whitespace-nowrap')} style={SERIF}>
+                    <span className={cn(isActive ? 'text-[var(--paper-strong)] font-medium' : 'text-[var(--paper-text)]')}>
+                      {fmtNysedYear(yr.year)}
+                    </span>
+                  </td>
+                  {cols.map((c, ci) => {
+                    const v = c.get(yr)
+                    return (
+                      <td key={c.label} className={cn(
+                        tabletTd, 'text-right tabular-nums',
+                        ci === cols.length - 1 ? 'px-5' : 'px-3',
+                        c.strong ? 'text-[var(--paper-text)] font-medium' : 'text-[var(--paper-muted)]',
+                      )} style={MONO}>
+                        {v != null ? (c.fmt ? c.fmt(v) : String(v)) : '--'}
+                      </td>
+                    )
+                  })}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Tablet>
+  )
+}
+
+// Regents sub-table: subject rows for one selected year, with the level-1..5
+// distribution and a proficiency rate. Reflects (does not set) the year.
+function RegentsTable({ rows }: { rows: RegentsRow[] }) {
+  if (!rows.length) return <EmptyTablet label="No Regents results for this school year." />
+  const lvlTh = cn('px-2 text-right', thBase)
+  return (
+    <Tablet>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
+          <thead>
+            <tr>
+              <th className={cn('px-5 text-left', thBase)}>Subject</th>
+              <th className={cn('px-3 text-right', thBase)}>Tested</th>
+              <th className={lvlTh}>L1</th>
+              <th className={lvlTh}>L2</th>
+              <th className={lvlTh}>L3</th>
+              <th className={lvlTh}>L4</th>
+              <th className={lvlTh}>L5</th>
+              <th className={cn('px-5 text-right', thBase)}>Prof %</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => {
+              const lvl = [r.pct_l1, r.pct_l2, r.pct_l3, r.pct_l4, r.pct_l5]
+              return (
+                <tr key={r.subject} className={cn(i > 0 && 'border-t border-[var(--paper-rule-soft)]')}>
+                  <td className={cn(tabletTd, 'pl-5 text-[var(--paper-text)] whitespace-nowrap')} style={SERIF}>{r.subject}</td>
+                  <td className={cn(tabletTd, 'px-3 text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.tested != null ? r.tested : '--'}</td>
+                  {lvl.map((v, li) => (
+                    <td key={li} className={cn(tabletTd, 'px-2 text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{v != null ? `${v}%` : '--'}</td>
+                  ))}
+                  <td className={cn(tabletTd, 'px-5 text-right text-[var(--paper-text)] font-medium tabular-nums')} style={MONO}>{r.pct_prof != null ? `${r.pct_prof}%` : '--'}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </div>
+    </Tablet>
+  )
+}
+
+type SectionId = 'enrollment' | 'gradrate' | 'reportcard' | 'academic' | 'demographic' | 'need' | 'trend' | 'football' | 'division'
 
 export function SchoolDetailShell({
-  school, prevSlug, nextSlug, yearStats, teamSeasons, divPeers,
+  school, prevSlug, nextSlug, yearStats, regentsResults, teamSeasons, divPeers,
 }: {
   school: SchoolDetail
   prevSlug: string
   nextSlug: string
   yearStats: SchoolYearStat[]
+  regentsResults: RegentsRow[]
   teamSeasons: TeamSeasonRow[]
   divPeers: DivisionPeer[]
 }) {
@@ -73,7 +192,7 @@ export function SchoolDetailShell({
   useSearchHotkey(searchRef, () => setQuery(''))
 
   const sectionRefs = useRef<Record<SectionId, HTMLElement | null>>({
-    enrollment: null, academic: null, gradrate: null, demographic: null, need: null, trend: null, football: null, division: null,
+    enrollment: null, gradrate: null, reportcard: null, academic: null, demographic: null, need: null, trend: null, football: null, division: null,
   })
 
   // Year selector
@@ -105,6 +224,7 @@ export function SchoolDetailShell({
   const SECTIONS: { id: SectionId; label: string }[] = [
     { id: 'enrollment',  label: 'Enrollment' },
     { id: 'gradrate',    label: 'Grad Rate' },
+    { id: 'reportcard',  label: 'Report Card' },
     { id: 'academic',    label: 'Academic' },
     { id: 'demographic', label: 'Demographic' },
     { id: 'need',        label: 'Need' },
@@ -115,8 +235,9 @@ export function SchoolDetailShell({
 
   const sectionCounts: Record<SectionId, number> = {
     enrollment:   yearStats.length,
-    academic:     9,
     gradrate:     yearStats.filter(y => y.grad_pct != null).length,
+    reportcard:   yearStats.filter(y => y.exp_per_pupil != null || y.chronic_abs_rate != null).length,
+    academic:     9,
     demographic:  5,
     need:         5,
     trend:        yearStats.length,
@@ -144,6 +265,14 @@ export function SchoolDetailShell({
   const yearsAsc = useMemo(
     () => [...yearStats].sort((a, b) => b.year - a.year),
     [yearStats],
+  )
+
+  // Regents rows for the currently-selected year, in canonical subject order.
+  const regentsForYear = useMemo(
+    () => regentsResults
+      .filter(r => r.year === selectedYear)
+      .sort((a, b) => (a.sort_order ?? 99) - (b.sort_order ?? 99)),
+    [regentsResults, selectedYear],
   )
 
   // Derived stats for selected year
@@ -255,7 +384,7 @@ export function SchoolDetailShell({
                         <thead>
                           <tr>
                             <th className="px-5 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Year</th>
-                            {(['PK','K','1','2','3','4','5','6','7','8','9','10','11','12','9-12','K-12'] as const).map(lbl => (
+                            {(['K','1','2','3','4','5','6','7','8','9','10','11','12','9-12','K-12'] as const).map(lbl => (
                               <th key={lbl} className="px-2 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">{lbl}</th>
                             ))}
                           </tr>
@@ -263,9 +392,8 @@ export function SchoolDetailShell({
                         <tbody>
                           {yearsAsc.map((yr, i) => {
                             const isActive = yr.year === selectedYear
-                            const pkTotal = (yr.pk ?? 0) + (yr.pk_half ?? 0) + (yr.pk_full ?? 0)
                             const kTotal  = (yr.k_half ?? 0) + (yr.k_full ?? 0)
-                            const grades = [pkTotal, kTotal, yr.g1, yr.g2, yr.g3, yr.g4, yr.g5, yr.g6, yr.g7, yr.g8, yr.g9, yr.g10, yr.g11, yr.g12]
+                            const grades = [kTotal, yr.g1, yr.g2, yr.g3, yr.g4, yr.g5, yr.g6, yr.g7, yr.g8, yr.g9, yr.g10, yr.g11, yr.g12]
                             return (
                               <tr key={yr.year}
                                 onClick={() => {
@@ -310,7 +438,7 @@ export function SchoolDetailShell({
                 <RevealFx delay={0.2} translateY={8}>
                   <SectionHead
                     title="Grad Rate"
-                    blurb="Four-year cohort graduation outcomes (August final), sorted by year."
+                    blurb="Four-year diploma outcomes (August final) up top; 4-, 5-, and 6-year cohort completion rates from the state report card below."
                     meta={<span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>{yearStats.filter(y => y.grad_pct != null).length} years</span>}
                   />
                   <Tablet>
@@ -367,6 +495,87 @@ export function SchoolDetailShell({
                       </table>
                     </div>
                   </Tablet>
+
+                  <div className="mt-10">
+                    <SubSectionHead>Cohort Completion · 4 / 5 / 6-Year</SubSectionHead>
+                    <RcYearTable
+                      selectedYear={selectedYear}
+                      onSelectYear={setSelectedYear}
+                      rows={yearsAsc.filter(yr => yr.grad_4yr_rate != null)}
+                      cols={[
+                        { label: '4-Yr %', strong: true, get: yr => yr.grad_4yr_rate, fmt: fmtPct },
+                        { label: '5-Yr %', get: yr => yr.grad_5yr_rate, fmt: fmtPct },
+                        { label: '6-Yr %', get: yr => yr.grad_6yr_rate, fmt: fmtPct },
+                      ]}
+                    />
+                  </div>
+                </RevealFx>
+              </section>
+
+              {/* ── Report Card ───────────────────────────────────────── */}
+              <section id="reportcard" ref={(el: HTMLElement | null) => { sectionRefs.current.reportcard = el }} className="mb-20 scroll-mt-24">
+                <RevealFx delay={0.26} translateY={8}>
+                  <SectionHead
+                    title="Report Card"
+                    blurb="NYSED accountability metrics, broken out by category — subject performance, Regents results, attendance, and the dollars and staffing behind them."
+                    meta={<span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>{yearStats.filter(y => y.exp_per_pupil != null || y.chronic_abs_rate != null).length} years</span>}
+                  />
+
+                  {/* Academic Performance — core index by subject + readiness */}
+                  <div className="mb-10">
+                    <SubSectionHead>Academic Performance</SubSectionHead>
+                    <RcYearTable
+                      selectedYear={selectedYear}
+                      onSelectYear={setSelectedYear}
+                      rows={yearsAsc.filter(yr => yr.perf_ela_idx != null || yr.cccr_index != null)}
+                      cols={[
+                        { label: 'ELA',        get: yr => yr.perf_ela_idx,  fmt: v => v.toFixed(0) },
+                        { label: 'Math',       get: yr => yr.perf_math_idx, fmt: v => v.toFixed(0) },
+                        { label: 'Sci',        get: yr => yr.perf_sci_idx,  fmt: v => v.toFixed(0) },
+                        { label: 'Perf Avg',   strong: true, fmt: v => v.toFixed(0), get: yr => {
+                            const v = [yr.perf_ela_idx, yr.perf_math_idx, yr.perf_sci_idx].filter((n): n is number => n != null)
+                            return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null
+                          } },
+                        { label: 'CCCR Index', get: yr => yr.cccr_index, fmt: v => v.toFixed(0) },
+                        { label: 'CCCR Lvl',   get: yr => yr.cccr_level },
+                      ]}
+                    />
+                  </div>
+
+                  {/* Regents Exams — subject rows for the selected year */}
+                  <div className="mb-10">
+                    <SubSectionHead>Regents Exams · {fmtNysedYear(selectedYear)}</SubSectionHead>
+                    <RegentsTable rows={regentsForYear} />
+                  </div>
+
+                  {/* Attendance & Absenteeism */}
+                  <div className="mb-10">
+                    <SubSectionHead>Attendance &amp; Absenteeism</SubSectionHead>
+                    <RcYearTable
+                      selectedYear={selectedYear}
+                      onSelectYear={setSelectedYear}
+                      rows={yearsAsc.filter(yr => yr.chronic_abs_rate != null || yr.attendance_level != null)}
+                      cols={[
+                        { label: 'Attendance Lvl', strong: true, get: yr => yr.attendance_level },
+                        { label: 'Chronic Abs %',  get: yr => yr.chronic_abs_rate, fmt: fmtPct },
+                      ]}
+                    />
+                  </div>
+
+                  {/* Spending & Staffing */}
+                  <div className="mb-2">
+                    <SubSectionHead>Spending &amp; Staffing</SubSectionHead>
+                    <RcYearTable
+                      selectedYear={selectedYear}
+                      onSelectYear={setSelectedYear}
+                      rows={yearsAsc.filter(yr => yr.exp_per_pupil != null || yr.inexp_teach_pct != null || yr.out_of_cert_pct != null)}
+                      cols={[
+                        { label: '$/Pupil',     strong: true, get: yr => yr.exp_per_pupil, fmt: fmtUSD },
+                        { label: 'Inexp Tch %', get: yr => yr.inexp_teach_pct, fmt: fmtPct },
+                        { label: 'Out-Cert %',  get: yr => yr.out_of_cert_pct, fmt: fmtPct },
+                      ]}
+                    />
+                  </div>
                 </RevealFx>
               </section>
 
