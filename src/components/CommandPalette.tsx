@@ -134,9 +134,9 @@ const DIVISIONS = [
   { label: 'Division IV',  slug: 'division-iv',  num: 4 },
 ]
 
-function buildResults(data: SearchData, query: string): { divisions: Result[]; charts: Result[]; teams: Result[]; players: Result[]; schools: Result[] } {
+function buildResults(data: SearchData, query: string): { divisions: Result[]; charts: Result[]; teams: Result[]; games: Result[]; players: Result[]; schools: Result[] } {
   const q = query.trim()
-  if (!q) return { divisions: [], charts: [], teams: [], players: [], schools: [] }
+  if (!q) return { divisions: [], charts: [], teams: [], games: [], players: [], schools: [] }
 
   const divisions: Result[] = []
   for (const d of DIVISIONS) {
