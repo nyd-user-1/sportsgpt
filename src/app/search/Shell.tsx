@@ -12,11 +12,14 @@ import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 import {
   buildResults,
+  dominantPlayer,
+  playerSlugFromKey,
   type SearchData,
   type Result,
   type ResultType,
   type GroupedResults,
 } from '@/lib/search'
+import { PlayerHubCard, buildPlayerHub } from '@/components/PlayerHubCard'
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
 const SANS:  React.CSSProperties = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' }
@@ -157,12 +160,29 @@ export function SearchShell({
   function pick(r: Result) {
     saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, logoUrl: r.logoUrl, type: r.type })
   }
+  function go(r: Result) { pick(r); router.push(r.href) }
+
+  // When one player clearly dominates the query, show a hub card (their team,
+  // school, recent team games) above the results — only on the "All" scope.
+  const hubPlayer = useMemo(() => dominantPlayer(grouped.players), [grouped.players])
+  const hub = useMemo(() => (hubPlayer ? buildPlayerHub(hubPlayer, data) : null), [hubPlayer, data])
+  const hubSlug = hubPlayer ? playerSlugFromKey(hubPlayer.key) : null
+  const showHub = !!hub && (!!hub.team || !!hub.school || hub.games.length > 0) && scope === 'all'
 
   // Categories with results, honoring the scope filter — ordered by best match
   // so the most relevant category (e.g. Players for a player name) renders first.
   const visibleCategories = CATEGORY_ORDER
     .filter(k => grouped[k].length > 0 && (scope === 'all' || scope === k))
     .sort((a, b) => bestScore(grouped[a]) - bestScore(grouped[b]))
+
+  // When the hub is shown, drop the hub player from the Players section (it's
+  // already the card header) so it isn't listed twice.
+  function rowsFor(k: CategoryKey): Result[] {
+    if (showHub && k === 'players' && hubSlug) {
+      return grouped.players.filter(r => playerSlugFromKey(r.key) !== hubSlug)
+    }
+    return grouped[k]
+  }
 
   return (
     <AppLayout paperMode>
@@ -242,23 +262,32 @@ export function SearchShell({
             ? (totalResults > 0
                 ? (
                   <div className="space-y-12">
-                    {visibleCategories.map(k => (
+                    {showHub && hub && (
+                      <RevealFx delay={0.03} translateY={8}>
+                        <PlayerHubCard hub={hub} onActPlayer={go} onAct={go} />
+                      </RevealFx>
+                    )}
+                    {visibleCategories.map(k => {
+                      const rows = rowsFor(k)
+                      if (rows.length === 0) return null
+                      return (
                       <RevealFx key={k} delay={0.05} translateY={8}>
                         <section>
-                          <GroupHead label={CATEGORY_LABEL[k]} count={grouped[k].length} />
+                          <GroupHead label={CATEGORY_LABEL[k]} count={rows.length} />
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            {grouped[k].slice(0, CAPS[k]).map(r => (
+                            {rows.slice(0, CAPS[k]).map(r => (
                               <ResultCard key={r.key} r={r} onPick={pick} />
                             ))}
                           </div>
-                          {grouped[k].length > CAPS[k] && (
+                          {rows.length > CAPS[k] && (
                             <p className="mt-3 text-[11px] text-[var(--paper-faint)]" style={SANS}>
-                              + {(grouped[k].length - CAPS[k]).toLocaleString()} more — refine your search to narrow.
+                              + {(rows.length - CAPS[k]).toLocaleString()} more — refine your search to narrow.
                             </p>
                           )}
                         </section>
                       </RevealFx>
-                    ))}
+                      )
+                    })}
                   </div>
                 )
                 : <NoResults query={query.trim()} />)

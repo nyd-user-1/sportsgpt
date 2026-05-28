@@ -297,3 +297,24 @@ export function buildResults(data: SearchData, query: string): GroupedResults {
 
   return { divisions, charts, teams, players, schools, games, seasons }
 }
+
+// Extract the player slug back out of a player Result's key (`player-<slug>`).
+export function playerSlugFromKey(key: string): string | null {
+  return key.startsWith('player-') ? key.slice('player-'.length) : null
+}
+
+// Decide whether a query resolves to ONE dominant player — strong enough to
+// warrant a hub card. Gate: top player is in the clean-name band (score < 10)
+// AND is distinctly better than the rest of the field (so "j" — hundreds of
+// players all at score 0 — does NOT trigger; "filardi" — one clear winner —
+// does). Returns the dominant player Result, or null.
+export function dominantPlayer(players: Result[]): Result | null {
+  if (players.length === 0) return null
+  const top = players[0]
+  // Must be a clean name hit (exact/prefix/early-substring), not an alias hit.
+  if (top.score >= 10) return null
+  // Field not flooded: either it's the only result, or it's strictly better
+  // than the second (a tie at the top = ambiguous, no hub).
+  if (players.length > 1 && players[1].score <= top.score) return null
+  return top
+}
