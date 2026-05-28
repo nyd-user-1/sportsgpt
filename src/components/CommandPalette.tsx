@@ -3,11 +3,12 @@
 import { Suspense, useEffect, useRef, useState } from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Search, X, ChevronRight, Users, Building2, School, BarChart2, Rocket, MessageCircle } from 'lucide-react'
+import { Search, X, ChevronRight, Users, Building2, School, BarChart2, Rocket, MessageCircle, Swords } from 'lucide-react'
 import { SCHOOL_LOGOS, DIVISION_LOGOS } from '@/lib/team-images'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
+import { formatSeason } from '@/lib/utils'
 
-type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: 'player' | 'team' | 'school' | 'chart' }
+type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: 'player' | 'team' | 'school' | 'chart' | 'game' }
 const RECENTS_KEY = 'sportsgpt-recents'
 const MAX_RECENTS = 5
 
@@ -30,11 +31,12 @@ const QUICK_NAV = [
 type PlayerRow  = { slug: string; name: string; position: string | null; school_slug: string; team_name: string | null }
 type TeamRow    = { slug: string; name: string; division: string; school_slug: string }
 type SchoolRow  = { slug: string; name: string }
-type SearchData = { players: PlayerRow[]; teams: TeamRow[]; schools: SchoolRow[] }
+type GameRow    = { id: number; home_name: string; away_name: string; home_school: string | null; away_school: string | null; home_score: number | null; away_score: number | null; season: number }
+type SearchData = { players: PlayerRow[]; teams: TeamRow[]; schools: SchoolRow[]; games: GameRow[] }
 
 type Result = {
   key: string
-  type: 'player' | 'team' | 'school' | 'chart'
+  type: 'player' | 'team' | 'school' | 'chart' | 'game'
   name: string
   displayName: string
   subtitle?: string
@@ -187,7 +189,32 @@ function buildResults(data: SearchData, query: string): { divisions: Result[]; c
   }
   schools.sort((a, b) => a.score - b.score)
 
-  return { divisions, charts, teams, players, schools }
+  // Games — searchable as "Home vs Away" so a single team token or a full
+  // matchup query ("floyd vs sayville") both match. data.games arrives
+  // newest-first, so equal scores keep recent games on top.
+  const games: Result[] = []
+  for (const g of (data.games ?? [])) {
+    const matchup = `${g.home_name} vs ${g.away_name}`
+    const s = matchScore(q, matchup)
+    if (s < Infinity) {
+      const score = g.home_score != null && g.away_score != null
+        ? `${g.home_name} ${g.home_score}, ${g.away_name} ${g.away_score}`
+        : matchup
+      games.push({
+        key: `game-${g.id}`,
+        type: 'game',
+        name: matchup,
+        displayName: score,
+        subtitle: formatSeason(g.season),
+        href: `/game/${g.id}`,
+        schoolSlug: g.home_school ?? undefined,
+        score: s,
+      })
+    }
+  }
+  games.sort((a, b) => a.score - b.score)
+
+  return { divisions, charts, teams, players, schools, games }
 }
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
@@ -213,6 +240,8 @@ function ResultItem({ r, active, onHover, onClick }: { r: Result; active: boolea
           <BarChart2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         ) : r.type === 'team' ? (
           <Building2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
+        ) : r.type === 'game' ? (
+          <Swords className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         ) : (
           <School className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
         )}
@@ -310,13 +339,14 @@ function Palette() {
     router.replace(`${pathname}?${p}`, { scroll: false })
   }
 
-  const { divisions, charts, teams, players, schools } = data ? buildResults(data, query) : { divisions: [], charts: [], teams: [], players: [], schools: [] }
+  const { divisions, charts, teams, games, players, schools } = data ? buildResults(data, query) : { divisions: [], charts: [], teams: [], games: [], players: [], schools: [] }
 
   // Flat list for keyboard nav — search results when typing, recents+quicknav when empty
   const allResults: Result[] = [
     ...(divisions.length ? divisions.slice(0, 4) : []),
     ...(charts.length    ? charts.slice(0, 5)    : []),
     ...(teams.length     ? teams.slice(0, 5)     : []),
+    ...(games.length     ? games.slice(0, 5)     : []),
     ...(players.length   ? players.slice(0, 8)   : []),
     ...(schools.length   ? schools.slice(0, 4)   : []),
   ]
@@ -452,6 +482,7 @@ function Palette() {
                             ? <Image src={logo} alt="" width={22} height={22} className="object-contain" unoptimized />
                             : r.type === 'player' ? <Users className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
                             : r.type === 'team'   ? <Building2 className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
+                            : r.type === 'game'   ? <Swords className="h-3.5 w-3.5 text-[var(--paper-faint)]" />
                             : <School className="h-3.5 w-3.5 text-[var(--paper-faint)]" />}
                         </div>
                         <div className="min-w-0 flex-1">
@@ -512,6 +543,18 @@ function Palette() {
             <>
               <SectionHeader label="Teams" />
               {teams.slice(0, 5).map(r => (
+                <ResultItem key={r.key} r={r}
+                  active={idxMap[r.key] === activeIdx}
+                  onHover={() => setActiveIdx(idxMap[r.key])}
+                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+              ))}
+            </>
+          )}
+
+          {games.length > 0 && (
+            <>
+              <SectionHeader label="Games" />
+              {games.slice(0, 5).map(r => (
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}

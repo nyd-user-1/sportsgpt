@@ -3,8 +3,19 @@ import { sql } from '@/lib/db'
 
 export const dynamic = 'force-dynamic'
 
+// De-slug a team slug into a readable name (fallback when the join misses —
+// e.g. Nassau opponents not in the teams table). 'east-islip-varsity-football'
+// → 'East Islip'.
+function nameFromSlug(slug: string): string {
+  return slug
+    .replace(/-varsity-football$/i, '')
+    .split('-')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+}
+
 export async function GET() {
-  const [playerRows, teamRows, schoolRows] = await Promise.all([
+  const [playerRows, teamRows, schoolRows, gameRows] = await Promise.all([
     sql`
       SELECT p.slug, p.name, p.position, p.school_slug,
              t.name AS team_name
@@ -22,11 +33,38 @@ export async function GET() {
     sql`
       SELECT slug, name FROM schools ORDER BY name
     `,
+    sql`
+      SELECT g.id,
+             g.home_team_slug, g.away_team_slug,
+             ht.name AS home_name, at.name AS away_name,
+             ht.school_slug AS home_school, at.school_slug AS away_school,
+             g.home_score, g.away_score, g.season, g.game_date
+      FROM games g
+      LEFT JOIN teams ht ON ht.slug = g.home_team_slug
+      LEFT JOIN teams at ON at.slug = g.away_team_slug
+      ORDER BY g.game_date DESC NULLS LAST, g.id DESC
+    `,
   ])
+
+  const games = gameRows.map(g => {
+    const homeName = (g.home_name as string | null)?.replace(/\s+Varsity\s+Football$/i, '') ?? nameFromSlug(g.home_team_slug as string)
+    const awayName = (g.away_name as string | null)?.replace(/\s+Varsity\s+Football$/i, '') ?? nameFromSlug(g.away_team_slug as string)
+    return {
+      id:          g.id,
+      home_name:   homeName,
+      away_name:   awayName,
+      home_school: g.home_school ?? null,
+      away_school: g.away_school ?? null,
+      home_score:  g.home_score,
+      away_score:  g.away_score,
+      season:      g.season,
+    }
+  })
 
   return NextResponse.json({
     players: playerRows,
     teams:   teamRows,
     schools: schoolRows,
+    games,
   })
 }
