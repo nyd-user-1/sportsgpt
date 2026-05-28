@@ -3,8 +3,8 @@
 import { useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { AppLayout } from '@/components/AppLayout'
+import { ChatSeasonsPanel } from '@/components/ChatSeasonsPanel'
 import { RevealFx } from '@/components/RevealFx'
 import { EditorialHead, DivisionTabs, type DivisionKey } from '@/components/editorial'
 import { SCHOOL_COLORS } from '@/lib/school-colors'
@@ -91,8 +91,8 @@ function HexTooltip({ s, x, y }: { s: HexSchool; x: number; y: number }) {
 
 // ── One unified geographic honeycomb (shared by /honeycomb + launchpad slide) ─
 export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; activeDiv: DivisionKey }) {
-  const router = useRouter()
   const [hover, setHover] = useState<{ s: HexSchool; x: number; y: number } | null>(null)
+  const [panel, setPanel] = useState<HexSchool | null>(null)
   const pos = useMemo(() => resolveLayout(schools), [schools])
 
   return (
@@ -115,23 +115,20 @@ export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; act
             <g
               key={s.schoolSlug}
               onMouseEnter={e => setHover({ s, x: e.clientX, y: e.clientY })}
-              onClick={() => router.push(`/team/${s.teamSlug}`)}
+              onClick={() => setPanel(s)}
               style={{
                 cursor: dim ? 'default' : 'pointer',
                 pointerEvents: dim ? 'none' : 'auto',
                 opacity: dim ? 0.14 : 1,
-                transformBox: 'fill-box',
-                transformOrigin: 'center',
-                transform: on ? 'scale(1.12)' : 'scale(1)',
-                transition: 'opacity .25s ease, transform .18s ease',
+                filter: on ? 'brightness(1.22)' : 'none',
+                transition: 'opacity .25s ease, filter .15s ease',
               }}
             >
               <polygon
                 points={hexPoints(cx, cy)}
                 fill={color}
-                stroke={on ? 'var(--paper-strong)' : 'rgba(0,0,0,0.4)'}
-                strokeWidth={on ? 3 : 1}
-                style={{ transition: 'stroke .15s, stroke-width .15s' }}
+                stroke="rgba(0,0,0,0.28)"
+                strokeWidth={0.5}
               />
               <circle cx={cx} cy={cy} r={S * 0.5} fill="#ffffff" opacity={0.94} />
               {logo && (
@@ -149,6 +146,11 @@ export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; act
         })}
       </svg>
       {hover && <HexTooltip s={hover.s} x={hover.x} y={hover.y} />}
+      <ChatSeasonsPanel
+        open={!!panel}
+        onClose={() => setPanel(null)}
+        teams={panel ? [{ slug: panel.teamSlug, name: panel.name }] : []}
+      />
     </>
   )
 }
