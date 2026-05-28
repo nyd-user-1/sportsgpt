@@ -164,7 +164,7 @@ export function SearchShell({
 
   // When one player clearly dominates the query, show a hub card (their team,
   // school, recent team games) above the results — only on the "All" scope.
-  const hubPlayer = useMemo(() => dominantPlayer(grouped.players), [grouped.players])
+  const hubPlayer = useMemo(() => dominantPlayer(grouped.players, grouped.teams[0]?.score), [grouped.players, grouped.teams])
   const hub = useMemo(() => (hubPlayer ? buildPlayerHub(hubPlayer, data) : null), [hubPlayer, data])
   const hubSlug = hubPlayer ? playerSlugFromKey(hubPlayer.key) : null
   const showHub = !!hub && (!!hub.team || !!hub.school || hub.games.length > 0) && scope === 'all'

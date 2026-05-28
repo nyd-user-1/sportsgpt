@@ -206,7 +206,7 @@ export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeam
 
   // When one player dominates the query, show a hub card; its team/school/games
   // become prompts too (consistent with the prompt-picker model).
-  const hubPlayer = useMemo(() => dominantPlayer(grouped.players), [grouped.players])
+  const hubPlayer = useMemo(() => dominantPlayer(grouped.players, grouped.teams[0]?.score), [grouped.players, grouped.teams])
   const hub = useMemo(() => (hubPlayer ? buildPlayerHub(hubPlayer, data) : null), [hubPlayer, data])
   const hubSlug = hubPlayer ? playerSlugFromKey(hubPlayer.key) : null
   const showHub = !!hub && (!!hub.team || !!hub.school || hub.games.length > 0) && scope === 'all'

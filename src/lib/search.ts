@@ -303,18 +303,29 @@ export function playerSlugFromKey(key: string): string | null {
   return key.startsWith('player-') ? key.slice('player-'.length) : null
 }
 
-// Decide whether a query resolves to ONE dominant player — strong enough to
-// warrant a hub card. Gate: top player is in the clean-name band (score < 10)
-// AND is distinctly better than the rest of the field (so "j" — hundreds of
-// players all at score 0 — does NOT trigger; "filardi" — one clear winner —
-// does). Returns the dominant player Result, or null.
-export function dominantPlayer(players: Result[]): Result | null {
-  if (players.length === 0) return null
-  const top = players[0]
-  // Must be a clean name hit (exact/prefix/early-substring), not an alias hit.
-  if (top.score >= 10) return null
-  // Field not flooded: either it's the only result, or it's strictly better
-  // than the second (a tie at the top = ambiguous, no hub).
-  if (players.length > 1 && players[1].score <= top.score) return null
-  return top
+// Largest clean-name band that still counts as "specific enough" for a hub.
+// "filardi" → 2 players (a family) qualifies; "joseph" → 42, "smith" → many,
+// "j" → ~1182 do not (the query names a crowd, not a person).
+const MAX_HUB_BAND = 5
+
+// Decide whether a query resolves to a specific player (or tight family) —
+// strong enough to warrant a hub card.
+//   - Top players must be clean NAME hits (score < 10), not alias/position hits.
+//   - The clean band must be small (≤ MAX_HUB_BAND): a unique-ish surname, not
+//     a common first name or single letter.
+//   - If a team matches at least as well (e.g. "floyd" → the Floyd team), defer
+//     to the team — the user typed a team name, not a person.
+// Returns the representative player (prefers one with a known position so a
+// QB beats an unlisted sibling), or null.
+export function dominantPlayer(players: Result[], topTeamScore?: number): Result | null {
+  const clean = players.filter(p => p.score < 10)
+  if (clean.length === 0 || clean.length > MAX_HUB_BAND) return null
+  const top = clean[0]
+  // Team collision: a team that matches as well or better wins the intent.
+  if (topTeamScore != null && topTeamScore <= top.score) return null
+  // Prefer a representative with a position (e.g. "QB · Hills West") over a
+  // sibling with no listed position, when they tie at the top score.
+  const tied = clean.filter(p => p.score === top.score)
+  const withPos = tied.find(p => p.subtitle && /·/.test(p.subtitle))
+  return withPos ?? top
 }
