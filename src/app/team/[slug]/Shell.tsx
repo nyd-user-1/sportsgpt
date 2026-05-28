@@ -199,7 +199,7 @@ export function TeamShell({
     [...new Set(gameRows.map(g => g.season))].sort((a, b) => b - a),
     [gameRows]
   )
-  const [activeSeason, setActiveSeason] = useState<number | null>(gameSeasons[0] ?? null)
+  const [activeSeason, setActiveSeason] = useState<number | null>(null)
   const seasonCycleOptions: (number | null)[] = [null, ...gameSeasons]
   const cycleIdx = activeSeason === null ? 0 : seasonCycleOptions.indexOf(activeSeason)
   const seasonLabel = activeSeason === null ? 'All-Time' : formatSeason(activeSeason)
@@ -532,6 +532,24 @@ export function TeamShell({
             >
               {cleanName}
             </EditorialHead>
+
+            {/* ── Division nav — siblings of this team's division ──── */}
+            <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 text-[10px] uppercase tracking-[0.22em]">
+              {(['I', 'II', 'III', 'IV'] as const).map(d => {
+                const active = d === division
+                return (
+                  <Link
+                    key={d}
+                    href={`/division/division-${d.toLowerCase()}`}
+                    className={active
+                      ? 'text-[var(--paper-strong)]'
+                      : 'text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors'}
+                  >
+                    Division {d}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
 
           {/* ── Sticky control bar ──────────────────────────────── */}
@@ -860,11 +878,17 @@ export function TeamShell({
                                               <Image src={playerLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
                                             </Link>
                                           )}
-                                          <Link href={`/player/${log.player_slug}`}
-                                            className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
-                                            style={SERIF}>
-                                            {log.player_name}
-                                          </Link>
+                                          {log.player_slug ? (
+                                            <Link href={`/player/${log.player_slug}`}
+                                              className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                              style={SERIF}>
+                                              {log.player_name}
+                                            </Link>
+                                          ) : (
+                                            <span className="whitespace-nowrap text-[var(--paper-text)]" style={SERIF}>
+                                              {log.player_name}
+                                            </span>
+                                          )}
                                         </div>
                                       </td>
                                       <td className={td}>
@@ -962,6 +986,7 @@ export function TeamShell({
                               <tbody>
                                 {rows.map((p, i) => {
                                   const playerSlug = p.player_slug as string
+                                  const linkSlug = p.link_slug as string | null
                                   const playerLogo = SCHOOL_LOGOS[schoolSlug]
                                   const yds = statType === 'Passing'   ? p.pass_yards as number | null
                                             : statType === 'Rushing'   ? p.rush_yards as number | null
@@ -986,11 +1011,17 @@ export function TeamShell({
                                               <Image src={playerLogo} alt="" width={18} height={18} className="object-contain" unoptimized />
                                             </Link>
                                           )}
-                                          <Link href={`/player/${playerSlug}`}
-                                            className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
-                                            style={SERIF}>
-                                            {p.player_name as string}
-                                          </Link>
+                                          {linkSlug ? (
+                                            <Link href={`/player/${linkSlug}`}
+                                              className="whitespace-nowrap text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+                                              style={SERIF}>
+                                              {p.player_name as string}
+                                            </Link>
+                                          ) : (
+                                            <span className="whitespace-nowrap text-[var(--paper-text)]" style={SERIF}>
+                                              {p.player_name as string}
+                                            </span>
+                                          )}
                                         </div>
                                       </td>
                                       <td className={cn(td, 'text-right font-semibold tabular-nums text-[var(--paper-text)]')} style={MONO}>
