@@ -59,8 +59,8 @@ type StatTab = 'Passing' | 'Rushing' | 'Receiving'
 
 type SortDir = 'asc' | 'desc'
 
-type PassCol = 'rank' | 'player_name' | 'school_name' | 'season' | 'pass_yards' | 'attempts' | 'completions' | 'comp_pct' | 'pass_tds' | 'interceptions' | 'ypa' | 'td_rate' | 'int_rate' | 'td_int_ratio' | 'cmd_score' | 'gbi_score' | 'ies_score'
-type RushCol = 'rank' | 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds' | 'ypg' | 'td_pct'
+type PassCol = 'rank' | 'player_name' | 'school_name' | 'season' | 'pass_yards' | 'attempts' | 'completions' | 'comp_pct' | 'pass_tds' | 'interceptions' | 'ypa' | 'ypc' | 'td_rate' | 'int_rate' | 'td_int_ratio' | 'yva' | 'cmd_score' | 'gbi_score' | 'ies_score'
+type RushCol = 'rank' | 'player_name' | 'school_name' | 'season' | 'rush_yards' | 'rush_attempts' | 'ypc' | 'rush_tds' | 'ypg' | 'td_pct' | 'tds_per_g' | 'r_exp'
 type RecvCol = 'rank' | 'player_name' | 'school_name' | 'season' | 'recv_yards' | 'receptions' | 'ypr' | 'recv_tds'
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -72,6 +72,11 @@ function fmtPct(v: number | null | undefined) {
   if (v == null) return '—'
   const n = Number(v)
   return (n < 1 ? n * 100 : n).toFixed(1) + '%'
+}
+function fmtYva(v: number | null | undefined) {
+  if (v == null) return '—'
+  const n = Number(v)
+  return (n > 0 ? '+' : '') + n.toFixed(0)
 }
 function numVal(v: number | null | undefined) { return v ?? -1 }
 
@@ -135,14 +140,14 @@ export function LeaderboardYearbook({
     const params = new URLSearchParams(searchParams.toString())
     params.set('tab', tab)
     params.delete('a'); params.delete('b')
-    router.replace(`/leaderboard-2?${params.toString()}`, { scroll: false })
+    router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
   }
 
   function toggleVersus() {
     if (versusMode) {
       const params = new URLSearchParams(searchParams.toString())
       params.delete('a'); params.delete('b')
-      router.replace(`/leaderboard-2?${params.toString()}`, { scroll: false })
+      router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
     } else {
       setSelectedPlayer(null)
     }
@@ -165,7 +170,7 @@ export function LeaderboardYearbook({
     } else {
       params.set('a', curB); params.set('b', rowKey); params.set('tab', statTab)
     }
-    router.replace(`/leaderboard-2?${params.toString()}`, { scroll: false })
+    router.replace(`/leaderboard?${params.toString()}`, { scroll: false })
   }
 
   function handleRowClick(p: Passer | Rusher | Receiver) {
@@ -241,6 +246,12 @@ export function LeaderboardYearbook({
       } else if (rushCol === 'td_pct') {
         av = a.rush_attempts ? (a.rush_tds ?? 0) / a.rush_attempts * 100 : 0
         bv = b.rush_attempts ? (b.rush_tds ?? 0) / b.rush_attempts * 100 : 0
+      } else if (rushCol === 'tds_per_g') {
+        av = a.games_played ? (a.rush_tds ?? 0) / a.games_played : 0
+        bv = b.games_played ? (b.rush_tds ?? 0) / b.games_played : 0
+      } else if (rushCol === 'r_exp') {
+        av = a.rush_attempts ? ((a.rush_yards ?? 0) / a.rush_attempts) * ((a.rush_tds ?? 0) / a.rush_attempts) * 100 : 0
+        bv = b.rush_attempts ? ((b.rush_yards ?? 0) / b.rush_attempts) * ((b.rush_tds ?? 0) / b.rush_attempts) * 100 : 0
       } else if (rushCol === 'player_name') {
         av = a.player_name; bv = b.player_name
       } else if (rushCol === 'school_name') {
@@ -576,7 +587,7 @@ function PassingTablet({
               <th colSpan={6} className="px-3 pt-3 pb-1.5 text-left">
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>Standard</span>
               </th>
-              <th colSpan={4} className="px-3 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
+              <th colSpan={6} className="px-3 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
                 <span className="text-[9px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>Foundational QB</span>
               </th>
               <th colSpan={3} className="px-3 pr-5 pt-3 pb-1.5 text-left border-l border-[var(--paper-rule-soft)]">
@@ -595,9 +606,11 @@ function PassingTablet({
               <SortTh col="pass_tds"     label="TD"    sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-12" glossaryId="pass-td" />
               <SortTh col="interceptions" label="INT"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-12" glossaryId="int" />
               <SortTh col="ypa"          label="YPA"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14 border-l border-[var(--paper-rule-soft)]" glossaryId="ypa" />
+              <SortTh col="ypc"          label="YPC"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="ypc" />
               <SortTh col="td_rate"      label="TD%"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="td-rate" />
               <SortTh col="int_rate"     label="INT%"  sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="int-rate" />
               <SortTh col="td_int_ratio" label="TD:INT" sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" glossaryId="td-int" />
+              <SortTh col="yva"          label="YVA"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" glossaryId="yva" />
               <SortTh col="cmd_score"    label="CMD"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14 border-l border-[var(--paper-rule-soft)]" glossaryId="cmd" />
               <SortTh col="gbi_score"    label="GBI"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" glossaryId="gbi" />
               <SortTh col="ies_score"    label="IES"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14 pr-5" glossaryId="ies" />
@@ -660,9 +673,11 @@ function PassingRow({ rank, p, onClick, active, versusMode, isA, isB, hasA, onAs
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt(p.pass_tds)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt(p.interceptions)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)] border-l border-[var(--paper-rule-soft)]')} style={MONO}>{fmt1(p.ypa)}</td>
+      <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(p.ypc)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmtPct(p.td_rate)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmtPct(p.int_rate)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(p.td_int_ratio)}</td>
+      <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmtYva(p.yva)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-strong)] border-l border-[var(--paper-rule-soft)]')} style={MONO}>{fmt1(p.cmd_score)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-strong)]')} style={MONO}>{fmt1(p.gbi_score)}</td>
       <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-strong)] pr-5')} style={MONO}>{fmt1(p.ies_score)}</td>
@@ -692,7 +707,9 @@ function RushingTablet({
               <SortTh col="ypc"           label="YPC"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
               <SortTh col="rush_tds"      label="TD"    sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-12" />
               <SortTh col="ypg"           label="YPG"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
-              <SortTh col="td_pct"        label="TD%"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14 pr-5" />
+              <SortTh col="td_pct"        label="TD%"   sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-14" />
+              <SortTh col="tds_per_g"     label="TDs/G" sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16" />
+              <SortTh col="r_exp"         label="R-EXP" sortCol={sortCol} sortDir={sortDir} onSort={onSort} right className="w-16 pr-5 border-l border-[var(--paper-rule-soft)]" />
             </tr>
           </thead>
           <tbody>
@@ -704,6 +721,8 @@ function RushingTablet({
               const active = !!selectedPlayer && `${selectedPlayer.player_slug}__${selectedPlayer.season}` === rowKey
               const ypc = p.rush_attempts ? (p.rush_yards ?? 0) / p.rush_attempts : null
               const tdPct = p.rush_attempts ? (p.rush_tds ?? 0) / p.rush_attempts : null
+              const tdsPerG = p.games_played ? (p.rush_tds ?? 0) / p.games_played : null
+              const rExp = p.rush_attempts ? ((p.rush_yards ?? 0) / p.rush_attempts) * ((p.rush_tds ?? 0) / p.rush_attempts) * 100 : null
               return (
                 <tr
                   key={rowKey}
@@ -726,7 +745,9 @@ function RushingTablet({
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(ypc)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt(p.rush_tds)}</td>
                   <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmt1(p.yards_per_game)}</td>
-                  <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)] pr-5')} style={MONO}>{fmtPct(tdPct)}</td>
+                  <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{fmtPct(tdPct)}</td>
+                  <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{fmt1(tdsPerG)}</td>
+                  <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-strong)] border-l border-[var(--paper-rule-soft)] pr-5')} style={MONO}>{fmt1(rExp)}</td>
                 </tr>
               )
             })}
