@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { flushSync } from 'react-dom'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, Sun, Moon } from 'lucide-react'
+import { PanelLeftOpen, PanelLeftClose, Sun, Moon, Search } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
@@ -158,6 +158,17 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
           )}
 
           <div className={mobileHeader ? 'hidden sm:block flex-1' : 'flex-1'} />
+
+          <Link
+            href="/search"
+            aria-label="Search"
+            className={`hidden sm:flex h-8 w-8 items-center justify-center rounded-full transition-colors mr-2 ${paperMode
+              ? 'border border-[var(--paper-rule)] bg-transparent text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)]'
+              : 'border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
+            }`}
+          >
+            <Search className="h-4 w-4" />
+          </Link>
 
           <button
             onClick={e => toggleTheme(e)}
