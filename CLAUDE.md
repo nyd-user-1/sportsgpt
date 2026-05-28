@@ -260,9 +260,11 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 
 | Route | File | Notes |
 |-------|------|-------|
-| `/team` | `TeamTable.tsx` | Sortable; cols: Team, Div, GP, W, L, T, PCT, Conf, PF, PA, DIFF; division filter tabs |
+| `/team` | `Shell.tsx` (`TeamMagazineShell`, "Season Index") | Editorial **Season Index** — every team-season is a row; **defaults to All Seasons**. Division tabs + search + sort. **Versus mode**: "Vs." toggle → assign two team-seasons (Team 1/Team 2 chips) → `PanelCompareTeam` head-to-head diff (client-side from loaded rows, no parallel route). Legacy `TeamTable.tsx` retired. |
 | `/player` | `PlayerIndexTable.tsx` | All 307 players, searchable, sortable; career stats: Tot Yds, Pass, Rush, Rec, TD, INT |
-| `/leaderboard` | `LeaderboardTable.tsx` | Top 25/season (2020–2024), Passing/Rushing/Receiving tabs, + season filter popover |
+| `/leaderboard` | `Shell.tsx` (`LeaderboardYearbook`, the "Yearbook") | Editorial top-25/season; Passing/Rushing/Receiving; season stepper + division tabs + search; **Versus** (`@compare` parallel route → `PanelCompare`). `leaderboard-2` was **retired INTO** this route — editorial replaced legacy `LeaderboardTable.tsx`. Passing has YPC/YVA; Rushing has TDs-G/R-EXP. |
+| `/honeycomb` | `Honeycomb.tsx` (`HoneycombMap`) | Single geographic hex map of all 52 programs (one cell each, school-colored + logo), positioned from Suffolk district centroids (`src/lib/section-hex-layout.ts`). Division tabs highlight/dim. Cell click → `ChatSeasonsPanel`. Also embedded as a Launchpad slide — see below. |
+| `/board` | `Board.tsx` ("The Press Box") | **Prototype** discussion board (tag filters, pinned threads, `AppPanel` thread view + reply/compose). Seeded via `src/lib/board-data.ts`, session-local — needs `board_threads`/`board_posts` + next-auth to go live. |
 | `/school` | `src/app/school/` | School index |
 | `/gallery` | `src/app/gallery/` | Blob-backed masonry grid + lightbox; dark/light toggle with View Transition ripple |
 | `/chat` | `src/app/chat/page.tsx` | AI chat — paperMode + grain overlay. Empty: `SECTION XI · FOOTBALL` eyebrow, Fraunces APP_NAME, ruled line, ChatInput, italic serif tagline, CardCarousel. Active: scrollable thread + bottom-pinned input. Uses `useChat`, `ChatInput`, `ChatMessage`, `CardCarousel`, `ChatSeasonsPanel`. **`/chat-2` is a deprecated duplicate — safe to delete.** |
@@ -652,3 +654,35 @@ SIDEBAR_NAV_TOP:    [Launchpad, Chat, Charts, Players, Teams]
 SIDEBAR_NAV_BOTTOM: [Gallery, Leaderboard]
 SIDEBAR_NAV_MORE:   [Maps, Schools, Divisions, Section XI]   ← new export
 ```
+
+---
+
+## 2026-05-28 additions (Honeycomb, Versus, Board, Sideline, slug hygiene)
+
+### Launchpad Honeycomb slide (`/launchpad`)
+`/launchpad` is a **two-slide deck**. The division-tab row (`LaunchpadTabs`) stays; the body below swaps between the standings+hero+cards view and the Honeycomb, driven by `?view=honeycomb`. `LaunchpadTabs` has a **chevron view-cycle** (‹ Launchpad / Honeycomb ›) that sets the param; `LaunchpadDeck.tsx` reads it and `RevealFx`-swaps the content (keyed by `view` so the reveal replays). The `?div` filter applies to both slides. `layout.tsx` calls `fetchSectionSchools()` and passes them in; the Honeycomb is `HoneycombMap` (shared with `/honeycomb`).
+
+### Honeycomb map (`HoneycombMap`, `src/app/honeycomb/Honeycomb.tsx`)
+One SVG, 52 pointy-top hex cells. Positions live in `src/lib/section-hex-layout.ts` (`HEX_LAYOUT: slug → [col,row]`, `HEX_COLS`/`HEX_ROWS`) — derived once from Suffolk district GeoJSON centroids, then hand-tuned. **Edit that table to nudge placements.** Cell = school primary color + white logo medallion; hover = brightness + record tooltip (no zoom); division tabs dim non-active. SVG capped `maxWidth: 1350` so it doesn't balloon in the full-width launchpad container. Cell click → `ChatSeasonsPanel` — **pass the school slug, not the team slug** (`/api/team/[slug]/records` + `/schedule` append `-varsity-football` themselves).
+
+### Team Versus (`src/components/PanelCompareTeam.tsx`)
+`/team` Season Index Versus toggle assigns two team-seasons → `PanelCompareTeam`, a client `AppPanel` that diffs them (record, win %, GP, PF, PA, Diff, Conf) with winner highlighting — fed from the index's already-loaded rows (no server fetch / parallel route, unlike the player `@compare`).
+
+### Player slug hygiene (was breaking `/player/null`)
+`player_game_stats` had NULL `player_slug`s; `player_season_stats` had malformed no-hyphen slugs (e.g. `nicksevilla`) → broken `/player/...` links.
+- **Query-time fix:** `/team/[slug]/page.tsx` resolves a valid slug via `COALESCE(slug, <players.slug by collapsed-whitespace name+school>)` for Player Logs + Top Players; the Shell renders **plain text** when no slug resolves.
+- **Data scripts (idempotent, dry-run default, `--apply` to write):** `scripts/backfill-player-game-slugs.mjs`, `scripts/reconcile-season-stat-slugs.mjs`, `scripts/dedup-orphan-season-stats.mjs`.
+- **Review queue:** `/admin` "Needs Review" (via `/api/admin/status`) lists players with no `players` row + season-stat slug conflicts.
+- **Invariant:** canonical slug = `players.slug` (`first-last` kebab); `player_game_stats`/`player_season_stats` must match it — box-score ingest should name-match to `players`, never mint its own slug.
+
+### School district name (`src/lib/school-districts.ts`)
+`/school` masthead shows the proper district (e.g. "Bay Shore Union Free School District"). **Not in the DB** (`schools.name` is the short name; report-card ingest kept only `entity_cd`). `SCHOOL_DISTRICTS: slug → name` is sourced from the GeoJSON district names (`POPULAR_NA`, same source as `/maps`), UFSD/CSD expanded, co-ops labelled.
+
+### Sideline chat widget (`src/components/SidelineChat.tsx`)
+Global floating community-chat widget, mounted in **root `layout.tsx`** (beside `CommandPalette`) so it's on every page. **Prototype** — seeded/session-local; needs a messages backend + next-auth.
+
+### ⚠ BUILD CHECK — run `npm run build` before pushing
+Turbopack (the dev server) does **NOT** full type-check. A `string | null` type error rendered fine on the dev server (all curl checks passed) but **failed every `next build` on Vercel**, silently stalling prod on an old build for hours. Dev-server/curl checks are NOT sufficient — run `npm run build` (or at least `tsc --noEmit`) before pushing, and confirm the Vercel deploy goes green.
+
+### Two-terminal hygiene
+This repo is frequently edited by two Claude terminals in the same working tree. **Check `git status` before editing**, commit only your own files via explicit pathspec (`git commit -- <paths>`), and never commit another terminal's staged/in-flight files. A globally-mounted file (e.g. `CommandPalette`) with even a transient compile error 500s every page.
