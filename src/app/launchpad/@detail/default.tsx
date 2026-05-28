@@ -66,7 +66,7 @@ function DefaultSlider() {
         <div key={src}
           className="absolute inset-0 transition-opacity duration-700 ease-in-out"
           style={{ opacity: i === slideIdx ? 1 : 0 }}>
-          <Image src={src} alt="" fill className="object-cover object-top" unoptimized />
+          <Image src={src} alt="" fill priority={i === 0} className="object-cover object-top" unoptimized />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         </div>
       ))}
