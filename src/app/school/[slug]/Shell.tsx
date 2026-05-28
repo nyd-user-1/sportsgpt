@@ -41,10 +41,6 @@ const NRC_SHORT: Record<string, string> = {
 
 function fmtSeason(y: number) { return `${y}-${String(y + 1).slice(2)}` }
 function fmtNysedYear(y: number) { return `${y - 1}-${String(y).slice(-2)}` }
-function pctOf(n: number | null, d: number | null) {
-  if (n == null || d == null || d === 0) return null
-  return (n / d) * 100
-}
 function fmtRecord(w: number | null, l: number | null, t?: number | null) {
   if (w == null && l == null) return '--'
   const ties = t ?? 0
@@ -59,6 +55,7 @@ function fmtPctWin(w: number | null, l: number | null) {
 const thBase = 'py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]'
 const fmtPct = (v: number) => `${v}%`
 const fmtUSD = (v: number) => `$${v.toLocaleString()}`
+const fmtCount = (v: number) => v.toLocaleString()
 
 type RcCol = {
   label: string
@@ -129,38 +126,78 @@ function RcYearTable({
   )
 }
 
-// Regents sub-table: subject rows for one selected year, with the level-1..5
-// distribution and a proficiency rate. Reflects (does not set) the year.
-function RegentsTable({ rows }: { rows: RegentsRow[] }) {
-  if (!rows.length) return <EmptyTablet label="No Regents results for this school year." />
-  const lvlTh = cn('px-2 text-right', thBase)
+// Regents sub-table: year rows, columns = Prof % per subject. Click selects the
+// year (shared selector), matching the other Report Card year-row tables.
+const REGENTS_SUBJECTS: { full: string; short: string }[] = [
+  { full: 'English Language Arts',   short: 'ELA'   },
+  { full: 'Algebra I',               short: 'Alg I' },
+  { full: 'Geometry',                short: 'Geo'   },
+  { full: 'Algebra II',              short: 'Alg II'},
+  { full: 'Global History',          short: 'Global'},
+  { full: 'US History & Government',  short: 'US Hist' },
+  { full: 'Living Environment',      short: 'Liv Env' },
+  { full: 'Earth Science',           short: 'Earth' },
+  { full: 'Chemistry',               short: 'Chem'  },
+  { full: 'Physics',                 short: 'Phys'  },
+]
+
+function RegentsYearTable({
+  rows, years, selectedYear, onSelectYear,
+}: {
+  rows: RegentsRow[]
+  years: number[]
+  selectedYear: number
+  onSelectYear: (y: number) => void
+}) {
+  // pivot: { [year]: { [subjectFull]: pct_prof } }
+  const byYear: Record<number, Record<string, number | null>> = {}
+  for (const r of rows) {
+    ;(byYear[r.year] ??= {})[r.subject] = r.pct_prof
+  }
+  const yearRows = years.filter(y => byYear[y])
+  if (!yearRows.length) return <EmptyTablet label="No Regents results on file." />
   return (
     <Tablet>
       <div className="overflow-x-auto">
         <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
           <thead>
             <tr>
-              <th className={cn('px-5 text-left', thBase)}>Subject</th>
-              <th className={cn('px-3 text-right', thBase)}>Tested</th>
-              <th className={lvlTh}>L1</th>
-              <th className={lvlTh}>L2</th>
-              <th className={lvlTh}>L3</th>
-              <th className={lvlTh}>L4</th>
-              <th className={lvlTh}>L5</th>
-              <th className={cn('px-5 text-right', thBase)}>Prof %</th>
+              <th className={cn('px-5 text-left', thBase)}>Year</th>
+              {REGENTS_SUBJECTS.map((s, si) => (
+                <th key={s.full} className={cn(si === REGENTS_SUBJECTS.length - 1 ? 'px-5' : 'px-3', 'text-right', thBase)}>{s.short}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            {rows.map((r, i) => {
-              const lvl = [r.pct_l1, r.pct_l2, r.pct_l3, r.pct_l4, r.pct_l5]
+            {yearRows.map((y, i) => {
+              const isActive = y === selectedYear
+              const subj = byYear[y]
               return (
-                <tr key={r.subject} className={cn(i > 0 && 'border-t border-[var(--paper-rule-soft)]')}>
-                  <td className={cn(tabletTd, 'pl-5 text-[var(--paper-text)] whitespace-nowrap')} style={SERIF}>{r.subject}</td>
-                  <td className={cn(tabletTd, 'px-3 text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{r.tested != null ? r.tested : '--'}</td>
-                  {lvl.map((v, li) => (
-                    <td key={li} className={cn(tabletTd, 'px-2 text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{v != null ? `${v}%` : '--'}</td>
-                  ))}
-                  <td className={cn(tabletTd, 'px-5 text-right text-[var(--paper-text)] font-medium tabular-nums')} style={MONO}>{r.pct_prof != null ? `${r.pct_prof}%` : '--'}</td>
+                <tr key={y}
+                  onClick={() => onSelectYear(y)}
+                  className={cn(
+                    'cursor-pointer transition-colors',
+                    i > 0 && 'border-t border-[var(--paper-rule-soft)]',
+                    isActive
+                      ? 'bg-[color:color-mix(in_srgb,var(--paper-strong)_8%,transparent)]'
+                      : 'hover:bg-[color:color-mix(in_srgb,var(--paper-text)_5%,transparent)]',
+                  )}>
+                  <td className={cn(tabletTd, 'pl-5 whitespace-nowrap')} style={SERIF}>
+                    <span className={cn(isActive ? 'text-[var(--paper-strong)] font-medium' : 'text-[var(--paper-text)]')}>
+                      {fmtNysedYear(y)}
+                    </span>
+                  </td>
+                  {REGENTS_SUBJECTS.map((s, si) => {
+                    const v = subj[s.full]
+                    return (
+                      <td key={s.full} className={cn(
+                        tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]',
+                        si === REGENTS_SUBJECTS.length - 1 ? 'px-5' : 'px-3',
+                      )} style={MONO}>
+                        {v != null ? `${v}%` : '--'}
+                      </td>
+                    )
+                  })}
                 </tr>
               )
             })}
@@ -267,12 +304,10 @@ export function SchoolDetailShell({
     [yearStats],
   )
 
-  // Regents rows for the currently-selected year, in canonical subject order.
-  const regentsForYear = useMemo(
-    () => regentsResults
-      .filter(r => r.year === selectedYear)
-      .sort((a, b) => (a.sort_order ?? 99) - (b.sort_order ?? 99)),
-    [regentsResults, selectedYear],
+  // Years with Regents data, newest first (matches the other year-row tables).
+  const regentsYears = useMemo(
+    () => [...new Set(regentsResults.map(r => r.year))].sort((a, b) => b - a),
+    [regentsResults],
   )
 
   // Derived stats for selected year
@@ -280,15 +315,6 @@ export function SchoolDetailShell({
   const gradPct    = ys?.grad_pct ?? school.grad_pct
   const apPct      = ys?.ap_pct ?? school.ap_pct
   const k12        = ys?.k12 ?? null
-  const whitePct   = pctOf(ys?.num_white ?? null, k12)
-  const blackPct   = pctOf(ys?.num_black ?? null, k12)
-  const hispPct    = pctOf(ys?.num_hisp ?? null, k12)
-  const asianPct   = pctOf(ys?.num_asian ?? null, k12)
-  const multiPct   = pctOf(ys?.num_multi ?? null, k12)
-  const ecdisPct   = pctOf(ys?.num_ecdis ?? null, k12)
-  const ellPct     = pctOf(ys?.num_ell ?? null, k12)
-  const swdPct     = pctOf(ys?.num_swd ?? null, k12)
-  const homelessPct= pctOf(ys?.num_homeless ?? null, k12)
 
   return (
     <>
@@ -542,10 +568,15 @@ export function SchoolDetailShell({
                     />
                   </div>
 
-                  {/* Regents Exams — subject rows for the selected year */}
+                  {/* Regents Exams — year rows, Prof % per subject */}
                   <div className="mb-10">
-                    <SubSectionHead>Regents Exams · {fmtNysedYear(selectedYear)}</SubSectionHead>
-                    <RegentsTable rows={regentsForYear} />
+                    <SubSectionHead>Regents Exams · Proficiency %</SubSectionHead>
+                    <RegentsYearTable
+                      rows={regentsResults}
+                      years={regentsYears}
+                      selectedYear={selectedYear}
+                      onSelectYear={setSelectedYear}
+                    />
                   </div>
 
                   {/* Attendance & Absenteeism */}
@@ -623,43 +654,23 @@ export function SchoolDetailShell({
               <section id="demographic" ref={(el: HTMLElement | null) => { sectionRefs.current.demographic = el }} className="mb-20 scroll-mt-24">
                 <RevealFx delay={0.22} translateY={8}>
                   <SectionHead
-                    title={`${fmtNysedYear(selectedYear)} Demographic`}
-                    blurb="Race and ethnicity breakdown by student population."
-                    meta={<span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>{k12 != null ? `${k12.toLocaleString()} K-12` : ''}</span>}
+                    title="Demographic"
+                    blurb="Race and ethnicity counts by student population — click any row to select that year."
+                    meta={<span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>{yearsAsc.length} years</span>}
                   />
-                  <Tablet>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
-                        <thead>
-                          <tr>
-                            <th className="px-5 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Group</th>
-                            <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">%</th>
-                            <th className="px-5 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Count</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {([
-                            ['White',       whitePct,  ys?.num_white],
-                            ['Black',       blackPct,  ys?.num_black],
-                            ['Hispanic',    hispPct,   ys?.num_hisp],
-                            ['Asian',       asianPct,  ys?.num_asian],
-                            ['Multiracial', multiPct,  ys?.num_multi],
-                          ] as [string, number | null, number | null | undefined][]).map(([label, pct, count], i) => (
-                            <tr key={label} className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}>
-                              <td className={cn(td, 'pl-5 text-[var(--paper-muted)]')} style={SERIF}>{label}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{pct != null ? `${pct.toFixed(0)}%` : '--'}</td>
-                              <td className={cn(td, 'text-right pr-5 text-[var(--paper-muted)] tabular-nums')} style={MONO}>{count != null ? Number(count).toLocaleString() : '--'}</td>
-                            </tr>
-                          ))}
-                          <tr className="border-t border-[var(--paper-rule)]">
-                            <td className={cn(td, 'pl-5 text-[var(--paper-text)] font-medium')} style={SERIF}>Total K-12</td>
-                            <td className={td} />
-                            <td className={cn(td, 'text-right pr-5 text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{k12 != null ? k12.toLocaleString() : '--'}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </Tablet>
+                  <RcYearTable
+                    selectedYear={selectedYear}
+                    onSelectYear={setSelectedYear}
+                    rows={yearsAsc.filter(yr => yr.k12 != null || yr.num_white != null)}
+                    cols={[
+                      { label: 'White', get: yr => yr.num_white, fmt: fmtCount },
+                      { label: 'Black', get: yr => yr.num_black, fmt: fmtCount },
+                      { label: 'Hisp',  get: yr => yr.num_hisp,  fmt: fmtCount },
+                      { label: 'Asian', get: yr => yr.num_asian, fmt: fmtCount },
+                      { label: 'Multi', get: yr => yr.num_multi, fmt: fmtCount },
+                      { label: 'K-12',  strong: true, get: yr => yr.k12, fmt: fmtCount },
+                    ]}
+                  />
                 </RevealFx>
               </section>
 
@@ -667,144 +678,45 @@ export function SchoolDetailShell({
               <section id="need" ref={(el: HTMLElement | null) => { sectionRefs.current.need = el }} className="mb-20 scroll-mt-24">
                 <RevealFx delay={0.28} translateY={8}>
                   <SectionHead
-                    title={`${fmtNysedYear(selectedYear)} Need`}
-                    blurb="Economic disadvantage, language, disabilities, and housing instability."
+                    title="Need"
+                    blurb="Economic disadvantage, language, disabilities, and housing instability — click any row to select that year."
                     meta={ys?.needs_index ? (
                       <span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
                         N/RC {ys.needs_index} · {NRC_SHORT[ys.needs_index] ?? ''}
                       </span>
                     ) : undefined}
                   />
-                  <Tablet>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
-                        <thead>
-                          <tr>
-                            <th className="px-5 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Indicator</th>
-                            <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">%</th>
-                            <th className="px-5 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Count</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {([
-                            ['Econ. Disadvantaged', ecdisPct,     ys?.num_ecdis],
-                            ['English Language Learner', ellPct,  ys?.num_ell],
-                            ['Students w/ Disabilities', swdPct,  ys?.num_swd],
-                            ['Homeless',            homelessPct,  ys?.num_homeless],
-                          ] as [string, number | null, number | null | undefined][]).map(([label, pct, count], i) => (
-                            <tr key={label} className={i > 0 ? 'border-t border-[var(--paper-rule-soft)]' : ''}>
-                              <td className={cn(td, 'pl-5 text-[var(--paper-muted)]')} style={SERIF}>{label}</td>
-                              <td className={cn(td, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{pct != null ? `${pct.toFixed(0)}%` : '--'}</td>
-                              <td className={cn(td, 'text-right pr-5 text-[var(--paper-muted)] tabular-nums')} style={MONO}>{count != null ? Number(count).toLocaleString() : '--'}</td>
-                            </tr>
-                          ))}
-                          {ys?.needs_index && (
-                            <tr className="border-t border-[var(--paper-rule)]">
-                              <td className={cn(td, 'pl-5 text-[var(--paper-text)] font-medium')} style={SERIF}>N/RC Tier</td>
-                              <td className={td} />
-                              <td className={cn(td, 'text-right pr-5 text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>
-                                {ys.needs_index} · {NRC_SHORT[ys.needs_index] ?? ''}
-                              </td>
-                            </tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
-                  </Tablet>
+                  <RcYearTable
+                    selectedYear={selectedYear}
+                    onSelectYear={setSelectedYear}
+                    rows={yearsAsc.filter(yr => yr.num_ecdis != null || yr.num_swd != null)}
+                    cols={[
+                      { label: 'Econ Dis', strong: true, get: yr => yr.num_ecdis, fmt: fmtCount },
+                      { label: 'ELL',      get: yr => yr.num_ell,      fmt: fmtCount },
+                      { label: 'SWD',      get: yr => yr.num_swd,      fmt: fmtCount },
+                      { label: 'Homeless', get: yr => yr.num_homeless, fmt: fmtCount },
+                    ]}
+                  />
                 </RevealFx>
               </section>
 
               {/* ── Trend ─────────────────────────────────────────────── */}
               <section id="trend" ref={(el: HTMLElement | null) => { sectionRefs.current.trend = el }} className="mb-20 scroll-mt-24">
                 <RevealFx delay={0.32} translateY={8}>
-                  {(() => {
-                    const sortedByYear = [...yearStats].sort((a, b) => a.year - b.year)
-                    const first = sortedByYear[0]
-                    const last  = sortedByYear[sortedByYear.length - 1]
-                    const firstEnroll = first?.g9_12
-                    const lastEnroll  = last?.g9_12
-                    const delta = (firstEnroll != null && lastEnroll != null) ? lastEnroll - firstEnroll : null
-                    const deltaPct = (firstEnroll != null && lastEnroll != null && firstEnroll > 0)
-                      ? (delta! / firstEnroll) * 100 : null
-
-                    const firstK12 = first?.k12
-                    const lastK12  = last?.k12
-                    const k12Delta = (firstK12 != null && lastK12 != null) ? lastK12 - firstK12 : null
-                    const k12DeltaPct = (firstK12 != null && lastK12 != null && firstK12 > 0)
-                      ? (k12Delta! / firstK12) * 100 : null
-
-                    return (
-                      <>
-                        <SectionHead
-                          title="Trend"
-                          blurb={`Enrollment change from ${first ? fmtNysedYear(first.year) : '--'} to ${last ? fmtNysedYear(last.year) : '--'}.`}
-                        />
-                        <Tablet>
-                          <div className="overflow-x-auto">
-                            <table className="w-full text-sm" style={{ borderSpacing: 0 }}>
-                              <thead>
-                                <tr>
-                                  <th className="px-5 py-3 text-left text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Metric</th>
-                                  <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">{first ? fmtNysedYear(first.year) : '--'}</th>
-                                  <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">{last ? fmtNysedYear(last.year) : '--'}</th>
-                                  <th className="px-3 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Δ</th>
-                                  <th className="px-5 py-3 text-right text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--paper-faint)] whitespace-nowrap border-b border-[var(--paper-rule)]">Δ %</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td className={cn(td, 'pl-5 text-[var(--paper-muted)]')} style={SERIF}>Enrollment (9-12)</td>
-                                  <td className={cn(td, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{firstEnroll != null ? firstEnroll.toLocaleString() : '--'}</td>
-                                  <td className={cn(td, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{lastEnroll != null ? lastEnroll.toLocaleString() : '--'}</td>
-                                  <td className={cn(td, 'text-right tabular-nums')} style={MONO}>
-                                    <span className={cn(
-                                      delta != null && delta > 0 && 'text-emerald-500',
-                                      delta != null && delta < 0 && 'text-rose-500',
-                                      (delta == null || delta === 0) && 'text-[var(--paper-faint)]',
-                                    )}>
-                                      {delta == null ? '--' : (delta >= 0 ? `+${delta}` : delta)}
-                                    </span>
-                                  </td>
-                                  <td className={cn(td, 'text-right pr-5 tabular-nums font-medium')} style={MONO}>
-                                    <span className={cn(
-                                      deltaPct != null && deltaPct > 0 && 'text-emerald-500',
-                                      deltaPct != null && deltaPct < 0 && 'text-rose-500',
-                                      (deltaPct == null || deltaPct === 0) && 'text-[var(--paper-faint)]',
-                                    )}>
-                                      {deltaPct == null ? '--' : (deltaPct >= 0 ? '+' : '') + deltaPct.toFixed(1)}
-                                    </span>
-                                  </td>
-                                </tr>
-                                <tr className="border-t border-[var(--paper-rule-soft)]">
-                                  <td className={cn(td, 'pl-5 text-[var(--paper-muted)]')} style={SERIF}>Total K-12</td>
-                                  <td className={cn(td, 'text-right text-[var(--paper-muted)] tabular-nums')} style={MONO}>{firstK12 != null ? firstK12.toLocaleString() : '--'}</td>
-                                  <td className={cn(td, 'text-right text-[var(--paper-text)] tabular-nums font-medium')} style={MONO}>{lastK12 != null ? lastK12.toLocaleString() : '--'}</td>
-                                  <td className={cn(td, 'text-right tabular-nums')} style={MONO}>
-                                    <span className={cn(
-                                      k12Delta != null && k12Delta > 0 && 'text-emerald-500',
-                                      k12Delta != null && k12Delta < 0 && 'text-rose-500',
-                                      (k12Delta == null || k12Delta === 0) && 'text-[var(--paper-faint)]',
-                                    )}>
-                                      {k12Delta == null ? '--' : (k12Delta >= 0 ? `+${k12Delta}` : k12Delta)}
-                                    </span>
-                                  </td>
-                                  <td className={cn(td, 'text-right pr-5 tabular-nums font-medium')} style={MONO}>
-                                    <span className={cn(
-                                      k12DeltaPct != null && k12DeltaPct > 0 && 'text-emerald-500',
-                                      k12DeltaPct != null && k12DeltaPct < 0 && 'text-rose-500',
-                                      (k12DeltaPct == null || k12DeltaPct === 0) && 'text-[var(--paper-faint)]',
-                                    )}>
-                                      {k12DeltaPct == null ? '--' : (k12DeltaPct >= 0 ? '+' : '') + k12DeltaPct.toFixed(1)}
-                                    </span>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </Tablet>
-                      </>
-                    )
-                  })()}
+                  <SectionHead
+                    title="Trend"
+                    blurb="Enrollment by year — 9-12 and total K-12. Click any row to select that year."
+                    meta={<span className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>{yearsAsc.length} years</span>}
+                  />
+                  <RcYearTable
+                    selectedYear={selectedYear}
+                    onSelectYear={setSelectedYear}
+                    rows={yearsAsc.filter(yr => yr.g9_12 != null || yr.k12 != null)}
+                    cols={[
+                      { label: '9-12', strong: true, get: yr => yr.g9_12, fmt: fmtCount },
+                      { label: 'K-12', get: yr => yr.k12, fmt: fmtCount },
+                    ]}
+                  />
                 </RevealFx>
               </section>
 
