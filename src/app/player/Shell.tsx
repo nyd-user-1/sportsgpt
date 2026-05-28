@@ -415,14 +415,15 @@ export function PlayerMagazineShell({
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-12" id="roster">
         <RevealFx delay={0.15} translateY={8}>
           <SectionHead
+            noRule
             title="Roster Index"
             blurb={
               activePos === 'All'
                 ? 'Every player on file — yards, touchdowns, picks. Sort by any column.'
                 : `${POS_LABEL[activePos]} — sort by any column.`
             }
-            meta={<PositionPills active={activePos} onChange={setActivePos} />}
           />
+          <PositionTabs active={activePos} onChange={setActivePos} />
 
           {sortedRows.length === 0 ? (
             <EmptyTablet
@@ -530,10 +531,11 @@ export function PlayerMagazineShell({
         <div id="production-index" className="mt-16">
           <RevealFx delay={0.22} translateY={8}>
             <SectionHead
+              noRule
               title="Production Index"
               blurb="Per-game output and a composite signature stat — yards-per-game and touchdowns minus interceptions, z-scored within the visible set."
-              meta={<PositionPills active={activePos} onChange={setActivePos} />}
             />
+            <PositionTabs active={activePos} onChange={setActivePos} />
 
             {sortedProd.length === 0 ? (
               <EmptyTablet
@@ -659,32 +661,38 @@ export function PlayerMagazineShell({
   )
 }
 
-// ── Position pills — sit in the SectionHead meta slot ───────────────────────
-function PositionPills({
+// ── Position tabs — underline row below the SectionHead, mirrors DivisionTabs ──
+function PositionTabs({
   active,
   onChange,
 }: {
   active: PosBucket
   onChange: (p: PosBucket) => void
 }) {
-  const opts: PosBucket[] = ['All', 'QB', 'RB', 'WR', 'Other']
+  const opts: { key: PosBucket; label: string }[] = [
+    { key: 'All',   label: 'All'   },
+    { key: 'QB',    label: 'QB'    },
+    { key: 'RB',    label: 'RB'    },
+    { key: 'WR',    label: 'WR'    },
+    { key: 'Other', label: 'Other' },
+  ]
   return (
-    <div className="flex items-center gap-1.5 flex-wrap">
-      {opts.map(p => {
-        const on = active === p
+    <div className="mb-7 flex items-center border-b border-[var(--paper-rule)]">
+      {opts.map(({ key, label }) => {
+        const on = active === key
         return (
           <button
-            key={p}
-            onClick={() => onChange(p)}
+            key={key}
+            onClick={() => onChange(key)}
             className={cn(
-              'px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] rounded-full border transition-colors',
+              'px-4 py-3 text-[11px] uppercase tracking-[0.22em] whitespace-nowrap border-b-2 -mb-px transition-colors first:pl-0',
               on
-                ? 'border-[var(--paper-text)] bg-[var(--paper-text)] text-[var(--paper)]'
-                : 'border-[var(--paper-rule)] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)]',
+                ? 'border-[var(--paper-strong)] text-[var(--paper-strong)]'
+                : 'border-transparent text-[var(--paper-muted)] hover:text-[var(--paper-text)]',
             )}
             style={SANS}
           >
-            {p}
+            {label}
           </button>
         )
       })}
