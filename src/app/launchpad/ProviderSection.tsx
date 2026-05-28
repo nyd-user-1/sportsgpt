@@ -9,21 +9,9 @@ import { RevealFx } from '@/components/RevealFx'
 import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { CURRENT_SEASON } from '@/lib/app-config'
 import Image from 'next/image'
+import type { GameRow } from '@/lib/launchpad-games'
 
-export type GameRow = {
-  id: number
-  game_date: string | null
-  season: number
-  home_team_slug: string
-  away_team_slug: string
-  home_score: number | null
-  away_score: number | null
-  game_number: number | null
-  home_name: string
-  away_name: string
-  home_div: string
-  away_div: string
-}
+export type { GameRow }
 
 const SEASONS = [CURRENT_SEASON, CURRENT_SEASON - 1, CURRENT_SEASON - 2, CURRENT_SEASON - 3, CURRENT_SEASON - 4].map(String)
 
@@ -65,6 +53,12 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
   const [seasonIdx, setSeasonIdx] = useState(0)
   const [direction, setDirection] = useState(1)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  // Per-season cache. Seeded with the current season (fetched server-side);
+  // older seasons load on demand the first time their tab is opened.
+  const [seasonGames, setSeasonGames] = useState<Record<number, GameRow[]>>(
+    () => ({ [CURRENT_SEASON]: games }),
+  )
 
   const searchParamsForSeason = useSearchParams()
   useEffect(() => {
@@ -108,8 +102,25 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
     })
   }, [selectedGameId])
 
-  const filtered = games.filter(g => {
-    if (g.season !== activeSeason) return false
+  // Load the active season's games the first time its tab is opened.
+  useEffect(() => {
+    if (seasonGames[activeSeason]) return
+    let cancelled = false
+    fetch(`/api/launchpad/games?season=${activeSeason}`)
+      .then(r => (r.ok ? r.json() : []))
+      .then((rows: GameRow[]) => {
+        if (!cancelled) setSeasonGames(prev => ({ ...prev, [activeSeason]: rows }))
+      })
+      .catch(() => {
+        if (!cancelled) setSeasonGames(prev => ({ ...prev, [activeSeason]: [] }))
+      })
+    return () => { cancelled = true }
+  }, [activeSeason, seasonGames])
+
+  const currentGames = seasonGames[activeSeason]
+  const isLoading = currentGames === undefined
+
+  const filtered = (currentGames ?? []).filter(g => {
     // Team selected → show only that team's games
     if (selectedTeam) {
       return g.home_team_slug === selectedTeam || g.away_team_slug === selectedTeam
@@ -155,7 +166,18 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
             exit="exit"
             transition={{ duration: 0.32, ease: [0.25, 0.1, 0.25, 1] }}
           >
-      {filtered.length === 0 ? (
+      {isLoading ? (
+        <div className="flex gap-4 py-3 overflow-x-auto no-scrollbar">
+          {[0, 1, 2].map(i => (
+            <div key={i}
+              className="w-[400px] shrink-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] animate-pulse"
+              style={{ padding: 6, borderRadius: 3 }}>
+              <div className="min-h-[280px]"
+                style={{ borderRadius: 1, background: 'color-mix(in srgb, var(--paper-text) 6%, transparent)' }} />
+            </div>
+          ))}
+        </div>
+      ) : filtered.length === 0 ? (
         <p
           className="text-[14px] text-[var(--paper-muted)] py-8 text-center"
           style={{ ...SERIF, fontStyle: 'italic' }}
