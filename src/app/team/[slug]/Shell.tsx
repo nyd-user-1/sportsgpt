@@ -12,7 +12,7 @@ import { ChatSeasonsPanel } from '@/components/ChatSeasonsPanel'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import { AppPanel } from '@/components/AppPanel'
 import { cn, formatSeason } from '@/lib/utils'
 import {
@@ -525,7 +525,7 @@ export function TeamShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                     { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline',  active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -1052,7 +1052,7 @@ export function TeamShell({
       </MaybeLayout>
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={teamName} />
+      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
       <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" searchable onSearchChange={q => setRosterQuery(q)}>
         {(() => {
           const teamLogo = SCHOOL_LOGOS[schoolSlug]

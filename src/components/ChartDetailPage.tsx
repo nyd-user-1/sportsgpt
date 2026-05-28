@@ -27,7 +27,7 @@ import {
 } from '@/components/editorial'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import { cn, formatSeason } from '@/lib/utils'
 import {
   type ChartConfig, type Period,
@@ -571,7 +571,7 @@ export function ChartDetailPage({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                       { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                      { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                     ]}
                   />
                 }
@@ -704,7 +704,7 @@ export function ChartDetailPage({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
-      <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={config.title} />
+      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
     </>
   )
 }

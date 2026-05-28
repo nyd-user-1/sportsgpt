@@ -8,7 +8,7 @@ import { ChartSpline, MessageCircle, FileUser, ArrowLeft, ArrowRight } from 'luc
 import { AppLayout } from '@/components/AppLayout'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import { RevealFx } from '@/components/RevealFx'
 import {
   EditorialHead,
@@ -307,7 +307,7 @@ export function SectionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                     { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -762,7 +762,7 @@ export function SectionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
         <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)}    context="Section XI" />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
     </>
   )

@@ -144,7 +144,7 @@ export function PanelChat({
       </div>
 
       <p className="text-[10px] uppercase tracking-[0.24em] text-[var(--paper-faint)]" style={SANS}>
-        Chat Panel
+        AI Panel
       </p>
     </div>
   )

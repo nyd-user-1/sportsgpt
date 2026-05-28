@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, ChartSpline, FileUser, MessageCircle } from 'luc
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { cn } from '@/lib/utils'
 import { districtName } from '@/lib/school-districts'
@@ -358,7 +358,7 @@ export function SchoolDetailShell({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                       ...(teamSlug ? [{ icon: FileUser, tooltip: 'Team Page', active: false, onClick: () => { window.location.href = `/team/${teamSlug}` } }] : []),
-                      { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                     ]}
                   />
                 }
@@ -850,7 +850,7 @@ export function SchoolDetailShell({
 
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)} context={school.name} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
     </>
   )

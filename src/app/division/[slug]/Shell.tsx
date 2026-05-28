@@ -10,7 +10,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import {
   EditorialHead,
   SearchButtonGroup,
@@ -296,7 +296,7 @@ export function DivisionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                     { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -513,7 +513,7 @@ export function DivisionShell({
         <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}    onClose={() => setMapsOpen(false)}   />
         <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-        <PanelChat  open={chatOpen}    onClose={() => setChatOpen(false)}   context={`Division ${division}`} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
     </>
   )

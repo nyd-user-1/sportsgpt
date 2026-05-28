@@ -11,7 +11,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
-import { PanelChat } from '@/components/PanelChat'
+import { PanelSideline } from '@/components/PanelSideline'
 import { cn, formatSeason } from '@/lib/utils'
 import { POSITIONS, type PositionConfig } from '@/lib/positions'
 import {
@@ -470,7 +470,7 @@ export function PositionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                     { icon: MapIcon,       tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'Ask SportsGPT', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -628,7 +628,7 @@ export function PositionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-        <PanelChat  open={chatOpen}   onClose={() => setChatOpen(false)}   context={config.fullName} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
       </div>
     </>
   )
