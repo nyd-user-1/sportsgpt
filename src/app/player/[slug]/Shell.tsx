@@ -546,12 +546,26 @@ function StatTable({
 
 // ── Game Log (per-season) ────────────────────────────────────────────────────
 
+// Opponent display name for a game-log row (mirrors the row-render logic).
+// Shared by the table render and the search matcher so they never drift.
+function gameOppName(ref: GameLogRow, schoolSlug: string): string {
+  const isHome = ref.home_team_slug === `${schoolSlug}-varsity-football`
+  const rawOpp = isHome ? ref.away_team_slug : ref.home_team_slug
+  return stripVarsity(isHome ? ref.away_team_name : ref.home_team_name) || GAME_SLUG_TO_NAME[rawOpp] || ''
+}
+
+function gameMatchesQuery(ref: GameLogRow, schoolSlug: string, q: string): boolean {
+  if (!q) return true
+  return gameOppName(ref, schoolSlug).toLowerCase().includes(q) || formatSeason(ref.season).toLowerCase().includes(q)
+}
+
 function GameLogTable({
-  player, season, gameLog,
+  player, season, gameLog, query,
 }: {
   player: PlayerRow
   season: number | null
   gameLog: GameLogRow[]
+  query: string
 }) {
   const rows = useMemo(
     () => season === null ? gameLog : gameLog.filter(r => r.season === season),
@@ -573,9 +587,17 @@ function GameLogTable({
     )
   }, [rows, season])
 
+  const q = query.trim().toLowerCase()
+  const visible = useMemo(
+    () => q ? byGame.filter(entries => gameMatchesQuery(entries[0], player.school_slug, q)) : byGame,
+    [byGame, q, player.school_slug],
+  )
+
   if (rows.length === 0) return <EmptyTablet label={season === null
     ? 'No game log recorded for this player.'
     : `No game log recorded for ${formatSeason(season)}.`} />
+
+  if (visible.length === 0) return <EmptyTablet label={`No games match “${query.trim()}”.`} />
 
   const showSeason = season === null
 
@@ -596,7 +618,7 @@ function GameLogTable({
           </tr>
         </thead>
         <tbody>
-          {byGame.map((entries, i) => {
+          {visible.map((entries, i) => {
             const ref = entries[0]
             const passYds = entries.find(r => r.stat_type === 'Passing')?.yds   ?? 0
             const rushYds = entries.find(r => r.stat_type === 'Rushing')?.yds   ?? 0
@@ -631,7 +653,7 @@ function GameLogTable({
                   </td>
                 )}
                 <td className={showSeason ? tabletTd : 'px-5 py-3.5'}>
-                  <Link href={`/game/${ref.game_id}?ref=${player.school_slug}-varsity-football`} className="flex items-center gap-3 min-w-0 text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors group/g">
+                  <Link href={`/team/${oppSlug}`} className="flex items-center gap-3 min-w-0 text-[var(--paper-text)] hover:text-[var(--paper-strong)] transition-colors group/g">
                     <span className="text-[11px] text-[var(--paper-faint)] shrink-0" style={SANS}>
                       {isHome ? 'vs' : 'at'}
                     </span>
@@ -644,7 +666,13 @@ function GameLogTable({
                 <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-muted)]')} style={MONO}>{recYds || '—'}</td>
                 <td className={cn(tabletTd, 'text-right tabular-nums text-[var(--paper-text)]')} style={MONO}>{totalTds || '—'}</td>
                 <td className={cn(tabletTd, 'text-right pr-5 tabular-nums font-medium', win && 'text-emerald-500', lose && 'text-rose-500', !win && !lose && 'text-[var(--paper-muted)]')} style={MONO}>
-                  {result}
+                  {result === '—' ? (
+                    result
+                  ) : (
+                    <Link href={`/game/${ref.game_id}?ref=${player.school_slug}-varsity-football`} className="hover:underline">
+                      {result}
+                    </Link>
+                  )}
                 </td>
               </tr>
             )
@@ -699,6 +727,7 @@ export function PlayerShell({
   const [query, setQuery] = useState('')
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
+  const q = query.trim().toLowerCase()
 
   // ── Recap section trigger (matches Game Highlights pattern) ─────────────
   const [recapTriggered, setRecapTriggered] = useState(false)
@@ -911,11 +940,26 @@ export function PlayerShell({
   // ── ContentsNav items ───────────────────────────────────────────────────
   const hasStatsForRecap = stats.length > 0
 
+  // Number of distinct games matching the search (drives the Games nav count
+  // when a query is active, since every other section collapses).
+  const matchedGamesCount = useMemo(() => {
+    if (!q) return 0
+    const base = selectedSeason !== null ? gameLog.filter(r => r.season === selectedSeason) : gameLog
+    const ids = new Set<number>()
+    for (const r of base) {
+      if (gameMatchesQuery(r, player.school_slug, q)) ids.add(r.game_id)
+    }
+    return ids.size
+  }, [q, selectedSeason, gameLog, player.school_slug])
+
   const sections = useMemo(() => {
     const gamesCount = selectedSeason !== null
       ? gameLog.filter(r => r.season === selectedSeason).length
       : [...new Set(gameLog.map(r => r.game_id))].length
     const seasonsCount = availableSeasons.length
+
+    // While searching, only the Games section is shown — collapse the nav to match.
+    if (q) return [{ id: 'games' as SectionId, label: 'Games', count: matchedGamesCount }]
 
     const list: { id: SectionId; label: string; count: number; subItems?: { id: string; label: string }[] }[] = [
       { id: 'seasons',     label: 'Seasons',     count: seasonsCount },
@@ -928,7 +972,7 @@ export function PlayerShell({
       { id: 'recap',       label: 'Recap',       count: hasStatsForRecap ? 1 : 0 },
     ]
     return list
-  }, [statRowsCount, selectedSeason, gameLog, hasStatsForRecap, availableSeasons.length, bestYards, availableStatTypes])
+  }, [statRowsCount, selectedSeason, gameLog, hasStatsForRecap, availableSeasons.length, bestYards, availableStatTypes, q, matchedGamesCount])
 
   const [activeSection, setActiveSection] = useState<SectionId>('seasons')
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -1123,7 +1167,7 @@ export function PlayerShell({
               <section
                 id="seasons"
                 ref={(el) => { sectionRefs.current.seasons = el }}
-                className="mb-20 scroll-mt-24"
+                className={cn('mb-20 scroll-mt-24', q && 'hidden')}
               >
                 <SectionHead
                   title="Seasons"
@@ -1208,9 +1252,9 @@ export function PlayerShell({
                 <SectionHead
                   title="Games"
                   eyebrow={selectedSeason === null ? 'Career · all seasons' : `Season · ${formatSeason(selectedSeason)}`}
-                  blurb="Game-by-game results — click any opponent to open the game page."
+                  blurb="Game-by-game results — click an opponent for its team page, a result for the game."
                 />
-                <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} />
+                <GameLogTable player={player} season={selectedSeason} gameLog={gameLog} query={query} />
               </section>
 
               {/* ── Best Season (3rd) ──────────────────────────── */}
@@ -1218,7 +1262,7 @@ export function PlayerShell({
                 <section
                   id="best-season"
                   ref={(el) => { sectionRefs.current['best-season'] = el }}
-                  className="mb-20 scroll-mt-24"
+                  className={cn('mb-20 scroll-mt-24', q && 'hidden')}
                 >
                   <SectionHead
                     title="Best Season"
@@ -1255,7 +1299,7 @@ export function PlayerShell({
               <section
                 id="stats"
                 ref={(el) => { sectionRefs.current.stats = el }}
-                className="mb-20 scroll-mt-24"
+                className={cn('mb-20 scroll-mt-24', q && 'hidden')}
               >
                 <SectionHead
                   title="Stats"
@@ -1289,7 +1333,7 @@ export function PlayerShell({
               <section
                 id="recap"
                 ref={(el) => { sectionRefs.current.recap = el }}
-                className="mb-20 scroll-mt-24"
+                className={cn('mb-20 scroll-mt-24', q && 'hidden')}
               >
                 <SectionHead
                   title={recapBody && recapTitle ? recapTitle : 'Recap'}
