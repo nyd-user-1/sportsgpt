@@ -55,6 +55,12 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       WITH latest AS (
         SELECT DISTINCT ON (pss.player_slug, pss.stat_type)
           pss.player_slug, pss.player_name, pss.stat_type, pss.season,
+          COALESCE(p.slug, (
+            SELECT p2.slug FROM players p2
+            WHERE p2.school_slug = pss.school_slug
+              AND lower(trim(regexp_replace(p2.name, ' +', ' ', 'g'))) = lower(trim(regexp_replace(pss.player_name, ' +', ' ', 'g')))
+            LIMIT 1
+          )) AS link_slug,
           pss.pass_yards, pss.pass_tds, pss.rush_yards, pss.rush_tds, pss.recv_yards, pss.recv_tds,
           p.position
         FROM player_season_stats pss
@@ -93,7 +99,14 @@ export default async function TeamDetailPage({ params }: { params: Promise<{ slu
       ORDER BY season, overall_wins DESC`,
     sql`
       SELECT
-        pgs.game_id, pgs.player_slug, pgs.player_name, pgs.school_slug,
+        pgs.game_id,
+        COALESCE(pgs.player_slug, (
+          SELECT p2.slug FROM players p2
+          WHERE p2.school_slug = pgs.school_slug
+            AND lower(trim(regexp_replace(p2.name, ' +', ' ', 'g'))) = lower(trim(regexp_replace(pgs.player_name, ' +', ' ', 'g')))
+          LIMIT 1
+        )) AS player_slug,
+        pgs.player_name, pgs.school_slug,
         pgs.team_name, pgs.stat_type, pgs.season,
         pgs.rush_att, pgs.rush_yds, pgs.rush_tds,
         pgs.pass_comp, pgs.pass_att, pgs.pass_yds, pgs.pass_tds, pgs.pass_int,

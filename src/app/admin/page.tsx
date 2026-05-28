@@ -41,6 +41,10 @@ type Status = {
     CHAT_PANEL_INTRO: string
   }
   content: { charts: number; glossaryTerms: number; launchpadTabs: number }
+  review?: {
+    noProfile: { player_name: string; school_slug: string | null }[]
+    slugConflicts: { player_name: string; school_slug: string | null; bad_slug: string }[]
+  }
 }
 
 const ICON_OPTIONS = [
@@ -337,6 +341,56 @@ export default function AdminPage() {
                   ))}
                 </div>
               </>
+            )}
+          </Section>
+
+          {/* Needs Review — player-slug data hygiene */}
+          <Section id="review" title="Needs Review">
+            <p className="text-[12px] text-[var(--paper-muted)] mb-4 italic" style={SERIF}>
+              Players surfaced by the slug-reconciliation scripts (<code className="not-italic bg-[var(--paper)] border border-[var(--paper-rule)] px-1.5 py-0.5 rounded-[2px]" style={MONO}>scripts/*-season-stat-slugs.mjs</code>). These render as plain text (no broken links) until resolved.
+            </p>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {[
+                { label: 'No profile page', count: status?.review?.noProfile.length ?? '—',     note: 'In stats, not in players table' },
+                { label: 'Slug conflicts',  count: status?.review?.slugConflicts.length ?? '—', note: 'Season-stat numbers disagree' },
+              ].map(({ label, count, note }) => (
+                <div key={label} className="rounded-[3px] border border-[var(--paper-rule)] bg-[var(--paper)] p-4 text-center">
+                  <p className="text-[28px] tabular-nums text-[var(--paper-text)] leading-none" style={SERIF}>{count}</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)] mt-2" style={SANS}>{label}</p>
+                  <p className="text-[10px] text-[var(--paper-faint)] mt-1.5" style={SERIF}>{note}</p>
+                </div>
+              ))}
+            </div>
+
+            {(status?.review?.slugConflicts.length ?? 0) > 0 && (
+              <div className="mb-5">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)] mb-2" style={SANS}>Slug conflicts — pick the correct season-stats row</p>
+                <div className="rounded-[3px] border border-[var(--paper-rule)] bg-[var(--paper)] overflow-hidden max-h-56 overflow-y-auto">
+                  {status!.review!.slugConflicts.map((r, i) => (
+                    <div key={i} className="flex items-center justify-between gap-3 px-4 py-2 border-b border-[var(--paper-rule-soft)] last:border-b-0">
+                      <span className="text-[13px] text-[var(--paper-text)] truncate" style={SERIF}>{r.player_name}</span>
+                      <span className="flex items-center gap-2 shrink-0">
+                        <code className="text-[10px] text-[var(--paper-faint)] bg-[var(--paper-quiet)] border border-[var(--paper-rule)] px-2 py-0.5 rounded-[2px]" style={MONO}>{r.bad_slug}</code>
+                        <span className="text-[10px] text-[var(--paper-faint)]" style={MONO}>{r.school_slug ?? '—'}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {(status?.review?.noProfile.length ?? 0) > 0 && (
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.18em] text-[var(--paper-faint)] mb-2" style={SANS}>No profile page — box-score-only players</p>
+                <div className="rounded-[3px] border border-[var(--paper-rule)] bg-[var(--paper)] overflow-hidden max-h-56 overflow-y-auto">
+                  {status!.review!.noProfile.map((r, i) => (
+                    <div key={i} className="flex items-center justify-between gap-3 px-4 py-2 border-b border-[var(--paper-rule-soft)] last:border-b-0">
+                      <span className="text-[13px] text-[var(--paper-text)] truncate" style={SERIF}>{r.player_name}</span>
+                      <span className="text-[10px] text-[var(--paper-faint)] shrink-0" style={MONO}>{r.school_slug ?? '—'}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </Section>
 
