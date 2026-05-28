@@ -100,7 +100,7 @@ export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; act
       <svg
         viewBox={`0 0 ${VIEW_W.toFixed(0)} ${VIEW_H.toFixed(0)}`}
         className="w-full h-auto"
-        style={{ overflow: 'visible' }}
+        style={{ overflow: 'visible', maxWidth: 1350, marginInline: 'auto', display: 'block' }}
         onMouseLeave={() => setHover(null)}
       >
         {schools.map(s => {
@@ -127,8 +127,8 @@ export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; act
               <polygon
                 points={hexPoints(cx, cy)}
                 fill={color}
-                stroke="rgba(0,0,0,0.28)"
-                strokeWidth={0.5}
+                stroke="rgba(0,0,0,0.5)"
+                strokeWidth={1.25}
               />
               <circle cx={cx} cy={cy} r={S * 0.5} fill="#ffffff" opacity={0.94} />
               {logo && (
@@ -149,7 +149,7 @@ export function HoneycombMap({ schools, activeDiv }: { schools: HexSchool[]; act
       <ChatSeasonsPanel
         open={!!panel}
         onClose={() => setPanel(null)}
-        teams={panel ? [{ slug: panel.teamSlug, name: panel.name }] : []}
+        teams={panel ? [{ slug: panel.schoolSlug, name: panel.name }] : []}
       />
     </>
   )
