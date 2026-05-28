@@ -58,6 +58,13 @@ type ProdCol =
 
 type SeasonFilter = number | 'all'
 
+type IndexTab = 'player' | 'production'
+const INDEX_ORDER: IndexTab[] = ['player', 'production']
+const INDEX_TITLE: Record<IndexTab, string> = {
+  player:     'Player Index',
+  production: 'Production Index',
+}
+
 type AggRow = {
   slug: string
   name: string
@@ -181,6 +188,7 @@ export function PlayerMagazineShell({
 }) {
   const router = useRouter()
   const [activePos,      setActivePos]      = useState<PosBucket>('All')
+  const [indexTab,       setIndexTab]       = useState<IndexTab>('player')
   const [query,          setQuery]          = useState('')
   const [sortCol,        setSortCol]        = useState<SortCol>('rank')
   const [sortDir,        setSortDir]        = useState<'asc' | 'desc'>('asc')
@@ -189,6 +197,16 @@ export function PlayerMagazineShell({
   const [selectedSeason, setSelectedSeason] = useState<SeasonFilter>(defaultSeason)
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
+
+  // Index cycling — one table visible at a time, arrow advances
+  function nextIndex() {
+    setIndexTab(t => INDEX_ORDER[(INDEX_ORDER.indexOf(t) + 1) % INDEX_ORDER.length])
+  }
+  const indexBlurb = indexTab === 'player'
+    ? (activePos === 'All'
+        ? 'Every player on file — yards, touchdowns, picks. Sort by any column.'
+        : `${POS_LABEL[activePos]} — sort by any column.`)
+    : 'Per-game output and a composite signature stat — yards-per-game and touchdowns minus interceptions, z-scored within the visible set.'
 
   const sortedSeasons = useMemo(
     () => [...availableSeasons].sort((a, b) => b - a),
@@ -411,21 +429,28 @@ export function PlayerMagazineShell({
         <SearchButtonGroup />
       </StickyControlBar>
 
-      {/* ── Roster Index ───────────────────────────────────────────────────── */}
+      {/* ── Player / Production Index — single section, arrow cycles ───────── */}
       <div className="mx-auto max-w-6xl px-6 sm:px-10 md:px-14 pt-14 pb-12" id="roster">
-        <RevealFx delay={0.15} translateY={8}>
+        <RevealFx delay={0.15} translateY={8} key={indexTab}>
           <SectionHead
             noRule
-            title="Roster Index"
-            blurb={
-              activePos === 'All'
-                ? 'Every player on file — yards, touchdowns, picks. Sort by any column.'
-                : `${POS_LABEL[activePos]} — sort by any column.`
+            title={
+              <span className="inline-flex items-center gap-4">
+                <span>{INDEX_TITLE[indexTab]}</span>
+                <button
+                  onClick={nextIndex}
+                  aria-label="Next index"
+                  className="inline-flex items-center justify-center text-[var(--paper-faint)] hover:text-[var(--paper-strong)] transition-colors duration-150"
+                >
+                  <ArrowRight className="h-8 w-8" />
+                </button>
+              </span>
             }
+            blurb={indexBlurb}
           />
           <PositionTabs active={activePos} onChange={setActivePos} />
 
-          {sortedRows.length === 0 ? (
+          {indexTab === 'player' && (sortedRows.length === 0 ? (
             <EmptyTablet
               label={q
                 ? `No players match "${query}" in ${POS_LABEL[activePos]} for ${seasonLabel}.`
@@ -524,20 +549,9 @@ export function PlayerMagazineShell({
                 </table>
               </div>
             </Tablet>
-          )}
-        </RevealFx>
+          ))}
 
-        {/* ── Production Index ──────────────────────────────────────────── */}
-        <div id="production-index" className="mt-16">
-          <RevealFx delay={0.22} translateY={8}>
-            <SectionHead
-              noRule
-              title="Production Index"
-              blurb="Per-game output and a composite signature stat — yards-per-game and touchdowns minus interceptions, z-scored within the visible set."
-            />
-            <PositionTabs active={activePos} onChange={setActivePos} />
-
-            {sortedProd.length === 0 ? (
+          {indexTab === 'production' && (sortedProd.length === 0 ? (
               <EmptyTablet
                 label={q
                   ? `No players match "${query}" in ${POS_LABEL[activePos]} for ${seasonLabel}.`
@@ -636,9 +650,8 @@ export function PlayerMagazineShell({
                   </table>
                 </div>
               </Tablet>
-            )}
-          </RevealFx>
-        </div>
+            ))}
+        </RevealFx>
 
         {/* ── Colophon ──────────────────────────────────────────────────── */}
         <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch]">

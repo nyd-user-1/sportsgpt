@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -97,7 +98,12 @@ function PlayerIdentity({ player, game }: { player: PlayerMeta; game: GameMeta }
         className="text-[var(--paper-text)] leading-tight truncate"
         style={{ ...SERIF, fontSize: 22, fontWeight: 500, letterSpacing: '-0.005em' }}
       >
-        {player.name}
+        <Link
+          href={`/player/${player.slug}`}
+          className="text-[var(--paper-text)] hover:text-[var(--paper-strong)] hover:underline transition-colors"
+        >
+          {player.name}
+        </Link>
         {player.position && (
           <span
             className="ml-2 text-[var(--paper-muted)]"
