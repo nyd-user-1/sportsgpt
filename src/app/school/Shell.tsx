@@ -295,6 +295,12 @@ export function SchoolMagazineShell({
   const SECTION_TITLE: Record<SectionTab, string> = {
     academic: 'Academic Index', demographic: 'Demographic Index', need: 'Need Index', trend: 'Trend Index',
   }
+  const SECTION_BLURB: Record<SectionTab, string> = {
+    academic:    'Every school ranked by academic profile — SAT, AP, graduation, and college outcomes.',
+    demographic: 'Every school ranked by the diversity of its student population.',
+    need:        'Every school ranked by economic disadvantage, language, and disability indicators.',
+    trend:       'Every school ranked by enrollment change over the reporting window.',
+  }
   const [sectionTab, setSectionTab] = useState<SectionTab>('academic')
   function nextSection() {
     setSectionTab(t => SECTION_ORDER[(SECTION_ORDER.indexOf(t) + 1) % SECTION_ORDER.length])
@@ -546,6 +552,7 @@ export function SchoolMagazineShell({
                   </button>
                 </span>
               }
+              blurb={SECTION_BLURB[sectionTab]}
             />
 
             <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
