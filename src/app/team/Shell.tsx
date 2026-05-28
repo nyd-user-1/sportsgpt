@@ -165,6 +165,10 @@ export function TeamMagazineShell({
   const TEAM_SECTION_TITLE: Record<TeamSection, string> = {
     standings: 'Standings Index', offensive: 'Offensive Index',
   }
+  const TEAM_SECTION_BLURB: Record<TeamSection, string> = {
+    standings: 'Every program ranked by record — wins, losses, point differential, and conference standing.',
+    offensive: 'Every program ranked by offensive output — points and yards per game, scoring, and margin of victory.',
+  }
   const [teamSection, setTeamSection] = useState<TeamSection>('standings')
   function nextTeamSection() {
     setTeamSection(t => TEAM_SECTIONS[(TEAM_SECTIONS.indexOf(t) + 1) % TEAM_SECTIONS.length])
@@ -217,11 +221,6 @@ export function TeamMagazineShell({
       setOffSortDir(ascDefault ? 'asc' : 'desc')
     }
   }
-
-  const distinctTeamCount = useMemo(
-    () => new Set(teams.map(t => t.slug)).size,
-    [teams],
-  )
 
   // ── Filter teams: selected season + division + search ───────────────────
   const q = query.trim().toLowerCase()
@@ -279,7 +278,6 @@ export function TeamMagazineShell({
   }, [filteredTeams, sortCol, sortDir, selectedSeason])
 
   const seasonLabel = selectedSeason === 'all' ? 'All Seasons' : formatSeason(selectedSeason)
-  const seasonMeta  = selectedSeason === 'all' ? `${availableSeasons.length} seasons` : `${formatSeason(selectedSeason)} season`
 
   // ── Offensive Index — derived rows + sort ───────────────────────────────
   const offRows = useMemo(() => buildOffRows(filteredTeams), [filteredTeams])
@@ -331,9 +329,10 @@ export function TeamMagazineShell({
                 </>
               }
               meta={[
-                `${distinctTeamCount} teams`,
-                '4 divisions',
-                seasonMeta,
+                <Link key="school"   href="/school"             className="hover:text-[var(--paper-strong)] transition-colors">School</Link>,
+                <Link key="division" href="/division/division-i" className="hover:text-[var(--paper-strong)] transition-colors">Division</Link>,
+                <Link key="team"     href="/team"               className="hover:text-[var(--paper-strong)] transition-colors">Team</Link>,
+                <Link key="player"   href="/player"             className="hover:text-[var(--paper-strong)] transition-colors">Player</Link>,
               ]}
             >
               Team
@@ -404,6 +403,7 @@ export function TeamMagazineShell({
                   </button>
                 </span>
               }
+              blurb={TEAM_SECTION_BLURB[teamSection]}
             />
 
             <DivisionTabs active={activeDiv} onChange={setActiveDiv} />
