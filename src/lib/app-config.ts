@@ -14,6 +14,8 @@ export { CURRENT_SEASON, AVAILABLE_SEASONS } from '@/lib/season'
 // ── Brand ──────────────────────────────────────────────────────────────────
 export const APP_NAME               = 'SportsGPT'
 export const APP_TAGLINE            = 'AI-powered high school sports intelligence'
+export const SITE_URL               = 'https://sports.nysgpt.com'
+export const APP_DESCRIPTION        = 'Section XI high school football intelligence — standings, player and team stats, game results, and AI-powered analysis for Long Island (Nassau & Suffolk).'
 export const CHAT_PLACEHOLDER       = 'Ask about Section XI football...'
 export const CHAT_PLACEHOLDER_PANEL = 'Ask about this team...'
 export const CHAT_PANEL_INTRO       = 'Ask anything about Section XI football.'

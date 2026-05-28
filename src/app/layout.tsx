@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, Fraunces, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-import { APP_NAME, APP_TAGLINE } from '@/lib/app-config'
+import { APP_NAME, APP_DESCRIPTION, SITE_URL } from '@/lib/app-config'
 import { CommandPalette } from '@/components/CommandPalette'
 import { AuthProvider } from '@/components/AuthProvider'
 
@@ -29,8 +29,40 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: APP_NAME,
-  description: APP_TAGLINE,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: APP_NAME,
+    template: `%s · ${APP_NAME}`,
+  },
+  description: APP_DESCRIPTION,
+  applicationName: APP_NAME,
+  keywords: [
+    'Section XI football',
+    'Long Island high school football',
+    'Suffolk County football',
+    'Nassau County football',
+    'high school sports stats',
+    'New York high school football',
+    APP_NAME,
+  ],
+  openGraph: {
+    type: 'website',
+    siteName: APP_NAME,
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
+    url: SITE_URL,
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
 }
 
 export const viewport: Viewport = {
