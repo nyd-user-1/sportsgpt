@@ -113,7 +113,7 @@ export async function GameDetailSlotContent({
       <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
         <Link
           href={href}
-          className="pointer-events-auto bg-black/60 backdrop-blur-md text-center border border-white/15 px-7 py-5 min-w-[360px] hover:border-white/30 transition-colors duration-200 cursor-pointer"
+          className="pointer-events-auto bg-black/60 backdrop-blur-md text-center border border-white/15 px-7 py-5 min-w-0 sm:min-w-[360px] hover:border-white/30 transition-colors duration-200 cursor-pointer"
           style={{ borderRadius: 3 }}
         >
           {scored ? (

@@ -28,7 +28,7 @@ export function LaunchpadTabs() {
 
   return (
     <div className="flex items-center justify-between gap-3 border-b border-[var(--paper-rule)]">
-      <div className="flex items-center">
+      <div className="flex items-center overflow-x-auto no-scrollbar min-w-0">
         {TABS.map(({ label, key }) => {
           const on = activeTab === key
           return (

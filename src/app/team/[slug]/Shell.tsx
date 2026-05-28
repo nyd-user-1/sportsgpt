@@ -486,7 +486,7 @@ export function TeamShell({
       )}
       <div className="flex-1 min-w-0">
         <p className="text-[15px] font-bold text-[var(--txt)] leading-tight truncate">{cleanName}</p>
-        <p className="text-[11px] text-[var(--muted)] leading-tight">Section XI · Division {division}</p>
+        <p className="text-[11px] text-[var(--muted)] leading-tight truncate">Section XI · Division {division}</p>
       </div>
     </div>
   )

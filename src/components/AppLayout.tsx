@@ -127,7 +127,7 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
     <div className="flex h-dvh overflow-hidden p-0 sm:p-[18px] bg-[var(--surface)] sm:bg-[var(--bg)]">
 
       <div className={`shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${sidebarOpen ? 'w-full sm:w-[240px] sm:mr-[18px]' : 'w-0'}`}>
-        <div className={`w-[240px] h-full rounded-none sm:rounded-2xl overflow-hidden sm:border ${paperMode ? 'sm:border-[var(--paper-rule)]' : 'sm:border-[var(--border)]'}`}>
+        <div className={`w-full sm:w-[240px] h-full rounded-none sm:rounded-2xl overflow-hidden sm:border ${paperMode ? 'sm:border-[var(--paper-rule)]' : 'sm:border-[var(--border)]'}`}>
           <Sidebar activeLabel={activeNav} />
         </div>
       </div>
@@ -157,7 +157,7 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
             <div className="flex sm:hidden flex-1 min-w-0">{mobileHeader}</div>
           )}
 
-          <div className="flex-1" />
+          <div className={mobileHeader ? 'hidden sm:block flex-1' : 'flex-1'} />
 
           <button
             onClick={e => toggleTheme(e)}
@@ -170,7 +170,9 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
             {dark ? <Sun className="h-4 w-4 fill-amber-400 text-amber-400" /> : <Moon className="h-4 w-4" />}
           </button>
 
-          <AuthButtons />
+          <div className={mobileHeader ? 'hidden sm:flex items-center' : 'flex items-center'}>
+            <AuthButtons />
+          </div>
 
         </div>
         )}

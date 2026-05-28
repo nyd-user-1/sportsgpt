@@ -170,7 +170,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
         <div className="flex gap-4 py-3 overflow-x-auto no-scrollbar">
           {[0, 1, 2].map(i => (
             <div key={i}
-              className="w-[400px] shrink-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] animate-pulse"
+              className="w-[85vw] sm:w-[400px] shrink-0 border border-[var(--paper-rule)] bg-[var(--paper-quiet)] animate-pulse"
               style={{ padding: 6, borderRadius: 3 }}>
               <div className="min-h-[280px]"
                 style={{ borderRadius: 1, background: 'color-mix(in srgb, var(--paper-text) 6%, transparent)' }} />
@@ -209,7 +209,7 @@ export function ProviderSection({ games }: { games: GameRow[] }) {
                   }
                 }}
                 className={cn(
-                  "group w-[400px] shrink-0 cursor-pointer transition-all border bg-[var(--paper-quiet)]",
+                  "group w-[85vw] sm:w-[400px] shrink-0 cursor-pointer transition-all border bg-[var(--paper-quiet)]",
                   onSel ? "border-[var(--paper-strong)]" : "border-[var(--paper-rule)] hover:border-[var(--paper-text)]"
                 )}
                 style={{ padding: 6, borderRadius: 3 }}

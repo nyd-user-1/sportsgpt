@@ -95,7 +95,7 @@ export function LaunchpadStandings({ rows }: { rows: StandingsRow[] }) {
   }, [selectedSlug, filtered, router, searchParams])
 
   return (
-    <RevealFx translateY={4} className="w-[55%] min-w-0 shrink-0 flex flex-col">
+    <RevealFx translateY={4} className="w-full h-[340px] sm:h-auto sm:w-[55%] min-w-0 shrink-0 flex flex-col">
       <Tablet className="flex flex-col h-full">
         <div ref={tableRef} className="overflow-y-auto no-scrollbar flex-1">
           <table className="w-full" style={{ borderSpacing: 0 }}>
