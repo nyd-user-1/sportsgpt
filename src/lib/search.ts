@@ -93,6 +93,14 @@ export function tokenizeQuery(query: string): { tokens: string[]; matchup: boole
   return { tokens, matchup }
 }
 
+// Normalize a raw query into a stable key for click-learning. Lowercase, drop
+// filler/connectors, sort the meaningful tokens so "joseph filardi" and
+// "filardi joseph" pool into one bucket. Prefix typing ("joseph fil") gets its
+// own bucket by design — it learns separately from completed queries.
+export function queryStem(query: string): string {
+  return tokenizeQuery(query).tokens.sort().join(' ')
+}
+
 // Score a single token against text: substring (returns its index) or ≤1-typo
 // fuzzy hit (returns a constant just above the substring band). Infinity = miss.
 function tokenScore(tok: string, text: string, words: string[]): number {
@@ -301,6 +309,41 @@ export function buildResults(data: SearchData, query: string): GroupedResults {
 // Extract the player slug back out of a player Result's key (`player-<slug>`).
 export function playerSlugFromKey(key: string): string | null {
   return key.startsWith('player-') ? key.slice('player-'.length) : null
+}
+
+// ── Click-learning boost ───────────────────────────────────────────────────
+// query_stem → (result_key → aggregated click count). Folded into the /api/search
+// payload and applied client-side so both the palette and /search rank alike.
+export type ClickBoostMap = Record<string, Record<string, number>>
+
+// Minimum clicks before a result earns any boost — keeps a single stray click
+// from reordering results (the user asked for this 2-click floor).
+const MIN_BOOST_CLICKS = 2
+
+// Re-rank each category using clicks as a SECONDARY sort key: results stay
+// ordered by relevance score first, and clicks only break ties among
+// equally-relevant results. This floats the popular sibling (e.g. Joseph
+// Filardi above a tied Filardi) without letting a heavily-clicked weak match
+// leapfrog a stronger one.
+export function applyClickBoost(grouped: GroupedResults, query: string, boost: ClickBoostMap): GroupedResults {
+  const stem = queryStem(query)
+  const counts = boost[stem]
+  if (!counts) return grouped
+  const clicks = (key: string) => {
+    const c = counts[key] ?? 0
+    return c >= MIN_BOOST_CLICKS ? c : 0
+  }
+  const rerank = (rows: Result[]) =>
+    [...rows].sort((a, b) => a.score - b.score || clicks(b.key) - clicks(a.key))
+  return {
+    divisions: rerank(grouped.divisions),
+    charts:    rerank(grouped.charts),
+    teams:     rerank(grouped.teams),
+    games:     rerank(grouped.games),
+    players:   rerank(grouped.players),
+    schools:   rerank(grouped.schools),
+    seasons:   rerank(grouped.seasons),
+  }
 }
 
 // Largest clean-name band that still counts as "specific enough" for a hub.

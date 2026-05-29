@@ -12,13 +12,16 @@ import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 import {
   buildResults,
+  applyClickBoost,
   dominantPlayer,
   playerSlugFromKey,
   type SearchData,
+  type ClickBoostMap,
   type Result,
   type ResultType,
   type GroupedResults,
 } from '@/lib/search'
+import { logSearchClick } from '@/lib/search-click'
 import { PlayerHubCard, buildPlayerHub } from '@/components/PlayerHubCard'
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
@@ -117,11 +120,13 @@ function GroupHead({ label, count }: { label: string; count: number }) {
 
 export function SearchShell({
   data,
+  boost,
   initialQuery,
   browseTeams,
   browseGames,
 }: {
   data: SearchData
+  boost?: ClickBoostMap
   initialQuery: string
   browseTeams: SearchData['teams']
   browseGames: SearchData['games']
@@ -148,7 +153,10 @@ export function SearchShell({
     syncUrl(q)
   }
 
-  const grouped = useMemo(() => buildResults(data, query), [data, query])
+  const grouped = useMemo(() => {
+    const base = buildResults(data, query)
+    return boost ? applyClickBoost(base, query, boost) : base
+  }, [data, query, boost])
 
   const totalResults = useMemo(
     () => CATEGORY_ORDER.reduce((n, k) => n + grouped[k].length, 0),
@@ -160,7 +168,13 @@ export function SearchShell({
   function pick(r: Result) {
     saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, logoUrl: r.logoUrl, type: r.type })
   }
-  function go(r: Result) { pick(r); router.push(r.href) }
+  // Picking a result FROM the live query results — also teach the ranking. Used
+  // only by the body result cards and the hub (not recents / browse / quick-nav).
+  function pickResult(r: Result) {
+    logSearchClick(query, r)
+    pick(r)
+  }
+  function go(r: Result) { pickResult(r); router.push(r.href) }
 
   // When one player clearly dominates the query, show a hub card (their team,
   // school, recent team games) above the results — only on the "All" scope.
@@ -276,7 +290,7 @@ export function SearchShell({
                           <GroupHead label={CATEGORY_LABEL[k]} count={rows.length} />
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                             {rows.slice(0, CAPS[k]).map(r => (
-                              <ResultCard key={r.key} r={r} onPick={pick} />
+                              <ResultCard key={r.key} r={r} onPick={pickResult} />
                             ))}
                           </div>
                           {rows.length > CAPS[k] && (

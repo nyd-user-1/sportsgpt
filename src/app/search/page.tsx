@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { sql } from '@/lib/db'
 import { APP_NAME } from '@/lib/app-config'
-import type { SearchData } from '@/lib/search'
+import type { SearchData, ClickBoostMap } from '@/lib/search'
 import { SearchShell } from './Shell'
 
 export const dynamic = 'force-dynamic'
@@ -21,6 +21,16 @@ function nameFromSlug(slug: string): string {
     .split('-')
     .map(w => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ')
+}
+
+async function getClickBoost(): Promise<ClickBoostMap> {
+  const rows = await sql`SELECT query_stem, result_key, count FROM search_clicks`
+  const boost: ClickBoostMap = {}
+  for (const r of rows) {
+    const stem = r.query_stem as string
+    ;(boost[stem] ??= {})[r.result_key as string] = Number(r.count)
+  }
+  return boost
 }
 
 async function getSearchData(): Promise<SearchData> {
@@ -82,7 +92,7 @@ export default async function SearchPage({
   searchParams: Promise<{ q?: string }>
 }) {
   const { q } = await searchParams
-  const data = await getSearchData()
+  const [data, boost] = await Promise.all([getSearchData(), getClickBoost()])
 
   // Lightweight browse rows for the empty state — a few teams + recent games,
   // so the page is useful before the user types.
@@ -92,6 +102,7 @@ export default async function SearchPage({
   return (
     <SearchShell
       data={data}
+      boost={boost}
       initialQuery={q ?? ''}
       browseTeams={browseTeams}
       browseGames={browseGames}

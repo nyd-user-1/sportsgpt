@@ -15,7 +15,7 @@ function nameFromSlug(slug: string): string {
 }
 
 export async function GET() {
-  const [playerRows, teamRows, schoolRows, gameRows] = await Promise.all([
+  const [playerRows, teamRows, schoolRows, gameRows, clickRows] = await Promise.all([
     sql`
       SELECT p.slug, p.name, p.position, p.school_slug,
              t.name AS team_name
@@ -44,6 +44,9 @@ export async function GET() {
       LEFT JOIN teams at ON at.slug = g.away_team_slug
       ORDER BY g.game_date DESC NULLS LAST, g.id DESC
     `,
+    sql`
+      SELECT query_stem, result_key, count FROM search_clicks
+    `,
   ])
 
   const games = gameRows.map(g => {
@@ -61,10 +64,19 @@ export async function GET() {
     }
   })
 
+  // query_stem → (result_key → count) for click-learning re-ranking. The table
+  // is hard-capped at 50 rows, so this is tiny.
+  const boost: Record<string, Record<string, number>> = {}
+  for (const r of clickRows) {
+    const stem = r.query_stem as string
+    ;(boost[stem] ??= {})[r.result_key as string] = r.count as number
+  }
+
   return NextResponse.json({
     players: playerRows,
     teams:   teamRows,
     schools: schoolRows,
     games,
+    boost,
   })
 }

@@ -15,13 +15,16 @@ import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { formatSeason } from '@/lib/utils'
 import {
   buildResults,
+  applyClickBoost,
   dominantPlayer,
   playerSlugFromKey,
   type SearchData,
+  type ClickBoostMap,
   type Result,
   type ResultType,
   type GroupedResults,
 } from '@/lib/search'
+import { logSearchClick } from '@/lib/search-click'
 import { PlayerHubCard, buildPlayerHub } from '@/components/PlayerHubCard'
 
 const SERIF: React.CSSProperties = { fontFamily: 'var(--font-display), Georgia, serif' }
@@ -144,7 +147,7 @@ function ScopePill({ label, count, active, onClick }: { label: string; count: nu
   )
 }
 
-export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeams: SearchData['teams'] }) {
+export function Chat3Shell({ data, boost, browseTeams }: { data: SearchData; boost?: ClickBoostMap; browseTeams: SearchData['teams'] }) {
   const { messages, isStreaming, sendMessage, stopStreaming } = useChat()
   const [selectedModel, setSelectedModel] = useState<ChatModelId>(DEFAULT_MODEL)
   const [query, setQuery] = useState('')
@@ -197,7 +200,10 @@ export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeam
     setShowScrollBtn(!nearBottom)
   }, [])
 
-  const grouped = useMemo(() => buildResults(data, query), [data, query])
+  const grouped = useMemo(() => {
+    const base = buildResults(data, query)
+    return boost ? applyClickBoost(base, query, boost) : base
+  }, [data, query, boost])
   const totalResults = useMemo(
     () => CATEGORY_ORDER.reduce((n, k) => n + grouped[k].length, 0),
     [grouped],
@@ -222,10 +228,17 @@ export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeam
     return grouped[k]
   }
 
-  // Click a result → send its tailored prompt; the page transitions to chat.
-  const pickResult = useCallback((r: Result) => {
+  // Send a result's tailored prompt; the page transitions to chat. Used by the
+  // empty-state browse cards (no live query → nothing to learn).
+  const sendPrompt = useCallback((r: Result) => {
     sendMessage(promptFor(r), selectedModel)
   }, [sendMessage, selectedModel])
+
+  // Click a live result → also log the pick so ranking learns the query→result.
+  const pickResult = useCallback((r: Result) => {
+    logSearchClick(query, r)
+    sendPrompt(r)
+  }, [query, sendPrompt])
 
   // ── Conversation phase: "Chat" collapses to top, line beneath, thread below ──
   if (hasMessages) {
@@ -460,7 +473,7 @@ export function Chat3Shell({ data, browseTeams }: { data: SearchData; browseTeam
                           <PromptCard
                             key={t.slug}
                             r={{ key: `team-${t.slug}`, type: 'team', name: display, displayName: display, subtitle: `Division ${t.division}`, href: `/team/${t.slug}`, schoolSlug: t.school_slug, score: 0 }}
-                            onPick={pickResult}
+                            onPick={sendPrompt}
                           />
                         )
                       })}

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { sql } from '@/lib/db'
 import { APP_NAME } from '@/lib/app-config'
-import type { SearchData } from '@/lib/search'
+import type { SearchData, ClickBoostMap } from '@/lib/search'
 import { Chat3Shell } from './Shell'
 
 export const dynamic = 'force-dynamic'
@@ -18,6 +18,16 @@ function nameFromSlug(slug: string): string {
     .split('-')
     .map(w => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ')
+}
+
+async function getClickBoost(): Promise<ClickBoostMap> {
+  const rows = await sql`SELECT query_stem, result_key, count FROM search_clicks`
+  const boost: ClickBoostMap = {}
+  for (const r of rows) {
+    const stem = r.query_stem as string
+    ;(boost[stem] ??= {})[r.result_key as string] = Number(r.count)
+  }
+  return boost
 }
 
 async function getSearchData(): Promise<SearchData> {
@@ -74,7 +84,7 @@ async function getSearchData(): Promise<SearchData> {
 }
 
 export default async function Chat3Page() {
-  const data = await getSearchData()
+  const [data, boost] = await Promise.all([getSearchData(), getClickBoost()])
   const browseTeams = data.teams.slice(0, 8)
-  return <Chat3Shell data={data} browseTeams={browseTeams} />
+  return <Chat3Shell data={data} boost={boost} browseTeams={browseTeams} />
 }

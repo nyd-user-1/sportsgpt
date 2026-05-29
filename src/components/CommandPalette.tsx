@@ -5,7 +5,10 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { Search, X, ChevronRight, Users, Building2, School, BarChart2, Rocket, MessageCircle, Swords } from 'lucide-react'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
-import { buildResults, type Result, type SearchData, type ResultType } from '@/lib/search'
+import { buildResults, applyClickBoost, type Result, type SearchData, type ClickBoostMap, type ResultType } from '@/lib/search'
+import { logSearchClick } from '@/lib/search-click'
+
+type SearchPayload = SearchData & { boost?: ClickBoostMap }
 
 type RecentEntry = { key: string; displayName: string; subtitle?: string; href: string; schoolSlug?: string; logoUrl?: string; type: ResultType }
 const RECENTS_KEY = 'sportsgpt-recents'
@@ -97,7 +100,7 @@ function Palette() {
   const urlQ    = searchParams.get('q') ?? ''
 
   const [query,     setQuery]     = useState(urlQ)
-  const [data,      setData]      = useState<SearchData | null>(null)
+  const [data,      setData]      = useState<SearchPayload | null>(null)
   const [activeIdx, setActiveIdx] = useState(0)
   const [recents,   setRecents]   = useState<RecentEntry[]>([])
 
@@ -149,7 +152,9 @@ function Palette() {
     router.replace(`${pathname}?${p}`, { scroll: false })
   }
 
-  const { divisions, charts, teams, games, players, schools } = data ? buildResults(data, query) : { divisions: [], charts: [], teams: [], games: [], players: [], schools: [] }
+  const { divisions, charts, teams, games, players, schools } = data
+    ? (data.boost ? applyClickBoost(buildResults(data, query), query, data.boost) : buildResults(data, query))
+    : { divisions: [], charts: [], teams: [], games: [], players: [], schools: [] }
 
   // Flat list for keyboard nav — search results when typing, recents+quicknav when empty
   const allResults: Result[] = [
@@ -182,6 +187,7 @@ function Palette() {
       if (e.key === 'Enter') {
         if (query.trim() && allResults[activeIdx]) {
           const r = allResults[activeIdx]
+          logSearchClick(query, r)
           saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type })
           router.push(r.href)
         } else if (!query.trim() && emptyNavItems[activeIdx]) {
@@ -332,7 +338,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
               ))}
             </>
           )}
@@ -344,7 +350,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); router.push(r.href) }} />
               ))}
             </>
           )}
@@ -356,7 +362,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
               ))}
             </>
           )}
@@ -368,7 +374,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
               ))}
             </>
           )}
@@ -380,7 +386,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
               ))}
             </>
           )}
@@ -392,7 +398,7 @@ function Palette() {
                 <ResultItem key={r.key} r={r}
                   active={idxMap[r.key] === activeIdx}
                   onHover={() => setActiveIdx(idxMap[r.key])}
-                  onClick={() => { saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
+                  onClick={() => { logSearchClick(query, r); saveRecent({ key: r.key, displayName: r.displayName, subtitle: r.subtitle, href: r.href, schoolSlug: r.schoolSlug, type: r.type }); router.push(r.href) }} />
               ))}
             </>
           )}
