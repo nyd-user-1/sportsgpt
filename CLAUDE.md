@@ -173,6 +173,7 @@ Client: `@neondatabase/serverless` — `import { sql } from '@/lib/db'`
 | `player_rosters` | `school_slug`, `season`, `player_name`, `player_slug`, `position`, `jersey_number`, `class` |
 | `school_year_stats` | `school_slug`, `year` (NYSED year, e.g. 2025 = 2024-25), per-grade enrollment, demographics, grad-rate/diploma cols, **Report Card cols:** `attendance_level`, `chronic_abs_rate`, `cccr_index/level`, `perf_ela/math/sci_idx`, `exp_per_pupil`, `inexp_teach_pct`, `out_of_cert_pct`, `grad_4yr/5yr/6yr_rate` |
 | `school_regents_results` | `school_slug`, `year`, `subject` (canonical), `sort_order`, `tested`, `num_prof`, `pct_prof`, `pct_l1..pct_l5`. PK `(school_slug, year, subject)`. One row per school/year/subject; main HS building only, deduped by max `tested`. |
+| `search_clicks` | `query_stem`, `result_key`, `result_type`, `result_label`, `count`, `updated_at`. PK `(query_stem, result_key)`. Aggregated click-learning leaderboard — **hard-capped at 50 rows** (LFU eviction). Created by `scripts/create-search-clicks.mjs`. See "Site-Wide Search → Click-learning". |
 
 ### Slug formats
 - Team slug: `{school-slug}-varsity-football`
@@ -268,6 +269,8 @@ const BLOB_P = '...blob.vercel-storage.com/gallery/players'
 | `/school` | `src/app/school/` | School index |
 | `/gallery` | `src/app/gallery/` | Blob-backed masonry grid + lightbox; dark/light toggle with View Transition ripple |
 | `/chat` | `src/app/chat/page.tsx` | AI chat — paperMode + grain overlay. Empty: `SECTION XI · FOOTBALL` eyebrow, Fraunces APP_NAME, ruled line, ChatInput, italic serif tagline, CardCarousel. Active: scrollable thread + bottom-pinned input. Uses `useChat`, `ChatInput`, `ChatMessage`, `CardCarousel`, `ChatSeasonsPanel`. **`/chat-2` is a deprecated duplicate — safe to delete.** |
+| `/search` | `page.tsx` + `Shell.tsx` (`SearchShell`) | Editorial site-wide search results page — hero input, scope pills, score-ranked category sections (Players outrank Teams for a player name), player hub card. Ranks via shared `src/lib/search.ts` + click-learning boost. `robots: noindex`. See "Site-Wide Search". |
+| `/chat-3` | `page.tsx` + `Shell.tsx` (`Chat3Shell`) | Same search-style picker UI titled "Chat" — type → filter results → click one to send a smart per-type prompt (`promptFor`); page collapses ("Chat" to top, input up, thread below) and reuses `useChat`/`ChatMessage`/`ChatInput`/`ChatSeasonsPanel`. A `-3` rebuild — decide whether to retire `/chat` into it. `robots: noindex`. |
 
 ### Detail pages
 
@@ -368,9 +371,30 @@ Editorial AI chat page. `useChat()` hook (`src/hooks/useChat.ts`) handles stream
 - `Cmd+K` opens palette; URL state: `?cmd=open&q=...`
 - Empty state: Recent searches (localStorage, max 5) + Quick Nav (Teams, Players, Leaderboard, Gallery, Divisions I–IV)
 - Search state: Teams / Players / Schools sections, fuzzy match, school logos shown
-- Data: `/api/search` — fetched once on first open, cached in ref
+- Data: `/api/search` — fetched once on first open, cached in ref. Payload now also carries a `boost` click-learning map (see below).
 - Navigation: `router.push(href)` only — no `close()` call; palette closes naturally when new URL lacks `?cmd=open`
 - Added to: root layout (`layout.tsx`) + Sidebar Search button
+
+---
+
+## Site-Wide Search (`src/lib/search.ts`)
+
+**`src/lib/search.ts` is the single source of truth for all search ranking.** Three surfaces consume it and rank identically: the ⌘K `CommandPalette`, the `/search` results page, and the `/chat-3` prompt picker. Never fork ranking logic into a surface — change it here.
+
+### Engine
+- **`matchScore(query, text, mode)`** — `-1` exact · `0` prefix · whole-query substring (index) · token tiers · `Infinity` miss. Uses capped Damerau-Levenshtein (`editDistance`) for ≤1-typo `fuzzyTokenHit` (exact required for tokens <4 chars).
+- **AND vs OR.** Default is **AND**: every token must hit (so "joseph fi" → only Joseph Filardi, not every Joseph). **OR** only when an explicit matchup connector is present (`vs / v / versus / at / @ / &`) so both sides of "Floyd vs Sayville" surface. Filler (`the/and/or/a/of`) is dropped but does NOT trigger OR. Anchor rule: a purely-fuzzy multi-token match is rejected.
+- **`tokenizeQuery(query)`** → `{ tokens, matchup }`.
+- **`expandPositions(pos)`** — `qb`/`quarterback`/`quart` all hit QBs; compound positions (`WR/DB`, `OL-DL`) split + each part expanded via `POSITION_WORDS`.
+- **`buildResults(data, query)`** → `GroupedResults` (divisions, charts, teams, games, players, schools, seasons). Teams match name + school-name alias + division; players match name (clean) or name+school+position alias (+10 penalty); seasons loop `AVAILABLE_SEASONS` and link to `/team?season=YEAR` (a season is a team-first stat — `/team` reads `?season=`); games match "Home vs Away" + season label/year.
+- **Player hub card** — `dominantPlayer(players, topTeamScore?)` decides whether a query resolves to one specific person (or a tight surname family ≤ `MAX_HUB_BAND`) and returns a representative (prefers one with a known position). Gated: clean NAME hits only (score < 10), small band, and defers to a team that matches as well (so "floyd" → the Floyd *team*, not Andrew Floyd). `PlayerHubCard` + `buildPlayerHub()` (`src/components/PlayerHubCard.tsx`) render the team/school/recent-games hub above results.
+
+### Click-learning (ranking refines from real picks)
+- **Table `search_clicks`** — aggregated **LFU leaderboard, hard-capped at 50 rows** (so it never bloats). PK `(query_stem, result_key)`; cols `result_type`, `result_label`, `count`, `updated_at`. Created by `scripts/create-search-clicks.mjs`.
+- **`queryStem(query)`** (in `search.ts`) — lowercase + drop filler/connectors + **sort** the meaningful tokens, so "joseph filardi" and "filardi joseph" pool into one bucket. Prefix typing ("joseph fil") gets its own bucket by design.
+- **Logging** — `POST /api/search-click` (atomic `INSERT … ON CONFLICT DO UPDATE count = count+1`, then LFU eviction: `DELETE … WHERE (stem,key) = (SELECT … ORDER BY count DESC, updated_at DESC OFFSET 50 LIMIT 1)` — no-op until over cap, single row even on ties). Client helper `logSearchClick(query, r)` in `src/lib/search-click.ts` (fire-and-forget, `keepalive`). **Only result-card clicks log** — never recents, quick-nav, hub headers, or empty-state browse cards.
+- **Boost application** — the boost map (`query_stem → result_key → count`) is folded into the `/api/search` payload (palette) and fetched server-side in the `/search` + `/chat-3` page loaders. `applyClickBoost(grouped, query, boost)` re-ranks each category with clicks as a **SECONDARY sort key**: `a.score - b.score || clicks(b) - clicks(a)`. Relevance always wins; clicks only break ties, and only at ≥ `MIN_BOOST_CLICKS` (2). This floats the popular Filardi above his tied sibling without ever letting a weak match leapfrog a stronger one.
+- **Cap is `MAX_LOGGED_ROWS = 50`** at the top of the route — edit there to retune.
 
 ---
 
