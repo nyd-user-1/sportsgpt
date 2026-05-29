@@ -470,7 +470,7 @@ export function PositionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                     { icon: MapIcon,       tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -628,7 +628,7 @@ export function PositionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={config.fullName} />
       </div>
     </>
   )

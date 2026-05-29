@@ -358,7 +358,7 @@ export function SchoolDetailShell({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                       ...(teamSlug ? [{ icon: FileUser, tooltip: 'Team Page', active: false, onClick: () => { window.location.href = `/team/${teamSlug}` } }] : []),
-                      { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                     ]}
                   />
                 }
@@ -850,7 +850,7 @@ export function SchoolDetailShell({
 
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={school.name} />
       </div>
     </>
   )

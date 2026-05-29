@@ -571,7 +571,7 @@ export function ChartDetailPage({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                       { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                      { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,   onClick: () => setChatOpen(v => !v) },
                     ]}
                   />
                 }
@@ -704,7 +704,7 @@ export function ChartDetailPage({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
-      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
+      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={config.title} />
     </>
   )
 }

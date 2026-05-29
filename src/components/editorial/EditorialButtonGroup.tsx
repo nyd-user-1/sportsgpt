@@ -10,6 +10,8 @@ export type EditorialBtn = {
   icon: LucideIcon
   tooltip: string
   active?: boolean
+  /** Show a pulsing green "live activity" dot on the button. */
+  dot?: boolean
   onClick: () => void
 }
 
@@ -71,6 +73,12 @@ export function EditorialButtonGroup({
               >
                 <Icon className="h-4 w-4" />
               </button>
+              {b.dot && (
+                <span className="absolute top-1 right-1 flex h-1.5 w-1.5 pointer-events-none">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                </span>
+              )}
               <span className={tip} style={tipStyle}>{b.tooltip}</span>
             </div>
           )

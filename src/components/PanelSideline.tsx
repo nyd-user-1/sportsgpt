@@ -19,7 +19,7 @@ const SEED: Msg[] = [
   { id: 4, author: 'Patriots22',     initials: 'P2', body: 'Hot take: Sachem North is the most underrated team in Division I right now.', ago: '12m' },
 ]
 
-export function PanelSideline({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function PanelSideline({ open, onClose, page }: { open: boolean; onClose: () => void; page: string }) {
   const [msgs, setMsgs] = useState<Msg[]>(SEED)
   const [draft, setDraft] = useState('')
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -41,7 +41,7 @@ export function PanelSideline({ open, onClose }: { open: boolean; onClose: () =>
         <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60 animate-ping" />
         <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
       </span>
-      The Sideline
+      Sideline: {page}
     </span>
   )
 
@@ -68,13 +68,13 @@ export function PanelSideline({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <AppPanel open={open} onClose={onClose} title={title} footer={footer}>
-      {/* Editorial intro — the eyebrow + tagline from the floating prototype */}
+      {/* Editorial intro — live message count + per-page board label */}
       <div className="px-5 pt-4 pb-3 border-b border-[var(--paper-rule-soft)]">
         <p className="text-[9px] uppercase tracking-[0.28em] text-[var(--paper-faint)]" style={SANS}>
-          Section XI · Live
+          {msgs.length} {msgs.length === 1 ? 'message' : 'messages'} in chat
         </p>
         <p className="mt-1 text-[12px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
-          Talk ball with the section.
+          {page} page discussion board.
         </p>
       </div>
 

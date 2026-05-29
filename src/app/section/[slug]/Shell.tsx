@@ -307,7 +307,7 @@ export function SectionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                     { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'The Sideline', active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,    onClick: () => setChatOpen(v => !v) },
                   ]}
                 />
               }
@@ -762,7 +762,7 @@ export function SectionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen}  onClose={() => setChartsOpen(false)} />
         <AppPanel   open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} />
+        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page="Section XI" />
       </div>
     </>
   )
