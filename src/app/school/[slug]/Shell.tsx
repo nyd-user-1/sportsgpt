@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, ChartSpline, FileUser, MessageCircle } from 'luc
 import { AppLayout } from '@/components/AppLayout'
 import { RevealFx } from '@/components/RevealFx'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelSideline } from '@/components/PanelSideline'
+import { useDiscussion } from '@/lib/discussion-store'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { cn } from '@/lib/utils'
 import { districtName } from '@/lib/school-districts'
@@ -223,7 +223,7 @@ export function SchoolDetailShell({
   divPeers: DivisionPeer[]
 }) {
   const [chartsOpen, setChartsOpen] = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
+  const { open: discussionOpen, openPanel: openDiscussion, close: closeDiscussion, seen: discussionSeen } = useDiscussion()
   const [query,      setQuery]      = useState('')
   const [activeSection, setActiveSection] = useState<string>('enrollment')
   const searchRef = useRef<HTMLInputElement>(null)
@@ -358,7 +358,7 @@ export function SchoolDetailShell({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                       ...(teamSlug ? [{ icon: FileUser, tooltip: 'Team Page', active: false, onClick: () => { window.location.href = `/team/${teamSlug}` } }] : []),
-                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !discussionSeen, active: discussionOpen, onClick: () => discussionOpen ? closeDiscussion() : openDiscussion() },
                     ]}
                   />
                 }
@@ -850,7 +850,6 @@ export function SchoolDetailShell({
 
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
-        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={school.name} />
       </div>
     </>
   )

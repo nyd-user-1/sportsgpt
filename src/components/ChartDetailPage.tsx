@@ -27,7 +27,7 @@ import {
 } from '@/components/editorial'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
-import { PanelSideline } from '@/components/PanelSideline'
+import { useDiscussion } from '@/lib/discussion-store'
 import { cn, formatSeason } from '@/lib/utils'
 import {
   type ChartConfig, type Period,
@@ -129,7 +129,7 @@ export function ChartDetailPage({
   const [divisionFilter, setDivisionFilter] = useState<string | null>(null)
   const [chartsOpen, setChartsOpen] = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
-  const [chatOpen,   setChatOpen]   = useState(false)
+  const { open: discussionOpen, openPanel: openDiscussion, close: closeDiscussion, seen: discussionSeen } = useDiscussion()
   const [query,      setQuery]      = useState('')
   const searchRef = useRef<HTMLInputElement>(null)
   useSearchHotkey(searchRef, () => setQuery(''))
@@ -571,7 +571,7 @@ export function ChartDetailPage({
                     buttons={[
                       { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                       { icon: AlignLeft,     tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                      { icon: MessageCircle, tooltip: 'The Sideline', dot: !discussionSeen, active: discussionOpen, onClick: () => discussionOpen ? closeDiscussion() : openDiscussion() },
                     ]}
                   />
                 }
@@ -704,7 +704,6 @@ export function ChartDetailPage({
 
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <PanelMap   open={playersOpen} onClose={() => setPlayersOpen(false)} />
-      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={config.title} />
     </>
   )
 }

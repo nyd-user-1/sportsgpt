@@ -34,11 +34,12 @@ export const BOARD_THREADS: BoardThread[] = [
   {
     id: 2, tag: 'Game Day',
     title: 'Floyd vs Ward Melville — who you got?',
-    author: 'mike_sec11', initials: 'MS', ago: '5h', replyCount: 2, lastActivity: '40m',
+    author: 'mike_sec11', initials: 'MS', ago: '5h', replyCount: 3, lastActivity: '25m',
     body: 'Two 10-win teams, +213 vs +294 differential. Strength of schedule says Ward Melville but Floyd hasn’t trailed in the second half all year. Score predictions?',
     replies: [
       { id: 21, author: 'BayportFaithful', initials: 'BF', body: 'Floyd 24–17. Their defense travels.', ago: '3h' },
       { id: 22, author: 'LI Gridiron', initials: 'LG', body: 'Ward Melville at home is a different team. Taking the Patriots by 10.', ago: '40m' },
+      { id: 23, author: 'You', initials: 'YOU', body: 'Floyd’s second-half conditioning wins it. 27–21 Colonials.', ago: '25m' },
     ],
   },
   {
@@ -65,6 +66,22 @@ export const BOARD_THREADS: BoardThread[] = [
     title: 'Is Sachem North the most underrated team in D-I?',
     author: 'Patriots22', initials: 'P2', ago: '2d', replyCount: 0, lastActivity: '2d',
     body: '7–3, +97 differential, and nobody talks about them. The schedule was brutal. Feels like a quarterfinal upset waiting to happen.',
+    replies: [],
+  },
+  {
+    id: 6, tag: 'Game Day',
+    title: 'Sayville’s defense is being slept on',
+    author: 'You', initials: 'YOU', ago: '4h', replyCount: 1, lastActivity: '1h',
+    body: 'Twelve shutout quarters down the stretch and nobody’s mentioning them in the title talk. What am I missing?',
+    replies: [
+      { id: 61, author: 'almanac_andy', initials: 'AA', body: 'You’re not. Their front seven is the most disciplined unit in D-IV.', ago: '1h' },
+    ],
+  },
+  {
+    id: 7, tag: 'History',
+    title: 'Best title-game finish you’ve seen at Stony Brook?',
+    author: 'You', initials: 'YOU', ago: '1d', replyCount: 0, lastActivity: '1d',
+    body: 'Curious what the long-timers rank #1. For me it’s still the goal-line stand a few years back.',
     replies: [],
   },
 ]

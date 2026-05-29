@@ -4,6 +4,9 @@ import './globals.css'
 import { APP_NAME, APP_DESCRIPTION, SITE_URL } from '@/lib/app-config'
 import { CommandPalette } from '@/components/CommandPalette'
 import { AuthProvider } from '@/components/AuthProvider'
+import { DiscussionProvider } from '@/lib/discussion-store'
+import { DiscussionShell } from '@/components/DiscussionShell'
+import { DiscussionPanel } from '@/components/DiscussionPanel'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -83,8 +86,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         style={{ fontFamily: 'var(--font-sans), sans-serif' }}
       >
         <AuthProvider>
-          {children}
-          <CommandPalette />
+          <DiscussionProvider>
+            <DiscussionShell>{children}</DiscussionShell>
+            <CommandPalette />
+            <DiscussionPanel />
+          </DiscussionProvider>
         </AuthProvider>
       </body>
     </html>

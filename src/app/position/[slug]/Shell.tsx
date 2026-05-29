@@ -11,7 +11,7 @@ import { AppLayout } from '@/components/AppLayout'
 import { SCHOOL_LOGOS } from '@/lib/team-images'
 import { PanelChart } from '@/components/PanelChart'
 import { PanelMap } from '@/components/PanelMap'
-import { PanelSideline } from '@/components/PanelSideline'
+import { useDiscussion } from '@/lib/discussion-store'
 import { cn, formatSeason } from '@/lib/utils'
 import { POSITIONS, type PositionConfig } from '@/lib/positions'
 import {
@@ -322,7 +322,7 @@ export function PositionShell({
   const [query,          setQuery]          = useState('')
   const [chartsOpen,     setChartsOpen]     = useState(false)
   const [mapsOpen,       setMapsOpen]       = useState(false)
-  const [chatOpen,       setChatOpen]       = useState(false)
+  const { open: discussionOpen, openPanel: openDiscussion, close: closeDiscussion, seen: discussionSeen } = useDiscussion()
   const [activeChapter,  setActiveChapter]  = useState<string>('')
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
   const searchRef   = useRef<HTMLInputElement>(null)
@@ -470,7 +470,7 @@ export function PositionShell({
                   buttons={[
                     { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen, onClick: () => setChartsOpen(v => !v) },
                     { icon: MapIcon,       tooltip: 'Map',           active: mapsOpen,   onClick: () => setMapsOpen(v => !v) },
-                    { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,   onClick: () => setChatOpen(v => !v) },
+                    { icon: MessageCircle, tooltip: 'The Sideline', dot: !discussionSeen, active: discussionOpen, onClick: () => discussionOpen ? closeDiscussion() : openDiscussion() },
                   ]}
                 />
               }
@@ -628,7 +628,6 @@ export function PositionShell({
       <div style={PAPER_BRIDGE}>
         <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
         <PanelMap   open={mapsOpen}   onClose={() => setMapsOpen(false)}   />
-        <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page={config.fullName} />
       </div>
     </>
   )

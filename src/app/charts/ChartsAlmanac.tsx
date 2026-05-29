@@ -9,7 +9,7 @@ import { SCHOOL_LOGOS, TEAM_PHOTOS } from '@/lib/team-images'
 import { RevealFx } from '@/components/RevealFx'
 import { AppPanel } from '@/components/AppPanel'
 import { PanelChart } from '@/components/PanelChart'
-import { PanelSideline } from '@/components/PanelSideline'
+import { useDiscussion } from '@/lib/discussion-store'
 import {
   EditorialHead, EditorialButtonGroup,
   SectionHead, StickyControlBar,
@@ -78,7 +78,7 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
   // Toolbar panels (mirrors team/division/player/game pattern)
   const [chartsOpen,  setChartsOpen]  = useState(false)
   const [playersOpen, setPlayersOpen] = useState(false)
-  const [chatOpen,    setChatOpen]    = useState(false)
+  const { open: discussionOpen, openPanel: openDiscussion, close: closeDiscussion, seen: discussionSeen } = useDiscussion()
 
   const q = query.trim().toLowerCase()
 
@@ -135,7 +135,7 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
                 buttons={[
                   { icon: ChartSpline,   tooltip: 'Charts',        active: chartsOpen,  onClick: () => setChartsOpen(v => !v) },
                   { icon: FileUser,      tooltip: 'Players',       active: playersOpen, onClick: () => setPlayersOpen(v => !v) },
-                  { icon: MessageCircle, tooltip: 'The Sideline', dot: !chatOpen, active: chatOpen,    onClick: () => setChatOpen(v => !v) },
+                  { icon: MessageCircle, tooltip: 'The Sideline', dot: !discussionSeen, active: discussionOpen, onClick: () => discussionOpen ? closeDiscussion() : openDiscussion() },
                 ]}
               />
             }
@@ -334,7 +334,6 @@ export function ChartsAlmanac({ chartSchools }: { chartSchools: Record<string, s
     <div style={PAPER_BRIDGE}>
       <PanelChart open={chartsOpen} onClose={() => setChartsOpen(false)} />
       <AppPanel open={playersOpen} onClose={() => setPlayersOpen(false)} title="Players" />
-      <PanelSideline open={chatOpen} onClose={() => setChatOpen(false)} page="Charts" />
     </div>
     </>
   )
