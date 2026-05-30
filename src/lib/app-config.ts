@@ -5,7 +5,7 @@
  * Swap the logo in src/components/AppLogo.tsx.
  */
 
-import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Users, Trophy, LayoutGrid, ListOrdered, Images } from 'lucide-react'
+import { MessageCircle, LayoutDashboard, Building2, School, Rocket, Map, User, Users, Trophy, LayoutGrid, ListOrdered, Images, MessagesSquare } from 'lucide-react'
 import { CHART_CONFIGS } from '@/lib/chart-configs'
 
 // ── Season — update season.ts to bump for a new year ──────────────────────
@@ -95,6 +95,7 @@ export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
 ]
 
 export const SIDEBAR_NAV_MORE: NavItem[] = [
+  { label: 'Board',      icon: MessagesSquare, href: '/board'            },
   { label: 'Maps',       icon: Map,         href: '/maps'                },
   { label: 'School',    icon: School,      href: '/school'              },
   { label: 'Divisions',  icon: LayoutGrid,  href: '/division/division-i' },
