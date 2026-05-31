@@ -614,7 +614,7 @@ Order (top → bottom):
 4. Chat → Charts → Players → Teams (NAV_TOP.slice(1))
 5. Divider
 6. Gallery → Leaderboard (NAV_BOTTOM)
-7. More... accordion (NAV_MORE: Maps, Schools, Divisions, Section XI)
+7. More... accordion (NAV_MORE: Board, Maps, School, Divisions, Positions, Section XI)
 8. Footer: Glossary, Admin, Log In
 
 **AppLayout header:** Trophy, APP_NAME, and "|" separator removed. Only page title (bold) remains.
@@ -676,7 +676,7 @@ All brand, nav, routing strings here.
 ```
 SIDEBAR_NAV_TOP:    [Launchpad, Chat, Charts, Players, Teams]
 SIDEBAR_NAV_BOTTOM: [Gallery, Leaderboard]
-SIDEBAR_NAV_MORE:   [Maps, Schools, Divisions, Section XI]   ← new export
+SIDEBAR_NAV_MORE:   [Board, Maps, School, Divisions, Positions, Section XI]
 ```
 
 ---
