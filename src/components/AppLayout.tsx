@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { flushSync } from 'react-dom'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { PanelLeftOpen, PanelLeftClose, Sun, Moon, Search } from 'lucide-react'
-import { useSession } from 'next-auth/react'
+import { PanelLeftOpen, PanelLeftClose, Search } from 'lucide-react'
 import { AppLogo } from '@/components/AppLogo'
 import { Sidebar } from '@/components/Sidebar'
 import {
@@ -128,7 +127,7 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
 
       <div className={`shrink-0 transition-all duration-300 ease-in-out overflow-hidden ${sidebarOpen ? 'w-full sm:w-[240px] sm:mr-[18px]' : 'w-0'}`}>
         <div className={`w-full sm:w-[240px] h-full rounded-none sm:rounded-2xl overflow-hidden sm:border ${paperMode ? 'sm:border-[var(--paper-rule)]' : 'sm:border-[var(--border)]'}`}>
-          <Sidebar activeLabel={activeNav} />
+          <Sidebar activeLabel={activeNav} dark={dark} onToggleTheme={toggleTheme} />
         </div>
       </div>
 
@@ -170,21 +169,6 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
             <Search className="h-4 w-4" />
           </Link>
 
-          <button
-            onClick={e => toggleTheme(e)}
-            aria-label="Toggle dark mode"
-            className={`hidden sm:flex h-8 w-8 items-center justify-center rounded-full transition-colors mr-2 ${paperMode
-              ? 'border border-[var(--paper-rule)] bg-transparent text-[var(--paper-faint)] hover:bg-[var(--paper-quiet)] hover:text-[var(--paper-text)]'
-              : 'border border-[var(--border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--inp-bg)] hover:text-[var(--txt)]'
-            }`}
-          >
-            {dark ? <Sun className="h-4 w-4 fill-amber-400 text-amber-400" /> : <Moon className="h-4 w-4" />}
-          </button>
-
-          <div className={mobileHeader ? 'hidden sm:flex items-center' : 'flex items-center'}>
-            <AuthButtons />
-          </div>
-
         </div>
         )}
 
@@ -213,28 +197,3 @@ export function AppLayout({ children, mobileHeader, hideHeader, paperMode }: { c
   )
 }
 
-// ── Auth buttons: sign-in/sign-up shown in header only when signed out ────────
-function AuthButtons() {
-  const { data: session, status } = useSession()
-
-  if (status === 'loading' || session?.user) return null
-
-  return (
-    <div className="flex items-center gap-1.5">
-      <Link
-        href="/sign-in"
-        className="h-8 px-3.5 border border-[var(--paper-rule)] dark:border-[var(--paper-rule)] text-[11px] uppercase tracking-[0.18em] font-medium text-[var(--paper-faint)] hover:text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors flex items-center"
-        style={{ borderRadius: 3, fontFamily: 'var(--font-sans), system-ui, sans-serif' }}
-      >
-        Sign in
-      </Link>
-      <Link
-        href="/sign-up"
-        className="h-8 px-3.5 bg-[var(--paper-text)] text-[var(--paper)] text-[11px] uppercase tracking-[0.18em] font-medium hover:opacity-85 transition-opacity flex items-center"
-        style={{ borderRadius: 3, fontFamily: 'var(--font-sans), system-ui, sans-serif' }}
-      >
-        Sign up
-      </Link>
-    </div>
-  )
-}

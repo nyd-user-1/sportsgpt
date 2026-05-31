@@ -3,7 +3,10 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
-import { ChevronDown, User, MoreHorizontal, Search, LogOut } from 'lucide-react'
+import {
+  ChevronDown, User, MoreHorizontal, Search, LogOut,
+  Settings, MessageSquarePlus, Home, ScrollText, LifeBuoy, BookOpen, Sun, Moon, Sparkles,
+} from 'lucide-react'
 import { useSession, signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 import {
@@ -18,6 +21,8 @@ const MONO:  React.CSSProperties = { fontFamily: 'var(--font-mono), ui-monospace
 
 interface SidebarProps {
   activeLabel?: string
+  dark?: boolean
+  onToggleTheme?: (e: React.MouseEvent) => void
 }
 
 // ── Shared classes ───────────────────────────────────────────────────────────
@@ -32,7 +37,7 @@ const subItemHot   = 'text-[var(--paper-strong)]'
 
 // ── Sidebar ──────────────────────────────────────────────────────────────────
 
-export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
+export function Sidebar({ activeLabel = 'Chat', dark = false, onToggleTheme }: SidebarProps) {
   const [moreOpen, setMoreOpen] = useState(false)
   const router   = useRouter()
   const pathname = usePathname()
@@ -182,7 +187,7 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
           Admin
         </Link>
         <div className="mt-2 px-1">
-          <SidebarAuth />
+          <SidebarAuth dark={dark} onToggleTheme={onToggleTheme} />
         </div>
       </div>
 
@@ -192,7 +197,10 @@ export function Sidebar({ activeLabel = 'Chat' }: SidebarProps) {
 
 // ── Auth chip ────────────────────────────────────────────────────────────────
 
-function SidebarAuth() {
+function SidebarAuth({ dark = false, onToggleTheme }: {
+  dark?: boolean
+  onToggleTheme?: (e: React.MouseEvent) => void
+}) {
   const { data: session, status } = useSession()
   const [menuOpen, setMenuOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -254,28 +262,103 @@ function SidebarAuth() {
 
       {menuOpen && (
         <div
-          className="absolute left-0 right-0 bottom-full mb-2 border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden py-1 z-50"
-          style={{ borderRadius: 3 }}
+          className="absolute left-0 right-0 bottom-full mb-2 border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden z-50"
+          style={{ borderRadius: 8 }}
         >
-          <div className="px-4 py-2.5 border-b border-[var(--paper-rule)]">
-            <p className="text-[12.5px] text-[var(--paper-text)] truncate" style={SERIF}>{session.user.name || 'Account'}</p>
-            <p className="text-[11px] text-[var(--paper-muted)] truncate" style={{ ...SERIF, fontStyle: 'italic' }}>{session.user.email}</p>
+          {/* Identity */}
+          <div className="flex items-start justify-between gap-3 px-4 pt-3.5 pb-3 border-b border-[var(--paper-rule)]">
+            <div className="min-w-0">
+              <p className="truncate text-[14px] text-[var(--paper-text)]" style={{ ...SERIF, fontWeight: 600 }}>
+                {session.user.name || 'Account'}
+              </p>
+              {session.user.email && (
+                <p className="truncate text-[12px] text-[var(--paper-muted)]" style={{ ...SERIF, fontStyle: 'italic' }}>
+                  {session.user.email}
+                </p>
+              )}
+            </div>
+            <Settings className="h-4 w-4 shrink-0 text-[var(--paper-faint)]" />
           </div>
-          <Link
-            href="/profile"
-            onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-muted)] hover:text-[var(--paper-strong)] hover:bg-[var(--paper-quiet)] transition-colors"
-            style={SERIF}
-          >
-            <User className="h-4 w-4" /> Profile
-          </Link>
-          <button
-            onClick={() => signOut({ callbackUrl: '/' })}
-            className="flex w-full items-center gap-2.5 px-4 py-2 text-[13px] text-rose-500 hover:bg-[var(--paper-quiet)] transition-colors border-t border-[var(--paper-rule)]"
-            style={SERIF}
-          >
-            <LogOut className="h-4 w-4" /> Sign out
-          </button>
+
+          {/* Items */}
+          <div className="py-1">
+            {/* Feedback — placeholder */}
+            <div className="flex items-center justify-between gap-3 px-4 py-2 text-[13px] text-[var(--paper-faint)] cursor-default select-none" style={SANS}>
+              <span className="flex items-center gap-2.5"><MessageSquarePlus className="h-4 w-4" /> Feedback</span>
+              <span className="text-[9.5px] uppercase tracking-[0.16em]">Soon</span>
+            </div>
+
+            {/* Theme — live */}
+            <button
+              onClick={onToggleTheme}
+              className="flex w-full items-center justify-between gap-3 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
+              style={SANS}
+            >
+              <span className="flex items-center gap-2.5">
+                {dark ? <Sun className="h-4 w-4 text-[var(--paper-faint)]" /> : <Moon className="h-4 w-4 text-[var(--paper-faint)]" />} Theme
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.16em] text-[var(--paper-muted)]">{dark ? 'Dark' : 'Light'}</span>
+            </button>
+
+            {/* Home Page — live */}
+            <Link href="/home-2" onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors" style={SANS}>
+              <Home className="h-4 w-4 text-[var(--paper-faint)]" /> Home Page
+            </Link>
+
+            {/* Changelog — placeholder */}
+            <div className="flex items-center justify-between gap-3 px-4 py-2 text-[13px] text-[var(--paper-faint)] cursor-default select-none" style={SANS}>
+              <span className="flex items-center gap-2.5"><ScrollText className="h-4 w-4" /> Changelog</span>
+              <span className="text-[9.5px] uppercase tracking-[0.16em]">Soon</span>
+            </div>
+
+            {/* Help — placeholder */}
+            <div className="flex items-center justify-between gap-3 px-4 py-2 text-[13px] text-[var(--paper-faint)] cursor-default select-none" style={SANS}>
+              <span className="flex items-center gap-2.5"><LifeBuoy className="h-4 w-4" /> Help</span>
+              <span className="text-[9.5px] uppercase tracking-[0.16em]">Soon</span>
+            </div>
+
+            {/* Docs → Glossary (live) */}
+            <Link href="/glossary" onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors" style={SANS}>
+              <BookOpen className="h-4 w-4 text-[var(--paper-faint)]" /> Docs
+            </Link>
+
+            {/* Profile — live */}
+            <Link href="/profile" onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors" style={SANS}>
+              <User className="h-4 w-4 text-[var(--paper-faint)]" /> Profile
+            </Link>
+
+            {/* Log Out — live */}
+            <button
+              onClick={() => signOut({ callbackUrl: '/' })}
+              className="flex w-full items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors"
+              style={SANS}
+            >
+              <LogOut className="h-4 w-4 text-[var(--paper-faint)]" /> Log Out
+            </button>
+          </div>
+
+          {/* Upgrade — placeholder CTA */}
+          <div className="px-3 pt-1 pb-3">
+            <div
+              className="flex items-center justify-center gap-2 rounded-[4px] py-2 text-[12px] font-medium text-[var(--paper)] opacity-90"
+              style={{ ...SANS, background: 'var(--paper-text)' }}
+              title="Coming soon"
+            >
+              <Sparkles className="h-3.5 w-3.5" /> Upgrade to Pro
+            </div>
+          </div>
+
+          {/* Platform status */}
+          <div className="flex items-center justify-between border-t border-[var(--paper-rule)] px-4 py-2.5">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.16em] text-[var(--paper-faint)]" style={SANS}>Platform Status</p>
+              <p className="text-[12px] text-[var(--paper-muted)]" style={SANS}>All systems normal.</p>
+            </div>
+            <span className="h-2 w-2 rounded-full" style={{ background: 'var(--paper-strong)' }} />
+          </div>
         </div>
       )}
     </div>
