@@ -301,7 +301,7 @@ function SidebarAuth({ dark = false, onToggleTheme }: {
             </button>
 
             {/* Home Page — live */}
-            <Link href="/home-2" onClick={() => setMenuOpen(false)}
+            <Link href="/" onClick={() => setMenuOpen(false)}
               className="flex items-center gap-2.5 px-4 py-2 text-[13px] text-[var(--paper-text)] hover:bg-[var(--paper-quiet)] transition-colors" style={SANS}>
               <Home className="h-4 w-4 text-[var(--paper-faint)]" /> Home Page
             </Link>

@@ -486,11 +486,14 @@ Data provenance + `.mdb` source location: see the Report Card ingest scripts abo
 
 ---
 
-## Home Page (`/`)
+## Home Page (`/`) — Wayfinding Hub
 
-- `CardCarouselPortrait` — 12 team cards with Blob action photos, links to `/team/[slug]`
-- Header (home page only): gallery icon (→ `/gallery`), Sign in (outline), Sign up (filled dark)
-- Shown via `pathname === '/'` check inside `AppLayout`
+`src/app/page.tsx` is an editorial **wayfinding hub** (the old gallery-as-home was promoted out; the gallery masonry lives only at `/gallery` now). Pure navigation, server-rendered with a lightweight count query (`loadCounts()`), no client state beyond the tour.
+
+- **Masthead** (`EditorialHead`, paper palette) → **12-card grid** (I–XII) ordering the index pages: Teams · Players · Leaderboard · Charts · Divisions · Schools · Games · Maps · Board · Chat · Search · Glossary. Each card: roman numeral + accent icon-medallion + serif title + blurb + live mono-blue stat line + hover arrow. Live counts from `loadCounts()` (teams/players/games/schools) + `AVAILABLE_SEASONS`/`CHART_SLUGS_AZ`/`GLOSSARY_TERMS`/`BOARD_THREADS` lengths.
+- **Guided tour** (`src/app/_home/HomeTour.tsx`) — 5 cluster steps (Welcome → Browse → Deeper → Explore → Ask & find). Cards carry `data-tour="browse|deeper|explore|ask"`; the tour rings+dims the active cluster (`.tour-on`/`.tour-off` in globals.css) and shows a **blinking beacon** (`.tour-beacon`) on the cluster's first card, tracking its rect on scroll/resize. Auto-opens once (localStorage `sportsgpt-tour-seen`) + always-available "Take the tour" trigger (`TourTrigger`, fires `sportsgpt:start-tour`). Esc + arrow-key nav.
+- `/home-2` is a **307 redirect to `/`** (the hub used to live there during review).
+- Account menu + theme toggle live in the **sidebar account block** (`SidebarAuth`), NOT the header — the header right side is just the search icon now. See Sidebar Structure.
 
 ---
 

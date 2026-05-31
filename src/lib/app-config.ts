@@ -39,7 +39,7 @@ export const NAV_CYCLE = [
 
 // ── Sidebar active-label lookup (exact path → label) ──────────────────────
 export const PATH_NAV: Record<string, string> = {
-  '/':                    'Gallery',
+  '/':                    'Home',
   '/chat':                'Chat',
   '/charts':              'Charts',
   '/maps':                'Maps',
@@ -90,7 +90,7 @@ export const SIDEBAR_NAV_TOP: NavItem[] = [
 ]
 
 export const SIDEBAR_NAV_BOTTOM: NavItem[] = [
-  { label: 'Gallery',     icon: Images,      href: '/'           },
+  { label: 'Gallery',     icon: Images,      href: '/gallery'     },
   { label: 'Leaderboard', icon: ListOrdered, href: '/leaderboard' },
 ]
 
