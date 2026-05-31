@@ -57,15 +57,15 @@ type HubCard = {
   body: string
   stat: string
   icon: React.ReactNode
+  /** Tour key on each card (NOT positional) — survives card reordering.
+   *  Grouped rows share a key (row1/row2); singled-out cards get unique keys. */
+  tour: string
 }
-
-// Card index → tour cluster (cards group three-per-cluster, matching the grid rows).
-const CLUSTER_OF = ['browse', 'browse', 'browse', 'deeper', 'deeper', 'deeper',
-  'explore', 'explore', 'explore', 'ask', 'ask', 'ask'] as const
 
 function buildCards(c: Counts): HubCard[] {
   const fmt = (n: number) => n.toLocaleString()
   return [
+    // ── Row 1 (grouped: row1) ──────────────────────────────────────────
     {
       href: '/team',
       numeral: 'I',
@@ -73,6 +73,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'Every program ranked by record — wins, losses, point differential, and conference standing.',
       stat: `${fmt(c.teams)} programs · 4 divisions`,
       icon: <Building2 className="h-5 w-5" />,
+      tour: 'row1',
     },
     {
       href: '/player',
@@ -81,63 +82,74 @@ function buildCards(c: Counts): HubCard[] {
       body: 'Every passer, rusher, and receiver on file — measured by yard, by touchdown, sortable by any column.',
       stat: `${fmt(c.players)} players on file`,
       icon: <User className="h-5 w-5" />,
-    },
-    {
-      href: '/leaderboard',
-      numeral: 'III',
-      title: 'Leaderboard',
-      body: 'The class of every year — top 25 per season by passing, rushing, and receiving, with head-to-head Versus.',
-      stat: `${AVAILABLE_SEASONS.length} seasons · top 25`,
-      icon: <ListOrdered className="h-5 w-5" />,
-    },
-    {
-      href: '/charts',
-      numeral: 'IV',
-      title: 'Charts',
-      body: 'A table of figures — team, season, player, and game records drawn as readable visual leaderboards.',
-      stat: `${CHART_SLUGS_AZ.length} charts`,
-      icon: <LayoutDashboard className="h-5 w-5" />,
-    },
-    {
-      href: '/division/division-i',
-      numeral: 'V',
-      title: 'Divisions',
-      body: 'Division I through IV — standings, season carousels, and the programs that define each tier.',
-      stat: '4 divisions',
-      icon: <LayoutGrid className="h-5 w-5" />,
-    },
-    {
-      href: '/school',
-      numeral: 'VI',
-      title: 'Schools',
-      body: 'The academic record behind the football — enrollment, graduation, Report Card, and demographics.',
-      stat: `${fmt(c.schools)} schools`,
-      icon: <School className="h-5 w-5" />,
+      tour: 'row1',
     },
     {
       href: '/section/section-xi#games',
-      numeral: 'VII',
+      numeral: 'III',
       title: 'Games',
       body: 'Every game on record — box scores, quarter-by-quarter scoring, and the player lines behind each result.',
       stat: `${fmt(c.games)} games`,
       icon: <CalendarDays className="h-5 w-5" />,
+      tour: 'row1',
+    },
+    // ── Row 2 (grouped: row2) ──────────────────────────────────────────
+    {
+      href: '/division/division-i',
+      numeral: 'IV',
+      title: 'Divisions',
+      body: 'Division I through IV — standings, season carousels, and the programs that define each tier.',
+      stat: '4 divisions',
+      icon: <LayoutGrid className="h-5 w-5" />,
+      tour: 'row2',
+    },
+    {
+      href: '/school',
+      numeral: 'V',
+      title: 'Schools',
+      body: 'The academic record behind the football — enrollment, graduation, Report Card, and demographics.',
+      stat: `${fmt(c.schools)} schools`,
+      icon: <School className="h-5 w-5" />,
+      tour: 'row2',
+    },
+    {
+      href: '/leaderboard',
+      numeral: 'VI',
+      title: 'Leaderboard',
+      body: 'The class of every year — top 25 per season by passing, rushing, and receiving, with head-to-head Versus.',
+      stat: `${AVAILABLE_SEASONS.length} seasons · top 25`,
+      icon: <ListOrdered className="h-5 w-5" />,
+      tour: 'row2',
+    },
+    // ── Row 3 (each card its own tour step) ────────────────────────────
+    {
+      href: '/board',
+      numeral: 'VII',
+      title: 'Board',
+      body: 'The Big Board — a community discussion board for Section XI football, tagged and threaded.',
+      stat: `${BOARD_THREADS.length} threads`,
+      icon: <MessagesSquare className="h-5 w-5" />,
+      tour: 'board',
+    },
+    {
+      href: '/charts',
+      numeral: 'VIII',
+      title: 'Charts',
+      body: 'A table of figures — team, season, player, and game records drawn as readable visual leaderboards.',
+      stat: `${CHART_SLUGS_AZ.length} charts`,
+      icon: <LayoutDashboard className="h-5 w-5" />,
+      tour: 'charts',
     },
     {
       href: '/maps',
-      numeral: 'VIII',
+      numeral: 'IX',
       title: 'Maps',
       body: 'Suffolk County drawn by school identity — every district colored by its program, click through to the team.',
       stat: `${fmt(c.schools)} programs mapped`,
       icon: <MapIcon className="h-5 w-5" />,
+      tour: 'maps',
     },
-    {
-      href: '/board',
-      numeral: 'IX',
-      title: 'Board',
-      body: 'The Press Box — a community discussion board for Section XI football, tagged and threaded.',
-      stat: `${BOARD_THREADS.length} threads`,
-      icon: <MessagesSquare className="h-5 w-5" />,
-    },
+    // ── Row 4 (each card its own tour step) ────────────────────────────
     {
       href: '/chat',
       numeral: 'X',
@@ -145,6 +157,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'Ask SportsGPT anything about Section XI — leaders, matchups, and season history, answered from the record.',
       stat: 'Ask anything',
       icon: <MessageCircle className="h-5 w-5" />,
+      tour: 'chat',
     },
     {
       href: '/search',
@@ -153,6 +166,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'One search across the whole almanac — teams, players, schools, games, and seasons, ranked as you type.',
       stat: 'Across the almanac',
       icon: <Search className="h-5 w-5" />,
+      tour: 'search',
     },
     {
       href: '/glossary',
@@ -161,6 +175,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'Every stat and abbreviation on the site, defined — from YPC to point differential, in plain language.',
       stat: `${GLOSSARY_TERMS.length} terms defined`,
       icon: <BookOpen className="h-5 w-5" />,
+      tour: 'glossary',
     },
   ]
 }
@@ -198,11 +213,11 @@ export default async function HomePage() {
           {/* Wayfinding card grid */}
           <RevealFx delay={0.12} translateY={8}>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {cards.map((card, i) => (
+              {cards.map(card => (
                 <Link
                   key={card.href}
                   href={card.href}
-                  data-tour={CLUSTER_OF[i]}
+                  data-tour={card.tour}
                   className="group flex flex-col justify-between border border-[var(--paper-rule)] bg-[var(--paper)] px-7 py-7 hover:bg-[var(--paper-quiet)] transition-colors"
                   style={{ borderRadius: 3, minHeight: 220 }}
                 >

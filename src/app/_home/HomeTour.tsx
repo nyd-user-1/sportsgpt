@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { X, ArrowRight, ArrowLeft, Compass } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
 const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
@@ -25,27 +26,51 @@ const STEPS: Step[] = [
   },
   {
     kicker: 'Browse the record',
-    title: 'Teams · Players · Leaderboard',
-    body: 'Start here. Every program ranked by record, every player on file sortable by any column, and the top 25 of each season.',
-    cluster: 'browse',
+    title: 'Teams · Players · Games',
+    body: 'Start here. Every program ranked by record, every player on file, and every game with its box score.',
+    cluster: 'row1',
   },
   {
     kicker: 'Go deeper',
-    title: 'Charts · Divisions · Schools',
-    body: 'Records drawn as visual leaderboards, the four divisions standing-by-standing, and the academic record behind each program.',
-    cluster: 'deeper',
+    title: 'Divisions · Schools · Leaderboard',
+    body: 'The four divisions standing-by-standing, the academic record behind each program, and the top 25 of every season.',
+    cluster: 'row2',
   },
   {
-    kicker: 'Explore',
-    title: 'Games · Maps · Board',
-    body: 'Box scores for every game, Suffolk County drawn by school identity, and The Press Box — the community discussion board.',
-    cluster: 'explore',
+    kicker: 'The Big Board',
+    title: 'Talk Section XI',
+    body: 'A community discussion board for Suffolk football — rankings, game-day debate, history, and recruiting, tagged and threaded.',
+    cluster: 'board',
   },
   {
-    kicker: 'Ask & find',
-    title: 'Chat · Search · Glossary',
-    body: 'Ask SportsGPT anything, search the whole almanac as you type, or look up any stat or abbreviation in plain language.',
-    cluster: 'ask',
+    kicker: 'Charts',
+    title: 'A table of figures',
+    body: 'Team, season, player, and game records drawn as readable visual leaderboards — the almanac at a glance.',
+    cluster: 'charts',
+  },
+  {
+    kicker: 'Maps',
+    title: 'The county, by program',
+    body: 'Suffolk County drawn by school identity — every district colored by its program; click through to any team.',
+    cluster: 'maps',
+  },
+  {
+    kicker: 'Chat',
+    title: 'Ask SportsGPT',
+    body: 'Ask anything about Section XI — leaders, matchups, and season history, answered straight from the record.',
+    cluster: 'chat',
+  },
+  {
+    kicker: 'Search',
+    title: 'Find anything',
+    body: 'One search across the whole almanac — teams, players, schools, games, and seasons, ranked as you type.',
+    cluster: 'search',
+  },
+  {
+    kicker: 'Glossary',
+    title: 'Every term, defined',
+    body: 'Every stat and abbreviation on the site explained in plain language — from YPC to point differential.',
+    cluster: 'glossary',
   },
 ]
 
@@ -65,15 +90,22 @@ function setHighlight(cluster: string | null) {
   })
 }
 
+const CARD_W = 380   // dialog card width (max-w-[380px])
+const CARD_H = 210   // approx dialog card height for clamping
+const MARGIN = 16    // viewport edge margin
+
 export function HomeTour() {
   const [open, setOpen] = useState(false)
   const [step, setStep] = useState(0)
   const [beacon, setBeacon] = useState<{ x: number; y: number } | null>(null)
+  // Tour card position. null → use the welcome fallback (top-right, under the trigger).
+  const [cardPos, setCardPos] = useState<{ left: number; top: number } | null>(null)
 
   const close = useCallback(() => {
     setOpen(false)
     setStep(0)
     setBeacon(null)
+    setCardPos(null)
     setHighlight(null)
     try { localStorage.setItem(STORAGE_KEY, '1') } catch { /* ignore */ }
   }, [])
@@ -97,39 +129,11 @@ export function HomeTour() {
     return () => window.removeEventListener('sportsgpt:start-tour', onStart)
   }, [])
 
-  // Drive the card highlight + beacon + Esc/arrow keys while open.
+  // Drive the card highlight + beacon + card position + Esc/arrow keys.
   useEffect(() => {
-    if (!open) { setHighlight(null); setBeacon(null); return }
+    if (!open) { setHighlight(null); setBeacon(null); setCardPos(null); return }
     const cluster = STEPS[step].cluster
     setHighlight(cluster)
-
-    if (!cluster) {
-      setBeacon(null)
-    } else {
-      const card = document.querySelector<HTMLElement>(`[data-tour="${cluster}"]`)
-      card?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      // Place the beacon at the card's top-right corner once the scroll settles.
-      const place = () => {
-        if (!card) return setBeacon(null)
-        const r = card.getBoundingClientRect()
-        setBeacon({ x: r.right - 14, y: r.top + 14 })
-      }
-      const t = setTimeout(place, 320)
-      window.addEventListener('resize', place)
-      window.addEventListener('scroll', place, true)
-      const onKey = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') close()
-        else if (e.key === 'ArrowRight') setStep(s => Math.min(s + 1, STEPS.length - 1))
-        else if (e.key === 'ArrowLeft') setStep(s => Math.max(s - 1, 0))
-      }
-      window.addEventListener('keydown', onKey)
-      return () => {
-        clearTimeout(t)
-        window.removeEventListener('resize', place)
-        window.removeEventListener('scroll', place, true)
-        window.removeEventListener('keydown', onKey)
-      }
-    }
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close()
@@ -137,7 +141,53 @@ export function HomeTour() {
       else if (e.key === 'ArrowLeft') setStep(s => Math.max(s - 1, 0))
     }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+
+    // Welcome step: no target → fixed top-right under the trigger (cardPos = null).
+    if (!cluster) {
+      setBeacon(null)
+      setCardPos(null)
+      return () => window.removeEventListener('keydown', onKey)
+    }
+
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(`[data-tour="${cluster}"]`))
+    cards[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+    // Compute beacon (first card) + card position (union rect of all targets),
+    // re-running on scroll/resize. One clamp rule keeps the card on-screen.
+    const place = () => {
+      if (!cards.length) { setBeacon(null); setCardPos(null); return }
+      const rects = cards.map(c => c.getBoundingClientRect())
+      const left   = Math.min(...rects.map(r => r.left))
+      const right   = Math.max(...rects.map(r => r.right))
+      const top     = Math.min(...rects.map(r => r.top))
+
+      // Beacon: top-right corner of the first card.
+      const f = rects[0]
+      setBeacon({ x: f.right - 14, y: f.top + 14 })
+
+      // Mobile: skip anchored positioning — the card renders as a bottom sheet.
+      const vw = window.innerWidth, vh = window.innerHeight
+      if (vw < 640) { setCardPos(null); return }
+
+      // Card: anchor above-and-right of the union rect's top-right, then clamp.
+      let cl = right - CARD_W * 0.45        // overlap the rightmost card a touch
+      let ct = top - CARD_H - 12            // float above the row
+      cl = Math.max(MARGIN, Math.min(cl, vw - CARD_W - MARGIN))
+      ct = Math.max(MARGIN, Math.min(ct, vh - CARD_H - MARGIN))
+      // Avoid the dead-left feel on a wide row — never left of the union midpoint.
+      cl = Math.max(cl, Math.min((left + right) / 2, vw - CARD_W - MARGIN))
+      setCardPos({ left: cl, top: ct })
+    }
+
+    const t = setTimeout(place, 320)
+    window.addEventListener('resize', place)
+    window.addEventListener('scroll', place, true)
+    return () => {
+      clearTimeout(t)
+      window.removeEventListener('resize', place)
+      window.removeEventListener('scroll', place, true)
+      window.removeEventListener('keydown', onKey)
+    }
   }, [open, step, close])
 
   if (!open) return null
@@ -158,12 +208,7 @@ export function HomeTour() {
         />
       )}
 
-      <div
-        className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center sm:justify-end p-4 sm:p-8"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Site tour"
-      >
+      <div className="fixed inset-0 z-[200]" role="dialog" aria-modal="true" aria-label="Site tour">
         {/* Soft scrim — click to dismiss, doesn't fully block the page so the
             highlighted cards stay readable behind it. */}
         <button
@@ -173,10 +218,20 @@ export function HomeTour() {
           style={{ cursor: 'default' }}
         />
 
-      {/* Stepped card */}
+      {/* Stepped card.
+          - Mobile: always a bottom sheet (left/right/bottom pinned via classes).
+          - Desktop welcome (no cardPos): top-right under the trigger.
+          - Desktop cluster steps: anchored at the computed cardPos near the row.
+          Inline top/left only set on desktop (place() nulls cardPos < 640px),
+          so the max-sm bottom-sheet classes win on mobile. */}
       <div
-        className="relative w-full max-w-[380px] border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden"
-        style={{ borderRadius: 6 }}
+        className={cn(
+          'absolute border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden',
+          'max-sm:left-4 max-sm:right-4 max-sm:bottom-4 max-sm:top-auto',
+          'sm:w-full sm:max-w-[380px]',
+          !cardPos && 'sm:top-[88px] sm:right-8',
+        )}
+        style={cardPos ? { borderRadius: 6, top: cardPos.top, left: cardPos.left } : { borderRadius: 6 }}
       >
         <div className="px-6 pt-5 pb-4">
           <div className="flex items-start justify-between gap-4">

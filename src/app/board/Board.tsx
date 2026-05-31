@@ -53,7 +53,7 @@ export function Board() {
             <EditorialHead
               size="xl"
               eyebrow="Section XI · Discussion"
-              subhead={<>Letters, hot takes, and game-day debate from the section. Pull up a chair in the press box.</>}
+              subhead={<>Letters, hot takes, and game-day debate from the section. Pull up a chair at the big board.</>}
               meta={[
                 <Link key="school"   href="/school"             className="hover:text-[var(--paper-strong)] transition-colors">School</Link>,
                 <Link key="division" href="/division/division-i" className="hover:text-[var(--paper-strong)] transition-colors">Division</Link>,
@@ -61,7 +61,7 @@ export function Board() {
                 <Link key="player"   href="/player"             className="hover:text-[var(--paper-strong)] transition-colors">Player</Link>,
               ]}
             >
-              The Press Box
+              The Big Board
             </EditorialHead>
           </RevealFx>
         </div>
@@ -202,7 +202,7 @@ export function Board() {
             </div>
 
             <div className="mt-16 pt-8 border-t border-[var(--paper-rule)] max-w-[68ch] text-[12.5px] leading-[1.75] text-[var(--paper-faint)]" style={{ ...SERIF, fontStyle: 'italic' }}>
-              The Press Box is a community discussion board for Section XI football. This is a design
+              The Big Board is a community discussion board for Section XI football. This is a design
               prototype — threads and replies are seeded and live only in your browser session until a
               <span style={MONO}> board_threads</span> / <span style={MONO}>board_posts</span> table is wired up with sign-in.
             </div>
