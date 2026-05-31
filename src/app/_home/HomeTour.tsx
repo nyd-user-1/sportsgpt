@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { X, ArrowRight, ArrowLeft, Compass } from 'lucide-react'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { useRouter } from 'next/navigation'
+import { X, ArrowRight, ArrowLeft, Compass, Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
@@ -31,28 +32,22 @@ const STEPS: Step[] = [
     cluster: 'row1',
   },
   {
-    kicker: 'Go deeper',
-    title: 'Divisions · Schools · Leaderboard',
-    body: 'The four divisions standing-by-standing, the academic record behind each program, and the top 25 of every season.',
-    cluster: 'row2',
+    kicker: 'By division',
+    title: 'Divisions',
+    body: 'The four divisions standing-by-standing — season carousels and the programs that define each tier.',
+    cluster: 'divisions',
   },
   {
-    kicker: 'The Big Board',
-    title: 'Talk Section XI',
+    kicker: 'Top of the class',
+    title: 'Leaderboard',
+    body: 'The top 25 of every season by passing, rushing, and receiving — with head-to-head Versus.',
+    cluster: 'leaderboard',
+  },
+  {
+    kicker: 'Discussion board',
+    title: 'The Big Board',
     body: 'A community discussion board for Suffolk football — rankings, game-day debate, history, and recruiting, tagged and threaded.',
     cluster: 'board',
-  },
-  {
-    kicker: 'Charts',
-    title: 'A table of figures',
-    body: 'Team, season, player, and game records drawn as readable visual leaderboards — the almanac at a glance.',
-    cluster: 'charts',
-  },
-  {
-    kicker: 'Maps',
-    title: 'The county, by program',
-    body: 'Suffolk County drawn by school identity — every district colored by its program; click through to any team.',
-    cluster: 'maps',
   },
   {
     kicker: 'Chat',
@@ -65,12 +60,6 @@ const STEPS: Step[] = [
     title: 'Find anything',
     body: 'One search across the whole almanac — teams, players, schools, games, and seasons, ranked as you type.',
     cluster: 'search',
-  },
-  {
-    kicker: 'Glossary',
-    title: 'Every term, defined',
-    body: 'Every stat and abbreviation on the site explained in plain language — from YPC to point differential.',
-    cluster: 'glossary',
   },
 ]
 
@@ -91,15 +80,19 @@ function setHighlight(cluster: string | null) {
 }
 
 const CARD_W = 380   // dialog card width (max-w-[380px])
-const CARD_H = 210   // approx dialog card height for clamping
+const GAP    = 14    // vertical gap between the tour card and the row/button below it
 const MARGIN = 16    // viewport edge margin
 
 export function HomeTour() {
+  const router = useRouter()
   const [open, setOpen] = useState(false)
   const [step, setStep] = useState(0)
   const [beacon, setBeacon] = useState<{ x: number; y: number } | null>(null)
   // Tour card position. null → use the welcome fallback (top-right, under the trigger).
   const [cardPos, setCardPos] = useState<{ left: number; top: number } | null>(null)
+  // Measured card height — the card grows/shrinks with copy length, so we read
+  // its real height to place its bottom edge a fixed GAP above the row below.
+  const cardRef = useRef<HTMLDivElement>(null)
 
   const close = useCallback(() => {
     setOpen(false)
@@ -142,24 +135,42 @@ export function HomeTour() {
     }
     window.addEventListener('keydown', onKey)
 
-    // Welcome step: no target → fixed top-right under the trigger (cardPos = null).
+    // Welcome step: no row to highlight. Anchor the card's right edge to the
+    // trigger button's right edge, dropped just below the button.
     if (!cluster) {
       setBeacon(null)
-      setCardPos(null)
-      return () => window.removeEventListener('keydown', onKey)
+      const placeWelcome = () => {
+        const vw = window.innerWidth
+        if (vw < 640) { setCardPos(null); return }
+        const btn = document.querySelector<HTMLElement>('[data-tour-trigger]')
+        if (!btn) { setCardPos(null); return }
+        const b = btn.getBoundingClientRect()
+        let cl = b.right - CARD_W                 // right edges flush
+        cl = Math.max(MARGIN, Math.min(cl, vw - CARD_W - MARGIN))
+        setCardPos({ left: cl, top: b.bottom + GAP })
+      }
+      const tw = setTimeout(placeWelcome, 50)
+      window.addEventListener('resize', placeWelcome)
+      window.addEventListener('scroll', placeWelcome, true)
+      return () => {
+        clearTimeout(tw)
+        window.removeEventListener('resize', placeWelcome)
+        window.removeEventListener('scroll', placeWelcome, true)
+        window.removeEventListener('keydown', onKey)
+      }
     }
 
     const cards = Array.from(document.querySelectorAll<HTMLElement>(`[data-tour="${cluster}"]`))
     cards[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
     // Compute beacon (first card) + card position (union rect of all targets),
-    // re-running on scroll/resize. One clamp rule keeps the card on-screen.
+    // re-running on scroll/resize. The card's RIGHT edge sits flush with the
+    // row's right edge, floating a GAP above the row (measured card height).
     const place = () => {
       if (!cards.length) { setBeacon(null); setCardPos(null); return }
       const rects = cards.map(c => c.getBoundingClientRect())
-      const left   = Math.min(...rects.map(r => r.left))
-      const right   = Math.max(...rects.map(r => r.right))
-      const top     = Math.min(...rects.map(r => r.top))
+      const right = Math.max(...rects.map(r => r.right))
+      const top   = Math.min(...rects.map(r => r.top))
 
       // Beacon: top-right corner of the first card.
       const f = rects[0]
@@ -169,13 +180,11 @@ export function HomeTour() {
       const vw = window.innerWidth, vh = window.innerHeight
       if (vw < 640) { setCardPos(null); return }
 
-      // Card: anchor above-and-right of the union rect's top-right, then clamp.
-      let cl = right - CARD_W * 0.45        // overlap the rightmost card a touch
-      let ct = top - CARD_H - 12            // float above the row
+      const h = cardRef.current?.offsetHeight ?? 210
+      let cl = right - CARD_W               // right edges flush with the row
+      let ct = top - GAP - h                // float a GAP above the row
       cl = Math.max(MARGIN, Math.min(cl, vw - CARD_W - MARGIN))
-      ct = Math.max(MARGIN, Math.min(ct, vh - CARD_H - MARGIN))
-      // Avoid the dead-left feel on a wide row — never left of the union midpoint.
-      cl = Math.max(cl, Math.min((left + right) / 2, vw - CARD_W - MARGIN))
+      ct = Math.max(MARGIN, Math.min(ct, vh - h - MARGIN))
       setCardPos({ left: cl, top: ct })
     }
 
@@ -225,6 +234,7 @@ export function HomeTour() {
           Inline top/left only set on desktop (place() nulls cardPos < 640px),
           so the max-sm bottom-sheet classes win on mobile. */}
       <div
+        ref={cardRef}
         className={cn(
           'absolute border border-[var(--paper-rule)] bg-[var(--paper)] shadow-xl overflow-hidden',
           'max-sm:left-4 max-sm:right-4 max-sm:bottom-4 max-sm:top-auto',
@@ -282,11 +292,11 @@ export function HomeTour() {
             )}
             {isLast ? (
               <button
-                onClick={close}
+                onClick={() => { close(); router.push('/search') }}
                 className="flex items-center gap-1.5 rounded-[3px] px-3 py-1.5 text-[12px] font-medium text-[var(--paper)] transition-opacity hover:opacity-90"
                 style={{ ...SANS, background: 'var(--paper-strong)' }}
               >
-                Start exploring
+                <Search className="h-3.5 w-3.5" /> Search
               </button>
             ) : (
               <button
@@ -309,6 +319,7 @@ export function HomeTour() {
 export function TourTrigger() {
   return (
     <button
+      data-tour-trigger
       onClick={() => window.dispatchEvent(new Event('sportsgpt:start-tour'))}
       className="inline-flex items-center gap-1.5 rounded-[3px] border border-[var(--paper-rule)] px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] text-[var(--paper-muted)] hover:text-[var(--paper-text)] hover:border-[var(--paper-strong)] transition-colors"
       style={SANS}

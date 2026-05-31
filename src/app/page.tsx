@@ -93,7 +93,8 @@ function buildCards(c: Counts): HubCard[] {
       icon: <CalendarDays className="h-5 w-5" />,
       tour: 'row1',
     },
-    // ── Row 2 (grouped: row2) ──────────────────────────────────────────
+    // ── Row 2 (Divisions + Leaderboard each get their own tour step;
+    //          Schools is not toured) ─────────────────────────────────────
     {
       href: '/division/division-i',
       numeral: 'IV',
@@ -101,7 +102,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'Division I through IV — standings, season carousels, and the programs that define each tier.',
       stat: '4 divisions',
       icon: <LayoutGrid className="h-5 w-5" />,
-      tour: 'row2',
+      tour: 'divisions',
     },
     {
       href: '/school',
@@ -110,7 +111,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'The academic record behind the football — enrollment, graduation, Report Card, and demographics.',
       stat: `${fmt(c.schools)} schools`,
       icon: <School className="h-5 w-5" />,
-      tour: 'row2',
+      tour: 'schools',
     },
     {
       href: '/leaderboard',
@@ -119,7 +120,7 @@ function buildCards(c: Counts): HubCard[] {
       body: 'The class of every year — top 25 per season by passing, rushing, and receiving, with head-to-head Versus.',
       stat: `${AVAILABLE_SEASONS.length} seasons · top 25`,
       icon: <ListOrdered className="h-5 w-5" />,
-      tour: 'row2',
+      tour: 'leaderboard',
     },
     // ── Row 3 (each card its own tour step) ────────────────────────────
     {
