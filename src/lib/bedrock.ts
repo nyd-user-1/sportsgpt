@@ -7,7 +7,7 @@ import { AnthropicBedrock } from '@anthropic-ai/bedrock-sdk'
  * AnthropicBedrock is a drop-in for the Anthropic client — same messages.create /
  * messages.stream — that signs requests with AWS_ACCESS_KEY_ID /
  * AWS_SECRET_ACCESS_KEY / AWS_REGION from env (an IAM user scoped to
- * bedrock:Invoke*/Converse*). Model ids on Bedrock are inference profiles, so the
+ * bedrock:Invoke and Converse actions). Model ids on Bedrock are inference profiles, so the
  * short ids the UI uses are mapped here; anything unmapped falls back to Haiku.
  */
 export const BEDROCK_MODELS: Record<string, string> = {
