@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
+import type Anthropic from '@anthropic-ai/sdk'
+import { bedrockClient, bedrockConfigured, bedrockModel } from '@/lib/bedrock'
 import OpenAI from 'openai'
 import { TOOLS, executeToolCall } from '@/lib/chat-tools'
 
@@ -123,7 +124,7 @@ export async function POST(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'messages required' }), { status: 400 })
   }
 
-  const anthropicKey = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
+  const bedrockOk    = bedrockConfigured()
   const openaiKey    = process.env.OPENAI_API_KEY_SPORTSGPT
   const geminiKey    = process.env.GEMINI_FLASH_API_KEY ?? process.env.Gemini_API_Key
   const grokKey      = process.env.GROK_API_KEY
@@ -199,16 +200,16 @@ export async function POST(req: NextRequest) {
         return true
       }
 
-      // ── 1. Anthropic (Claude) ──────────────────────────────────────────────
-      if (isAnthropic && anthropicKey) {
+      // ── 1. Anthropic (Claude) via AWS Bedrock ─────────────────────────────
+      if (isAnthropic && bedrockOk) {
         try {
-          const client = new Anthropic({ apiKey: anthropicKey })
+          const client = bedrockClient()
           type AnthMsg = Anthropic.Messages.MessageParam
           const history: AnthMsg[] = messages.map(m => ({ role: m.role, content: m.content }))
 
           for (let i = 0; i < 5; i++) {
             const response = await client.messages.create({
-              model, max_tokens: 2048, system: SYSTEM_PROMPT, tools: TOOLS, messages: history,
+              model: bedrockModel(model), max_tokens: 2048, system: SYSTEM_PROMPT, tools: TOOLS, messages: history,
             })
             for (const block of response.content) {
               if (block.type === 'text' && block.text) send(block.text)

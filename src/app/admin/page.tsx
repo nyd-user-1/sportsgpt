@@ -246,7 +246,7 @@ export default function AdminPage() {
                       />
                       <InfraRow logo={AI_LOGOS.anthropic} label="Claude" ok={status?.aiKeys.anthropic ?? false} loading={!status}
                         okText="API key set"
-                        failText="Add ANTHROPIC_API_KEY_SPORTSGPT2 to Vercel env vars"
+                        failText="Add AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY (Bedrock) to Vercel env vars"
                       />
                       <InfraRow logo={AI_LOGOS.gemini} label="Gemini" ok={status?.aiKeys.gemini ?? false} loading={!status}
                         okText="API key set"

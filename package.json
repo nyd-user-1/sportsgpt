@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@anthropic-ai/bedrock-sdk": "^0.32.4",
     "@anthropic-ai/sdk": "^0.96.0",
     "@headlessui/react": "^2.2.10",
     "@neondatabase/serverless": "^1.1.0",

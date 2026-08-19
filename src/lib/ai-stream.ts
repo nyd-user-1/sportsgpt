@@ -1,4 +1,4 @@
-import Anthropic from '@anthropic-ai/sdk'
+import { bedrockClient, bedrockConfigured, BEDROCK_HAIKU } from '@/lib/bedrock'
 import OpenAI from 'openai'
 
 /**
@@ -6,7 +6,7 @@ import OpenAI from 'openai'
  *
  * Provider selection:
  *   - OPENROUTER_API_KEY set  → OpenRouter (OpenAI-compatible)
- *   - else ANTHROPIC_API_KEY_SPORTSGPT2 → direct Anthropic SDK
+ *   - else AWS Bedrock (AWS_ACCESS_KEY_ID/SECRET set) → Claude Haiku via Bedrock
  *   - else → an inline error message
  *
  * The shape on either path is identical from the caller's perspective:
@@ -14,7 +14,6 @@ import OpenAI from 'openai'
  * and /api/player/[slug]/recap.
  */
 
-const ANTHROPIC_MODEL  = 'claude-haiku-4-5-20251001'
 const OPENROUTER_MODEL = 'anthropic/claude-haiku-4.5'
 
 export function streamChatResponse({
@@ -30,7 +29,7 @@ export function streamChatResponse({
 }): ReadableStream<Uint8Array> {
   const encoder        = new TextEncoder()
   const openrouterKey  = process.env.OPENROUTER_API_KEY
-  const anthropicKey   = process.env.ANTHROPIC_API_KEY_SPORTSGPT2
+  const bedrockOk      = bedrockConfigured()
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -58,17 +57,17 @@ export function streamChatResponse({
             const text = chunk.choices[0]?.delta?.content ?? ''
             if (text) enqueue(text)
           }
-        } else if (anthropicKey) {
-          const client = new Anthropic({ apiKey: anthropicKey })
+        } else if (bedrockOk) {
+          const client = bedrockClient()
           const stream = client.messages.stream({
-            model:      ANTHROPIC_MODEL,
+            model:      BEDROCK_HAIKU,
             max_tokens: maxTokens,
             system,
             messages: [{ role: 'user', content: user }],
           })
           stream.on('text', enqueue)
           stream.on('error', (err) => {
-            console.error('[ai-stream] anthropic error:', err.message)
+            console.error('[ai-stream] bedrock error:', err.message)
             enqueue(`\n\n*${errorPrefix}: ${err.message}*`)
           })
           await stream.finalMessage().catch(() => { /* errored, already enqueued */ })
