@@ -1,6 +1,9 @@
 import { sql } from '@/lib/db'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 3600
 import CityTable from './CityTable'
 
 export default async function CityPage() {

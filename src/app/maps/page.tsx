@@ -1,7 +1,10 @@
 import { sql } from '@/lib/db'
 import SuffolkDistrictMap, { type SchoolRecord } from '@/components/SuffolkDistrictMap'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 3600
 
 export default async function MapsPage() {
   const rows = await sql`

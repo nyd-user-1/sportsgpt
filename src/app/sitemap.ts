@@ -2,7 +2,10 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/app-config'
 import { sql } from '@/lib/db'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 86400
 
 type Entry = MetadataRoute.Sitemap[number]
 type ChangeFreq = Entry['changeFrequency']

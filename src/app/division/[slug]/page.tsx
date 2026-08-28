@@ -5,7 +5,10 @@ import { DivisionShell } from './Shell'
 import { AVAILABLE_SEASONS } from '@/lib/season'
 import { pageMetadata } from '@/lib/seo'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 3600
 
 const divMap: Record<string, string> = {
   'division-i':   'I',

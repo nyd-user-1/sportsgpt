@@ -2,7 +2,10 @@ import { notFound } from 'next/navigation'
 import { getPhotos } from '@/lib/gallery'
 import SharedModal from '../../components/SharedModal'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 3600
 
 export default async function PhotoPage({
   params,

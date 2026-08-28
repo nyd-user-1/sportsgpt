@@ -15,7 +15,10 @@ import { GLOSSARY_TERMS } from '@/lib/glossary-terms'
 import { BOARD_THREADS } from '@/lib/board-data'
 import { formatSeason } from '@/lib/utils'
 
-export const dynamic = 'force-dynamic'
+// Cached for an hour, not rendered per request: nothing here reads searchParams,
+// cookies or headers, and every crawler hit used to be a Neon query. Rosters and
+// scores change between games, not between seconds. (Was force-dynamic.)
+export const revalidate = 3600
 
 const SERIF = { fontFamily: 'var(--font-display), Georgia, serif' } as const
 const SANS  = { fontFamily: 'var(--font-sans, "DM Sans"), sans-serif' } as const
