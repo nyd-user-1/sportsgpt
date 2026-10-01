@@ -4,7 +4,7 @@ import { sql } from '@/lib/db'
 // Cached for an hour, not rendered per request: nothing here reads searchParams,
 // cookies or headers, and every crawler hit used to be a Neon query. Rosters and
 // scores change between games, not between seconds. (Was force-dynamic.)
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 import { CityShell } from './Shell'
 
 export default async function DetailPageCity({ params }: { params: Promise<{ slug: string }> }) {
