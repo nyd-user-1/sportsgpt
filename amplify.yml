@@ -1,0 +1,28 @@
+# Sports on AWS Amplify Hosting (2026-10-01; before that, Vercel).
+#
+# The branch is password-protected at the edge, so no crawler reaches a page
+# and nothing wakes the database. Amplify only hands its env vars to the
+# compile step, so the ones the server reads at run time are written into
+# .env.production here.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - |
+          for name in DATABASE_URL AUTH_SECRET AUTH_TRUST_HOST EXA_API_KEY OPENROUTER_API_KEY NEXT_PUBLIC_GOOGLE_MAPS_API_KEY; do
+            value="$(printenv "$name" || true)"
+            if [ -n "$value" ]; then printf '%s=%s\n' "$name" "$value" >> .env.production; fi
+          done
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*
