@@ -177,10 +177,13 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      const isAnthropic = model.startsWith('claude-')
-      const isOpenAI    = model.startsWith('gpt-')
-      const isGemini    = model.startsWith('gemini-')
-      const isGrok      = model.startsWith('grok-')
+      // Every reply comes from Claude on Bedrock, whatever the picker sent: a
+      // non-Claude id maps to Haiku in bedrockModel(). The other providers'
+      // branches below stay unreachable without their keys.
+      const isAnthropic = true
+      const isOpenAI    = false
+      const isGemini    = false
+      const isGrok      = false
 
       // ── Helper: run OpenAI-compatible provider with tools ──────────────────
       async function tryOAIProvider(client: OpenAI, oaiModel: string): Promise<boolean> {
