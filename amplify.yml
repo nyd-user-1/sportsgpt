@@ -3,7 +3,8 @@
 # The branch is password-protected at the edge, so no crawler reaches a page
 # and nothing wakes the database. Amplify only hands its env vars to the
 # compile step, so the ones the server reads at run time are written into
-# .env.production here.
+# .env.production here. No model key is carried: chat runs on Bedrock through
+# the app's role.
 version: 1
 frontend:
   phases:
@@ -18,11 +19,15 @@ frontend:
             if [ -n "$value" ]; then printf '%s=%s\n' "$name" "$value" >> .env.production; fi
           done
         - npm run build
+        # Source maps and the compile cache ship nowhere; Amplify weighs the output.
+        - |
+          find .next/server -name '*.map' -delete
+          rm -rf .next/cache
+          echo "output size: $(du -sm .next | cut -f1)M"
   artifacts:
     baseDirectory: .next
     files:
       - '**/*'
   cache:
     paths:
-      - .next/cache/**/*
       - node_modules/**/*
