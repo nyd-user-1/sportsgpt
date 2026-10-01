@@ -13,7 +13,7 @@ frontend:
     build:
       commands:
         - |
-          for name in DATABASE_URL AUTH_SECRET AUTH_TRUST_HOST EXA_API_KEY OPENROUTER_API_KEY NEXT_PUBLIC_GOOGLE_MAPS_API_KEY; do
+          for name in DATABASE_URL AUTH_SECRET AUTH_TRUST_HOST EXA_API_KEY NEXT_PUBLIC_GOOGLE_MAPS_API_KEY; do
             value="$(printenv "$name" || true)"
             if [ -n "$value" ]; then printf '%s=%s\n' "$name" "$value" >> .env.production; fi
           done

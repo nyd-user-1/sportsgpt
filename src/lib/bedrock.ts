@@ -18,8 +18,11 @@ export const BEDROCK_MODELS: Record<string, string> = {
 }
 export const BEDROCK_HAIKU = BEDROCK_MODELS['claude-haiku-4-5-20251001']
 
+// On AWS the role the app runs under signs the call (the SDK's default
+// credential chain finds it), so there is always a credential and no key is
+// stored (2026-10-01, the standard across the apps).
 export function bedrockConfigured(): boolean {
-  return !!(process.env.AWS_ACCESS_KEY_ID?.trim() && process.env.AWS_SECRET_ACCESS_KEY?.trim())
+  return true
 }
 
 export function bedrockModel(id: string): string {
