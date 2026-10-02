@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
-import { neon } from '@neondatabase/serverless'
+import { neon } from '@/lib/aurora'
 import bcrypt from 'bcryptjs'
 
 export const { handlers, auth, signIn, signOut } = NextAuth({

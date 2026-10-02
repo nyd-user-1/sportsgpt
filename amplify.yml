@@ -1,7 +1,8 @@
 # Sports on AWS Amplify Hosting (2026-10-01; before that, Vercel).
 #
 # The branch is password-protected at the edge, so no crawler reaches a page
-# and nothing wakes the database. Amplify only hands its env vars to the
+# and nothing wakes the database. The database is the Aurora cluster `sports`,
+# reached over the Data API on the app's role (src/lib/aurora.ts). Amplify only hands its env vars to the
 # compile step, so the ones the server reads at run time are written into
 # .env.production here. No model key is carried: chat runs on Bedrock through
 # the app's role.
@@ -14,10 +15,11 @@ frontend:
     build:
       commands:
         - |
-          for name in DATABASE_URL AUTH_SECRET AUTH_TRUST_HOST EXA_API_KEY NEXT_PUBLIC_GOOGLE_MAPS_API_KEY; do
+          for name in AURORA_CLUSTER_ARN AURORA_SECRET_ARN AURORA_DATABASE AUTH_SECRET AUTH_TRUST_HOST EXA_API_KEY NEXT_PUBLIC_GOOGLE_MAPS_API_KEY; do
             value="$(printenv "$name" || true)"
             if [ -n "$value" ]; then printf '%s=%s\n' "$name" "$value" >> .env.production; fi
           done
+          grep -q "^AURORA_CLUSTER_ARN=" .env.production || { echo "AURORA_CLUSTER_ARN missing"; exit 1; }
         - npm run build
         # Source maps and the compile cache ship nowhere; Amplify weighs the output.
         - |

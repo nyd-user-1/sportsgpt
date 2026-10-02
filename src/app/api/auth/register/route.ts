@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { neon } from '@neondatabase/serverless'
+import { neon } from '@/lib/aurora'
 import bcrypt from 'bcryptjs'
 
 export async function POST(req: NextRequest) {

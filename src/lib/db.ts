@@ -1,4 +1,4 @@
-import { neon } from '@neondatabase/serverless';
+import { neon } from '@/lib/aurora';
 
 const url = process.env.DATABASE_URL ?? 'postgresql://placeholder:placeholder@placeholder/placeholder';
 
